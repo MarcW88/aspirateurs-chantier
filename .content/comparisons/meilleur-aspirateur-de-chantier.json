@@ -1,0 +1,213 @@
+{
+  "slug": "meilleur-aspirateur-de-chantier",
+  "url": "/comparatifs/meilleur-aspirateur-de-chantier/",
+  "updated_at": "2026-09-08",
+  "intent": {
+    "query": "meilleur aspirateur de chantier",
+    "type": "best_overall",
+    "user_job": "choisir un aspirateur réellement adapté au chantier, pas seulement le modèle ayant le plus gros chiffre de dépression",
+    "primary_constraint": "équilibrer sécurité poussière, endurance, aspiration et praticité"
+  },
+  "product_universe": [
+    {
+      "id": "bosch-gas35m",
+      "name": "Bosch Professional GAS 35 M AFC",
+      "status": "ELIGIBLE",
+      "equivalence": "FUNCTIONALLY_COMPARABLE",
+      "exclusion_reason": null
+    },
+    {
+      "id": "karcher-nt30m",
+      "name": "Kärcher NT 30/1 Tact Te M ACD",
+      "status": "ELIGIBLE",
+      "equivalence": "FUNCTIONALLY_COMPARABLE",
+      "exclusion_reason": null
+    },
+    {
+      "id": "karcher-wd7",
+      "name": "Kärcher WD 7 Control P S 30/6/35/T",
+      "status": "ELIGIBLE",
+      "equivalence": "FUNCTIONALLY_COMPARABLE",
+      "exclusion_reason": null
+    }
+  ],
+  "criteria": [
+    {
+      "id": "safety",
+      "label": "Adéquation poussières et filtration",
+      "weight": 25,
+      "hard_gate": true,
+      "hard_gate_min": 5,
+      "rationale": "Critère retenu avant calcul car il change la décision pour meilleur aspirateur de chantier."
+    },
+    {
+      "id": "endurance",
+      "label": "Maintien des performances",
+      "weight": 25,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour meilleur aspirateur de chantier."
+    },
+    {
+      "id": "suction",
+      "label": "Débit et dépression",
+      "weight": 20,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour meilleur aspirateur de chantier."
+    },
+    {
+      "id": "workflow",
+      "label": "Prise, flexible et usage outil",
+      "weight": 15,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour meilleur aspirateur de chantier."
+    },
+    {
+      "id": "mobility",
+      "label": "Mobilité et volume utile",
+      "weight": 15,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour meilleur aspirateur de chantier."
+    }
+  ],
+  "evidence": [
+    {
+      "product": "bosch-gas35m",
+      "criterion": "product_identity",
+      "claim": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
+      "value": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
+      "source_date": "2026-09-08",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "karcher-nt30m",
+      "criterion": "product_identity",
+      "claim": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
+      "value": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
+      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html",
+      "source_date": "2026-09-08",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "karcher-wd7",
+      "criterion": "product_identity",
+      "claim": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
+      "value": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html",
+      "source_date": "2026-09-08",
+      "evidence_class": "VERIFIED"
+    }
+  ],
+  "scores": {
+    "bosch-gas35m": {
+      "safety": {
+        "score": 9,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "endurance": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "suction": {
+        "score": 8,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "workflow": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "mobility": {
+        "score": 7,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      }
+    },
+    "karcher-nt30m": {
+      "safety": {
+        "score": 10,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "endurance": {
+        "score": 10,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "suction": {
+        "score": 9,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "workflow": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "mobility": {
+        "score": 6,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      }
+    },
+    "karcher-wd7": {
+      "safety": {
+        "score": 5,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "endurance": {
+        "score": 7,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "suction": {
+        "score": 10,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "workflow": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "mobility": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « meilleur aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
+      }
+    }
+  },
+  "ranking": [
+    {
+      "product_id": "karcher-nt30m",
+      "raw_score": 90.5,
+      "confidence_adjusted_score": 83.38,
+      "hard_gate_failed": false
+    },
+    {
+      "product_id": "bosch-gas35m",
+      "raw_score": 85.0,
+      "confidence_adjusted_score": 78.02,
+      "hard_gate_failed": false
+    },
+    {
+      "product_id": "karcher-wd7",
+      "raw_score": 77.0,
+      "confidence_adjusted_score": 70.33,
+      "hard_gate_failed": false
+    }
+  ],
+  "notes": {
+    "total_solution_cost_required": false,
+    "affiliate_commission_used_in_ranking": false,
+    "desk_research_only": true
+  }
+}

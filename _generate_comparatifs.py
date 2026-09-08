@@ -182,7 +182,7 @@ PAGES = {
         "products": ["karcher-nt30m","bosch-gas35m","festool-ctm-midi-ac"],
         "criteria": [("safety","Classe M et surveillance",25,True),("endurance","Décolmatage et endurance",25,False),("workflow","Prise, antistatique, outils",20,False),("suction","Aspiration",15,False),("mobility","Mobilité sur chantier",15,False)],
         "scores": {"karcher-nt30m":[10,10,10,9,7],"bosch-gas35m":[10,10,9,8,8],"festool-ctm-midi-ac":[10,10,10,8,9]},
-        "answer": "Pour un usage professionnel polyvalent, le <strong>Kärcher NT 30/1 Tact Te M ACD</strong> prend la première place. Le <strong>Bosch GAS 35 M AFC</strong> reste un excellent généraliste. Le <strong>Festool CTM MIDI I AC</strong> est le meilleur choix compact pour les utilisateurs qui privilégient l'intégration Festool.",
+        "answer": "Pour un usage professionnel polyvalent, le <strong>Festool CTM MIDI I AC</strong> arrive en tête de notre scoring grâce à son format compact, sa classe M, son AUTOCLEAN et son intégration aux outils. Le <strong>Kärcher NT 30/1 Tact Te M ACD</strong> est plus pertinent lorsque capacité et gros volumes de poussières priment. Le <strong>Bosch GAS 35 M AFC</strong> reste un excellent généraliste.",
         "decision": "Le classement professionnel donne plus de poids à la classe de poussière, au décolmatage et au workflow outil qu'au prix d'achat. Sur une journée de chantier, les arrêts de nettoyage, le flexible, la prise asservie et le vidage pèsent davantage qu'un écart marginal de puissance.",
     },
     "aspirateur-industriel": {
