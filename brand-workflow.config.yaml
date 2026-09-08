@@ -7,7 +7,13 @@ content:
   scope:
     - "/marques/"
   source_of_truth: "_generate.py"
-  mode: "auto"  # auto | recovery | new_content
+  brand_source_of_truth: "_generate_brands.py"
+  generation_order:
+    - "python _generate.py (site shell when a full rebuild is needed)"
+    - "python _generate_guides.py + guide supplements/normalization"
+    - "python _generate_comparatifs.py + comparison normalization"
+    - "python _generate_brands.py"
+  mode: "auto"
 
 quality:
   quality_reference: "/marques/bosch/"
