@@ -6,6 +6,7 @@ on:
       - content/guides-production-workflow
     paths:
       - '_generate_guides.py'
+      - '_guide_quality_supplements.py'
       - 'guides/**'
       - 'content-workflow.config.yaml'
       - '.agents/skills/content-recovery-and-production-workflow/**'
@@ -30,6 +31,9 @@ jobs:
 
       - name: Apply guide content
         run: python _generate_guides.py
+
+      - name: Apply editorial quality supplements
+        run: python _guide_quality_supplements.py
 
       - name: Structural quality gate
         run: >-
