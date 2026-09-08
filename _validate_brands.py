@@ -32,7 +32,7 @@ def main():
         internal=LINK.findall(body); unique=set(internal); sources=len(EXT.findall(body))
         checks=[
           ('article absent',not body),('placeholder présent','<!-- contenu à rédiger -->' in body.lower()),
-          ('MM/AAAA présent','mm/aaaa' in html.lower()),('année 2025 résiduelle dans le contenu marque','2025' in body),
+          ('MM/AAAA présent','mm/aaaa' in html.lower()),('année 2025 résiduelle dans le texte visible','2025' in text),
           ('noindex absent','<meta name="robots" content="noindex, follow">' not in html),
           ('answer box absent',body.count('class="answer-box"')!=1),('marqueur start absent',body.count('<!-- BRAND_CONTENT_START -->')!=1),
           ('marqueur end absent',body.count('<!-- BRAND_CONTENT_END -->')!=1),('moins de 9 H2',h2<9),
