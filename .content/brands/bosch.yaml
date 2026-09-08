@@ -1,0 +1,169 @@
+{
+  "slug": "bosch",
+  "brand": "Bosch",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "Bosch",
+    "products": [
+      "AdvancedVac 18V-8",
+      "AdvancedVac 20",
+      "GAS 18V-10 L",
+      "GAS 35 M AFC",
+      "GAS 55 M AFC",
+      "GAS 35 L AFC et références L antérieures"
+    ],
+    "use_cases": [
+      "ponceuse"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "Chez Bosch, il faut d'abord distinguer les aspirateurs DIY verts — dont l'AdvancedVac 20 — et les aspirateurs Professional GAS bleus. Les premiers répondent au bricolage eau/poussière ; les seconds structurent l'offre chantier, avec notamment des modèles classe M, le système Click & Clean et des formats sur batterie.",
+    "strengths": [
+      "Une séparation utile entre bricolage et gamme Professional.",
+      "Des références classe M très documentées avec AFC.",
+      "Click & Clean et L-BOXX rendent l'ensemble cohérent pour un parc Bosch Professional.",
+      "Un choix filaire et sans fil qui couvre atelier, chantier et interventions mobiles."
+    ],
+    "limitations": [
+      "Deux plateformes 18 V Bosch coexistent : DIY et Professional ne sont pas un seul écosystème batterie.",
+      "L'AdvancedVac peut être très performant en nettoyage sans répondre au rôle réglementaire d'un GAS classe M.",
+      "Les GAS 35/55 M sont lourds et chers pour de simples travaux domestiques.",
+      "Les chiffres publiés à la turbine doivent être comparés avec le même point de mesure."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "AdvancedVac 18V-8",
+      "status": "CURRENT",
+      "role": "Bricolage mobile",
+      "evidence": "8 L, plateforme Power for All 18 V, format compact."
+    },
+    {
+      "name": "AdvancedVac 20",
+      "status": "CURRENT",
+      "role": "Atelier DIY eau/poussière",
+      "evidence": "20 L, 70 l/s, 260 mbar, démarrage automatique avec outil."
+    },
+    {
+      "name": "GAS 18V-10 L",
+      "status": "CURRENT",
+      "role": "Interventions sans fil",
+      "evidence": "Classe L, 10 L brut, plateforme Professional 18 V."
+    },
+    {
+      "name": "GAS 35 M AFC",
+      "status": "CURRENT",
+      "role": "Chantier classe M polyvalent",
+      "evidence": "35 L brut, 74 l/s, 254 mbar, nettoyage automatique AFC."
+    },
+    {
+      "name": "GAS 55 M AFC",
+      "status": "CURRENT",
+      "role": "Classe M et gros volume",
+      "evidence": "55 L brut / 43 L net, même logique AFC et Click & Clean."
+    },
+    {
+      "name": "GAS 35 L AFC et références L antérieures",
+      "status": "CURRENT_OR_LEGACY_BY_MARKET",
+      "role": "Classe L / parc existant",
+      "evidence": "Toujours pertinentes selon marché, mais à distinguer des besoins imposant M."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "Côté Professional, Bosch s'appuie sur Click & Clean pour raccorder l'aspiration aux outils et sur la compatibilité L-BOXX pour le transport. C'est un avantage concret si l'atelier ou le parc de chantier est déjà largement Bosch : l'aspirateur devient un élément du workflow plutôt qu'un appareil isolé. La plateforme batterie Professional 18 V renforce cette logique sur les références sans fil.",
+      "Il existe toutefois deux écosystèmes Bosch distincts. Power for All 18 V concerne l'univers DIY, tandis que Professional 18 V concerne les outils bleus. Il ne faut donc pas écrire qu'un aspirateur Bosch 18 V partage automatiquement ses batteries avec n'importe quel outil Bosch. Cette distinction est importante dans le coût total d'une solution sans fil."
+    ],
+    "choose": [
+      "Choisissez Bosch si vous avez déjà un parc Professional et souhaitez raccorder outils, L-BOXX et aspiration.",
+      "Le GAS 35 M AFC convient si la classe M est adaptée au risque et que vous voulez un volume encore mobile.",
+      "L'AdvancedVac 20 est à privilégier pour un atelier DIY eau/poussière sans besoin de classe M."
+    ],
+    "avoid": [
+      "Évitez l'AdvancedVac pour remplacer un aspirateur de sécurité requis par votre poussière.",
+      "Bosch convient moins si votre workflow est centré sur Systainer/Festool ou sur le ponçage Mirka.",
+      "Ne choisissez pas le GAS 55 simplement parce qu'il est plus gros : son volume pénalise les déplacements fréquents."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "Bosch Professional GAS 35 M AFC",
+      "status": "VERIFIED",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Bosch Professional GAS 55 M AFC",
+      "status": "VERIFIED",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-55-m-afc-06019C33W0",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Bosch DIY AdvancedVac 20",
+      "status": "VERIFIED",
+      "source": "https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Bosch DIY — gamme aspirateurs eau et poussière",
+      "status": "VERIFIED",
+      "source": "https://www.bosch-diy.com/fr/fr/outils-de-nettoyage/aspirateurs-eau-et-poussiere",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "Bosch GAS 35 M AFC",
+      "url": "/modeles/bosch-gas-35-m-afc/"
+    },
+    {
+      "label": "Bosch GAS 18V-10 L",
+      "url": "/modeles/bosch-gas-18v-10-l/"
+    },
+    {
+      "label": "Bosch AdvancedVac 20",
+      "url": "/modeles/bosch-advancedvac-20/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
+    },
+    {
+      "label": "sans fil",
+      "url": "/comparatifs/aspirateur-chantier-sans-fil/"
+    },
+    {
+      "label": "professionnel",
+      "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "prise asservie",
+      "url": "/guides/prise-asservie/"
+    },
+    {
+      "label": "classes L/M/H",
+      "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "ponceuse",
+      "url": "/usages/aspirateur-ponceuse/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}

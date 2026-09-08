@@ -1,0 +1,163 @@
+{
+  "slug": "festool",
+  "brand": "Festool",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "Festool",
+    "products": [
+      "CTL MIDI I / CTL MIDI I AC",
+      "CTM MIDI I / CTM MIDI I AC",
+      "CTH MIDI I AC",
+      "CTM 26 EI / CTM 26 EI AC",
+      "CTC / CTMC MIDI I",
+      "Anciennes CT MINI/MIDI générations"
+    ],
+    "use_cases": [
+      "ponceuse"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "Festool est surtout pertinent quand l'aspirateur fait partie d'un système de travail : ponceuse, flexible CLEANTEC, Systainer, Bluetooth et application. La gamme 2026 distingue clairement les classes L, M et H via les familles CTL, CTM et CTH, avec des versions AUTOCLEAN et des solutions sans fil CTC/CTMC.",
+    "strengths": [
+      "Intégration outil-flexible-aspirateur particulièrement poussée.",
+      "Nomenclature L/M/H plus lisible que chez beaucoup de concurrents.",
+      "AUTOCLEAN disponible sur des formats compacts récents.",
+      "Bluetooth, Systainer et Festool App réduisent les manipulations dans un parc Festool."
+    ],
+    "limitations": [
+      "Positionnement premium et consommables/accessoires parfois coûteux.",
+      "Les cuves MIDI restent compactes : un gros volume de déchets peut justifier un modèle plus grand ou une autre marque.",
+      "L'intérêt du système diminue si vos outils et coffrets appartiennent à d'autres écosystèmes.",
+      "Il faut toujours choisir la classe selon le risque ; le logo Festool ne rend pas une version CTL équivalente à une CTM ou CTH."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "CTL MIDI I / CTL MIDI I AC",
+      "status": "CURRENT",
+      "role": "Compact classe L",
+      "evidence": "Format mobile ; version AC avec AUTOCLEAN."
+    },
+    {
+      "name": "CTM MIDI I / CTM MIDI I AC",
+      "status": "CURRENT",
+      "role": "Compact classe M",
+      "evidence": "15 L, Bluetooth ; AC pour poussières colmatantes et cycles de nettoyage auto."
+    },
+    {
+      "name": "CTH MIDI I AC",
+      "status": "CURRENT",
+      "role": "Compact classe H",
+      "evidence": "Filtration et sécurité adaptées aux poussières relevant de H selon les prescriptions."
+    },
+    {
+      "name": "CTM 26 EI / CTM 26 EI AC",
+      "status": "CURRENT",
+      "role": "Volume intermédiaire classe M",
+      "evidence": "Cuve plus grande, intégration système et version AUTOCLEAN."
+    },
+    {
+      "name": "CTC / CTMC MIDI I",
+      "status": "CURRENT",
+      "role": "Aspiration sans fil",
+      "evidence": "Deux batteries 18 V sur les configurations sans fil ; classe selon variante."
+    },
+    {
+      "name": "Anciennes CT MINI/MIDI générations",
+      "status": "PREVIOUS_GENERATION",
+      "role": "Occasion / parc existant",
+      "evidence": "Toujours répandues mais à distinguer de la génération I/AC actuelle."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "CLEANTEC est le cœur du raccordement : le manchon à baïonnette verrouille le flexible sur l'outil et limite les déconnexions. Le tuyau lisse est conçu pour moins accrocher les arêtes. À cela s'ajoutent Systainer/T-LOC pour le transport et Bluetooth pour le démarrage automatique avec une batterie compatible ou une télécommande. Sur les générations récentes, l'application Festool peut aussi fournir des informations d'usage ou aider au réglage.",
+      "Cette intégration crée un vrai avantage si vos ponceuses, scies et coffrets sont déjà Festool. Elle peut en revanche devenir un surcoût si vous n'utilisez qu'un aspirateur de façon isolée : le prix premium rémunère autant l'écosystème que la simple capacité à aspirer. C'est pourquoi il faut comparer le workflow complet, pas uniquement le prix de la cuve."
+    ],
+    "choose": [
+      "Choisissez Festool si votre activité tourne autour du ponçage, montage ou sciage avec des outils Festool.",
+      "Le CTM MIDI I AC est à privilégier si vous voulez classe M, AUTOCLEAN et compacité.",
+      "Une CTH est à étudier lorsque le risque et les règles applicables exigent réellement la classe H."
+    ],
+    "avoid": [
+      "Évitez de payer l'écosystème si vous cherchez seulement un aspirateur eau/poussière économique pour garage.",
+      "Festool convient moins aux gros gravats et très gros volumes avec une petite cuve MIDI.",
+      "Ne choisissez pas CTL à la place de CTM/CTH lorsque la classe supérieure est requise par l'application."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "Festool CTM MIDI I AC",
+      "status": "VERIFIED",
+      "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578552---ctm-midi-i-ac",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Festool CTH MIDI I AC",
+      "status": "VERIFIED",
+      "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-pour-amiante/578558---cth-midi-i-ac",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Festool — gamme aspiration et classes de poussière",
+      "status": "VERIFIED",
+      "source": "https://www.festool.fr/produits/aspirateurs",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "Festool CTL Midi",
+      "url": "/modeles/festool-ctl-midi/"
+    },
+    {
+      "label": "ponceuse",
+      "url": "/usages/aspirateur-ponceuse/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
+    },
+    {
+      "label": "professionnel",
+      "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "sans fil",
+      "url": "/comparatifs/aspirateur-chantier-sans-fil/"
+    },
+    {
+      "label": "classes L/M/H",
+      "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "décolmatage automatique",
+      "url": "/guides/decolmatage-automatique/"
+    },
+    {
+      "label": "prise asservie",
+      "url": "/guides/prise-asservie/"
+    },
+    {
+      "label": "Mirka",
+      "url": "/marques/mirka/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}

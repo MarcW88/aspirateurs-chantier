@@ -1,0 +1,157 @@
+{
+  "slug": "mirka",
+  "brand": "Mirka",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "Mirka",
+    "products": [
+      "DEXOS 1217 M AFC",
+      "DEXOS 1230 M AFC",
+      "DE 1230 / 1242 et anciennes générations",
+      "DEROS II / DEOS II / DEROS RS",
+      "Workstation et télécommande DEXOS"
+    ],
+    "use_cases": [
+      "ponceuse",
+      "bois et sciure"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "Mirka n'est pas d'abord une marque d'aspirateurs généralistes : son intérêt vient du ponçage sans poussière. La génération DEXOS 1217 M AFC et DEXOS 1230 M AFC place désormais la classe M, le nettoyage automatique du filtre, le Bluetooth et l'application myMirka au cœur de cet écosystème.",
+    "strengths": [
+      "Écosystème de ponçage et extraction très cohérent.",
+      "DEXOS 1217 et 1230 sont classe M avec AFC.",
+      "Bluetooth, myMirka et télécommande facilitent le contrôle du workflow.",
+      "Le DEXOS 1230 apporte désormais un vrai volume 30 L au système."
+    ],
+    "limitations": [
+      "Positionnement professionnel premium, peu justifié pour du simple nettoyage de garage.",
+      "Gamme d'aspirateurs moins large que Kärcher ou Nilfisk hors ponçage.",
+      "Les anciennes références DE 1230/1242 restent visibles et peuvent être confondues avec DEXOS.",
+      "Classe M ne signifie pas adapté à toutes les poussières dangereuses : le risque doit toujours être vérifié."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "DEXOS 1217 M AFC",
+      "status": "CURRENT",
+      "role": "Ponçage mobile classe M",
+      "evidence": "17 L, moteur brushless, AFC, Bluetooth/myMirka, sec/humide."
+    },
+    {
+      "name": "DEXOS 1230 M AFC",
+      "status": "CURRENT",
+      "role": "Ponçage continu / gros volume",
+      "evidence": "30 L, classe M, AFC, deux prises auto, workstation disponible."
+    },
+    {
+      "name": "DE 1230 / 1242 et anciennes générations",
+      "status": "PREVIOUS_GENERATION_OR_LEGACY",
+      "role": "Parc existant",
+      "evidence": "Encore supportées et visibles ; DEXOS structure la nouvelle génération."
+    },
+    {
+      "name": "DEROS II / DEOS II / DEROS RS",
+      "status": "CURRENT_RELATED",
+      "role": "Outils de ponçage",
+      "evidence": "Ponceuses qui donnent son sens au système d'aspiration Mirka."
+    },
+    {
+      "name": "Workstation et télécommande DEXOS",
+      "status": "CURRENT_ACCESSORY",
+      "role": "Organisation du poste",
+      "evidence": "Accessoires dédiés au contrôle et au rangement."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "L'écosystème Mirka est particulièrement cohérent autour des ponceuses. Les abrasifs maillés, les plateaux, les flexibles et les extracteurs sont pensés ensemble pour capter la poussière à la source. Le Bluetooth relie les DEXOS à myMirka et la télécommande peut piloter l'extracteur selon le workflow. Sur le DEXOS 1230, une workstation transforme l'appareil en poste mobile pour outils et abrasifs.",
+      "Ce positionnement spécialisé explique à la fois l'intérêt et la limite de la marque. Pour un atelier de finition, l'intégration peut être plus importante qu'une cuve géante. Pour des gravats, un sous-sol inondé ou un nettoyage généraliste bon marché, la valeur du système Mirka est moins évidente."
+    ],
+    "choose": [
+      "Choisissez Mirka si votre travail est dominé par le ponçage, la finition ou la carrosserie.",
+      "Le DEXOS 1217 est à privilégier pour la mobilité ; le 1230 si la capacité et le fonctionnement continu comptent davantage.",
+      "La marque est particulièrement logique si vous utilisez déjà DEROS/DEOS, abrasifs Mirka et myMirka."
+    ],
+    "avoid": [
+      "Évitez de payer le système Mirka pour un besoin essentiellement gravats ou eau/poussière domestique.",
+      "Mirka convient moins si vous cherchez une très grande diversité de classes, de tailles et de budgets.",
+      "N'assimilez pas DEXOS M à une classe H : vérifiez le matériau et les règles applicables."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "Mirka DEXOS 1217 M AFC",
+      "status": "VERIFIED",
+      "source": "https://www.mirka.com/fr-fr/produits/top-brands/extracteur-de-poussiere-mirka-dexos/",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Mirka DEXOS 1230 M AFC — fiche officielle",
+      "status": "VERIFIED",
+      "source": "https://www.mirka.com/fr-fr/p/Mirka-DEXOS-1230-M-AFC-M/",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Mirka — lancement DEXOS 1230 M AFC",
+      "status": "VERIFIED",
+      "source": "https://www.mirka.com/fr-fr/entreprise/actualites/mirka-dexos-1230-m-afc--concu-pour-lextraction-efficace-de-la-poussiere/",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "ponceuse",
+      "url": "/usages/aspirateur-ponceuse/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
+    },
+    {
+      "label": "professionnel",
+      "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "décolmatage automatique",
+      "url": "/guides/decolmatage-automatique/"
+    },
+    {
+      "label": "classes L/M/H",
+      "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "adaptateurs outil",
+      "url": "/accessoires/adaptateur-outil-electroportatif/"
+    },
+    {
+      "label": "Festool",
+      "url": "/marques/festool/"
+    },
+    {
+      "label": "bois et sciure",
+      "url": "/usages/aspirateur-bois-sciure-copeaux/"
+    },
+    {
+      "label": "guide débit d'air",
+      "url": "/guides/debit-air-aspirateur/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}

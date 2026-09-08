@@ -1,0 +1,156 @@
+{
+  "slug": "dewalt",
+  "brand": "DeWalt",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "DeWalt",
+    "products": [
+      "DCV586M / DCV586MN",
+      "DCV584L",
+      "DWH161 et extracteurs embarqués",
+      "AIRLOCK accessoires et forets aspirants",
+      "DWV900L / DWV901L / DWV902M"
+    ],
+    "use_cases": [
+      "ponceuse"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "DeWalt est surtout intéressant pour un chantier déjà équipé en XR / FLEXVOLT. La pièce maîtresse actuelle est le DCV586M, extracteur sans fil 54 V classe M compatible TSTAK. La marque complète ce système avec AIRLOCK et des solutions d'extraction directement reliées aux outils, plutôt qu'avec une immense famille d'aspirateurs traîneaux.",
+    "strengths": [
+      "DCV586M : véritable option sans fil classe M dans l'écosystème FLEXVOLT.",
+      "AIRLOCK facilite le raccordement direct aux outils.",
+      "TSTAK simplifie le transport avec les coffrets DeWalt.",
+      "Le DCV584L offre une flexibilité secteur/batterie utile en classe L."
+    ],
+    "limitations": [
+      "Gamme d'aspirateurs complets moins profonde que Kärcher, Bosch ou Makita.",
+      "Le coût d'un système 54 V est élevé si vous ne possédez pas déjà les batteries FLEXVOLT.",
+      "Le DCV584L reste classe L malgré son filtre HEPA et sa polyvalence.",
+      "Les anciennes références DWV sont encore très visibles en ligne et peuvent brouiller la perception de la gamme actuelle."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "DCV586M / DCV586MN",
+      "status": "CURRENT",
+      "role": "Sans fil classe M",
+      "evidence": "XR FLEXVOLT 54 V, brushless, nettoyage automatique, télécommande, TSTAK."
+    },
+    {
+      "name": "DCV584L",
+      "status": "CURRENT",
+      "role": "Hybride secteur/batterie classe L",
+      "evidence": "Wet & dry, XR/FLEXVOLT, compact pour chantier mobile."
+    },
+    {
+      "name": "DWH161 et extracteurs embarqués",
+      "status": "CURRENT",
+      "role": "Extraction à la source",
+      "evidence": "Solutions dédiées au perçage et aux outils plutôt qu'au nettoyage général."
+    },
+    {
+      "name": "AIRLOCK accessoires et forets aspirants",
+      "status": "CURRENT",
+      "role": "Connexion outil-aspirateur",
+      "evidence": "Raccords rapides et extraction à la source."
+    },
+    {
+      "name": "DWV900L / DWV901L / DWV902M",
+      "status": "PREVIOUS_GENERATION",
+      "role": "Parc filaire existant",
+      "evidence": "Encore présents dans la documentation/accessoires, mais ne structurent plus seuls la gamme actuelle."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "L'écosystème DeWalt relie trois briques. XR/FLEXVOLT fournit l'énergie sans fil, TSTAK structure le transport, et AIRLOCK standardise la connexion entre les outils et l'extracteur. Pour un artisan déjà équipé en batteries 54 V et coffrets TSTAK, le DCV586M peut donc éviter d'ajouter un second univers de batteries ou de rangement.",
+      "Perform & Protect élargit la logique au contrôle des poussières à la source. DeWalt propose des forets et accessoires aspirants qui se raccordent via AIRLOCK. Cela ne dispense pas d'évaluer la poussière et la classe de l'aspirateur, mais explique pourquoi la marque est plus convaincante comme système chantier que comme simple achat d'un aspirateur isolé."
+    ],
+    "choose": [
+      "Choisissez DeWalt si votre parc chantier est déjà XR/FLEXVOLT et TSTAK.",
+      "Le DCV586M est à privilégier pour un besoin mobile classe M compatible avec votre analyse de risque.",
+      "Le DCV584L convient si la classe L suffit et que l'hybride secteur/batterie est plus important que la classe M."
+    ],
+    "avoid": [
+      "Évitez de choisir le DCV584L comme substitut à un aspirateur M uniquement parce qu'il possède un filtre HEPA.",
+      "DeWalt convient moins si vous cherchez une grande diversité de cuves 30 à 50 L filaires.",
+      "Si vous ne possédez aucune batterie FLEXVOLT, comparez le coût complet avec Bosch, Makita ou Festool avant d'acheter."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "DeWalt DCV586MN — fiche officielle",
+      "status": "VERIFIED",
+      "source": "https://www.dewalt.fr/fr-fr/produit/dcv586mn-xj/aspirateur-tstak-xr-flexvolt-54v-brushless-eau-et-poussieres-classe-m",
+      "source_type": "primary"
+    },
+    {
+      "claim": "DeWalt DCV584L — fiche officielle",
+      "status": "VERIFIED",
+      "source": "https://www.dewalt.fr/fr-fr/produit/dcv584l-qw/aspirateur-sur-secteur-ou-batterie-xr-et-xr-flexvolt-1854v-classe-l-sans",
+      "source_type": "primary"
+    },
+    {
+      "claim": "DeWalt Perform & Protect / AIRLOCK",
+      "status": "VERIFIED",
+      "source": "https://prod.dewalt.fr/fr-fr/solutions-chantier/perform-protect",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "sans fil",
+      "url": "/comparatifs/aspirateur-chantier-sans-fil/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
+    },
+    {
+      "label": "professionnel",
+      "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "guide classes L/M/H",
+      "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "adaptateurs outils",
+      "url": "/accessoires/adaptateur-outil-electroportatif/"
+    },
+    {
+      "label": "prise asservie",
+      "url": "/guides/prise-asservie/"
+    },
+    {
+      "label": "ponceuse",
+      "url": "/usages/aspirateur-ponceuse/"
+    },
+    {
+      "label": "Bosch",
+      "url": "/marques/bosch/"
+    },
+    {
+      "label": "Makita",
+      "url": "/marques/makita/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}

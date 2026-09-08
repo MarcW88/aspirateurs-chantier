@@ -1,0 +1,75 @@
+name: Generate brand content
+
+on:
+  push:
+    branches:
+      - content/brand-pages-workflow
+    paths:
+      - "_generate.py"
+      - "_generate_brands.py"
+      - "_validate_brands.py"
+      - "brand-workflow.config.yaml"
+      - ".agents/skills/brand-content-workflow/**"
+      - ".github/workflows/generate-brand-content.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/brand-pages-workflow
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate eight brand hubs and entity data
+        run: python _generate_brands.py
+
+      - name: Validate Brand Content Workflow floor
+        run: |
+          python .agents/skills/brand-content-workflow/scripts/validate_brand_quality.py marques \
+            --min-h2 7 \
+            --min-internal-links 6 \
+            --min-unique-targets 5 \
+            --min-sources 3 \
+            --require-noindex \
+            --require-limits \
+            --require-choose-avoid
+
+      - name: Repository-specific brand QA
+        run: python _validate_brands.py
+
+      - name: Check generation idempotence
+        run: |
+          before=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
+          python _generate_brands.py >/tmp/brand-regenerate.log
+          after=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
+          test "$before" = "$after"
+
+      - name: Preserve noindex
+        run: |
+          for f in marques/*/index.html; do
+            grep -q '<meta name="robots" content="noindex, follow">' "$f"
+          done
+
+      - name: Whitespace check
+        run: git diff --check
+
+      - name: Commit generated brand artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add marques .content/brands
+          if git diff --cached --quiet; then
+            echo "No generated brand changes to commit."
+          else
+            git commit -m "Generate 2026 brand hubs from entity workflow"
+            git push origin HEAD:content/brand-pages-workflow
+          fi

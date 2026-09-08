@@ -1,0 +1,163 @@
+{
+  "slug": "parkside",
+  "brand": "Parkside",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "Parkside",
+    "products": [
+      "PWD 12 B1",
+      "PWD 20 C3",
+      "PWD 25 C4",
+      "PWD 30 C1",
+      "PNTS 1250 / 1300 et anciennes séries"
+    ],
+    "use_cases": [
+      "bricolage et rénovation",
+      "gravats"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "Parkside se positionne d'abord sur le rapport équipement/prix. En 2026, les références PWD 12, 20, 25 et 30 apparaissent sur Lidl France selon les stocks. Elles couvrent le nettoyage eau/poussière, le garage et le bricolage, mais ne doivent pas être assimilées à une gamme professionnelle de sécurité L/M/H sans certification explicite.",
+    "strengths": [
+      "Prix d'entrée très compétitif pour eau/poussière et garage.",
+      "Équipement généreux sur les PWD 20/25/30.",
+      "Prise outil et nettoyage de filtre sur certaines grandes références.",
+      "Formats de 12 à 30 L qui couvrent de nombreux besoins domestiques."
+    ],
+    "limitations": [
+      "Disponibilité et révisions de modèles fluctuantes chez Lidl.",
+      "Pas de raison de déduire une classe M ou H à partir de la puissance ou d'un filtre plissé.",
+      "Le décolmatage par bouton n'est pas équivalent à un système automatique Tact/AFC/InfiniClean en poussière fine continue.",
+      "Pour un usage professionnel quotidien, SAV, consommables et robustesse du workflow peuvent peser plus que le prix initial."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "PWD 12 B1",
+      "status": "CURRENT",
+      "role": "Petit nettoyage eau/poussière",
+      "evidence": "12 L brut, 1 200 W, format compact."
+    },
+    {
+      "name": "PWD 20 C3",
+      "status": "CURRENT",
+      "role": "Garage et bricolage polyvalent",
+      "evidence": "19,8 L, 1 300 W, 200 Airwatts annoncés."
+    },
+    {
+      "name": "PWD 25 C4",
+      "status": "CURRENT",
+      "role": "Rénovation domestique",
+      "evidence": "25 L, 1 400 W, 240 Airwatts annoncés."
+    },
+    {
+      "name": "PWD 30 C1",
+      "status": "CURRENT_STOCK_DEPENDENT",
+      "role": "Grand format DIY",
+      "evidence": "30 L brut, prise outil, nettoyage filtre par bouton, disponibilité fluctuante."
+    },
+    {
+      "name": "PNTS 1250 / 1300 et anciennes séries",
+      "status": "PREVIOUS_GENERATION",
+      "role": "Parc existant / consommables",
+      "evidence": "Encore citées pour la compatibilité des sacs et filtres, mais ne résument plus la gamme actuelle."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "Parkside fonctionne moins comme un écosystème fermé d'aspiration que comme une gamme d'équipement Lidl à prix serré. Les consommables et accessoires sont proposés pour plusieurs générations, avec des raccords souvent simples et des kits fournis généreux. Sur le PWD 30, la prise outil et l'adaptateur permettent une aspiration directe lors de certains travaux de sciage ou ponçage.",
+      "La principale variable est la disponibilité. Les références, révisions et promotions changent plus souvent qu'un catalogue professionnel stable. Il faut donc vérifier la fiche Lidl du moment, le contenu du carton et la compatibilité des filtres avant achat. Une bonne affaire n'est bonne que si les consommables utiles restent accessibles."
+    ],
+    "choose": [
+      "Choisissez Parkside pour du bricolage occasionnel, un garage ou de l'eau/poussière avec budget serré.",
+      "Le PWD 20 ou 25 est souvent un meilleur compromis si vous n'avez pas besoin d'une cuve 30 L.",
+      "Le PWD 30 est à privilégier lorsque la prise outil et le volume comptent réellement et que la référence est disponible."
+    ],
+    "avoid": [
+      "Évitez Parkside pour remplacer un aspirateur de sécurité M/H requis par la poussière sans certification explicite du modèle.",
+      "La marque convient moins à une utilisation intensive où le décolmatage automatique et la surveillance de débit sont critiques.",
+      "Évitez de commander des sacs ou filtres uniquement sur le nom Parkside : vérifiez la génération PWD/PNTS exacte."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "Lidl / Parkside PWD 30 C1",
+      "status": "VERIFIED",
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-30-c1/p100407117",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Lidl / Parkside PWD 20 C3",
+      "status": "VERIFIED",
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-20-c3-19-8-l-1300-w/p100397254",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Lidl / Parkside PWD 25 C4",
+      "status": "VERIFIED",
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-25-c4-25-l-1400-w/p100395330",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Lidl / Parkside PWD 12 B1",
+      "status": "VERIFIED",
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-12-b1/p100406420",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "petit aspirateur",
+      "url": "/comparatifs/petit-aspirateur-de-chantier/"
+    },
+    {
+      "label": "eau et poussière",
+      "url": "/comparatifs/aspirateur-eau-poussiere/"
+    },
+    {
+      "label": "bricolage et rénovation",
+      "url": "/usages/aspirateur-bricolage-renovation/"
+    },
+    {
+      "label": "gravats",
+      "url": "/usages/aspirateur-gravats/"
+    },
+    {
+      "label": "classes L/M/H",
+      "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "prise asservie",
+      "url": "/guides/prise-asservie/"
+    },
+    {
+      "label": "sacs",
+      "url": "/accessoires/sacs-aspirateur-chantier/"
+    },
+    {
+      "label": "filtres",
+      "url": "/accessoires/filtres-aspirateur-chantier/"
+    },
+    {
+      "label": "Kärcher",
+      "url": "/marques/karcher/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}
