@@ -6,6 +6,7 @@ on:
       - content/comparatifs-production-workflow
     paths:
       - "_generate_comparatifs.py"
+      - "_normalize_comparatifs.py"
       - "_validate_comparatifs.py"
       - ".agents/skills/comparison-content-workflow/**"
       - ".github/workflows/generate-comparatifs-content.yml"
@@ -27,6 +28,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Align source verdicts before generation
+        run: python _normalize_comparatifs.py
+
       - name: Generate comparison pages and data
         run: python _generate_comparatifs.py
 
@@ -35,6 +39,9 @@ jobs:
           python _generate_guides.py
           python _guide_quality_supplements.py
           python _normalize_guide_answers.py
+
+      - name: Normalize generated comparison HTML
+        run: python _normalize_comparatifs.py
 
       - name: Validate comparison methodology
         run: |
@@ -65,7 +72,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add comparatifs .content/comparisons
+          git add _generate_comparatifs.py comparatifs .content/comparisons
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
           else
