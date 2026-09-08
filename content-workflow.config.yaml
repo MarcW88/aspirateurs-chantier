@@ -14,10 +14,13 @@ content:
   content_type: "affiliate"
   mode: "auto"
   source_of_truth: "_generate.py"
-  guide_source_of_truth: "_generate_guides.py"
+  guide_source_of_truth:
+    - "_generate_guides.py"
+    - "_guide_quality_supplements.py"
   generation_order:
     - "python _generate.py"
     - "python _generate_guides.py"
+    - "python _guide_quality_supplements.py"
 
 quality:
   quality_reference: "/guides/comment-choisir-aspirateur-de-chantier/"
