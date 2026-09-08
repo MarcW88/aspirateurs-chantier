@@ -7,6 +7,7 @@ on:
     paths:
       - '_generate_guides.py'
       - '_guide_quality_supplements.py'
+      - '_normalize_guide_answers.py'
       - 'guides/**'
       - 'content-workflow.config.yaml'
       - '.agents/skills/content-recovery-and-production-workflow/**'
@@ -34,6 +35,9 @@ jobs:
 
       - name: Apply editorial quality supplements
         run: python _guide_quality_supplements.py
+
+      - name: Normalize answer-first blocks
+        run: python _normalize_guide_answers.py
 
       - name: Structural quality gate
         run: >-
