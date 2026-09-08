@@ -1,0 +1,73 @@
+name: Generate guide content
+
+on:
+  push:
+    branches:
+      - content/guides-production-workflow
+    paths:
+      - '_generate_guides.py'
+      - 'guides/**'
+      - 'content-workflow.config.yaml'
+      - '.agents/skills/content-recovery-and-production-workflow/**'
+      - '.github/workflows/generate-guides-content.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: content/guides-production-workflow
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Apply guide content
+        run: python _generate_guides.py
+
+      - name: Structural quality gate
+        run: >-
+          python .agents/skills/content-recovery-and-production-workflow/scripts/validate_content_quality.py
+          guides
+          --min-words 900
+          --min-h2 5
+          --min-section-words 70
+          --min-table-prose 50
+          --min-internal-links 4
+          --min-unique-targets 3
+          --min-sources 3
+          --single-p-min-words 130
+
+      - name: Verify draft robots directive remains present
+        shell: bash
+        run: |
+          failures=0
+          for page in guides/*/index.html; do
+            if ! grep -Eq '<meta name="robots" content="noindex, ?follow">' "$page"; then
+              echo "Missing noindex,follow: $page"
+              failures=1
+            fi
+          done
+          exit "$failures"
+
+      - name: HTML whitespace check
+        run: git diff --check
+
+      - name: Commit generated guide HTML
+        shell: bash
+        run: |
+          if git diff --quiet -- guides; then
+            echo "Guide HTML already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add guides
+          git commit -m "Generate production guide content"
+          git push origin HEAD:content/guides-production-workflow
