@@ -6,15 +6,15 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 
 # ── LOGO SVG ──────────────────────────────────────────────────────────────────
 LOGO_ICON = """<svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="2" y="18" width="12" height="10" rx="3" fill="#1B4FD8" opacity="0.15" stroke="#1B4FD8" stroke-width="1.5"/>
-  <circle cx="8" cy="28" r="2" fill="#1B4FD8"/>
-  <circle cx="14" cy="28" r="2" fill="#1B4FD8"/>
-  <path d="M14 22 Q20 16 26 10" stroke="#1B4FD8" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="27" cy="9" r="3" fill="#E05E1A"/>
+  <rect x="2" y="18" width="12" height="10" rx="3" fill="#25516B" opacity="0.15" stroke="#25516B" stroke-width="1.5"/>
+  <circle cx="8" cy="28" r="2" fill="#25516B"/>
+  <circle cx="14" cy="28" r="2" fill="#25516B"/>
+  <path d="M14 22 Q20 16 26 10" stroke="#25516B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="27" cy="9" r="3" fill="#D36A2D"/>
 </svg>"""
 
 # ── NAV ───────────────────────────────────────────────────────────────────────
-NAV_HTML = """<nav class="site-nav">
+NAV_HTML = """<nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
   <div class="nav-item">
     <a href="/comparatifs/" class="nav-link">Comparatifs<svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></a>
     <div class="dropdown">
@@ -100,7 +100,7 @@ HEADER_HTML = f"""<header class="site-header">
     </a>
     {NAV_HTML}
     <a href="/guides/comment-choisir-aspirateur-de-chantier/" class="header-cta">Choisir mon aspirateur</a>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="site-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>"""
 
@@ -142,7 +142,7 @@ FOOTER_HTML = """<footer class="site-footer">
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 aspirateurs-chantier.fr — Base de données indépendante</span>
+      <span>© 2026 aspirateurs-chantier.fr — Base de données indépendante</span>
       <span>Liens affiliés présents. <a href="/transparence-affiliation/">Transparence.</a></span>
     </div>
   </div>
@@ -170,11 +170,13 @@ def html_doc(title, desc, canonical, body_html):
   <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
 {HEADER_HTML}
-<main>
+<main id="main-content">
 {body_html}
 </main>
 {FOOTER_HTML}
+<script src="/site.js" defer></script>
 </body>
 </html>"""
 
@@ -358,10 +360,10 @@ homepage_body = """
       <div>
         <div class="hero-eyebrow">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="6" r="2" fill="currentColor"/></svg>
-          Base de données spécialisée — Tests &amp; comparatifs indépendants
+          Média technique spécialisé — Comparatifs documentés
         </div>
         <h1 class="hero-title">Aspirateurs de chantier :<br>comparatifs, tests et guide de choix.</h1>
-        <p class="hero-desc lead">Tests approfondis, fiches techniques normalisées et comparatifs indépendants. Pour choisir le bon aspirateur selon le chantier, pas selon la commission.</p>
+        <p class="hero-desc lead">Comparatifs documentés, fiches techniques normalisées et guides pratiques. Pour choisir selon le chantier, la poussière et l’usage réel — pas selon la commission.</p>
         <div class="hero-actions">
           <a href="/comparatifs/meilleur-aspirateur-de-chantier/" class="btn btn-primary btn-lg">Voir le comparatif général</a>
           <a href="/guides/comment-choisir-aspirateur-de-chantier/" class="btn btn-outline btn-lg">Guide de choix</a>

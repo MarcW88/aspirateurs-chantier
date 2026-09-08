@@ -11,22 +11,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="site-logo">
       <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="2" y="18" width="12" height="10" rx="3" fill="#1B4FD8" opacity="0.15" stroke="#1B4FD8" stroke-width="1.5"/>
-  <circle cx="8" cy="28" r="2" fill="#1B4FD8"/>
-  <circle cx="14" cy="28" r="2" fill="#1B4FD8"/>
-  <path d="M14 22 Q20 16 26 10" stroke="#1B4FD8" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="27" cy="9" r="3" fill="#E05E1A"/>
+  <rect x="2" y="18" width="12" height="10" rx="3" fill="#25516B" opacity="0.15" stroke="#25516B" stroke-width="1.5"/>
+  <circle cx="8" cy="28" r="2" fill="#25516B"/>
+  <circle cx="14" cy="28" r="2" fill="#25516B"/>
+  <path d="M14 22 Q20 16 26 10" stroke="#25516B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="27" cy="9" r="3" fill="#D36A2D"/>
 </svg>
       <div class="logo-text">
         <span class="logo-line1">Aspirateurs</span>
         <span class="logo-line2">Chantier</span>
       </div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
   <div class="nav-item">
     <a href="/comparatifs/" class="nav-link">Comparatifs<svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></a>
     <div class="dropdown">
@@ -101,10 +102,10 @@
   </div>
 </nav>
     <a href="/guides/comment-choisir-aspirateur-de-chantier/" class="header-cta">Choisir mon aspirateur</a>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="site-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<main>
+<main id="main-content">
 <div class="container"><nav class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span> <a href="/guides/">Guides</a> <span class="sep">/</span> <span>Sac ou sans sac pour un aspirateur de chantier ?</span></nav></div>
 <section class="page-hero">
   <div class="container">
@@ -226,10 +227,11 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 aspirateurs-chantier.fr — Base de données indépendante</span>
+      <span>© 2026 aspirateurs-chantier.fr — Base de données indépendante</span>
       <span>Liens affiliés présents. <a href="/transparence-affiliation/">Transparence.</a></span>
     </div>
   </div>
 </footer>
+<script src="/site.js" defer></script>
 </body>
 </html>
