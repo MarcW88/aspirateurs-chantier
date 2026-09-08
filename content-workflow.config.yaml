@@ -17,10 +17,12 @@ content:
   guide_source_of_truth:
     - "_generate_guides.py"
     - "_guide_quality_supplements.py"
+    - "_normalize_guide_answers.py"
   generation_order:
     - "python _generate.py"
     - "python _generate_guides.py"
     - "python _guide_quality_supplements.py"
+    - "python _normalize_guide_answers.py"
 
 quality:
   quality_reference: "/guides/comment-choisir-aspirateur-de-chantier/"
