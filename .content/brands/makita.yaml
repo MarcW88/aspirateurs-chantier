@@ -1,0 +1,164 @@
+{
+  "slug": "makita",
+  "brand": "Makita",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "Makita",
+    "products": [
+      "VC2512L",
+      "VC4210L / VC4210M",
+      "VC3211M / VC2211M",
+      "VC001G à VC007G",
+      "DVC / 18Vx2 LXT",
+      "Anciennes références et suffixes kit X/X1"
+    ],
+    "use_cases": [
+      "atelier",
+      "bois et sciure"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "Makita a l'une des gammes les plus étendues pour qui possède déjà ses outils : aspirateurs filaires VC, modèles sur batterie LXT/XGT, classes L et M selon références, compatibilité Makpac et démarrage sans fil AWS sur certaines configurations. La contrepartie est une nomenclature dense qu'il faut lire référence par référence.",
+    "strengths": [
+      "Très grande profondeur de gamme filaire et sans fil.",
+      "Intégration Makpac et AWS intéressante avec les outils Makita.",
+      "Présence de références L, M et H dans le catalogue professionnel.",
+      "Choix pertinent pour les utilisateurs déjà investis dans LXT ou XGT."
+    ],
+    "limitations": [
+      "Nomenclature complexe : un suffixe peut changer la fourniture, la classe ou le marché.",
+      "La batterie LXT et la batterie XGT ne sont pas une même plateforme.",
+      "Les petits modèles Push & Clean demandent plus d'intervention qu'un vrai décolmatage automatique en poussière fine continue.",
+      "Certaines pages revendeurs continuent d'utiliser des noms abrégés qui peuvent masquer la classe exacte."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "VC2512L",
+      "status": "CURRENT",
+      "role": "Filaire classe L accessible",
+      "evidence": "25 L brut, 21 L poussière, 18 L liquide, Push & Clean manuel."
+    },
+    {
+      "name": "VC4210L / VC4210M",
+      "status": "CURRENT",
+      "role": "Grand volume filaire",
+      "evidence": "42 L brut ; variantes L ou M, décolmatage automatique sur la famille."
+    },
+    {
+      "name": "VC3211M / VC2211M",
+      "status": "CURRENT_OR_CATALOG",
+      "role": "Classe M filaire",
+      "evidence": "Références professionnelles présentes dans les catalogues Makita."
+    },
+    {
+      "name": "VC001G à VC007G",
+      "status": "CURRENT",
+      "role": "Aspiration XGT 40 V",
+      "evidence": "Famille sans fil, avec variantes L/M selon référence et configuration."
+    },
+    {
+      "name": "DVC / 18Vx2 LXT",
+      "status": "CURRENT_OR_CATALOG",
+      "role": "Parc batterie LXT",
+      "evidence": "Solutions mobiles pour utilisateurs déjà équipés Makita."
+    },
+    {
+      "name": "Anciennes références et suffixes kit X/X1",
+      "status": "REGION_SPECIFIC",
+      "role": "Parc existant",
+      "evidence": "Le suffixe peut désigner une fourniture ou une variante de marché ; vérifier la classe exacte."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "Makita est particulièrement intéressante lorsqu'on raisonne en parc d'outillage. Makpac permet d'empiler et transporter des coffrets, tandis qu'AWS peut déclencher l'aspiration sans câble de commande avec des outils compatibles. Sur les modèles batterie, le choix entre LXT 18 V, 18Vx2 et XGT 40 V pèse directement sur le coût total si l'utilisateur possède déjà batteries et chargeurs.",
+      "Cet écosystème impose cependant de vérifier les compatibilités au niveau de la référence. Un aspirateur filaire peut recevoir un adaptateur AWS sans devenir pour autant un aspirateur sur batterie ; une machine XGT n'utilise pas les mêmes batteries qu'une LXT. Makita offre de nombreuses combinaisons, mais cette largeur rend les raccourcis éditoriaux dangereux."
+    ],
+    "choose": [
+      "Choisissez Makita si vos outils, batteries et coffrets sont déjà majoritairement Makita.",
+      "Le VC2512L convient aux besoins eau/poussière de classe L avec prise outil, sans usage intensif de poussière fine.",
+      "Une variante VC4210M ou un modèle M sans fil devient plus cohérent lorsque la classe M et l'endurance de filtre font partie du cahier des charges."
+    ],
+    "avoid": [
+      "Évitez d'acheter sur la seule mention VC4210 sans vérifier L ou M et le suffixe exact.",
+      "Makita convient moins si vous ne possédez aucune batterie de la plateforme visée et cherchez uniquement le coût initial le plus bas.",
+      "Pour une intégration de ponçage très spécialisée, Mirka ou Festool peuvent offrir une chaîne outil-flexible-aspirateur plus lisible."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "Makita VC2512L — fiche produit officielle",
+      "status": "VERIFIED",
+      "source": "https://www.makita.fr/data/sr/productinfo/generated/vc2512l_fiche_produit.pdf",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Makita — brochure gamme aspiration",
+      "status": "VERIFIED",
+      "source": "https://www.makita.fr/data/pam/public/Content-Pages/Media/CatalogsAndBrochures/2023_leaflet_aspi_web.pdf",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Makita — références sous garantie commerciale",
+      "status": "VERIFIED",
+      "source": "https://www.makita.fr/data/pam/public/Content-Pages/Media/CatalogsAndBrochures/GARANTY/21032025_-_refs_sous_garantie_%28web%29.pdf",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "Makita VC2512L",
+      "url": "/modeles/makita-vc2512l/"
+    },
+    {
+      "label": "Makita VC4210MX",
+      "url": "/modeles/makita-vc4210mx/"
+    },
+    {
+      "label": "sans fil",
+      "url": "/comparatifs/aspirateur-chantier-sans-fil/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
+    },
+    {
+      "label": "professionnel",
+      "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "décolmatage automatique",
+      "url": "/guides/decolmatage-automatique/"
+    },
+    {
+      "label": "prise asservie",
+      "url": "/guides/prise-asservie/"
+    },
+    {
+      "label": "atelier",
+      "url": "/usages/aspirateur-atelier/"
+    },
+    {
+      "label": "bois et sciure",
+      "url": "/usages/aspirateur-bois-sciure-copeaux/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}

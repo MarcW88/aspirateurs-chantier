@@ -1,0 +1,169 @@
+{
+  "slug": "karcher",
+  "brand": "Kärcher",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "Kärcher",
+    "products": [
+      "WD 3 / WD 4 / WD 5 / WD 6",
+      "WD 7 Control",
+      "NT 30/1 Tact Te M ACD",
+      "NT 50/1 Tact Te M ACD",
+      "NT Tact Te H / H ACD",
+      "WD 2 Plus et anciennes variantes WD"
+    ],
+    "use_cases": [
+      "gravats"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "Kärcher est l'une des marques les plus larges de ce marché : la famille WD vise surtout le nettoyage eau/poussière, le garage et la rénovation, tandis que la gamme professionnelle NT couvre les chantiers exigeants et des aspirateurs de sécurité L, M ou H. Le bon choix dépend donc davantage de la famille que du logo Kärcher lui-même.",
+    "strengths": [
+      "Une gamme très large, du petit nettoyage eau/poussière jusqu'aux aspirateurs de sécurité professionnels.",
+      "Des options professionnelles M et H clairement documentées.",
+      "Le système Tact, la prise asservie et l'antistatique sur les NT concernés.",
+      "Une forte disponibilité d'accessoires, consommables et pièces dans l'écosystème Kärcher."
+    ],
+    "limitations": [
+      "La proximité des noms WD et NT peut masquer des différences de certification beaucoup plus importantes que la puissance annoncée.",
+      "Les WD ne doivent pas être présentés comme des aspirateurs de sécurité simplement parce qu'ils aspirent fort.",
+      "Les références professionnelles deviennent lourdes et coûteuses ; le NT 50 est disproportionné pour un petit atelier domestique.",
+      "La gamme évolue : certaines anciennes variantes WD restent visibles chez des revendeurs alors qu'elles ne représentent plus le meilleur point de comparaison 2026."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "WD 3 / WD 4 / WD 5 / WD 6",
+      "status": "CURRENT",
+      "role": "Bricolage et nettoyage eau/poussière",
+      "evidence": "Famille Home & Garden, du format simple au modèle plus équipé."
+    },
+    {
+      "name": "WD 7 Control",
+      "status": "CURRENT",
+      "role": "Rénovation et atelier polyvalents",
+      "evidence": "30 L, 80 l/s et 290 mbar annoncés, prise outil et télécommande 2-en-1."
+    },
+    {
+      "name": "NT 30/1 Tact Te M ACD",
+      "status": "CURRENT",
+      "role": "Poussières fines et chantier pro",
+      "evidence": "Classe M, 30 L, Tact automatique commandé par capteur et certification ACD."
+    },
+    {
+      "name": "NT 50/1 Tact Te M ACD",
+      "status": "CURRENT",
+      "role": "Gros volumes en classe M",
+      "evidence": "Cuve 50 L, Tact, surveillance du débit, prise asservie."
+    },
+    {
+      "name": "NT Tact Te H / H ACD",
+      "status": "CURRENT",
+      "role": "Poussières relevant de la classe H",
+      "evidence": "Références dédiées ; le choix doit suivre le risque et les prescriptions applicables."
+    },
+    {
+      "name": "WD 2 Plus et anciennes variantes WD",
+      "status": "PREVIOUS_GENERATION",
+      "role": "Occasion / anciens catalogues",
+      "evidence": "Ne pas les confondre avec la gamme actuellement mise en avant en France."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "L'écosystème Kärcher repose moins sur une plateforme batterie d'outillage que sur la continuité entre accessoires, flexibles, filtres, sacs et familles de machines. Sur les WD, l'intérêt vient de la polyvalence et de fonctions de confort : filtre plissé, soufflerie, vidange, prise outil ou nettoyage de filtre selon le modèle. Sur les NT, l'écosystème devient plus technique avec flexibles conducteurs, antistatique, sacs d'élimination et surveillance du débit.",
+      "Le système Tact est le marqueur le plus important côté professionnel. Sur les versions récentes, Kärcher pilote le décolmatage en fonction du besoin afin de maintenir le filtre disponible pendant l'aspiration de grandes quantités de poussières fines. La mention ACD concerne la collecte de poussières combustibles selon le cadre indiqué par le fabricant ; elle ne doit pas être interprétée comme une compatibilité universelle avec toute atmosphère explosive."
+    ],
+    "choose": [
+      "Vous cherchez avant tout un aspirateur eau/poussière robuste pour garage, rénovation ou gravats : regardez les WD 5 à WD 7.",
+      "Vous travaillez avec des poussières fines et avez besoin d'une classe M documentée : partez sur les NT M, puis vérifiez le risque exact.",
+      "Vous voulez une grosse cuve et un décolmatage automatique pour un chantier intensif : les NT Tact sont plus cohérents que les WD."
+    ],
+    "avoid": [
+      "Évitez de choisir un WD pour une poussière exigeant une classe M ou H uniquement sur la base de son débit ou de sa dépression.",
+      "Kärcher convient moins si votre priorité est une intégration poussée avec une plateforme batterie d'outillage déjà possédée.",
+      "Pour du ponçage ultra-mobile en environnement premium, Festool ou Mirka peuvent offrir un workflow plus intégré autour de l'outil."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "Kärcher WD 7 Control — fiche officielle",
+      "status": "VERIFIED",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Kärcher NT 30/1 Tact Te M ACD — fiche officielle",
+      "status": "VERIFIED",
+      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Kärcher NT 50/1 Tact Te M ACD — fiche officielle",
+      "status": "VERIFIED",
+      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-50-1-tact-te-m-acd-11484350.html",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Kärcher — gamme aspirateurs de sécurité",
+      "status": "VERIFIED",
+      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite.html",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "comparatif général",
+      "url": "/comparatifs/meilleur-aspirateur-de-chantier/"
+    },
+    {
+      "label": "eau et poussière",
+      "url": "/comparatifs/aspirateur-eau-poussiere/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
+    },
+    {
+      "label": "professionnel",
+      "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "guide classes L/M/H",
+      "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "décolmatage automatique",
+      "url": "/guides/decolmatage-automatique/"
+    },
+    {
+      "label": "gravats",
+      "url": "/usages/aspirateur-gravats/"
+    },
+    {
+      "label": "Kärcher WD6",
+      "url": "/modeles/karcher-wd6/"
+    },
+    {
+      "label": "Kärcher NT 30/1 Tact",
+      "url": "/modeles/karcher-nt-30-1-tact/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}

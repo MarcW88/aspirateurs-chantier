@@ -1,0 +1,157 @@
+{
+  "slug": "nilfisk",
+  "brand": "Nilfisk",
+  "page_type": "BRAND_HUB",
+  "updated_at": "2026-09-08",
+  "entity_map": {
+    "brand": "Nilfisk",
+    "products": [
+      "Buddy II 12 / 18",
+      "Multi II 22 / 30 T",
+      "ATTIX 33 IC",
+      "ATTIX 44-2M IC",
+      "ATTIX H / variantes spécifiques"
+    ],
+    "use_cases": [
+      "atelier",
+      "gravats"
+    ],
+    "technologies": [],
+    "competitors": [
+      "Kärcher",
+      "Bosch",
+      "Makita",
+      "Festool",
+      "DeWalt",
+      "Parkside",
+      "Nilfisk",
+      "Mirka"
+    ]
+  },
+  "brand_positioning": {
+    "summary": "Nilfisk couvre deux besoins très différents : Buddy/Multi pour le nettoyage eau/poussière grand public et ATTIX pour l'aspiration professionnelle, avec des variantes de sécurité et le système de décolmatage InfiniClean. Cette séparation est plus utile que de chercher un unique “meilleur Nilfisk”.",
+    "strengths": [
+      "Spécialiste historique du nettoyage avec une gamme grand public et professionnelle distincte.",
+      "InfiniClean est pertinent pour les poussières colmatantes en usage continu.",
+      "ATTIX propose des variantes classe M avec FlowSensor et antistatique.",
+      "Multi II offre une alternative eau/poussière robuste sans payer une architecture de sécurité inutile."
+    ],
+    "limitations": [
+      "Moins d'intégration avec une plateforme de batteries ou d'outillage qu'un Bosch, Makita ou DeWalt.",
+      "Les noms ATTIX couvrent plusieurs classes : il faut vérifier la variante complète.",
+      "Un Multi II ne remplace pas un ATTIX M lorsqu'une classe M est requise.",
+      "Les accessoires professionnels peuvent être spécifiques au système Nilfisk."
+    ]
+  },
+  "product_range": [
+    {
+      "name": "Buddy II 12 / 18",
+      "status": "CURRENT",
+      "role": "Nettoyage occasionnel",
+      "evidence": "Petits aspirateurs eau/poussière simples et accessibles."
+    },
+    {
+      "name": "Multi II 22 / 30 T",
+      "status": "CURRENT",
+      "role": "Garage, atelier, eau/poussière",
+      "evidence": "Famille 22 à 30 L avec variantes Inox et prise outil selon version."
+    },
+    {
+      "name": "ATTIX 33 IC",
+      "status": "CURRENT",
+      "role": "Professionnel compact",
+      "evidence": "Famille pro avec InfiniClean selon variante et classes L/M."
+    },
+    {
+      "name": "ATTIX 44-2M IC",
+      "status": "CURRENT",
+      "role": "Classe M / poussière fine",
+      "evidence": "42 L, InfiniClean, FlowSensor, antistatique et alarme débit."
+    },
+    {
+      "name": "ATTIX H / variantes spécifiques",
+      "status": "CURRENT_BY_MARKET",
+      "role": "Risques supérieurs",
+      "evidence": "Choisir sur la certification exacte et les prescriptions applicables."
+    }
+  ],
+  "ecosystem": {
+    "summary": [
+      "Nilfisk n'est pas un fabricant d'outillage électroportatif au sens de Bosch ou Makita : son écosystème se concentre sur le nettoyage, les accessoires et la gestion des poussières. C'est un avantage si l'aspiration est le centre du besoin, moins si vous cherchez à partager batteries et coffrets avec un parc d'outils.",
+      "Dans la gamme ATTIX, les éléments à regarder sont InfiniClean, le diamètre du flexible, l'antistatique, la prise outil et la surveillance du débit. Certains modèles acceptent aussi des adaptateurs de rangement ou de coffrets. Le vrai différenciateur est la maîtrise de l'aspiration professionnelle, pas l'appartenance à une plateforme d'outils."
+    ],
+    "choose": [
+      "Choisissez Nilfisk si l'aspiration et le nettoyage sont le centre du cahier des charges plutôt que l'écosystème d'outillage.",
+      "Le Multi II convient au garage et aux liquides ; l'ATTIX M convient mieux à la poussière fine professionnelle lorsque cette classe est adaptée.",
+      "InfiniClean est à privilégier lorsque le filtre se colmate vite et que les interruptions coûtent du temps."
+    ],
+    "avoid": [
+      "Évitez un Multi grand public pour une poussière qui nécessite une certification de sécurité supérieure.",
+      "Nilfisk convient moins si votre priorité est de mutualiser batteries et coffrets avec vos outils électroportatifs.",
+      "N'achetez pas un ATTIX uniquement sur la taille de cuve : la classe et le système de filtre priment."
+    ]
+  },
+  "evidence": [
+    {
+      "claim": "Nilfisk Multi II 30 T Inox VSC",
+      "status": "VERIFIED",
+      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere-2",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Nilfisk ATTIX 44-2M IC",
+      "status": "VERIFIED",
+      "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/attix-44-2m-ic%2B107412182/",
+      "source_type": "primary"
+    },
+    {
+      "claim": "Nilfisk — aspirateurs professionnels",
+      "status": "VERIFIED",
+      "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/",
+      "source_type": "primary"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "Nilfisk Multi II 30 T",
+      "url": "/modeles/nilfisk-multi-ii-30-t/"
+    },
+    {
+      "label": "industriel",
+      "url": "/comparatifs/aspirateur-industriel/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
+    },
+    {
+      "label": "eau et poussière",
+      "url": "/comparatifs/aspirateur-eau-poussiere/"
+    },
+    {
+      "label": "professionnel",
+      "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "décolmatage automatique",
+      "url": "/guides/decolmatage-automatique/"
+    },
+    {
+      "label": "classes L/M/H",
+      "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "atelier",
+      "url": "/usages/aspirateur-atelier/"
+    },
+    {
+      "label": "gravats",
+      "url": "/usages/aspirateur-gravats/"
+    }
+  ],
+  "editorial": {
+    "desk_research_only": true,
+    "affiliate_influence": false,
+    "human_validation_required": true
+  }
+}
