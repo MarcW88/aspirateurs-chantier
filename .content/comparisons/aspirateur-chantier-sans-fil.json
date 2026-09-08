@@ -1,0 +1,213 @@
+{
+  "slug": "aspirateur-chantier-sans-fil",
+  "url": "/comparatifs/aspirateur-chantier-sans-fil/",
+  "updated_at": "2026-09-08",
+  "intent": {
+    "query": "aspirateur chantier sans fil",
+    "type": "feature_specific",
+    "user_job": "travailler sans prise pour des interventions courtes, du montage ou du nettoyage mobile",
+    "primary_constraint": "autonomie réelle du système, mobilité et niveau d'aspiration"
+  },
+  "product_universe": [
+    {
+      "id": "bosch-gas18",
+      "name": "Bosch Professional GAS 18V-10 L",
+      "status": "ELIGIBLE",
+      "equivalence": "FUNCTIONALLY_COMPARABLE",
+      "exclusion_reason": null
+    },
+    {
+      "id": "festool-ctc-midi",
+      "name": "Festool CTC MIDI I",
+      "status": "ELIGIBLE",
+      "equivalence": "FUNCTIONALLY_COMPARABLE",
+      "exclusion_reason": null
+    },
+    {
+      "id": "karcher-wd318",
+      "name": "Kärcher WD 3-18 S",
+      "status": "ELIGIBLE",
+      "equivalence": "FUNCTIONALLY_COMPARABLE",
+      "exclusion_reason": null
+    }
+  ],
+  "criteria": [
+    {
+      "id": "cordless",
+      "label": "Fonctionnement réellement sans fil",
+      "weight": 20,
+      "hard_gate": true,
+      "hard_gate_min": 5,
+      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans fil."
+    },
+    {
+      "id": "runtime",
+      "label": "Autonomie et batteries",
+      "weight": 25,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans fil."
+    },
+    {
+      "id": "suction",
+      "label": "Aspiration",
+      "weight": 20,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans fil."
+    },
+    {
+      "id": "mobility",
+      "label": "Poids et encombrement",
+      "weight": 20,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans fil."
+    },
+    {
+      "id": "workflow",
+      "label": "Écosystème et usage outil",
+      "weight": 15,
+      "hard_gate": false,
+      "hard_gate_min": null,
+      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans fil."
+    }
+  ],
+  "evidence": [
+    {
+      "product": "bosch-gas18",
+      "criterion": "product_identity",
+      "claim": "18 V, classe L, 10 L brut / 6 L net, 34 l/s, 115 mbar, sans sac, 4,7 kg sans batterie, autonomie annoncée 4 min/Ah",
+      "value": "18 V, classe L, 10 L brut / 6 L net, 34 l/s, 115 mbar, sans sac, 4,7 kg sans batterie, autonomie annoncée 4 min/Ah",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302",
+      "source_date": "2026-09-08",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "festool-ctc-midi",
+      "criterion": "product_identity",
+      "claim": "aspirateur sans fil 36 V (2 batteries 18 V), cuve 15 L, 10,2 kg, autonomie 10–20 min avec 2×4 Ah, jusqu'à 24–45 min avec 2×8 Ah",
+      "value": "aspirateur sans fil 36 V (2 batteries 18 V), cuve 15 L, 10,2 kg, autonomie 10–20 min avec 2×4 Ah, jusqu'à 24–45 min avec 2×8 Ah",
+      "source": "https://www.festool.fr/campagnes/microsites/aspiration",
+      "source_date": "2026-09-08",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "karcher-wd318",
+      "criterion": "product_identity",
+      "claim": "18 V, 17 L, 30 l/s, 110 mbar, environ 20 min avec batterie 5 Ah, 4,1 kg sans accessoires",
+      "value": "18 V, 17 L, 30 l/s, 110 mbar, environ 20 min avec batterie 5 Ah, 4,1 kg sans accessoires",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-3-18-s-avec-la-batterie-amovible-16285760.html",
+      "source_date": "2026-09-08",
+      "evidence_class": "VERIFIED"
+    }
+  ],
+  "scores": {
+    "bosch-gas18": {
+      "cordless": {
+        "score": 10,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "runtime": {
+        "score": 8,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "suction": {
+        "score": 8,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "mobility": {
+        "score": 10,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "workflow": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      }
+    },
+    "festool-ctc-midi": {
+      "cordless": {
+        "score": 10,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTC MIDI I et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "runtime": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTC MIDI I et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "suction": {
+        "score": 9,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTC MIDI I et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "mobility": {
+        "score": 6,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTC MIDI I et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "workflow": {
+        "score": 10,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTC MIDI I et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      }
+    },
+    "karcher-wd318": {
+      "cordless": {
+        "score": 10,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3-18 S et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "runtime": {
+        "score": 8,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3-18 S et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "suction": {
+        "score": 7,
+        "evidence_class": "VERIFIED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3-18 S et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "mobility": {
+        "score": 9,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3-18 S et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      },
+      "workflow": {
+        "score": 7,
+        "evidence_class": "INFERRED",
+        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3-18 S et de leur adéquation à l'intention « aspirateur chantier sans fil ». Le score est éditorial et non un résultat de laboratoire."
+      }
+    }
+  },
+  "ranking": [
+    {
+      "product_id": "bosch-gas18",
+      "raw_score": 89.5,
+      "confidence_adjusted_score": 81.47,
+      "hard_gate_failed": false
+    },
+    {
+      "product_id": "festool-ctc-midi",
+      "raw_score": 87.5,
+      "confidence_adjusted_score": 80.08,
+      "hard_gate_failed": false
+    },
+    {
+      "product_id": "karcher-wd318",
+      "raw_score": 82.5,
+      "confidence_adjusted_score": 75.22,
+      "hard_gate_failed": false
+    }
+  ],
+  "notes": {
+    "total_solution_cost_required": true,
+    "affiliate_commission_used_in_ranking": false,
+    "desk_research_only": true
+  }
+}

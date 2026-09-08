@@ -1,0 +1,81 @@
+name: Generate comparison content
+
+on:
+  push:
+    branches:
+      - content/comparatifs-production-workflow
+    paths:
+      - "_generate_comparatifs.py"
+      - "_normalize_comparatifs.py"
+      - "_validate_comparatifs.py"
+      - ".agents/skills/comparison-content-workflow/**"
+      - ".github/workflows/generate-comparatifs-content.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/comparatifs-production-workflow
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Align source verdicts before generation
+        run: python _normalize_comparatifs.py
+
+      - name: Generate comparison pages and data
+        run: python _generate_comparatifs.py
+
+      - name: Restore guide content after site generator import
+        run: |
+          python _generate_guides.py
+          python _guide_quality_supplements.py
+          python _normalize_guide_answers.py
+
+      - name: Normalize generated comparison HTML
+        run: python _normalize_comparatifs.py
+
+      - name: Validate comparison methodology
+        run: |
+          for f in .content/comparisons/*.json; do
+            python .agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py "$f"
+          done
+
+      - name: Recalculate rankings
+        run: |
+          for f in .content/comparisons/*.json; do
+            echo "== $f =="
+            python .agents/skills/comparison-content-workflow/scripts/score_comparison.py "$f"
+          done
+
+      - name: Structural and editorial safety gate
+        run: python _validate_comparatifs.py
+
+      - name: Preserve noindex
+        run: |
+          for f in comparatifs/*/index.html; do
+            grep -q '<meta name="robots" content="noindex, follow">' "$f"
+          done
+
+      - name: Whitespace check
+        run: git diff --check
+
+      - name: Commit generated comparison artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _generate_comparatifs.py comparatifs .content/comparisons
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "Generate 2026 comparison pages from auditable scoring"
+            git push origin HEAD:content/comparatifs-production-workflow
+          fi
