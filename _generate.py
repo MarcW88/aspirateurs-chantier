@@ -150,8 +150,9 @@ FOOTER_HTML = """<footer class="site-footer">
 
 
 def css_path_for(canonical):
-    depth = canonical.strip("/").count("/")
-    return ("../" * depth) + "style.css" if depth > 0 else "style.css"
+    # The site is served from its own domain, so an absolute root path works
+    # consistently for the homepage and for pages at every directory depth.
+    return "/style.css"
 
 
 def html_doc(title, desc, canonical, body_html):
