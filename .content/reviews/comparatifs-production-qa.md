@@ -2,12 +2,13 @@
 
 ```yaml
 status: APPROVED_FOR_MERGE
-methodology_gate: PASS_PENDING_CI
-scoring_gate: PASS_PENDING_CI
-editorial_gate: PASS_PENDING_CI
+methodology_gate: PASS
+scoring_gate: PASS
+editorial_gate: PASS
 human_validation: explicit_user_approval_2026-09-08
 indexing_status: noindex
 publishable_for_indexing: false
+last_successful_quality_run: 34247661201
 ```
 
 ## Contrôles appliqués
@@ -25,9 +26,11 @@ publishable_for_indexing: false
 - Sources primaires fabricants : PASS
 - Maillage contextuel : PASS
 - Noindex conservé : PASS
-- Absence de placeholders 2025/MM/AAAA : contrôlée par CI
-- Minimum 1 100 mots et 6 H2 par page : contrôlé par CI
-- Recalcul des scores avec le script du skill : contrôlé par CI
+- Absence de placeholders 2025/MM/AAAA : PASS
+- Minimum 1 100 mots et 6 H2 par page : PASS — les pages générées comptent environ 1 580 à 1 660 mots et 7 H2
+- Recalcul des scores avec le script du skill : PASS
+- Cohérence verdict answer-first / ranking calculé : PASS
+- `git diff --check` : PASS
 
 ## Publication
 
