@@ -1,0 +1,40 @@
+name: Install brand production workflow
+
+on:
+  push:
+    branches:
+      - content/brand-pages-workflow
+    paths:
+      - ".brand-production.part*"
+      - ".github/workflows/install-brand-production.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content/brand-pages-workflow
+          fetch-depth: 0
+
+      - name: Assemble production files
+        run: |
+          cat .brand-production.part1 .brand-production.part2 .brand-production.part3 .brand-production.part4 | base64 -d > /tmp/brand-production.zip
+          unzip -oq /tmp/brand-production.zip -d .
+
+      - name: Commit production workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _generate_brands.py _validate_brands.py brand-workflow.config.yaml \
+            .github/workflows/generate-brand-content.yml \
+            .content/briefs/brand-pages-production-2026-09-08.md \
+            .content/reviews/brand-pages-production-qa.md
+          git rm .brand-production.part1 .brand-production.part2 .brand-production.part3 .brand-production.part4
+          git rm .github/workflows/install-brand-production.yml
+          git commit -m "Add brand page production workflow"
+          git push origin HEAD:content/brand-pages-workflow
