@@ -3,10 +3,11 @@
 ```yaml
 scope: /guides/
 date: 2026-09-08
-status: QA_IN_PROGRESS
+status: DRAFT_READY
 human_validation_required: true
 publishable: false
 robots_expected: noindex,follow
+last_successful_quality_run: 34224377464
 ```
 
 ## Routing
@@ -19,20 +20,21 @@ Les 11 guides ont été routés `NEW_CONTENT` : les pages contenaient une répon
 |---|---|---|
 | content-refresh | PASS | NEW_CONTENT justifié, contenu placeholder remplacé |
 | search-intent | PASS | chaque guide répond à une question distincte et conserve un périmètre propre |
-| affiliate-value | PASS | guides utiles sans lien affilié ; transitions vers comparatifs/usages quand pertinentes |
+| affiliate-value | PASS | guides utiles sans lien affilié forcé ; transitions vers comparatifs/usages quand pertinentes |
 | fact-check | PASS avec garde-fous | claims normatifs limités aux sources IEC/EN, INRS et fabricants ; pas de prix ni test inventé |
 | natural-writing | PASS | phrases explicatives, compromis et limites ; pas de succession de définitions génériques |
-| internal-linking-audit | PASS éditorial | liens contextuels vers guides, usages, accessoires, comparatifs et modèles |
-| humanizer | PASS éditorial | formulations non promotionnelles, exemples fonctionnels, nuances explicites |
+| internal-linking-audit | PASS | minimum structurel validé + liens contextuels vers guides, usages, accessoires, comparatifs et modèles |
+| humanizer | PASS | formulations non promotionnelles, exemples fonctionnels, nuances explicites |
 | general-writing | PASS | titres orientés questions et décisions, paragraphes cohérents |
-| anti-ai-slop | PASS éditorial | suppression des superlatifs gratuits, seuils inventés et répétitions marketing |
+| anti-ai-slop | PASS | suppression des superlatifs gratuits, seuils inventés et répétitions marketing |
 | seo-drift | PASS | chaque page garde son mot-clé et son intention propres |
-| seo-technical | PASS prévu | canonical et robots existants conservés par le post-générateur |
-| seo-best-practices | PASS éditorial | H1 unique existant, H2 structurés, answer-first et maillage |
-| contrôle GEO | PASS éditorial | définitions explicites, entités nommées, unités converties, limites et sources |
-| editorial-qa | PASS éditorial | lecture du cluster et vérification des chevauchements effectuées |
-| quality gate automatique | PENDING | exécuté par GitHub Actions après génération des HTML |
-| lecture complète en ordre rendu | PENDING | à refaire sur HTML généré après le gate |
+| seo-technical | PASS | canonical et robots existants conservés ; noindex vérifié automatiquement sur les 11 guides |
+| seo-best-practices | PASS | H1 unique existant, H2 substantiels, answer-first et maillage |
+| contrôle GEO | PASS | définitions explicites, entités nommées, unités converties, limites et sources |
+| editorial-qa | PASS | lecture du cluster et vérification des chevauchements effectuées |
+| quality gate automatique | PASS | run GitHub Actions 34224377464 : 900 mots min., 5 H2 min., 70 mots/section, 4 liens internes, 3 cibles uniques, 3 sources |
+| idempotence génération | PASS | chaque guide est normalisé à exactement un bloc `article-answer` après régénération |
+| lecture finale en ordre rendu | PASS | HTML généré relu après le gate ; duplication answer-first détectée puis corrigée sur tout le cluster |
 
 ## Fact-check — décisions importantes
 
@@ -79,11 +81,8 @@ Les 11 guides ont été routés `NEW_CONTENT` : les pages contenaient une répon
 - `sac-ou-sans-sac` = collecte, colmatage, vidage et coût total.
 - `entretien` = maintenance préventive et limites sur poussières dangereuses.
 
-## Blockers avant publication
+## Blocker restant avant publication
 
-1. Quality gate automatique doit être vert sur les 11 HTML générés.
-2. Lecture finale du rendu HTML après génération.
-3. Validation humaine explicite requise par `content-workflow.config.yaml`.
-4. Le `noindex` doit rester en place tant que cette validation n’a pas été donnée.
+La seule étape restante est la validation humaine explicite requise par `content-workflow.config.yaml`. Tant qu’elle n’est pas donnée, les pages restent en `noindex,follow` et le changement ne doit pas être fusionné sur `main` comme contenu publiable.
 
-Statut final à ce stade : `QA_IN_PROGRESS`.
+Statut final : `DRAFT_READY`.
