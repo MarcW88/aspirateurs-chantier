@@ -1,0 +1,57 @@
+name: Apply comparison design review fixes
+
+on:
+  push:
+    branches:
+      - design-review-comparisons-2026-09-09
+    paths:
+      - "_apply_comparison_design.py"
+      - "_generate_comparison_content.py"
+      - "comparison-pages.css"
+      - "comparison-pages.js"
+      - ".github/workflows/apply-comparison-design-review-fixes.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile design layer
+        run: python -m py_compile _apply_comparison_design.py _generate_comparison_content.py
+      - name: Generate canonical comparison cluster with design layer
+        run: python _generate_comparison_content.py
+      - name: Preserve draft indexation
+        run: |
+          for f in comparatifs/*/index.html; do
+            grep -q '<meta name="robots" content="noindex, follow">' "$f"
+          done
+      - name: Verify design assets applied
+        run: |
+          for f in comparatifs/index.html comparatifs/*/index.html; do
+            grep -q 'class="comparison-page"' "$f"
+            grep -q '/comparison-pages.css' "$f"
+            grep -q '/comparison-pages.js' "$f"
+          done
+          test "$(grep -R -l 'comparison-decision-module' comparatifs/*/index.html | wc -l)" -eq 9
+      - name: Whitespace check
+        run: git diff --check
+      - name: Commit generated comparison pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add comparatifs .content/comparisons
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "Apply comparison design review fixes"
+            git push origin HEAD:design-review-comparisons-2026-09-09
+          fi
