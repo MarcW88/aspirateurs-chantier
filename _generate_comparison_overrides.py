@@ -86,7 +86,7 @@ EXTERNAL = {
         "brand": "Kärcher",
         "dust_class": "M",
         "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivc-60-24-2-tact2-m-15761050.html",
-        "local": null,
+        "local": None,
         "specs": {
             "Alimentation": "220–240 V monophasé",
             "Puissance": "2,4 kW",
@@ -103,7 +103,7 @@ EXTERNAL = {
         "brand": "Kärcher",
         "dust_class": "M",
         "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivr-60-30-sc-m-acd-99906430.html",
-        "local": null,
+        "local": None,
         "specs": {
             "Alimentation": "400 V triphasé",
             "Puissance": "3 kW",
@@ -121,7 +121,7 @@ EXTERNAL = {
         "brand": "Nilfisk",
         "dust_class": "Famille certifiée L/M/H selon version",
         "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/s3-l100-lc%2B4010300177/",
-        "local": null,
+        "local": None,
         "specs": {
             "Type": "Aspirateur industriel monophasé",
             "Puissance": "3 kW",
@@ -135,7 +135,7 @@ EXTERNAL = {
         "brand": "Nilfisk",
         "dust_class": "Usage industriel huile/copeaux",
         "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/huile-et-copeaux/vho200%2B4010400037/",
-        "local": null,
+        "local": None,
         "specs": {
             "Usage": "Collecte d’huile, liquides et copeaux",
             "Capacité liquides": "75 L",

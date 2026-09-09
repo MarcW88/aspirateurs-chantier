@@ -1,213 +1,209 @@
 {
   "slug": "aspirateur-classe-m",
   "url": "/comparatifs/aspirateur-classe-m/",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
+  "status": "REWRITTEN_AFTER_CLUSTER_AUDIT",
   "intent": {
     "query": "aspirateur classe M",
     "type": "feature_specific",
-    "user_job": "sélectionner un aspirateur certifié M adapté aux poussières et au rythme de travail visés",
-    "primary_constraint": "la certification M est un hard gate, pas un bonus marketing"
+    "user_job": "choisir entre plusieurs aspirateurs réellement certifiés M selon mobilité, décolmatage, capacité et workflow",
+    "primary_constraint": "la classe M est un gate d’entrée : elle n’est ni un bonus marketing ni une note globale",
+    "boundary": "la page professionnel reste plus large et peut inclure L ou M ; ici seuls les appareils documentés M entrent dans le comparatif"
+  },
+  "scope": {
+    "selection_rule": "références représentatives choisies pour couvrir les décisions qui changent réellement le choix ; pas de census exhaustif ni de ranking universel",
+    "candidates": [
+      {
+        "id": "bosch-gas-18v-12-mc",
+        "name": "Bosch Professional GAS 18V-12 MC",
+        "brand": "Bosch Professional",
+        "status": "ELIGIBLE",
+        "role": "Classe M sans fil / mobilité",
+        "source": "https://www.bosch-professional.com/be/fr/products/gas-18v-12-mc-06019K2000"
+      },
+      {
+        "id": "festool-ctm-midi-ac",
+        "name": "Festool CTM MIDI I AC",
+        "brand": "Festool",
+        "status": "ELIGIBLE",
+        "role": "Classe M compacte / écosystème Festool",
+        "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578552---ctm-midi-i-ac"
+      },
+      {
+        "id": "karcher-nt-30-1-tact",
+        "name": "Kärcher NT 30/1 Tact Te M ACD",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Classe M 30 L + Tact/antistatique/ACD",
+        "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html"
+      },
+      {
+        "id": "bosch-gas-35-m-afc",
+        "name": "Bosch Professional GAS 35 M AFC",
+        "brand": "Bosch Professional",
+        "status": "ELIGIBLE",
+        "role": "Classe M 35 L + AFC",
+        "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"
+      },
+      {
+        "id": "makita-vc4210mx",
+        "name": "Makita VC4210MX",
+        "brand": "Makita",
+        "status": "ELIGIBLE",
+        "role": "Classe M gros volume",
+        "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf"
+      }
+    ],
+    "major_exclusions": []
   },
   "product_universe": [
     {
-      "id": "karcher-nt30m",
-      "name": "Kärcher NT 30/1 Tact Te M ACD",
+      "id": "bosch-gas-18v-12-mc",
+      "name": "Bosch Professional GAS 18V-12 MC",
+      "brand": "Bosch Professional",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
-    },
-    {
-      "id": "bosch-gas35m",
-      "name": "Bosch Professional GAS 35 M AFC",
-      "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Classe M sans fil / mobilité",
+      "source": "https://www.bosch-professional.com/be/fr/products/gas-18v-12-mc-06019K2000"
     },
     {
       "id": "festool-ctm-midi-ac",
       "name": "Festool CTM MIDI I AC",
+      "brand": "Festool",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Classe M compacte / écosystème Festool",
+      "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578552---ctm-midi-i-ac"
+    },
+    {
+      "id": "karcher-nt-30-1-tact",
+      "name": "Kärcher NT 30/1 Tact Te M ACD",
+      "brand": "Kärcher",
+      "status": "ELIGIBLE",
+      "role": "Classe M 30 L + Tact/antistatique/ACD",
+      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html"
+    },
+    {
+      "id": "bosch-gas-35-m-afc",
+      "name": "Bosch Professional GAS 35 M AFC",
+      "brand": "Bosch Professional",
+      "status": "ELIGIBLE",
+      "role": "Classe M 35 L + AFC",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"
+    },
+    {
+      "id": "makita-vc4210mx",
+      "name": "Makita VC4210MX",
+      "brand": "Makita",
+      "status": "ELIGIBLE",
+      "role": "Classe M gros volume",
+      "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf"
     }
   ],
   "criteria": [
     {
-      "id": "classm",
-      "label": "Certification classe M",
-      "weight": 30,
-      "hard_gate": true,
-      "hard_gate_min": 5,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur classe M."
+      "id": "class",
+      "label": "Certification M"
     },
     {
-      "id": "endurance",
-      "label": "Décolmatage",
-      "weight": 25,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur classe M."
+      "id": "cleaning",
+      "label": "Décolmatage / nettoyage filtre"
     },
     {
-      "id": "monitoring",
-      "label": "Surveillance et sécurité",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur classe M."
-    },
-    {
-      "id": "suction",
-      "label": "Aspiration",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur classe M."
+      "id": "monitor",
+      "label": "Surveillance et fonctions de sécurité"
     },
     {
       "id": "mobility",
-      "label": "Mobilité",
-      "weight": 10,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur classe M."
+      "label": "Mobilité"
+    },
+    {
+      "id": "capacity",
+      "label": "Capacité / vidage"
+    },
+    {
+      "id": "tool",
+      "label": "Intégration outil"
     }
   ],
   "evidence": [
     {
-      "product": "karcher-nt30m",
-      "criterion": "product_identity",
-      "claim": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
-      "value": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
-      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html",
-      "source_date": "2026-09-08",
-      "evidence_class": "VERIFIED"
-    },
-    {
-      "product": "bosch-gas35m",
-      "criterion": "product_identity",
-      "claim": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
-      "value": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
-      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
-      "source_date": "2026-09-08",
+      "product": "bosch-gas-18v-12-mc",
+      "criterion": "product_identity_and_role",
+      "claim": "Batterie : 18 V Professional / AMPShare · Classe : M · Débit max. (turbine) : 30 L/s · Dépression max. (turbine) : 170 mbar · Cuve : 12 L brut / 8 L net / 6 L eau · Nettoyage du filtre : SFC semi-automatique",
+      "source": "https://www.bosch-professional.com/be/fr/products/gas-18v-12-mc-06019K2000",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
       "product": "festool-ctm-midi-ac",
-      "criterion": "product_identity",
-      "claim": "classe M, 15 L / sac 12,5 L, 3 700 l/min (≈61,7 l/s), 24 000 Pa, AUTOCLEAN, prise 2 400 W, 11,8 kg",
-      "value": "classe M, 15 L / sac 12,5 L, 3 700 l/min (≈61,7 l/s), 24 000 Pa, AUTOCLEAN, prise 2 400 W, 11,8 kg",
+      "criterion": "product_identity_and_role",
+      "claim": "Classe : M · Réservoir / sac filtre : 15 / 12,5 L · Débit max. : 3 700 L/min (≈61,7 L/s) · Dépression max. : 24 000 Pa · Décolmatage : AUTOCLEAN · Prise outil : Oui",
       "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578552---ctm-midi-i-ac",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "karcher-nt-30-1-tact",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance absorbée : max. 1 380 W · Débit d’air : 74 L/s · Dépression : 273 mbar (27,3 kPa) · Cuve : 30 L · Classe de poussière : M · Décolmatage : Tact automatique commandé par capteur",
+      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "bosch-gas-35-m-afc",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance nominale : 1 200 W · Débit max. (turbine) : 74 L/s · Dépression max. (turbine) : 254 mbar (25,4 kPa) · Cuve : 35 L brut / 23 L net / 19,2 L eau · Classe : M · Décolmatage : AFC automatique",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "makita-vc4210mx",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance nominale : 1 200 W · Débit d’air : 4,5 m³/min (75 L/s) · Dépression max. : 250 mbar (25 kPa) · Cuve : 42 L brut / 34 L poussière / 30 L liquide · Classe : M · Décolmatage : InfiniClean automatique",
+      "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     }
   ],
-  "scores": {
-    "karcher-nt30m": {
-      "classm": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "monitoring": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 7,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "bosch-gas35m": {
-      "classm": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "monitoring": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "festool-ctm-midi-ac": {
-      "classm": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "monitoring": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « aspirateur classe M ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    }
-  },
-  "ranking": [
+  "recommendation_logic": [
     {
-      "product_id": "karcher-nt30m",
-      "raw_score": 95.5,
-      "confidence_adjusted_score": 87.7,
-      "hard_gate_failed": false
+      "scenario": "Classe M sans fil / mobilité",
+      "product_id": "bosch-gas-18v-12-mc",
+      "why": "18 V, classe M, 12 L brut et Auto-Start via module.",
+      "main_tradeoff": "Petite cuve et SFC semi-automatique : pas le même rythme qu’un gros filaire AFC/Tact/InfiniClean."
     },
     {
+      "scenario": "Classe M compacte / écosystème Festool",
       "product_id": "festool-ctm-midi-ac",
-      "raw_score": 94.0,
-      "confidence_adjusted_score": 86.2,
-      "hard_gate_failed": false
+      "why": "15 L, AUTOCLEAN et forte intégration outil dans un format compact.",
+      "main_tradeoff": "Volume limité et intérêt maximal surtout dans un parc Festool."
     },
     {
-      "product_id": "bosch-gas35m",
-      "raw_score": 93.0,
-      "confidence_adjusted_score": 85.35,
-      "hard_gate_failed": false
+      "scenario": "Classe M 30 L + Tact/antistatique/ACD",
+      "product_id": "karcher-nt-30-1-tact",
+      "why": "Tact commandé par capteur, système antistatique complet et 30 L.",
+      "main_tradeoff": "14,2 kg ; ACD n’équivaut pas à une homologation ATEX universelle."
+    },
+    {
+      "scenario": "Classe M 35 L + AFC",
+      "product_id": "bosch-gas-35-m-afc",
+      "why": "35 L brut, AFC et prise outil avec métriques turbine documentées.",
+      "main_tradeoff": "12,4 kg et valeurs turbine à ne pas utiliser comme podium cross-brand."
+    },
+    {
+      "scenario": "Classe M gros volume",
+      "product_id": "makita-vc4210mx",
+      "why": "42 L, InfiniClean, prise outil et avertisseur de débit.",
+      "main_tradeoff": "16 kg sans câble : choix davantage orienté volume que mobilité."
     }
   ],
+  "measurement_notes": [],
   "notes": {
-    "total_solution_cost_required": false,
+    "scoring_used": false,
     "affiliate_commission_used_in_ranking": false,
-    "desk_research_only": true
+    "desk_research_only": true,
+    "noindex_during_rollout": true,
+    "hands_on_test": false
   }
 }

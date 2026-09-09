@@ -1,213 +1,184 @@
 {
   "slug": "aspirateur-industriel",
   "url": "/comparatifs/aspirateur-industriel/",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
+  "status": "REWRITTEN_AFTER_CLUSTER_AUDIT",
   "intent": {
-    "query": "aspirateur industriel chantier",
-    "type": "best_for_use_case",
-    "user_job": "collecter des volumes importants de déchets, poussières ou liquides dans un cadre professionnel mobile",
-    "primary_constraint": "capacité, endurance et sécurité sans basculer vers une installation d'aspiration fixe"
+    "query": "aspirateur industriel",
+    "type": "best_for_process",
+    "user_job": "identifier le type d’aspirateur industriel adapté au process : poussières, fonctionnement continu, huiles/copeaux ou exigences de filtration",
+    "primary_constraint": "ne pas confondre grande cuve de chantier et machine industrielle conçue pour production/process",
+    "boundary": "les NT, GAS et CT de chantier restent des aspirateurs professionnels mobiles ; ils ne sont pas des pairs automatiques des familles IVC/IVR/S3/VHO"
+  },
+  "scope": {
+    "selection_rule": "références représentatives choisies pour couvrir les décisions qui changent réellement le choix ; pas de census exhaustif ni de ranking universel",
+    "candidates": [
+      {
+        "id": "karcher-ivc60m",
+        "name": "Kärcher IVC 60/24-2 Tact² M",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Nettoyage mobile de machines et zones de production avec poussières M",
+        "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivc-60-24-2-tact2-m-15761050.html"
+      },
+      {
+        "id": "karcher-ivr60m",
+        "name": "Kärcher IVR 60/30 Sc M ACD",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Fonctionnement continu / process en triphasé",
+        "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivr-60-30-sc-m-acd-99906430.html"
+      },
+      {
+        "id": "nilfisk-s3-l100",
+        "name": "Nilfisk S3 L100 LC",
+        "brand": "Nilfisk",
+        "status": "ELIGIBLE",
+        "role": "Poussières dangereuses avec famille industrielle configurable",
+        "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/s3-l100-lc%2B4010300177/"
+      },
+      {
+        "id": "nilfisk-vho200",
+        "name": "Nilfisk VHO200",
+        "brand": "Nilfisk",
+        "status": "ELIGIBLE",
+        "role": "Huiles, liquides et copeaux",
+        "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/huile-et-copeaux/vho200%2B4010400037/"
+      }
+    ],
+    "major_exclusions": [
+      {
+        "name": "Kärcher NT 50/1 Tact Te M ACD",
+        "reason": "grande capacité professionnelle, mais gamme NT eau/poussière de chantier distincte des familles industrielles IVC/IVR"
+      },
+      {
+        "name": "Bosch GAS 55 M AFC",
+        "reason": "aspirateur de chantier classe M grande cuve ; ne représente pas à lui seul l’intention process/industrielle"
+      }
+    ]
   },
   "product_universe": [
     {
-      "id": "karcher-nt50m",
-      "name": "Kärcher NT 50/1 Tact Te M ACD",
+      "id": "karcher-ivc60m",
+      "name": "Kärcher IVC 60/24-2 Tact² M",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Nettoyage mobile de machines et zones de production avec poussières M",
+      "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivc-60-24-2-tact2-m-15761050.html"
     },
     {
-      "id": "karcher-nt30m",
-      "name": "Kärcher NT 30/1 Tact Te M ACD",
+      "id": "karcher-ivr60m",
+      "name": "Kärcher IVR 60/30 Sc M ACD",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Fonctionnement continu / process en triphasé",
+      "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivr-60-30-sc-m-acd-99906430.html"
     },
     {
-      "id": "bosch-gas35m",
-      "name": "Bosch Professional GAS 35 M AFC",
+      "id": "nilfisk-s3-l100",
+      "name": "Nilfisk S3 L100 LC",
+      "brand": "Nilfisk",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Poussières dangereuses avec famille industrielle configurable",
+      "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/s3-l100-lc%2B4010300177/"
+    },
+    {
+      "id": "nilfisk-vho200",
+      "name": "Nilfisk VHO200",
+      "brand": "Nilfisk",
+      "status": "ELIGIBLE",
+      "role": "Huiles, liquides et copeaux",
+      "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/huile-et-copeaux/vho200%2B4010400037/"
     }
   ],
   "criteria": [
     {
-      "id": "capacity",
-      "label": "Capacité et vidange",
-      "weight": 25,
-      "hard_gate": true,
-      "hard_gate_min": 5,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur industriel chantier."
+      "id": "process",
+      "label": "Type de process et matière"
     },
     {
-      "id": "endurance",
-      "label": "Décolmatage et endurance",
-      "weight": 25,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur industriel chantier."
+      "id": "duty",
+      "label": "Cycle de service / continu"
     },
     {
-      "id": "safety",
-      "label": "Classe M et filtration",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur industriel chantier."
+      "id": "power",
+      "label": "Alimentation mono ou triphasée"
     },
     {
-      "id": "suction",
-      "label": "Aspiration",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur industriel chantier."
+      "id": "dust",
+      "label": "Classe/filtration documentée"
     },
     {
-      "id": "handling",
-      "label": "Manutention",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur industriel chantier."
+      "id": "emptying",
+      "label": "Vidage et collecte"
     }
   ],
   "evidence": [
     {
-      "product": "karcher-nt50m",
-      "criterion": "product_identity",
-      "claim": "classe M, ACD, 50 L, 74 l/s, 273 mbar, Tact automatique, flexible de vidange, 19 kg",
-      "value": "classe M, ACD, 50 L, 74 l/s, 273 mbar, Tact automatique, flexible de vidange, 19 kg",
-      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-50-1-tact-te-m-acd-11484350.html",
-      "source_date": "2026-09-08",
+      "product": "karcher-ivc60m",
+      "criterion": "product_identity_and_role",
+      "claim": "Alimentation : 220–240 V monophasé · Puissance : 2,4 kW · Classe : M · Débit : 148 L/s · Dépression : 254 mbar · Cuve : 60 L inox",
+      "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivc-60-24-2-tact2-m-15761050.html",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "karcher-nt30m",
-      "criterion": "product_identity",
-      "claim": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
-      "value": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
-      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html",
-      "source_date": "2026-09-08",
+      "product": "karcher-ivr60m",
+      "criterion": "product_identity_and_role",
+      "claim": "Alimentation : 400 V triphasé · Puissance : 3 kW · Classe : M · Débit : 88 L/s · Dépression : 260 mbar · Cuve : 60 L acier",
+      "source": "https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivr-60-30-sc-m-acd-99906430.html",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "bosch-gas35m",
-      "criterion": "product_identity",
-      "claim": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
-      "value": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
-      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
-      "source_date": "2026-09-08",
+      "product": "nilfisk-s3-l100",
+      "criterion": "product_identity_and_role",
+      "claim": "Type : Aspirateur industriel monophasé · Puissance : 3 kW · Filtration : Versions certifiées L/M/H · Nettoyage du filtre : Secouage manuel ou électrique · Option : HEPA 14 disponible",
+      "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/s3-l100-lc%2B4010300177/",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "nilfisk-vho200",
+      "criterion": "product_identity_and_role",
+      "claim": "Usage : Collecte d’huile, liquides et copeaux · Capacité liquides : 75 L · Séparation : Panier à copeaux · Vidange : Vanne de répartition / soufflage · Option : Filtre brouillard d’huile",
+      "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/huile-et-copeaux/vho200%2B4010400037/",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     }
   ],
-  "scores": {
-    "karcher-nt50m": {
-      "capacity": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 50/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 50/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "safety": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 50/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 50/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "handling": {
-        "score": 6,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 50/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "karcher-nt30m": {
-      "capacity": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "safety": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "handling": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "bosch-gas35m": {
-      "capacity": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "safety": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "handling": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur industriel chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    }
-  },
-  "ranking": [
+  "recommendation_logic": [
     {
-      "product_id": "karcher-nt50m",
-      "raw_score": 92.5,
-      "confidence_adjusted_score": 87.4,
-      "hard_gate_failed": false
+      "scenario": "Nettoyage mobile de machines et zones de production avec poussières M",
+      "product_id": "karcher-ivc60m",
+      "why": "Monophasé, 60 L, Tact² automatique et vraie architecture industrielle mobile.",
+      "main_tradeoff": "60 kg : ce n’est déjà plus un aspirateur de chantier à déplacer dans des escaliers."
     },
     {
-      "product_id": "karcher-nt30m",
-      "raw_score": 90.5,
-      "confidence_adjusted_score": 84.95,
-      "hard_gate_failed": false
+      "scenario": "Fonctionnement continu / process en triphasé",
+      "product_id": "karcher-ivr60m",
+      "why": "Moteur triphasé, compresseur à canal latéral et usage continu en trois-huit.",
+      "main_tradeoff": "142 kg et 400 V : logique d’installation/process, pas de mobilité chantier classique."
     },
     {
-      "product_id": "bosch-gas35m",
-      "raw_score": 86.5,
-      "confidence_adjusted_score": 81.33,
-      "hard_gate_failed": false
+      "scenario": "Poussières dangereuses avec famille industrielle configurable",
+      "product_id": "nilfisk-s3-l100",
+      "why": "Famille industrielle monophasée avec versions L/M/H et options de filtration.",
+      "main_tradeoff": "La configuration exacte doit être vérifiée : une famille L/M/H ne signifie pas qu’une même référence couvre toutes les classes."
+    },
+    {
+      "scenario": "Huiles, liquides et copeaux",
+      "product_id": "nilfisk-vho200",
+      "why": "Architecture dédiée à la séparation liquides/copeaux et à la vidange de 75 L.",
+      "main_tradeoff": "Ce profil n’est pas un aspirateur de poussières fines de sécurité et ne doit pas être comparé comme tel."
     }
   ],
+  "measurement_notes": [],
   "notes": {
-    "total_solution_cost_required": false,
+    "scoring_used": false,
     "affiliate_commission_used_in_ranking": false,
-    "desk_research_only": true
+    "desk_research_only": true,
+    "noindex_during_rollout": true,
+    "hands_on_test": false
   }
 }
