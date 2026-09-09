@@ -62,13 +62,59 @@ for slug in USAGES:
     check('<meta name="robots" content="noindex, follow">' in h, f'{slug}: robots changed')
 
 # Professional intent must stay broader than the dedicated class-M comparison.
-professional = (BASE / 'comparatifs' / 'aspirateur-professionnel' / 'index.html').read_text(encoding='utf-8')
-check('<h2 id="frontiere">Professionnel ne veut pas dire automatiquement classe M</h2>' in professional, 'professional comparison: intent boundary missing')
-check('<h2 id="profils">Quatre profils professionnels à distinguer</h2>' in professional, 'professional comparison: scenario profiles missing')
-check('/comparatifs/aspirateur-classe-m/' in professional, 'professional comparison: class-M handoff missing')
-check('critère éliminatoire' not in professional, 'professional comparison: stale universal hard gate remains')
-check('Bosch Professional GAS 18V-10 L' in professional and 'Makita VC4210MX' in professional, 'professional comparison: profile diversity missing')
-check('<meta name="robots" content="noindex, follow">' in professional, 'professional comparison: robots changed')
+# Validate semantic decisions rather than freezing exact H2 wording or a fixed
+# number of scenarios. The comparison workflow explicitly prohibits structural
+# templates for sibling pages.
+professional_path = BASE / 'comparatifs' / 'aspirateur-professionnel' / 'index.html'
+professional = professional_path.read_text(encoding='utf-8')
+professional_text = re.sub(r'<[^>]+>', ' ', professional)
+professional_text = re.sub(r'\s+', ' ', professional_text).lower()
+
+check('id="frontiere"' in professional, 'professional comparison: intent-boundary section missing')
+check(
+    ('professionnel' in professional_text and 'classe m' in professional_text and
+     ('ne sont pas synonymes' in professional_text or 'ne veut pas dire automatiquement' in professional_text)),
+    'professional comparison: professional-vs-class-M distinction missing'
+)
+check('id="raccourci"' in professional or 'id="profils"' in professional,
+      'professional comparison: scenario decision section missing')
+check('/comparatifs/aspirateur-classe-m/' in professional,
+      'professional comparison: class-M handoff missing')
+check('critère éliminatoire' not in professional_text,
+      'professional comparison: stale universal hard gate remains')
+
+# Require multiple genuinely different professional scenarios instead of the old
+# exact four-profile template. This also catches a regression toward a class-M-only list.
+scenario_markers = [
+    'interventions sans prise',
+    'classe l simple avec outil filaire',
+    'classe l compacte / parc festool',
+    'classe m polyvalente autour de 35 l',
+    'classe m avec tact, antistatique et acd',
+    'classe m gros volume',
+]
+scenario_hits = sum(marker in professional_text for marker in scenario_markers)
+check(scenario_hits >= 4, f'professional comparison: insufficient scenario diversity ({scenario_hits}/6 markers)')
+
+brand_markers = ['bosch professional', 'makita', 'festool', 'kärcher']
+brand_hits = sum(marker in professional_text for marker in brand_markers)
+check(brand_hits >= 3, f'professional comparison: insufficient cross-brand diversity ({brand_hits}/4 brands)')
+check('<meta name="robots" content="noindex, follow">' in professional,
+      'professional comparison: robots changed')
+
+# If a method ledger exists, it must reflect the scenario-led page and must not
+# silently reintroduce the legacy universal class-M scoring model.
+ledger_path = BASE / '.content' / 'comparisons' / 'aspirateur-professionnel.json'
+check(ledger_path.exists(), 'professional comparison: evidence ledger missing')
+if ledger_path.exists():
+    ledger = json.loads(ledger_path.read_text(encoding='utf-8'))
+    notes = ledger.get('notes', {})
+    candidates = ledger.get('product_universe') or ledger.get('scope', {}).get('candidates', [])
+    check(len(candidates) >= 4, 'professional comparison: ledger candidate scope too narrow')
+    check(notes.get('affiliate_commission_used_in_ranking') is False,
+          'professional comparison: affiliate independence not documented')
+    check(not ledger.get('scores'), 'professional comparison: legacy scores unexpectedly restored')
+    check(not ledger.get('ranking'), 'professional comparison: legacy ranking unexpectedly restored')
 
 # The cluster audit concerns the /marques/ hub content, not the global navigation
 # shell that is still shared site-wide. Validate only the hub's <main> region.
@@ -100,6 +146,7 @@ if errors:
 print('CLUSTER_ROLLOUT: PASS')
 print(f' - {len(MODELS)} model pages verified')
 print(f' - {len(USAGES)} usage pages completed')
-print(' - professional vs class-M intent boundary verified')
+print(' - professional vs class-M intent boundary verified without a fixed heading template')
+print(' - professional scenario diversity and method-neutral ledger verified')
 print(' - brand recovery verdicts aligned with pre-rollout cluster audit')
 print(' - noindex, follow preserved')
