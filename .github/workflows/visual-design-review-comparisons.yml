@@ -6,6 +6,10 @@ on:
     paths:
       - "comparatifs/**"
       - "style.css"
+      - "comparison-pages.css"
+      - "comparison-pages.js"
+      - "_apply_comparison_design.py"
+      - "_generate_comparison_content.py"
       - "DESIGN.md"
       - ".agents/skills/site-design-review/**"
       - "package.json"
@@ -16,6 +20,10 @@ on:
     paths:
       - "comparatifs/**"
       - "style.css"
+      - "comparison-pages.css"
+      - "comparison-pages.js"
+      - "_apply_comparison_design.py"
+      - "_generate_comparison_content.py"
       - "DESIGN.md"
       - ".agents/skills/site-design-review/**"
       - "package.json"
