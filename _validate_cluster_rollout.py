@@ -68,9 +68,8 @@ main_match = re.search(r'<main>.*?</main>', brand_index, flags=re.S)
 check(main_match is not None, 'brand index: main region missing')
 brand_main = main_match.group(0) if main_match else ''
 check('Tier 1' not in brand_main and 'Tier 2' not in brand_main, 'brand index: unsupported tiers remain in hub content')
-for needle in ['DCV586M','PWD 12 à 30','DEXOS','Buddy / Multi','Home &amp; Garden']:
-    encoded = needle.replace('&', '&amp;')
-    check(needle in brand_main or encoded in brand_main, f'brand index: missing current family {needle}')
+for needle in ['DCV586M','PWD 12 à 30','DEXOS','Buddy / Multi','GAS Professional','AMPShare']:
+    check(needle in brand_main, f'brand index: missing current family {needle}')
 
 expected = {
  'bosch':'KEEP','karcher':'DEEP_REWRITE','festool':'DEEP_REWRITE','makita':'DEEP_REWRITE',
