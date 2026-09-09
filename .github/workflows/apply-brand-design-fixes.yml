@@ -1,0 +1,57 @@
+name: Apply brand design fixes
+
+on:
+  push:
+    branches: [fix-brand-design-review]
+    paths:
+      - '_apply_brand_design_fixes.py'
+      - '_generate_brand_content.py'
+      - 'brand-pages.css'
+      - 'brand-pages.js'
+      - '.github/workflows/apply-brand-design-fixes.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix-brand-design-review
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate brands canonically
+        run: python _generate_brand_content.py
+      - name: Validate brand machine integrity
+        run: python _validate_brands.py
+      - name: Validate design layer
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          routes = [Path('marques/index.html')] + [Path('marques') / s / 'index.html' for s in ['bosch','karcher','makita','festool','dewalt','parkside','nilfisk','mirka']]
+          for p in routes:
+              t = p.read_text(encoding='utf-8')
+              assert 'class="brand-page"' in t, p
+              assert '/brand-pages.css' in t, p
+              assert '/brand-pages.js' in t, p
+          for p in routes[1:]:
+              assert 'brand-decision-module' in p.read_text(encoding='utf-8'), p
+          print('brand design layer OK')
+          PY
+      - name: Check whitespace
+        run: git diff --check
+      - name: Commit generated brand pages
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "Brand pages already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add marques .content/brands
+          git commit -m "Render brand design fixes"
+          git push origin HEAD:fix-brand-design-review
