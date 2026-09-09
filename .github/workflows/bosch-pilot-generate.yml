@@ -1,0 +1,66 @@
+name: Generate Bosch pilot
+
+on:
+  push:
+    branches:
+      - bosch-brand-pilot-80-20
+    paths:
+      - "_generate_bosch.py"
+      - ".github/workflows/bosch-pilot-generate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-validate-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: bosch-brand-pilot-80-20
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild generic brand sources
+        run: python _generate_brands.py
+
+      - name: Apply bespoke Bosch override
+        run: python _generate_bosch.py
+
+      - name: Validate shared skill stack
+        run: python validate_brand_skill_stack.py
+
+      - name: Validate brand machine integrity
+        run: python _validate_brands.py
+
+      - name: Verify Bosch override is idempotent
+        run: |
+          before=$(sha256sum marques/bosch/index.html .content/brands/bosch.yaml | sha256sum)
+          python _generate_bosch.py >/tmp/bosch-regenerate.log
+          after=$(sha256sum marques/bosch/index.html .content/brands/bosch.yaml | sha256sum)
+          test "$before" = "$after"
+
+      - name: Preserve draft noindex
+        run: grep -q '<meta name="robots" content="noindex, follow">' marques/bosch/index.html
+
+      - name: Check bespoke headings
+        run: |
+          grep -q 'id="univers-bosch"' marques/bosch/index.html
+          grep -q 'id="deux-systemes-18v"' marques/bosch/index.html
+          ! grep -q 'id="forces"' marques/bosch/index.html
+
+      - name: Commit generated Bosch artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add marques/bosch/index.html .content/brands/bosch.yaml
+          if git diff --cached --quiet; then
+            echo "No Bosch artifact changes to commit."
+          else
+            git commit -m "Generate bespoke Bosch brand pilot"
+            git push origin HEAD:bosch-brand-pilot-80-20
+          fi
