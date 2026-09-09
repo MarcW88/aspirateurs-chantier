@@ -8,6 +8,7 @@ on:
       - '_generate_guides.py'
       - '_guide_quality_supplements.py'
       - '_normalize_guide_answers.py'
+      - '_guide_classes_lmh_pilot.py'
       - 'guides/**'
       - 'content-workflow.config.yaml'
       - '.agents/skills/content-recovery-and-production-workflow/**'
@@ -38,6 +39,9 @@ jobs:
 
       - name: Normalize answer-first blocks
         run: python _normalize_guide_answers.py
+
+      - name: Apply evidence-led guide overrides
+        run: python _guide_classes_lmh_pilot.py
 
       - name: Structural quality gate
         run: >-
