@@ -17,7 +17,23 @@ const BRAND_ROUTES = [
   '/marques/mirka/'
 ];
 
-const SCOPES = { brands: BRAND_ROUTES };
+const COMPARISON_ROUTES = [
+  '/comparatifs/',
+  '/comparatifs/meilleur-aspirateur-de-chantier/',
+  '/comparatifs/aspirateur-eau-poussiere/',
+  '/comparatifs/aspirateur-chantier-sans-fil/',
+  '/comparatifs/aspirateur-chantier-sans-sac/',
+  '/comparatifs/aspirateur-chantier-puissant/',
+  '/comparatifs/aspirateur-professionnel/',
+  '/comparatifs/aspirateur-industriel/',
+  '/comparatifs/aspirateur-classe-m/',
+  '/comparatifs/petit-aspirateur-de-chantier/'
+];
+
+const SCOPES = {
+  brands: BRAND_ROUTES,
+  comparisons: COMPARISON_ROUTES
+};
 
 const VIEWPORTS = [
   { name: 'desktop', width: 1440, height: 1000 },
@@ -46,7 +62,7 @@ function parseArgs(argv) {
   }
 
   if (options.scope && !SCOPES[options.scope]) {
-    throw new Error(`Scope inconnu : ${options.scope}. Scope disponible : brands`);
+    throw new Error(`Scope inconnu : ${options.scope}. Scopes disponibles : ${Object.keys(SCOPES).join(', ')}`);
   }
   if (!options.routes.length && options.scope) options.routes = SCOPES[options.scope];
   if (!options.routes.length) options.routes = BRAND_ROUTES;
@@ -70,7 +86,7 @@ async function waitForServer(url) {
 
 const options = parseArgs(process.argv.slice(2));
 if (options.help) {
-  console.log('Usage: run-visual-review.mjs [--scope brands] [--route /chemin/] [--base-url URL] [--output dossier] [--port 4173]');
+  console.log('Usage: run-visual-review.mjs [--scope brands|comparisons] [--route /chemin/] [--base-url URL] [--output dossier] [--port 4173]');
   process.exit(0);
 }
 
@@ -193,19 +209,21 @@ try {
 
       let interaction = {};
       if (route === options.routes[0] && viewport.name === 'desktop') {
-        const marquesNav = page.locator('.nav-item').filter({ has: page.locator('a.nav-link', { hasText: 'Marques' }) }).first();
-        if (await marquesNav.count()) {
-          await marquesNav.hover();
+        const navLabel = options.scope === 'comparisons' ? 'Comparatifs' : 'Marques';
+        const navItem = page.locator('.nav-item').filter({ has: page.locator('a.nav-link', { hasText: navLabel }) }).first();
+        if (await navItem.count()) {
+          await navItem.hover();
           await page.screenshot({
-            path: path.join(viewportFolder, `${slug(route)}--brands-menu-open.png`),
+            path: path.join(viewportFolder, `${slug(route)}--nav-menu-open.png`),
             fullPage: false,
             animations: 'disabled'
           });
-          interaction.desktopBrandMenuVisible = await marquesNav.locator('.dropdown').evaluate(element => {
+          interaction.desktopSectionMenuVisible = await navItem.locator('.dropdown').evaluate(element => {
             const style = getComputedStyle(element);
             const rect = element.getBoundingClientRect();
             return style.visibility !== 'hidden' && style.opacity !== '0' && rect.width > 0 && rect.height > 0;
           });
+          if (options.scope === 'brands') interaction.desktopBrandMenuVisible = interaction.desktopSectionMenuVisible;
         }
       }
 
