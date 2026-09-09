@@ -60,13 +60,23 @@
     });
 
     const ensureHandoff = () => {
-      if (!sidebarCta || mobileHandoff) return;
+      if (mobileHandoff) return;
       mobileHandoff = document.createElement('div');
       mobileHandoff.className = 'comparison-mobile-handoff';
       const copy = document.createElement('span');
       copy.textContent = 'Besoin de passer du comparatif au choix concret ?';
-      const link = sidebarCta.cloneNode(true);
-      link.removeAttribute('style');
+
+      let link;
+      if (sidebarCta) {
+        link = sidebarCta.cloneNode(true);
+        link.removeAttribute('style');
+      } else {
+        link = document.createElement('a');
+        link.href = '/guides/comment-choisir-aspirateur-de-chantier/';
+        link.className = 'btn btn-outline btn-sm';
+        link.textContent = 'Voir le guide de choix';
+      }
+
       mobileHandoff.append(copy, link);
       article.insertBefore(mobileHandoff, article.firstChild);
     };
