@@ -5,7 +5,8 @@ Order matters:
 1. legacy generator provides the shared HTML shell and keeps backwards compatibility;
 2. the professional pilot override restores its scenario-led source of truth;
 3. the audited 8-page override replaces legacy scoring output with intent-specific bodies;
-4. whitespace and machine-integrity QA run on the final canonical artifacts.
+4. small editorial polish removes stale legacy wording before QA;
+5. whitespace and machine-integrity QA run on the final canonical artifacts.
 """
 from pathlib import Path
 import subprocess
@@ -25,6 +26,7 @@ def main():
     run("_generate_comparatifs.py")
     run("_generate_professional_comparison_override.py")
     run("_generate_comparison_overrides.py")
+    run("_polish_comparison_rollout.py")
     run("_normalize_comparatifs.py")
     run("_validate_comparatifs.py")
     run("_validate_comparison_rollout.py")
