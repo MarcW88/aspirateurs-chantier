@@ -7,6 +7,8 @@ on:
     paths:
       - "marques/**"
       - "style.css"
+      - "brand-pages.css"
+      - "brand-pages.js"
       - "DESIGN.md"
       - ".agents/skills/site-design-review/**"
       - "package.json"
@@ -16,6 +18,8 @@ on:
     paths:
       - "marques/**"
       - "style.css"
+      - "brand-pages.css"
+      - "brand-pages.js"
       - "DESIGN.md"
       - ".agents/skills/site-design-review/**"
       - "package.json"
@@ -47,6 +51,11 @@ jobs:
           node .agents/skills/site-design-review/scripts/run-visual-review.mjs
           --scope brands
           --output .artifacts/design-review/brands
+
+      - name: Validate visual regressions
+        run: >-
+          node .agents/skills/site-design-review/scripts/validate-brand-visual-report.mjs
+          .artifacts/design-review/brands/report.json
 
       - name: Upload brand visual review
         if: always()
