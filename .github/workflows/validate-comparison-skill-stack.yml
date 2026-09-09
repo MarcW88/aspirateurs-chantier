@@ -9,6 +9,9 @@ on:
       - "comparison-workflow.config.yaml"
       - ".agents/skills/**"
       - "_validate_comparatifs.py"
+      - "_generate_professional_comparison_override.py"
+      - ".content/comparisons/**"
+      - "comparatifs/**"
       - ".github/workflows/validate-comparison-skill-stack.yml"
   push:
     branches:
@@ -18,6 +21,9 @@ on:
       - "comparison-workflow.config.yaml"
       - ".agents/skills/**"
       - "_validate_comparatifs.py"
+      - "_generate_professional_comparison_override.py"
+      - ".content/comparisons/**"
+      - "comparatifs/**"
       - ".github/workflows/validate-comparison-skill-stack.yml"
   workflow_dispatch:
 
@@ -34,6 +40,10 @@ jobs:
           python-version: "3.12"
       - name: Validate shared/custom comparison ratio and required skills
         run: python validate_comparison_skill_stack.py
+      - name: Smoke-test bespoke comparison overrides
+        run: |
+          python -m py_compile _generate_professional_comparison_override.py
+          python _generate_professional_comparison_override.py
       - name: Validate current comparison machine integrity
         run: python _validate_comparatifs.py
       - name: Validate existing comparison data files
