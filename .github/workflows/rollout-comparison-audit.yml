@@ -25,7 +25,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Normalize Python None literals from connector serialization
-        run: sed -i 's/"local": null/"local": None/g' _generate_comparison_overrides.py
+        run: |
+          sed -i 's/"local": null/"local": None/g' _generate_comparison_overrides.py
       - name: Compile rollout code
         run: |
           python -m py_compile _generate_comparison_overrides.py
