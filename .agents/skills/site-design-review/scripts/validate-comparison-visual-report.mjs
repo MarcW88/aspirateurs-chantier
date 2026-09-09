@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 const reportPath = process.argv[2] || '.artifacts/design-review/comparisons/report.json';
 const report = JSON.parse(await readFile(reportPath, 'utf8'));
 const failures = [];
+const ARTICLE_ROUTES = report.routes.filter(route => route !== '/comparatifs/');
 
 for (const page of report.pages) {
   const label = `${page.viewport} ${page.route}`;
@@ -14,6 +15,15 @@ for (const page of report.pages) {
   if (page.consoleErrors?.length) failures.push(`${label}: console errors`);
   if (page.pageErrors?.length) failures.push(`${label}: page errors`);
   if (page.tables?.some(table => !table.hasExpectedWrapper)) failures.push(`${label}: table without responsive wrapper`);
+  if (ARTICLE_ROUTES.includes(page.route) && page.decisionModuleCount !== 1) failures.push(`${label}: expected exactly one intent-specific decision module`);
+
+  const outlinePx = Number.parseFloat(page.focus?.outlineWidth || '0');
+  if (page.focus && (!Number.isFinite(outlinePx) || outlinePx < 2)) failures.push(`${label}: focus outline is not visibly reinforced`);
+
+  if (page.viewport === 'mobile' && ARTICLE_ROUTES.includes(page.route)) {
+    if (page.tocBeforeArticle !== true) failures.push(`${label}: TOC is not before article on mobile`);
+    if (page.mobileHandoffCount !== 1) failures.push(`${label}: expected one mobile handoff before long-form content`);
+  }
 }
 
 const mobileHub = report.pages.find(page => page.viewport === 'mobile' && page.route === '/comparatifs/');
