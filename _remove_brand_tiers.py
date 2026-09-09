@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Remove unsupported Tier 1 / Tier 2 labels from the shared brand navigation.
+"""Remove unsupported Tier 1 / Tier 2 terminology from brand surfaces.
 
 Default mode applies the migration to the navigation source and every committed
-HTML page. Use --check in CI to fail if an old tier label is reintroduced.
+HTML page. Use --check in CI to fail if the old tier concept is reintroduced.
 """
 from pathlib import Path
 import argparse
@@ -11,6 +11,15 @@ import re
 BASE = Path(__file__).resolve().parent
 SOURCE = BASE / "_generate.py"
 FORBIDDEN = ("Tier 1", "Tier 2")
+OLD_HUB_INTRO = (
+    "Tier 1 : Kärcher, Bosch, Makita, Festool — fabricants avec gammes complètes "
+    "et SAV établi. Tier 2 : DeWalt, Parkside, Nilfisk, Mirka."
+)
+NEW_HUB_INTRO = (
+    "Kärcher, Bosch, Makita, Festool, DeWalt, Parkside, Nilfisk et Mirka : "
+    "huit univers de gamme à comparer selon l’usage, les classes, les outils "
+    "et l’écosystème."
+)
 
 
 def targets():
@@ -21,8 +30,8 @@ def targets():
 
 
 def migrate(text: str) -> str:
-    # Different generators historically produced slightly different indentation,
-    # so the migration is intentionally whitespace-agnostic.
+    # Navigation labels. Different generators produced slightly different
+    # indentation, so the migration is intentionally whitespace-agnostic.
     text = re.sub(
         r'[ \t]*<span class="dd-label">Tier 1</span>[ \t]*(?:\r?\n)?',
         '',
@@ -39,6 +48,16 @@ def migrate(text: str) -> str:
         '',
         text,
     )
+
+    # Homepage brand cards: keep the useful family information, remove the
+    # unsupported hierarchy.
+    text = text.replace("Tier 1 · ", "")
+    text = text.replace("Tier 2 · ", "")
+
+    # Legacy /marques/ generator copy: replace the ranking language with the
+    # audited role of the hub.
+    text = text.replace(OLD_HUB_INTRO, NEW_HUB_INTRO)
+
     return text
 
 
@@ -73,12 +92,12 @@ def main():
 
     bad = violations()
     if bad:
-        print("GLOBAL_NAV: FAIL")
+        print("BRAND_TIER_GUARD: FAIL")
         for path, hits in bad:
             print(f" - {path}: {', '.join(hits)}")
         raise SystemExit(1)
 
-    print("GLOBAL_NAV: PASS — no Tier 1 / Tier 2 labels remain")
+    print("BRAND_TIER_GUARD: PASS — no Tier 1 / Tier 2 terminology remains")
 
 
 if __name__ == "__main__":
