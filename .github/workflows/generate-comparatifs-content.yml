@@ -6,9 +6,12 @@ on:
       - content/comparatifs-production-workflow
     paths:
       - "_generate_comparatifs.py"
+      - "_generate_professional_comparison_override.py"
       - "_normalize_comparatifs.py"
       - "_validate_comparatifs.py"
-      - ".agents/skills/comparison-content-workflow/**"
+      - "validate_comparison_skill_stack.py"
+      - "comparison-workflow.config.yaml"
+      - ".agents/skills/**"
       - ".github/workflows/generate-comparatifs-content.yml"
   workflow_dispatch:
 
@@ -21,18 +24,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: content/comparatifs-production-workflow
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      - name: Validate comparison skill governance
+        run: python validate_comparison_skill_stack.py
+
       - name: Align source verdicts before generation
         run: python _normalize_comparatifs.py
 
       - name: Generate comparison pages and data
         run: python _generate_comparatifs.py
+
+      - name: Apply comparison-specific overrides
+        run: |
+          if [ -f _generate_professional_comparison_override.py ]; then
+            python _generate_professional_comparison_override.py
+          fi
 
       - name: Restore guide content after site generator import
         run: |
@@ -43,17 +54,10 @@ jobs:
       - name: Normalize generated comparison HTML
         run: python _normalize_comparatifs.py
 
-      - name: Validate comparison methodology
+      - name: Validate comparison data present
         run: |
           for f in .content/comparisons/*.json; do
             python .agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py "$f"
-          done
-
-      - name: Recalculate rankings
-        run: |
-          for f in .content/comparisons/*.json; do
-            echo "== $f =="
-            python .agents/skills/comparison-content-workflow/scripts/score_comparison.py "$f"
           done
 
       - name: Structural and editorial safety gate
@@ -76,6 +80,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
           else
-            git commit -m "Generate 2026 comparison pages from auditable scoring"
-            git push origin HEAD:content/comparatifs-production-workflow
+            git commit -m "Generate comparison pages from evidence-led methodology"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

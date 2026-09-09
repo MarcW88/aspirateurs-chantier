@@ -1,0 +1,45 @@
+name: Validate comparison skill stack
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "validate_comparison_skill_stack.py"
+      - "comparison-workflow.config.yaml"
+      - ".agents/skills/**"
+      - "_validate_comparatifs.py"
+      - ".github/workflows/validate-comparison-skill-stack.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "validate_comparison_skill_stack.py"
+      - "comparison-workflow.config.yaml"
+      - ".agents/skills/**"
+      - "_validate_comparatifs.py"
+      - ".github/workflows/validate-comparison-skill-stack.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate shared/custom comparison ratio and required skills
+        run: python validate_comparison_skill_stack.py
+      - name: Validate current comparison machine integrity
+        run: python _validate_comparatifs.py
+      - name: Validate existing comparison data files
+        run: |
+          for f in .content/comparisons/*.json; do
+            python .agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py "$f"
+          done
+      - name: Whitespace check
+        run: git diff --check
