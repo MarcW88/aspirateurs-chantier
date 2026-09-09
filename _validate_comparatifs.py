@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Structural QA for generated comparison pages."""
+"""Machine-integrity QA for comparison pages.
+
+This validator deliberately does NOT enforce editorial quotas, scoring, ranking,
+weights, hard gates or a fixed article architecture. Those decisions belong to
+comparison-analysis-workflow / PUBLISH_REVIEW.
+"""
 from pathlib import Path
 import json
 import re
@@ -17,15 +22,53 @@ SLUGS = [
     "petit-aspirateur-de-chantier",
 ]
 
-def words(html):
+PLACEHOLDERS = (
+    "<!-- Contenu à rédiger -->",
+    "<!-- Contenu test à rédiger -->",
+    "MM/AAAA",
+    "TODO CONTENT",
+)
+
+# Positive first-hand claims only. Negative/disclosure statements such as
+# "nous n'avons pas testé" are intentionally excluded.
+FAKE_HANDS_ON_PATTERNS = [
+    r"\bnous avons test[ée]s?\b",
+    r"\blors de nos tests?\b",
+    r"\bapr[eè]s nos tests?\b",
+    r"\bnous l['’]avons utilis[ée]\b",
+    r"\bpendant notre test\b",
+]
+
+
+def plain_text(html):
     text = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html, flags=re.S | re.I)
-    text = re.sub(r"<[^>]+>", " ", text)
-    return re.findall(r"\b[\wÀ-ÿ'-]+\b", text)
+    return re.sub(r"<[^>]+>", " ", text)
+
+
+def heading_signature(html):
+    return tuple(
+        re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", value)).strip().lower()
+        for value in re.findall(r"<h2\b[^>]*>(.*?)</h2>", html, flags=re.S | re.I)
+    )
+
+
+def long_paragraphs(html):
+    values = []
+    for raw in re.findall(r"<p\b[^>]*>(.*?)</p>", html, flags=re.S | re.I):
+        text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", raw)).strip()
+        if len(text) >= 180:
+            values.append(text)
+    return values
+
 
 errors = []
+warnings = []
+html_by_slug = {}
+
 for slug in SLUGS:
     page = BASE / "comparatifs" / slug / "index.html"
     data = BASE / ".content" / "comparisons" / f"{slug}.json"
+
     if not page.exists():
         errors.append(f"{slug}: missing HTML")
         continue
@@ -34,30 +77,83 @@ for slug in SLUGS:
         continue
 
     html = page.read_text(encoding="utf-8")
-    obj = json.loads(data.read_text(encoding="utf-8"))
+    html_by_slug[slug] = html
 
-    checks = {
-        "minimum 1100 words": len(words(html)) >= 1100,
-        "minimum 6 H2": len(re.findall(r"<h2\b", html, flags=re.I)) >= 6,
-        "one answer box": len(re.findall(r'class="answer-box"', html)) == 1,
-        "minimum 5 internal links": len(re.findall(r'href="/', html)) >= 5,
-        "minimum 3 external sources": len(re.findall(r'href="https://', html)) >= 3,
-        "noindex preserved": 'name="robots" content="noindex, follow"' in html,
-        "2026 freshness": "2026" in html and "Comparatif 2025" not in html,
-        "no placeholders": "<!-- Contenu à rédiger -->" not in html and "MM/AAAA" not in html,
-        "desk research disclosure": "sans prétention de test physique" in html or "sans prétendre à un test physique" in html,
-        "affiliate independence": "commission" in html.lower() and obj.get("notes", {}).get("affiliate_commission_used_in_ranking") is False,
-        "ranking present": len(obj.get("ranking", [])) >= 3,
-        "weights sum 100": sum(c["weight"] for c in obj.get("criteria", [])) == 100,
-        "hard gate present": any(c.get("hard_gate") for c in obj.get("criteria", [])),
-    }
-    for label, ok in checks.items():
-        if not ok:
-            errors.append(f"{slug}: FAIL {label}")
-    print(f"{slug}: {len(words(html))} words, {len(re.findall(r'<h2\b', html, flags=re.I))} H2 — {'PASS' if all(checks.values()) else 'FAIL'}")
+    try:
+        obj = json.loads(data.read_text(encoding="utf-8"))
+    except Exception as exc:
+        errors.append(f"{slug}: invalid JSON ({exc})")
+        continue
+
+    expected_canonical = f'https://aspirateurs-chantier.fr/comparatifs/{slug}/'
+    canonical = re.search(r'<link\s+rel="canonical"\s+href="([^"]+)"', html, flags=re.I)
+    robots = re.search(r'<meta\s+name="robots"\s+content="([^"]+)"', html, flags=re.I)
+    h1_count = len(re.findall(r"<h1\b", html, flags=re.I))
+
+    if canonical is None or canonical.group(1) != expected_canonical:
+        errors.append(f"{slug}: canonical mismatch")
+    if robots is None or "noindex" not in robots.group(1).lower() or "follow" not in robots.group(1).lower():
+        errors.append(f"{slug}: draft robots must contain noindex, follow")
+    if h1_count != 1:
+        errors.append(f"{slug}: expected exactly one H1, got {h1_count}")
+    for placeholder in PLACEHOLDERS:
+        if placeholder.lower() in html.lower():
+            errors.append(f"{slug}: placeholder present: {placeholder}")
+
+    lower_text = plain_text(html).lower()
+    for pattern in FAKE_HANDS_ON_PATTERNS:
+        if re.search(pattern, lower_text, flags=re.I):
+            errors.append(f"{slug}: possible fake hands-on language: {pattern}")
+
+    if obj.get("slug") and obj["slug"] != slug:
+        errors.append(f"{slug}: JSON slug mismatch ({obj['slug']})")
+    expected_url = f"/comparatifs/{slug}/"
+    if obj.get("url") and obj["url"] != expected_url:
+        errors.append(f"{slug}: JSON url mismatch ({obj['url']})")
+
+    notes = obj.get("notes", {})
+    if notes.get("affiliate_commission_used_in_ranking") not in (None, False):
+        errors.append(f"{slug}: affiliate commission cannot influence recommendation/ranking")
+
+    # Warnings are useful review signals, not machine blockers.
+    if not re.search(r"<h2\b", html, flags=re.I):
+        warnings.append(f"{slug}: no H2 found")
+    if 'class="answer-box"' not in html:
+        warnings.append(f"{slug}: no answer-box; acceptable if the page has another strong opening")
+    if 'href="https://' not in html:
+        warnings.append(f"{slug}: no external source link found")
+    if not any(marker in lower_text for marker in ("analyse documentaire", "sans test physique", "sans prétendre à un test physique", "sans prétention de test physique")):
+        warnings.append(f"{slug}: no explicit desk-research disclosure detected")
+
+# Cluster-level anti-industrialisation warnings.
+signatures = {}
+for slug, html in html_by_slug.items():
+    sig = heading_signature(html)
+    if sig:
+        signatures.setdefault(sig, []).append(slug)
+for sig, slugs in signatures.items():
+    if len(slugs) >= 3:
+        warnings.append("identical H2 signature across >=3 comparisons: " + ", ".join(slugs))
+
+paragraph_usage = {}
+for slug, html in html_by_slug.items():
+    for paragraph in set(long_paragraphs(html)):
+        paragraph_usage.setdefault(paragraph, []).append(slug)
+for paragraph, slugs in paragraph_usage.items():
+    if len(slugs) >= 3:
+        warnings.append(
+            "identical long paragraph across >=3 comparisons: "
+            + ", ".join(slugs)
+            + f" :: {paragraph[:120]}…"
+        )
+
+for warning in warnings:
+    print("WARN", warning)
 
 if errors:
-    print("\n".join(errors))
+    for error in errors:
+        print("FAIL", error)
     raise SystemExit(1)
 
-print(f"PASS: {len(SLUGS)} comparison pages satisfy structural QA.")
+print(f"PASS: {len(SLUGS)} comparison pages satisfy machine-integrity QA.")
+print("NOTE: machine integrity is not editorial approval; run comparison-analysis-workflow / PUBLISH_REVIEW before human validation.")
