@@ -68,3 +68,35 @@ quality_gate:
   require_limit_section: true
   require_choose_avoid: true
   require_noindex_in_draft: true
+
+publish_gate:
+  skill: ".agents/skills/brand-editorial-publish-gate/SKILL.md"
+  scope:
+    - "/marques/"
+  current_page_types:
+    - DIRECTORY
+    - BRAND_HUB
+  architecture:
+    brand_directory: "/marques/"
+    brand_hubs: "/marques/<marque>/"
+    product_pages: "/modeles/"
+    comparisons: "/comparatifs/"
+    guides: "/guides/"
+    use_cases: "/usages/"
+  require_pass_before_indexing: true
+  require_human_validation_before_indexing: true
+  keep_noindex_on_fail: true
+  allow_automatic_rewrite_on_fail: false
+  output_dir: ".content/reviews"
+  domain_checks:
+    require_explicit_dust_class_evidence: true
+    distinguish_hepa_from_whole_vacuum_class_h: true
+    compare_airflow_and_vacuum_only_with_measurement_context: true
+    forbid_watts_as_direct_suction_proxy: true
+    distinguish_gross_net_and_liquid_capacity: true
+    verify_tool_socket_load_by_model_and_market: true
+    distinguish_filter_cleaning_modes: true
+    distinguish_acd_at_ex_and_zone_22: true
+    require_extra_care_for_hazardous_dust: true
+    require_current_model_and_market_status: true
+    hide_internal_status_codes_from_reader: true
