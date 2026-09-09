@@ -50,30 +50,19 @@ Une couche d'interaction dédiée aux comparatifs gère désormais :
 - retour du focus vers le burger ;
 - menu plein écran lisible sous le header.
 
-Le Playwright final confirme sur `/comparatifs/` :
-
-- `burgerAriaExpanded = true` après clic ;
-- navigation réellement visible après clic.
+Le Playwright final confirme sur `/comparatifs/` : `burgerAriaExpanded = true` et navigation réellement visible après clic.
 
 ### 2. Aucun overflow global sur mobile
 
 Les tableaux restent larges quand le contenu le nécessite, mais leur largeur est maintenant contenue dans `.table-wrap` / `.data-table-wrap` avec scroll horizontal local.
 
-Sur les 10 routes mobiles finales :
-
-- `clientWidth = 390 px` ;
-- `scrollWidth = 390 px` ;
-- `horizontalOverflow = false`.
+Sur les 10 routes mobiles finales : `clientWidth = 390 px`, `scrollWidth = 390 px` et `horizontalOverflow = false`.
 
 Cela corrige notamment les anciens dépassements de Classe M (+153 px) et Petit format (+165 px).
 
 ### 3. Sommaire mobile avant l'article
 
-Sur les 9 pages article, le sommaire est désormais déplacé avant le contenu à `max-width:1024px` et rendu repliable.
-
-Le gate vérifie explicitement `tocBeforeArticle = true` pour les 9 pages mobiles.
-
-Le sommaire redevient donc un outil de navigation au lieu d'apparaître après plusieurs milliers de pixels de lecture.
+Sur les 9 pages article, le sommaire est désormais déplacé avant le contenu à `max-width:1024px` et rendu repliable. Le gate vérifie explicitement `tocBeforeArticle = true` pour les 9 pages mobiles.
 
 ### 4. Tableaux plus scannables
 
@@ -115,15 +104,15 @@ Ces modules différencient les pages sans créer neuf thèmes graphiques ni ajou
 
 ### 7. Focus clavier
 
-Les comparatifs disposent maintenant d'un `:focus-visible` renforcé de `3 px`, cohérent avec la correction déjà utilisée sur les pages marques.
-
-Le gate Playwright vérifie que le premier élément interactif testé a un outline visible d'au moins `2 px` ; le run final mesure `3 px`.
+Les comparatifs disposent maintenant d'un `:focus-visible` renforcé de `3 px`, cohérent avec la correction déjà utilisée sur les pages marques. Le gate Playwright vérifie un outline d'au moins `2 px`.
 
 ## Résultat Playwright final
 
-`Visual design review — comparisons` : **SUCCESS**.
+`Visual design review — comparisons` : **SUCCESS** sur le premier head corrigé `669045da92e1abe72389802bce23583f060df1be`.
 
-Le gate final vérifie notamment :
+Le workflow permanent suit désormais aussi ce rapport ; une dernière exécution est déclenchée sur le head final de la PR avant fusion.
+
+Le gate vérifie notamment :
 
 - 20 page/viewports capturés ;
 - HTTP 200 ;
