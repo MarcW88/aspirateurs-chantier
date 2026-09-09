@@ -2,7 +2,7 @@
   "slug": "festool",
   "brand": "Festool",
   "page_type": "BRAND_HUB",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
   "entity_map": {
     "brand": "Festool",
     "products": [
@@ -158,6 +158,10 @@
   "editorial": {
     "desk_research_only": true,
     "affiliate_influence": false,
-    "human_validation_required": true
-  }
+    "human_validation_required": true,
+    "publish_review": "READY_FOR_HUMAN_VALIDATION"
+  },
+  "source_of_truth": "_generate_brand_overrides.py",
+  "structure_strategy": "bespoke_system_workflow_ctl_ctm_cth_autoclean",
+  "recovery_verdict": "MAJOR"
 }
