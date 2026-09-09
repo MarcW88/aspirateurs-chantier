@@ -18,12 +18,12 @@ L'identité doit évoquer l'atelier et le chantier par la précision des donnée
 
 Le lecteur peut être un bricoleur avancé, un artisan ou un professionnel qui cherche à comprendre une gamme, une classe de poussière, un système de décolmatage, une compatibilité outil ou un compromis mobilité/capacité.
 
-Sur une page marque, l'interface doit l'aider à :
+Sur une page éditoriale, l'interface doit l'aider à :
 
-1. comprendre rapidement le positionnement réel de la marque ;
-2. distinguer ses familles de produits et technologies ;
-3. identifier les critères qui changent réellement la décision ;
-4. poursuivre vers une fiche modèle, un comparatif ou un guide lorsque la question devient plus précise.
+1. comprendre rapidement l'angle de décision ;
+2. distinguer les familles, profils ou technologies qui changent réellement le choix ;
+3. lire les preuves, limites et données techniques sans fausse précision ;
+4. poursuivre vers une fiche modèle, un comparatif spécialisé, un usage ou un guide lorsque la question devient plus précise.
 
 ## Principes visuels
 
@@ -31,7 +31,7 @@ Sur une page marque, l'interface doit l'aider à :
 - Information dense mais hiérarchisée ; éviter les grands vides artificiels.
 - Les tableaux, classes L/M/H et valeurs techniques doivent être lisibles avant d'être décoratifs.
 - Les composants doivent soutenir la lecture : answer box, tableaux, sommaire, sources et liens associés.
-- Les pages marques peuvent partager un système visuel, mais ne doivent pas paraître être le même template avec un logo différent.
+- Les pages d'un même cluster peuvent partager un système visuel, mais ne doivent pas paraître être le même template avec un titre différent.
 - Les appels commerciaux restent secondaires par rapport au raisonnement éditorial.
 - Responsive conçu pour la lecture de données : reflow des blocs et scroll contrôlé des tableaux.
 
@@ -65,6 +65,21 @@ Une page marque peut utiliser, lorsque le contenu le justifie :
 
 L'absence d'une carte ou d'un tableau n'est pas un défaut si la structure éditoriale fonctionne mieux sans.
 
+## Pages comparatifs : composants attendus
+
+Une page comparatif doit aider à arbitrer, pas seulement empiler des fiches produits. Elle peut utiliser :
+
+- un hero éditorial compact avec l'intention et la date de vérification ;
+- une `answer-box` qui pose immédiatement la règle de décision ;
+- un module de décision propre à l'intention lorsque plusieurs axes doivent être compris avant le tableau ;
+- un tableau comparatif dans un wrapper scrollable lorsque les colonnes sont réellement utiles ;
+- une indication de scroll sur mobile lorsque le tableau dépasse le viewport ;
+- un sommaire latéral sticky sur desktop et repliable avant l'article sur tablette/mobile ;
+- un handoff mobile avant la lecture longue, éditorial si aucun CTA existant n'est pertinent ;
+- des sources et limites aussi visibles que les recommandations.
+
+Un comparatif ne doit pas transformer un score arbitraire en élément visuel dominant. Les modules de décision doivent refléter l'intention de la page : classe, mobilité, mesure, process, collecte ou encombrement selon le cas.
+
 ## Règles anti-design générique / IA
 
 Éviter notamment :
@@ -79,7 +94,7 @@ L'absence d'une carte ou d'un tableau n'est pas un défaut si la structure édit
 - les barres de score ou notes pseudo-scientifiques sans méthode ;
 - les faux badges de confiance ou d'urgence ;
 - la répétition agressive de boutons d'achat ;
-- des blocs « avantages / inconvénients » identiques sur toutes les marques lorsqu'ils ne servent pas l'intention ;
+- des blocs « avantages / inconvénients » identiques sur toutes les pages lorsqu'ils ne servent pas l'intention ;
 - une interface qui mime un tableau de bord alors que la page est éditoriale.
 
 Ne jamais affirmer qu'un design a été généré par IA. On peut signaler une accumulation de conventions génériques fréquemment observées dans des interfaces générées ou assemblées automatiquement.
@@ -101,17 +116,18 @@ Ne jamais affirmer qu'un design a été généré par IA. On peut signaler une a
 - Un bouton burger sans menu fonctionnel est un défaut bloquant de navigation mobile.
 - Les tableaux larges doivent rester utilisables sans créer de débordement horizontal de toute la page.
 - Les ancres du sommaire doivent pointer vers des IDs existants.
+- Sur les pages longues, le sommaire mobile doit apparaître avant l'article et rester repliable.
 - Aucun contenu essentiel ne doit disparaître à un breakpoint.
 
-## Critères de validation d'une page marque
+## Critères de validation d'une page éditoriale
 
-Une page marque est visuellement validée si :
+Une page est visuellement validée si :
 
-1. le positionnement de la marque et l'angle de décision sont compris rapidement ;
+1. son angle de décision est compris rapidement ;
 2. la hiérarchie éditoriale reste claire sur desktop et mobile ;
-3. les tableaux et données techniques restent lisibles ;
+3. les tableaux et données techniques restent lisibles sans overflow global ;
 4. le sommaire aide réellement à naviguer ;
 5. le niveau de preuve et l'affiliation sont visibles sans écraser le contenu ;
-6. la page appartient clairement à aspirateurs-chantier.fr tout en gardant une architecture propre à la marque ;
+6. la page appartient clairement à aspirateurs-chantier.fr tout en gardant une architecture adaptée à son intention ;
 7. la navigation et les états clavier sont fonctionnels ;
 8. aucun pattern générique important ne domine la composition.
