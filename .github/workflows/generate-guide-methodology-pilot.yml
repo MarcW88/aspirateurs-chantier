@@ -1,0 +1,72 @@
+name: Generate guide methodology pilot
+
+on:
+  push:
+    branches:
+      - article-methodology-pilot
+    paths:
+      - '_guide_classes_lmh_pilot.py'
+      - 'content-workflow.config.yaml'
+      - '.content/briefs/classes-l-m-h-methodology-pilot-2026-09-09.md'
+      - '.github/workflows/generate-guide-methodology-pilot.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-check-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: article-methodology-pilot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild guide content
+        run: |
+          python _generate_guides.py
+          python _guide_quality_supplements.py
+          python _normalize_guide_answers.py
+          python _guide_classes_lmh_pilot.py
+      - name: Structural quality gate
+        run: >-
+          python .agents/skills/content-recovery-and-production-workflow/scripts/validate_content_quality.py
+          guides/classes-l-m-h
+          --min-words 900
+          --min-h2 5
+          --min-section-words 70
+          --min-table-prose 50
+          --min-internal-links 4
+          --min-unique-targets 3
+          --min-sources 3
+          --single-p-min-words 130
+      - name: Pilot assertions
+        shell: bash
+        run: |
+          page=guides/classes-l-m-h/index.html
+          grep -q 'id="lecture-rapide"' "$page"
+          grep -q 'id="debit-classe-h"' "$page"
+          grep -q 'NOETUDE%2FC2026-013' "$page"
+          grep -q '<meta name="robots" content="noindex, follow">' "$page"
+          grep -q 'l’appareil complet' "$page"
+          ! grep -q 'de nombreux poussières' "$page"
+      - name: Idempotence
+        shell: bash
+        run: |
+          before=$(sha256sum guides/classes-l-m-h/index.html | cut -d' ' -f1)
+          python _guide_classes_lmh_pilot.py
+          after=$(sha256sum guides/classes-l-m-h/index.html | cut -d' ' -f1)
+          test "$before" = "$after"
+      - name: Commit pilot render
+        shell: bash
+        run: |
+          if git diff --quiet -- guides/classes-l-m-h/index.html; then
+            echo "Pilot guide already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add guides/classes-l-m-h/index.html
+          git commit -m "Render classes L M H methodology pilot"
+          git push origin HEAD:article-methodology-pilot
