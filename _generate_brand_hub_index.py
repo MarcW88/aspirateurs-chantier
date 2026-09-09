@@ -26,7 +26,7 @@ body = f'''<main>
 <div class="container"><nav class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span><span>Marques</span></nav></div>
 <section class="page-hero"><div class="container"><h1>Marques d'aspirateurs de chantier</h1><p class="lead">Comprendre la logique de gamme et l’écosystème de chaque fabricant avant de descendre vers un modèle, un usage ou un comparatif.</p><div class="page-meta"><span class="meta-tag">Cluster audité : 09/09/2026</span></div></div></section>
 <section class="section"><div class="container">
-<div class="answer-box"><p>Nous ne classons pas les marques en « Tier 1 » ou « Tier 2 » sans critère mesurable. Chaque hub explique ce que la marque change réellement dans le choix : famille de produits, classe, décolmatage, raccords, batteries, consommables ou usage spécialisé.</p></div>
+<div class="answer-box"><p>Nous n’imposons pas de hiérarchie arbitraire entre les fabricants sans critère mesurable. Chaque hub explique ce que la marque change réellement dans le choix : famille de produits, classe, décolmatage, raccords, batteries, consommables ou usage spécialisé.</p></div>
 <div class="hub-grid">{cards}</div>
 </div></section>
 </main>'''
