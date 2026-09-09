@@ -61,6 +61,15 @@ for slug in USAGES:
     check('<h2 id="sources">Sources et méthode</h2>' in h, f'{slug}: sources missing')
     check('<meta name="robots" content="noindex, follow">' in h, f'{slug}: robots changed')
 
+# Professional intent must stay broader than the dedicated class-M comparison.
+professional = (BASE / 'comparatifs' / 'aspirateur-professionnel' / 'index.html').read_text(encoding='utf-8')
+check('<h2 id="frontiere">Professionnel ne veut pas dire automatiquement classe M</h2>' in professional, 'professional comparison: intent boundary missing')
+check('<h2 id="profils">Quatre profils professionnels à distinguer</h2>' in professional, 'professional comparison: scenario profiles missing')
+check('/comparatifs/aspirateur-classe-m/' in professional, 'professional comparison: class-M handoff missing')
+check('critère éliminatoire' not in professional, 'professional comparison: stale universal hard gate remains')
+check('Bosch Professional GAS 18V-10 L' in professional and 'Makita VC4210MX' in professional, 'professional comparison: profile diversity missing')
+check('<meta name="robots" content="noindex, follow">' in professional, 'professional comparison: robots changed')
+
 # The cluster audit concerns the /marques/ hub content, not the global navigation
 # shell that is still shared site-wide. Validate only the hub's <main> region.
 brand_index = (BASE / 'marques' / 'index.html').read_text(encoding='utf-8')
@@ -91,5 +100,6 @@ if errors:
 print('CLUSTER_ROLLOUT: PASS')
 print(f' - {len(MODELS)} model pages verified')
 print(f' - {len(USAGES)} usage pages completed')
+print(' - professional vs class-M intent boundary verified')
 print(' - brand recovery verdicts aligned with pre-rollout cluster audit')
 print(' - noindex, follow preserved')
