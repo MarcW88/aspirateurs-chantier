@@ -13,7 +13,7 @@ on:
       - "_generate_comparison_content.py"
       - "_generate_comparison_overrides.py"
       - "_generate_professional_comparison_override.py"
-      - "_generate_comparatifs.py"
+      - "_polish_comparison_rollout.py"
       - ".content/comparisons/**"
       - "comparatifs/**"
       - ".github/workflows/validate-comparison-skill-stack.yml"
@@ -29,7 +29,7 @@ on:
       - "_generate_comparison_content.py"
       - "_generate_comparison_overrides.py"
       - "_generate_professional_comparison_override.py"
-      - "_generate_comparatifs.py"
+      - "_polish_comparison_rollout.py"
       - ".content/comparisons/**"
       - "comparatifs/**"
       - ".github/workflows/validate-comparison-skill-stack.yml"
@@ -53,6 +53,7 @@ jobs:
           python -m py_compile _generate_comparison_content.py
           python -m py_compile _generate_professional_comparison_override.py
           python -m py_compile _generate_comparison_overrides.py
+          python -m py_compile _polish_comparison_rollout.py
           python -m py_compile _validate_comparison_rollout.py
       - name: Regenerate canonical comparison cluster
         run: python _generate_comparison_content.py
@@ -62,6 +63,6 @@ jobs:
             python .agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py "$f"
           done
       - name: Require committed canonical artifacts
-        run: git diff --exit-code -- comparatifs .content/comparisons _generate_comparatifs.py
+        run: git diff --exit-code -- comparatifs .content/comparisons
       - name: Whitespace check
         run: git diff --check
