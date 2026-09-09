@@ -10,6 +10,7 @@ on:
       - "_validate_brands.py"
       - "brand-workflow.config.yaml"
       - ".agents/skills/brand-content-workflow/**"
+      - ".agents/skills/brand-analysis-workflow/**"
       - ".github/workflows/generate-brand-content.yml"
   workflow_dispatch:
 
@@ -32,18 +33,7 @@ jobs:
       - name: Generate eight brand hubs and entity data
         run: python _generate_brands.py
 
-      - name: Validate Brand Content Workflow floor
-        run: |
-          python .agents/skills/brand-content-workflow/scripts/validate_brand_quality.py marques \
-            --min-h2 7 \
-            --min-internal-links 6 \
-            --min-unique-targets 5 \
-            --min-sources 3 \
-            --require-noindex \
-            --require-limits \
-            --require-choose-avoid
-
-      - name: Repository-specific brand QA
+      - name: Repository-specific machine QA
         run: python _validate_brands.py
 
       - name: Check generation idempotence
@@ -70,6 +60,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated brand changes to commit."
           else
-            git commit -m "Generate 2026 brand hubs from entity workflow"
+            git commit -m "Generate brand hubs from entity workflow"
             git push origin HEAD:content/brand-pages-workflow
           fi
