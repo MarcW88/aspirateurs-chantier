@@ -1,0 +1,58 @@
+name: Validate brand generation
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "_generate_brand_content.py"
+      - "_generate_brands.py"
+      - "_generate_bosch.py"
+      - "_validate_brands.py"
+      - "brand-workflow.config.yaml"
+      - ".content/brands/**"
+      - "marques/**"
+      - ".github/workflows/validate-brand-generation.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "_generate_brand_content.py"
+      - "_generate_brands.py"
+      - "_generate_bosch.py"
+      - "_validate_brands.py"
+      - "brand-workflow.config.yaml"
+      - ".content/brands/**"
+      - "marques/**"
+      - ".github/workflows/validate-brand-generation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate shared skill stack
+        run: python validate_brand_skill_stack.py
+
+      - name: Regenerate all brand content canonically
+        run: python _generate_brand_content.py
+
+      - name: Validate brand machine integrity
+        run: python _validate_brands.py
+
+      - name: Preserve Bosch bespoke structure
+        run: |
+          grep -q 'id="univers-bosch"' marques/bosch/index.html
+          grep -q 'id="deux-systemes-18v"' marques/bosch/index.html
+          ! grep -q 'id="forces"' marques/bosch/index.html
+
+      - name: Require committed generated artifacts
+        run: git diff --exit-code -- marques .content/brands

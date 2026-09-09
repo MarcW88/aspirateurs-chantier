@@ -8,10 +8,21 @@ content:
     - "/marques/"
   source_of_truth:
     - "_generate_brands.py"
+    - "_generate_bosch.py"
     - ".content/brands/"
   rendered_output:
     - "marques/"
   mode: "recovery"
+
+generation:
+  canonical_command: "python _generate_brand_content.py"
+  generic_generator: "_generate_brands.py"
+  bespoke_overrides:
+    bosch: "_generate_bosch.py"
+  order:
+    - "python _generate_brands.py"
+    - "python _generate_bosch.py"
+  prohibit_generic_rebuild_without_overrides: true
 
 skill_stack:
   manifest: ".agents/skills/brand-skill-stack.json"
@@ -109,6 +120,7 @@ workflow:
   final_review_mode: "PUBLISH_REVIEW"
   skill_stack_validator: "validate_brand_skill_stack.py"
   machine_validator: "_validate_brands.py"
+  canonical_generator: "_generate_brand_content.py"
   require_analysis_pass_before_human_validation: true
   require_human_validation_before_publish: true
   allow_automatic_merge: false
@@ -129,6 +141,7 @@ editorial_chain:
   - contextual_internal_linking
   - seo_editorial_and_technical
   - editorial_qa
+  - canonical_generation
   - machine_validation
   - brand_analysis_publish_review
   - human_validation
