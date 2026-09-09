@@ -62,19 +62,12 @@ CANDIDATES = [
 ]
 
 
-def spec(d, *keys):
-    for key in keys:
-        if key in d.get('specs', {}):
-            return d['specs'][key]
-    return '—'
-
-
 def local_url(slug):
     return f'/modeles/{slug}/'
 
 
 def key_facts(d):
-    s = d.get('specs', {})
+    specs = d.get('specs', {})
     preferred = [
         'Classe', 'Classe de poussière', 'Cuve', 'Réservoir / sac filtre',
         'Décolmatage', 'Nettoyage du filtre', 'Prise outil', 'Prise outil asservie',
@@ -83,8 +76,10 @@ def key_facts(d):
     ]
     facts = []
     for key in preferred:
-        if key in s and f'{key} : {s[key]}' not in facts:
-            facts.append(f'{key} : {s[key]}')
+        if key in specs:
+            fact = f'{key} : {specs[key]}'
+            if fact not in facts:
+                facts.append(fact)
     return facts[:5]
 
 
@@ -159,7 +154,6 @@ ledger = {
 }
 LEDGER_PATH.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-# Render decision table.
 rows = []
 for item in CANDIDATES:
     d = MODELS[item['slug']]
@@ -172,20 +166,16 @@ for item in CANDIDATES:
         '</tr>'
     )
 
-# Render deliberately asymmetrical product notes from evidence + the decision brief.
 blocks = []
 for item in CANDIDATES:
     d = MODELS[item['slug']]
     facts = ' · '.join(key_facts(d))
     blocks.append(
         f'<h3>{escape(d["name"])}</h3>'
-        f'<p><strong>{escape(item["profile"])}.</strong> {escape(item["decision"])} '</n        f'{escape(facts)}.</p>'
+        f'<p><strong>{escape(item["profile"])}.</strong> {escape(item["decision"])} {escape(facts)}.</p>'
         f'<p><strong>Limite à garder en tête :</strong> {escape(item["tradeoff"])} '
         f'<a href="{local_url(item["slug"])}">Voir la fiche modèle</a>.</p>'
     )
-
-# NOTE: fix the accidental split marker above before rendering.
-blocks = [b.replace(" '</n        f'", "") for b in blocks]
 
 source_items = []
 for item in CANDIDATES:
