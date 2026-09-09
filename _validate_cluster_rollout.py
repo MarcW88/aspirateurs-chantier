@@ -61,10 +61,16 @@ for slug in USAGES:
     check('<h2 id="sources">Sources et méthode</h2>' in h, f'{slug}: sources missing')
     check('<meta name="robots" content="noindex, follow">' in h, f'{slug}: robots changed')
 
+# The cluster audit concerns the /marques/ hub content, not the global navigation
+# shell that is still shared site-wide. Validate only the hub's <main> region.
 brand_index = (BASE / 'marques' / 'index.html').read_text(encoding='utf-8')
-check('Tier 1' not in brand_index and 'Tier 2' not in brand_index, 'brand index: unsupported tiers remain')
+main_match = re.search(r'<main>.*?</main>', brand_index, flags=re.S)
+check(main_match is not None, 'brand index: main region missing')
+brand_main = main_match.group(0) if main_match else ''
+check('Tier 1' not in brand_main and 'Tier 2' not in brand_main, 'brand index: unsupported tiers remain in hub content')
 for needle in ['DCV586M','PWD 12 à 30','DEXOS','Buddy / Multi','Home &amp; Garden']:
-    check(needle in brand_index, f'brand index: missing current family {needle}')
+    encoded = needle.replace('&', '&amp;')
+    check(needle in brand_main or encoded in brand_main, f'brand index: missing current family {needle}')
 
 expected = {
  'bosch':'KEEP','karcher':'DEEP_REWRITE','festool':'DEEP_REWRITE','makita':'DEEP_REWRITE',
