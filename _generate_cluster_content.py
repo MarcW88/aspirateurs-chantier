@@ -4,9 +4,10 @@
 The order is intentional and enforced:
 1. model evidence/pages;
 2. non-brand usage pages;
-3. brand hubs;
-4. cluster metadata/index;
-5. validation.
+3. neighboring comparison intent cleanup;
+4. brand hubs;
+5. cluster metadata/index;
+6. validation.
 """
 from pathlib import Path
 import subprocess
@@ -24,6 +25,7 @@ def main():
     run('validate_brand_skill_stack.py')
     run('_generate_model_overrides.py')
     run('_generate_usage_overrides.py')
+    run('_generate_professional_comparison_override.py')
     run('_generate_brand_content.py')
     run('_generate_brand_hub_index.py')
     run('_apply_cluster_audit_metadata.py')
