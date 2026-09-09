@@ -8,9 +8,9 @@ on:
       - "_generate.py"
       - "_generate_brands.py"
       - "_validate_brands.py"
+      - "validate_brand_skill_stack.py"
       - "brand-workflow.config.yaml"
-      - ".agents/skills/brand-content-workflow/**"
-      - ".agents/skills/brand-analysis-workflow/**"
+      - ".agents/skills/**"
       - ".github/workflows/generate-brand-content.yml"
   workflow_dispatch:
 
@@ -29,6 +29,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Validate shared/custom brand skill stack
+        run: python validate_brand_skill_stack.py
 
       - name: Generate eight brand hubs and entity data
         run: python _generate_brands.py

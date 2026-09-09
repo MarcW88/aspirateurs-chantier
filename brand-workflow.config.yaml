@@ -13,6 +13,17 @@ content:
     - "marques/"
   mode: "recovery"
 
+skill_stack:
+  manifest: ".agents/skills/brand-skill-stack.json"
+  validator: "validate_brand_skill_stack.py"
+  ratio_basis: "orchestration_components"
+  target_shared_ratio_min: 0.80
+  require_stack_validation_before_brand_work: true
+  shared_methodology_owner: ".agents/skills/"
+  custom_workflows:
+    - "brand-content-workflow"
+    - "brand-analysis-workflow"
+
 quality:
   editorial_reference: "/guides/comment-choisir-aspirateur-de-chantier/"
   visual_reference: "/marques/bosch/"
@@ -37,12 +48,6 @@ routing:
   page_type_defines_structure: false
   current_brand_hubs_live_under: "/marques/<slug>/"
   product_pages_prefer: "/modeles/"
-
-entities:
-  require_entity_map_when_relevant: true
-  require_current_range_when_relevant: true
-  require_ecosystem_map_when_relevant: true
-  require_brand_positioning_when_relevant: true
 
 vacuum_domain_checks:
   verify_when_relevant:
@@ -102,6 +107,7 @@ workflow:
   content_workflow: ".agents/skills/brand-content-workflow/SKILL.md"
   analysis_workflow: ".agents/skills/brand-analysis-workflow/SKILL.md"
   final_review_mode: "PUBLISH_REVIEW"
+  skill_stack_validator: "validate_brand_skill_stack.py"
   machine_validator: "_validate_brands.py"
   require_analysis_pass_before_human_validation: true
   require_human_validation_before_publish: true
@@ -109,17 +115,20 @@ workflow:
   allow_automatic_indexation: false
 
 editorial_chain:
+  - validate_shared_skill_stack
   - brand_analysis_audit_for_existing_page
-  - search_intent_and_role
-  - preserve_existing_value
+  - search_intent
+  - content_audit_and_refresh_when_needed
   - evidence_brief_and_fact_check
+  - evidence_based_review_when_needed
   - original_affiliate_value
   - bespoke_outline_from_intent_and_evidence
   - evidence_bound_writing
   - post_draft_fact_check
-  - house_tone_and_anti_ai_slop
+  - humanizer_general_writing_anti_ai_slop
   - contextual_internal_linking
   - seo_editorial_and_technical
+  - editorial_qa
   - machine_validation
   - brand_analysis_publish_review
   - human_validation
