@@ -8,6 +8,7 @@ on:
       - "_generate_brand_content.py"
       - "_generate_brands.py"
       - "_generate_bosch.py"
+      - "_generate_brand_overrides.py"
       - "_validate_brands.py"
       - "brand-workflow.config.yaml"
       - ".content/brands/**"
@@ -20,6 +21,7 @@ on:
       - "_generate_brand_content.py"
       - "_generate_brands.py"
       - "_generate_bosch.py"
+      - "_generate_brand_overrides.py"
       - "_validate_brands.py"
       - "brand-workflow.config.yaml"
       - ".content/brands/**"
@@ -48,11 +50,27 @@ jobs:
       - name: Validate brand machine integrity
         run: python _validate_brands.py
 
-      - name: Preserve Bosch bespoke structure
+      - name: Preserve bespoke brand structures
+        shell: bash
         run: |
-          grep -q 'id="univers-bosch"' marques/bosch/index.html
-          grep -q 'id="deux-systemes-18v"' marques/bosch/index.html
-          ! grep -q 'id="forces"' marques/bosch/index.html
+          declare -A checks=(
+            [bosch]='univers-bosch deux-systemes-18v'
+            [karcher]='wd-vs-nt tact-acd'
+            [festool]='logique-systeme classes-ct'
+            [makita]='lire-reference lxt-xgt'
+            [dewalt]='systeme-chantier dcv586m'
+            [parkside]='logique-parkside disponibilite'
+            [nilfisk]='deux-univers infiniclean'
+            [mirka]='poncage-dabord 1217-1230'
+          )
+          for slug in "${!checks[@]}"; do
+            page="marques/$slug/index.html"
+            for id in ${checks[$slug]}; do
+              grep -q "id=\"$id\"" "$page"
+            done
+            ! grep -q 'id="forces"' "$page"
+            ! grep -q 'id="eviter"' "$page"
+          done
 
       - name: Require committed generated artifacts
         run: git diff --exit-code -- marques .content/brands
