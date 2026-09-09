@@ -9,6 +9,9 @@ on:
       - "_generate_comparison_content.py"
       - "_generate_professional_comparison_override.py"
       - "_generate_comparison_overrides.py"
+      - "_apply_comparison_design.py"
+      - "comparison-pages.css"
+      - "comparison-pages.js"
       - "_validate_comparison_rollout.py"
       - "_normalize_comparatifs.py"
       - "_validate_comparatifs.py"
@@ -66,7 +69,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _generate_comparatifs.py _generate_comparison_content.py _generate_professional_comparison_override.py _generate_comparison_overrides.py _validate_comparison_rollout.py comparatifs .content/comparisons
+          git add _generate_comparatifs.py _generate_comparison_content.py _generate_professional_comparison_override.py _generate_comparison_overrides.py _apply_comparison_design.py comparison-pages.css comparison-pages.js _validate_comparison_rollout.py comparatifs .content/comparisons
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
           else
