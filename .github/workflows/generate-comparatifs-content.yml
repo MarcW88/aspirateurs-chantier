@@ -6,7 +6,10 @@ on:
       - content/comparatifs-production-workflow
     paths:
       - "_generate_comparatifs.py"
+      - "_generate_comparison_content.py"
       - "_generate_professional_comparison_override.py"
+      - "_generate_comparison_overrides.py"
+      - "_validate_comparison_rollout.py"
       - "_normalize_comparatifs.py"
       - "_validate_comparatifs.py"
       - "validate_comparison_skill_stack.py"
@@ -30,20 +33,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate comparison skill governance
-        run: python validate_comparison_skill_stack.py
-
-      - name: Align source verdicts before generation
-        run: python _normalize_comparatifs.py
-
-      - name: Generate comparison pages and data
-        run: python _generate_comparatifs.py
-
-      - name: Apply comparison-specific overrides
-        run: |
-          if [ -f _generate_professional_comparison_override.py ]; then
-            python _generate_professional_comparison_override.py
-          fi
+      - name: Generate canonical comparison cluster
+        run: python _generate_comparison_content.py
 
       - name: Restore guide content after site generator import
         run: |
@@ -51,17 +42,16 @@ jobs:
           python _guide_quality_supplements.py
           python _normalize_guide_answers.py
 
-      - name: Normalize generated comparison HTML
-        run: python _normalize_comparatifs.py
-
       - name: Validate comparison data present
         run: |
           for f in .content/comparisons/*.json; do
             python .agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py "$f"
           done
 
-      - name: Structural and editorial safety gate
-        run: python _validate_comparatifs.py
+      - name: Structural and semantic safety gates
+        run: |
+          python _validate_comparatifs.py
+          python _validate_comparison_rollout.py
 
       - name: Preserve noindex
         run: |
@@ -76,10 +66,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _generate_comparatifs.py comparatifs .content/comparisons
+          git add _generate_comparatifs.py _generate_comparison_content.py _generate_professional_comparison_override.py _generate_comparison_overrides.py _validate_comparison_rollout.py comparatifs .content/comparisons
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
           else
-            git commit -m "Generate comparison pages from evidence-led methodology"
+            git commit -m "Generate audited comparison cluster"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
