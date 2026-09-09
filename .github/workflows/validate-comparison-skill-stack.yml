@@ -9,7 +9,11 @@ on:
       - "comparison-workflow.config.yaml"
       - ".agents/skills/**"
       - "_validate_comparatifs.py"
+      - "_validate_comparison_rollout.py"
+      - "_generate_comparison_content.py"
+      - "_generate_comparison_overrides.py"
       - "_generate_professional_comparison_override.py"
+      - "_polish_comparison_rollout.py"
       - ".content/comparisons/**"
       - "comparatifs/**"
       - ".github/workflows/validate-comparison-skill-stack.yml"
@@ -21,7 +25,11 @@ on:
       - "comparison-workflow.config.yaml"
       - ".agents/skills/**"
       - "_validate_comparatifs.py"
+      - "_validate_comparison_rollout.py"
+      - "_generate_comparison_content.py"
+      - "_generate_comparison_overrides.py"
       - "_generate_professional_comparison_override.py"
+      - "_polish_comparison_rollout.py"
       - ".content/comparisons/**"
       - "comparatifs/**"
       - ".github/workflows/validate-comparison-skill-stack.yml"
@@ -40,16 +48,21 @@ jobs:
           python-version: "3.12"
       - name: Validate shared/custom comparison ratio and required skills
         run: python validate_comparison_skill_stack.py
-      - name: Smoke-test bespoke comparison overrides
+      - name: Compile comparison generators and validators
         run: |
+          python -m py_compile _generate_comparison_content.py
           python -m py_compile _generate_professional_comparison_override.py
-          python _generate_professional_comparison_override.py
-      - name: Validate current comparison machine integrity
-        run: python _validate_comparatifs.py
-      - name: Validate existing comparison data files
+          python -m py_compile _generate_comparison_overrides.py
+          python -m py_compile _polish_comparison_rollout.py
+          python -m py_compile _validate_comparison_rollout.py
+      - name: Regenerate canonical comparison cluster
+        run: python _generate_comparison_content.py
+      - name: Validate comparison data files
         run: |
           for f in .content/comparisons/*.json; do
             python .agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py "$f"
           done
+      - name: Require committed canonical artifacts
+        run: git diff --exit-code -- comparatifs .content/comparisons
       - name: Whitespace check
         run: git diff --check

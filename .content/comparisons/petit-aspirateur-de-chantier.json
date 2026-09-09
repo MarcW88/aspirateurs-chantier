@@ -1,213 +1,179 @@
 {
   "slug": "petit-aspirateur-de-chantier",
   "url": "/comparatifs/petit-aspirateur-de-chantier/",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
+  "status": "REWRITTEN_AFTER_CLUSTER_AUDIT",
   "intent": {
     "query": "petit aspirateur de chantier",
     "type": "best_for_use_case",
-    "user_job": "gagner de la place et transporter facilement l'aspirateur sans le rendre inutile dès que les déchets s'accumulent",
-    "primary_constraint": "compacité, poids et capacité suffisante"
+    "user_job": "choisir un aspirateur réellement facile à transporter sans réduire le compact à un seuil arbitraire de litres",
+    "primary_constraint": "combiner poids, dimensions, poignée/rangement, alimentation et capacité utile",
+    "boundary": "la page sans fil traite la batterie ; ici la priorité est l’encombrement et la manutention, filaire ou non"
+  },
+  "scope": {
+    "selection_rule": "références représentatives choisies pour couvrir les décisions qui changent réellement le choix ; pas de census exhaustif ni de ranking universel",
+    "candidates": [
+      {
+        "id": "karcher-wd2",
+        "name": "Kärcher WD 2 Plus V-15/4/18",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Petit wet/dry économique",
+        "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-2-v-15-4-18-c-16280110.html"
+      },
+      {
+        "id": "bosch-gas-18v-10-l",
+        "name": "Bosch Professional GAS 18V-10 L",
+        "brand": "Bosch Professional",
+        "status": "ELIGIBLE",
+        "role": "Très mobile sur batterie classe L",
+        "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/"
+      },
+      {
+        "id": "bosch-gas-18v-12-mc",
+        "name": "Bosch Professional GAS 18V-12 MC",
+        "brand": "Bosch Professional",
+        "status": "ELIGIBLE",
+        "role": "Compact sans fil classe M",
+        "source": "https://www.bosch-professional.com/be/fr/products/gas-18v-12-mc-06019K2000"
+      },
+      {
+        "id": "festool-ctl-midi",
+        "name": "Festool CTL MIDI I",
+        "brand": "Festool",
+        "status": "ELIGIBLE",
+        "role": "Compact filaire orienté outil",
+        "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578309---ctl-midi-i"
+      }
+    ],
+    "major_exclusions": []
   },
   "product_universe": [
     {
-      "id": "karcher-wd3",
-      "name": "Kärcher WD 3 V-17/4/20",
+      "id": "karcher-wd2",
+      "name": "Kärcher WD 2 Plus V-15/4/18",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Petit wet/dry économique",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-2-v-15-4-18-c-16280110.html"
     },
     {
-      "id": "bosch-gas18",
+      "id": "bosch-gas-18v-10-l",
       "name": "Bosch Professional GAS 18V-10 L",
+      "brand": "Bosch Professional",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Très mobile sur batterie classe L",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/"
     },
     {
-      "id": "festool-ctm-midi-ac",
-      "name": "Festool CTM MIDI I AC",
+      "id": "bosch-gas-18v-12-mc",
+      "name": "Bosch Professional GAS 18V-12 MC",
+      "brand": "Bosch Professional",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Compact sans fil classe M",
+      "source": "https://www.bosch-professional.com/be/fr/products/gas-18v-12-mc-06019K2000"
+    },
+    {
+      "id": "festool-ctl-midi",
+      "name": "Festool CTL MIDI I",
+      "brand": "Festool",
+      "status": "ELIGIBLE",
+      "role": "Compact filaire orienté outil",
+      "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578309---ctl-midi-i"
     }
   ],
   "criteria": [
     {
-      "id": "compact",
-      "label": "Compacité",
-      "weight": 25,
-      "hard_gate": true,
-      "hard_gate_min": 5,
-      "rationale": "Critère retenu avant calcul car il change la décision pour petit aspirateur de chantier."
+      "id": "weight",
+      "label": "Poids"
     },
     {
-      "id": "weight",
-      "label": "Poids",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour petit aspirateur de chantier."
+      "id": "dimensions",
+      "label": "Encombrement"
     },
     {
       "id": "capacity",
-      "label": "Capacité utile",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour petit aspirateur de chantier."
+      "label": "Capacité utile"
     },
     {
-      "id": "suction",
-      "label": "Aspiration",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour petit aspirateur de chantier."
+      "id": "power",
+      "label": "Filaire / batterie"
     },
     {
-      "id": "workflow",
-      "label": "Usage chantier",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour petit aspirateur de chantier."
+      "id": "dust",
+      "label": "Classe"
+    },
+    {
+      "id": "handling",
+      "label": "Transport / rangement"
     }
   ],
   "evidence": [
     {
-      "product": "karcher-wd3",
-      "criterion": "product_identity",
-      "claim": "17 L, 45 l/s, 230 mbar, 4,5 kg, filtre cartouche permettant eau et poussière sans changement de filtre",
-      "value": "17 L, 45 l/s, 230 mbar, 4,5 kg, filtre cartouche permettant eau et poussière sans changement de filtre",
-      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-3-v-17-4-20-16281300.html",
-      "source_date": "2026-09-08",
+      "product": "karcher-wd2",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance absorbée : 1 000 W · Débit d’air max. : 43 L/s · Dépression max. : 220 mbar (22 kPa) · Cuve : 15 L · Eau + poussière : Oui · Nettoyage du filtre : Pas de décolmatage automatique documenté",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-2-v-15-4-18-c-16280110.html",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "bosch-gas18",
-      "criterion": "product_identity",
-      "claim": "18 V, classe L, 10 L brut / 6 L net, 34 l/s, 115 mbar, sans sac, 4,7 kg sans batterie, autonomie annoncée 4 min/Ah",
-      "value": "18 V, classe L, 10 L brut / 6 L net, 34 l/s, 115 mbar, sans sac, 4,7 kg sans batterie, autonomie annoncée 4 min/Ah",
-      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302",
-      "source_date": "2026-09-08",
+      "product": "bosch-gas-18v-10-l",
+      "criterion": "product_identity_and_role",
+      "claim": "Batterie : 18 V Professional / AMPShare · Débit max. (turbine) : 34 L/s · Dépression max. (turbine) : 115 mbar (11,5 kPa) · Cuve : 10 L brut / 6 L net / 6 L eau · Classe : L · Autonomie annoncée : 4 min/Ah",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "festool-ctm-midi-ac",
-      "criterion": "product_identity",
-      "claim": "classe M, 15 L / sac 12,5 L, 3 700 l/min (≈61,7 l/s), 24 000 Pa, AUTOCLEAN, prise 2 400 W, 11,8 kg",
-      "value": "classe M, 15 L / sac 12,5 L, 3 700 l/min (≈61,7 l/s), 24 000 Pa, AUTOCLEAN, prise 2 400 W, 11,8 kg",
-      "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578552---ctm-midi-i-ac",
-      "source_date": "2026-09-08",
+      "product": "bosch-gas-18v-12-mc",
+      "criterion": "product_identity_and_role",
+      "claim": "Batterie : 18 V Professional / AMPShare · Classe : M · Débit max. (turbine) : 30 L/s · Dépression max. (turbine) : 170 mbar · Cuve : 12 L brut / 8 L net / 6 L eau · Nettoyage du filtre : SFC semi-automatique",
+      "source": "https://www.bosch-professional.com/be/fr/products/gas-18v-12-mc-06019K2000",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "festool-ctl-midi",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance absorbée : 350–1 200 W · Débit max. : 3 700 L/min (≈61,7 L/s) · Dépression max. : 24 000 Pa (24 kPa) · Réservoir / sac filtre : 15 / 12,5 L · Classe : L · Prise outil : 2 400 W admissibles",
+      "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578309---ctl-midi-i",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     }
   ],
-  "scores": {
-    "karcher-wd3": {
-      "compact": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "weight": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "capacity": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 7,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "bosch-gas18": {
-      "compact": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "weight": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "capacity": {
-        "score": 6,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 7,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "festool-ctm-midi-ac": {
-      "compact": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "weight": {
-        "score": 5,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "capacity": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Festool CTM MIDI I AC et de leur adéquation à l'intention « petit aspirateur de chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    }
-  },
-  "ranking": [
+  "recommendation_logic": [
     {
-      "product_id": "karcher-wd3",
-      "raw_score": 89.5,
-      "confidence_adjusted_score": 84.17,
-      "hard_gate_failed": false
+      "scenario": "Petit wet/dry économique",
+      "product_id": "karcher-wd2",
+      "why": "15 L et 4,4 kg : simple à transporter pour petits travaux.",
+      "main_tradeoff": "Pas de prise outil ni classe L/M/H documentée."
     },
     {
-      "product_id": "bosch-gas18",
-      "raw_score": 82.5,
-      "confidence_adjusted_score": 76.72,
-      "hard_gate_failed": false
+      "scenario": "Très mobile sur batterie classe L",
+      "product_id": "bosch-gas-18v-10-l",
+      "why": "4,7 kg sans batterie et 10 L brut.",
+      "main_tradeoff": "6 L net et autonomie limitée."
     },
     {
-      "product_id": "festool-ctm-midi-ac",
-      "raw_score": 79.0,
-      "confidence_adjusted_score": 73.75,
-      "hard_gate_failed": false
+      "scenario": "Compact sans fil classe M",
+      "product_id": "bosch-gas-18v-12-mc",
+      "why": "12 L brut, 7 kg sans batterie et certification M.",
+      "main_tradeoff": "Plus lourd qu’un petit wet/dry et petite capacité nette."
+    },
+    {
+      "scenario": "Compact filaire orienté outil",
+      "product_id": "festool-ctl-midi",
+      "why": "15 L, classe L, Bluetooth et intégration CLEANTEC/Systainer.",
+      "main_tradeoff": "11,4 kg : “compact” décrit l’encombrement/workflow plus que le poids minimal."
     }
   ],
+  "measurement_notes": [],
   "notes": {
-    "total_solution_cost_required": false,
+    "scoring_used": false,
     "affiliate_commission_used_in_ranking": false,
-    "desk_research_only": true
+    "desk_research_only": true,
+    "noindex_during_rollout": true,
+    "hands_on_test": false
   }
 }

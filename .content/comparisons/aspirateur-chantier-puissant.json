@@ -1,213 +1,179 @@
 {
   "slug": "aspirateur-chantier-puissant",
   "url": "/comparatifs/aspirateur-chantier-puissant/",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
+  "status": "REWRITTEN_AFTER_CLUSTER_AUDIT",
   "intent": {
     "query": "aspirateur chantier puissant",
     "type": "feature_specific",
-    "user_job": "choisir un aspirateur capable de déplacer un fort volume d'air et de garder une aspiration utile sous charge",
-    "primary_constraint": "ne pas confondre watts électriques, débit et dépression"
+    "user_job": "comprendre ce qui rend un aspirateur réellement performant pour le déchet et le workflow plutôt que chercher un chiffre unique",
+    "primary_constraint": "séparer débit, dépression, point de mesure, filtration et maintien des performances",
+    "boundary": "la page générale choisit par usage ; cette page explique la performance d’aspiration et les limites de comparabilité"
+  },
+  "scope": {
+    "selection_rule": "références représentatives choisies pour couvrir les décisions qui changent réellement le choix ; pas de census exhaustif ni de ranking universel",
+    "candidates": [
+      {
+        "id": "karcher-wd7",
+        "name": "Kärcher WD 7 Control P S 30/6/35/T",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Nettoyage/gravats avec maxima élevés publiés",
+        "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html"
+      },
+      {
+        "id": "karcher-nt-30-1-tact",
+        "name": "Kärcher NT 30/1 Tact Te M ACD",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Poussières fines classe M + maintien du débit",
+        "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html"
+      },
+      {
+        "id": "bosch-gas-35-m-afc",
+        "name": "Bosch Professional GAS 35 M AFC",
+        "brand": "Bosch Professional",
+        "status": "ELIGIBLE",
+        "role": "Classe M avec données explicitement à la turbine",
+        "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"
+      },
+      {
+        "id": "makita-vc4210mx",
+        "name": "Makita VC4210MX",
+        "brand": "Makita",
+        "status": "ELIGIBLE",
+        "role": "Gros volume M avec InfiniClean",
+        "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf"
+      }
+    ],
+    "major_exclusions": []
   },
   "product_universe": [
     {
       "id": "karcher-wd7",
       "name": "Kärcher WD 7 Control P S 30/6/35/T",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Nettoyage/gravats avec maxima élevés publiés",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html"
     },
     {
-      "id": "karcher-nt30m",
+      "id": "karcher-nt-30-1-tact",
       "name": "Kärcher NT 30/1 Tact Te M ACD",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Poussières fines classe M + maintien du débit",
+      "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html"
     },
     {
-      "id": "bosch-gas35m",
+      "id": "bosch-gas-35-m-afc",
       "name": "Bosch Professional GAS 35 M AFC",
+      "brand": "Bosch Professional",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Classe M avec données explicitement à la turbine",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"
+    },
+    {
+      "id": "makita-vc4210mx",
+      "name": "Makita VC4210MX",
+      "brand": "Makita",
+      "status": "ELIGIBLE",
+      "role": "Gros volume M avec InfiniClean",
+      "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf"
     }
   ],
   "criteria": [
     {
-      "id": "suction",
-      "label": "Débit et dépression annoncés",
-      "weight": 35,
-      "hard_gate": true,
-      "hard_gate_min": 5,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier puissant."
+      "id": "airflow",
+      "label": "Débit d’air et contexte de mesure"
     },
     {
-      "id": "endurance",
-      "label": "Maintien du débit filtre chargé",
-      "weight": 25,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier puissant."
+      "id": "vacuum",
+      "label": "Dépression et contexte de mesure"
+    },
+    {
+      "id": "filter",
+      "label": "Maintien du débit filtre chargé"
     },
     {
       "id": "dust",
-      "label": "Gestion des poussières fines",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier puissant."
+      "label": "Classe / nature des poussières"
     },
     {
-      "id": "workflow",
-      "label": "Connexion outils",
-      "weight": 10,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier puissant."
-    },
-    {
-      "id": "mobility",
-      "label": "Rapport puissance/encombrement",
-      "weight": 10,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier puissant."
+      "id": "hose",
+      "label": "Flexible, diamètre et pertes"
     }
   ],
   "evidence": [
     {
       "product": "karcher-wd7",
-      "criterion": "product_identity",
-      "claim": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
-      "value": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
+      "criterion": "product_identity_and_role",
+      "claim": "Débit d’air max. : 80 L/s · Dépression max. : 290 mbar · Cuve : 30 L inox · Prise outil : Oui · Nettoyage du filtre : Par impulsion à la demande · Poids sans accessoires : 8,7 kg",
       "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "karcher-nt30m",
-      "criterion": "product_identity",
-      "claim": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
-      "value": "classe M, ACD, 30 L, 74 l/s, 273 mbar, Tact commandé par capteur, prise asservie, 14,2 kg",
+      "product": "karcher-nt-30-1-tact",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance absorbée : max. 1 380 W · Débit d’air : 74 L/s · Dépression : 273 mbar (27,3 kPa) · Cuve : 30 L · Classe de poussière : M · Décolmatage : Tact automatique commandé par capteur",
       "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "bosch-gas35m",
-      "criterion": "product_identity",
-      "claim": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
-      "value": "classe M, 35 L brut / 23 L net, 74 l/s et 254 mbar à la turbine, nettoyage automatique AFC, 12,4 kg",
+      "product": "bosch-gas-35-m-afc",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance nominale : 1 200 W · Débit max. (turbine) : 74 L/s · Dépression max. (turbine) : 254 mbar (25,4 kPa) · Cuve : 35 L brut / 23 L net / 19,2 L eau · Classe : M · Décolmatage : AFC automatique",
       "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "makita-vc4210mx",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance nominale : 1 200 W · Débit d’air : 4,5 m³/min (75 L/s) · Dépression max. : 250 mbar (25 kPa) · Cuve : 42 L brut / 34 L poussière / 30 L liquide · Classe : M · Décolmatage : InfiniClean automatique",
+      "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     }
   ],
-  "scores": {
-    "karcher-wd7": {
-      "suction": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 7,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "dust": {
-        "score": 5,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "karcher-nt30m": {
-      "suction": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "dust": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 6,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher NT 30/1 Tact Te M ACD et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "bosch-gas35m": {
-      "suction": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "endurance": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "dust": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 7,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 35 M AFC et de leur adéquation à l'intention « aspirateur chantier puissant ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    }
-  },
-  "ranking": [
+  "recommendation_logic": [
     {
-      "product_id": "karcher-nt30m",
-      "raw_score": 91.5,
-      "confidence_adjusted_score": 82.5,
-      "hard_gate_failed": false
-    },
-    {
-      "product_id": "bosch-gas35m",
-      "raw_score": 89.0,
-      "confidence_adjusted_score": 79.85,
-      "hard_gate_failed": false
-    },
-    {
+      "scenario": "Nettoyage/gravats avec maxima élevés publiés",
       "product_id": "karcher-wd7",
-      "raw_score": 80.5,
-      "confidence_adjusted_score": 73.68,
-      "hard_gate_failed": false
+      "why": "80 L/s et 290 mbar annoncés par Kärcher, avec 30 L et usage eau/poussière.",
+      "main_tradeoff": "Pas de classe L/M/H documentée ; ces chiffres ne remplacent pas une exigence de sécurité poussière."
+    },
+    {
+      "scenario": "Poussières fines classe M + maintien du débit",
+      "product_id": "karcher-nt-30-1-tact",
+      "why": "74 L/s, 273 mbar, classe M et Tact commandé par capteur.",
+      "main_tradeoff": "Plus lourd et professionnel ; le gain vient surtout de l’ensemble filtration/décolmatage, pas d’un podium de mbar."
+    },
+    {
+      "scenario": "Classe M avec données explicitement à la turbine",
+      "product_id": "bosch-gas-35-m-afc",
+      "why": "74 L/s et 254 mbar à la turbine avec AFC.",
+      "main_tradeoff": "Le point de mesure est explicitement la turbine : ne pas le comparer naïvement à une valeur publiée dans un autre contexte."
+    },
+    {
+      "scenario": "Gros volume M avec InfiniClean",
+      "product_id": "makita-vc4210mx",
+      "why": "75 L/s, 250 mbar, 42 L et InfiniClean.",
+      "main_tradeoff": "16 kg sans câble ; puissance utile et mobilité ne vont pas toujours ensemble."
     }
+  ],
+  "measurement_notes": [
+    "Bosch publie les maxima du GAS 35 M AFC à la turbine.",
+    "Kärcher et Makita publient des maxima fabricant qui ne sont pas assimilés automatiquement à un même protocole de mesure.",
+    "Aucun score cross-brand de puissance n’est calculé lorsque l’équivalence de mesure n’est pas démontrée."
   ],
   "notes": {
-    "total_solution_cost_required": false,
+    "scoring_used": false,
     "affiliate_commission_used_in_ranking": false,
-    "desk_research_only": true
+    "desk_research_only": true,
+    "noindex_during_rollout": true,
+    "hands_on_test": false
   }
 }

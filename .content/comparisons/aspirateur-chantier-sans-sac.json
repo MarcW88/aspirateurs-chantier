@@ -1,213 +1,183 @@
 {
   "slug": "aspirateur-chantier-sans-sac",
   "url": "/comparatifs/aspirateur-chantier-sans-sac/",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
+  "status": "REWRITTEN_AFTER_CLUSTER_AUDIT",
   "intent": {
     "query": "aspirateur chantier sans sac",
     "type": "feature_specific",
-    "user_job": "limiter les consommables sans sacrifier la filtration ni encrasser prématurément le filtre",
-    "primary_constraint": "fonctionnement sans sac crédible et entretien du filtre"
+    "user_job": "comprendre quels appareils sont réellement pensés pour un usage sans sac et quand le sac reste préférable",
+    "primary_constraint": "séparer conception sans sac, possibilité de collecte directe en cuve et gestion sûre des poussières fines",
+    "boundary": "la page wet/dry compare humide/sec ; ici le mode de collecte et ses compromis sont centraux"
+  },
+  "scope": {
+    "selection_rule": "références représentatives choisies pour couvrir les décisions qui changent réellement le choix ; pas de census exhaustif ni de ranking universel",
+    "candidates": [
+      {
+        "id": "bosch-gas-18v-10-l",
+        "name": "Bosch Professional GAS 18V-10 L",
+        "brand": "Bosch Professional",
+        "status": "ELIGIBLE",
+        "role": "Conception mobile explicitement sans sac",
+        "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/"
+      },
+      {
+        "id": "karcher-wd7",
+        "name": "Kärcher WD 7 Control P S 30/6/35/T",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Cuve wet/dry pour déchets grossiers / liquides",
+        "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html"
+      },
+      {
+        "id": "karcher-wd6",
+        "name": "Kärcher WD 6 P S V-30/6/22/T",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Wet/dry 30 L avec entretien manuel",
+        "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-6-p-s-v-30-6-22-t-16283610.html"
+      },
+      {
+        "id": "bosch-gas-35-m-afc",
+        "name": "Bosch Professional GAS 35 M AFC",
+        "brand": "Bosch Professional",
+        "status": "ELIGIBLE",
+        "role": "Classe M / collecte contrôlée",
+        "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"
+      }
+    ],
+    "major_exclusions": []
   },
   "product_universe": [
     {
-      "id": "bosch-gas18",
+      "id": "bosch-gas-18v-10-l",
       "name": "Bosch Professional GAS 18V-10 L",
+      "brand": "Bosch Professional",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Conception mobile explicitement sans sac",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/"
     },
     {
       "id": "karcher-wd7",
       "name": "Kärcher WD 7 Control P S 30/6/35/T",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Cuve wet/dry pour déchets grossiers / liquides",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html"
     },
     {
-      "id": "karcher-wd3",
-      "name": "Kärcher WD 3 V-17/4/20",
+      "id": "karcher-wd6",
+      "name": "Kärcher WD 6 P S V-30/6/22/T",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Wet/dry 30 L avec entretien manuel",
+      "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-6-p-s-v-30-6-22-t-16283610.html"
+    },
+    {
+      "id": "bosch-gas-35-m-afc",
+      "name": "Bosch Professional GAS 35 M AFC",
+      "brand": "Bosch Professional",
+      "status": "ELIGIBLE",
+      "role": "Classe M / collecte contrôlée",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"
     }
   ],
   "criteria": [
     {
-      "id": "bagless",
-      "label": "Conception ou usage sans sac",
-      "weight": 25,
-      "hard_gate": true,
-      "hard_gate_min": 5,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans sac."
+      "id": "collection",
+      "label": "Mode de collecte documenté"
+    },
+    {
+      "id": "dust",
+      "label": "Nature du déchet"
     },
     {
       "id": "filter",
-      "label": "Gestion du filtre",
-      "weight": 25,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans sac."
-    },
-    {
-      "id": "suction",
-      "label": "Aspiration",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans sac."
+      "label": "Protection/entretien filtre"
     },
     {
       "id": "emptying",
-      "label": "Vidage et entretien",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans sac."
+      "label": "Vidage et exposition"
     },
     {
-      "id": "mobility",
-      "label": "Mobilité",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur chantier sans sac."
+      "id": "consumables",
+      "label": "Consommables"
     }
   ],
   "evidence": [
     {
-      "product": "bosch-gas18",
-      "criterion": "product_identity",
-      "claim": "18 V, classe L, 10 L brut / 6 L net, 34 l/s, 115 mbar, sans sac, 4,7 kg sans batterie, autonomie annoncée 4 min/Ah",
-      "value": "18 V, classe L, 10 L brut / 6 L net, 34 l/s, 115 mbar, sans sac, 4,7 kg sans batterie, autonomie annoncée 4 min/Ah",
-      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302",
-      "source_date": "2026-09-08",
+      "product": "bosch-gas-18v-10-l",
+      "criterion": "product_identity_and_role",
+      "claim": "Batterie : 18 V Professional / AMPShare · Débit max. (turbine) : 34 L/s · Dépression max. (turbine) : 115 mbar (11,5 kPa) · Cuve : 10 L brut / 6 L net / 6 L eau · Classe : L · Autonomie annoncée : 4 min/Ah",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
       "product": "karcher-wd7",
-      "criterion": "product_identity",
-      "claim": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
-      "value": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
+      "criterion": "product_identity_and_role",
+      "claim": "Débit d’air max. : 80 L/s · Dépression max. : 290 mbar · Cuve : 30 L inox · Prise outil : Oui · Nettoyage du filtre : Par impulsion à la demande · Poids sans accessoires : 8,7 kg",
       "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "karcher-wd3",
-      "criterion": "product_identity",
-      "claim": "17 L, 45 l/s, 230 mbar, 4,5 kg, filtre cartouche permettant eau et poussière sans changement de filtre",
-      "value": "17 L, 45 l/s, 230 mbar, 4,5 kg, filtre cartouche permettant eau et poussière sans changement de filtre",
-      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-3-v-17-4-20-16281300.html",
-      "source_date": "2026-09-08",
+      "product": "karcher-wd6",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance absorbée : 1 300 W · Débit d’air max. : 75 L/s · Dépression max. : 280 mbar (28 kPa) · Cuve : 30 L inox · Eau + poussière : Oui · Nettoyage du filtre : Manuel par bouton",
+      "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-6-p-s-v-30-6-22-t-16283610.html",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "bosch-gas-35-m-afc",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance nominale : 1 200 W · Débit max. (turbine) : 74 L/s · Dépression max. (turbine) : 254 mbar (25,4 kPa) · Cuve : 35 L brut / 23 L net / 19,2 L eau · Classe : M · Décolmatage : AFC automatique",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "bosch-gas-18v-10-l",
+      "criterion": "bagless_design",
+      "claim": "Bosch décrit le GAS 18V-10 L comme une conception sans sac avec technologie cyclonique pour l’aspiration de matières solides et de liquides.",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     }
   ],
-  "scores": {
-    "bosch-gas18": {
-      "bagless": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "filter": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 7,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "emptying": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch Professional GAS 18V-10 L et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "karcher-wd7": {
-      "bagless": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "filter": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "emptying": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "karcher-wd3": {
-      "bagless": {
-        "score": 7,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "filter": {
-        "score": 7,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 6,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "emptying": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 3 V-17/4/20 et de leur adéquation à l'intention « aspirateur chantier sans sac ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    }
-  },
-  "ranking": [
+  "recommendation_logic": [
     {
-      "product_id": "bosch-gas18",
-      "raw_score": 90.0,
-      "confidence_adjusted_score": 78.6,
-      "hard_gate_failed": false
+      "scenario": "Conception mobile explicitement sans sac",
+      "product_id": "bosch-gas-18v-10-l",
+      "why": "Bosch documente explicitement une conception sans sac avec technologie cyclonique sur ce modèle compact de classe L.",
+      "main_tradeoff": "Vidage direct plus exposant et filtre à protéger sur poussières fines ; petite cuve."
     },
     {
+      "scenario": "Cuve wet/dry pour déchets grossiers / liquides",
       "product_id": "karcher-wd7",
-      "raw_score": 86.5,
-      "confidence_adjusted_score": 76.53,
-      "hard_gate_failed": false
+      "why": "Wet/dry 30 L ; l’usage direct en cuve peut être pertinent selon déchet et consignes.",
+      "main_tradeoff": "Le fabricant fournit et valorise aussi un sac filtrant : “peut fonctionner sans sac” n’est pas “optimisé sans consommable”."
     },
     {
-      "product_id": "karcher-wd3",
-      "raw_score": 74.0,
-      "confidence_adjusted_score": 64.7,
-      "hard_gate_failed": false
+      "scenario": "Wet/dry 30 L avec entretien manuel",
+      "product_id": "karcher-wd6",
+      "why": "Cuve 30 L et filtre nettoyable par bouton pour différents déchets.",
+      "main_tradeoff": "Pour poussières fines, le sac peut rester utile à la protection du filtre et au vidage."
+    },
+    {
+      "scenario": "Classe M / collecte contrôlée",
+      "product_id": "bosch-gas-35-m-afc",
+      "why": "Contre-exemple utile : sur poussières M, le mode de collecte et l’élimination sûre priment sur l’objectif “zéro sac”.",
+      "main_tradeoff": "Chercher à éviter tout consommable peut dégrader le workflow de sécurité."
     }
   ],
+  "measurement_notes": [],
   "notes": {
-    "total_solution_cost_required": false,
+    "scoring_used": false,
     "affiliate_commission_used_in_ranking": false,
-    "desk_research_only": true
+    "desk_research_only": true,
+    "noindex_during_rollout": true,
+    "hands_on_test": false
   }
 }

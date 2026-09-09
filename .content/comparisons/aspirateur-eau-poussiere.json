@@ -1,213 +1,179 @@
 {
   "slug": "aspirateur-eau-poussiere",
   "url": "/comparatifs/aspirateur-eau-poussiere/",
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
+  "status": "REWRITTEN_AFTER_CLUSTER_AUDIT",
   "intent": {
     "query": "aspirateur eau poussière chantier",
     "type": "feature_specific",
-    "user_job": "aspirer aussi bien des liquides que des déchets secs sans transformer chaque changement d'usage en contrainte",
-    "primary_constraint": "polyvalence eau/poussière, capacité et facilité de vidange"
+    "user_job": "choisir un wet/dry selon vidange, capacité, prise outil et entretien sans confondre polyvalence humide/sec avec sécurité poussière",
+    "primary_constraint": "l’aptitude eau/poussière est un gate fonctionnel ; la classe de poussière reste une décision séparée",
+    "boundary": "si la poussière exige M/H, utiliser les pages classe/sécurité plutôt qu’un comparatif grand public wet/dry"
+  },
+  "scope": {
+    "selection_rule": "références représentatives choisies pour couvrir les décisions qui changent réellement le choix ; pas de census exhaustif ni de ranking universel",
+    "candidates": [
+      {
+        "id": "karcher-wd7",
+        "name": "Kärcher WD 7 Control P S 30/6/35/T",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "Rénovation 30 L très équipée",
+        "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html"
+      },
+      {
+        "id": "karcher-wd6",
+        "name": "Kärcher WD 6 P S V-30/6/22/T",
+        "brand": "Kärcher",
+        "status": "ELIGIBLE",
+        "role": "30 L simple avec prise outil",
+        "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-6-p-s-v-30-6-22-t-16283610.html"
+      },
+      {
+        "id": "bosch-advancedvac-20",
+        "name": "Bosch AdvancedVac 20",
+        "brand": "Bosch",
+        "status": "ELIGIBLE",
+        "role": "Atelier bricolage 20 L",
+        "source": "https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0"
+      },
+      {
+        "id": "nilfisk-multi-ii-30-t",
+        "name": "Nilfisk Multi II 30 T",
+        "brand": "Nilfisk",
+        "status": "ELIGIBLE",
+        "role": "Grand public 30 L hors Kärcher",
+        "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
+      }
+    ],
+    "major_exclusions": []
   },
   "product_universe": [
     {
       "id": "karcher-wd7",
       "name": "Kärcher WD 7 Control P S 30/6/35/T",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Rénovation 30 L très équipée",
+      "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html"
     },
     {
       "id": "karcher-wd6",
       "name": "Kärcher WD 6 P S V-30/6/22/T",
+      "brand": "Kärcher",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "30 L simple avec prise outil",
+      "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-6-p-s-v-30-6-22-t-16283610.html"
     },
     {
-      "id": "bosch-advancedvac20",
+      "id": "bosch-advancedvac-20",
       "name": "Bosch AdvancedVac 20",
+      "brand": "Bosch",
       "status": "ELIGIBLE",
-      "equivalence": "FUNCTIONALLY_COMPARABLE",
-      "exclusion_reason": null
+      "role": "Atelier bricolage 20 L",
+      "source": "https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0"
+    },
+    {
+      "id": "nilfisk-multi-ii-30-t",
+      "name": "Nilfisk Multi II 30 T",
+      "brand": "Nilfisk",
+      "status": "ELIGIBLE",
+      "role": "Grand public 30 L hors Kärcher",
+      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
     }
   ],
   "criteria": [
     {
       "id": "wetdry",
-      "label": "Polyvalence eau/poussière",
-      "weight": 25,
-      "hard_gate": true,
-      "hard_gate_min": 5,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur eau poussière chantier."
+      "label": "Aptitude humide/sec"
     },
     {
-      "id": "suction",
-      "label": "Débit et dépression",
-      "weight": 25,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur eau poussière chantier."
+      "id": "drain",
+      "label": "Vidange des liquides"
+    },
+    {
+      "id": "tool",
+      "label": "Prise / démarrage outil"
+    },
+    {
+      "id": "filter",
+      "label": "Entretien du filtre"
     },
     {
       "id": "capacity",
-      "label": "Capacité et vidange",
-      "weight": 20,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur eau poussière chantier."
+      "label": "Capacité"
     },
     {
-      "id": "workflow",
-      "label": "Prise et outils",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur eau poussière chantier."
-    },
-    {
-      "id": "mobility",
-      "label": "Mobilité et entretien",
-      "weight": 15,
-      "hard_gate": false,
-      "hard_gate_min": null,
-      "rationale": "Critère retenu avant calcul car il change la décision pour aspirateur eau poussière chantier."
+      "id": "safety",
+      "label": "Classe documentée"
     }
   ],
   "evidence": [
     {
       "product": "karcher-wd7",
-      "criterion": "product_identity",
-      "claim": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
-      "value": "30 L, 80 l/s, 290 mbar, 315 W de puissance d'aspiration annoncée, prise asservie et télécommande 2-en-1, 8,7 kg",
+      "criterion": "product_identity_and_role",
+      "claim": "Débit d’air max. : 80 L/s · Dépression max. : 290 mbar · Cuve : 30 L inox · Prise outil : Oui · Nettoyage du filtre : Par impulsion à la demande · Poids sans accessoires : 8,7 kg",
       "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
       "product": "karcher-wd6",
-      "criterion": "product_identity",
-      "claim": "30 L, 75 l/s, 280 mbar, prise asservie, nettoyage du filtre par impulsion et 9,3 kg",
-      "value": "30 L, 75 l/s, 280 mbar, prise asservie, nettoyage du filtre par impulsion et 9,3 kg",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance absorbée : 1 300 W · Débit d’air max. : 75 L/s · Dépression max. : 280 mbar (28 kPa) · Cuve : 30 L inox · Eau + poussière : Oui · Nettoyage du filtre : Manuel par bouton",
       "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-6-p-s-v-30-6-22-t-16283610.html",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     },
     {
-      "product": "bosch-advancedvac20",
-      "criterion": "product_identity",
-      "claim": "20 L, 70 l/s, 260 mbar, prise asservie, évacuation d'eau et 7,6 kg",
-      "value": "20 L, 70 l/s, 260 mbar, prise asservie, évacuation d'eau et 7,6 kg",
+      "product": "bosch-advancedvac-20",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance absorbée : 1 200 W · Débit max. (turbine) : 70 L/s · Dépression max. (turbine) : 260 mbar (26 kPa) · Cuve : 20 L · Eau + poussière : Oui · Démarrage avec outil : Oui",
       "source": "https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0",
-      "source_date": "2026-09-08",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "nilfisk-multi-ii-30-t",
+      "criterion": "product_identity_and_role",
+      "claim": "Puissance annoncée : 1 400 W · Dépression : 210 mbar (21 kPa) · Cuve : 30 L · Eau + poussière : Oui · Fonction soufflerie : Oui · Prise outil : Selon variante T/VSC — vérifier le suffixe exact",
+      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere",
+      "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     }
   ],
-  "scores": {
-    "karcher-wd7": {
-      "wetdry": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "capacity": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 10,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 7 Control P S 30/6/35/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "karcher-wd6": {
-      "wetdry": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 6 P S V-30/6/22/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 6 P S V-30/6/22/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "capacity": {
-        "score": 10,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 6 P S V-30/6/22/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 6 P S V-30/6/22/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 8,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Kärcher WD 6 P S V-30/6/22/T et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    },
-    "bosch-advancedvac20": {
-      "wetdry": {
-        "score": 9,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch AdvancedVac 20 et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "suction": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch AdvancedVac 20 et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "capacity": {
-        "score": 8,
-        "evidence_class": "VERIFIED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch AdvancedVac 20 et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "workflow": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch AdvancedVac 20 et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      },
-      "mobility": {
-        "score": 9,
-        "evidence_class": "INFERRED",
-        "justification": "Score attribué à partir des caractéristiques officielles de Bosch AdvancedVac 20 et de leur adéquation à l'intention « aspirateur eau poussière chantier ». Le score est éditorial et non un résultat de laboratoire."
-      }
-    }
-  },
-  "ranking": [
+  "recommendation_logic": [
     {
+      "scenario": "Rénovation 30 L très équipée",
       "product_id": "karcher-wd7",
-      "raw_score": 97.0,
-      "confidence_adjusted_score": 92.95,
-      "hard_gate_failed": false
+      "why": "30 L, bouchon de vidange, prise outil, contrôle du filtre et hautes valeurs annoncées.",
+      "main_tradeoff": "Pas de classe L/M/H documentée."
     },
     {
+      "scenario": "30 L simple avec prise outil",
       "product_id": "karcher-wd6",
-      "raw_score": 93.0,
-      "confidence_adjusted_score": 89.17,
-      "hard_gate_failed": false
+      "why": "Cuve inox 30 L, prise asservie et nettoyage du filtre par bouton.",
+      "main_tradeoff": "Nettoyage manuel, pas Tact/AFC ; pas de classe de sécurité documentée."
     },
     {
-      "product_id": "bosch-advancedvac20",
-      "raw_score": 85.5,
-      "confidence_adjusted_score": 81.45,
-      "hard_gate_failed": false
+      "scenario": "Atelier bricolage 20 L",
+      "product_id": "bosch-advancedvac-20",
+      "why": "20 L, démarrage avec outil, vidange d’eau et tuyau antistatique.",
+      "main_tradeoff": "Positionnement DIY et pas de classe L/M/H documentée."
+    },
+    {
+      "scenario": "Grand public 30 L hors Kärcher",
+      "product_id": "nilfisk-multi-ii-30-t",
+      "why": "30 L, wet/dry et gamme grand public dédiée garage/atelier.",
+      "main_tradeoff": "Options variant selon suffixe et pas de classe L/M/H documentée sur la fiche grand public."
     }
   ],
+  "measurement_notes": [],
   "notes": {
-    "total_solution_cost_required": false,
+    "scoring_used": false,
     "affiliate_commission_used_in_ranking": false,
-    "desk_research_only": true
+    "desk_research_only": true,
+    "noindex_during_rollout": true,
+    "hands_on_test": false
   }
 }
