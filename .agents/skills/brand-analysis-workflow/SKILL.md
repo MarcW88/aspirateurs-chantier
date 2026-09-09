@@ -1,277 +1,151 @@
 ---
 name: brand-analysis-workflow
-description: Workflow d'analyse des pages /marques/ d'aspirateurs-chantier.fr. Audite une page ou le cluster, contrôle intention, valeur affiliée, preuves, sécurité des claims, structure, ton éditorial, maillage et SEO, puis décide KEEP, LIGHT_UPDATE, DEEP_REWRITE, MERGE ou NOINDEX. En mode PUBLISH_REVIEW, sert de gate final avant validation humaine.
+description: Orchestration custom d'audit et de publish review des pages /marques/ d'aspirateurs-chantier.fr, appuyée sur une pile majoritairement partagée de skills génériques.
 metadata:
   adapted_for: aspirateurs-chantier.fr
   source_workflow: bloc-notes-numeriques.fr/brand-analysis-workflow
+  orchestration_target: ">=80% shared skills"
+  custom_scope: "vacuum-domain risk checks, cluster distinctiveness, site tone and publish gate"
 ---
 
 # Brand Analysis Workflow — aspirateurs-chantier.fr
 
-## Rôle
+## Rôle et modes
 
-C'est le workflow d'analyse à utiliser pour les URLs sous `/marques/`.
+Ce workflow décide et contrôle ; il ne rédige pas par défaut.
 
-Il reprend la logique du workflow de `bloc-notes-numeriques.fr`, mais l'adapte au marché des aspirateurs de chantier, à la structure statique du dépôt et au ton du site.
+- `AUDIT` : une page existante ;
+- `CLUSTER_AUDIT` : plusieurs pages marques et leurs chevauchements ;
+- `PUBLISH_REVIEW` : gate final du draft.
 
-Il ne réécrit pas la page par défaut. Il produit un diagnostic, une décision et un plan de correction. Les pages `/modeles/`, `/comparatifs/`, `/guides/` et `/usages/` gardent leurs propres workflows.
+Avant l'audit :
 
-## Modes
+```bash
+python3 validate_brand_skill_stack.py
+```
 
-### `AUDIT`
-Mode par défaut pour une page existante.
-
-### `CLUSTER_AUDIT`
-Compare plusieurs pages `/marques/` afin de détecter cannibalisation, duplication de rôle et industrialisation éditoriale.
-
-### `PUBLISH_REVIEW`
-Gate final après rédaction. Retourne :
-
-- `PASS — READY_FOR_HUMAN_VALIDATION`
-- `FAIL — KEEP_NOINDEX`
-
-Un PASS ne retire jamais `noindex, follow` automatiquement.
+Un FAIL bloque l'analyse éditoriale finale : la pile partagée doit être disponible.
 
 ---
 
-# 1. Entrées
+# 1. Chaîne partagée obligatoire
 
-Lire avant l'audit :
+Déléguer les contrôles génériques aux skills dédiés :
 
-- `brand-workflow.config.yaml` ;
-- `_generate_brands.py`, source de vérité actuelle du cluster ;
-- page cible et pages sœurs pertinentes ;
-- `.content/brands/` et `.content/reviews/` si présents ;
-- données GSC, sémantiques ou historiques lorsqu'elles existent ;
-- sources actuelles lorsque les faits peuvent avoir évolué.
+- `search-intent` ;
+- `content-audit` puis `content-refresh` si UPDATE ;
+- `affiliate-value` ;
+- `fact-check` ;
+- `evidence-based-reviews` pour tout jugement important ;
+- `internal-linking-audit` ;
+- `humanizer`, `general-writing`, `anti-ai-slop` en review du draft ;
+- `seo-technical`, `seo-best-practices` ;
+- `editorial-qa`.
 
-Ne jamais inventer une donnée absente pour compléter l'audit.
-
-Pour une page existante, vérifier la source de vérité et le HTML rendu : un correctif appliqué uniquement au HTML généré est incomplet s'il sera écrasé au prochain build.
-
----
-
-# 2. Chaîne d'analyse
-
-Réutiliser en priorité le workflow `.agents/skills/content-recovery-and-production-workflow/SKILL.md` pour les contrôles génériques de récupération : intention, valeur utile, contenu générique, obsolescence, fact-check, maillage, QA éditoriale et SEO.
-
-Lorsque les skills spécialisés cités par ce workflow sont disponibles dans l'environnement, les exécuter selon leur rôle : `search-intent`, `content-refresh`, `affiliate-value`, `fact-check`, `internal-linking-audit`, `humanizer`, `anti-ai-slop`, `seo-technical`, `seo-best-practices` et `editorial-qa`.
-
-Pour les jugements produit, ne jamais transformer une fiche fabricant ou un test tiers en expérience propre au site. Une page de marque de ce dépôt est, sauf preuve contraire, une **analyse documentaire**.
+Ne pas recopier leurs checklists ici. Le workflow `.agents/skills/content-recovery-and-production-workflow/SKILL.md` couvre la logique générale de récupération.
 
 ---
 
-# 3. Contrôle métier propre aux aspirateurs de chantier
+# 2. Custom — rôle et frontière de page
 
-Les claims techniques ne sont pas tous équivalents. Contrôler en priorité les éléments qui changent réellement une décision ou touchent à la sécurité :
+Les `/marques/<slug>/` sont surtout des `BRAND_HUB`; les fiches détaillées vivent plutôt sous `/modeles/`.
 
-- classe de poussière L, M ou H ;
-- rôle exact d'un aspirateur de sécurité ;
-- débit d'air et dépression, avec le point de mesure lorsqu'il est connu ;
-- capacité brute, nette et volume d'eau ;
-- décolmatage manuel ou automatique ;
-- prise asservie / démarrage avec outil ;
-- système antistatique ;
-- raccords et compatibilités avec les outils ;
-- plateformes batterie et incompatibilités entre gammes ;
-- filtres, sacs, consommables et disponibilité ;
-- eau/poussière versus poussières dangereuses ;
-- poids, mobilité et volume quand ils modifient l'usage ;
-- statut réel du modèle ou de la génération.
+Vérifier que la page explique la logique de gamme, les systèmes/technologies qui changent le choix, l'écosystème utile et la prochaine étape du parcours sans dupliquer une fiche modèle ou un comparatif générique.
 
-## Règles de prudence
-
-- Ne jamais déduire une classe de sécurité à partir d'un filtre HEPA, d'une puissance ou d'un débit.
-- Ne pas comparer deux chiffres fabricants comme s'ils étaient directement équivalents lorsque le protocole ou le point de mesure diffère.
-- Ne pas présenter une fonction fabricant comme un résultat mesuré par la rédaction.
-- Pour une poussière potentiellement dangereuse, garder une formulation qui renvoie au risque, aux prescriptions applicables et à la classe requise, sans transformer la page en conseil réglementaire personnalisé.
+Le type de page sert de garde-fou, jamais de template de headings.
 
 ---
 
-# 4. Adéquation au rôle de page
+# 3. Custom — contrôle métier aspirateurs
 
-Le type de page est une grille de risque, pas un template.
+Contrôler avec attention les claims sur :
 
-Types possibles : `DIRECTORY`, `BRAND_HUB`, `PRODUCT`, `REVIEW`, `SERVICE`, `ACCESSORY_HUB`, `ALTERNATIVES`.
+- classes L/M/H ;
+- filtre vs classe de sécurité ;
+- débit/dépression et contexte de mesure ;
+- capacité brute/net/eau ;
+- décolmatage ;
+- prise asservie ;
+- antistatique ;
+- compatibilités outils/raccords ;
+- plateformes batterie ;
+- consommables ;
+- eau/poussière vs poussières dangereuses ;
+- poids/mobilité ;
+- génération/statut du produit.
 
-Sur l'architecture actuelle du site, les URLs `/marques/<slug>/` sont principalement des `BRAND_HUB`. Les produits détaillés se trouvent plutôt sous `/modeles/` : ne pas dupliquer une fiche modèle dans une page marque.
-
-Pour un `BRAND_HUB`, vérifier notamment :
-
-- le vrai principe de lecture de la gamme ;
-- les familles ou technologies qui changent le choix ;
-- l'écosystème utile : outils, batteries, coffrets, raccords, filtres et consommables ;
-- les limites concrètes ;
-- les usages pour lesquels la marque est ou non cohérente ;
-- la prochaine page logique du site.
-
-Aucune section n'est obligatoire uniquement parce qu'elle existe chez une autre marque.
-
----
-
-# 5. Contrôle de similarité structurelle du cluster
-
-C'est un gate majeur sur ce dépôt.
-
-Comparer :
-
-- H2/H3 et leur ordre ;
-- forme de l'introduction et de l'`answer-box` ;
-- répétition des blocs gamme / écosystème / forces / limites / pour qui / éviter ;
-- emplacement systématique des tableaux et CTA ;
-- paragraphes de transition recyclés ;
-- mêmes arguments génériques appliqués à plusieurs marques ;
-- même conclusion ou même routage interne avec simple substitution du nom de marque.
-
-Une cohérence visuelle est souhaitable. Un squelette éditorial identique ne l'est pas.
-
-### FAIL structurel
-
-La page mérite `DEEP_REWRITE` lorsque l'architecture semble dictée par `_generate_brands.py` plutôt que par les questions propres à la marque.
-
-Signaux forts :
-
-- mêmes rôles de sections dans le même ordre sur plusieurs marques ;
-- phrases génériques identiques d'une page à l'autre ;
-- blocs « pour qui / à éviter » produits par obligation plutôt que par besoin ;
-- tableau de gamme présent alors qu'une autre représentation serait plus utile ;
-- contenu que l'on peut permuter entre deux marques sans changer le raisonnement.
+FAIL si une classe est déduite d'une puissance/filtration, si des métriques non comparables sont présentées comme équivalentes, ou si une donnée fabricant devient une observation maison.
 
 ---
 
-# 6. Ton of voice et mise en avant
+# 4. Custom — distinctivité du cluster
 
-La page doit rester cohérente avec aspirateurs-chantier.fr :
+Comparer la page aux marques sœurs :
 
-- expertise pratique et vocabulaire précis ;
-- ton sobre, comparatif et non promotionnel ;
-- réponse utile rapidement, sans intro marketing ;
-- distinction claire entre données fabricant et interprétation éditoriale ;
-- limites visibles au même niveau que les avantages ;
-- pas de faux test ni de première personne d'expérience si aucun hands-on n'existe ;
-- formulations compréhensibles pour un bricoleur exigeant sans perdre la précision utile aux pros.
+- H2/H3 et ordre ;
+- fonction des sections ;
+- introduction / answer-box ;
+- emplacement systématique tableaux et CTA ;
+- paragraphes de transition ;
+- mêmes blocs forces/limites/pour qui/éviter ;
+- conclusions et routage interne ;
+- arguments génériques interchangeables.
 
-Conserver le design system existant : `answer-box`, tableaux dans `table-wrap` lorsque nécessaires, encadrés associés et sidebar. La cohérence visuelle ne doit pas forcer la même architecture éditoriale.
-
----
-
-# 7. Contrôle des preuves
-
-Hiérarchie par défaut :
-
-1. fabricant, documentation et manuel officiel ;
-2. distributeur officiel ;
-3. retailer fiable pour disponibilité ou information commerciale complémentaire ;
-4. tests et médias spécialisés indépendants nommés ;
-5. plusieurs sources utilisateurs lorsqu'un pattern d'expérience est réellement étudié.
-
-Statuts : `VERIFIED`, `SUPPORTED`, `INFERRED`, `UNKNOWN`, `OUTDATED`, `CONTRADICTED`.
-
-`UNKNOWN` et `CONTRADICTED` ne peuvent pas devenir une certitude rédactionnelle.
-
-Pour les marques, vérifier la fraîcheur des gammes et modèles : la présence chez un revendeur ne suffit pas toujours à établir qu'un produit fait encore partie de la gamme actuelle.
+Une cohérence visuelle est normale. Une architecture éditoriale dictée par `_generate_brands.py` plutôt que par la marque est un signal fort de `DEEP_REWRITE`.
 
 ---
 
-# 8. Décision finale AUDIT / CLUSTER_AUDIT
+# 5. Custom — ton et design
 
-### `KEEP`
-Page forte, actuelle, distincte et utile.
+La page doit rester pratique, experte, sobre et compréhensible par un bricoleur exigeant sans perdre la précision utile aux pros.
 
-### `LIGHT_UPDATE`
-Corrections ciblées : faits, sources, liens, formulations ou faiblesse locale sans changement fondamental d'architecture.
+Les limites doivent être aussi visibles que les avantages. Aucune expérience de première main sans preuve réelle.
 
-### `DEEP_REWRITE`
-Intent mal servi, architecture générique ou clonée, valeur marchande trop forte, preuves insuffisantes ou besoin de reconstruire le raisonnement.
-
-### `MERGE`
-Une autre URL couvre pratiquement la même intention et la distinction ne justifie pas deux pages.
-
-### `NOINDEX`
-La page n'a pas encore assez de valeur ou de justification pour être indexée.
-
-Pour chaque décision fournir :
-
-- confiance ;
-- preuves utilisées ;
-- unknowns ;
-- blockers ;
-- valeur déjà présente ;
-- actions nécessaires ;
-- prochaine étape.
-
-Pour `DEEP_REWRITE`, passer la main à `brand-content-workflow`.
+Conserver les composants du site (`answer-box`, `table-wrap`, `related-box`, sidebar, affiliation) sans les transformer en sections obligatoires.
 
 ---
 
-# 9. Mode PUBLISH_REVIEW
+# 6. Décision AUDIT / CLUSTER_AUDIT
 
-## Étape A — validation machine
+- `KEEP` : page forte, actuelle, distincte et utile.
+- `LIGHT_UPDATE` : corrections ciblées sans reconstruction substantielle.
+- `DEEP_REWRITE` : intention mal servie, architecture clonée/générique, valeur trop marchande ou raisonnement à reconstruire.
+- `MERGE` : intention pratiquement identique à une autre URL.
+- `NOINDEX` : valeur/justification encore insuffisante.
+
+Retourner confiance, preuves, unknowns, blockers, valeur existante, actions et prochaine étape.
+
+`DEEP_REWRITE` route vers `brand-content-workflow`.
+
+---
+
+# 7. PUBLISH_REVIEW
 
 Exécuter :
 
 ```bash
+python3 validate_brand_skill_stack.py
 python3 _validate_brands.py
 ```
 
-Le validateur machine vérifie uniquement des signaux structurels et d'intégrité observables. Il ne doit pas imposer un nombre de mots, de H2 ou de liens, ni un plan fixe.
+Puis vérifier les résultats des skills partagés et les gates custom :
 
-## Étape B — gates substantiels
-
-Vérifier au minimum :
-
-- intention satisfaite ;
-- valeur originale même sans affiliation ;
-- claims importants sourcés ;
-- sécurité des formulations L/M/H ;
-- niveau de preuve honnête ;
-- pas de faux test ;
-- pas de merchant rewrite ;
-- pas de cannibalisation non résolue ;
-- pas de signal `HIGH` d'AI-slop ;
+- preuves et niveau d'expérience honnêtes ;
+- aucun blocker métier L/M/H ou métrique ;
 - architecture propre à la marque ;
-- absence de clonage structurel substantiel avec les pages sœurs ;
-- title/H1/canonical/robots cohérents ;
-- liens internes utiles ;
-- design cohérent avec le site sans template éditorial forcé.
+- pas de clonage substantiel ;
+- ton/design cohérents sans template éditorial ;
+- source de vérité et HTML rendu cohérents ;
+- `noindex, follow` conservé.
 
-## Étape C — résultat
-
-PASS :
+Résultat :
 
 `PASS — READY_FOR_HUMAN_VALIDATION`
 
-FAIL :
+ou
 
 `FAIL — KEEP_NOINDEX`
 
-Lister les gates en échec et router vers le workflow approprié.
+Un PASS ne retire jamais le noindex automatiquement.
 
----
-
-# 10. Indexation
-
-Par défaut, conserver `noindex, follow`.
-
-Conditions cumulatives avant une future indexation :
-
-1. `_validate_brands.py` sans blocker ;
-2. `PUBLISH_REVIEW` = `PASS — READY_FOR_HUMAN_VALIDATION` ;
-3. validation humaine explicite ;
-4. instruction explicite de rendre la page indexable.
-
----
-
-# 11. Ce que ce workflow ne doit pas devenir
-
-Ne pas ajouter :
-
-- quotas de mots ;
-- quotas de headings ;
-- quotas de liens ;
-- score artificiel de qualité ;
-- template fixe par marque ;
-- obligation automatique d'un tableau, d'une FAQ, d'un bloc « forces » ou « à éviter » ;
-- deuxième copie des règles génériques déjà couvertes par le workflow de récupération.
-
-Sa valeur est l'orchestration, la décision et le contrôle inter-pages propre au cluster marques.
+Toute nouvelle règle générique doit être portée par le skill partagé correspondant, pas ajoutée ici.

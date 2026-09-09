@@ -1,392 +1,163 @@
 ---
 name: brand-content-workflow
-description: Workflow de production et de refonte des pages /marques/ d'aspirateurs-chantier.fr. Produit un contenu d'affiliation utile, sourcé, fact-checké, non templatisé et sans faux test. La structure éditoriale doit découler de l'intention, des preuves et des enjeux propres à chaque marque, tout en conservant le ton et le design system du site.
+description: Orchestration custom de production/refonte des pages /marques/ d'aspirateurs-chantier.fr à partir d'une pile majoritairement partagée de skills génériques.
 metadata:
   adapted_for: aspirateurs-chantier.fr
   source_workflow: bloc-notes-numeriques.fr/brand-content-workflow
+  orchestration_target: ">=80% shared skills"
+  custom_scope: "vacuum-domain rules, site architecture, tone and presentation"
 ---
 
 # Brand Content Workflow — aspirateurs-chantier.fr
 
 ## Rôle
 
-C'est le workflow de production à utiliser pour créer ou réécrire une URL sous `/marques/`.
+Ce workflow **orchestre** la production des pages `/marques/`. Il ne réimplémente pas l'intention, le fact-check, le humanizer, le SEO ou la QA : ces responsabilités appartiennent aux skills partagés du dépôt.
 
-Il reprend la logique du workflow de `bloc-notes-numeriques.fr`, mais l'adapte au marché des aspirateurs de chantier, aux sources de vérité du dépôt et au style éditorial du site.
+Principe : **shared skills pour la méthode ; custom uniquement pour l'univers aspirateurs de chantier et le site.**
 
-Principe central :
+Avant toute exécution :
 
-> **Pas de plan avant l'intention et les preuves. Pas de claim important sans source. Pas de template éditorial par marque.**
+```bash
+python3 validate_brand_skill_stack.py
+```
 
-Le but est de produire une page qui aide réellement à choisir entre des familles, systèmes et usages, pas un catalogue constructeur réécrit.
+Un FAIL du skill stack bloque la production.
 
 ---
 
-# 1. Entrées obligatoires
+# 1. Entrées site-spécifiques
 
 Lire :
 
 - `brand-workflow.config.yaml` ;
-- `_generate_brands.py`, source de vérité actuelle ;
-- page cible et contenu existant ;
-- pages sœurs `/marques/` ;
-- pages `/modeles/`, `/comparatifs/`, `/guides/` et `/usages/` pertinentes ;
-- `.content/brands/` et `.content/reviews/` ;
-- données GSC, sémantiques ou historiques disponibles ;
+- `_generate_brands.py` et `.content/brands/`, sources de vérité actuelles ;
+- page cible + pages sœurs `/marques/` ;
+- pages `/modeles/`, `/comparatifs/`, `/guides/`, `/usages/` utiles ;
+- données GSC/sémantiques disponibles ;
 - sources actuelles nécessaires à la vérification.
 
-Pour une page existante, commencer obligatoirement par :
+Ne jamais corriger seulement le HTML rendu si `_generate_brands.py` peut l'écraser.
 
-`.agents/skills/brand-analysis-workflow/SKILL.md` en mode `AUDIT`.
-
-Ne pas lancer une réécriture profonde si l'audit conclut `KEEP`, `LIGHT_UPDATE`, `MERGE` ou `NOINDEX` sans raison documentée.
-
-Ne jamais modifier uniquement le HTML généré si `_generate_brands.py` reste capable de l'écraser au prochain build.
+Pour une page existante, commencer par `brand-analysis-workflow / AUDIT`.
 
 ---
 
-# 2. Pré-analyse et récupération
+# 2. Chaîne partagée obligatoire
 
-Réutiliser en priorité `.agents/skills/content-recovery-and-production-workflow/SKILL.md` pour l'intention, le diagnostic de récupération, le fact-check, la valeur affiliée, le maillage, la QA éditoriale et SEO.
+Les skills ci-dessous sont **obligatoires lorsqu'ils correspondent à l'étape**, et non des fallbacks optionnels :
 
-Lorsque les skills spécialisés cités par ce workflow sont disponibles dans l'environnement, les exécuter selon leur rôle : `search-intent`, `content-refresh`, `affiliate-value`, `fact-check`, `internal-linking-audit`, `humanizer`, `general-writing`, `anti-ai-slop`, `seo-technical`, `seo-best-practices` et `editorial-qa`.
+1. `search-intent` — intention, rôle et cannibalisation ;
+2. `content-audit` — KEEP / UPDATE / MERGE / REDIRECT / REMOVE ;
+3. `content-refresh` — uniquement après UPDATE ;
+4. `fact-check` — evidence brief avant plan ;
+5. `evidence-based-reviews` — dès qu'un jugement dépasse une simple spec ;
+6. `affiliate-value` — valeur décisionnelle indépendante de l'affiliation ;
+7. rédaction depuis les preuves ;
+8. `fact-check` post-draft ;
+9. `humanizer` → `general-writing` → `anti-ai-slop` ;
+10. `internal-linking-audit` ;
+11. `seo-technical` + `seo-best-practices` selon le stack ;
+12. `editorial-qa` ;
+13. `brand-analysis-workflow / PUBLISH_REVIEW`.
 
-Pour une page existante :
+`humanizer` peut mobiliser `better-usage`, `writing-cadence`, `non-autoregressive-writing-pass` et, seulement si le genre le justifie, `academic-voice`.
 
-- conserver les passages concrets et toujours valides ;
-- conserver les liens utiles ;
-- conserver un tableau seulement s'il réduit réellement une ambiguïté ;
-- supprimer les phrases génériques recyclées entre marques ;
-- ne pas remplacer une information précise par une prose plus fluide mais plus vague.
-
----
-
-# 3. Intention avant architecture
-
-Avant de proposer un plan, établir :
-
-- requête/topic principal ;
-- intention ;
-- décision ou problème concret du lecteur ;
-- rôle de la page marque par rapport aux fiches `/modeles/` ;
-- prochaine question logique ;
-- risque de cannibalisation.
-
-Sur l'architecture actuelle, une page `/marques/<slug>/` sert surtout de `BRAND_HUB`. Elle ne doit pas refaire les fiches modèles ni les comparatifs génériques.
-
-Exemples de vraies questions de marque :
-
-- comment lire la gamme ;
-- quelles familles sont réellement différentes ;
-- quel écosystème outils/batteries/raccords/consommables est impliqué ;
-- quelles technologies changent l'usage ;
-- dans quels cas la marque est rationnelle ou moins adaptée ;
-- vers quel modèle, comparatif ou guide poursuivre.
+Le workflow partagé `.agents/skills/content-recovery-and-production-workflow/SKILL.md` reste la couche de récupération générale et ne doit pas être recopié ici.
 
 ---
 
-# 4. Recherche et evidence brief
+# 3. Custom — rôle d'une page marque sur ce site
 
-La recherche précède le plan.
+Une URL `/marques/<slug>/` est principalement un `BRAND_HUB`.
 
-Construire un registre des affirmations nécessaires avec au minimum :
+Elle doit aider à comprendre **comment choisir dans l'univers de cette marque**, puis router vers `/modeles/`, `/comparatifs/`, `/guides/` ou `/usages/`.
 
-| Question / claim | Source | Date | Status | Utilité pour la décision |
-|---|---|---|---|---|
+Elle ne doit pas devenir :
 
-Hiérarchie de sources :
+- une fiche modèle géante ;
+- un comparatif général recopié ;
+- un catalogue constructeur ;
+- la même page que les autres marques avec substitutions de noms.
 
-1. fabricant, documentation ou manuel officiel ;
-2. distributeur officiel ;
-3. retailer fiable pour disponibilité ou information commerciale complémentaire ;
-4. tests et médias spécialisés indépendants nommés ;
-5. plusieurs sources utilisateurs lorsqu'un pattern d'expérience est réellement étudié.
-
-Statuts : `VERIFIED`, `SUPPORTED`, `INFERRED`, `UNKNOWN`, `OUTDATED`, `CONTRADICTED`.
-
-Ne jamais utiliser la mémoire du modèle pour combler `UNKNOWN`.
+Le plan vient de l'intention et des preuves. Aucun ordre de H2 n'est imposé.
 
 ---
 
-# 5. Claims métier à traiter avec prudence
+# 4. Custom — garde-fous aspirateurs de chantier
 
-Pour aspirateurs-chantier.fr, vérifier en priorité :
+Lorsqu'ils sont décisionnels, vérifier et contextualiser :
 
-- classe de poussière L, M ou H ;
-- filtre et niveau de filtration sans les confondre avec une classe de sécurité ;
-- débit d'air et dépression avec le point de mesure lorsqu'il est connu ;
-- décolmatage automatique ou manuel ;
-- prise asservie et démarrage avec outil ;
+- classes L / M / H et rôle réel d'un aspirateur de sécurité ;
+- filtre HEPA ou niveau de filtration **sans** l'assimiler à une classe de sécurité ;
+- débit d'air et dépression avec protocole/point de mesure lorsqu'il est connu ;
+- capacité brute, nette et volume d'eau ;
+- décolmatage manuel/automatique ;
+- prise asservie ou démarrage avec outil ;
 - antistatique ;
-- cuve brute/net/volume eau ;
-- batteries et compatibilité réelle entre plateformes ;
-- raccords et compatibilité avec les outils ;
-- sacs, filtres et consommables ;
-- poids, mobilité et volume ;
-- statut actuel d'un modèle ou d'une génération.
+- raccords et compatibilités outils ;
+- plateformes batterie et incompatibilités entre gammes ;
+- sacs, filtres, consommables et disponibilité ;
+- eau/poussière versus poussières potentiellement dangereuses ;
+- poids, mobilité, encombrement et volume ;
+- statut actuel du modèle ou de la génération.
 
-Une donnée constructeur reste une donnée constructeur. Ne jamais écrire qu'un produit a été « puissant », « silencieux », « pratique » ou « efficace lors de notre usage » sans expérience documentée.
+Règles absolues :
 
-Pour les poussières potentiellement dangereuses, expliquer la différence entre familles et classes sans transformer la page en conseil réglementaire personnalisé.
-
----
-
-# 6. Valeur originale avant plan
-
-Identifier ce que la page apporte au-delà du fabricant et des marchands.
-
-Cela peut être :
-
-- décoder une nomenclature complexe ;
-- distinguer une gamme bricolage d'une gamme professionnelle ;
-- expliquer pourquoi deux modèles avec des chiffres proches n'ont pas le même rôle ;
-- révéler une incompatibilité batterie ou accessoire ;
-- montrer le coût réel d'un écosystème ;
-- distinguer mobilité et gros volume ;
-- identifier le modèle ou la famille disproportionnée pour un usage ;
-- expliquer quand une autre marque est plus logique ;
-- remettre les chiffres fabricant dans le contexte d'un usage précis.
-
-Test obligatoire : **la page reste-t-elle utile si tous les liens affiliés disparaissent ?**
+- ne jamais déduire une classe de sécurité depuis puissance, débit ou filtre ;
+- ne pas comparer des métriques fabricants comme directement équivalentes si la mesure diffère ;
+- ne jamais transformer une donnée fabricant en observation propre au site ;
+- ne pas fournir de conseil réglementaire personnalisé sur un risque poussière.
 
 ---
 
-# 7. Construction libre mais justifiée du plan
+# 5. Custom — valeur propre à chaque marque
 
-Le plan est construit après l'intention, l'evidence brief et la valeur originale.
+Chercher la logique qui change réellement la décision, par exemple :
 
-Pour chaque section :
+- nomenclature ou familles distinctes ;
+- univers bricolage vs professionnel ;
+- écosystème batterie ;
+- intégration outil/aspirateur ;
+- raccords, coffrets et consommables ;
+- classes disponibles ;
+- mobilité vs capacité ;
+- coût total d'écosystème ;
+- situations où une autre marque est rationnellement plus cohérente.
 
-1. quelle question du lecteur résout-elle ?
-2. quelles preuves permettent de l'écrire ?
-3. quelle décision améliore-t-elle ?
-4. pourquoi mérite-t-elle une section autonome ?
-
-Si les réponses sont faibles, supprimer ou fusionner.
-
-## Interdiction de template
-
-Ne pas imposer :
-
-- un nombre fixe de H2/H3 ;
-- l'ordre « distinction → gamme → écosystème → forces → limites → pour qui → éviter → alternatives » ;
-- un tableau de gamme obligatoire ;
-- une FAQ automatique ;
-- un bloc « forces » ou « à éviter » obligatoire ;
-- un minimum de mots ou de liens.
-
-Deux marques peuvent partager des composants visuels sans partager la même architecture éditoriale.
-
-Exemples :
-
-- Bosch peut être structuré autour de la séparation DIY / Professional et des deux univers 18 V ;
-- Festool peut être structuré autour du système d'aspiration connecté à l'outil, des classes et du workflow Systainer/CLEANTEC ;
-- Kärcher peut être structuré autour de la différence WD / NT et du passage du nettoyage eau/poussière aux aspirateurs de sécurité.
-
-Ces exemples sont des angles de recherche, pas des templates.
+Exemples d'angles, jamais de templates : Bosch peut se lire via DIY/Professional et ses univers 18 V ; Festool via l'intégration outil/aspiration ; Kärcher via WD/NT et le passage eau/poussière → sécurité professionnelle.
 
 ---
 
-# 8. Ton of voice du site
+# 6. Custom — ton et mise en avant
 
-La rédaction doit rester cohérente avec aspirateurs-chantier.fr :
+Conserver le ton d'aspirateurs-chantier.fr : expert mais lisible, pratique, sobre, comparatif, précis sur les limites et transparent sur la provenance des données.
 
-- expert mais lisible ;
-- pratique et décisionnelle ;
-- sobre, sans superlatifs commerciaux inutiles ;
-- directe : répondre rapidement au point central ;
-- précise sur les limites ;
-- capable de vulgariser une différence technique sans la déformer ;
-- claire sur la provenance des données ;
-- pas de jargon SEO/GEO dans la prose finale.
+Éviter superlatifs sans critères, transitions génériques, conclusions récapitulatives et formulations interchangeables entre marques.
 
-Éviter particulièrement :
+Conserver le design system existant :
 
-- « excellent », « incontournable », « meilleur » sans critères ;
-- transitions passe-partout répétées sur plusieurs marques ;
-- « le bon produit est celui qui... » et autres phrases applicables à toute marque ;
-- conclusions qui répètent l'introduction ;
-- listes symétriques écrites pour remplir une structure.
+- `answer-box` si une réponse courte aide réellement ;
+- `table-wrap` seulement quand le tableau réduit une ambiguïté ;
+- `related-box`, sidebar, affiliation et styles existants ;
+- TOC calculée depuis les vrais headings.
+
+La cohérence visuelle ne dicte jamais l'architecture éditoriale.
 
 ---
 
-# 9. Mise en avant et design system
+# 7. Persistance et publication
 
-Respecter l'interface du site au lieu de créer un nouveau langage visuel.
+Conserver dans `.content/brands/` ou `.content/reviews/` : intention, evidence brief, statuts de claims, sources/date, valeur originale, justification du plan et résultat de QA.
 
-Réutiliser lorsque pertinent :
+Par défaut : `noindex, follow`.
 
-- `answer-box` pour une réponse initiale courte ;
-- `table-wrap` lorsqu'un tableau réduit réellement une ambiguïté ;
-- `related-box` pour la suite du parcours ;
-- sidebar et sommaire ;
-- encadré affiliation existant ;
-- styles de liens, titres et composants de `style.css`.
+Avant indexation :
 
-Le sommaire doit refléter les vrais H2 de la page, pas une liste fixe héritée du générateur.
+1. `validate_brand_skill_stack.py` PASS ;
+2. `_validate_brands.py` sans blocker ;
+3. `brand-analysis-workflow / PUBLISH_REVIEW` = `PASS — READY_FOR_HUMAN_VALIDATION` ;
+4. validation humaine explicite ;
+5. instruction explicite de rendre la page indexable.
 
-La cohérence visuelle ne justifie jamais un plan éditorial identique entre marques.
-
----
-
-# 10. Rédaction depuis les preuves
-
-Règles :
-
-- chaque claim important doit être relié à une source ou présenté comme déduction ;
-- aucune donnée, classe, prix, génération, compatibilité, date ou performance ne peut être inventée ;
-- expliquer la conséquence pour le lecteur au lieu de paraphraser le fabricant ;
-- afficher les limites aussi clairement que les avantages ;
-- ne pas écrire une section uniquement pour placer un mot-clé ou un lien ;
-- ne jamais simuler d'expérience utilisateur ;
-- ne pas faire varier le verdict selon la commission.
-
-La prose finale ne parle pas de SEO, GEO, maillage, intention, page type, evidence ledger ou stratégie éditoriale.
-
----
-
-# 11. Fact-check post-draft
-
-Après rédaction :
-
-1. réextraire les claims vérifiables ;
-2. comparer avec l'evidence brief ;
-3. recontrôler les formulations ajoutées ;
-4. corriger `OUTDATED` ou `CONTRADICTED` ;
-5. qualifier ou supprimer `UNKNOWN` ;
-6. s'assurer qu'une donnée fabricant n'est pas devenue une observation propre au site.
-
----
-
-# 12. Finition éditoriale
-
-Appliquer la chaîne QA du workflow de récupération et, lorsque disponibles, les passes `humanizer`, `general-writing` puis `anti-ai-slop`.
-
-La finition peut modifier la structure si elle semble mécanique, mais elle ne peut ajouter aucun fait absent des preuves.
-
-Contrôler particulièrement :
-
-- même rythme sur toutes les sections ;
-- rule of three artificielle ;
-- intro qui reformule le H1 ;
-- mêmes paragraphes de transition sur plusieurs marques ;
-- headings interchangeables ;
-- structure trop symétrique ;
-- surpromesse commerciale.
-
----
-
-# 13. Maillage
-
-Ajouter uniquement les liens qui servent la prochaine question logique :
-
-- modèle pertinent ;
-- comparatif adapté ;
-- guide technique ;
-- usage ;
-- autre marque lorsque la comparaison est directement utile.
-
-Aucun quota de liens ni de destinations.
-
----
-
-# 14. SEO et QA
-
-Vérifier :
-
-- title et H1 ;
-- canonical ;
-- robots ;
-- breadcrumbs ;
-- liens ;
-- structured data honnête ;
-- absence de cannibalisation ;
-- cohérence entre HTML rendu et source de vérité.
-
-Aucun nombre de mots, headings, tableaux ou liens n'est un KPI de qualité.
-
----
-
-# 15. Gate final
-
-Une fois le draft stable, appeler :
-
-`.agents/skills/brand-analysis-workflow/SKILL.md` en mode `PUBLISH_REVIEW`.
-
-Le gate :
-
-- exécute `python3 _validate_brands.py` ;
-- recontrôle preuves, intention et claims métier ;
-- compare la structure aux pages sœurs ;
-- cherche l'industrialisation éditoriale ;
-- vérifie le ton et le design system.
-
-Résultat attendu :
-
-`PASS — READY_FOR_HUMAN_VALIDATION`
-
-Sinon :
-
-`FAIL — KEEP_NOINDEX`
-
----
-
-# 16. Persistance
-
-Conserver dans `.content/brands/` ou `.content/reviews/` selon le cas :
-
-- cadrage de l'intention ;
-- research/evidence brief ;
-- statut des claims ;
-- sources et date de vérification ;
-- valeur originale recherchée ;
-- justification du plan ;
-- résultat de l'audit et du `PUBLISH_REVIEW`.
-
-Le HTML final ne doit pas être l'unique endroit où les preuves sont documentées.
-
----
-
-# 17. Indexation
-
-Par défaut, conserver `noindex, follow`.
-
-Conditions cumulatives avant une future indexation :
-
-1. `_validate_brands.py` sans blocker ;
-2. `brand-analysis-workflow / PUBLISH_REVIEW` = `PASS — READY_FOR_HUMAN_VALIDATION` ;
-3. validation humaine explicite ;
-4. instruction explicite de rendre la page indexable.
-
----
-
-# 18. Résumé
-
-```text
-PAGE EXISTANTE
-  brand-analysis-workflow / AUDIT
-        ↓
-intention + récupération
-        ↓
-recherche → evidence brief
-        ↓
-valeur originale
-        ↓
-PLAN PROPRE À LA MARQUE
-        ↓
-rédaction depuis les preuves
-        ↓
-fact-check post-draft
-        ↓
-QA éditoriale + anti-AI-slop
-        ↓
-maillage contextuel
-        ↓
-SEO technique
-        ↓
-brand-analysis-workflow / PUBLISH_REVIEW
-        ↓
-validation humaine
-```
-
-Le workflow orchestre la production ; il ne transforme pas les pages marques en variantes d'un même template.
+Le custom s'arrête là : toute règle générique supplémentaire doit être ajoutée au skill partagé approprié, pas dupliquée dans ce workflow.
