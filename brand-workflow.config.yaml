@@ -14,7 +14,9 @@ content:
   mode: "recovery"
 
 quality:
-  quality_reference: "/marques/bosch/"
+  editorial_reference: "/guides/comment-choisir-aspirateur-de-chantier/"
+  visual_reference: "/marques/bosch/"
+  visual_reference_is_not_structure_template: true
   draft_robots: "noindex, follow"
   prohibit_word_count_quotas: true
   prohibit_heading_count_quotas: true
