@@ -4,7 +4,7 @@
 The legacy `_generate_comparatifs.py` is intentionally NOT executed here anymore:
 it imports the old global site generator and can rewrite unrelated pages. The canonical
 comparison source of truth is now the professional scenario override plus the eight
-audited intent-specific overrides.
+audited intent-specific overrides, followed by the comparison-specific design layer.
 """
 from pathlib import Path
 import subprocess
@@ -24,6 +24,7 @@ def main():
     run("_generate_comparison_overrides.py")
     run("_polish_comparison_rollout.py")
     run("_normalize_comparatifs.py")
+    run("_apply_comparison_design.py")
     run("_validate_comparatifs.py")
     run("_validate_comparison_rollout.py")
     print("✓ canonical comparison generation complete")
