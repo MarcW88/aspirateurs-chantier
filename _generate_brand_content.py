@@ -2,7 +2,7 @@
 """Canonical brand-content generation entry point.
 
 Run the generic generator first, then site-approved bespoke overrides. This
-prevents a later generic rebuild from silently restoring a templated Bosch hub.
+prevents a later generic rebuild from silently restoring templated brand hubs.
 """
 from pathlib import Path
 import subprocess
@@ -18,6 +18,7 @@ def run(script):
 def main():
     run('_generate_brands.py')
     run('_generate_bosch.py')
+    run('_generate_brand_overrides.py')
     print('✓ canonical brand generation complete')
 
 
