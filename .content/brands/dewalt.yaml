@@ -156,5 +156,12 @@
   },
   "source_of_truth": "_generate_brand_overrides.py",
   "structure_strategy": "bespoke_flexvolt_airlock_tstak_dust_control",
-  "recovery_verdict": "MAJOR"
+  "recovery_verdict": "LIGHT_UPDATE",
+  "cluster_audit": {
+    "audited_snapshot": "7547c8ef4b1d6bb2602756312beecb1cdc1ad185",
+    "date": "2026-09-09",
+    "verdict": "LIGHT_UPDATE",
+    "confidence": 0.8,
+    "order_gate": "MODEL_CLEANUP -> USAGE_COMPLETION -> BRAND_REVIEW -> CLUSTER_PUBLISH_REVIEW"
+  }
 }

@@ -2,8 +2,8 @@
 """Canonical brand-content generation entry point.
 
 Run the generic generator first, then site-approved bespoke overrides and the
-small editorial polish pass. This prevents later rebuilds from silently
-restoring templated brand hubs or pre-review copy.
+small editorial polish pass. If the cluster audit metadata layer exists, reapply
+it last so a standalone brand rebuild cannot erase recovery decisions.
 """
 from pathlib import Path
 import subprocess
@@ -21,6 +21,9 @@ def main():
     run('_generate_bosch.py')
     run('_generate_brand_overrides.py')
     run('_brand_rollout_polish.py')
+    cluster_metadata = BASE / '_apply_cluster_audit_metadata.py'
+    if cluster_metadata.exists():
+        run(cluster_metadata.name)
     print('✓ canonical brand generation complete')
 
 
