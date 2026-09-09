@@ -136,13 +136,21 @@
       "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0",
       "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
+    },
+    {
+      "product": "bosch-gas-18v-10-l",
+      "criterion": "bagless_design",
+      "claim": "Bosch décrit le GAS 18V-10 L comme une conception sans sac avec technologie cyclonique pour l’aspiration de matières solides et de liquides.",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/",
+      "source_date": "2026-09-09",
+      "evidence_class": "VERIFIED"
     }
   ],
   "recommendation_logic": [
     {
       "scenario": "Conception mobile explicitement sans sac",
       "product_id": "bosch-gas-18v-10-l",
-      "why": "Référence retenue historiquement pour son usage sans sac et sa compacité classe L.",
+      "why": "Bosch documente explicitement une conception sans sac avec technologie cyclonique sur ce modèle compact de classe L.",
       "main_tradeoff": "Vidage direct plus exposant et filtre à protéger sur poussières fines ; petite cuve."
     },
     {
