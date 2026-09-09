@@ -7,6 +7,7 @@ on:
     paths:
       - "_generate_comparison_overrides.py"
       - "_generate_comparison_content.py"
+      - "_polish_comparison_rollout.py"
       - "_validate_comparison_rollout.py"
       - ".github/workflows/rollout-comparison-audit.yml"
   workflow_dispatch:
@@ -31,6 +32,7 @@ jobs:
         run: |
           python -m py_compile _generate_comparison_overrides.py
           python -m py_compile _generate_comparison_content.py
+          python -m py_compile _polish_comparison_rollout.py
           python -m py_compile _validate_comparison_rollout.py
       - name: Generate comparison cluster in audited order
         run: python _generate_comparison_content.py
@@ -50,7 +52,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _generate_comparison_overrides.py _generate_comparison_content.py _validate_comparison_rollout.py _generate_comparatifs.py comparatifs .content/comparisons
+          git add _generate_comparison_overrides.py _generate_comparison_content.py _polish_comparison_rollout.py _validate_comparison_rollout.py comparatifs .content/comparisons
           if git diff --cached --quiet; then
             echo "No rollout changes to commit."
           else
