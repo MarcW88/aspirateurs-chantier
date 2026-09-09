@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "purpose": "comparison workflow shared-vs-custom governance",
+  "ratio_basis": "orchestration_components",
+  "target_shared_ratio_min": 0.8,
+  "shared": [
+    {"name":"seo-content-audit","source_repo":"MarcW88/bloc-notes-numerique","source_sha":"5528c4bef76f9f52f1c3c00e17aaa31f806d2d36","upstream":"rampstackco/claude-skills"},
+    {"name":"seo-keyword","source_repo":"MarcW88/bloc-notes-numerique","source_sha":"97eb0de9d21b79802957a2e93ed89d9acdd13542","upstream":"rampstackco/claude-skills"},
+    {"name":"jobs-to-be-done","source_repo":"MarcW88/bloc-notes-numerique","source_sha":"b1c1932e0b0279d3060583bafbd2263420a4c2a7","upstream":"wondelai/skills"},
+    {"name":"evidence-based-reviews","source":"existing vendored skill in this repository","upstream":"rampstackco/claude-skills"},
+    {"name":"fact-check","source":"existing shared skill in this repository"},
+    {"name":"affiliate-value","source":"existing shared skill in this repository"},
+    {"name":"content-brief-authoring","source_repo":"MarcW88/bloc-notes-numerique","source_sha":"861de637874253aa2302d1ad43fb20b9b01572cf","upstream":"rampstackco/claude-skills"},
+    {"name":"content-and-copy","source_repo":"MarcW88/bloc-notes-numerique","source_sha":"6fbe38f95618d6462c95f19967fa7f66235546c8","upstream":"rampstackco/claude-skills"},
+    {"name":"humanizer","source":"existing shared skill in this repository"},
+    {"name":"general-writing","source":"existing shared skill in this repository","upstream":"msimchowitz/writing-skills"},
+    {"name":"anti-ai-slop","source":"existing shared skill in this repository"},
+    {"name":"seo-onpage","source_repo":"MarcW88/bloc-notes-numerique","source_sha":"7df9f0c63c5b6433ff808157667e71b56ccd2dd5","upstream":"rampstackco/claude-skills"},
+    {"name":"seo-technical","source":"existing shared skill in this repository"},
+    {"name":"internal-linking-audit","source":"existing shared skill in this repository"},
+    {"name":"editorial-qa","source":"existing shared skill in this repository"}
+  ],
+  "custom": [
+    {"name":"comparison-analysis-workflow","scope":"aspirateurs-chantier.fr comparison sanity, vacuum claim safety, cluster boundaries and publish gate"},
+    {"name":"comparison-content-workflow","scope":"aspirateurs-chantier.fr comparison orchestration and vacuum-specific decision rules"}
+  ]
+}
