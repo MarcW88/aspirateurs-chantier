@@ -4,6 +4,7 @@
 The generic generator may build the shell/seed only. Every brand must then receive a
 bespoke editorial override. Publication readiness is never granted by generation:
 `enforce_brand_review_state.py` downgrades pages without a valid v2 shared-skill run.
+Validation is intentionally performed by separate CI steps for observability.
 """
 from pathlib import Path
 import subprocess
@@ -13,6 +14,7 @@ BASE = Path(__file__).resolve().parent
 
 
 def run(script, *args):
+    print(f'→ {script}', flush=True)
     subprocess.run([sys.executable, str(BASE / script), *args], cwd=BASE, check=True)
 
 
@@ -29,9 +31,7 @@ def main():
 
     run('_apply_brand_design_fixes.py')
     run('enforce_brand_review_state.py')
-    run('_validate_brands.py')
-    run('validate_brand_run_evidence.py')
-    print('✓ canonical brand generation complete; publish readiness remains evidence-gated')
+    print('✓ canonical brand generation complete; run machine/run-evidence validators separately')
 
 
 if __name__ == '__main__':
