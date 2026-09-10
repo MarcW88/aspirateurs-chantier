@@ -48,6 +48,9 @@ jobs:
       - name: Generate canonically and enforce evidence-gated review state
         run: python _generate_brand_content.py
 
+      - name: Validate machine integrity and anti-template gates
+        run: python _validate_brands.py
+
       - name: Validate persistent run evidence state
         run: python validate_brand_run_evidence.py
 
@@ -55,6 +58,7 @@ jobs:
         run: |
           before=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
           python _generate_brand_content.py >/tmp/brand-regenerate.log
+          python _validate_brands.py >/tmp/brand-validate.log
           after=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
           test "$before" = "$after"
 
