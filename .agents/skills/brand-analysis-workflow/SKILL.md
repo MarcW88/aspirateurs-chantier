@@ -1,151 +1,184 @@
 ---
 name: brand-analysis-workflow
-description: Orchestration custom d'audit et de publish review des pages /marques/ d'aspirateurs-chantier.fr, appuyée sur une pile majoritairement partagée de skills génériques.
+description: Orchestration 80/20 d'audit et de publish review des pages /marques/ d'aspirateurs-chantier.fr. Les contrôles génériques restent délégués aux skills partagés vendored depuis bloc-notes-numerique ; le custom se limite aux risques métier aspirateurs et à la distinctivité inter-marques.
 metadata:
   adapted_for: aspirateurs-chantier.fr
   source_workflow: bloc-notes-numeriques.fr/brand-analysis-workflow
-  orchestration_target: ">=80% shared skills"
-  custom_scope: "vacuum-domain risk checks, cluster distinctiveness, site tone and publish gate"
+  orchestration_target: ">=80% shared responsibilities; <=20% custom"
 ---
 
 # Brand Analysis Workflow — aspirateurs-chantier.fr
 
-## Rôle et modes
+## Contrat 80/20
 
-Ce workflow décide et contrôle ; il ne rédige pas par défaut.
+Ce workflow décide ; il ne remplace pas les skills spécialisés.
 
-- `AUDIT` : une page existante ;
-- `CLUSTER_AUDIT` : plusieurs pages marques et leurs chevauchements ;
-- `PUBLISH_REVIEW` : gate final du draft.
+- **>=80% shared** : audit, intention, refresh, affiliate value, fact-check, evidence-based reviews, maillage, anti-AI, SEO et editorial QA restent propriétaires de leurs skills partagés.
+- **<=20% custom** : contrôle des risques métier aspirateurs + comparaison structurelle/inter-pages + décision finale.
 
-Avant l'audit :
+Avant toute analyse :
 
 ```bash
 python3 validate_brand_skill_stack.py
 ```
 
-Un FAIL bloque l'analyse éditoriale finale : la pile partagée doit être disponible.
+## Modes
+
+- `AUDIT` : une page existante ;
+- `CLUSTER_AUDIT` : plusieurs marques ensemble ;
+- `PUBLISH_REVIEW` : gate final d'un draft déjà produit par `brand-content-workflow`.
 
 ---
 
-# 1. Chaîne partagée obligatoire
+# 1. Shared skills à orchestrer
 
-Déléguer les contrôles génériques aux skills dédiés :
+Ne pas recopier leurs checklists. Utiliser selon leur rôle :
 
+- `content-audit` ;
 - `search-intent` ;
-- `content-audit` puis `content-refresh` si UPDATE ;
+- `content-refresh` si UPDATE ;
 - `affiliate-value` ;
 - `fact-check` ;
 - `evidence-based-reviews` pour tout jugement important ;
 - `internal-linking-audit` ;
-- `humanizer`, `general-writing`, `anti-ai-slop` en review du draft ;
-- `seo-technical`, `seo-best-practices` ;
+- `anti-ai-slop` en review ;
+- `seo-technical` ;
+- `seo-best-practices` ;
 - `editorial-qa`.
 
-Ne pas recopier leurs checklists ici. Le workflow `.agents/skills/content-recovery-and-production-workflow/SKILL.md` couvre la logique générale de récupération.
+En `PUBLISH_REVIEW`, vérifier également la trace des étapes de production `content-brief-authoring`, `content-and-copy`, `humanizer` et `general-writing` dans le run-evidence v2.
 
 ---
 
-# 2. Custom — rôle et frontière de page
+# 2. AUDIT — rôle et valeur de l'URL
 
-Les `/marques/<slug>/` sont surtout des `BRAND_HUB`; les fiches détaillées vivent plutôt sous `/modeles/`.
+Déterminer d'abord avec les shared skills :
 
-Vérifier que la page explique la logique de gamme, les systèmes/technologies qui changent le choix, l'écosystème utile et la prochaine étape du parcours sans dupliquer une fiche modèle ou un comparatif générique.
+- intention réelle ;
+- décision ou problème du lecteur ;
+- rôle autonome dans le cluster ;
+- valeur existante à préserver ;
+- faits obsolètes ou non prouvés ;
+- dépendance excessive aux fiches fabricant ;
+- valeur qui subsiste sans affiliation ;
+- chevauchement avec `/modeles/`, `/comparatifs/`, `/guides/`, `/usages/`.
 
-Le type de page sert de garde-fou, jamais de template de headings.
-
----
-
-# 3. Custom — contrôle métier aspirateurs
-
-Contrôler avec attention les claims sur :
-
-- classes L/M/H ;
-- filtre vs classe de sécurité ;
-- débit/dépression et contexte de mesure ;
-- capacité brute/net/eau ;
-- décolmatage ;
-- prise asservie ;
-- antistatique ;
-- compatibilités outils/raccords ;
-- plateformes batterie ;
-- consommables ;
-- eau/poussière vs poussières dangereuses ;
-- poids/mobilité ;
-- génération/statut du produit.
-
-FAIL si une classe est déduite d'une puissance/filtration, si des métriques non comparables sont présentées comme équivalentes, ou si une donnée fabricant devient une observation maison.
+Ne pas produire un plan avant d'avoir ces éléments.
 
 ---
 
-# 4. Custom — distinctivité du cluster
+# 3. Custom n°1 — contrôle métier aspirateurs
 
-Comparer la page aux marques sœurs :
+Seulement lorsqu'ils sont pertinents pour la marque, contrôler : classes L/M/H, filtre vs classe, débit/dépression et protocole, capacité, décolmatage, prise outil, antistatique, raccords, plateformes batteries, consommables, eau/poussière, poids/mobilité et statut de génération.
 
-- H2/H3 et ordre ;
-- fonction des sections ;
-- introduction / answer-box ;
-- emplacement systématique tableaux et CTA ;
+FAIL si :
+
+- une classe est déduite de la puissance ou de la filtration ;
+- deux métriques non comparables sont mises sur le même plan sans qualification ;
+- une donnée fabricant ou tierce devient une observation maison ;
+- une recommandation sécurité personnalisée dépasse les preuves disponibles.
+
+Ce contrôle ne doit jamais devenir un deuxième `fact-check` custom.
+
+---
+
+# 4. Custom n°2 — distinctivité inter-marques
+
+Comparer la page aux marques sœurs sur :
+
+- rôle des H2/H3 et leur ordre ;
+- question réellement résolue par chaque section ;
+- intro / answer-box ;
+- emplacement systématique de tableaux et CTA ;
+- répétition de blocs « gamme / forces / limites / pour qui / éviter » ;
 - paragraphes de transition ;
-- mêmes blocs forces/limites/pour qui/éviter ;
-- conclusions et routage interne ;
-- arguments génériques interchangeables.
+- recommandations interchangeables ;
+- architecture dictée par un générateur plutôt que par les preuves.
 
-Une cohérence visuelle est normale. Une architecture éditoriale dictée par `_generate_brands.py` plutôt que par la marque est un signal fort de `DEEP_REWRITE`.
+Une cohérence visuelle est normale. Une architecture éditoriale clonée ne l'est pas.
 
----
+Signaux de `DEEP_REWRITE` :
 
-# 5. Custom — ton et design
-
-La page doit rester pratique, experte, sobre et compréhensible par un bricoleur exigeant sans perdre la précision utile aux pros.
-
-Les limites doivent être aussi visibles que les avantages. Aucune expérience de première main sans preuve réelle.
-
-Conserver les composants du site (`answer-box`, `table-wrap`, `related-box`, sidebar, affiliation) sans les transformer en sections obligatoires.
+- plusieurs marques suivent la même signature de sections malgré des décisions différentes ;
+- une section n'a pas de question lecteur identifiable ;
+- son existence n'est pas justifiable par le brief/evidence ledger ;
+- des paragraphes longs peuvent être copiés d'une marque à l'autre en changeant seulement le nom ;
+- l'output est plus proche d'une fiche catalogue que d'une aide à la décision.
 
 ---
 
-# 6. Décision AUDIT / CLUSTER_AUDIT
+# 5. Décision AUDIT / CLUSTER_AUDIT
 
-- `KEEP` : page forte, actuelle, distincte et utile.
-- `LIGHT_UPDATE` : corrections ciblées sans reconstruction substantielle.
-- `DEEP_REWRITE` : intention mal servie, architecture clonée/générique, valeur trop marchande ou raisonnement à reconstruire.
-- `MERGE` : intention pratiquement identique à une autre URL.
+- `KEEP` : forte, actuelle, distincte et utile ;
+- `LIGHT_UPDATE` : corrections ciblées sans reconstruction ;
+- `DEEP_REWRITE` : intention mal servie, valeur faible, recherche trop superficielle ou architecture générique ;
+- `MERGE` : intention pratiquement identique à une autre URL ;
 - `NOINDEX` : valeur/justification encore insuffisante.
 
-Retourner confiance, preuves, unknowns, blockers, valeur existante, actions et prochaine étape.
+Retourner : confiance, preuves, unknowns, blockers, valeur existante, actions nécessaires et prochaine étape.
 
 `DEEP_REWRITE` route vers `brand-content-workflow`.
 
 ---
 
-# 7. PUBLISH_REVIEW
+# 6. PUBLISH_REVIEW — preuve d'exécution obligatoire
 
-Exécuter :
+Avant de pouvoir retourner un PASS :
 
 ```bash
 python3 validate_brand_skill_stack.py
 python3 _validate_brands.py
+python3 validate_brand_run_evidence.py --slug <slug> --require-run
 ```
 
-Puis vérifier les résultats des skills partagés et les gates custom :
+Puis vérifier substantiellement :
 
-- preuves et niveau d'expérience honnêtes ;
-- aucun blocker métier L/M/H ou métrique ;
-- architecture propre à la marque ;
-- pas de clonage substantiel ;
-- ton/design cohérents sans template éditorial ;
-- source de vérité et HTML rendu cohérents ;
-- `noindex, follow` conservé.
+- intention satisfaite ;
+- valeur utile même sans affiliation ;
+- claims importants reliés aux preuves ;
+- contradictions/unknowns correctement qualifiés ;
+- niveau de preuve honnête ;
+- aucun faux test ;
+- architecture issue du brief propre à l'URL ;
+- aucune industrialisation structurelle substantielle ;
+- résultats des passes `humanizer`, `general-writing`, `anti-ai-slop` pris en compte ;
+- liens internes répondant à la prochaine question ;
+- SEO technique cohérent ;
+- limitations aussi visibles que les avantages lorsque décisionnelles.
 
-Résultat :
+Un fichier d'audit de quelques lignes ou un flag généré par Python ne constitue pas un PUBLISH_REVIEW.
+
+## Résultat
+
+PASS exact :
 
 `PASS — READY_FOR_HUMAN_VALIDATION`
 
-ou
+Sinon :
 
 `FAIL — KEEP_NOINDEX`
 
-Un PASS ne retire jamais le noindex automatiquement.
+Le run-evidence v2 doit enregistrer le résultat sous `brand-analysis-publish-review`.
 
-Toute nouvelle règle générique doit être portée par le skill partagé correspondant, pas ajoutée ici.
+---
+
+# 7. Indexation
+
+Le workflow conserve `noindex, follow` par défaut.
+
+Conditions cumulatives avant indexation :
+
+1. stack shared/custom valide ;
+2. run-evidence v2 valide ;
+3. `_validate_brands.py` sans blocker ;
+4. `PUBLISH_REVIEW = PASS — READY_FOR_HUMAN_VALIDATION` ;
+5. validation humaine explicite ;
+6. instruction explicite d'indexer.
+
+---
+
+# 8. Limites du custom
+
+Ne pas ajouter de quotas de mots, headings ou liens. Ne pas créer de score artificiel. Ne pas transformer le type `BRAND_HUB` en squelette. Ne pas coder un nouveau moteur de recherche, de fact-check, de rédaction ou de style dans ce workflow.
+
+La gouvernance reste **>=80% shared / <=20% custom**. Le custom sert à adapter le domaine et à prendre la décision inter-pages, pas à remplacer les skills provenant des repos existants.
