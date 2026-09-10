@@ -27,6 +27,12 @@ def clean(s):
     return re.sub(r'\s+', ' ', unescape(TAG.sub(' ', s))).strip()
 
 
+def editorial_before_sources(body):
+    """Exclude shared sourcing/disclosure boilerplate from clone detection."""
+    parts = re.split(r'<h2\b[^>]*id="sources"[^>]*>', body, maxsplit=1, flags=re.I)
+    return parts[0]
+
+
 def fail(msgs):
     for msg in msgs:
         print('FAIL', msg)
@@ -49,6 +55,7 @@ def main():
         m = re.search(r'<article\b[^>]*class="[^"]*content-main[^"]*"[^>]*>(.*?)</article>', html, re.S | re.I)
         body = m.group(1) if m else ''
         text = clean(body).lower()
+        clone_body = editorial_before_sources(body)
 
         if not body:
             issues.append(f'{slug}: article absent')
@@ -103,17 +110,17 @@ def main():
         elif publish_status not in {'REQUIRES_WORKFLOW_RERUN', 'PENDING', None}:
             warnings.append(f'{slug}: statut éditorial non standard: {publish_status}')
 
-        h2_ids = tuple(match[0] for match in H2.findall(body))
+        h2_ids = tuple(match[0] for match in H2.findall(clone_body))
         if h2_ids:
             heading_signatures[h2_ids].append(slug)
         else:
-            issues.append(f'{slug}: aucun H2 détecté')
+            issues.append(f'{slug}: aucun H2 éditorial détecté')
 
         legacy_count = len(LEGACY_TEMPLATE_IDS.intersection(h2_ids))
         if legacy_count >= 5:
             issues.append(f'{slug}: legacy generic brand skeleton detected ({legacy_count} template sections)')
 
-        for para_html in P.findall(body):
+        for para_html in P.findall(clone_body):
             para = clean(para_html)
             if len(para) >= 180:
                 shared_paragraphs[para].append(slug)
@@ -136,7 +143,7 @@ def main():
         if len(unique_slugs) >= 3:
             excerpt = para[:110] + ('…' if len(para) > 110 else '')
             issues.append(
-                f"long paragraphe partagé entre {', '.join(unique_slugs)}: {excerpt}"
+                f"long paragraphe éditorial partagé entre {', '.join(unique_slugs)}: {excerpt}"
             )
 
     for warning in warnings:
