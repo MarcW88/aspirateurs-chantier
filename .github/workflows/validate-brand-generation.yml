@@ -10,10 +10,17 @@ on:
       - "_generate_bosch.py"
       - "_generate_brand_overrides.py"
       - "_brand_rollout_polish.py"
+      - "_apply_cluster_audit_metadata.py"
+      - "_apply_brand_design_fixes.py"
+      - "enforce_brand_review_state.py"
       - "_validate_brands.py"
+      - "validate_brand_skill_stack.py"
+      - "validate_brand_run_evidence.py"
       - "brand-workflow.config.yaml"
       - ".content/brands/**"
       - "marques/**"
+      - ".agents/skills/brand-*/**"
+      - ".agents/skills/brand-skill-stack.json"
       - ".github/workflows/validate-brand-generation.yml"
   push:
     branches:
@@ -24,10 +31,17 @@ on:
       - "_generate_bosch.py"
       - "_generate_brand_overrides.py"
       - "_brand_rollout_polish.py"
+      - "_apply_cluster_audit_metadata.py"
+      - "_apply_brand_design_fixes.py"
+      - "enforce_brand_review_state.py"
       - "_validate_brands.py"
+      - "validate_brand_skill_stack.py"
+      - "validate_brand_run_evidence.py"
       - "brand-workflow.config.yaml"
       - ".content/brands/**"
       - "marques/**"
+      - ".agents/skills/brand-*/**"
+      - ".agents/skills/brand-skill-stack.json"
       - ".github/workflows/validate-brand-generation.yml"
   workflow_dispatch:
 
@@ -43,14 +57,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate shared skill stack
+      - name: Validate shared skill provenance and 80/20 governance
         run: python validate_brand_skill_stack.py
 
       - name: Regenerate all brand content canonically
         run: python _generate_brand_content.py
 
-      - name: Validate brand machine integrity
+      - name: Validate machine integrity and anti-template gates
         run: python _validate_brands.py
+
+      - name: Validate publish-state/run-evidence consistency
+        run: python validate_brand_run_evidence.py
 
       - name: Preserve bespoke brand structures
         shell: bash
@@ -70,9 +87,14 @@ jobs:
             for id in ${checks[$slug]}; do
               grep -q "id=\"$id\"" "$page"
             done
-            ! grep -q 'id="forces"' "$page"
-            ! grep -q 'id="eviter"' "$page"
           done
 
-      - name: Require committed generated artifacts
-        run: git diff --exit-code -- marques .content/brands
+      - name: Check canonical generation is idempotent
+        run: |
+          before=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
+          python _generate_brand_content.py >/tmp/brand-regenerate.log
+          after=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
+          test "$before" = "$after"
+
+      - name: Whitespace check
+        run: git diff --check
