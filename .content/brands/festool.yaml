@@ -159,7 +159,9 @@
     "desk_research_only": true,
     "affiliate_influence": false,
     "human_validation_required": true,
-    "publish_review": "READY_FOR_HUMAN_VALIDATION"
+    "publish_review": "REQUIRES_WORKFLOW_RERUN",
+    "workflow_contract_version": 2,
+    "run_evidence": ".content/brands/runs/festool.json"
   },
   "source_of_truth": "_generate_brand_overrides.py",
   "structure_strategy": "bespoke_system_workflow_ctl_ctm_cth_autoclean",
