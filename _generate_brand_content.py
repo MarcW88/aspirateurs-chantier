@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Canonical brand-content generation entry point.
 
-Run the generic generator first, then site-approved bespoke overrides and the
-small editorial polish pass. If the cluster audit metadata layer exists, reapply
-it last so a standalone brand rebuild cannot erase recovery decisions. Finally,
-apply the shared brand UX/design layer so visual fixes cannot be lost on rebuild.
+The generic generator may build the shell/seed only. Every brand must then receive a
+bespoke editorial override. Publication readiness is never granted by generation:
+`enforce_brand_review_state.py` downgrades pages without a valid v2 shared-skill run.
 """
 from pathlib import Path
 import subprocess
@@ -13,20 +12,26 @@ import sys
 BASE = Path(__file__).resolve().parent
 
 
-def run(script):
-    subprocess.run([sys.executable, str(BASE / script)], cwd=BASE, check=True)
+def run(script, *args):
+    subprocess.run([sys.executable, str(BASE / script), *args], cwd=BASE, check=True)
 
 
 def main():
-    run('_generate_brands.py')
-    run('_generate_bosch.py')
-    run('_generate_brand_overrides.py')
+    run('validate_brand_skill_stack.py')
+    run('_generate_brands.py')                 # shell + seed only
+    run('_generate_bosch.py')                  # Bosch bespoke body
+    run('_generate_brand_overrides.py')        # seven other bespoke bodies
     run('_brand_rollout_polish.py')
+
     cluster_metadata = BASE / '_apply_cluster_audit_metadata.py'
     if cluster_metadata.exists():
         run(cluster_metadata.name)
+
     run('_apply_brand_design_fixes.py')
-    print('✓ canonical brand generation complete')
+    run('enforce_brand_review_state.py')
+    run('_validate_brands.py')
+    run('validate_brand_run_evidence.py')
+    print('✓ canonical brand generation complete; publish readiness remains evidence-gated')
 
 
 if __name__ == '__main__':
