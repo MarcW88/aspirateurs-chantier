@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Repository-specific QA gate for generated brand hubs.
 
-The validator checks machine-observable integrity only. Editorial quality,
-source sufficiency, intent fit and cross-page structural cloning are reviewed
-by brand-analysis-workflow / PUBLISH_REVIEW.
+Machine-observable integrity only. The substantive workflow still lives in the
+shared skills + brand-analysis-workflow, but this gate blocks obvious template
+industrialisation and any false READY_FOR_HUMAN_VALIDATION state.
 """
 from pathlib import Path
 from html import unescape
@@ -11,12 +11,16 @@ from collections import defaultdict
 import json
 import re
 
+from validate_brand_run_evidence import validate_slug as validate_run_evidence
+
 BASE = Path(__file__).resolve().parent
 SLUGS = ['karcher','bosch','makita','festool','dewalt','parkside','nilfisk','mirka']
 TAG = re.compile(r'<[^>]+>', re.S)
 H2 = re.compile(r'<h2\b[^>]*id="([^"]+)"[^>]*>(.*?)</h2>', re.S | re.I)
 P = re.compile(r'<p\b[^>]*>(.*?)</p>', re.S | re.I)
 EXT = re.compile(r'<a\b[^>]*href="https?://', re.I)
+READY = 'READY_FOR_HUMAN_VALIDATION'
+LEGACY_TEMPLATE_IDS = {'distinction','gamme','ecosysteme','forces','limites','choisir','eviter','alternatives'}
 
 
 def clean(s):
@@ -78,7 +82,6 @@ def main():
         if not data.exists():
             issues.append(f'{slug}: fichier de preuves absent')
             continue
-
         try:
             obj = json.loads(data.read_text(encoding='utf-8'))
         except Exception as exc:
@@ -94,11 +97,21 @@ def main():
         if not obj.get('editorial', {}).get('desk_research_only'):
             issues.append(f'{slug}: desk_research_only absent ou faux')
 
+        publish_status = obj.get('editorial', {}).get('publish_review')
+        if publish_status == READY:
+            issues.extend(validate_run_evidence(slug, require_run=True))
+        elif publish_status not in {'REQUIRES_WORKFLOW_RERUN', 'PENDING', None}:
+            warnings.append(f'{slug}: statut éditorial non standard: {publish_status}')
+
         h2_ids = tuple(match[0] for match in H2.findall(body))
         if h2_ids:
             heading_signatures[h2_ids].append(slug)
         else:
-            warnings.append(f'{slug}: aucun H2 détecté')
+            issues.append(f'{slug}: aucun H2 détecté')
+
+        legacy_count = len(LEGACY_TEMPLATE_IDS.intersection(h2_ids))
+        if legacy_count >= 5:
+            issues.append(f'{slug}: legacy generic brand skeleton detected ({legacy_count} template sections)')
 
         for para_html in P.findall(body):
             para = clean(para_html)
@@ -109,14 +122,11 @@ def main():
         if source_links == 0:
             warnings.append(f'{slug}: aucun lien source externe dans le rendu')
 
-        if 'class="answer-box"' not in body:
-            warnings.append(f'{slug}: answer-box absent — valide uniquement si le plan le justifie')
-
-        print(f'{slug}: machine integrity OK')
+        print(f'{slug}: machine integrity OK ({publish_status or "UNSET"})')
 
     for signature, slugs in heading_signatures.items():
         if len(slugs) >= 3:
-            warnings.append(
+            issues.append(
                 'structure H2 identique sur plusieurs marques '
                 f"({', '.join(slugs)}): {' > '.join(signature)}"
             )
@@ -125,18 +135,17 @@ def main():
         unique_slugs = sorted(set(slugs))
         if len(unique_slugs) >= 3:
             excerpt = para[:110] + ('…' if len(para) > 110 else '')
-            warnings.append(
-                f"paragraphe partagé entre {', '.join(unique_slugs)}: {excerpt}"
+            issues.append(
+                f"long paragraphe partagé entre {', '.join(unique_slugs)}: {excerpt}"
             )
 
     for warning in warnings:
         print('WARN', warning)
-
     if issues:
         fail(issues)
 
-    print('PASS: machine integrity checks completed for 8 brand hubs.')
-    print('NOTE: editorial and cluster-structure approval still requires brand-analysis-workflow / PUBLISH_REVIEW.')
+    print('PASS: machine integrity, anti-template and publish-state checks completed for 8 brand hubs.')
+    print('NOTE: a substantive READY still requires a v2 run evidence file produced by the shared-skill workflow.')
 
 
 if __name__ == '__main__':
