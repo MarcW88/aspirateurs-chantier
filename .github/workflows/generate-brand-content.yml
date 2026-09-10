@@ -3,19 +3,32 @@ name: Generate brand content
 on:
   push:
     branches:
-      - content/brand-pages-workflow
+      - main
     paths:
-      - "_generate.py"
+      - "_generate_brand_content.py"
       - "_generate_brands.py"
+      - "_generate_bosch.py"
+      - "_generate_brand_overrides.py"
+      - "_brand_rollout_polish.py"
+      - "_apply_cluster_audit_metadata.py"
+      - "_apply_brand_design_fixes.py"
+      - "enforce_brand_review_state.py"
       - "_validate_brands.py"
       - "validate_brand_skill_stack.py"
+      - "validate_brand_run_evidence.py"
       - "brand-workflow.config.yaml"
-      - ".agents/skills/**"
+      - ".content/brands/**"
+      - ".agents/skills/brand-*/**"
+      - ".agents/skills/brand-skill-stack.json"
       - ".github/workflows/generate-brand-content.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: generate-brand-content-main
+  cancel-in-progress: false
 
 jobs:
   generate-and-validate:
@@ -23,32 +36,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: content/brand-pages-workflow
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Validate shared/custom brand skill stack
+      - name: Validate shared/custom governance and provenance
         run: python validate_brand_skill_stack.py
 
-      - name: Generate eight brand hubs and entity data
-        run: python _generate_brands.py
+      - name: Generate canonically and enforce evidence-gated review state
+        run: python _generate_brand_content.py
 
-      - name: Repository-specific machine QA
-        run: python _validate_brands.py
+      - name: Validate persistent run evidence state
+        run: python validate_brand_run_evidence.py
 
-      - name: Check generation idempotence
+      - name: Check canonical generation idempotence
         run: |
           before=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
-          python _generate_brands.py >/tmp/brand-regenerate.log
+          python _generate_brand_content.py >/tmp/brand-regenerate.log
           after=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
           test "$before" = "$after"
 
-      - name: Preserve noindex
+      - name: Preserve noindex drafts
         run: |
-          for f in marques/*/index.html; do
+          for f in marques/karcher/index.html marques/bosch/index.html marques/makita/index.html marques/festool/index.html marques/dewalt/index.html marques/parkside/index.html marques/nilfisk/index.html marques/mirka/index.html; do
             grep -q '<meta name="robots" content="noindex, follow">' "$f"
           done
 
@@ -63,6 +75,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated brand changes to commit."
           else
-            git commit -m "Generate brand hubs from entity workflow"
-            git push origin HEAD:content/brand-pages-workflow
+            git commit -m "content: regenerate brands with evidence-gated workflow"
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
