@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "karcher-wd2",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether the compact WD 2 is sufficient for simple wet/dry cleaning or whether WD 3 / WD 5 materially change the decision."},
+    "content-audit": {"status": "PASS", "output": "Existing page audited as DEEP_REWRITE: correct factual base but generic cloned structure and too little model-specific decision value."},
+    "content-refresh": {"status": "PASS", "output": "Preserved verified WD 2 facts and rebuilt the page as a concise model decision rather than expanding it into a synthetic long review."},
+    "fact-check-pre": {"status": "PASS", "output": "Kärcher primary pages checked for WD 2, WD 3 and WD 5 before drafting; naming nuance on WD 2 / WD 2 Plus V-15/4/18/C persisted."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "The page deliberately avoids subjective ratings, reliability claims, hands-on ergonomics and review-style verdicts."},
+    "affiliate-value": {"status": "PASS", "output": "Affiliate-independent value comes from distinguishing the small WD 2-to-WD 3 step from the more meaningful WD 5 capacity/filter-management step and from keeping L/M/H limits explicit."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted at .content/models/briefs/karcher-wd2-2026-09-11.md with E1-E5 evidence refs and four decision questions."},
+    "content-and-copy": {"status": "PASS", "output": "Concise bespoke body persisted under .content/models/pages/karcher-wd2.html and rendered without the legacy model template."},
+    "fact-check-post": {"status": "PASS", "output": "Post-draft check retained official WD 2 / WD 3 / WD 5 capacities, weights and maxima, and kept the missing L/M/H certification explicit."},
+    "humanizer": {"status": "PASS", "output": "Removed generic product-review cadence and kept prose proportional to a simple wet/dry vacuum decision."},
+    "general-writing": {"status": "PASS", "output": "Copy tightened around three concrete purchase thresholds: WD 2 sufficiency, WD 3 incremental step, WD 5 workflow change."},
+    "anti-ai-slop": {"status": "PASS", "output": "No generic FAQ, inflated conclusion, fixed section quota or cloned 'for whom / limits / source' structure remains."},
+    "internal-linking-audit": {"status": "PASS", "output": "Existing related links preserve handoff to Kärcher range and wet/dry comparison rather than duplicating those page roles."},
+    "seo-technical": {"status": "PASS", "output": "Canonical preserved, robots remains noindex, follow, H1 remains model-specific, bespoke TOC and verification date render correctly."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta now express the exact sufficiency decision and documented L/M/H limitation instead of generic technical-sheet wording."},
+    "editorial-qa": {"status": "PASS", "output": "Final draft checked for proportional depth, naming nuance, no false safety class, no fake hands-on and no simplistic 'bigger is better' conclusion."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "WD 2 exact variant naming nuance, 15 L tank, 43 l/s, 220 mbar, 4.4 kg without accessories, cartridge filter, wet/dry use, blower function and absent L/M/H documentation checked against Kärcher."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Publish review passed: concise page has a role distinct from Bosch pilots and adjacent Kärcher/comparison content, remains evidence-bounded and noindex pending human validation."}
+  },
+  "reader_decision": "Decide whether the Kärcher WD 2 is sufficient for compact wet/dry cleaning and small jobs, or whether moving to WD 3 or WD 5 materially improves the workflow.",
+  "value_without_affiliate_links": "Explains the limited WD 2-to-WD 3 step, the more meaningful WD 5 capacity/filter-management step, and the absence of a documented L/M/H class without inflating a simple product into a long review.",
+  "outline": [
+    {"question": "Pour quels travaux simples le WD 2 suffit-il réellement ?", "evidence_refs": ["E1", "E5"], "decision_value": "Defines the exact role without inflating the product."},
+    {"question": "WD 2 ou WD 3 : y a-t-il un vrai saut de gamme ?", "evidence_refs": ["E1", "E2"], "decision_value": "Shows that the published step is small in capacity, hose length and maxima."},
+    {"question": "Quand le WD 5 devient-il plus rationnel ?", "evidence_refs": ["E1", "E3"], "decision_value": "Identifies the meaningful change in capacity and filter management, with a clear weight trade-off."},
+    {"question": "Quelle limite de sécurité doit rester explicite ?", "evidence_refs": ["E1", "E4"], "decision_value": "Prevents wet/dry versatility or filter type from being mistaken for L/M/H certification."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
