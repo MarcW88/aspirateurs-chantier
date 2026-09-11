@@ -1,0 +1,74 @@
+name: Design v2 visual QA
+
+on:
+  push:
+    branches:
+      - feat/design-editorial-v2
+    paths:
+      - "design-v2.css"
+      - "design-v2.js"
+      - "index.html"
+      - "guides/comment-choisir-aspirateur-de-chantier/index.html"
+      - "modeles/bosch-gas-35-l-afc/index.html"
+      - "comparatifs/meilleur-aspirateur-de-chantier/index.html"
+      - ".github/workflows/design-v2-visual-qa.yml"
+  workflow_dispatch:
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/design-editorial-v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0 >/dev/null 2>&1
+          npx playwright install --with-deps chromium >/dev/null
+      - name: Serve site
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 >/tmp/design-v2-server.log 2>&1 &
+          echo $! > /tmp/design-v2-server.pid
+          sleep 2
+      - name: Capture desktop and mobile
+        run: |
+          mkdir -p screenshots
+          cat > /tmp/capture.mjs <<'JS'
+          import { chromium } from 'playwright';
+          const browser = await chromium.launch({headless:true});
+          const pages = [
+            ['home','/'],
+            ['guide','/guides/comment-choisir-aspirateur-de-chantier/'],
+            ['model','/modeles/bosch-gas-35-l-afc/'],
+            ['comparison','/comparatifs/meilleur-aspirateur-de-chantier/']
+          ];
+          for (const [name,path] of pages) {
+            for (const [mode,viewport] of [['desktop',{width:1440,height:1000}],['mobile',{width:390,height:844}]]) {
+              const page = await browser.newPage({ viewportSize: viewport });
+              await page.goto('http://127.0.0.1:8000'+path, {waitUntil:'networkidle'});
+              await page.screenshot({path:`screenshots/${name}-${mode}.png`, fullPage:true});
+              const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
+              if (overflow) throw new Error(`${name}-${mode}: global horizontal overflow`);
+              if (mode === 'mobile') {
+                const burger = page.locator('.burger');
+                if (await burger.count()) {
+                  await burger.click();
+                  const expanded = await burger.getAttribute('aria-expanded');
+                  if (expanded !== 'true') throw new Error(`${name}: burger did not open`);
+                }
+              }
+              await page.close();
+            }
+          }
+          await browser.close();
+          JS
+          node /tmp/capture.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: design-v2-screenshots
+          path: screenshots/*.png
+          retention-days: 7
