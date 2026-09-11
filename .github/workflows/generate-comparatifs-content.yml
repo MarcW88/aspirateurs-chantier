@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "_generate_comparison_content.py"
+      - "_materialize_comparison_v2.py"
       - "_generate_professional_comparison_override.py"
       - "_generate_comparison_overrides.py"
       - "_polish_comparison_rollout.py"
