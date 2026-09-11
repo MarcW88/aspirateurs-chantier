@@ -1,0 +1,43 @@
+{
+  "contract_version":1,
+  "slug":"decolmatage-automatique",
+  "url":"/guides/decolmatage-automatique/",
+  "guide_type":"HYBRID",
+  "audit_decision":"LIGHT_UPDATE",
+  "intent":{"reader_task":"Comprendre le rôle du décolmatage et décider quand un système manuel, semi-automatique ou automatique apporte une vraie valeur."},
+  "value_to_preserve":["Lien colmatage -> résistance -> baisse de débit.","Distinction des modes de nettoyage.","Importance sur poussières fines continues."],
+  "evidence":[
+    {"id":"S1","claim":"Le Bosch GAS 35 M AFC est documenté avec un nettoyage automatique du filtre destiné à maintenir le pouvoir aspirant.","source":"https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/","checked_at":"2026-09-11","status":"SUPPORTED"},
+    {"id":"S2","claim":"Le captage à la source reste prioritaire pour les opérations poussiéreuses et le décolmatage ne remplace pas un système de captage adapté.","source":"https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir.html","checked_at":"2026-09-11","status":"SUPPORTED"}
+  ],
+  "outline":[
+    {"question":"Que change le colmatage ?","evidence_refs":["S1"],"decision_value":"Relier nettoyage du filtre au maintien du débit."},
+    {"question":"Quand l’automatique vaut-il le surcoût ?","evidence_refs":["S1","S2"],"decision_value":"Décider selon durée et type de poussière."},
+    {"question":"Que ne résout pas le décolmatage ?","evidence_refs":["S2"],"decision_value":"Éviter de le confondre avec classe, filtre ou captage."}
+  ],
+  "workflow_execution":{"shared":[
+    {"skill":"seo-content-audit","status":"PASS","output":"LIGHT_UPDATE confirmé ; structure utile à préserver."},
+    {"skill":"seo-keyword","status":"PASS","output":"Topic décolmatage automatique / nettoyage filtre conservé."},
+    {"skill":"search-intent","status":"PASS","output":"HYBRID EXPLAINER+CHOICE : mécanisme puis utilité réelle."},
+    {"skill":"content-refresh","status":"PASS","output":"Section rentabilité intégrée au plan final au lieu d’un patch post-génération."},
+    {"skill":"fact-check","status":"PASS","output":"Claims constructeur et prévention revérifiés."},
+    {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucune supériorité expérientielle entre systèmes n’est affirmée."},
+    {"skill":"affiliate-value","status":"PASS","output":"Arbitrage utile indépendamment d’un achat affilié."},
+    {"skill":"content-brief-authoring","status":"PASS","output":"Brief colmatage -> mécanismes -> continu -> limites -> comparaison -> rentabilité -> entretien."},
+    {"skill":"content-and-copy","status":"PASS","output":"LIGHT_UPDATE rédigé avec distinction promesse constructeur / preuve d’usage."},
+    {"skill":"humanizer","status":"PASS","output":"Style relu."},
+    {"skill":"general-writing","status":"PASS","output":"Explications resserrées."},
+    {"skill":"anti-ai-slop","status":"PASS","output":"Pas de remplissage ni quota."},
+    {"skill":"internal-linking-audit","status":"PASS","output":"Liens vers débit et entretien conservés."},
+    {"skill":"seo-onpage","status":"PASS","output":"Title/H1/meta alignés sur les trois modes de décolmatage."},
+    {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow préservés."},
+    {"skill":"seo-best-practices","status":"PASS","output":"Réponse tôt et limites explicites."},
+    {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline fournie."},
+    {"skill":"editorial-qa","status":"PASS","output":"Aucune généralisation d’un nom commercial à tous les systèmes."}
+  ],"custom":[
+    {"skill":"guide-analysis-workflow","status":"PASS","output":"LIGHT_UPDATE HYBRID validé."},
+    {"skill":"guide-content-workflow","status":"PASS","output":"Fragment v2 produit et evidence-led."}
+  ]},
+  "residual_risks":["Le comportement réel de systèmes concurrents nécessite des essais comparables pour toute conclusion de supériorité."],
+  "editorial":{"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+}
