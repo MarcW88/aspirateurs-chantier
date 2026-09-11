@@ -1,0 +1,136 @@
+/* Sitewide extensions for Editorial V2.
+   Loaded after page-specific CSS and design-v2.css. */
+
+/* Shared footer: quiet publication colophon instead of a dark app footer. */
+.design-v2 .site-footer {
+  background: #ECEBE5;
+  color: var(--v2-ink);
+  border-top: 1px solid var(--v2-rule);
+}
+.design-v2 .site-footer a { color: #47545f; }
+.design-v2 .site-footer a:hover { color: var(--v2-blue); }
+.design-v2 .footer-col h4,
+.design-v2 .footer-tagline,
+.design-v2 .footer-bottom { color: var(--v2-muted); }
+.design-v2 .footer-bottom { border-top-color: var(--v2-rule); }
+
+/* Index pages become editorial directories rather than card galleries. */
+.design-v2.design-hub .page-hero { padding-bottom: 32px; }
+.design-v2.design-hub .section { padding: 44px 0 78px; }
+.design-v2.design-hub .answer-box { max-width: 820px; margin-bottom: 30px; }
+.design-v2.design-hub .hub-grid {
+  display: block;
+  max-width: 940px;
+  border-top: 1px solid #8f969b;
+}
+.design-v2.design-hub .hub-link {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 0;
+  padding: 15px 2px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--v2-rule);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--v2-ink);
+}
+.design-v2.design-hub .hub-link:hover {
+  transform: none;
+  background: rgba(255,255,255,.28);
+  border-color: #9fa1a0;
+}
+.design-v2.design-hub .hub-link > div > div:first-child { font-weight: 600; }
+.design-v2.design-hub .hub-link-meta {
+  margin-top: 3px;
+  color: var(--v2-muted);
+  font-family: var(--font-body);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+.design-v2.design-hub .hub-link-right { color: var(--v2-blue); font-size: 1rem; }
+
+/* Brand pages: flatten branded decision widgets into editorial comparison strips. */
+.design-v2.design-brand .brand-decision-module {
+  margin: 28px 0 40px;
+  padding: 18px 0 8px;
+  background: transparent;
+  border: 0;
+  border-top: 2px solid var(--v2-ink);
+  border-bottom: 1px solid var(--v2-rule);
+  border-radius: 0;
+  box-shadow: none;
+}
+.design-v2.design-brand .brand-decision-kicker {
+  color: var(--v2-orange);
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.design-v2.design-brand .brand-decision-title { margin: 5px 0 16px; font-size: 1.08rem; font-weight: 600; }
+.design-v2.design-brand .brand-decision-flow { gap: 0; }
+.design-v2.design-brand .brand-decision-node {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #d8d5ce;
+  border-radius: 0;
+  padding: 12px 0;
+  box-shadow: none;
+}
+.design-v2.design-brand .brand-decision-node strong { color: var(--v2-ink); }
+.design-v2.design-brand .brand-decision-node span { color: var(--v2-muted); }
+
+/* Usage pages share the long-form rhythm but keep a warmer functional accent. */
+.design-v2.design-usage .answer-box { border-left-color: var(--v2-orange); }
+.design-v2.design-usage .content-main ol,
+.design-v2.design-usage .content-main ul { padding-left: 23px; }
+.design-v2.design-usage .content-main blockquote {
+  margin: 28px 0;
+  padding: 3px 0 3px 20px;
+  border-left: 2px solid var(--v2-rule);
+  color: #4f5a63;
+}
+
+/* Accessory pages: editorial reference sheets; no ecommerce-card treatment. */
+.design-v2.design-accessory .answer-box { border-left-color: var(--v2-orange); }
+.design-v2.design-accessory .content-main .card,
+.design-v2.design-accessory .content-main [class*="product-card"] {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--v2-rule);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* About / method / legal pages: narrower, calmer reading measure. */
+.design-v2.design-static .page-hero .container { max-width: 920px; }
+.design-v2.design-static .content-layout {
+  grid-template-columns: minmax(0, 680px) 210px;
+  max-width: 980px;
+}
+.design-v2.design-static .content-main { max-width: 680px; }
+
+/* Existing comparison/brand components occasionally carry generic cards. */
+.design-v2 .content-main .info-box,
+.design-v2 .content-main .warning-box,
+.design-v2 .content-main .method-box {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Mobile directory and article refinements. */
+@media (max-width: 1024px) {
+  .design-v2.design-brand .brand-decision-flow { grid-template-columns: 1fr; }
+  .design-v2.design-static .content-layout { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .design-v2.design-hub .section { padding: 32px 0 58px; }
+  .design-v2.design-hub .hub-link { padding: 14px 0; }
+  .design-v2.design-brand .brand-decision-module { margin: 24px 0 32px; }
+  .design-v2.design-static .content-layout { grid-template-columns: 1fr; }
+}
