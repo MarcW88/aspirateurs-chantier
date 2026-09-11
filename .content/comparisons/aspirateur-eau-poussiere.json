@@ -175,5 +175,11 @@
     "desk_research_only": true,
     "noindex_during_rollout": true,
     "hands_on_test": false
+  },
+  "editorial": {
+    "workflow_contract_version": 2,
+    "publish_review": "REQUIRES_WORKFLOW_RERUN",
+    "run_evidence": ".content/comparisons/runs/aspirateur-eau-poussiere.json",
+    "generator_role": "shell_and_components_only"
   }
 }
