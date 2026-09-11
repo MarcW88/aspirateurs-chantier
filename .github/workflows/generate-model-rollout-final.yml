@@ -1,0 +1,47 @@
+name: Generate final model rollout
+
+on:
+  push:
+    branches:
+      - feat/model-rollout-final
+    paths:
+      - ".content/models/pages/makita-vc2512l.html"
+      - ".content/models/pages/makita-vc2512l.meta.json"
+      - ".content/models/pages/makita-vc4210mx.html"
+      - ".content/models/pages/makita-vc4210mx.meta.json"
+      - ".content/models/pages/festool-ctl-midi.html"
+      - ".content/models/pages/festool-ctl-midi.meta.json"
+      - ".content/models/pages/nilfisk-multi-ii-30-t.html"
+      - ".content/models/pages/nilfisk-multi-ii-30-t.meta.json"
+      - "_patch_final_model_evidence.py"
+      - ".github/workflows/generate-model-rollout-final.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/model-rollout-final
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh final evidence data
+        run: python _patch_final_model_evidence.py
+      - name: Render model pages
+        run: python _generate_model_overrides.py
+      - name: Commit evidence and rendered pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .content/models/model-evidence.json modeles/makita-vc2512l/index.html modeles/makita-vc4210mx/index.html modeles/festool-ctl-midi/index.html modeles/nilfisk-multi-ii-30-t/index.html modeles/index.html
+          if git diff --cached --quiet; then
+            echo "No rendered model changes"
+          else
+            git commit -m "content: render final model rollout"
+            git push origin HEAD:feat/model-rollout-final
+          fi
