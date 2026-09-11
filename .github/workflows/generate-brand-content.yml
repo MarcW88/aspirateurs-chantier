@@ -10,6 +10,7 @@ on:
       - "_generate_bosch.py"
       - "_generate_karcher.py"
       - "_generate_makita.py"
+      - "_generate_parkside.py"
       - "_generate_brand_overrides.py"
       - "_brand_rollout_polish.py"
       - "_apply_cluster_audit_metadata.py"
