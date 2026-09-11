@@ -1,0 +1,54 @@
+{
+  "contract_version": 2,
+  "slug": "dewalt",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur DeWalt en séparant d'abord le besoin de classe de poussière et le type d'alimentation : DCV586M pour une extraction mobile classe M dans un parc XR FLEXVOLT, DCV584L pour un usage hybride classe L, puis vérifier l'intérêt réel d'AIRLOCK, Wireless Tool Control et TSTAK dans le workflow existant.",
+  "value_without_affiliate_links": "La page évite quatre erreurs d'achat : confondre filtre HEPA et classe M, payer un système FLEXVOLT complet sans parc batterie existant, choisir DeWalt pour une grande offre filaire multi-volumes qu'il ne propose pas réellement, ou considérer AIRLOCK/Wireless Tool Control comme des substituts au choix de la bonne classe de poussière.",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent principal confirmé : comprendre les aspirateurs DeWalt pour chantier et savoir quand l'écosystème XR/FLEXVOLT justifie le choix. Sous-intentions : DCV586M classe M, DCV584L classe L hybride, AIRLOCK, Wireless Tool Control, TSTAK, Perform & Protect et compatibilité des batteries FLEXVOLT avec XR 18V."},
+    "content-audit": {"status": "PASS", "output": "LIGHT_UPDATE confirmé. La page actuelle suit déjà une structure spécifique à DeWalt : système chantier -> DCV586M -> DCV584L -> AIRLOCK -> FLEXVOLT/TSTAK -> routage. Elle ne présente ni structure de marque générique ni accumulation de fiches produit."},
+    "content-refresh": {"status": "PASS", "output": "Revalidation au 11/09/2026 des références et briques d'écosystème qui changent la décision : DCV586MN, DCV584L, Perform & Protect/AIRLOCK, XR FLEXVOLT et Wireless Tool Control sur des outils actuels compatibles avec le DCV586M. Aucun changement substantiel ne justifie une réécriture complète."},
+    "fact-check-pre": {"status": "PASS", "output": "Brief ciblé sur les risques d'erreur : DCV586M bien classe M et 54 V FLEXVOLT, double filtre avec nettoyage automatique et alarme de baisse de performance ; DCV584L bien classe L malgré filtre HEPA et alimentation secteur/batterie ; batteries FLEXVOLT rétrocompatibles XR 18 V ; AIRLOCK et Wireless Tool Control à traiter comme fonctions de workflow, pas comme preuve de classe."},
+    "evidence-based-reviews": {"status": "PASS", "output": "Les affirmations produit et compatibilité reposent sur des sources officielles DeWalt Tier 1. Aucun jugement de fiabilité, de meilleure aspiration ou de supériorité inter-marques n'est introduit sans preuve indépendante ; la page reste explicitement documentaire."},
+    "affiliate-value": {"status": "PASS", "output": "La valeur indépendante de l'affiliation réside dans le routage classe/alimentation/écosystème et dans la mise en garde HEPA != classe M. La page aide aussi à décider quand DeWalt est moins rationnel qu'une gamme filaire plus large, sans dépendre d'un CTA marchand."},
+    "content-brief-authoring": {"status": "PASS", "output": "Le brief existant reste pertinent : système de captage DeWalt ; DCV586M comme proposition classe M sans fil ; DCV584L comme hybride classe L ; AIRLOCK ; FLEXVOLT/TSTAK ; cas d'usage où la marque a ou non du sens. Aucune nouvelle architecture n'est nécessaire."},
+    "content-and-copy": {"status": "PASS", "output": "LIGHT_UPDATE : conservation du corps éditorial existant. Le texte traite déjà les critères qui changent l'achat, ne transforme pas la page en catalogue et explicite les limites d'un parc FLEXVOLT/TSTAK absent."},
+    "fact-check-post": {"status": "PASS", "output": "Contrôle post-audit : DCV586MN toujours classe M, XR FLEXVOLT 54 V, double filtre à nettoyage automatique, alarme sonore, télécommande et compatibilité TSTAK ; DCV584L toujours classe L, eau/poussière, secteur ou batteries XR/XR FLEXVOLT, filtre HEPA 99,97 % à 0,3 micron ; FLEXVOLT toujours compatible 18 V XR et 54 V FLEXVOLT."},
+    "humanizer": {"status": "PASS", "output": "Le texte reste centré sur des arbitrages concrets de chantier : mobilité M, besoin hybride, parc batterie existant, raccord à l'outil et coût d'écosystème. Pas de narration promotionnelle de marque ni de superlatifs non prouvés."},
+    "general-writing": {"status": "PASS", "output": "La progression est claire et courte : système -> deux extracteurs aux rôles distincts -> raccordement -> batteries/rangement -> routage final. Un seul tableau synthétise les cas d'usage sans répétition."},
+    "anti-ai-slop": {"status": "PASS", "output": "Pas de FAQ automatique, pas de bloc avantages/inconvénients générique, pas de conclusion vide, pas de faux test et pas de structure clonée de Bosch, Festool, Makita, Kärcher, Parkside ou Nilfisk."},
+    "internal-linking-audit": {"status": "PASS", "output": "Le maillage actuel envoie vers sans-fil, classe M, professionnel, guide L/M/H, adaptateurs outils, prise asservie, ponceuse, Bosch et Makita. Ces liens correspondent aux prochaines décisions du lecteur plutôt qu'à un maillage SEO artificiel."},
+    "seo-technical": {"status": "PASS", "output": "Canonical /marques/dewalt/ conservé, un seul H1, IDs et sommaire cohérents, title/meta spécifiques et noindex, follow maintenu pendant la recovery."},
+    "seo-best-practices": {"status": "PASS", "output": "Le ciblage reste centré sur DeWalt + DCV586M/DCV584L/FLEXVOLT/AIRLOCK/TSTAK/classe M sans cannibaliser les comparatifs classe M et sans-fil ni les guides sécurité et raccordement."},
+    "editorial-qa": {"status": "PASS", "output": "QA final : aucune classe extrapolée depuis un filtre HEPA, aucune compatibilité batterie généralisée hors XR/FLEXVOLT, aucune promesse de performance absolue issue du marketing fabricant et aucune confusion entre commande à distance, raccordement AIRLOCK et conformité poussière."}
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {"status": "PASS", "output": "Contrôle métier sur classes L/M, filtre HEPA, nettoyage automatique, alarme de baisse de performance, aspiration eau/poussière, raccord AIRLOCK, déclenchement Wireless Tool Control et dépendance au parc batterie. Aucun raccourci HEPA=classe M ou sans-fil=meilleure solution chantier."},
+    "brand-analysis-publish-review": {"status": "PASS", "output": "PUBLISH_REVIEW : LIGHT_UPDATE satisfait sans réécriture artificielle ; structure DeWalt spécifique préservée, preuves officielles revalidées, limites visibles, valeur indépendante de l'affiliation et noindex conservé. PASS — READY_FOR_HUMAN_VALIDATION."}
+  },
+  "outline": [
+    {"id": "systeme-chantier", "question": "Quand DeWalt a-t-il plus de sens comme système de captage que comme simple aspirateur ?", "evidence_refs": ["S3", "S4", "S5"], "decision_value": "Relie batteries, raccordement et transport au workflow sans en faire un argument universel."},
+    {"id": "dcv586m", "question": "Quand le DCV586M est-il le bon choix ?", "evidence_refs": ["S1", "S5"], "decision_value": "Positionne clairement l'extracteur classe M sans fil pour un utilisateur déjà engagé dans FLEXVOLT."},
+    {"id": "dcv584l", "question": "Que permet le DCV584L sans le confondre avec un appareil classe M ?", "evidence_refs": ["S2"], "decision_value": "Sépare usage hybride classe L et filtration HEPA des besoins réglementaires de classe M."},
+    {"id": "airlock", "question": "AIRLOCK et Wireless Tool Control changent-ils réellement le captage à la source ?", "evidence_refs": ["S3", "S5", "S6"], "decision_value": "Explique les bénéfices de connexion et déclenchement sans les substituer à la bonne classe d'extracteur."},
+    {"id": "flexvolt-tstak", "question": "Le coût FLEXVOLT/TSTAK est-il justifié dans le parc existant ?", "evidence_refs": ["S1", "S4"], "decision_value": "Fait comparer le coût système complet selon les batteries et coffrets déjà détenus."},
+    {"id": "quand-dewalt", "question": "Quand faut-il choisir DeWalt ou regarder une gamme plus large ?", "evidence_refs": ["S1", "S2", "S3"], "decision_value": "Routage final entre classe M mobile, classe L hybride et besoin filaire multi-volumes."}
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "DCV586MN : XR FLEXVOLT 54 V, classe M, double filtre HEPA avec nettoyage automatique toutes les 30 secondes, alarme de baisse de performance, télécommande et compatibilité TSTAK", "source": "https://www.dewalt.fr/fr-fr/produit/dcv586mn-xj/aspirateur-tstak-xr-flexvolt-54v-brushless-eau-et-poussieres-classe-m"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "DCV584L : classe L, eau/poussière, alimentation secteur ou batterie XR/XR FLEXVOLT, filtre HEPA 99,97 % à 0,3 micron et connexion AIRLOCK", "source": "https://www.dewalt.fr/fr-fr/produit/dcv584l-qw/aspirateur-sur-secteur-ou-batterie-xr-et-xr-flexvolt-1854v-classe-l-sans"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "Perform & Protect et AIRLOCK : solutions de gestion des poussières, extracteurs classe M et raccord direct outil-extracteur", "source": "https://www.dewalt.fr/fr-fr/solutions-chantier/perform-protect"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "XR FLEXVOLT : batterie commutant automatiquement entre 54 V et 18 V et rétrocompatible avec les outils XR 18 V", "source": "https://www.dewalt.fr/fr-fr/produits/gammes/outils-electroportatifs-sans-fil/xr-flexvolt"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "Wireless Tool Control sur outils FLEXVOLT compatibles : démarrage/arrêt automatique du dépoussiérage avec le DCV586M", "source": "https://www.dewalt.fr/fr-fr/produit/dch911nk-xj/marteau-de-demolition-sds-max-xr-flexvolt-54v-brushless-27j-coffret"},
+    {"ref": "S6", "tier": 1, "status": "VERIFIED", "claim_scope": "Wireless Tool Control également documenté sur la scie à onglets DCS727 pour le DCV586M", "source": "https://www.dewalt.fr/fr-fr/produit/dcs727t2-qw/scie-onglets-xr-flexvolt-54v-250-mm-2-x-2ah"}
+  ],
+  "residual_risks": [
+    "Les obligations de classe dépendent de la poussière et du contexte réglementaire ; la page ne remplace pas une évaluation de prévention.",
+    "Les références DeWalt et compositions de kits peuvent évoluer ; vérifier le suffixe exact, la présence de batterie/chargeur et la compatibilité de commande avant achat.",
+    "Les performances et efficacités de filtration citées sont des données constructeur et non des mesures indépendantes réalisées par le site.",
+    "Le DCV584L possède un filtre HEPA mais reste un appareil de classe L ; ne pas déduire une classe M du type de filtre.",
+    "La valeur économique du DCV586M dépend fortement de l'existence préalable d'un parc XR FLEXVOLT et de besoins réels de mobilité classe M."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
