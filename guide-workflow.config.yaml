@@ -7,6 +7,7 @@ content:
   scope:
     - "/guides/"
   records_dir: ".content/guides"
+  authored_v2_dir: ".content/guides/v2"
   draft_robots: "noindex, follow"
   require_human_validation_before_indexation: true
   allow_automatic_merge: false
@@ -18,12 +19,15 @@ guide:
   skill_stack: ".agents/skills/guide-skill-stack.json"
   machine_workflow_validator: "validate_guide_workflow.py"
   machine_quality_validator: "validate_guide_quality.py"
-  editorial_source_of_truth: "_generate_guides.py"
+  canonical_generator: "_generate_guide_content.py"
   shell_generator: "_generate.py"
+  baseline_editorial_generator: "_generate_guides.py"
+  authored_v2_materializer: "_materialize_guides_v2.py"
   supplemental_generators:
     - "_guide_classes_lmh_pilot.py"
-    - "_guide_quality_supplements.py"
     - "_normalize_guide_answers.py"
+  deprecated_length_patch: "_guide_quality_supplements.py"
+  deprecated_length_patch_must_not_run: true
   allowed_decisions:
     - KEEP
     - LIGHT_UPDATE
