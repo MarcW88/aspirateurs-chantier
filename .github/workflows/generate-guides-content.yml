@@ -3,15 +3,20 @@ name: Generate guide content
 on:
   push:
     branches:
-      - content/guides-production-workflow
+      - main
     paths:
+      - '_generate_guide_content.py'
       - '_generate_guides.py'
-      - '_guide_quality_supplements.py'
       - '_normalize_guide_answers.py'
       - '_guide_classes_lmh_pilot.py'
+      - '_materialize_guides_v2.py'
+      - 'validate_guide_workflow.py'
+      - 'validate_guide_quality.py'
+      - 'guide-workflow.config.yaml'
+      - '.content/guides/**'
+      - '.agents/skills/guide-*/**'
+      - '.agents/skills/guide-skill-stack.json'
       - 'guides/**'
-      - 'content-workflow.config.yaml'
-      - '.agents/skills/content-recovery-and-production-workflow/**'
       - '.github/workflows/generate-guides-content.yml'
 
 permissions:
@@ -21,40 +26,21 @@ jobs:
   generate-and-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
-          ref: content/guides-production-workflow
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Apply guide content
-        run: python _generate_guides.py
+      - name: Compile Guide v2 pipeline
+        run: python -m py_compile _generate_guide_content.py _materialize_guides_v2.py validate_guide_workflow.py validate_guide_quality.py
 
-      - name: Apply editorial quality supplements
-        run: python _guide_quality_supplements.py
-
-      - name: Normalize answer-first blocks
-        run: python _normalize_guide_answers.py
-
-      - name: Apply evidence-led guide overrides
-        run: python _guide_classes_lmh_pilot.py
-
-      - name: Structural quality gate
-        run: >-
-          python .agents/skills/content-recovery-and-production-workflow/scripts/validate_content_quality.py
-          guides
-          --min-words 900
-          --min-h2 5
-          --min-section-words 70
-          --min-table-prose 50
-          --min-internal-links 4
-          --min-unique-targets 3
-          --min-sources 3
-          --single-p-min-words 130
+      - name: Generate canonical Guide content
+        run: python _generate_guide_content.py
 
       - name: Verify draft robots directive remains present
         shell: bash
@@ -68,10 +54,22 @@ jobs:
           done
           exit "$failures"
 
+      - name: Verify canonical generation is idempotent
+        shell: bash
+        run: |
+          git diff -- guides > /tmp/guide-first.diff || true
+          python _generate_guide_content.py
+          git diff -- guides > /tmp/guide-second.diff || true
+          if ! cmp -s /tmp/guide-first.diff /tmp/guide-second.diff; then
+            echo "Guide generation is not idempotent"
+            diff -u /tmp/guide-first.diff /tmp/guide-second.diff || true
+            exit 1
+          fi
+
       - name: HTML whitespace check
         run: git diff --check
 
-      - name: Commit generated guide HTML
+      - name: Commit generated Guide HTML
         shell: bash
         run: |
           if git diff --quiet -- guides; then
@@ -81,5 +79,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add guides
-          git commit -m "Generate production guide content"
-          git push origin HEAD:content/guides-production-workflow
+          git commit -m "content: regenerate Guides with evidence-led workflow"
+          git push origin HEAD:main
