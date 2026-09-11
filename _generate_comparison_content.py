@@ -21,13 +21,17 @@ def run(script, *args):
 def main():
     run("validate_comparison_skill_stack.py")
 
-    # Existing renderers materialize the current draft only. They are not evidence that
-    # seo-keyword / research / brief / writing / humanizer / QA actually ran.
+    # Legacy renderers still build the shared shell and existing draft state. They are
+    # not proof that research / brief / writing / humanizer / QA actually ran.
     run("_generate_professional_comparison_override.py")
     run("_generate_comparison_overrides.py")
     run("_polish_comparison_rollout.py")
     run("_normalize_comparatifs.py")
     run("_apply_comparison_design.py")
+
+    # Final editorial bodies are authored and persisted outside Python under
+    # .content/comparisons/v2/. This step only materializes those artifacts.
+    run("_materialize_comparison_v2.py")
 
     # READY status is evidence-gated after materialization.
     run("enforce_comparison_review_state.py")
