@@ -15,7 +15,10 @@ for (const page of report.pages) {
   if (page.consoleErrors?.length) failures.push(`${label}: console errors`);
   if (page.pageErrors?.length) failures.push(`${label}: page errors`);
   if (page.tables?.some(table => !table.hasExpectedWrapper)) failures.push(`${label}: table without responsive wrapper`);
-  if (ARTICLE_ROUTES.includes(page.route) && page.decisionModuleCount !== 1) failures.push(`${label}: expected exactly one intent-specific decision module`);
+
+  // Comparison workflow v2 makes the intent-specific decision module optional.
+  // Zero or one module is valid; duplicated modules remain a visual regression.
+  if (ARTICLE_ROUTES.includes(page.route) && page.decisionModuleCount > 1) failures.push(`${label}: duplicate intent-specific decision modules`);
 
   const outlinePx = Number.parseFloat(page.focus?.outlineWidth || '0');
   if (page.focus && (!Number.isFinite(outlinePx) || outlinePx < 2)) failures.push(`${label}: focus outline is not visibly reinforced`);
