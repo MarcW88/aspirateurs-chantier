@@ -3,21 +3,24 @@ name: Generate comparison content
 on:
   push:
     branches:
-      - content/comparatifs-production-workflow
+      - main
     paths:
-      - "_generate_comparatifs.py"
       - "_generate_comparison_content.py"
       - "_generate_professional_comparison_override.py"
       - "_generate_comparison_overrides.py"
+      - "_polish_comparison_rollout.py"
+      - "_normalize_comparatifs.py"
       - "_apply_comparison_design.py"
+      - "_validate_comparatifs.py"
+      - "_validate_comparison_rollout.py"
+      - "validate_comparison_skill_stack.py"
+      - "validate_comparison_run_evidence.py"
+      - "enforce_comparison_review_state.py"
+      - "comparison-workflow.config.yaml"
       - "comparison-pages.css"
       - "comparison-pages.js"
-      - "_validate_comparison_rollout.py"
-      - "_normalize_comparatifs.py"
-      - "_validate_comparatifs.py"
-      - "validate_comparison_skill_stack.py"
-      - "comparison-workflow.config.yaml"
-      - ".agents/skills/**"
+      - ".content/comparisons/**"
+      - ".agents/skills/comparison-*/**"
       - ".github/workflows/generate-comparatifs-content.yml"
   workflow_dispatch:
 
@@ -36,14 +39,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate canonical comparison cluster
+      - name: Validate 80/20 governance and provenance
+        run: python validate_comparison_skill_stack.py
+
+      - name: Materialize canonical comparison drafts
         run: python _generate_comparison_content.py
 
-      - name: Restore guide content after site generator import
-        run: |
-          python _generate_guides.py
-          python _guide_quality_supplements.py
-          python _normalize_guide_answers.py
+      - name: Validate persisted run-evidence state
+        run: python validate_comparison_run_evidence.py
 
       - name: Validate comparison data present
         run: |
@@ -69,10 +72,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _generate_comparatifs.py _generate_comparison_content.py _generate_professional_comparison_override.py _generate_comparison_overrides.py _apply_comparison_design.py comparison-pages.css comparison-pages.js _validate_comparison_rollout.py comparatifs .content/comparisons
+          git add comparatifs .content/comparisons
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
           else
-            git commit -m "Generate audited comparison cluster"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            git commit -m "content: materialize evidence-gated comparison drafts"
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
