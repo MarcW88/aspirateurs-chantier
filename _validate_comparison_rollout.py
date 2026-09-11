@@ -1,28 +1,26 @@
 #!/usr/bin/env python3
-"""Semantic and anti-template gate for the comparison cluster.
+"""Semantic gate for the evidence-led comparison v2 rollout.
 
-The validator protects intent boundaries and core safety rules for every draft. Stronger
-functional anti-template checks apply when pages claim READY_FOR_HUMAN_VALIDATION: a
-READY cluster cannot merely rename H2s while recycling the same editorial cadence.
+This validator checks page roles, safety boundaries and anti-template signals. It does
+not impose fixed H2 labels, word counts, scoring systems or a universal page template.
 """
 from pathlib import Path
-from collections import defaultdict
 import json
 import re
 
 BASE = Path(__file__).resolve().parent
-REWRITTEN = [
-    "aspirateur-industriel",
-    "aspirateur-chantier-puissant",
+V2 = [
     "meilleur-aspirateur-de-chantier",
+    "aspirateur-professionnel",
     "aspirateur-classe-m",
+    "aspirateur-chantier-puissant",
+    "aspirateur-industriel",
     "aspirateur-chantier-sans-fil",
     "aspirateur-eau-poussiere",
-    "aspirateur-chantier-sans-sac",
     "petit-aspirateur-de-chantier",
 ]
-ALL = ["aspirateur-professionnel"] + REWRITTEN
-READY = "READY_FOR_HUMAN_VALIDATION"
+BAGLESS = "aspirateur-chantier-sans-sac"
+ALL = V2 + [BAGLESS]
 errors = []
 
 
@@ -39,38 +37,8 @@ def data(slug):
     return json.loads((BASE / ".content" / "comparisons" / f"{slug}.json").read_text(encoding="utf-8"))
 
 
-def editorial_body(slug):
-    h = html(slug)
-    match = re.search(r"<!-- COMPARISON_CONTENT_START -->(.*?)<!-- COMPARISON_CONTENT_END -->", h, flags=re.S)
-    body = match.group(1) if match else h
-    body = re.split(r'<h2\b[^>]*id=["\']sources["\'][^>]*>', body, maxsplit=1, flags=re.I)[0]
-    return body
-
-
-def functional_signature(slug):
-    """Return the ordered editorial component cadence, ignoring wording/labels."""
-    body = editorial_body(slug)
-    token_re = re.compile(
-        r'(?P<answer><div\b[^>]*class=["\'][^"\']*answer-box[^"\']*["\'][^>]*>)'
-        r'|(?P<decision><section\b[^>]*class=["\'][^"\']*comparison-decision-module[^"\']*["\'][^>]*>)'
-        r'|(?P<h2><h2\b[^>]*>)'
-        r'|(?P<h3><h3\b[^>]*>)'
-        r'|(?P<table><table\b[^>]*>)'
-        r'|(?P<ul><ul\b[^>]*>)',
-        flags=re.I,
-    )
-    mapping = {"answer": "A", "decision": "D", "h2": "H2", "h3": "H3", "table": "T", "ul": "L"}
-    return tuple(mapping[m.lastgroup] for m in token_re.finditer(body))
-
-
-def normalized_long_paragraphs(slug):
-    paras = []
-    for raw in re.findall(r"<p\b[^>]*>(.*?)</p>", editorial_body(slug), flags=re.S | re.I):
-        text = re.sub(r"<[^>]+>", " ", raw)
-        text = re.sub(r"\s+", " ", text).strip().lower()
-        if len(text.split()) >= 40:
-            paras.append(text)
-    return paras
+def text(slug):
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html(slug))).lower()
 
 
 for slug in ALL:
@@ -78,112 +46,93 @@ for slug in ALL:
     d = data(slug)
     check('<meta name="robots" content="noindex, follow">' in h, f"{slug}: noindex/follow changed")
     check(d.get("notes", {}).get("affiliate_commission_used_in_ranking") is False, f"{slug}: affiliate independence missing")
-    editorial = d.get("editorial", {})
-    check(editorial.get("workflow_contract_version") == 2, f"{slug}: comparison workflow contract v2 missing")
-    check(editorial.get("generator_role") == "shell_and_components_only", f"{slug}: generator role is not constrained")
-    check(editorial.get("publish_review") in {READY, "REQUIRES_WORKFLOW_RERUN"}, f"{slug}: invalid publish-review state")
+    check("notre classement 2026" not in h.lower() and "score ajusté" not in h.lower(), f"{slug}: legacy ranking language remains")
 
-for slug in REWRITTEN:
-    h = html(slug)
+for slug in V2:
     d = data(slug)
-    check(d.get("status") == "REWRITTEN_AFTER_CLUSTER_AUDIT", f"{slug}: rollout status missing")
-    check(d.get("notes", {}).get("scoring_used") is False, f"{slug}: scoring must be disabled")
-    check("Score ajusté" not in h and "Notre classement 2026" not in h, f"{slug}: legacy ranking language remains")
-    check("scores" not in d and "ranking" not in d, f"{slug}: legacy score/ranking fields remain")
-    check(len(d.get("recommendation_logic", [])) >= 3, f"{slug}: insufficient scenario/trade-off logic")
-    check(all(r.get("main_tradeoff") for r in d.get("recommendation_logic", [])), f"{slug}: recommendation without trade-off")
+    source = BASE / ".content" / "comparisons" / "v2" / f"{slug}.html"
+    check(source.exists(), f"{slug}: authored v2 fragment missing")
+    check(d.get("status") == "V2_EDITORIAL_REWRITE", f"{slug}: v2 materialization status missing")
+    check(d.get("notes", {}).get("v2_editorial_source") == f".content/comparisons/v2/{slug}.html", f"{slug}: v2 source provenance missing")
+    check(d.get("notes", {}).get("generator_authored_content") is False, f"{slug}: generator must not claim editorial authorship")
 
-industrial = html("aspirateur-industriel")
-for needle in ["IVC 60/24-2", "IVR 60/30", "S3 L100", "VHO200", "process"]:
-    check(needle.lower() in industrial.lower(), f"industrial: missing industrial-universe marker {needle}")
-check("NT 50/1 Tact Te M ACD</strong></td>" not in industrial, "industrial: legacy NT50 ranking remains")
+bag = data(BAGLESS)
+check(bag.get("editorial", {}).get("publish_review") != "READY_FOR_HUMAN_VALIDATION", "bagless: merge candidate must not become READY automatically")
 
-powerful = html("aspirateur-chantier-puissant")
-check("ne crée volontairement pas de podium" in powerful, "powerful: measurement-comparability caveat missing")
-check("à la turbine" in powerful, "powerful: measurement-point context missing")
-check("/guides/depression-kpa-mbar-air-watt/" in powerful, "powerful: technical handoff missing")
+class_m = text("aspirateur-classe-m")
+for needle in ["surveillance", "décolmatage", "collecte", "antistatique", "inrs", "filtre se charge"]:
+    check(needle in class_m, f"class M: missing decision layer {needle}")
+check("hepa" in class_m and "ne transforment" in class_m, "class M: HEPA/class distinction missing")
 
-general = html("meilleur-aspirateur-de-chantier")
+industrial = text("aspirateur-industriel")
+for needle in ["process", "triphasé", "fonctionnement continu", "vho200", "huile", "copeaux", "atex", "acd"]:
+    check(needle in industrial, f"industrial: missing process marker {needle}")
+check("hors zone atex" in industrial, "industrial: ACD/ATEX boundary missing")
+
+powerful = text("aspirateur-chantier-puissant")
+for needle in ["à la turbine", "colmatage", "débit", "dépression", "flexible", "pas un classement"]:
+    check(needle in powerful, f"powerful: missing comparability marker {needle}")
+check("inrs" in powerful, "powerful: independent filter-loading evidence missing")
+
+best = html("meilleur-aspirateur-de-chantier")
 for path in [
     "/comparatifs/aspirateur-classe-m/",
     "/comparatifs/aspirateur-chantier-sans-fil/",
     "/comparatifs/aspirateur-eau-poussiere/",
     "/comparatifs/aspirateur-chantier-puissant/",
     "/comparatifs/aspirateur-industriel/",
+    "/comparatifs/petit-aspirateur-de-chantier/",
 ]:
-    check(path in general, f"general: missing specialist handoff {path}")
-check("gagnant universel" in general.lower(), "general: umbrella decision framing missing")
+    check(path in best, f"general: missing specialist handoff {path}")
+check("score global" in best.lower(), "general: no-universal-score rationale missing")
 
-class_m = data("aspirateur-classe-m")
-check(len(class_m.get("product_universe", [])) >= 5, "class M: candidate coverage still too narrow")
-for item in class_m.get("product_universe", []):
-    check("m" in str(item.get("role", "")).lower() or "m" in str(item.get("name", "")).lower() or item.get("id") in {"karcher-nt-30-1-tact","bosch-gas-35-m-afc","makita-vc4210mx","festool-ctm-midi-ac","bosch-gas-18v-12-mc"}, f"class M: unexpected candidate {item.get('id')}")
-class_m_html = html("aspirateur-classe-m")
-check("pré-requis" in class_m_html.lower() or "prérequis" in class_m_html.lower() or "point d’entrée" in class_m_html.lower(), "class M: certification gate framing missing")
+cordless = text("aspirateur-chantier-sans-fil")
+for needle in ["parc batteries", "autonomie", "coût", "poids", "déclenchement", "vendu sans batterie"]:
+    check(needle in cordless, f"cordless: missing system-cost/workflow marker {needle}")
+check("score commun" in cordless, "cordless: runtime non-equivalence caveat missing")
 
-cordless = html("aspirateur-chantier-sans-fil")
-for needle in ["DeWalt DCV586M", "GAS 18V-12 MC", "GAS 18V-10 L", "WD 3-18 S"]:
-    check(needle in cordless, f"cordless: missing candidate {needle}")
-check("Classe L" in cordless and "classe M" in cordless, "cordless: class distinction missing")
+wetdry = text("aspirateur-eau-poussiere")
+for needle in ["sec au liquide", "vidange", "sac", "filtre", "wet/dry ne dit rien"]:
+    check(needle in wetdry, f"wet/dry: missing transition or safety marker {needle}")
 
-wetdry = html("aspirateur-eau-poussiere")
-check("Nilfisk Multi II 30 T" in wetdry, "wet/dry: non-Kärcher coverage missing")
-check("Wet & dry n’est pas une classe de poussière" in wetdry, "wet/dry: safety boundary missing")
+compact = text("petit-aspirateur-de-chantier")
+for needle in ["poids prêt à travailler", "dimensions d’emballage", "escaliers", "véhicule", "classe"]:
+    check(needle in compact, f"compact: missing mobility marker {needle}")
+check("moins de 15 litres" not in compact and "< 15" not in compact, "compact: arbitrary litre threshold remains")
 
-bagless = html("aspirateur-chantier-sans-sac")
-for needle in ["Conçu explicitement sans sac", "Peut collecter en cuve", "Devrait utiliser un système de collecte"]:
-    check(needle in bagless, f"bagless: collection-mode distinction missing: {needle}")
+professional = text("aspirateur-professionnel")
+for needle in ["professionnel", "classe l", "classe m", "workflow", "consommables", "inrs"]:
+    check(needle in professional, f"professional: missing v2 decision layer {needle}")
 
-compact = html("petit-aspirateur-de-chantier")
-check("moins de 15" not in compact.lower() and "< 15" not in compact, "compact: arbitrary litre threshold remains")
-check("poids" in compact.lower() and "encombrement" in compact.lower(), "compact: handling definition incomplete")
-
-hub = (BASE / "comparatifs" / "index.html").read_text(encoding="utf-8")
-for stale in ["Dépression &gt; 25 kPa", "&lt; 15 litres", "Grande capacité", "Poussières dangereuses modérées"]:
-    check(stale not in hub, f"comparison hub: stale scope label remains: {stale}")
-for fresh in ["Débit et dépression contextualisés", "Mobilité et encombrement", "Process, continu, huiles et copeaux", "Certification classe M"]:
-    check(fresh in hub, f"comparison hub: new role label missing: {fresh}")
-
-# The general and powerful pages must no longer be the same product universe.
-g = {p["id"] for p in data("meilleur-aspirateur-de-chantier").get("product_universe", [])}
-p = {p["id"] for p in data("aspirateur-chantier-puissant").get("product_universe", [])}
-check(g != p, "cluster: general and powerful still use the exact same product universe")
-
-# Exact H2 cloning is still useful as a low-level draft check.
-signatures = defaultdict(list)
-for slug in REWRITTEN:
-    sig = tuple(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", x)).strip().lower() for x in re.findall(r"<h2\b[^>]*>(.*?)</h2>", html(slug), flags=re.S | re.I))
-    signatures[sig].append(slug)
-for slugs in signatures.values():
+signatures = {}
+for slug in V2:
+    headings = tuple(
+        re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", x)).strip().lower()
+        for x in re.findall(r"<h2\b[^>]*>(.*?)</h2>", html(slug), flags=re.S | re.I)
+    )
+    check(len(headings) >= 5, f"{slug}: insufficient decision sections after v2 rewrite")
+    signatures.setdefault(headings, []).append(slug)
+for sig, slugs in signatures.items():
     check(len(slugs) == 1, "cluster: identical H2 architecture remains: " + ", ".join(slugs))
 
-# READY pages get a stronger functional anti-template gate. Components can be shared,
-# but three READY pages may not have the exact same ordered component cadence.
-ready_slugs = [slug for slug in ALL if data(slug).get("editorial", {}).get("publish_review") == READY]
-functional = defaultdict(list)
-for slug in ready_slugs:
-    functional[functional_signature(slug)].append(slug)
-for sig, slugs in functional.items():
-    if sig and len(slugs) >= 3:
-        check(False, "cluster: READY pages share the same functional editorial cadence: " + ", ".join(slugs))
-
-# Long editorial prose copied verbatim into 3+ READY pages is also a blocker.
-paragraph_owners = defaultdict(set)
-for slug in ready_slugs:
-    for paragraph in normalized_long_paragraphs(slug):
-        paragraph_owners[paragraph].add(slug)
-for owners in paragraph_owners.values():
-    if len(owners) >= 3:
-        check(False, "cluster: long editorial paragraph cloned across READY pages: " + ", ".join(sorted(owners)))
+paragraph_owners = {}
+for slug in V2:
+    for p in re.findall(r"<p[^>]*>(.*?)</p>", html(slug), flags=re.S | re.I):
+        clean = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", p)).strip().lower()
+        if len(clean) >= 220:
+            paragraph_owners.setdefault(clean, []).append(slug)
+for paragraph, owners in paragraph_owners.items():
+    if len(set(owners)) > 1:
+        check(False, "cluster: long paragraph reused across pages: " + ", ".join(sorted(set(owners))))
 
 if errors:
-    print("COMPARISON_ROLLOUT: FAIL")
+    print("COMPARISON_ROLLOUT_V2: FAIL")
     for error in errors:
         print(" -", error)
     raise SystemExit(1)
 
-print("COMPARISON_ROLLOUT: PASS")
-print(" - intent and safety boundaries preserved across all 9 comparison drafts")
-print(f" - {len(ready_slugs)} page(s) currently claim READY_FOR_HUMAN_VALIDATION")
-print(" - READY pages are subject to functional-cadence and long-paragraph anti-template gates")
-print(" - all 9 comparison pages remain noindex, follow")
+print("COMPARISON_ROLLOUT_V2: PASS")
+print(" - 8 retained comparisons materialize authored evidence-led v2 fragments")
+print(" - bagless remains a human-gated merge candidate")
+print(" - page roles are distinct and exact structural cloning is blocked")
+print(" - all 9 comparison URLs remain noindex, follow")
