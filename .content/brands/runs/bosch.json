@@ -1,0 +1,56 @@
+{
+  "contract_version": 2,
+  "slug": "bosch",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur Bosch en identifiant d'abord l'univers : Home & Garden pour le nettoyage et le bricolage, GAS Professional filaire lorsque la classe et le décolmatage comptent, ou Professional 18V / AMPShare pour la mobilité ; choisir ensuite la classe, le volume et le raccordement outil.",
+  "value_without_affiliate_links": "La page évite quatre erreurs d'achat : comparer un modèle DIY et un GAS Professional comme s'ils répondaient au même besoin, déduire une classe M d'un débit élevé ou d'un filtre HEPA, confondre POWER FOR ALL et Professional 18V / AMPShare, ou choisir GAS 55 M AFC en pensant gagner en aspiration alors que l'écart principal avec le GAS 35 M AFC est la capacité et le poids.",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent principal confirmé : comprendre la gamme Bosch d'aspirateurs de chantier et savoir quand rester en Home & Garden, passer en GAS Professional filaire ou choisir un modèle Professional 18V. Sous-intentions : AdvancedVac 20, PAS30-240PRS, GAS 18V-10 L, GAS 35/55 M AFC, AFC, Click & Clean et compatibilité batteries."},
+    "content-audit": {"status": "PASS", "output": "LIGHT_UPDATE confirmé. La page du 09/09/2026 possède déjà une structure décisionnelle distincte, des limites explicites, un maillage utile et une séparation nette DIY / Professional / 18V. Aucun motif de DEEP_REWRITE n'a été identifié."},
+    "content-refresh": {"status": "PASS", "output": "Les sources officielles Bosch ont été recontrôlées le 11/09/2026. Les caractéristiques structurantes utilisées dans le contenu restent cohérentes ; aucun changement éditorial substantiel n'est nécessaire. Le refresh consiste donc principalement à valider la fraîcheur et à produire la preuve d'exécution v2 manquante."},
+    "fact-check-pre": {"status": "PASS", "output": "Brief de vérification ciblé sur les points pouvant changer la décision : AdvancedVac 20 20 L / 70 l/s / 260 mbar et Auto-Start ; PAS30-240PRS 30 L et nettoyage semi-automatique ; AdvancedVac 18V-8 sur POWER FOR ALL ; GAS 18V-10 L classe L ; GAS 35/55 M AFC classe M et AFC ; compatibilité AMPShare."},
+    "evidence-based-reviews": {"status": "PASS", "output": "Toutes les caractéristiques décisionnelles reposent sur des pages Bosch DIY ou Bosch Professional de premier niveau. Aucun avis marchand ou témoignage utilisateur n'est utilisé pour attribuer une performance ou une classe."},
+    "affiliate-value": {"status": "PASS", "output": "La valeur indépendante de l'affiliation réside dans la séparation des trois univers Bosch, l'explication des deux plateformes 18V et la mise en garde contre les faux équivalents puissance/classe. Aucun lien marchand n'est requis pour que la page aide à décider."},
+    "content-brief-authoring": {"status": "PASS", "output": "Le brief existant reste pertinent : choix de l'univers Bosch ; lecture Home & Garden ; GAS Professional ; séparation des plateformes 18V ; routage par usage ; limites ; pages suivantes. Aucune restructuration lourde n'est justifiée."},
+    "content-and-copy": {"status": "PASS", "output": "LIGHT_UPDATE : conservation du corps existant plutôt que réécriture artificielle. Le contenu actuel répond déjà au brief, limite les chiffres aux critères décisionnels et distingue clairement DIY, classe L, classe M et écosystèmes batteries."},
+    "fact-check-post": {"status": "PASS", "output": "Contrôle post-audit : AdvancedVac 20 toujours 20 L, 70 l/s et 260 mbar à la turbine avec démarrage synchronisé à l'outil ; PAS30-240PRS toujours 30 L avec nettoyage semi-automatique ; GAS 18V-10 L toujours classe L, 34 l/s et 115 mbar ; GAS 35 M AFC et GAS 55 M AFC toujours classe M, 74 l/s et 254 mbar."},
+    "humanizer": {"status": "PASS", "output": "Le texte reste centré sur des erreurs d'achat concrètes plutôt que sur une narration de marque : univers Bosch mal choisi, classe déduite d'un chiffre, batteries 18V supposées interchangeables et surdimensionnement vers GAS 55."},
+    "general-writing": {"status": "PASS", "output": "La structure existante est lisible : paragraphes courts, deux tableaux réellement décisionnels et progression du général vers le choix de modèle. Pas d'accumulation de fiches produit."},
+    "anti-ai-slop": {"status": "PASS", "output": "Pas de FAQ automatique, pas de liste générique d'avantages/inconvénients, pas de conclusion creuse, pas de faux test et pas de répétition d'une structure de marque voisine."},
+    "internal-linking-audit": {"status": "PASS", "output": "Le maillage relie les prochaines décisions utiles : AdvancedVac 20, GAS 18V-10 L, GAS 35 M AFC, sans-fil, classe M, professionnel, classes L/M/H, décolmatage, prise asservie, débit d'air et ponceuse."},
+    "seo-technical": {"status": "PASS", "output": "Canonical /marques/bosch/ conservé, un seul H1, IDs et sommaire cohérents, aucune instruction d'indexation modifiée et noindex, follow maintenu pendant la phase de recovery."},
+    "seo-best-practices": {"status": "PASS", "output": "Le ciblage reste centré sur Bosch + AdvancedVac/PAS/GAS/AFC/Click & Clean/AMPShare sans cannibaliser les pages modèles, les comparatifs classe M ou les guides de sécurité."},
+    "editorial-qa": {"status": "PASS", "output": "QA final : aucune classe extrapolée, les chiffres sont explicitement des données fabricant à la turbine, la différence HEPA/classe est visible, les deux plateformes 18V sont correctement séparées et aucun prix n'est figé dans l'analyse."}
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {"status": "PASS", "output": "Contrôle métier sur eau/poussière, prise outil, Auto-Start, nettoyage semi-automatique, AFC, classes L/M, HEPA, débit/dépression à la turbine, Click & Clean et compatibilité batteries. Aucun raccourci puissance=classe ou HEPA=classe M."},
+    "brand-analysis-publish-review": {"status": "PASS", "output": "PUBLISH_REVIEW : LIGHT_UPDATE satisfait sans réécriture artificielle ; structure spécifique préservée, sources officielles revalidées, limites visibles, valeur indépendante de l'affiliation et noindex conservé. PASS — READY_FOR_HUMAN_VALIDATION."}
+  },
+  "outline": [
+    {"id": "univers-bosch", "question": "Quel univers Bosch faut-il choisir avant même de comparer les références ?", "evidence_refs": ["S1", "S5", "S6"], "decision_value": "Sépare Home & Garden, Professional filaire et Professional 18V pour éviter les comparaisons trompeuses."},
+    {"id": "home-garden", "question": "Quand la gamme Home & Garden suffit-elle ?", "evidence_refs": ["S1", "S2", "S3", "S4"], "decision_value": "Positionne les modèles DIY sur le nettoyage, l'atelier et le raccordement outil sans leur attribuer une classe de sécurité non documentée."},
+    {"id": "gas-professional", "question": "Quand la classe et l'AFC deviennent-ils plus importants que le volume ?", "evidence_refs": ["S5", "S6", "S7"], "decision_value": "Distingue le mobile classe L des modèles M avec AFC et montre que GAS 35 et 55 partagent les mêmes maxima à la turbine."},
+    {"id": "deux-systemes-18v", "question": "Les deux systèmes 18V Bosch sont-ils compatibles ?", "evidence_refs": ["S4", "S5", "S8"], "decision_value": "Évite de créer un parc batterie incompatible en supposant que 18V Bosch signifie une plateforme unique."},
+    {"id": "quel-bosch", "question": "Quel Bosch regarder selon le travail réel ?", "evidence_refs": ["S2", "S3", "S4", "S5", "S6", "S7"], "decision_value": "Transforme la gamme en routage par usage plutôt qu'en classement universel."},
+    {"id": "limites-bosch", "question": "Quelles limites le logo Bosch ne règle-t-il pas ?", "evidence_refs": ["S3", "S5", "S6", "S8"], "decision_value": "Rappelle que classe, protocole de mesure et compatibilités doivent être vérifiés séparément."},
+    {"id": "suite", "question": "Quelle page consulter après avoir identifié l'univers Bosch ?", "evidence_refs": ["S3", "S5", "S6"], "decision_value": "Envoie le lecteur vers les pages modèles et comparatifs correspondant à sa décision déjà structurée."}
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "gamme Bosch DIY actuelle des aspirateurs eau et poussière", "source": "https://www.bosch-diy.com/fr/fr/outils-de-nettoyage/aspirateurs-eau-et-poussiere"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "PAS30-240PRS actuel : 30 L, 67 l/s, 265 mbar, nettoyage de filtre semi-automatique et raccordement outil", "source": "https://www.bosch-diy.com/fr/fr/p/pas30-240prs-06033e73w0"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "AdvancedVac 20 actuel : 20 L, 70 l/s, 260 mbar et démarrage/arrêt automatique avec outil raccordé", "source": "https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "AdvancedVac 18V-8 actuel : POWER FOR ALL 18V, 8 L, 29 l/s et 92 mbar", "source": "https://www.bosch-diy.com/fr/fr/p/advancedvac-18v-8-06033e1000"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "GAS 18V-10 L actuel : classe L, 10 L brut, 34 l/s, 115 mbar, Professional 18V et AMPShare", "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/"},
+    {"ref": "S6", "tier": 1, "status": "VERIFIED", "claim_scope": "GAS 35 M AFC actuel : classe M, AFC, 35 L brut, 23 L net, 74 l/s et 254 mbar", "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"},
+    {"ref": "S7", "tier": 1, "status": "VERIFIED", "claim_scope": "GAS 55 M AFC actuel : classe M, AFC, 55 L brut, 43 L net, 74 l/s, 254 mbar et 16,2 kg", "source": "https://www.bosch-professional.com/fr/fr/products/gas-55-m-afc-06019C33W0"},
+    {"ref": "S8", "tier": 1, "status": "VERIFIED", "claim_scope": "AMPShare est basé sur Professional 18V System ; Bosch confirme que AMPShare et POWER FOR ALL ne sont pas compatibles", "source": "https://www.bosch-professional.com/fr/fr/ampshare/"}
+  ],
+  "residual_risks": [
+    "La gamme Bosch DIY peut évoluer rapidement ; la page doit être recontrôlée si Bosch remplace les références PAS ou AdvancedVac.",
+    "Les chiffres de débit et de dépression sont des maxima constructeur à la turbine et ne doivent pas être comparés comme des mesures indépendantes au flexible.",
+    "La classe L/M dépend de la référence complète et ne peut pas être déduite d'un filtre HEPA, d'une puissance moteur ou d'un niveau de dépression.",
+    "POWER FOR ALL et Professional 18V / AMPShare restent deux plateformes distinctes malgré une tension nominale identique."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
