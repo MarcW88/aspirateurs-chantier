@@ -1,12 +1,13 @@
 {
   "title": "Bosch GAS 35 M AFC : classe M, AFC et vrai écart avec le 35 L",
   "meta_description": "GAS 35 M AFC : classe M, AFC, 35/23 L, 74 l/s. Comparaison directe avec le GAS 35 L AFC et le GAS 55 M AFC, limites et cas d’usage.",
+  "verified_date": "11/09/2026",
   "toc": [
     ["35m-vs-35l", "35 M vs 35 L"],
     ["afc", "Ce que change l’AFC"],
     ["35m-vs-55m", "35 M vs 55 M"],
     ["workflow", "Quand il devient cohérent"],
     ["limites", "Limites"],
-    ["sources", "Sources" ]
+    ["sources", "Sources"]
   ]
 }
