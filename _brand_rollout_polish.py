@@ -9,9 +9,6 @@ REPLACEMENTS = {
         "Cette distinction est précisément le type de raccourci que notre méthodologie interdit.":
         "Un filtre HEPA et une classe de poussière répondent à deux classifications différentes : il faut donc vérifier les deux séparément.",
     },
-    "parkside": {
-        "tout en offrir un workflow plus stable": "tout en offrant un workflow plus stable",
-    },
 }
 
 
