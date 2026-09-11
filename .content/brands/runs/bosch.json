@@ -3,6 +3,7 @@
   "slug": "bosch",
   "run_date": "2026-09-11",
   "status": "PASS",
+  "validation_scope": "LIGHT_UPDATE — sources and decision-critical claims revalidated; no substantive body rewrite required.",
   "reader_decision": "Choisir un aspirateur Bosch en identifiant d'abord l'univers : Home & Garden pour le nettoyage et le bricolage, GAS Professional filaire lorsque la classe et le décolmatage comptent, ou Professional 18V / AMPShare pour la mobilité ; choisir ensuite la classe, le volume et le raccordement outil.",
   "value_without_affiliate_links": "La page évite quatre erreurs d'achat : comparer un modèle DIY et un GAS Professional comme s'ils répondaient au même besoin, déduire une classe M d'un débit élevé ou d'un filtre HEPA, confondre POWER FOR ALL et Professional 18V / AMPShare, ou choisir GAS 55 M AFC en pensant gagner en aspiration alors que l'écart principal avec le GAS 35 M AFC est la capacité et le poids.",
   "shared_steps": {
