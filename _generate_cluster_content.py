@@ -4,7 +4,7 @@
 The order is intentional and enforced:
 1. shared/custom skill governance;
 2. model evidence/pages;
-3. non-brand usage pages;
+3. non-brand usage shell + authored v2 materialization;
 4. comparison cluster with audited bespoke overrides;
 5. brand hubs;
 6. cluster metadata/index;
@@ -25,8 +25,11 @@ def run(script):
 def main():
     run('validate_brand_skill_stack.py')
     run('validate_comparison_skill_stack.py')
+    run('validate_usage_workflow.py')
     run('_generate_model_overrides.py')
     run('_generate_usage_overrides.py')
+    run('_materialize_usage_v2.py')
+    run('validate_usage_workflow.py')
     run('_generate_comparison_content.py')
     run('_generate_brand_content.py')
     run('_generate_brand_hub_index.py')
