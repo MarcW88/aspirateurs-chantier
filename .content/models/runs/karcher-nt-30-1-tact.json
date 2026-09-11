@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "karcher-nt-30-1-tact",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to why the NT 30/1 Tact Te M ACD is a safety-system decision rather than simply a more powerful 30 L vacuum."},
+    "content-audit": {"status": "PASS", "output": "Existing page audited as DEEP_REWRITE because it stated the right facts but still used the generic model template."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt around class M, sensor-controlled Tact, ACD, tool integration and the boundary with class H."},
+    "fact-check-pre": {"status": "PASS", "output": "Kärcher NT 30/1 Tact Te M ACD, NT 30/1 Tact Te H ACD and WD 6 primary pages checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No subjective rating, durability judgment or hands-on claim is used."},
+    "affiliate-value": {"status": "PASS", "output": "Affiliate-independent value comes from explaining what class M, Tact and ACD actually mean and what they do not mean."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted at .content/models/briefs/karcher-nt-30-1-tact-2026-09-11.md."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/karcher-nt-30-1-tact.html."},
+    "fact-check-post": {"status": "PASS", "output": "Final copy retains class M, 99.9% manufacturer filtration claim, 74 l/s, 273 mbar, 30 L, sensor-controlled Tact and ACD wording in context."},
+    "humanizer": {"status": "PASS", "output": "Removed generic product-review cadence and centered prose on safety architecture."},
+    "general-writing": {"status": "PASS", "output": "Copy tightened around WD-vs-NT boundary, Tact behavior, ACD scope and class M vs H."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned 'for whom / limits / source' structure, filler FAQ or generic verdict remains."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links support handoff to the class-M comparison and WD 6 without duplicating those page roles."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata and TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta surface the exact class M, Tact and ACD decision rather than a generic spec-sheet query."},
+    "editorial-qa": {"status": "PASS", "output": "ACD scope stays precise, class M is not universalized, and no unsupported ATEX or hands-on claim remains."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Exact Te M ACD variant, class M, sensor-controlled Tact, electronic airflow monitoring, tool auto-start, antistatic system, ACD scope and class-H alternative checked against Kärcher."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Page is structurally and semantically distinct from WD 5/6 and is ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Understand whether the Kärcher NT 30/1 Tact Te M ACD is required because of class M, Tact and ACD workflow needs rather than simply because it is a 30 L professional vacuum.",
+  "value_without_affiliate_links": "Explains the professional safety architecture, separates sensor-controlled Tact from manual filter cleaning, scopes ACD precisely and shows why class M is not a universal dust answer.",
+  "outline": [
+    {"question": "Pourquoi le NT 30/1 n'est-il pas un WD 6 pro ?", "evidence_refs": ["E1", "E2"], "decision_value": "Separates safety architecture from consumer feature escalation."},
+    {"question": "Que change Tact commandé par capteur ?", "evidence_refs": ["E1"], "decision_value": "Explains the documented automatic filter-cleaning logic without inventing benchmark performance."},
+    {"question": "Que signifie réellement ACD ?", "evidence_refs": ["E1", "E4"], "decision_value": "Keeps combustible-dust approval precise and avoids overclaiming explosive-atmosphere suitability."},
+    {"question": "Pourquoi la classe M n'est-elle pas universelle ?", "evidence_refs": ["E1", "E3"], "decision_value": "Uses the official H variant to preserve the risk-based class boundary."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
