@@ -14,6 +14,7 @@ on:
       - ".github/workflows/design-v2-visual-qa.yml"
   workflow_dispatch:
 
+# Temporary visual QA for the editorial design prototype.
 jobs:
   screenshots:
     runs-on: ubuntu-latest
