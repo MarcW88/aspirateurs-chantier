@@ -1,0 +1,54 @@
+{
+  "contract_version": 2,
+  "slug": "aspirateur-professionnel",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur professionnel à partir du risque et du workflow réel — durée, outil, mobilité, capacité et maintenance — sans confondre le terme professionnel avec la classe M.",
+  "comparison_scope": "Six profils couvrent L mobile, L filaire simple, L compact intégré, M 35 L AFC, M 30 L Tact et M gros volume.",
+  "value_without_affiliate_links": "La page explique professionnel vs classe, ordre de décision, coût de workflow, comportement filtre chargé et limites de comparabilité des mesures.",
+  "candidate_scope": {
+    "considered": ["Bosch Professional GAS 18V-10 L","Makita VC2512L","Festool CTL MIDI I","Bosch Professional GAS 35 M AFC","Kärcher NT 30/1 Tact Te M ACD","Makita VC4210MX"],
+    "major_exclusions": [
+      "Pas de classement universel : L et M ne répondent pas au même gate de risque.",
+      "Les usages spécifiquement M et sans-fil sont approfondis dans leurs comparatifs dédiés."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.inrs.fr/media.html?refINRS=EC+44","supports":"performance des aspirateurs de chantier en cours de colmatage"},
+    {"ref":"S2","source":"https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302","supports":"GAS18V-10L : L, mobilité, capacité et poids"},
+    {"ref":"S3","source":"model evidence ledger / Makita VC2512L","supports":"VC2512L : classe L, prise outil et Push & Clean"},
+    {"ref":"S4","source":"https://www.festool.fr/produits/nouveaux-produits/outils/578309---ctl-midi-i","supports":"CTL MIDI I : L, Bluetooth, CLEANTEC, capacité et poids"},
+    {"ref":"S5","source":"https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0","supports":"GAS35 M AFC : M, AFC, capacité et mesure turbine"},
+    {"ref":"S6","source":"https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html","supports":"NT30 : M, Tact, surveillance, antistatique"},
+    {"ref":"S7","source":"https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf","supports":"VC4210MX : M, 42 L, InfiniClean, poids"}
+  ],
+  "outline": [
+    {"question":"Qu’est-ce qui rend un aspirateur professionnel ?","evidence_refs":["S2","S3","S4","S5","S6","S7"],"decision_value":"Sépare contexte professionnel et classe de poussière."},
+    {"question":"Quels six profils couvrent des workflows pro distincts ?","evidence_refs":["S2","S3","S4","S5","S6","S7"],"decision_value":"Permet une sélection conditionnelle au lieu d’un podium."},
+    {"question":"Quel ordre de décision évite les mauvais achats ?","evidence_refs":["S1","S2","S3","S4","S5","S6","S7"],"decision_value":"Place risque avant durée, outil et déplacements."},
+    {"question":"Quel est le coût professionnel au-delà du prix d’achat ?","evidence_refs":["S2","S3","S4","S5","S6","S7"],"decision_value":"Ajoute maintenance, consommables, batteries et interruptions."},
+    {"question":"Pourquoi ne pas classer les machines sur L/s et mbar ?","evidence_refs":["S5","S6","S7"],"decision_value":"Empêche une comparaison cross-brand non démontrée équivalente."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"Intention professionnel conservée comme contexte de travail large ; frontière nette avec requête spécifique classe M."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD : minimiser interruptions et manutention tout en respectant le niveau de poussière nécessaire et l’intégration outil."},
+    "seo-content-audit":{"status":"PASS","output":"LIGHT_UPDATE respecté : meilleure base du cluster préservée, puis revalidée et enrichie sous contrat v2."},
+    "evidence-based-reviews":{"status":"PASS","output":"Six références vérifiées via sources fabricants/model evidence et INRS ajouté uniquement pour le principe de colmatage."},
+    "fact-check-pre":{"status":"PASS","output":"Classes L/M, décolmatage, prise outil, capacité, poids et contexte des mesures vérifiés avant brief."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale : professionnel ≠ M, ordre risque→workflow, coût de maintenance/consommables et limites du classement métrique."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief autour de définition pro, six profils, ordre de décision, coût workflow, comparabilité et routage spécialisé."},
+    "content-and-copy":{"status":"PASS","output":"Mise à jour persistée dans .content/comparisons/v2/aspirateur-professionnel.html en conservant les éléments forts du pilote précédent."},
+    "fact-check-post":{"status":"PASS","output":"Relecture des profils, des classes et du contexte turbine Bosch ; aucune extrapolation INRS aux modèles nommés."},
+    "humanizer":{"status":"PASS","output":"Réduction du ton fiche-produit et ajout de situations professionnelles concrètes : intervention, atelier, ponçage, déplacements."},
+    "general-writing":{"status":"PASS","output":"Hiérarchie de décision et compromis simplifiés sans mélanger sécurité et confort de travail."},
+    "anti-ai-slop":{"status":"PASS","output":"Architecture propre au contexte professionnel, distincte du comparatif M et sans répétition mécanique avantages/limites."},
+    "seo-onpage":{"status":"PASS","output":"Title/meta/H1 conservent ‘aspirateur de chantier professionnel’ avec angle par usage et workflow."},
+    "seo-technical":{"status":"PASS","output":"Canonical conservé, robots noindex, follow maintenu et aucun balisage de review physique inventé."},
+    "internal-linking-audit":{"status":"PASS","output":"Handoffs vers classe M et sans-fil uniquement lorsque l’utilisateur a déjà identifié ces priorités."},
+    "editorial-qa":{"status":"PASS","output":"Sources et limites visibles, aucun gagnant universel, aucune commission d’affiliation utilisée dans les recommandations."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Classe traitée comme gate ; mesures turbine contextualisées, décolmatage séparé de certification et mobilité/capacité traitées en compromis."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; LIGHT_UPDATE suffisant, rôle professionnel préservé et preuves v2 complètes."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
