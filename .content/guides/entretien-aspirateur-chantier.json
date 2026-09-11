@@ -1,0 +1,43 @@
+{
+  "contract_version":1,
+  "slug":"entretien-aspirateur-chantier",
+  "url":"/guides/entretien-aspirateur-chantier/",
+  "guide_type":"HOW_TO",
+  "audit_decision":"LIGHT_UPDATE",
+  "intent":{"reader_task":"Entretenir l’aspirateur sans endommager filtre, circuit ou dispositifs de sécurité, et diagnostiquer les causes simples d’une baisse de débit."},
+  "value_to_preserve":["Contrôles après usage.","Prudence sur lavage/soufflage des filtres.","Maintenance des poussières dangereuses traitée à part."],
+  "evidence":[
+    {"id":"S1","claim":"La maintenance d’un aspirateur utilisé en présence d’amiante nécessite des précautions spécifiques et l’INRS recommande de confier certaines vérifications à des centres adaptés.","source":"https://www.inrs.fr/risques/amiante/prevention-risque-amiante.html","checked_at":"2026-09-11","status":"SUPPORTED"},
+    {"id":"S2","claim":"Les procédures de maintenance doivent respecter la conception et la notice de l’appareil complet.","source":"https://webstore.iec.ch/en/publication/64777","checked_at":"2026-09-11","status":"SUPPORTED"}
+  ],
+  "outline":[
+    {"question":"Quels contrôles faire après usage ?","evidence_refs":["S2"],"decision_value":"Prévenir bouchons, fuites et colmatage."},
+    {"question":"Que faire quand le débit baisse ?","evidence_refs":["S2"],"decision_value":"Diagnostiquer le circuit avant d’accuser le moteur."},
+    {"question":"Quand la maintenance devient-elle une opération à risque ?","evidence_refs":["S1"],"decision_value":"Séparer poussières dangereuses de l’entretien courant."}
+  ],
+  "workflow_execution":{"shared":[
+    {"skill":"seo-content-audit","status":"PASS","output":"LIGHT_UPDATE confirmé ; guide HOW_TO distinct."},
+    {"skill":"seo-keyword","status":"PASS","output":"Topic entretien aspirateur chantier conservé."},
+    {"skill":"search-intent","status":"PASS","output":"HOW_TO : contrôles, diagnostic, entretien et stockage."},
+    {"skill":"content-refresh","status":"PASS","output":"Rythme d’entretien intégré au plan réel, sans calendrier universel."},
+    {"skill":"fact-check","status":"PASS","output":"Prudence maintenance amiante et priorité notice revérifiées."},
+    {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucun jugement expérientiel."},
+    {"skill":"affiliate-value","status":"PASS","output":"Procédure utile sans achat affilié."},
+    {"skill":"content-brief-authoring","status":"PASS","output":"Brief après usage -> perte débit -> filtre -> eau -> étanchéité -> stockage -> danger -> rythme."},
+    {"skill":"content-and-copy","status":"PASS","output":"HOW_TO réécrit selon déclencheurs réels d’entretien."},
+    {"skill":"humanizer","status":"PASS","output":"Style relu."},
+    {"skill":"general-writing","status":"PASS","output":"Étapes clarifiées sans sur-prescription."},
+    {"skill":"anti-ai-slop","status":"PASS","output":"Aucun calendrier arbitraire ou liste artificielle."},
+    {"skill":"internal-linking-audit","status":"PASS","output":"Liens vers décolmatage placés là où ils aident au diagnostic."},
+    {"skill":"seo-onpage","status":"PASS","output":"Title/H1/meta alignés sur entretien filtre/cuve/flexible."},
+    {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow préservés."},
+    {"skill":"seo-best-practices","status":"PASS","output":"Réponse actionnable et risques visibles."},
+    {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline fournie."},
+    {"skill":"editorial-qa","status":"PASS","output":"Aucune méthode de lavage/soufflage présentée comme universelle."}
+  ],"custom":[
+    {"skill":"guide-analysis-workflow","status":"PASS","output":"LIGHT_UPDATE HOW_TO validé."},
+    {"skill":"guide-content-workflow","status":"PASS","output":"Fragment v2 produit."}
+  ]},
+  "residual_risks":["Les procédures exactes de filtre, eau et maintenance varient selon la notice de chaque machine."],
+  "editorial":{"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+}
