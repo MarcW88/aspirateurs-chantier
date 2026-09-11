@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-11",
   "method": "desk_research_primary_sources",
   "models": {
     "karcher-wd2": {
@@ -9,9 +9,26 @@
       "status": "CURRENT",
       "description": "Aspirateur eau et poussière grand public 15 L pour nettoyage, garage et bricolage léger.",
       "summary": "Le WD 2 Plus est un aspirateur eau et poussière de nettoyage. Il ne faut pas lui attribuer une classe L, M ou H si Kärcher ne documente pas cette certification sur la référence.",
-      "specs": {"Puissance absorbée":"1 000 W","Débit d’air max.":"43 L/s","Dépression max.":"220 mbar (22 kPa)","Cuve":"15 L","Eau + poussière":"Oui","Nettoyage du filtre":"Pas de décolmatage automatique documenté","Prise outil asservie":"Non sur cette référence","Poids sans accessoires":"4,4 kg"},
-      "best_for": ["Nettoyage de garage, véhicule et petits travaux","Liquides et déchets mixtes non dangereux","Priorité au prix et à la compacité"],
-      "limits": ["Pas de certification L/M/H documentée","Pas de prise outil asservie sur cette référence","Peu adapté à une production continue de poussières fines"],
+      "specs": {
+        "Puissance absorbée": "1 000 W",
+        "Débit d’air max.": "43 L/s",
+        "Dépression max.": "220 mbar (22 kPa)",
+        "Cuve": "15 L",
+        "Eau + poussière": "Oui",
+        "Nettoyage du filtre": "Pas de décolmatage automatique documenté",
+        "Prise outil asservie": "Non sur cette référence",
+        "Poids sans accessoires": "4,4 kg"
+      },
+      "best_for": [
+        "Nettoyage de garage, véhicule et petits travaux",
+        "Liquides et déchets mixtes non dangereux",
+        "Priorité au prix et à la compacité"
+      ],
+      "limits": [
+        "Pas de certification L/M/H documentée",
+        "Pas de prise outil asservie sur cette référence",
+        "Peu adapté à une production continue de poussières fines"
+      ],
       "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-2-v-15-4-18-c-16280110.html"
     },
     "karcher-wd5": {
@@ -21,9 +38,26 @@
       "status": "CURRENT",
       "description": "Aspirateur eau et poussière 25 L avec nettoyage du filtre par bouton pour atelier et rénovation.",
       "summary": "Le WD 5 est un bon aspirateur eau/poussière grand public, mais son débit élevé et sa fonction de nettoyage du filtre ne constituent pas une certification de sécurité L/M/H.",
-      "specs": {"Puissance absorbée":"1 200 W","Débit d’air max.":"70 L/s","Dépression max.":"260 mbar (26 kPa)","Cuve":"25 L","Eau + poussière":"Oui","Nettoyage du filtre":"Manuel par bouton","Prise outil asservie":"Non sur la version S documentée","Poids sans accessoires":"8,6 kg"},
-      "best_for": ["Rénovation domestique et atelier","Déchets secs, humides, fins ou grossiers non dangereux","Utilisateur qui veut nettoyer le filtre sans le démonter"],
-      "limits": ["Pas de certification L/M/H documentée","Nettoyage du filtre manuel, pas Tact/AFC/InfiniClean","Pour l’aspiration à l’outil, vérifier une variante P ou un autre modèle"],
+      "specs": {
+        "Puissance absorbée": "1 200 W",
+        "Débit d’air max.": "70 L/s",
+        "Dépression max.": "260 mbar (26 kPa)",
+        "Cuve": "25 L",
+        "Eau + poussière": "Oui",
+        "Nettoyage du filtre": "Manuel par bouton",
+        "Prise outil asservie": "Non sur la version S documentée",
+        "Poids sans accessoires": "8,6 kg"
+      },
+      "best_for": [
+        "Rénovation domestique et atelier",
+        "Déchets secs, humides, fins ou grossiers non dangereux",
+        "Utilisateur qui veut nettoyer le filtre sans le démonter"
+      ],
+      "limits": [
+        "Pas de certification L/M/H documentée",
+        "Nettoyage du filtre manuel, pas Tact/AFC/InfiniClean",
+        "Pour l’aspiration à l’outil, vérifier une variante P ou un autre modèle"
+      ],
       "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-5-s-v-25-5-22-16283500.html"
     },
     "karcher-wd6": {
@@ -33,9 +67,26 @@
       "status": "CURRENT",
       "description": "Aspirateur eau et poussière 30 L avec prise outil et nettoyage du filtre par bouton.",
       "summary": "Le WD 6 P S combine grande cuve, prise asservie et aspiration eau/poussière. Il reste un appareil Home & Garden : ne pas le présenter comme classe L ou M sans certification explicite.",
-      "specs": {"Puissance absorbée":"1 300 W","Débit d’air max.":"75 L/s","Dépression max.":"280 mbar (28 kPa)","Cuve":"30 L inox","Eau + poussière":"Oui","Nettoyage du filtre":"Manuel par bouton","Prise outil asservie":"Oui, 100–2 100 W","Poids sans accessoires":"9,3 kg"},
-      "best_for": ["Garage, atelier et rénovation polyvalente","Aspiration directe avec un outil grâce à la prise intégrée","Liquides et gros déchets non dangereux"],
-      "limits": ["Pas de certification L/M/H documentée","Nettoyage du filtre manuel","Ne remplace pas un aspirateur de sécurité quand le risque impose M ou H"],
+      "specs": {
+        "Puissance absorbée": "1 300 W",
+        "Débit d’air max.": "75 L/s",
+        "Dépression max.": "280 mbar (28 kPa)",
+        "Cuve": "30 L inox",
+        "Eau + poussière": "Oui",
+        "Nettoyage du filtre": "Manuel par bouton",
+        "Prise outil asservie": "Oui, 100–2 100 W",
+        "Poids sans accessoires": "9,3 kg"
+      },
+      "best_for": [
+        "Garage, atelier et rénovation polyvalente",
+        "Aspiration directe avec un outil grâce à la prise intégrée",
+        "Liquides et gros déchets non dangereux"
+      ],
+      "limits": [
+        "Pas de certification L/M/H documentée",
+        "Nettoyage du filtre manuel",
+        "Ne remplace pas un aspirateur de sécurité quand le risque impose M ou H"
+      ],
       "source": "https://www.kaercher.com/be-fr/home-garden/aspirateurs-multifonction/wd-6-p-s-v-30-6-22-t-16283610.html"
     },
     "karcher-nt-30-1-tact": {
@@ -45,9 +96,27 @@
       "status": "CURRENT",
       "description": "Aspirateur de sécurité classe M 30 L avec Tact automatique, prise outil, surveillance du débit et ACD.",
       "summary": "Le NT 30/1 Tact Te M ACD est une vraie référence professionnelle classe M. Ici, la classe, la surveillance du débit et le décolmatage automatique sont plus structurants que la seule puissance moteur.",
-      "specs": {"Puissance absorbée":"max. 1 380 W","Débit d’air":"74 L/s","Dépression":"273 mbar (27,3 kPa)","Cuve":"30 L","Classe de poussière":"M","Décolmatage":"Tact automatique commandé par capteur","Prise outil asservie":"Oui","Antistatique":"Oui","Poids sans accessoires":"14,2 kg"},
-      "best_for": ["Poussières fines lorsque la classe M est adaptée au risque","Travail continu avec besoin de décolmatage automatique","Aspiration directe sur outil électroportatif"],
-      "limits": ["Poids et budget professionnels","ACD ne signifie pas adapté à toute atmosphère explosive","La classe doit toujours être choisie selon le risque réel"],
+      "specs": {
+        "Puissance absorbée": "max. 1 380 W",
+        "Débit d’air": "74 L/s",
+        "Dépression": "273 mbar (27,3 kPa)",
+        "Cuve": "30 L",
+        "Classe de poussière": "M",
+        "Décolmatage": "Tact automatique commandé par capteur",
+        "Prise outil asservie": "Oui",
+        "Antistatique": "Oui",
+        "Poids sans accessoires": "14,2 kg"
+      },
+      "best_for": [
+        "Poussières fines lorsque la classe M est adaptée au risque",
+        "Travail continu avec besoin de décolmatage automatique",
+        "Aspiration directe sur outil électroportatif"
+      ],
+      "limits": [
+        "Poids et budget professionnels",
+        "ACD ne signifie pas adapté à toute atmosphère explosive",
+        "La classe doit toujours être choisie selon le risque réel"
+      ],
       "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html"
     },
     "bosch-advancedvac-20": {
@@ -57,9 +126,25 @@
       "status": "CURRENT",
       "description": "Aspirateur eau et poussière DIY 20 L avec démarrage automatique avec l’outil.",
       "summary": "L’AdvancedVac 20 est un appareil Home & Garden performant pour le bricolage. Bosch publie ses performances à la turbine, mais ne le positionne pas comme aspirateur de sécurité L/M/H.",
-      "specs": {"Puissance absorbée":"1 200 W","Débit max. (turbine)":"70 L/s","Dépression max. (turbine)":"260 mbar (26 kPa)","Cuve":"20 L","Eau + poussière":"Oui","Démarrage avec outil":"Oui","Poids":"7,6 kg"},
-      "best_for": ["Atelier domestique et bricolage","Nettoyage eau/poussière","Travaux avec outil quand aucune classe de sécurité spécifique n’est requise"],
-      "limits": ["Pas de certification L/M/H documentée","Mesures publiées à la turbine : comparer avec le même point de mesure","Pas destiné à remplacer un GAS classe M"],
+      "specs": {
+        "Puissance absorbée": "1 200 W",
+        "Débit max. (turbine)": "70 L/s",
+        "Dépression max. (turbine)": "260 mbar (26 kPa)",
+        "Cuve": "20 L",
+        "Eau + poussière": "Oui",
+        "Démarrage avec outil": "Oui",
+        "Poids": "7,6 kg"
+      },
+      "best_for": [
+        "Atelier domestique et bricolage",
+        "Nettoyage eau/poussière",
+        "Travaux avec outil quand aucune classe de sécurité spécifique n’est requise"
+      ],
+      "limits": [
+        "Pas de certification L/M/H documentée",
+        "Mesures publiées à la turbine : comparer avec le même point de mesure",
+        "Pas destiné à remplacer un GAS classe M"
+      ],
       "source": "https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0"
     },
     "bosch-gas-12-25-pl": {
@@ -69,9 +154,26 @@
       "status": "CURRENT",
       "description": "Aspirateur classe L 25 L avec nettoyage semi-automatique SFC et Auto-Start.",
       "summary": "Le GAS 12-25 PL est un aspirateur professionnel classe L, eau/poussière, plus simple que les GAS AFC. Son SFC est semi-automatique et ne doit pas être présenté comme un AFC continu.",
-      "specs": {"Puissance":"1 250 W","Débit max. (turbine)":"65 L/s","Dépression max. (turbine)":"200 mbar (20 kPa)","Cuve":"25 L brut / 21 L net / 15 L eau","Classe":"L","Nettoyage du filtre":"SFC semi-automatique","Auto-Start outil":"Oui","Poids":"9 kg"},
-      "best_for": ["Usage professionnel classe L","Eau/poussière avec outil raccordé","Budget inférieur aux modèles AFC"],
-      "limits": ["Classe L uniquement","SFC semi-automatique, pas AFC","Pour poussières imposant M, passer à une référence certifiée M"],
+      "specs": {
+        "Puissance": "1 250 W",
+        "Débit max. (turbine)": "65 L/s",
+        "Dépression max. (turbine)": "200 mbar (20 kPa)",
+        "Cuve": "25 L brut / 21 L net / 15 L eau",
+        "Classe": "L",
+        "Nettoyage du filtre": "SFC semi-automatique",
+        "Auto-Start outil": "Oui",
+        "Poids": "9 kg"
+      },
+      "best_for": [
+        "Usage professionnel classe L",
+        "Eau/poussière avec outil raccordé",
+        "Budget inférieur aux modèles AFC"
+      ],
+      "limits": [
+        "Classe L uniquement",
+        "SFC semi-automatique, pas AFC",
+        "Pour poussières imposant M, passer à une référence certifiée M"
+      ],
       "source": "https://www.bosch-professional.com/be/fr/products/gas12-25-12-25ps-060197C100"
     },
     "bosch-gas-18v-10-l": {
@@ -81,9 +183,26 @@
       "status": "CURRENT",
       "description": "Aspirateur sans fil 18 V classe L, 10 L, pour interventions mobiles.",
       "summary": "Le GAS 18V-10 L privilégie la mobilité. Sa classe L et sa petite cuve le placent dans un autre usage qu’un gros aspirateur filaire M.",
-      "specs": {"Batterie":"18 V Professional / AMPShare","Débit max. (turbine)":"34 L/s","Dépression max. (turbine)":"115 mbar (11,5 kPa)","Cuve":"10 L brut / 6 L net / 6 L eau","Classe":"L","Autonomie annoncée":"4 min/Ah","Poids sans batterie":"4,7 kg","Prise outil":"Non — raccordement Click & Clean, pas prise secteur asservie"},
-      "best_for": ["Interventions courtes sans prise","Parc Bosch Professional 18 V / AMPShare","Nettoyage eau/poussière mobile en classe L"],
-      "limits": ["Autonomie et cuve limitées","Classe L uniquement","Pas de prise secteur pour démarrer un outil"],
+      "specs": {
+        "Batterie": "18 V Professional / AMPShare",
+        "Débit max. (turbine)": "34 L/s",
+        "Dépression max. (turbine)": "115 mbar (11,5 kPa)",
+        "Cuve": "10 L brut / 6 L net / 6 L eau",
+        "Classe": "L",
+        "Autonomie annoncée": "4 min/Ah",
+        "Poids sans batterie": "4,7 kg",
+        "Prise outil": "Non — raccordement Click & Clean, pas prise secteur asservie"
+      },
+      "best_for": [
+        "Interventions courtes sans prise",
+        "Parc Bosch Professional 18 V / AMPShare",
+        "Nettoyage eau/poussière mobile en classe L"
+      ],
+      "limits": [
+        "Autonomie et cuve limitées",
+        "Classe L uniquement",
+        "Pas de prise secteur pour démarrer un outil"
+      ],
       "source": "https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302/"
     },
     "bosch-gas-35-l-afc": {
@@ -93,9 +212,26 @@
       "status": "CURRENT",
       "description": "Aspirateur filaire classe L 35 L avec nettoyage automatique AFC.",
       "summary": "Le GAS 35 L AFC combine grande cuve, AFC et classe L. Il ne faut pas le confondre avec le GAS 35 M AFC : les performances peuvent être proches, mais la certification de poussière ne l’est pas.",
-      "specs": {"Puissance nominale":"1 200 W","Débit max. (turbine)":"74 L/s","Dépression max. (turbine)":"254 mbar (25,4 kPa)","Cuve":"35 L brut / 23 L net / 19,2 L eau","Classe":"L","Décolmatage":"AFC automatique","Prise outil":"Oui","Poids":"12,2 kg"},
-      "best_for": ["Travail régulier en classe L avec poussières colmatantes","Aspiration à l’outil avec AFC","Besoin de 35 L sans passer en classe M"],
-      "limits": ["Classe L uniquement","Lourd pour des interventions courtes","Ne pas le substituer au GAS 35 M quand M est requis"],
+      "specs": {
+        "Puissance nominale": "1 200 W",
+        "Débit max. (turbine)": "74 L/s",
+        "Dépression max. (turbine)": "254 mbar (25,4 kPa)",
+        "Cuve": "35 L brut / 23 L net / 19,2 L eau",
+        "Classe": "L",
+        "Décolmatage": "AFC automatique",
+        "Prise outil": "Oui",
+        "Poids": "12,2 kg"
+      },
+      "best_for": [
+        "Travail régulier en classe L avec poussières colmatantes",
+        "Aspiration à l’outil avec AFC",
+        "Besoin de 35 L sans passer en classe M"
+      ],
+      "limits": [
+        "Classe L uniquement",
+        "Lourd pour des interventions courtes",
+        "Ne pas le substituer au GAS 35 M quand M est requis"
+      ],
       "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-l-afc-06019C32W0"
     },
     "bosch-gas-35-m-afc": {
@@ -105,9 +241,26 @@
       "status": "CURRENT",
       "description": "Aspirateur filaire classe M 35 L avec AFC, Click & Clean et prise outil.",
       "summary": "Le GAS 35 M AFC est le modèle Bosch classe M de 35 L. Les 74 L/s et 254 mbar sont des maxima à la turbine et doivent être comparés à des chiffres mesurés au même point.",
-      "specs": {"Puissance nominale":"1 200 W","Débit max. (turbine)":"74 L/s","Dépression max. (turbine)":"254 mbar (25,4 kPa)","Cuve":"35 L brut / 23 L net / 19,2 L eau","Classe":"M","Décolmatage":"AFC automatique","Prise outil":"Oui","Poids":"12,4 kg"},
-      "best_for": ["Poussières nécessitant une classe M selon l’évaluation du risque","Ponçage et outils générant des poussières fines","Travail continu avec décolmatage automatique"],
-      "limits": ["Plus lourd et plus cher qu’un modèle DIY","Classe M n’est pas une réponse universelle à tous les risques","Mesures turbine à ne pas mélanger avec des mesures au flexible"],
+      "specs": {
+        "Puissance nominale": "1 200 W",
+        "Débit max. (turbine)": "74 L/s",
+        "Dépression max. (turbine)": "254 mbar (25,4 kPa)",
+        "Cuve": "35 L brut / 23 L net / 19,2 L eau",
+        "Classe": "M",
+        "Décolmatage": "AFC automatique",
+        "Prise outil": "Oui",
+        "Poids": "12,4 kg"
+      },
+      "best_for": [
+        "Poussières nécessitant une classe M selon l’évaluation du risque",
+        "Ponçage et outils générant des poussières fines",
+        "Travail continu avec décolmatage automatique"
+      ],
+      "limits": [
+        "Plus lourd et plus cher qu’un modèle DIY",
+        "Classe M n’est pas une réponse universelle à tous les risques",
+        "Mesures turbine à ne pas mélanger avec des mesures au flexible"
+      ],
       "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0"
     },
     "makita-vc2512l": {
@@ -117,9 +270,26 @@
       "status": "CURRENT",
       "description": "Aspirateur filaire classe L 25 L avec Push & Clean manuel et prise outil.",
       "summary": "Le VC2512L est une référence simple et robuste de classe L. Son nettoyage Push & Clean est manuel : il faut le distinguer des systèmes automatiques de type InfiniClean.",
-      "specs": {"Puissance nominale":"1 000 W","Débit d’air":"3,6 m³/min (60 L/s)","Dépression max.":"210 mbar (21 kPa)","Cuve":"25 L brut / 21 L poussière / 18 L liquide","Classe":"L","Nettoyage du filtre":"Push & Clean manuel","Prise outil":"Oui, charge connectable max. 2 600 W","Poids sans câble":"7,0 kg"},
-      "best_for": ["Atelier et chantier en classe L","Outil filaire avec marche/arrêt automatique","Utilisateur qui privilégie simplicité et capacité 25 L"],
-      "limits": ["Pas de décolmatage automatique","Classe L uniquement","Le nettoyage manuel interrompt davantage le workflow sur poussière fine"],
+      "specs": {
+        "Puissance nominale": "1 000 W",
+        "Débit d’air": "3,6 m³/min (60 L/s)",
+        "Dépression max.": "210 mbar (21 kPa)",
+        "Cuve": "25 L brut / 21 L poussière / 18 L liquide",
+        "Classe": "L",
+        "Nettoyage du filtre": "Push & Clean manuel",
+        "Prise outil": "Oui, charge connectable max. 2 600 W",
+        "Poids sans câble": "7,0 kg"
+      },
+      "best_for": [
+        "Atelier et chantier en classe L",
+        "Outil filaire avec marche/arrêt automatique",
+        "Utilisateur qui privilégie simplicité et capacité 25 L"
+      ],
+      "limits": [
+        "Pas de décolmatage automatique",
+        "Classe L uniquement",
+        "Le nettoyage manuel interrompt davantage le workflow sur poussière fine"
+      ],
       "source": "https://www.makita.fr/data/sr/productinfo/generated/vc2512l_fiche_produit.pdf"
     },
     "makita-vc4210mx": {
@@ -129,9 +299,26 @@
       "status": "CURRENT",
       "description": "Aspirateur filaire classe M 42 L avec InfiniClean automatique et prise outil.",
       "summary": "Le VC4210MX est bien une référence classe M, et non classe L. Son InfiniClean nettoie automatiquement le filtre et sa grande cuve le destine davantage au chantier qu’aux déplacements fréquents.",
-      "specs": {"Puissance nominale":"1 200 W","Débit d’air":"4,5 m³/min (75 L/s)","Dépression max.":"250 mbar (25 kPa)","Cuve":"42 L brut / 34 L poussière / 30 L liquide","Classe":"M","Décolmatage":"InfiniClean automatique","Prise outil":"Oui, charge connectable max. 2 400 W","Poids sans câble":"16,0 kg"},
-      "best_for": ["Gros volume en classe M","Poussière fine avec décolmatage automatique","Atelier/chantier où le poids est secondaire"],
-      "limits": ["16 kg sans câble : peu mobile","Grand volume inutile pour de petites interventions","Classe M à choisir selon le risque, pas comme simple niveau de gamme"],
+      "specs": {
+        "Puissance nominale": "1 200 W",
+        "Débit d’air": "4,5 m³/min (75 L/s)",
+        "Dépression max.": "250 mbar (25 kPa)",
+        "Cuve": "42 L brut / 34 L poussière / 30 L liquide",
+        "Classe": "M",
+        "Décolmatage": "InfiniClean automatique",
+        "Prise outil": "Oui, charge connectable max. 2 400 W",
+        "Poids sans câble": "16,0 kg"
+      },
+      "best_for": [
+        "Gros volume en classe M",
+        "Poussière fine avec décolmatage automatique",
+        "Atelier/chantier où le poids est secondaire"
+      ],
+      "limits": [
+        "16 kg sans câble : peu mobile",
+        "Grand volume inutile pour de petites interventions",
+        "Classe M à choisir selon le risque, pas comme simple niveau de gamme"
+      ],
       "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf"
     },
     "festool-ctl-midi": {
@@ -141,9 +328,27 @@
       "status": "CURRENT",
       "description": "Aspirateur compact classe L 15 L avec Bluetooth et intégration CLEANTEC.",
       "summary": "Le CTL MIDI I est classe L. Le sigle CTL ne doit pas être présenté comme classe M, et la version standard CTL MIDI I n’est pas une version AUTOCLEAN.",
-      "specs": {"Puissance absorbée":"350–1 200 W","Débit max.":"3 700 L/min (≈61,7 L/s)","Dépression max.":"24 000 Pa (24 kPa)","Réservoir / sac filtre":"15 / 12,5 L","Classe":"L","Prise outil":"2 400 W admissibles","Bluetooth":"Oui","Poids sans accessoires":"11,4 kg","AUTOCLEAN":"Non sur la référence CTL MIDI I standard"},
-      "best_for": ["Ponçage et montage avec outils Festool quand la classe L est adaptée","Workflow CLEANTEC/Systainer/Bluetooth","Besoin d’un format compact"],
-      "limits": ["Classe L : ne pas confondre avec CTM","Pas AUTOCLEAN sur cette référence standard","Positionnement premium surtout pertinent dans un parc Festool"],
+      "specs": {
+        "Puissance absorbée": "350–1 200 W",
+        "Débit max.": "3 700 L/min (≈61,7 L/s)",
+        "Dépression max.": "24 000 Pa (24 kPa)",
+        "Réservoir / sac filtre": "15 / 12,5 L",
+        "Classe": "L",
+        "Prise outil": "2 400 W admissibles",
+        "Bluetooth": "Oui",
+        "Poids sans accessoires": "11,4 kg",
+        "AUTOCLEAN": "Non sur la référence CTL MIDI I standard"
+      },
+      "best_for": [
+        "Ponçage et montage avec outils Festool quand la classe L est adaptée",
+        "Workflow CLEANTEC/Systainer/Bluetooth",
+        "Besoin d’un format compact"
+      ],
+      "limits": [
+        "Classe L : ne pas confondre avec CTM",
+        "Pas AUTOCLEAN sur cette référence standard",
+        "Positionnement premium surtout pertinent dans un parc Festool"
+      ],
       "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578309---ctl-midi-i"
     },
     "nilfisk-multi-ii-30-t": {
@@ -151,12 +356,31 @@
       "brand": "Nilfisk",
       "dust_class": "Non classé L/M/H",
       "status": "CURRENT",
-      "description": "Aspirateur eau et poussière 30 L grand public pour garage, atelier et bricolage.",
-      "summary": "Le Multi II 30 T est un aspirateur eau/poussière de la gamme grand public Nilfisk. Il ne faut pas lui attribuer une classe L/M/H à partir de sa puissance ou de son filtre.",
-      "specs": {"Puissance annoncée":"1 400 W","Dépression":"210 mbar (21 kPa)","Cuve":"30 L","Eau + poussière":"Oui","Fonction soufflerie":"Oui","Prise outil":"Selon variante T/VSC — vérifier le suffixe exact","Classe de sécurité":"Non documentée comme L/M/H sur la fiche grand public"},
-      "best_for": ["Garage et atelier domestique","Nettoyage eau/poussière et gros volume","Utilisateur qui veut 30 L sans gamme de sécurité professionnelle"],
-      "limits": ["Pas de classe L/M/H documentée sur la fiche grand public","Options et cuve inox varient selon suffixe","Pour poussières réglementées, regarder la gamme ATTIX certifiée"],
-      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
+      "description": "Aspirateur eau et poussière 30 L avec prise outil, auto on/off et Push&Clean manuel.",
+      "summary": "Le Multi II 30 T est un aspirateur eau/poussière grand public bien équipé pour l’atelier. La fiche fabricant ne documente pas de classe L/M/H et affiche deux champs de dépression distincts, 292 mbar et 210 mbar / 21 kPa, qui ne doivent pas être fusionnés.",
+      "specs": {
+        "Puissance Pmax": "1 400 W",
+        "Puissance": "1 260 W",
+        "Cuve": "30 L",
+        "Dépression (champ Vacuum)": "210 mbar (21 kPa)",
+        "Max. suction power (champ distinct)": "292 mbar",
+        "Nettoyage du filtre": "Push&Clean manuel + indicateur",
+        "Prise outil": "Oui, 1 100 W + marche/arrêt automatique",
+        "Flexible": "4 m",
+        "Poids": "9,6 kg",
+        "Classe de sécurité": "Pas de classe L/M/H documentée"
+      },
+      "best_for": [
+        "Garage et atelier avec outil électroportatif",
+        "Nettoyage eau/poussière avec cuve 30 L",
+        "Utilisateur qui veut Push&Clean et auto on/off sans gamme de sécurité professionnelle"
+      ],
+      "limits": [
+        "Pas de classe L/M/H documentée sur la fiche grand public",
+        "Push&Clean est manuel",
+        "La fiche affiche 292 mbar et 210 mbar / 21 kPa sous deux libellés distincts"
+      ],
+      "source": "https://shop.nilfisk.com/fr-be/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
     }
   }
 }

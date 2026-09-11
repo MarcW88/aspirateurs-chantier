@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "nilfisk-multi-ii-30-t",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether Multi II 30 T is a useful consumer workshop/tool vacuum and how to interpret its conflicting vacuum labels without inventing a safety class."},
+    "content-audit": {"status": "PASS", "output": "Legacy page was overly generic and uncertain about the T variant; DEEP_REWRITE used the current exact product page."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt around tool socket/auto-start, manual Push&Clean, filter indicator, spec ambiguity and absent L/M/H certification."},
+    "fact-check-pre": {"status": "PASS", "output": "Current Nilfisk Belgium Multi II 30 T product page checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No subjective or hands-on rating."},
+    "affiliate-value": {"status": "PASS", "output": "Value comes from exposing the 292-vs-210 mbar manufacturer-label ambiguity instead of cherry-picking a stronger number."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted under .content/models/briefs/."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/."},
+    "fact-check-post": {"status": "PASS", "output": "30 L, 1400 W Pmax, 1260 W power, 1100 W tool socket, 9.6 kg, 4 m hose, Push&Clean, filter indicator and auto on/off remain correctly qualified."},
+    "humanizer": {"status": "PASS", "output": "Removed generic consumer-vacuum boilerplate."},
+    "general-writing": {"status": "PASS", "output": "Copy centers exact workshop functions and the ambiguous manufacturer fields."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned headings, filler FAQ or generic 'for whom' list."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links remain appropriate to Nilfisk, wet/dry and workshop roles."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata/TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta surface tool workflow and the two distinct vacuum values."},
+    "editorial-qa": {"status": "PASS", "output": "No L/M/H class is invented, Push&Clean remains manual and 292/210 mbar are not merged."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Exact 30 T page, tool socket, auto-start, Push&Clean, filter indicator, 30 L capacity, 9.6 kg and separate 292/210 mbar fields checked."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Page has a distinct evidence-quality role and is ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Decide whether the Nilfisk Multi II 30 T fits a consumer workshop/tool workflow while understanding its manual cleaning, absent safety class and conflicting manufacturer vacuum fields.",
+  "value_without_affiliate_links": "Clarifies the exact T functions and surfaces an otherwise easy-to-miss specification ambiguity instead of optimizing for the largest number.",
+  "outline": [
+    {"question": "Pourquoi le T compte-t-il en atelier ?", "evidence_refs": ["E1"], "decision_value": "Centers the tool socket and auto-start workflow."},
+    {"question": "Push&Clean est-il automatique ?", "evidence_refs": ["E1"], "decision_value": "Keeps manual filter cleaning precise."},
+    {"question": "Pourquoi la fiche affiche-t-elle 292 et 210 mbar ?", "evidence_refs": ["E1", "E2"], "decision_value": "Prevents cherry-picking or merging differently labelled values."},
+    {"question": "A-t-il une classe L/M/H ?", "evidence_refs": ["E3"], "decision_value": "Keeps consumer features separate from safety certification."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}

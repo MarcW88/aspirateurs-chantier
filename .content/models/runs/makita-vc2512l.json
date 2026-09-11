@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "makita-vc2512l",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether a light class-L Makita with manual Push & Clean is sufficient or whether class M/InfiniClean is required."},
+    "content-audit": {"status": "PASS", "output": "Legacy page was factual but generic; DEEP_REWRITE retained the verified specs and replaced the template structure."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt around class L, manual filter cleaning, useful capacity and the VC4210MX step-up."},
+    "fact-check-pre": {"status": "PASS", "output": "Current Makita VC2512L and VC4210MX official product PDFs checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No hands-on rating or subjective review claim."},
+    "affiliate-value": {"status": "PASS", "output": "Value comes from the manual-vs-automatic cleaning distinction and the 7 kg vs 16 kg trade-off."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted under .content/models/briefs/."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/."},
+    "fact-check-post": {"status": "PASS", "output": "Class L, 25/21/18 L, 3.6 m³/min, 210 mbar, 7 kg, 2600 W socket and manual cleaning remain correctly qualified."},
+    "humanizer": {"status": "PASS", "output": "Removed generic product-review cadence."},
+    "general-writing": {"status": "PASS", "output": "Copy stays proportional to a relatively simple product."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned headings, filler FAQ or word-count padding."},
+    "internal-linking-audit": {"status": "PASS", "output": "Handoff to VC4210MX and Makita hub is role-consistent."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata/TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta reflect the L/manual-cleaning versus M/automatic-cleaning decision."},
+    "editorial-qa": {"status": "PASS", "output": "Push & Clean remains manual; class is not generalized and no fake test remains."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Exact model, class L, useful tank volumes, tool socket, manual cleaning, airflow, vacuum and weight checked."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Distinct model role and evidence-led structure; ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Choose between the lighter VC2512L class L/manual cleaning workflow and the heavier VC4210MX class M/automatic cleaning workflow.",
+  "value_without_affiliate_links": "Makes filter-cleaning mode, useful capacity, class and weight the decision instead of a generic feature list.",
+  "outline": [
+    {"question": "Pourquoi le VC2512L reste-t-il cohérent ?", "evidence_refs": ["E1"], "decision_value": "Defines the lightweight class-L role."},
+    {"question": "Que signifie Push & Clean manuel ?", "evidence_refs": ["E1"], "decision_value": "Clarifies filter-cleaning workflow."},
+    {"question": "VC2512L ou VC4210MX ?", "evidence_refs": ["E1", "E2"], "decision_value": "Compares class, weight, capacity and automatic cleaning."},
+    {"question": "Quelle capacité est réellement disponible ?", "evidence_refs": ["E1"], "decision_value": "Separates gross/dust/liquid volume."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}

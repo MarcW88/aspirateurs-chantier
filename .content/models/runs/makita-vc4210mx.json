@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "makita-vc4210mx",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether class M, InfiniClean and large capacity justify the 16 kg VC4210MX."},
+    "content-audit": {"status": "PASS", "output": "Legacy page was factual but generic; DEEP_REWRITE focused the page on continuous filter management and mobility trade-offs."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt around InfiniClean, airflow warning, useful capacity and comparison with VC2512L."},
+    "fact-check-pre": {"status": "PASS", "output": "Current Makita VC4210MX and VC2512L official product PDFs checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No hands-on or subjective rating."},
+    "affiliate-value": {"status": "PASS", "output": "Value comes from explaining automatic 15-second cleaning, class M, capacity and 16 kg mobility cost."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted under .content/models/briefs/."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/."},
+    "fact-check-post": {"status": "PASS", "output": "Class M, 42/34/30 L, 4.5 m³/min, 250 mbar, 16 kg, 2400 W socket, LED flow warning and InfiniClean remain correctly qualified."},
+    "humanizer": {"status": "PASS", "output": "Removed generic review boilerplate."},
+    "general-writing": {"status": "PASS", "output": "Copy centers real workflow trade-offs rather than feature accumulation."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned section signature or filler content."},
+    "internal-linking-audit": {"status": "PASS", "output": "Handoff to VC2512L/class-M content remains role-consistent."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata/TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta expose class M, InfiniClean and weight trade-off."},
+    "editorial-qa": {"status": "PASS", "output": "No unsupported productivity claim, no universal class recommendation and no fake field test."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Exact model, class M, InfiniClean cadence, flow warning, tank volumes, tool socket, airflow, vacuum and 16 kg weight checked."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Distinct from VC2512L and other class-M pages; ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Decide whether class M, automatic 15-second filter cleaning and 34 L dust capacity justify the VC4210MX's 16 kg format.",
+  "value_without_affiliate_links": "Explains the continuous-cleaning workflow and makes weight/capacity/class the purchase trade-off.",
+  "outline": [
+    {"question": "Que change InfiniClean toutes les 15 secondes ?", "evidence_refs": ["E1"], "decision_value": "Explains documented automatic cleaning without inventing test results."},
+    {"question": "Que signifie 42 L brut ?", "evidence_refs": ["E1"], "decision_value": "Separates useful dust/liquid capacity."},
+    {"question": "VC4210MX ou VC2512L ?", "evidence_refs": ["E1", "E2"], "decision_value": "Frames class/cleaning/capacity against mobility."},
+    {"question": "Quand 16 kg devient-il le principal compromis ?", "evidence_refs": ["E1"], "decision_value": "Prevents bigger from being treated as universally better."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
