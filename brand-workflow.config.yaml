@@ -14,6 +14,7 @@ content:
     rendered_body_overrides:
       - "_generate_bosch.py"
       - "_generate_brand_overrides.py"
+      - "_generate_karcher.py"
     shell_generator: "_generate_brands.py"
   rendered_output:
     - "marques/"
@@ -27,6 +28,7 @@ generation:
   generic_generator_may_define_final_editorial_structure: false
   bespoke_overrides:
     bosch: "_generate_bosch.py"
+    karcher: "_generate_karcher.py"
     others: "_generate_brand_overrides.py"
   post_generation_review_state: "enforce_brand_review_state.py"
   prohibit_generic_rebuild_without_overrides: true
