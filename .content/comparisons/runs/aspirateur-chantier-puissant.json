@@ -1,0 +1,52 @@
+{
+  "contract_version": 2,
+  "slug": "aspirateur-chantier-puissant",
+  "status": "PASS",
+  "reader_decision": "Choisir le profil de performance utile selon le déchet et le workflow sans transformer des valeurs de débit, dépression ou watts publiées dans des contextes différents en classement cross-brand.",
+  "comparison_scope": "Quatre références servent à expliquer débit, dépression, colmatage, flexible et classe ; les chiffres fabricants sont conservés avec leur contexte de mesure.",
+  "value_without_affiliate_links": "La page explique pourquoi la puissance n’est pas une métrique unique, ajoute le comportement filtre chargé et montre quand la question de puissance doit céder la place à la classe, la mobilité ou le process.",
+  "candidate_scope": {
+    "considered": ["Kärcher WD 7 Control P S 30/6/35/T","Kärcher NT 30/1 Tact Te M ACD","Bosch Professional GAS 35 M AFC","Makita VC4210MX"],
+    "major_exclusions": [
+      "Aucun podium exhaustif du marché : absence de protocole cross-brand commun démontré.",
+      "Puissance électrique en watts exclue comme proxy unique de puissance d’aspiration."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.inrs.fr/media.html?refINRS=EC+44","supports":"effet du colmatage, décolmatage et évolution du débit en cours d’utilisation"},
+    {"ref":"S2","source":"https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html","supports":"WD7 : 80 L/s, 290 mbar, wet/dry, 30 L"},
+    {"ref":"S3","source":"https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html","supports":"NT30 : 74 L/s, 273 mbar, M, Tact, 30 L"},
+    {"ref":"S4","source":"https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0","supports":"GAS35 : 74 L/s et 254 mbar explicitement à la turbine, M, AFC"},
+    {"ref":"S5","source":"https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf","supports":"VC4210MX : 75 L/s, 250 mbar, 42 L, M, InfiniClean"}
+  ],
+  "outline": [
+    {"question":"Que signifie réellement ‘puissant’ pour un aspirateur ?","evidence_refs":["S2","S3","S4","S5"],"decision_value":"Sépare débit, dépression et watts avant toute recommandation."},
+    {"question":"Que peut-on comparer honnêtement entre quatre références ?","evidence_refs":["S2","S3","S4","S5"],"decision_value":"Expose les chiffres et leurs limites sans normalisation artificielle."},
+    {"question":"Que devient la performance quand le filtre se charge ?","evidence_refs":["S1"],"decision_value":"Ajoute la continuité de performance à la fiche technique initiale."},
+    {"question":"Quel critère domine selon le type de déchet ?","evidence_refs":["S2","S3","S4","S5"],"decision_value":"Relie puissance utile à gravats, poussière fine et outils."},
+    {"question":"Quand faut-il arrêter de chercher ‘le plus puissant’ ?","evidence_refs":["S1","S2","S3","S4","S5"],"decision_value":"Route vers classe M, sans-fil ou industriel lorsque ces gates dominent."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"Intention ‘aspirateur chantier puissant’ traitée comme besoin de performance utile, pas comme recherche d’un chiffre unique."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD : déplacer le déchet efficacement dans le contexte réel tout en tenant compte du filtre, du flexible, de la classe et du chantier."},
+    "seo-content-audit":{"status":"PASS","output":"DEEP_REWRITE appliqué ; prudence métrique existante conservée et enrichie avec colmatage, flexible et scénarios de déchet."},
+    "evidence-based-reviews":{"status":"PASS","output":"Données fabricants conservées avec point de mesure quand disponible ; INRS ajouté comme preuve indépendante du comportement filtre chargé."},
+    "fact-check-pre":{"status":"PASS","output":"Débits, dépressions, classes, capacités, poids et mention ‘à la turbine’ vérifiés avant rédaction."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale : démonter les faux podiums de puissance, expliciter pertes de circuit, filtre chargé et critères dominants par déchet."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief basé sur définition de puissance, comparabilité, colmatage, déchet, flexible, profils et sortie du sujet puissance."},
+    "content-and-copy":{"status":"PASS","output":"Réécriture persistée dans .content/comparisons/v2/aspirateur-chantier-puissant.html avec architecture métrique propre."},
+    "fact-check-post":{"status":"PASS","output":"Relecture des quatre valeurs fabricants et vérification que l’étude INRS n’est jamais attribuée à une référence précise."},
+    "humanizer":{"status":"PASS","output":"Texte passé d’une mini-leçon de specs à une logique de chantier : déchets, pertes, filtre et limites."},
+    "general-writing":{"status":"PASS","output":"Distinction débit/dépression formulée simplement et conséquences pratiques explicitées sans fausse précision."},
+    "anti-ai-slop":{"status":"PASS","output":"Pas de tableau de classement, pas de symétrie produit répétitive, sections liées à des questions techniques propres à l’intention."},
+    "seo-onpage":{"status":"PASS","output":"Title/meta/H1 couvrent débit, dépression et performance utile ; lien vers guide unités et comparatifs spécialisés intégré."},
+    "seo-technical":{"status":"PASS","output":"Canonical existant et noindex, follow conservés ; aucun schema de test ou score inventé."},
+    "internal-linking-audit":{"status":"PASS","output":"Liens vers guide kPa/mbar/Air Watts, classe M, sans-fil et industriel seulement lorsque ces décisions prennent le relais."},
+    "editorial-qa":{"status":"PASS","output":"Aucune équivalence de mesure non démontrée, aucun faux test et aucune revendication sponsorisée."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Contexte des mesures vérifié, classe non déduite de la puissance, filtre chargé et diamètre/flexible traités comme variables distinctes."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; page désormais décisionnelle et distincte du guide technique sur les unités."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
