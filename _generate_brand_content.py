@@ -25,6 +25,7 @@ def main():
     run('_generate_brand_overrides.py')        # legacy bespoke bodies before evidence-led replacements
     run('_generate_karcher.py')                # evidence-led Kärcher body + ledger v2
     run('_generate_makita.py')                 # evidence-led Makita body + ledger v2
+    run('_generate_parkside.py')               # evidence-led Parkside body + ledger v2
     run('_brand_rollout_polish.py')
 
     cluster_metadata = BASE / '_apply_cluster_audit_metadata.py'
