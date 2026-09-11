@@ -1,0 +1,58 @@
+{
+  "contract_version": 2,
+  "slug": "parkside",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur Parkside en partant de l'usage et du type d'alimentation, puis des fonctions réellement nécessaires, puis vérifier la génération exacte, l'IAN et les consommables avant achat.",
+  "value_without_affiliate_links": "La page évite plusieurs erreurs coûteuses : acheter sur le seul nombre PWD, ignorer le PAWD X20V, confondre nettoyage manuel du filtre et décolmatage automatique, déduire une classe de poussière depuis le marketing, ou commander sacs/filtres sans vérifier la génération et l'IAN. Cette valeur subsiste sans lien marchand.",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent principal : brand hub de décision Parkside pour distinguer offre actuelle PWD/PAWD, capacité, mobilité, fonctions chantier, limites en poussière fine et compatibilités de consommables. Sous-intentions : PWD 12/20/25/30, X20V, prise outil, filtre, IAN, PNTS et sacs."},
+    "content-audit": {"status": "PASS", "output": "DEEP_REWRITE confirmé. À préserver : PWD 12/20/25/30, rapport équipement/prix, prudence sur classes M/H, génération exacte. À corriger : absence du PAWD X20V, structure trop linéaire, rôle de l'IAN faible et compatibilités de sacs insuffisamment concrètes."},
+    "content-refresh": {"status": "PASS", "output": "Actualisation au 11/09/2026 avec fiches Lidl France actuelles PWD 12 B1, PWD 20 C3, PWD 25 C4, PWD 30 C1, PAWD 20-Li A1, sacs 20/30 L et pages Parkside Service/manuels."},
+    "fact-check-pre": {"status": "PASS", "output": "Evidence brief construit avant rédaction. Vérifications prioritaires : volumes brut/net, AirWatt, poids, prise outil et post-fonctionnement du PWD30, nettoyage du filtre PWD25/30, PAWD X20V vendu sans batterie, groupes de compatibilité des sacs et usage de l'IAN."},
+    "evidence-based-reviews": {"status": "PASS", "output": "Toutes les caractéristiques restent Tier 1 Lidl/Parkside. BricoZone est utilisé uniquement comme signal qualitatif sur un ancien PWD en rénovation et sur la limite avec rainureuse/poussière fine ; aucune performance ou certification n'est inférée depuis ce témoignage."},
+    "affiliate-value": {"status": "PASS", "output": "Valeur originale définie autour de cinq décisions : PWD vs PAWD ; capacité/fonctions ; nettoyage manuel vs aspiration fine soutenue ; classe non déductible ; génération/IAN/consommables. Aucun CTA marchand n'est nécessaire pour rendre la page utile."},
+    "content-brief-authoring": {"status": "PASS", "output": "Brief evidence-led en 7 sections : achat Parkside comme snapshot ; PWD vs PAWD X20V ; formats actuels ; fonctions chantier vs classe ; IAN/consommables ; limite en poussière fine ; routage final par usage. Aucun squelette BRAND_HUB générique imposé."},
+    "content-and-copy": {"status": "PASS", "output": "Réécriture complète produite dans _generate_parkside.py. Les modèles servent à expliquer une décision d'usage et non à fabriquer quatre mini-reviews répétitives."},
+    "fact-check-post": {"status": "PASS", "output": "Contrôle post-draft : PWD12 12 L/1200 W/180 AW ; PWD20 19,8 L/1300 W/200 AW ; PWD25 25 L/1400 W/240 AW avec nettoyage du filtre ; PWD30 30 L brut/22,3 L net/1500 W/260 AW avec prise 2200 W ; PAWD 8 L/60 AW X20V sans batterie."},
+    "humanizer": {"status": "PASS", "output": "Passe de style : suppression du ton catalogue et du réflexe meilleur/plus puissant ; ouverture des sections par la décision réelle et les erreurs typiques d'achat Parkside."},
+    "general-writing": {"status": "PASS", "output": "Lisibilité renforcée par deux tableaux seulement : snapshot des PWD actuels et routage final. Les détails de références sont limités aux différences qui changent l'achat."},
+    "anti-ai-slop": {"status": "PASS", "output": "Pas de FAQ automatique, pas de conclusion générique, pas de superlatifs, pas de faux test, pas de symétrie artificielle avantages/inconvénients et aucune architecture copiée de Kärcher ou Makita."},
+    "internal-linking-audit": {"status": "PASS", "output": "Liens vers sans-fil, eau/poussière, petit format, classes L/M/H, décolmatage, prise asservie, sacs et bricolage/rénovation uniquement lorsqu'ils répondent à la prochaine décision du lecteur."},
+    "seo-technical": {"status": "PASS", "output": "Canonical /marques/parkside/ conservé, un seul H1, noindex, follow conservé, title/meta actualisés, IDs uniques et TOC aligné sur la structure réelle."},
+    "seo-best-practices": {"status": "PASS", "output": "Ciblage centré sur l'entité Parkside et les requêtes PWD/PAWD/PNTS/consommables. La page marque explique le système d'achat ; les comparatifs gardent la confrontation inter-marques et les guides gardent les sujets de sécurité."},
+    "editorial-qa": {"status": "PASS", "output": "QA final : snapshot daté, aucune promotion figée, aucune classe déduite, anciennes générations distinguées, témoignage BricoZone non généralisé et limites de preuve visibles."}
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {"status": "PASS", "output": "Contrôle métier réalisé sur eau/poussière, AirWatt, cuves brut/net, prise asservie, post-fonctionnement, nettoyage manuel du filtre, poussière fine, classes L/M/H, X20V, sacs, filtres et raccords. Aucun raccourci watts=classe ou filtre=classe."},
+    "brand-analysis-publish-review": {"status": "PASS", "output": "PUBLISH_REVIEW : intention satisfaite, structure distincte du cluster, preuves reliées aux claims, limites visibles, valeur indépendante de l'affiliation et noindex conservé. PASS — READY_FOR_HUMAN_VALIDATION."}
+  },
+  "outline": [
+    {"id": "achat-parkside", "question": "Pourquoi faut-il lire Parkside comme une offre datée et une génération exacte ?", "evidence_refs": ["S1", "S2", "S3", "S4", "S6"], "decision_value": "Empêche de transposer automatiquement une ancienne référence PNTS/PWD à l'offre actuelle et introduit l'IAN comme identifiant pratique."},
+    {"id": "pwd-pawd", "question": "Quand choisir un PWD filaire ou le PAWD X20V ?", "evidence_refs": ["S1", "S2", "S3", "S4", "S5"], "decision_value": "Sépare besoin de mobilité et besoin de capacité/aspiration continue au lieu de traiter le sans-fil comme une simple montée en gamme."},
+    {"id": "formats-actuels", "question": "Que changent réellement les PWD 12, 20, 25 et 30 actuels ?", "evidence_refs": ["S1", "S2", "S3", "S4"], "decision_value": "Compare la gamme actuelle sur données homogènes et fonctions réellement différenciantes."},
+    {"id": "fonctions-chantier", "question": "Que valent la prise outil et le nettoyage de filtre face à une vraie contrainte de poussière ?", "evidence_refs": ["S3", "S4"], "decision_value": "Évite de confondre confort de bricolage, décolmatage automatique et classe de sécurité."},
+    {"id": "ian-consommables", "question": "Pourquoi l'IAN et la génération déterminent-ils sacs, filtres et service ?", "evidence_refs": ["S6", "S7", "S8", "S9"], "decision_value": "Réduit le risque de commander un consommable incompatible et rend l'ancien parc PNTS exploitable sans généralisation."},
+    {"id": "usage-limite", "question": "Où se situe la frontière entre rénovation ponctuelle et extraction soutenue ?", "evidence_refs": ["S4", "S10"], "decision_value": "Montre que la limite peut venir du colmatage et de la sécurité poussière avant le manque de watts."},
+    {"id": "quel-parkside", "question": "Quel Parkside correspond au besoin réel ?", "evidence_refs": ["S1", "S2", "S3", "S4", "S5", "S8", "S9"], "decision_value": "Transforme la gamme en routage par usage sans fabriquer un classement universel."}
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "PWD 12 B1 actuel, 12 L, 1200 W, 180 AirWatt", "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-12-b1/p100406420"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "PWD 20 C3 actuel, 19,8 L, 1300 W, 200 AirWatt", "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-20-c3-19-8-l-1300-w/p100397254"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "PWD 25 C4 actuel, 25 L, 1400 W, 240 AirWatt et nettoyage du filtre", "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-25-c4-25-l-1400-w/p100395330"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "PWD 30 C1 actuel, 30 L brut/22,3 L net, prise outil, post-fonctionnement, débit réglable et nettoyage du filtre", "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-30-c1/p100407117"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "PAWD 20-Li A1 X20V, 8 L, 60 AirWatt, Eco/Power, batterie séparée", "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-sans-fil-pawd-20-li-a1-8-l-20-v/p100406180"},
+    {"ref": "S6", "tier": 1, "status": "VERIFIED", "claim_scope": "recherche des manuels via le numéro IAN", "source": "https://parkside-diy.com/fr/service/manuals"},
+    {"ref": "S7", "tier": 1, "status": "VERIFIED", "claim_scope": "service, garantie, pièces de rechange et réparations", "source": "https://parkside-diy.com/fr/service"},
+    {"ref": "S8", "tier": 1, "status": "VERIFIED", "claim_scope": "sacs 20 L compatibles PWD12/PWD20/PNTS1250/1300", "source": "https://www.lidl.fr/p/parkside-sacs-pour-aspirateur/p100397672"},
+    {"ref": "S9", "tier": 1, "status": "VERIFIED", "claim_scope": "sacs 30 L compatibles PWD25/PWD30/PNTS1400/1500", "source": "https://www.lidl.fr/p/parkside-sacs-pour-aspirateur-30-l/p100396593003"},
+    {"ref": "S10", "tier": 4, "status": "SUPPORTED", "claim_scope": "retours communautaires sur rénovation longue et limite rainureuse/décolmatage", "source": "https://www.bricozone.be/t/aspirateur-de-chantier-aspirer-tout-couplage-ponceuse-rainureuse.160266/"}
+  ],
+  "residual_risks": [
+    "Les stocks, prix et promotions Lidl changent rapidement ; la page ne doit pas les figer.",
+    "Les suffixes PWD/PNTS et compatibilités peuvent varier selon génération ; l'IAN reste la vérification prioritaire.",
+    "L'absence de classe L/M/H sur les fiches consultées ne doit pas être généralisée à toute référence Parkside passée ou future.",
+    "Le témoignage communautaire retenu concerne d'anciennes générations et ne prouve aucune performance du PWD 30 C1 actuel."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
