@@ -1,0 +1,51 @@
+{
+  "aspirateur-atelier": {
+    "title": "Aspirateur d’atelier : mobile, fixe ou les deux ?",
+    "description": "Atelier : distinguer nettoyage, outils portatifs et machines fixes pour choisir entre aspirateur mobile, captage dédié ou réseau d’aspiration.",
+    "h1": "Aspirateur d’atelier : comment organiser l’aspiration selon les postes ?",
+    "lead": "Dans un atelier, la bonne question n’est pas la taille de cuve mais quels postes doivent être captés, lesquels sont mobiles et quels déchets doivent être collectés.",
+    "toc": [["cartographier", "Cartographier les postes"], ["trois-architectures", "3 architectures"], ["mobile", "Outils portatifs"], ["fixe", "Machines fixes"], ["nettoyage", "Nettoyage général"], ["risque", "Poussières et risque"], ["dimensionner", "Dimensionner le système"], ["sources", "Sources"]]
+  },
+  "aspirateur-bois-sciure-copeaux": {
+    "title": "Aspirateur bois, sciure et copeaux : choisir le bon captage",
+    "description": "Bois : distinguer poussières fines, sciure et copeaux, puis choisir aspiration mobile, diamètre de conduit, collecte ou réseau d’atelier.",
+    "h1": "Bois, sciure et copeaux : quel système d’aspiration choisir ?",
+    "lead": "Poussières fines et gros copeaux n’imposent ni le même débit, ni les mêmes conduits, ni le même système de collecte.",
+    "toc": [["deux-flux", "Deux flux à distinguer"], ["captage", "Captage à la source"], ["mobile-ou-fixe", "Mobile ou fixe"], ["conduits", "Conduits et bouchons"], ["filtration", "Filtration et risque"], ["nettoyage", "Nettoyage de l’atelier"], ["sources", "Sources"]]
+  },
+  "aspirateur-bricolage-renovation": {
+    "title": "Aspirateur pour rénovation : une machine suffit-elle pour tout le chantier ?",
+    "description": "Rénovation : démolition, perçage, découpe, ponçage, eau et nettoyage final. Voyez quand un seul aspirateur suffit et quand séparer les usages.",
+    "h1": "Rénovation : faut-il un seul aspirateur pour toutes les phases du chantier ?",
+    "lead": "Le besoin change entre dépose, découpe, ponçage, incidents humides et nettoyage final : le bon système suit les phases du chantier.",
+    "toc": [["phases", "Raisonner par phases"], ["depose", "Dépose et débris"], ["coupe-percage", "Coupe et perçage"], ["poncage", "Ponçage"], ["eau", "Eau et nettoyage"], ["une-ou-deux", "Une ou deux machines ?"], ["sources", "Sources"]]
+  },
+  "aspirateur-gravats": {
+    "title": "Aspirateur pour gravats : débris, poussière fine et eau",
+    "description": "Gravats : choisir flexible, cuve et méthode de collecte pour les débris déposés, sans confondre nettoyage et captage de poussières minérales à la source.",
+    "h1": "Aspirateur pour gravats : comment nettoyer sans confondre débris et poussières fines ?",
+    "lead": "Les gravats déjà au sol posent un problème de collecte ; la poussière créée pendant découpe ou meulage pose un problème de captage et de risque différent.",
+    "toc": [["au-sol", "Débris déjà au sol"], ["taille", "Taille des déchets"], ["poussiere-fine", "Poussière fine"], ["humide", "Débris humides"], ["sequence", "Séquence de nettoyage"], ["changer-machine", "Quand changer de système"], ["sources", "Sources"]]
+  },
+  "aspirateur-platre": {
+    "title": "Aspirateur pour plâtre et enduit : ponçage, découpe et nettoyage",
+    "description": "Plâtre, plaques et enduits : distinguer ponçage, découpe et nettoyage, gérer le colmatage et choisir le captage selon la poussière réellement produite.",
+    "h1": "Plâtre et enduit : quel aspirateur selon le travail réalisé ?",
+    "lead": "Poncer un enduit, couper une plaque et ramasser des morceaux sont trois travaux différents : la poussière, le captage et le colmatage ne se traitent pas de la même façon.",
+    "toc": [["quel-materiau", "Quel matériau ?"], ["trois-operations", "3 opérations"], ["poncage", "Ponçage"], ["decoupe", "Découpe"], ["colmatage", "Colmatage"], ["collecte", "Collecte et vidage"], ["sortir-platre", "Quand sortir du seul plâtre"], ["sources", "Sources"]]
+  },
+  "aspirateur-ponceuse": {
+    "title": "Aspirateur pour ponceuse : construire une boucle de captage efficace",
+    "description": "Ponceuse : raccord, flexible, captage à la source, débit maintenu, décolmatage et démarrage automatique selon la poussière travaillée.",
+    "h1": "Aspirateur pour ponceuse : quels critères comptent pendant une longue session ?",
+    "lead": "Avec une ponceuse, l’efficacité vient d’une boucle complète — plateau, raccord, flexible, débit maintenu et collecte — plus que d’une grosse cuve.",
+    "toc": [["boucle", "La boucle de captage"], ["interface", "Raccord et flexible"], ["matiere", "Matière poncée"], ["filtre-charge", "Filtre chargé"], ["declenchement", "Démarrage automatique"], ["ergonomie", "Ergonomie de session"], ["limites", "Quand l’aspirateur ne suffit pas"], ["sources", "Sources"]]
+  },
+  "aspirateur-scie": {
+    "title": "Aspirateur pour scie : circulaire, onglet ou table",
+    "description": "Scie circulaire, plongeante, à onglet ou sur table : géométrie du captage, raccords, débit, copeaux et différence entre installation mobile et fixe.",
+    "h1": "Aspirateur pour scie : le bon système dépend d’abord du type de scie",
+    "lead": "Une scie portative, une scie à onglet et une scie sur table n’émettent pas la poussière au même endroit : le captage doit suivre la machine avant de suivre la puissance de l’aspirateur.",
+    "toc": [["type-scie", "Identifier la scie"], ["geometrie", "Géométrie du captage"], ["portative", "Scies portatives"], ["onglet", "Scie à onglet"], ["table", "Scie sur table"], ["matiere", "Matériau coupé"], ["declenchement", "Démarrage"], ["reseau", "Quand passer au réseau"], ["sources", "Sources"]]
+  }
+}
