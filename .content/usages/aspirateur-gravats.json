@@ -1,0 +1,52 @@
+{
+  "contract_version": 1,
+  "slug": "aspirateur-gravats",
+  "url": "/usages/aspirateur-gravats/",
+  "updated_at": "2026-09-11",
+  "intent": {"topic": "aspirateur pour gravats et debris de renovation", "intent": "information/commercial investigation by cleanup situation", "user_job": "ramasser les petites fractions et residus de chantier sans confondre ce nettoyage avec le captage de poussiere fine pendant la decoupe", "boundary": "cleanup-situation page; wet-dry comparison selects machines and silica/class guides own technical risk details"},
+  "jtbd": {"circumstances": ["debris deja au sol", "petits morceaux", "poussiere residuelle", "eau/boue legere", "decoupe ou meulage encore en cours"], "progress": "nettoyer efficacement sans boucher la machine ni utiliser un generaliste comme aspirateur de securite", "frictions": ["gros morceaux", "etranglement du flexible", "cuve lourde", "melange sec/humide", "confusion nettoyage/captage"], "evidence_class": "SUPPORTED"},
+  "criteria": [
+    {"criterion": "taille/forme des debris", "priority": "MUST_HAVE", "decision_effect": "determine ce qui doit etre retire manuellement"},
+    {"criterion": "diametre et chemin du flexible", "priority": "HIGH", "decision_effect": "limite les bouchons"},
+    {"criterion": "captage a la source si emission active", "priority": "MUST_HAVE", "decision_effect": "separe le risque poussiere du nettoyage au sol"},
+    {"criterion": "aptitude humide et vidange", "priority": "CONDITIONAL", "decision_effect": "gere eau et debris humides"},
+    {"criterion": "mode de vidage", "priority": "HIGH", "decision_effect": "evite de surcharger ou remettre la poussiere en suspension"}
+  ],
+  "evidence": [
+    {"id": "S1", "claim": "les procedes sur materiaux susceptibles de contenir de la silice doivent etre evalues et les emissions reduites", "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S2", "claim": "la prevention des poussieres privilegie notamment le captage au plus pres de la source", "source": "https://www.inrs.fr/risques/poussieres/ce-qu-il-faut-retenir.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S3", "claim": "le captage local/on-tool est une mesure de controle distincte du nettoyage apres emission", "source": "https://www.hse.gov.uk/lev/common-processes.htm", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"}
+  ],
+  "handoffs": {"usage": ["/usages/aspirateur-bricolage-renovation/"], "guides": ["/guides/classes-l-m-h/", "/guides/capacite-cuve/"], "comparisons": ["/comparatifs/aspirateur-eau-poussiere/"]},
+  "outline": [
+    {"question": "Qu'est-ce qui doit etre ramasse manuellement avant aspiration ?", "evidence_refs": [], "decision_value": "reduit bouchons et surcharge"},
+    {"question": "Le chantier produit-il encore de la poussiere fine ?", "evidence_refs": ["S1", "S2", "S3"], "decision_value": "bascule du nettoyage vers le captage a la source"},
+    {"question": "Quand wet/dry et vidange deviennent-ils prioritaires ?", "evidence_refs": ["S2"], "decision_value": "separe l'usage gravats du comparatif produit"}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "content-audit", "status": "PASS", "output": "LIGHT_UPDATE; deposited-rubble vs generated-dust distinction preserved"},
+      {"skill": "search-intent", "status": "PASS", "output": "cleanup-situation intent confirmed"},
+      {"skill": "jobs-to-be-done", "status": "PASS", "output": "cleanup sequence and active-emission boundary mapped"},
+      {"skill": "content-refresh", "status": "PASS", "output": "debris-size, sequence and wet handling deepened"},
+      {"skill": "fact-check", "status": "PASS", "output": "INRS/HSE dust-control claims checked"},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "no product-experience ranking"},
+      {"skill": "affiliate-value", "status": "PASS", "output": "cleanup sequence useful without products"},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "sequence-led outline"},
+      {"skill": "content-and-copy", "status": "PASS", "output": "authored v2 fragment"},
+      {"skill": "humanizer", "status": "PASS", "output": "generic criterion list replaced by practical sequence"},
+      {"skill": "general-writing", "status": "PASS", "output": "cleaning/capture distinction clarified"},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "structure distinct within cluster"},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "handoffs to renovation and wet-dry comparison are role-based"},
+      {"skill": "seo-onpage", "status": "PASS", "output": "metadata covers gravats/debris cleanup"},
+      {"skill": "seo-technical", "status": "PASS", "output": "canonical/noindex preserved"},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "single H1 and semantic steps"},
+      {"skill": "editorial-qa", "status": "PASS", "output": "no claim that all rubble contains silica; no class inference"}
+    ],
+    "custom": [
+      {"skill": "usage-content-workflow", "status": "PASS", "output": "debris/hosing/wet-dry and claim-safety gates applied"},
+      {"skill": "usage-analysis-workflow", "status": "PASS", "output": "PUBLISH_REVIEW passed"}
+    ]
+  },
+  "editorial": {"cluster_audit_decision": "LIGHT_UPDATE", "final_decision": "LIGHT_UPDATE_COMPLETED", "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION", "human_validation": false, "robots": "noindex, follow"}
+}
