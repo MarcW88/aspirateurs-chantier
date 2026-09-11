@@ -65,12 +65,8 @@ jobs:
 
       - name: Preserve noindex drafts
         run: |
-          for f in marques/karcher/index.html marques/bosch/index.html marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka; do
-            if [ -d "$f" ]; then
-              grep -q '<meta name="robots" content="noindex, follow">' "$f/index.html"
-            else
-              grep -q '<meta name="robots" content="noindex, follow">' "$f"
-            fi
+          for f in marques/karcher/index.html marques/bosch/index.html marques/makita/index.html marques/festool/index.html marques/dewalt/index.html marques/parkside/index.html marques/nilfisk/index.html marques/mirka/index.html; do
+            grep -q '<meta name="robots" content="noindex, follow">' "$f"
           done
 
       - name: Whitespace check
