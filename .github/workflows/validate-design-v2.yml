@@ -1,0 +1,61 @@
+name: Validate editorial v2 coverage
+
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "accessoires/**"
+      - "comparatifs/**"
+      - "guides/**"
+      - "marques/**"
+      - "modeles/**"
+      - "usages/**"
+      - "a-propos/**"
+      - "contact/**"
+      - "mentions-legales/**"
+      - "methode-de-test/**"
+      - "transparence-affiliation/**"
+      - "design-v2.css"
+      - "design-v2-rollout.css"
+      - "design-v2.js"
+      - "_apply_design_v2.py"
+      - "validate_design_v2.py"
+      - ".github/workflows/validate-design-v2.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "index.html"
+      - "accessoires/**"
+      - "comparatifs/**"
+      - "guides/**"
+      - "marques/**"
+      - "modeles/**"
+      - "usages/**"
+      - "a-propos/**"
+      - "contact/**"
+      - "mentions-legales/**"
+      - "methode-de-test/**"
+      - "transparence-affiliation/**"
+      - "design-v2.css"
+      - "design-v2-rollout.css"
+      - "design-v2.js"
+      - "_apply_design_v2.py"
+      - "validate_design_v2.py"
+      - ".github/workflows/validate-design-v2.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check V2 shell coverage
+        run: python validate_design_v2.py
+      - name: Verify applicator is idempotent
+        run: |
+          python _apply_design_v2.py
+          git diff --exit-code -- index.html accessoires comparatifs guides marques modeles usages \
+            a-propos contact mentions-legales methode-de-test transparence-affiliation
