@@ -1,0 +1,54 @@
+{
+  "contract_version": 1,
+  "slug": "depression-kpa-mbar-air-watt",
+  "url": "/guides/depression-kpa-mbar-air-watt/",
+  "guide_type": "EXPLAINER",
+  "audit_decision": "LIGHT_UPDATE",
+  "intent": {
+    "reader_task": "Comprendre la dépression, convertir kPa/mbar/mmH₂O et savoir ce qu’une valeur maximale permet réellement de comparer."
+  },
+  "value_to_preserve": [
+    "Conversions kPa/mbar/mmH₂O.",
+    "Prudence sur les Air Watts.",
+    "Importance du point de mesure.",
+    "Exemple 25 kPa / 250 mbar."
+  ],
+  "evidence": [
+    {"id": "S1", "claim": "Le SI utilise le pascal comme unité de pression ; 1 kPa = 1 000 Pa et 1 kPa = 10 mbar.", "source": "https://www.bipm.org/en/publications/si-brochure", "checked_at": "2026-09-11", "status": "SUPPORTED"},
+    {"id": "S2", "claim": "Le Bosch GAS 35 M AFC annonce 254 mbar de dépression maximale à la turbine, ce qui illustre la nécessité de conserver le point de mesure avec la valeur.", "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/", "checked_at": "2026-09-11", "status": "SUPPORTED"}
+  ],
+  "outline": [
+    {"question": "Que mesure la dépression ?", "evidence_refs": ["S1"], "decision_value": "Comprendre la grandeur avant de comparer."},
+    {"question": "Comment convertir les unités ?", "evidence_refs": ["S1"], "decision_value": "Normaliser les nombres sans normaliser abusivement le protocole."},
+    {"question": "Pourquoi le point de mesure compte ?", "evidence_refs": ["S2"], "decision_value": "Éviter turbine vs raccord comme faux ex aequo."},
+    {"question": "Que ne dit pas la dépression seule ?", "evidence_refs": ["S2"], "decision_value": "Maintenir la frontière avec débit et puissance."}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "seo-content-audit", "status": "PASS", "output": "LIGHT_UPDATE : intention distincte, mais chevauchement à réduire avec débit et puissance."},
+      {"skill": "seo-keyword", "status": "PASS", "output": "Topic maintenu sur dépression, kPa, mbar, mmH₂O et Air Watts."},
+      {"skill": "search-intent", "status": "PASS", "output": "Intention EXPLAINER centrée unités, interprétation et protocole de mesure."},
+      {"skill": "content-refresh", "status": "PASS", "output": "Conversions et exemple conservés ; sections redondantes avec débit raccourcies."},
+      {"skill": "fact-check", "status": "PASS", "output": "Conversions et valeur Bosch revérifiées le 2026-09-11."},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "Aucun jugement expérientiel n’est formulé."},
+      {"skill": "affiliate-value", "status": "PASS", "output": "Guide autonome de lecture technique, utile sans produit recommandé."},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "Brief : définition -> conversions -> Air Watts -> point de mesure -> usage -> exemple -> limites."},
+      {"skill": "content-and-copy", "status": "PASS", "output": "Réécriture ciblée avec frontière explicite vers le guide débit."},
+      {"skill": "humanizer", "status": "PASS", "output": "Formulations techniques relues pour rester naturelles et non répétitives."},
+      {"skill": "general-writing", "status": "PASS", "output": "Explications et exemple simplifiés sans perdre les nuances de mesure."},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "Pas de remplissage ni de section générique non justifiée."},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "Liens vers débit, puissance et guide de choix maintenus selon le besoin du lecteur."},
+      {"skill": "seo-onpage", "status": "PASS", "output": "Title/H1/meta recentrés sur dépression et unités."},
+      {"skill": "seo-technical", "status": "PASS", "output": "Canonical et noindex, follow préservés."},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "Réponse directe et contexte de mesure clairement exposé."},
+      {"skill": "seo-drift", "status": "N/A", "reason": "Pas de baseline fournie pour mesurer un drift."},
+      {"skill": "editorial-qa", "status": "PASS", "output": "Pas de confusion débit/dépression ni de promesse de performance tirée d’une conversion seule."}
+    ],
+    "custom": [
+      {"skill": "guide-analysis-workflow", "status": "PASS", "output": "LIGHT_UPDATE confirmé et frontière avec puissance/débit contrôlée."},
+      {"skill": "guide-content-workflow", "status": "PASS", "output": "Mise à jour evidence-led intégrée en source v2."}
+    ]
+  },
+  "residual_risks": ["Les Air Watts restent une métrique commerciale dont le protocole doit être vérifié lorsqu’une marque la publie."],
+  "editorial": {"publish_review": "PASS — READY_FOR_HUMAN_VALIDATION", "human_validation": false, "robots": "noindex, follow"}
+}
