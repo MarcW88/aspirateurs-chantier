@@ -126,16 +126,29 @@ check('Tier 1' not in brand_main and 'Tier 2' not in brand_main, 'brand index: u
 for needle in ['DCV586M','PWD 12 à 30','DEXOS','Buddy / Multi','GAS Professional','AMPShare']:
     check(needle in brand_main, f'brand index: missing current family {needle}')
 
+# Latest brand CLUSTER_AUDIT (2026-09-10) is the source of truth for recovery
+# work classification. A per-page v2 PUBLISH_REVIEW may later mark a page READY,
+# but it must not rewrite the original recovery verdict.
 expected = {
- 'bosch':'KEEP','karcher':'DEEP_REWRITE','festool':'DEEP_REWRITE','makita':'DEEP_REWRITE',
- 'dewalt':'LIGHT_UPDATE','parkside':'LIGHT_UPDATE','nilfisk':'DEEP_REWRITE','mirka':'DEEP_REWRITE'
+ 'karcher':'DEEP_REWRITE',
+ 'makita':'DEEP_REWRITE',
+ 'parkside':'DEEP_REWRITE',
+ 'nilfisk':'DEEP_REWRITE',
+ 'bosch':'LIGHT_UPDATE',
+ 'festool':'LIGHT_UPDATE',
+ 'dewalt':'LIGHT_UPDATE',
+ 'mirka':'LIGHT_UPDATE',
 }
 for slug, verdict in expected.items():
     d = json.loads((BASE / '.content' / 'brands' / f'{slug}.yaml').read_text(encoding='utf-8'))
-    check(d.get('cluster_audit', {}).get('verdict') == verdict, f'{slug}: wrong cluster verdict')
+    audit = d.get('cluster_audit', {})
+    check(audit.get('verdict') == verdict, f'{slug}: wrong cluster verdict')
     check(d.get('recovery_verdict') == verdict, f'{slug}: recovery verdict not aligned')
+    check(audit.get('date') == '2026-09-10', f'{slug}: stale cluster-audit date')
+    check(audit.get('audit_artifact') == '.content/brands/cluster-audit-2026-09-10.md',
+          f'{slug}: latest cluster-audit artifact not referenced')
 
-check((BASE / '.content/cluster-audits/brand-cluster-2026-09-09.md').exists(), 'cluster audit artifact missing')
+check((BASE / '.content/brands/cluster-audit-2026-09-10.md').exists(), 'latest brand cluster audit artifact missing')
 
 if errors:
     print('CLUSTER_ROLLOUT: FAIL')
@@ -148,5 +161,5 @@ print(f' - {len(MODELS)} model pages verified')
 print(f' - {len(USAGES)} usage pages completed')
 print(' - professional vs class-M intent boundary verified without a fixed heading template')
 print(' - professional scenario diversity and method-neutral ledger verified')
-print(' - brand recovery verdicts aligned with pre-rollout cluster audit')
+print(' - brand recovery verdicts aligned with latest 2026-09-10 cluster audit')
 print(' - noindex, follow preserved')
