@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the shared/custom comparison skill stack and its 80/20 governance target."""
+"""Validate comparison workflow 80/20 governance and shared-skill provenance."""
 from pathlib import Path
 import json
 import sys
@@ -15,12 +15,11 @@ REQUIRED_SHARED = {
     'general-writing', 'anti-ai-slop', 'seo-onpage', 'seo-technical',
     'internal-linking-audit', 'editorial-qa'
 }
-CUSTOM_WORKFLOWS = {'comparison-content-workflow', 'comparison-analysis-workflow'}
+CUSTOM_ALLOWED = {'comparison-content-workflow', 'comparison-analysis-workflow'}
 
 
 def main():
     errors = []
-
     if not MANIFEST.exists():
         errors.append(f'missing manifest: {MANIFEST.relative_to(ROOT)}')
         data = {}
@@ -31,11 +30,42 @@ def main():
             errors.append(f'invalid manifest JSON: {exc}')
             data = {}
 
+    governance = data.get('governance', {})
+    shared_resp = governance.get('shared_responsibilities', [])
+    custom_resp = governance.get('custom_responsibilities', [])
+    total_resp = len(shared_resp) + len(custom_resp)
+    shared_ratio = len(shared_resp) / total_resp if total_resp else 0.0
+    custom_ratio = len(custom_resp) / total_resp if total_resp else 1.0
+    shared_min = float(governance.get('target_shared_ratio_min', 0.80))
+    custom_max = float(governance.get('target_custom_ratio_max', 0.20))
+
+    if data.get('version') != 2:
+        errors.append('comparison skill-stack manifest version must be 2')
+    if governance.get('ratio_basis') != 'workflow_responsibilities':
+        errors.append('ratio_basis must be workflow_responsibilities')
+    if shared_ratio < shared_min:
+        errors.append(f'shared responsibility ratio {shared_ratio:.1%} is below target {shared_min:.1%}')
+    if custom_ratio > custom_max:
+        errors.append(f'custom responsibility ratio {custom_ratio:.1%} exceeds target {custom_max:.1%}')
+    if not governance.get('require_external_provenance_for_shared_skills'):
+        errors.append('shared-skill provenance gate must be enabled')
+    if not governance.get('require_run_evidence_before_publish_review_pass'):
+        errors.append('run-evidence publish gate must be enabled')
+
     shared = data.get('shared', [])
     custom = data.get('custom', [])
-    total = len(shared) + len(custom)
-    ratio = len(shared) / total if total else 0.0
-    target = float(data.get('target_shared_ratio_min', 0.80))
+    shared_names = {item.get('name') for item in shared}
+    custom_names = {item.get('name') for item in custom}
+
+    missing_shared = sorted(REQUIRED_SHARED - shared_names)
+    if missing_shared:
+        errors.append('missing required shared skills in manifest: ' + ', '.join(missing_shared))
+    unexpected_custom = sorted(custom_names - CUSTOM_ALLOWED)
+    if unexpected_custom:
+        errors.append('custom comparison stack exceeds allowed scope: ' + ', '.join(unexpected_custom))
+    missing_custom = sorted(CUSTOM_ALLOWED - custom_names)
+    if missing_custom:
+        errors.append('missing comparison orchestrators: ' + ', '.join(missing_custom))
 
     for item in shared + custom:
         name = item.get('name')
@@ -45,44 +75,39 @@ def main():
         skill = ROOT / '.agents' / 'skills' / name / 'SKILL.md'
         if not skill.exists():
             errors.append(f'missing skill: {name}')
+            continue
+        if name in shared_names:
+            source_repo = item.get('source_repo')
+            source_sha = item.get('source_sha')
+            if source_repo != 'MarcW88/bloc-notes-numerique' or not source_sha:
+                errors.append(f'{name}: missing bloc-notes shared-skill provenance')
+                continue
+            text = skill.read_text(encoding='utf-8')
+            if f'source_repo: {source_repo}' not in text or f'source_sha: {source_sha}' not in text:
+                errors.append(f'{name}: local SKILL.md provenance does not match manifest')
 
-    shared_names = {item.get('name') for item in shared}
-    custom_names = {item.get('name') for item in custom}
+    evidence_item = next((x for x in shared if x.get('name') == 'evidence-based-reviews'), {})
+    if evidence_item.get('upstream') != 'rampstackco/claude-skills/skills/evidence-based-reviews':
+        errors.append('evidence-based-reviews upstream provenance missing')
 
-    missing_shared = sorted(REQUIRED_SHARED - shared_names)
-    if missing_shared:
-        errors.append('missing required shared skills in manifest: ' + ', '.join(missing_shared))
-
-    missing_custom = sorted(CUSTOM_WORKFLOWS - custom_names)
-    if missing_custom:
-        errors.append('missing custom comparison workflows in manifest: ' + ', '.join(missing_custom))
-
-    unexpected_custom = sorted(custom_names - CUSTOM_WORKFLOWS)
-    if unexpected_custom:
-        errors.append('unexpected custom comparison components: ' + ', '.join(unexpected_custom))
-
-    if ratio < target:
-        errors.append(f'shared ratio {ratio:.1%} is below target {target:.1%}')
-
-    # Custom workflows must orchestrate, not fall back to vague optional skills.
-    for workflow in CUSTOM_WORKFLOWS:
+    for workflow in CUSTOM_ALLOWED:
         path = ROOT / '.agents' / 'skills' / workflow / 'SKILL.md'
         if not path.exists():
             continue
         text = path.read_text(encoding='utf-8').lower()
-        if 'when available' in text or 'lorsque les skills spécialisés' in text:
-            errors.append(f'{workflow}: optional-skill fallback still present')
         if '80/20' not in text:
             errors.append(f'{workflow}: 80/20 governance not documented')
         if 'aspirateurs-chantier.fr' not in text:
             errors.append(f'{workflow}: target domain adaptation not explicit')
+        for forbidden in ['when available', 'lorsque les skills spécialisés sont disponibles']:
+            if forbidden in text:
+                errors.append(f'{workflow}: optional-skill fallback still present')
 
-    # The root config must not silently restore the old mandatory-scoring method.
     if not CONFIG.exists():
         errors.append('missing comparison-workflow.config.yaml')
     else:
         config = CONFIG.read_text(encoding='utf-8').lower()
-        required_config_tokens = [
+        for token in [
             'scoring_optional: true',
             'weighting_optional: true',
             'hard_gates_optional: true',
@@ -91,19 +116,11 @@ def main():
             'prohibit_internal_link_quotas: true',
             'prohibit_comparison_type_templates: true',
             'prohibit_inferring_dust_class_from_hepa_power_or_airflow: true',
-        ]
-        for token in required_config_tokens:
+            'require_run_evidence_before_publish_review_pass: true',
+            'generator_role: "shell_and_components_only"',
+        ]:
             if token not in config:
                 errors.append(f'config missing governance rule: {token}')
-
-        forbidden_config_tokens = [
-            'require_weights_sum_100: true',
-            'require_hard_gates: true',
-            'enable_confidence_adjustment: true',
-        ]
-        for token in forbidden_config_tokens:
-            if token in config:
-                errors.append(f'legacy mandatory-scoring rule still present: {token}')
 
     if errors:
         for error in errors:
@@ -111,9 +128,10 @@ def main():
         return 1
 
     print(
-        f'PASS: {len(shared)} shared + {len(custom)} custom comparison components; '
-        f'shared ratio={ratio:.1%} (target >= {target:.0%}).'
+        f'PASS: comparison governance uses {len(shared_resp)} shared responsibilities and '
+        f'{len(custom_resp)} custom responsibilities; shared={shared_ratio:.1%}, custom={custom_ratio:.1%}.'
     )
+    print(f'PASS: {len(shared)} shared skills have bloc-notes provenance; only {len(custom)} custom orchestrators are allowed.')
     return 0
 
 
