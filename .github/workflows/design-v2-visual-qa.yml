@@ -52,17 +52,21 @@ jobs:
               const page = await browser.newPage({ viewportSize: viewport });
               await page.goto('http://127.0.0.1:8000'+path, {waitUntil:'domcontentloaded'});
               await page.waitForTimeout(800);
-              await page.screenshot({path:`screenshots/${name}-${mode}.png`, fullPage:true});
+              console.log(`checking ${name}-${mode}`);
               const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
               if (overflow) throw new Error(`${name}-${mode}: global horizontal overflow`);
               if (mode === 'mobile') {
                 const burger = page.locator('.burger');
                 if (await burger.count()) {
+                  const visible = await burger.isVisible();
+                  if (!visible) throw new Error(`${name}: burger exists but is not visible`);
                   await burger.click();
                   const expanded = await burger.getAttribute('aria-expanded');
                   if (expanded !== 'true') throw new Error(`${name}: burger did not open`);
+                  await burger.click();
                 }
               }
+              await page.screenshot({path:`screenshots/${name}-${mode}.png`, fullPage:true});
               await page.close();
             }
           }
