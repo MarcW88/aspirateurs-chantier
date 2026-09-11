@@ -1,0 +1,43 @@
+{
+  "contract_version":1,
+  "slug":"sac-ou-sans-sac",
+  "url":"/guides/sac-ou-sans-sac/",
+  "guide_type":"CHOICE",
+  "audit_decision":"LIGHT_UPDATE",
+  "intent":{"reader_task":"Décider avec ou sans sac selon le déchet, le colmatage, le vidage, le coût total et les exigences de collecte."},
+  "value_to_preserve":["Poussières fines et vidage.","Cas eau/déchets grossiers.","Collecte comme composante de sécurité pour certaines poussières."],
+  "evidence":[
+    {"id":"S1","claim":"Pour certains travaux sur amiante, l’INRS décrit un système de collecte par double sac parmi les exigences de l’aspirateur.","source":"https://www.inrs.fr/risques/amiante/prevention-risque-amiante.html","checked_at":"2026-09-11","status":"SUPPORTED"},
+    {"id":"S2","claim":"La classe d’un aspirateur et son système de collecte relèvent de l’appareil complet, pas du seul filtre ou du seul sac.","source":"https://webstore.iec.ch/en/publication/64777","checked_at":"2026-09-11","status":"SUPPORTED"}
+  ],
+  "outline":[
+    {"question":"Quand le sac apporte-t-il plus que le coût du consommable ?","evidence_refs":["S1","S2"],"decision_value":"Relier sac à colmatage et vidage."},
+    {"question":"Quand le sans-sac est-il logique ?","evidence_refs":["S2"],"decision_value":"Distinguer grossier/liquide des poussières fines."},
+    {"question":"Quand la collecte devient-elle une exigence de sécurité ?","evidence_refs":["S1"],"decision_value":"Éviter de retirer un dispositif prévu par la configuration."}
+  ],
+  "workflow_execution":{"shared":[
+    {"skill":"seo-content-audit","status":"PASS","output":"LIGHT_UPDATE confirmé ; rôle CHOICE autonome."},
+    {"skill":"seo-keyword","status":"PASS","output":"Topic aspirateur chantier avec ou sans sac conservé."},
+    {"skill":"search-intent","status":"PASS","output":"CHOICE : arbitrer par type de déchet et mode de vidage."},
+    {"skill":"content-refresh","status":"PASS","output":"Stratégie de consommables intégrée au plan final."},
+    {"skill":"fact-check","status":"PASS","output":"Cas amiante et rôle système/collecte revérifiés."},
+    {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucune expérience produit n’est revendiquée."},
+    {"skill":"affiliate-value","status":"PASS","output":"Arbitrage coût/maintenance utile sans affiliation."},
+    {"skill":"content-brief-authoring","status":"PASS","output":"Brief décision -> fines -> grossier/eau -> danger -> coût -> stratégie -> checklist."},
+    {"skill":"content-and-copy","status":"PASS","output":"LIGHT_UPDATE rédigé sans doctrine universelle avec/sans sac."},
+    {"skill":"humanizer","status":"PASS","output":"Style relu."},
+    {"skill":"general-writing","status":"PASS","output":"Arbitrages rendus plus concrets."},
+    {"skill":"anti-ai-slop","status":"PASS","output":"Aucun remplissage par quota."},
+    {"skill":"internal-linking-audit","status":"PASS","output":"Liens vers capacité et entretien placés en sortie de décision."},
+    {"skill":"seo-onpage","status":"PASS","output":"Title/H1/meta couvrent déchet, vidage et sac."},
+    {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow préservés."},
+    {"skill":"seo-best-practices","status":"PASS","output":"Réponse CHOICE visible tôt."},
+    {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline fournie."},
+    {"skill":"editorial-qa","status":"PASS","output":"Pas de recommandation dangereuse de suppression du sac pour une configuration certifiée."}
+  ],"custom":[
+    {"skill":"guide-analysis-workflow","status":"PASS","output":"LIGHT_UPDATE CHOICE validé."},
+    {"skill":"guide-content-workflow","status":"PASS","output":"Fragment v2 produit."}
+  ]},
+  "residual_risks":["La configuration sac/filtre varie selon modèle et mode humide ; la notice reste prioritaire."],
+  "editorial":{"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+}
