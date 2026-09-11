@@ -2,141 +2,207 @@
   "slug": "parkside",
   "brand": "Parkside",
   "page_type": "BRAND_HUB",
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-11",
+  "source_of_truth": "_generate_parkside.py",
+  "structure_strategy": "bespoke_stock_generation_use_case_logic",
+  "recovery_verdict": "DEEP_REWRITE",
   "entity_map": {
     "brand": "Parkside",
+    "families": [
+      "PWD filaire",
+      "PAWD X20V Team",
+      "anciennes séries PNTS"
+    ],
     "products": [
       "PWD 12 B1",
       "PWD 20 C3",
       "PWD 25 C4",
       "PWD 30 C1",
-      "PNTS 1250 / 1300 et anciennes séries"
+      "PAWD 20-Li A1"
+    ],
+    "technologies": [
+      "X20V Team",
+      "prise outil automatique",
+      "nettoyage du filtre par bouton",
+      "IAN"
     ],
     "use_cases": [
-      "bricolage et rénovation",
-      "gravats"
+      "voiture",
+      "garage",
+      "bricolage",
+      "rénovation domestique",
+      "aspiration eau/poussière",
+      "ponçage occasionnel"
     ],
-    "technologies": [],
     "competitors": [
       "Kärcher",
       "Bosch",
       "Makita",
       "Festool",
       "DeWalt",
-      "Parkside",
       "Nilfisk",
       "Mirka"
     ]
   },
   "brand_positioning": {
-    "summary": "Parkside se positionne d'abord sur le rapport équipement/prix. En 2026, les références PWD 12, 20, 25 et 30 apparaissent sur Lidl France selon les stocks. Elles couvrent le nettoyage eau/poussière, le garage et le bricolage, mais ne doivent pas être assimilées à une gamme professionnelle de sécurité L/M/H sans certification explicite.",
-    "strengths": [
-      "Prix d'entrée très compétitif pour eau/poussière et garage.",
-      "Équipement généreux sur les PWD 20/25/30.",
-      "Prise outil et nettoyage de filtre sur certaines grandes références.",
-      "Formats de 12 à 30 L qui couvrent de nombreux besoins domestiques."
-    ],
-    "limitations": [
-      "Disponibilité et révisions de modèles fluctuantes chez Lidl.",
-      "Pas de raison de déduire une classe M ou H à partir de la puissance ou d'un filtre plissé.",
-      "Le décolmatage par bouton n'est pas équivalent à un système automatique Tact/AFC/InfiniClean en poussière fine continue.",
-      "Pour un usage professionnel quotidien, SAV, consommables et robustesse du workflow peuvent peser plus que le prix initial."
-    ]
-  },
-  "product_range": [
-    {
-      "name": "PWD 12 B1",
-      "status": "CURRENT",
-      "role": "Petit nettoyage eau/poussière",
-      "evidence": "12 L brut, 1 200 W, format compact."
-    },
-    {
-      "name": "PWD 20 C3",
-      "status": "CURRENT",
-      "role": "Garage et bricolage polyvalent",
-      "evidence": "19,8 L, 1 300 W, 200 Airwatts annoncés."
-    },
-    {
-      "name": "PWD 25 C4",
-      "status": "CURRENT",
-      "role": "Rénovation domestique",
-      "evidence": "25 L, 1 400 W, 240 Airwatts annoncés."
-    },
-    {
-      "name": "PWD 30 C1",
-      "status": "CURRENT_STOCK_DEPENDENT",
-      "role": "Grand format DIY",
-      "evidence": "30 L brut, prise outil, nettoyage filtre par bouton, disponibilité fluctuante."
-    },
-    {
-      "name": "PNTS 1250 / 1300 et anciennes séries",
-      "status": "PREVIOUS_GENERATION",
-      "role": "Parc existant / consommables",
-      "evidence": "Encore citées pour la compatibilité des sacs et filtres, mais ne résument plus la gamme actuelle."
-    }
-  ],
-  "ecosystem": {
-    "summary": [
-      "Parkside fonctionne moins comme un écosystème fermé d'aspiration que comme une gamme d'équipement Lidl à prix serré. Les consommables et accessoires sont proposés pour plusieurs générations, avec des raccords souvent simples et des kits fournis généreux. Sur le PWD 30, la prise outil et l'adaptateur permettent une aspiration directe lors de certains travaux de sciage ou ponçage.",
-      "La principale variable est la disponibilité. Les références, révisions et promotions changent plus souvent qu'un catalogue professionnel stable. Il faut donc vérifier la fiche Lidl du moment, le contenu du carton et la compatibilité des filtres avant achat. Une bonne affaire n'est bonne que si les consommables utiles restent accessibles."
-    ],
-    "choose": [
-      "Choisissez Parkside pour du bricolage occasionnel, un garage ou de l'eau/poussière avec budget serré.",
-      "Le PWD 20 ou 25 est souvent un meilleur compromis si vous n'avez pas besoin d'une cuve 30 L.",
-      "Le PWD 30 est à privilégier lorsque la prise outil et le volume comptent réellement et que la référence est disponible."
-    ],
-    "avoid": [
-      "Évitez Parkside pour remplacer un aspirateur de sécurité M/H requis par la poussière sans certification explicite du modèle.",
-      "La marque convient moins à une utilisation intensive où le décolmatage automatique et la surveillance de débit sont critiques.",
-      "Évitez de commander des sacs ou filtres uniquement sur le nom Parkside : vérifiez la génération PWD/PNTS exacte."
+    "summary": "Parkside se choisit comme une offre de bricolage datée et référencée précisément : type d'usage, filaire ou X20V, fonctions utiles, puis génération/IAN et consommables.",
+    "core_decisions": [
+      "PWD filaire ou PAWD X20V selon mobilité et charge de travail ?",
+      "quelle capacité et quelles fonctions sont réellement utiles ?",
+      "la poussière exige-t-elle une classe ou un décolmatage automatique absent de cette catégorie ?",
+      "quels sacs, filtres et manuels correspondent à la génération exacte ?"
     ]
   },
   "evidence": [
     {
-      "claim": "Lidl / Parkside PWD 30 C1",
+      "ref": "S1",
       "status": "VERIFIED",
-      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-30-c1/p100407117",
-      "source_type": "primary"
-    },
-    {
-      "claim": "Lidl / Parkside PWD 20 C3",
-      "status": "VERIFIED",
-      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-20-c3-19-8-l-1300-w/p100397254",
-      "source_type": "primary"
-    },
-    {
-      "claim": "Lidl / Parkside PWD 25 C4",
-      "status": "VERIFIED",
-      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-25-c4-25-l-1400-w/p100395330",
-      "source_type": "primary"
-    },
-    {
-      "claim": "Lidl / Parkside PWD 12 B1",
-      "status": "VERIFIED",
+      "tier": 1,
       "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-12-b1/p100406420",
-      "source_type": "primary"
+      "source_type": "primary",
+      "label": "Lidl France — Parkside PWD 12 B1"
+    },
+    {
+      "ref": "S2",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-20-c3-19-8-l-1300-w/p100397254",
+      "source_type": "primary",
+      "label": "Lidl France — Parkside PWD 20 C3"
+    },
+    {
+      "ref": "S3",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-25-c4-25-l-1400-w/p100395330",
+      "source_type": "primary",
+      "label": "Lidl France — Parkside PWD 25 C4"
+    },
+    {
+      "ref": "S4",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-30-c1/p100407117",
+      "source_type": "primary",
+      "label": "Lidl France — Parkside PWD 30 C1"
+    },
+    {
+      "ref": "S5",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-sans-fil-pawd-20-li-a1-8-l-20-v/p100406180",
+      "source_type": "primary",
+      "label": "Lidl France — Parkside PAWD 20-Li A1"
+    },
+    {
+      "ref": "S6",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://parkside-diy.com/fr/service/manuals",
+      "source_type": "primary",
+      "label": "Parkside — recherche de manuels par référence IAN"
+    },
+    {
+      "ref": "S7",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://parkside-diy.com/fr/service",
+      "source_type": "primary",
+      "label": "Parkside — service, garantie et pièces de rechange"
+    },
+    {
+      "ref": "S8",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.lidl.fr/p/parkside-sacs-pour-aspirateur/p100397672",
+      "source_type": "primary",
+      "label": "Lidl France — sacs 20 L compatibles PWD 12/PWD 20"
+    },
+    {
+      "ref": "S9",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.lidl.fr/p/parkside-sacs-pour-aspirateur-30-l/p100396593003",
+      "source_type": "primary",
+      "label": "Lidl France — sacs 30 L compatibles PWD 25/PWD 30"
+    },
+    {
+      "ref": "S10",
+      "status": "SUPPORTED",
+      "tier": 4,
+      "source": "https://www.bricozone.be/t/aspirateur-de-chantier-aspirer-tout-couplage-ponceuse-rainureuse.160266/",
+      "source_type": "user_experience",
+      "label": "BricoZone — retours d'usage Parkside PWD en rénovation"
+    }
+  ],
+  "key_claims": [
+    {
+      "claim": "PWD 12 B1, PWD 20 C3, PWD 25 C4 et PWD 30 C1 sont des références actuelles Lidl France consultées le 11/09/2026.",
+      "evidence_refs": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "PAWD 20-Li A1 est un modèle X20V Team 8 L annoncé à 60 AirWatt, vendu sans batterie ni chargeur.",
+      "evidence_refs": [
+        "S5"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "PWD 30 C1 dispose d'une prise outil automatique jusqu'à 2200 W, d'un court post-fonctionnement et d'un nettoyage du filtre par bouton.",
+      "evidence_refs": [
+        "S4"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Les sacs 20 L et 30 L Parkside documentent deux groupes de compatibilité qui recoupent PWD et anciennes séries PNTS.",
+      "evidence_refs": [
+        "S8",
+        "S9"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Parkside recommande l'IAN pour retrouver précisément le manuel correspondant à un appareil.",
+      "evidence_refs": [
+        "S6"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Des retours communautaires de rénovation montrent qu'un ancien PWD peut durer sur des usages variés tout en atteignant ses limites sur une rainureuse sans décolmatage automatique.",
+      "evidence_refs": [
+        "S10"
+      ],
+      "status": "SUPPORTED"
     }
   ],
   "internal_links": [
     {
-      "label": "petit aspirateur",
-      "url": "/comparatifs/petit-aspirateur-de-chantier/"
+      "label": "sans fil",
+      "url": "/comparatifs/aspirateur-chantier-sans-fil/"
     },
     {
       "label": "eau et poussière",
       "url": "/comparatifs/aspirateur-eau-poussiere/"
     },
     {
-      "label": "bricolage et rénovation",
-      "url": "/usages/aspirateur-bricolage-renovation/"
-    },
-    {
-      "label": "gravats",
-      "url": "/usages/aspirateur-gravats/"
+      "label": "petit format",
+      "url": "/comparatifs/petit-aspirateur-de-chantier/"
     },
     {
       "label": "classes L/M/H",
       "url": "/guides/classes-l-m-h/"
+    },
+    {
+      "label": "décolmatage automatique",
+      "url": "/guides/decolmatage-automatique/"
     },
     {
       "label": "prise asservie",
@@ -147,25 +213,70 @@
       "url": "/accessoires/sacs-aspirateur-chantier/"
     },
     {
-      "label": "filtres",
-      "url": "/accessoires/filtres-aspirateur-chantier/"
-    },
-    {
-      "label": "Kärcher",
-      "url": "/marques/karcher/"
+      "label": "bricolage et rénovation",
+      "url": "/usages/aspirateur-bricolage-renovation/"
     }
   ],
   "editorial": {
     "desk_research_only": true,
     "affiliate_influence": false,
     "human_validation_required": true,
-    "publish_review": "REQUIRES_WORKFLOW_RERUN",
+    "publish_review": "READY_FOR_HUMAN_VALIDATION",
     "workflow_contract_version": 2,
     "run_evidence": ".content/brands/runs/parkside.json"
   },
-  "source_of_truth": "_generate_brand_overrides.py",
-  "structure_strategy": "bespoke_budget_stock_generation_logic",
-  "recovery_verdict": "DEEP_REWRITE",
+  "sources": {
+    "S1": {
+      "label": "Lidl France — Parkside PWD 12 B1",
+      "url": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-12-b1/p100406420",
+      "source_type": "primary"
+    },
+    "S2": {
+      "label": "Lidl France — Parkside PWD 20 C3",
+      "url": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-20-c3-19-8-l-1300-w/p100397254",
+      "source_type": "primary"
+    },
+    "S3": {
+      "label": "Lidl France — Parkside PWD 25 C4",
+      "url": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-25-c4-25-l-1400-w/p100395330",
+      "source_type": "primary"
+    },
+    "S4": {
+      "label": "Lidl France — Parkside PWD 30 C1",
+      "url": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-pwd-30-c1/p100407117",
+      "source_type": "primary"
+    },
+    "S5": {
+      "label": "Lidl France — Parkside PAWD 20-Li A1",
+      "url": "https://www.lidl.fr/p/parkside-aspirateur-eau-et-poussiere-sans-fil-pawd-20-li-a1-8-l-20-v/p100406180",
+      "source_type": "primary"
+    },
+    "S6": {
+      "label": "Parkside — recherche de manuels par référence IAN",
+      "url": "https://parkside-diy.com/fr/service/manuals",
+      "source_type": "primary"
+    },
+    "S7": {
+      "label": "Parkside — service, garantie et pièces de rechange",
+      "url": "https://parkside-diy.com/fr/service",
+      "source_type": "primary"
+    },
+    "S8": {
+      "label": "Lidl France — sacs 20 L compatibles PWD 12/PWD 20",
+      "url": "https://www.lidl.fr/p/parkside-sacs-pour-aspirateur/p100397672",
+      "source_type": "primary"
+    },
+    "S9": {
+      "label": "Lidl France — sacs 30 L compatibles PWD 25/PWD 30",
+      "url": "https://www.lidl.fr/p/parkside-sacs-pour-aspirateur-30-l/p100396593003",
+      "source_type": "primary"
+    },
+    "S10": {
+      "label": "BricoZone — retours d'usage Parkside PWD en rénovation",
+      "url": "https://www.bricozone.be/t/aspirateur-de-chantier-aspirer-tout-couplage-ponceuse-rainureuse.160266/",
+      "source_type": "user_experience"
+    }
+  },
   "cluster_audit": {
     "audit_artifact": ".content/brands/cluster-audit-2026-09-10.md",
     "audited_snapshot": "3a79ddb899fe9c17f210e4b413738d68f19df705",
