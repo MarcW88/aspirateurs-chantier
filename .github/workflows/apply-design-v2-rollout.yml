@@ -1,0 +1,48 @@
+name: Apply editorial v2 rollout
+
+on:
+  push:
+    branches:
+      - feat/design-editorial-v2-rollout
+    paths:
+      - "_apply_design_v2.py"
+      - "design-v2.css"
+      - "design-v2-rollout.css"
+      - ".github/workflows/apply-design-v2-rollout.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/design-editorial-v2-rollout
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply V2 classes and assets
+        run: python _apply_design_v2.py
+      - name: Verify applicator is idempotent
+        run: |
+          first=$(git diff -- . ':!*.pyc' | sha256sum)
+          python _apply_design_v2.py >/tmp/design-v2-rerun.log
+          second=$(git diff -- . ':!*.pyc' | sha256sum)
+          test "$first" = "$second"
+      - name: Commit rolled-out pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html accessoires comparatifs guides marques modeles usages \
+            a-propos contact mentions-legales methode-de-test transparence-affiliation
+          if git diff --cached --quiet; then
+            echo "No rollout page changes."
+          else
+            git commit -m "design: apply editorial v2 across site"
+            git pull --rebase origin feat/design-editorial-v2-rollout
+            git push origin HEAD:feat/design-editorial-v2-rollout
+          fi
