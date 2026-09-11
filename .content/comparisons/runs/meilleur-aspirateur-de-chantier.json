@@ -1,0 +1,52 @@
+{
+  "contract_version": 2,
+  "slug": "meilleur-aspirateur-de-chantier",
+  "status": "PASS",
+  "reader_decision": "Identifier d’abord la bonne famille d’aspirateur selon risque poussière, déchet, mobilité et rythme de travail, puis basculer vers le comparatif spécialisé pertinent au lieu de chercher un vainqueur universel.",
+  "comparison_scope": "Cinq références repères couvrent rénovation wet/dry, M mobile, M filaire 30 L, M gros volume et atelier DIY ; la page joue un rôle d’orientation générale.",
+  "value_without_affiliate_links": "La page fournit un ordre de décision, des erreurs d’achat à éviter et des handoffs explicites vers les pages spécialisées ; aucune valeur ne dépend d’un classement marchand.",
+  "candidate_scope": {
+    "considered": ["Kärcher WD 7 Control P S 30/6/35/T","Bosch Professional GAS 18V-12 MC","Kärcher NT 30/1 Tact Te M ACD","Makita VC4210MX","Bosch AdvancedVac 20"],
+    "major_exclusions": [
+      "Pas de census exhaustif : les références servent d’archétypes de décision.",
+      "Les familles industriel, classe M, sans-fil, wet/dry, puissant et compact gardent leurs propres pages spécialisées."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html","supports":"WD7 : rénovation wet/dry, 30 L, prise, vidange, performances publiées"},
+    {"ref":"S2","source":"https://www.bosch-professional.com/fr/fr/products/gas-18v-12-mc-06019K2000","supports":"GAS18V-12 MC : M mobile, capacité, Auto-Start, antistatique"},
+    {"ref":"S3","source":"https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html","supports":"NT30 : M, 30 L, Tact, surveillance, antistatique"},
+    {"ref":"S4","source":"https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf","supports":"VC4210MX : M gros volume et InfiniClean"},
+    {"ref":"S5","source":"https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0","supports":"AdvancedVac20 : atelier DIY, 20 L, wet/dry et démarrage outil"}
+  ],
+  "outline": [
+    {"question":"Quelles questions éliminent d’abord les mauvaises familles ?","evidence_refs":["S1","S2","S3","S4","S5"],"decision_value":"Place classe, déchet, mobilité et rythme avant les marques."},
+    {"question":"Quels cinq archétypes couvrent les décisions les plus fréquentes ?","evidence_refs":["S1","S2","S3","S4","S5"],"decision_value":"Donne des repères sans fabriquer de meilleur absolu."},
+    {"question":"Quel critère doit router vers quel comparatif spécialisé ?","evidence_refs":["S1","S2","S3","S4","S5"],"decision_value":"Réduit la cannibalisation et aide l’utilisateur à approfondir la bonne décision."},
+    {"question":"Quels achats apparemment logiques deviennent de mauvais choix ?","evidence_refs":["S1","S2","S3","S4","S5"],"decision_value":"Ajoute de la valeur éditoriale au-delà du tri de spécifications."},
+    {"question":"Pourquoi un score global est-il inadapté ?","evidence_refs":["S1","S2","S3","S4","S5"],"decision_value":"Empêche de compenser artificiellement classe, mobilité, capacité et performance."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"La requête générale reste une URL umbrella ; rôle clarifié comme routeur vers les sous-intentions au lieu de dupliquer les comparatifs spécialisés."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD principal : éviter d’acheter la mauvaise famille de machine avant même de choisir une marque ou un modèle."},
+    "seo-content-audit":{"status":"PASS","output":"DEEP_REWRITE appliqué ; le principe sans gagnant universel est conservé mais enrichi avec archétypes, mauvaises décisions et routage."},
+    "evidence-based-reviews":{"status":"PASS","output":"Cinq références actuelles vérifiées au niveau fabricant comme archétypes ; aucun jugement expérientiel non sourcé ajouté."},
+    "fact-check-pre":{"status":"PASS","output":"Classes, capacités, poids/fonctions, wet/dry et décolmatage vérifiés avant construction de l’orientation."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale : ordre de décision, quatre faux bons achats et frontières explicites vers six comparatifs spécialisés."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief umbrella construit autour des gates, cinq archétypes, critères de routage, erreurs d’achat et refus du score global."},
+    "content-and-copy":{"status":"PASS","output":"Réécriture persistée dans .content/comparisons/v2/meilleur-aspirateur-de-chantier.html."},
+    "fact-check-post":{"status":"PASS","output":"Les cinq profils et leurs limites ont été relus pour éviter toute assimilation d’un wet/dry à une machine M ou d’un gros volume à un choix universel."},
+    "humanizer":{"status":"PASS","output":"La page est passée d’un tableau d’orientation mince à un guide de décision avec exemples concrets de mauvais achats."},
+    "general-writing":{"status":"PASS","output":"Ordre de lecture simplifié : gates d’abord, archétypes ensuite, approfondissement spécialisé enfin."},
+    "anti-ai-slop":{"status":"PASS","output":"Architecture umbrella spécifique ; aucune répétition de la structure classe M, industriel, puissant ou sans-fil."},
+    "seo-onpage":{"status":"PASS","output":"Title/meta/H1 maintiennent la requête principale tout en explicitant ‘selon votre chantier’."},
+    "seo-technical":{"status":"PASS","output":"Canonical existant conservé et robots noindex, follow maintenu pendant validation."},
+    "internal-linking-audit":{"status":"PASS","output":"Handoffs intégrés vers classe M, sans-fil, eau/poussière, puissant, industriel et compact selon le critère dominant."},
+    "editorial-qa":{"status":"PASS","output":"Aucun score artificiel, aucune fausse expérience produit, limites et indépendance affiliation explicites."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Ordre métier validé : classe/risque avant performance, wet/dry séparé de sécurité, mobilité et volume traités comme compromis non compensatoires."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; rôle umbrella net et chevauchement avec pages spécialisées réduit par le routage."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
