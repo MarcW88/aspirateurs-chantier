@@ -1,0 +1,55 @@
+{
+  "contract_version": 2,
+  "slug": "makita",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur Makita en séparant d'abord la classe de poussière requise, puis l'alimentation cohérente avec le chantier et le parc batterie, puis seulement les fonctions de workflow comme AWS, Makpac, raccords et consommables.",
+  "value_without_affiliate_links": "La page aide à éviter plusieurs erreurs coûteuses : acheter sur la seule référence VC sans vérifier L/M/H, confondre XGT et LXT, croire qu'AWS implique un aspirateur sur batterie, payer une plateforme batterie sans tenir compte de l'autonomie réelle, ou découvrir trop tard les sacs/raccords compatibles. Cette valeur subsiste sans aucun lien marchand.",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent principal : brand hub de décision pour comprendre la matrice Makita classe de poussière × alimentation × intégration outil. Sous-intentions : VC filaires, LXT, XGT, AWS, Makpac, classe M, décolmatage, autonomie et consommables. Ce n'est ni un catalogue exhaustif ni une review d'un modèle unique."},
+    "content-audit": {"status": "PASS", "output": "DEEP_REWRITE confirmé. À préserver : distinction LXT/XGT, classe référence par référence, VC2512L, VC4210M, AWS/Makpac. À corriger : structure encore linéaire, statut des références peu hiérarchisé, coût batterie/consommables faible, manque de distinction entre classe, alimentation et connectivité."},
+    "content-refresh": {"status": "PASS", "output": "Actualisation avec documentation Makita France 2025/2026 : VC2512L, VC4210MX/LX, VC004GL, VC006GM, parc XGT actuel, adaptateur AWS WUT02/199773-1 et tableaux de sacs/consommables. Les références anciennes ou marché-spécifiques ne sont plus utilisées comme base de recommandation générale."},
+    "fact-check-pre": {"status": "PASS", "output": "Evidence brief construit avec sources Makita France et sources indépendantes. Claims vérifiés avant plan : classes L/M sur VC4210L/M, VC006GM classe M, rôle du VC004GL XGT, InfiniClean, AWS sur aspirateur filaire via adaptateur, Makpac, autonomie selon niveau d'aspiration et compatibilités de sacs/raccords."},
+    "evidence-based-reviews": {"status": "PASS", "output": "Les specs/classes restent Tier 1 fabricant. Les observations d'usage sont limitées aux tests tiers retenus : KlusVisie pour le compromis autonomie/ponçage du VC004GL et PortalNarzedzi pour le VC006GM. Les avis Coolblue servent uniquement comme signal secondaire sur raccords/manipulation, jamais comme preuve de classe ou performance normalisée."},
+    "affiliate-value": {"status": "PASS", "output": "Valeur originale définie autour de cinq décisions : classe avant plateforme ; filaire vs batterie ; LXT vs XGT ; AWS comme automatisation indépendante de l'alimentation ; coût total via batteries, filtres, sacs et raccords. La page doit rester utile sans CTA marchand."},
+    "content-brief-authoring": {"status": "PASS", "output": "Brief evidence-led en 7 sections : lire Makita comme matrice ; classe avant référence ; filaire vs LXT/XGT ; VC004GL vs VC006GM comme cas XGT ; AWS/Makpac ; consommables/raccords ; routage final par profil. Aucun squelette BRAND_HUB imposé."},
+    "content-and-copy": {"status": "PASS", "output": "Réécriture complète produite dans _generate_makita.py. Les références servent de points d'ancrage pour expliquer les décisions, pas de mini-reviews répétées. Le texte privilégie les conséquences pratiques : mobilité, coût batterie, maintien du débit, compatibilité outil et sécurité."},
+    "fact-check-post": {"status": "PASS", "output": "Contrôle post-draft : VC2512L classe L et 25 L brut/21 L poussière/18 L liquide ; VC4210M classe M, 42 L brut, InfiniClean, Makpac et AWS via adaptateur ; VC004GL XGT 15 L et autonomie fortement variable ; VC006GM XGT 80 V avec filtre classe M, 40 L et double filtre auto-nettoyant ; aucune classe déduite d'un HEPA ou d'une plateforme."},
+    "humanizer": {"status": "PASS", "output": "Passe de style : suppression du ton catalogue et des transitions génériques ; priorité aux erreurs de décision et aux arbitrages concrets ; vocabulaire technique conservé uniquement quand il change le choix."},
+    "general-writing": {"status": "PASS", "output": "Lisibilité renforcée avec ouvertures de section décisionnelles, tableaux seulement pour les croisements réellement complexes et limitation des listes de références au strict nécessaire."},
+    "anti-ai-slop": {"status": "PASS", "output": "Pas de FAQ automatique, pas de conclusion passe-partout, pas de superlatifs vagues, pas de symétrie forces/limites, pas de faux vécu et aucun paragraphe transposable tel quel à Kärcher/Festool/Nilfisk."},
+    "internal-linking-audit": {"status": "PASS", "output": "Liens conservés vers VC2512L/VC4210MX pour descendre au modèle, comparatifs sans-fil/classe M/professionnel pour élargir, guides décolmatage/prise asservie et usages atelier/bois lorsque la prochaine question le justifie."},
+    "seo-technical": {"status": "PASS", "output": "Canonical /marques/makita/ conservé, un seul H1, noindex, follow conservé, title/meta mis à jour, IDs de sections uniques et TOC aligné sur l'architecture réelle."},
+    "seo-best-practices": {"status": "PASS", "output": "Ciblage centré sur l'entité Makita et ses décisions de gamme. Les pages modèles gardent les détails unitaires ; les comparatifs gardent la confrontation inter-marques. La page marque explique le système et limite la cannibalisation."},
+    "editorial-qa": {"status": "PASS", "output": "QA final : chaque section change une décision, les limites de preuve sont explicites, l'autonomie est qualifiée par niveau de puissance, les tests tiers ne sont pas généralisés et aucune affirmation sécurité ne vient d'une simple caractéristique marketing."}
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {"status": "PASS", "output": "Contrôle métier réalisé sur classes L/M/H, HEPA vs classe, InfiniClean, AWS, prise asservie, batteries LXT/XGT, alimentation 2x40 V, cuves, sacs, filtres, raccords et autonomie. Aucun raccourci plateforme=classe ou AWS=sans-fil."},
+    "brand-analysis-publish-review": {"status": "PASS", "output": "PUBLISH_REVIEW : intention satisfaite, structure distincte du cluster, preuves reliées aux claims, limites visibles, valeur indépendante de l'affiliation et noindex conservé. PASS — READY_FOR_HUMAN_VALIDATION."}
+  },
+  "outline": [
+    {"id": "matrice-makita", "question": "Comment lire la gamme Makita sans se perdre dans les références ?", "evidence_refs": ["S1", "S2", "S4"], "decision_value": "Force l'ordre de décision classe -> alimentation -> workflow au lieu d'une lecture linéaire des modèles."},
+    {"id": "classe-avant-reference", "question": "Pourquoi la classe L/M/H doit-elle être fixée avant LXT, XGT ou AWS ?", "evidence_refs": ["S1", "S2", "S3", "S4"], "decision_value": "Évite de déduire une classe depuis un filtre HEPA, une batterie ou un nom de gamme."},
+    {"id": "lxt-xgt", "question": "Quand le filaire, LXT ou XGT est-il rationnel ?", "evidence_refs": ["S1", "S2", "S4", "S6"], "decision_value": "Met le coût de batteries et l'autonomie face à la mobilité, au lieu de traiter le sans-fil comme une montée en gamme automatique."},
+    {"id": "xgt-deux-logiques", "question": "Que montrent VC004GL et VC006GM sur la diversité XGT ?", "evidence_refs": ["S2", "S4", "S6"], "decision_value": "Montre que deux aspirateurs XGT peuvent viser des charges, capacités et classes différentes."},
+    {"id": "aws-makpac", "question": "Que changent réellement AWS et Makpac ?", "evidence_refs": ["S1", "S2", "S5"], "decision_value": "Sépare automatisation du démarrage, rangement et classe de poussière ; montre qu'un aspirateur filaire peut aussi rejoindre un workflow AWS."},
+    {"id": "consommables-raccords", "question": "Quels sacs, filtres et raccords conditionnent le coût et la compatibilité ?", "evidence_refs": ["S1", "S3", "S4", "S7"], "decision_value": "Fait vérifier le coût d'exploitation et le raccord à l'outil avant l'achat."},
+    {"id": "quel-makita", "question": "Quel point de départ Makita correspond au profil réel ?", "evidence_refs": ["S1", "S2", "S3", "S4", "S5", "S6"], "decision_value": "Transforme la recherche en routage vers filaire L, filaire M, XGT mobile ou XGT M sans inventer un classement universel."}
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "gamme aspiration, VC4210M, InfiniClean, AWS, raccords et consommables", "source": "https://www.makita.fr/data/pam/public/Content-Pages/Media/CatalogsAndBrochures/2023_leaflet_aspi_web.pdf"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "VC004GL, VC006GM, VC4210L/M, XGT et adaptateur AWS", "source": "https://www.makita.fr/data/pam/public/Content-Pages/Media/CatalogsAndBrochures/BROCHURE_PRODUIT/makita_leaflet_charpentier_couvreur_-_web.pdf"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "VC2512L et accessoires", "source": "https://www.makita.fr/data/sr/productinfo/generated/vc2512l_fiche_produit.pdf"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "parc XGT actuel et compatibilités de sacs", "source": "https://www.makita.fr/data/pam/public/content-pages/media/catalogsandbrochures/catalogs/tract_01_2025_vsp_bd.pdf"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "VC4210MX actuel et accessoires", "source": "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf"},
+    {"ref": "S6", "tier": 3, "status": "SUPPORTED", "claim_scope": "compromis autonomie et travail de ponçage XGT", "source": "https://www.klusvisie.nl/gereedschap/makitas-schurende-scheurijzers/19254/"},
+    {"ref": "S7", "tier": 3, "status": "SUPPORTED", "claim_scope": "retours secondaires VC4210M sur raccords et maniabilité", "source": "https://www.coolblue.be/fr/produit/816681/makita-vc4210m.html"}
+  ],
+  "residual_risks": [
+    "Le catalogue Makita varie selon marché et génération ; la page n'est pas exhaustive.",
+    "Les autonomies dépendent fortement de la puissance d'aspiration et des batteries utilisées.",
+    "Les suffixes de kit ne doivent pas être généralisés hors de la documentation du marché concerné.",
+    "Les tests tiers retenus ne justifient aucune généralisation à toutes les références Makita."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
