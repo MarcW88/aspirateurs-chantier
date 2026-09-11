@@ -13,6 +13,7 @@ on:
       - "_validate_comparatifs.py"
       - "_validate_comparison_rollout.py"
       - "_generate_comparison_content.py"
+      - "_materialize_comparison_v2.py"
       - "_generate_comparison_overrides.py"
       - "_generate_professional_comparison_override.py"
       - "_polish_comparison_rollout.py"
@@ -31,6 +32,7 @@ on:
       - "_validate_comparatifs.py"
       - "_validate_comparison_rollout.py"
       - "_generate_comparison_content.py"
+      - "_materialize_comparison_v2.py"
       - "_generate_comparison_overrides.py"
       - "_generate_professional_comparison_override.py"
       - "_polish_comparison_rollout.py"
@@ -57,6 +59,7 @@ jobs:
       - name: Compile comparison generators and validators
         run: |
           python -m py_compile _generate_comparison_content.py
+          python -m py_compile _materialize_comparison_v2.py
           python -m py_compile _generate_professional_comparison_override.py
           python -m py_compile _generate_comparison_overrides.py
           python -m py_compile _polish_comparison_rollout.py
