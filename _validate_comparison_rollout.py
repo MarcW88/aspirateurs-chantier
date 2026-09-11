@@ -98,7 +98,10 @@ for needle in ["sec au liquide", "vidange", "sac", "filtre", "wet/dry ne dit rie
 compact = text("petit-aspirateur-de-chantier")
 for needle in ["poids prêt à travailler", "dimensions d’emballage", "escaliers", "véhicule", "classe"]:
     check(needle in compact, f"compact: missing mobility marker {needle}")
-check("moins de 15 litres" not in compact and "< 15" not in compact, "compact: arbitrary litre threshold remains")
+# The page may mention the old threshold only to reject it. What is forbidden is
+# reintroducing it as a positive definition or selection rule.
+for forbidden in ["compact = moins de 15 litres", "compact : moins de 15 litres", "définition : moins de 15 litres", "< 15 l = compact"]:
+    check(forbidden not in compact, f"compact: arbitrary litre threshold reintroduced: {forbidden}")
 
 professional = text("aspirateur-professionnel")
 for needle in ["professionnel", "classe l", "classe m", "workflow", "consommables", "inrs"]:
