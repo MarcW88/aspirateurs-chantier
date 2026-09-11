@@ -1,0 +1,56 @@
+{
+  "contract_version": 2,
+  "slug": "mirka",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Choisir un extracteur Mirka en partant du workflow de ponçage et du niveau de captage attendu : DEXOS 1217 M AFC pour un poste mobile et compact, DEXOS 1230 M AFC pour davantage de capacité et d'organisation, puis vérifier le besoin réel d'AFC, de Bluetooth/myMirka, de télécommande et de workstation sans confondre ces fonctions avec la classe de poussière.",
+  "value_without_affiliate_links": "La page évite quatre erreurs d'achat : payer l'écosystème Mirka pour un besoin de nettoyage généraliste, confondre DEXOS 1217 et 1230 comme une hiérarchie de qualité alors qu'ils répondent surtout à des besoins de capacité et d'organisation, considérer la connectivité comme une preuve de meilleure extraction, ou supposer qu'une classe M couvre toutes les poussières dangereuses.",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent principal confirmé : comprendre les aspirateurs Mirka pour le ponçage et choisir entre DEXOS 1217/1230 dans l'écosystème DEROS/DEOS. Sous-intentions : classe M, AFC, sec/humide, Bluetooth/myMirka, télécommande, workstation, anciennes générations DE et limites hors finition."},
+    "content-audit": {"status": "PASS", "output": "LIGHT_UPDATE confirmé. La page actuelle possède déjà une structure spécifique à Mirka : ponçage d'abord -> génération DEXOS -> 1217 vs 1230 -> DEROS/DEOS -> workflow connecté -> limites. Elle n'est ni générique ni clonée des autres marques."},
+    "content-refresh": {"status": "PASS", "output": "Revalidation au 11/09/2026 des pages Mirka DEXOS 1217 et 1230, des pages nouvelle génération DEROS/DEOS et du support myMirka. Les fonctions structurantes utilisées dans la page restent actuelles : classe M, AFC, sec/humide, Bluetooth, application myMirka, accessoires de télécommande et workstation 1230."},
+    "fact-check-pre": {"status": "PASS", "output": "Brief ciblé sur les éléments qui changent la décision : DEXOS 1217 bien classe M, 17 L, sec/humide, 1200 W, 250 mbar, 2520 l/min, AFC, deux prises auto et Bluetooth ; DEXOS 1230 bien classe M, 30 L et sec/humide ; workstation liée au 1230 ; télécommande et myMirka à traiter comme fonctions de workflow."},
+    "evidence-based-reviews": {"status": "PASS", "output": "Les caractéristiques et compatibilités citées reposent sur des pages Mirka Tier 1. Aucun classement de performance inter-marques, aucune promesse de fiabilité et aucune conclusion de test terrain ne sont ajoutés sans preuve indépendante ; la page reste explicitement documentaire."},
+    "affiliate-value": {"status": "PASS", "output": "La valeur indépendante de l'affiliation vient du routage workflow de ponçage -> captage -> classe -> capacité -> ergonomie/connectivité, ainsi que de la mise en garde sur les situations où Mirka est surdimensionné. Aucun CTA marchand n'est nécessaire à cette valeur."},
+    "content-brief-authoring": {"status": "PASS", "output": "Le brief existant reste pertinent : Mirka comme système de ponçage sans poussière ; DEXOS comme génération actuelle ; arbitrage 1217/1230 ; intégration DEROS/DEOS ; Bluetooth/myMirka/workstation ; limites et alternatives. Aucune nouvelle architecture n'est nécessaire."},
+    "content-and-copy": {"status": "PASS", "output": "LIGHT_UPDATE : conservation du corps éditorial existant. Le texte est déjà centré sur les décisions utiles, évite les fiches produit répétitives et explicite pourquoi Mirka est plus cohérent pour le ponçage/finition que pour les gravats ou le nettoyage généraliste."},
+    "fact-check-post": {"status": "PASS", "output": "Contrôle post-audit : DEXOS 1217 toujours classe M, 17 L, sec/humide, moteur 1200 W, 250 mbar, 2520 l/min, AFC, deux prises auto et Bluetooth ; DEXOS 1230 toujours classe M, 30 L, sec/humide et compatible workstation ; myMirka et les fonctions Bluetooth restent documentées par Mirka."},
+    "humanizer": {"status": "PASS", "output": "Le texte reste ancré dans des situations concrètes de finition : mobilité, vidage, longueur/raccord du flexible, ponceuse utilisée, fréquence du ponçage et organisation du poste. Pas de storytelling promotionnel ni de vocabulaire de marque non contextualisé."},
+    "general-writing": {"status": "PASS", "output": "La progression reste courte et lisible : système de ponçage -> génération DEXOS -> comparaison 1217/1230 -> outils -> workflow connecté -> limites. Le tableau unique sert un arbitrage clair sans répétition de modules."},
+    "anti-ai-slop": {"status": "PASS", "output": "Pas de FAQ automatique, pas de bloc avantages/inconvénients générique, pas de conclusion creuse, pas de faux test, pas de répétition mécanique des autres marques et pas de sur-promesse sur la connectivité."},
+    "internal-linking-audit": {"status": "PASS", "output": "Le maillage actuel mène vers usage ponceuse, classe M, professionnel, décolmatage automatique, classes L/M/H, adaptateurs outil, Festool, bois/sciure et débit d'air. Ces liens correspondent aux prochaines décisions du lecteur."},
+    "seo-technical": {"status": "PASS", "output": "Canonical /marques/mirka/ conservé, un seul H1, IDs et sommaire cohérents, title/meta spécifiques et noindex, follow maintenu pendant la recovery."},
+    "seo-best-practices": {"status": "PASS", "output": "Le ciblage reste centré sur Mirka + DEXOS 1217/1230 + AFC + ponçage + DEROS/DEOS + myMirka sans cannibaliser le comparatif classe M, l'usage ponceuse ou le guide décolmatage."},
+    "editorial-qa": {"status": "PASS", "output": "QA final : aucune extrapolation classe M -> toutes poussières dangereuses, aucune comparaison de performance inventée, aucune confusion connectivité -> meilleure aspiration, distinction claire entre génération DEXOS et anciens DE, et limites hors finition visibles."}
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {"status": "PASS", "output": "Contrôle métier sur classe M, AFC, sec/humide, débit/dépression constructeur, raccordement de ponceuse, colmatage, captage à la source, utilisation avec outils et limites face aux poussières relevant d'autres classes. Aucun raccourci classe M=universel."},
+    "brand-analysis-publish-review": {"status": "PASS", "output": "PUBLISH_REVIEW : LIGHT_UPDATE satisfait sans réécriture artificielle ; structure spécifique au ponçage Mirka préservée, preuves officielles revalidées, limites visibles, valeur indépendante de l'affiliation et noindex conservé. PASS — READY_FOR_HUMAN_VALIDATION."}
+  },
+  "outline": [
+    {"id": "poncage-dabord", "question": "Quand Mirka a-t-il du sens comme système de ponçage plutôt que comme aspirateur généraliste ?", "evidence_refs": ["S3", "S6"], "decision_value": "Évite de payer un écosystème spécialisé pour un besoin de nettoyage ou de gravats."},
+    {"id": "dexos", "question": "Pourquoi DEXOS doit-il désormais être le point de départ de la lecture Mirka ?", "evidence_refs": ["S1", "S2", "S7"], "decision_value": "Distingue la génération actuelle des anciens DE encore visibles en ligne."},
+    {"id": "1217-1230", "question": "Faut-il choisir DEXOS 1217 ou 1230 ?", "evidence_refs": ["S1", "S2", "S5"], "decision_value": "Fait arbitrer mobilité/17 L contre capacité/30 L et organisation du poste plutôt que qualité ou classe."},
+    {"id": "deros-deos", "question": "Pourquoi les ponceuses DEROS/DEOS changent-elles la valeur de l'extracteur ?", "evidence_refs": ["S3", "S6"], "decision_value": "Relie l'achat au captage à la source et au workflow de finition réel."},
+    {"id": "workflow", "question": "Bluetooth, myMirka, télécommande et workstation apportent-ils une vraie valeur ?", "evidence_refs": ["S4", "S5", "S8"], "decision_value": "Distingue fonctions d'organisation et de contrôle de la performance d'extraction elle-même."},
+    {"id": "limites", "question": "Quand faut-il regarder une autre marque ?", "evidence_refs": ["S1", "S2", "S7"], "decision_value": "Rend visibles les limites de la spécialisation Mirka hors ponçage, classe M et environnement premium."}
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "DEXOS 1217 M AFC : classe M, 17 L, sec/humide, 1200 W, 250 mbar, 2520 l/min, AFC, Bluetooth/myMirka et deux prises avec démarrage automatique", "source": "https://www.mirka.com/fr-fr/p/Mirka-DEXOS-1217-M-AFC-with-Hose-Sleeve-4m-M?variant=34856"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "DEXOS 1230 M AFC : classe M, réservoir 30 L et utilisation à sec/humide", "source": "https://www.mirka.com/fr-fr/p/Mirka-DEXOS-1230-M-AFC-M/"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "Positionnement DEXOS dans la nouvelle génération d'outils Mirka et association au ponçage sans poussière avec DEROS II/DEOS II", "source": "https://www.mirka.com/fr-fr/produits/top-brands/outil-electroportatif-mirka-nouvelle-generation/"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "Connectivité Bluetooth DEXOS vers l'application myMirka", "source": "https://www.mirka.com/fr-fr/support/centre-aide/faq/assistance-outils/extracteurs-de-poussiere/troubleshooting-DEXOS/comment-connecter-mon-extracteur-de-poussiere-mirka-dexos-par-bluetooth-a-lapplication-mymirka/"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "DEXOS 1230 Workstation : rangement d'outils et abrasifs, fixation directe à l'extracteur et accès au sac sans démontage", "source": "https://www.mirka.com/fr-fr/produits/top-brands/extracteur-de-poussiere-mirka-dexos/"},
+    {"ref": "S6", "tier": 1, "status": "VERIFIED", "claim_scope": "DEOS II et la logique de ponçage sans poussière avec raccordement à un extracteur Mirka", "source": "https://www.mirka.com/fr-fr/entreprise/actualites/mirka-deos-ii--nouveau-design-pour-la-ponceuse-mirka-deos/"},
+    {"ref": "S7", "tier": 1, "status": "VERIFIED", "claim_scope": "Gamme actuelle d'outils Mirka mettant en avant DEROS II, DEOS II, DEROS RS et DEXOS classe M", "source": "https://www.mirka.com/fr-fr/produits/outils-electroportatifs/"},
+    {"ref": "S8", "tier": 1, "status": "VERIFIED", "claim_scope": "Télécommande DEXOS Bluetooth documentée comme accessoire compatible DEXOS 1217 ; son rôle est le contrôle de l'extracteur, pas la classe ou la filtration", "source": "https://www.mirka.com/en/p/Mirka-DEXOS-Remote-Control/"}
+  ],
+  "residual_risks": [
+    "Les obligations de classe M dépendent de la poussière et du contexte réglementaire ; la page ne remplace pas une évaluation de prévention.",
+    "Les spécifications chiffrées sont des données constructeur et non des mesures indépendantes réalisées par le site.",
+    "La connectivité myMirka et les fonctions Bluetooth peuvent dépendre du pays, de la version d'application et du produit exact.",
+    "Les anciennes références DE restent présentes dans certains catalogues et accessoires ; vérifier la génération exacte avant achat de consommables.",
+    "La valeur de Mirka dépend fortement d'un workflow de ponçage/finition ; elle peut être faible pour gravats, gros nettoyage généraliste ou besoins de classe H."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
