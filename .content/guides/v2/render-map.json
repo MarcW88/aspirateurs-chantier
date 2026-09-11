@@ -1,10 +1,62 @@
 {
+  "comment-choisir-aspirateur-de-chantier": {
+    "title": "Comment choisir un aspirateur de chantier ? Le cahier des charges avant les modèles",
+    "description": "Choisir un aspirateur de chantier : poussière, classe, captage, débit, dépression, décolmatage, raccord outil, cuve et mobilité, dans le bon ordre.",
+    "h1": "Comment choisir un aspirateur de chantier ? Le cahier des charges avant les modèles",
+    "lead": "Le bon choix commence par ce que vous aspirez et comment vous travaillez, pas par les watts ni par une liste de modèles.",
+    "answer": "Pour choisir un aspirateur de chantier, commencez par les critères éliminatoires : nature et risque de la poussière, aptitude eau/poussière si nécessaire et compatibilité avec le travail prévu. Définissez ensuite le captage à la source, le débit et la dépression utiles, la gestion du filtre, la connexion à l’outil, puis seulement la capacité, la mobilité et le coût des consommables.",
+    "toc": [
+      ["cahier", "Commencer par le chantier, pas par la fiche produit"],
+      ["eliminatoires", "Les critères qui éliminent une machine"],
+      ["captage", "Penser d’abord au captage à la source"],
+      ["performance", "Lire débit, dépression et watts sans les confondre"],
+      ["workflow", "Filtre, décolmatage et connexion à l’outil"],
+      ["logistique", "Cuve, mobilité et consommables"],
+      ["routing", "Vers quel guide ou comparatif continuer ?"],
+      ["erreurs", "Les erreurs qui faussent le choix"],
+      ["sources", "Sources"]
+    ]
+  },
+  "decolmatage-automatique": {
+    "title": "Décolmatage d’un aspirateur : automatique, semi-automatique ou manuel ?",
+    "description": "Décolmatage des aspirateurs de chantier : pourquoi le filtre se colmate, différences de mécanisme, intérêt réel, limites et critères de comparaison.",
+    "h1": "Décolmatage d’un aspirateur : automatique, semi-automatique ou manuel ?",
+    "lead": "Le décolmatage vise surtout à maintenir le passage d’air quand le filtre se charge. Tous les systèmes ne fonctionnent pas de la même façon.",
+    "answer": "Le décolmatage retire périodiquement une partie de la poussière déposée sur le filtre afin de limiter l’augmentation de résistance et la chute de débit. Il peut être manuel, semi-automatique ou automatique selon la machine. Son intérêt est maximal avec des poussières fines produites longtemps, mais il ne remplace ni une classe adaptée, ni le bon sac, ni l’entretien du filtre.",
+    "toc": [
+      ["probleme", "Ce que le colmatage change réellement"],
+      ["mecanismes", "Manuel, semi-auto, automatique : ne pas tout mélanger"],
+      ["continu", "Quand le maintien du débit devient critique"],
+      ["limites", "Ce que le décolmatage ne corrige pas"],
+      ["compare", "Comment comparer deux systèmes"],
+      ["rentabilite", "Quand le surcoût apporte une vraie valeur"],
+      ["entretien", "Pourquoi l’entretien reste nécessaire"],
+      ["sources", "Sources"]
+    ]
+  },
+  "prise-asservie": {
+    "title": "Prise asservie d’un aspirateur : fonctionnement, limites et alternatives sans fil",
+    "description": "Prise asservie : démarrage avec un outil filaire, puissance admissible, Bluetooth/télécommande pour le sans-fil, raccordement et checklist de compatibilité.",
+    "h1": "Prise asservie d’un aspirateur : fonctionnement, limites et alternatives sans fil",
+    "lead": "Une prise outil peut synchroniser l’aspiration avec un outil filaire. Pour les outils batterie, le déclenchement relève d’autres systèmes et compatibilités.",
+    "answer": "Une prise asservie détecte la consommation d’un outil filaire branché sur l’aspirateur et déclenche automatiquement l’aspiration. La puissance admissible dépend de la référence exacte et doit être vérifiée dans la notice. Avec un outil sur batterie, il faut une autre solution — télécommande, Bluetooth ou système propriétaire compatible — et ces modes de déclenchement ne sont pas interchangeables.",
+    "toc": [
+      ["choix-systeme", "Prise, télécommande ou déclenchement sans fil ?"],
+      ["filaire", "Comment fonctionne la prise asservie"],
+      ["limite", "La puissance admissible est spécifique au modèle"],
+      ["sansfil", "Ce qui change avec les outils sur batterie"],
+      ["raccord", "Le raccord aspiration compte autant que la commande"],
+      ["checklist", "Checklist de compatibilité"],
+      ["pertinence", "Quand en faire un critère d’achat"],
+      ["sources", "Sources"]
+    ]
+  },
   "puissance-aspiration": {
     "title": "Puissance d’un aspirateur de chantier : que signifient vraiment les watts ?",
     "description": "Watts, puissance moteur et aspiration : ce que la puissance électrique permet de conclure, ce qu’elle ne dit pas, et comment lire une fiche technique.",
     "h1": "Puissance d’un aspirateur de chantier : que signifient vraiment les watts ?",
     "lead": "Les watts indiquent d’abord une puissance électrique. Ils ne suffisent pas à classer la capacité d’aspiration d’un aspirateur de chantier.",
-    "answer": "Les watts indiqués sur un aspirateur de chantier décrivent principalement sa puissance électrique absorbée, pas une « force d’aspiration » directement comparable entre machines. Pour juger le système, il faut séparer puissance absorbée, débit d’air, dépression, point de mesure et comportement lorsque le filtre, le flexible et l’outil ajoutent des pertes de charge.",
+    "answer": "Les watts indiqués sur un aspirateur de chantier décrivent principalement sa puissance électrique absorbée, pas une force d’aspiration directement comparable entre machines. Pour juger le système, il faut séparer puissance absorbée, débit d’air, dépression, point de mesure et comportement lorsque le filtre, le flexible et l’outil ajoutent des pertes de charge.",
     "toc": [
       ["vocabulaire", "Le mot puissance recouvre plusieurs données"],
       ["watts", "Ce que les watts permettent de conclure"],
@@ -47,6 +99,74 @@
       ["pertes", "Ce qui fait chuter le débit pendant le chantier"],
       ["diagnostic", "Diagnostiquer une perte de débit"],
       ["choix", "Utiliser le débit sans chercher un seuil magique"],
+      ["sources", "Sources"]
+    ]
+  },
+  "capacite-cuve": {
+    "title": "Capacité de cuve : combien de litres faut-il vraiment ?",
+    "description": "Capacité brute, nette et eau d’un aspirateur de chantier : dimensionner la cuve selon déchets, poids, fréquence de vidage et mobilité.",
+    "h1": "Capacité de cuve : combien de litres faut-il vraiment ?",
+    "lead": "Une grande cuve espace les vidages, mais le volume brut n’est pas le volume utile et le poids plein peut devenir la vraie limite.",
+    "answer": "La bonne capacité est celle qui permet de travailler jusqu’au prochain vidage raisonnable sans rendre l’appareil trop encombrant ou trop lourd. Distinguez toujours capacité brute, volume net de poussière et volume d’eau : le filtre, le sac et le dispositif d’arrêt des liquides réduisent l’espace réellement disponible.",
+    "toc": [
+      ["volumes", "Brut, net, poussière et eau : quatre notions à séparer"],
+      ["poids", "Le volume n’est utile que si vous pouvez encore déplacer la cuve"],
+      ["dechets", "Copeaux, poussières fines et gravats ne remplissent pas pareil"],
+      ["eau", "Le volume utile change en aspiration de liquides"],
+      ["configuration", "Sac, filtre et décolmatage font partie du volume réel"],
+      ["dimensionnement", "Dimensionner par fréquence de vidage"],
+      ["sources", "Sources"]
+    ]
+  },
+  "filtre-hepa-aspirateur": {
+    "title": "Filtre HEPA sur un aspirateur : H13, H14 et différence avec la classe H",
+    "description": "HEPA H13/H14, EN 1822, efficacité et pénétration, différence avec la classe H d’un aspirateur et vérifications avant achat ou remplacement.",
+    "h1": "Filtre HEPA sur un aspirateur : H13, H14 et différence avec la classe H",
+    "lead": "H13/H14 décrivent un filtre. La classe H décrit un aspirateur destiné à certaines poussières dangereuses : les deux classifications ne sont pas synonymes.",
+    "answer": "Un filtre H13 ou H14 relève de la classification HEPA selon EN 1822. H13 atteint au moins 99,95 % d’efficacité intégrale à la MPPS et H14 au moins 99,995 %, soit une pénétration dix fois plus faible. Cela ne transforme pas automatiquement l’appareil en aspirateur de classe H : la certification et l’étanchéité du système complet restent distinctes.",
+    "toc": [
+      ["hepa", "Ce que le terme HEPA décrit réellement"],
+      ["h13h14", "H13 et H14 : lire efficacité et pénétration"],
+      ["systeme", "Un bon filtre ne suffit pas si le système fuit"],
+      ["classeh", "Pourquoi HEPA H13/H14 n’est pas la classe H"],
+      ["amiante", "L’amiante montre pourquoi les deux notions doivent coexister"],
+      ["achat", "Que vérifier avant achat ou remplacement"],
+      ["entretien", "Montage et entretien du filtre"],
+      ["sources", "Sources"]
+    ]
+  },
+  "sac-ou-sans-sac": {
+    "title": "Aspirateur de chantier avec ou sans sac : choisir selon le déchet et le vidage",
+    "description": "Avec ou sans sac : poussières fines, déchets grossiers, liquides, classes de poussières, colmatage, vidage et coût réel des consommables.",
+    "h1": "Aspirateur de chantier avec ou sans sac : choisir selon le déchet et le vidage",
+    "lead": "Le sac n’est pas qu’un coût : il change le colmatage, la propreté du vidage et parfois la configuration de sécurité prévue par la machine.",
+    "answer": "Avec des poussières fines, un sac compatible peut protéger le filtre principal et surtout réduire la remise en suspension au vidage. Sans sac, la collecte peut être pratique pour certains déchets grossiers ou pour l’eau lorsque la notice le prévoit. Pour des poussières dangereuses, la configuration de collecte prévue par l’appareil et les prescriptions applicables priment sur l’économie de consommables.",
+    "toc": [
+      ["decision", "La bonne question n’est pas seulement le prix du sac"],
+      ["fines", "Poussières fines : protéger le filtre et le vidage"],
+      ["grossier", "Déchets grossiers et liquides : quand le sans-sac a du sens"],
+      ["danger", "Poussières dangereuses : la collecte fait partie du système"],
+      ["cout", "Calculer le coût total plutôt que le prix du paquet"],
+      ["strategie", "Alterner les configurations sans dégrader la machine"],
+      ["checklist", "Checklist avant de choisir"],
+      ["sources", "Sources"]
+    ]
+  },
+  "entretien-aspirateur-chantier": {
+    "title": "Entretenir un aspirateur de chantier : filtre, cuve, flexible et stockage",
+    "description": "Entretien d’un aspirateur de chantier : contrôles après usage, perte de débit, filtre, aspiration d’eau, joints, flexible, stockage et poussières dangereuses.",
+    "h1": "Entretenir un aspirateur de chantier : filtre, cuve, flexible et stockage",
+    "lead": "L’entretien utile consiste surtout à préserver le circuit d’air, l’étanchéité et les dispositifs de sécurité sans appliquer une méthode de nettoyage non prévue par le fabricant.",
+    "answer": "Après usage, contrôlez le sac ou la cuve, le filtre, le flexible et les raccords ; après aspiration d’eau, videz et séchez selon la notice. Si le débit chute, cherchez d’abord un sac plein, un filtre chargé, un bouchon ou une fuite. Ne lavez, ne soufflez ou ne brossez jamais un filtre si cette méthode n’est pas explicitement autorisée, et traitez la maintenance de poussières dangereuses comme une opération à risque.",
+    "toc": [
+      ["apres", "Après chaque chantier : les contrôles courts"],
+      ["debit", "Si l’aspiration baisse, chercher la cause avant le moteur"],
+      ["filtre", "Nettoyer ou remplacer le filtre sans l’endommager"],
+      ["eau", "Après aspiration d’eau"],
+      ["etancheite", "Flexible, raccords, joints et cuve"],
+      ["stockage", "Avant stockage ou longue pause"],
+      ["dangereux", "Poussières dangereuses : maintenance à part"],
+      ["rythme", "Adapter le rythme d’entretien à l’usage"],
       ["sources", "Sources"]
     ]
   }
