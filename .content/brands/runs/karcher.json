@@ -1,0 +1,148 @@
+{
+  "contract_version": 2,
+  "slug": "karcher",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Déterminer d'abord si le besoin relève de WD Home & Garden ou de NT Professional, puis choisir l'architecture de filtre/classe, le volume et les consommables adaptés sans confondre puissance brute, classe de poussière, ACD et ATEX.",
+  "value_without_affiliate_links": "La page permet de choisir la bonne famille Kärcher, d'éviter plusieurs erreurs coûteuses ou risquées (WD pris pour un aspirateur de sécurité, H choisi par surclassement, ACD assimilé à Zone 22, 50 L choisi pour une aspiration supposée supérieure), et d'anticiper filtres, sacs et raccords avant tout achat. Cette valeur subsiste intégralement sans lien marchand.",
+  "shared_steps": {
+    "search-intent": {
+      "status": "PASS",
+      "output": "Intent principal identifié comme brand hub de décision : comprendre la gamme Kärcher pour choisir le bon univers et la bonne technologie, avec sous-intentions WD vs NT, professionnel, classe M/H, Tact, ACD, volume de cuve et compatibilité consommables. L'intention n'est pas une review d'un modèle unique ni un simple catalogue de références."
+    },
+    "content-audit": {
+      "status": "PASS",
+      "output": "Verdict DEEP_REWRITE confirmé depuis le cluster audit. À conserver : distinction WD/NT, Tact/ACD, hiérarchie classe avant puissance, liens vers WD5/WD6/NT30. À supprimer/corriger : profondeur uniforme de 2 paragraphes par section, raccourci NT=pro sans architecture Ap/Tact/Safety, manque de consommables, manque de preuves indépendantes et absence de distinction explicite ACD vs Zone 22."
+    },
+    "content-refresh": {
+      "status": "PASS",
+      "output": "Actualisation 2026 effectuée sur le sélecteur WD, WD 7 Control, architecture NT Professional, gamme Safety, NT 30/1 et 50/1 Tact Te M ACD, sacs/filtres compatibles et sources INRS actuelles. Les anciennes généralisations de gamme ont été remplacées par des références et familles actuellement documentées."
+    },
+    "fact-check-pre": {
+      "status": "PASS",
+      "output": "Evidence brief construit avec 12 sources nommées : 8 sources primaires Kärcher, 2 sources INRS et 2 tests indépendants WD6. Claims vérifiés avant plan : segmentation WD, architecture NT, fonctionnement Tact M/H, caractéristiques NT30/NT50, ACD, exigences amiante, consommables et limites des preuves indépendantes."
+    },
+    "evidence-based-reviews": {
+      "status": "PASS",
+      "output": "Niveau de preuve séparé par claim. Tier 1 utilisé pour specs/classes/compatibilités. Tier 3 retenu pour les observations d'usage WD6 (Ideal Home, Homes & Gardens) et pour l'étude INRS sur l'évolution du débit/colmatage. Les tests peu traçables du NT trouvés en recherche n'ont pas été utilisés comme preuve éditoriale. Aucun langage de test maison n'est autorisé."
+    },
+    "affiliate-value": {
+      "status": "PASS",
+      "output": "Valeur originale définie autour de cinq erreurs de décision à éviter : WD vs NT, Ap vs Tact vs Safety, classe M/H vs filtre, ACD vs Zone 22, volume 30/50 L vs aspiration. La page ajoute également une lecture du coût de consommables et du raccordement, absente d'une fiche produit isolée."
+    },
+    "content-brief-authoring": {
+      "status": "PASS",
+      "output": "Brief construit après les preuves avec 7 sections décisionnelles : WD vs NT ; architecture NT ; Tact/M-H/ACD ; 30/40/50 L ; consommables ; preuves indépendantes ; routage final par situation. Aucun nombre de sections n'a été imposé par le type BRAND_HUB."
+    },
+    "content-and-copy": {
+      "status": "PASS",
+      "output": "Réécriture complète produite dans _generate_karcher.py. Le corps explique les mécanismes et arbitrages au lieu d'aligner forces/limites. Les modèles servent de preuves et points de repère, sans transformer la page marque en huit mini-reviews."
+    },
+    "fact-check-post": {
+      "status": "PASS",
+      "output": "Contrôle post-draft : WD7 30 L/80 l/s/290 mbar et détection de vibrations vérifiés ; NT30 M ACD 74 l/s, 273 mbar, 30 L, 14,2 kg vérifiés ; NT50 M ACD 74 l/s, 273 mbar, 50 L, 19 kg vérifiés ; ACD qualifié sans équivalence ATEX ; exigences amiante limitées au cadre INRS ; observations WD6 attribuées aux tests tiers."
+    },
+    "humanizer": {
+      "status": "PASS",
+      "output": "Passe de style appliquée : suppression des transitions génériques de type 'points forts/points faibles', variation du rythme des paragraphes, conservation du vocabulaire technique nécessaire et formulation des arbitrages en conséquences concrètes pour le lecteur."
+    },
+    "general-writing": {
+      "status": "PASS",
+      "output": "Lisibilité renforcée par phrases de décision en ouverture de section, tableaux uniquement pour les choix multicritères et suppression des répétitions de rappels L/M/H lorsqu'un lien vers le guide spécialisé suffit."
+    },
+    "anti-ai-slop": {
+      "status": "PASS",
+      "output": "Revue anti-patterns effectuée : pas de conclusion automatique, pas de FAQ artificielle, pas de superlatifs vagues, pas de 'dans le monde de', pas de symétrie forces/limites, pas de faux vécu, pas de paragraphes passe-partout réutilisables tels quels sur Makita/Festool/Parkside."
+    },
+    "internal-linking-audit": {
+      "status": "PASS",
+      "output": "Liens internes retenus uniquement quand ils répondent à la question suivante : WD5/WD6 pour descendre au modèle, comparatif eau/poussière pour l'univers WD, classe M et guide L/M/H pour la sécurité, décolmatage/prise asservie pour les mécanismes, usage ponceuse pour le captage à la source."
+    },
+    "seo-technical": {
+      "status": "PASS",
+      "output": "Canonical conservé sur /marques/karcher/, un seul H1, meta robots noindex, follow conservée, title/meta mis à jour, IDs de sections uniques, TOC aligné sur le nouveau plan et aucun changement de routing."
+    },
+    "seo-best-practices": {
+      "status": "PASS",
+      "output": "Le ciblage reste centré sur l'entité Kärcher et les décisions de gamme plutôt que sur la répétition de 'aspirateur de chantier'. Les sous-intentions WD/NT/Tact/classe M sont traitées contextuellement sans créer de cannibalisation volontaire avec les pages modèles et comparatifs."
+    },
+    "editorial-qa": {
+      "status": "PASS",
+      "output": "QA final : chaque section répond à une question réelle, les limites de preuve sont visibles, les sources indépendantes ne sont pas extrapolées, la page conserve une utilité sans affiliation et aucune affirmation de sécurité ne repose sur une simple inférence de puissance ou de filtre."
+    }
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {
+      "status": "PASS",
+      "output": "Contrôle métier réalisé sur classes M/H, filtre vs classe, débit/dépression, Tact, ACD vs Zone 22, prise outil, antistatique, cuve 30/50 L, sacs/filtres et cadre amiante. Aucun claim de classe n'est déduit d'une puissance ou d'un filtre HEPA."
+    },
+    "brand-analysis-publish-review": {
+      "status": "PASS",
+      "output": "PUBLISH_REVIEW : l'intention est satisfaite, la structure est distincte du cluster, les claims matériels sont reliés à des preuves, le niveau de preuve est honnête et la page reste utile sans affiliation. PASS — READY_FOR_HUMAN_VALIDATION ; noindex à conserver jusqu'à validation humaine et instruction explicite d'indexer."
+    }
+  },
+  "outline": [
+    {
+      "id": "wd-vs-nt",
+      "question": "Mon besoin relève-t-il d'un WD Home & Garden ou d'un NT Professional ?",
+      "evidence_refs": ["S1", "S2", "S3"],
+      "decision_value": "Évite de choisir une machine sur le débit ou le prix avant d'avoir identifié la famille et le niveau d'usage."
+    },
+    {
+      "id": "nt-architecture",
+      "question": "Si je pars sur un NT, ai-je besoin de Standard/Classic, Ap, Tact ou Safety ?",
+      "evidence_refs": ["S3", "S4"],
+      "decision_value": "Relie la quantité/type de poussière et la fréquence de colmatage à l'architecture de filtre adaptée."
+    },
+    {
+      "id": "tact-acd",
+      "question": "Que changent réellement Tact, les classes M/H et ACD ?",
+      "evidence_refs": ["S3", "S4", "S5", "S6", "S9", "S10"],
+      "decision_value": "Sépare productivité, classe de poussière, poussières combustibles et atmosphère explosive afin d'éviter des raccourcis de sécurité."
+    },
+    {
+      "id": "30-40-50",
+      "question": "Faut-il choisir 30, 40 ou 50 litres ?",
+      "evidence_refs": ["S5", "S6"],
+      "decision_value": "Montre que 30 et 50 L peuvent partager les mêmes maxima d'aspiration et que le vrai arbitrage est volume contre mobilité."
+    },
+    {
+      "id": "consommables",
+      "question": "Quels sacs, filtres et raccords conditionnent le coût réel et la compatibilité ?",
+      "evidence_refs": ["S7", "S8", "S4"],
+      "decision_value": "Fait vérifier l'écosystème consommables avant l'achat plutôt qu'après le premier filtre ou sac à remplacer."
+    },
+    {
+      "id": "preuves-independantes",
+      "question": "Qu'apportent les preuves indépendantes par rapport aux fiches Kärcher ?",
+      "evidence_refs": ["S9", "S11", "S12"],
+      "decision_value": "Ajoute des contraintes d'usage et une lecture du maintien des performances tout en conservant les limites d'extrapolation."
+    },
+    {
+      "id": "quel-karcher",
+      "question": "Quel point de départ Kärcher correspond à mon chantier ?",
+      "evidence_refs": ["S1", "S3", "S4", "S5", "S6", "S10"],
+      "decision_value": "Transforme le research en routage final vers WD, NT Ap/Tact, M/H ou une référence dédiée Zone 22."
+    }
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "segmentation usage WD", "source": "https://www.kaercher.com/fr/home-garden/comment-choisir-son-aspirateur-eau-et-poussieres-wd.html"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "WD7 Control, télécommande/vibrations, caractéristiques", "source": "https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "architecture NT, Ap/Tact, comportement Tact M/H", "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres.html"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "gamme sécurité M/H, ACD, référence Zone 22", "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite.html"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "NT30 M ACD specs et équipement", "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html"},
+    {"ref": "S6", "tier": 1, "status": "VERIFIED", "claim_scope": "NT50 M ACD specs et équipement", "source": "https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-50-1-tact-te-m-acd-11484350.html"},
+    {"ref": "S7", "tier": 1, "status": "VERIFIED", "claim_scope": "compatibilité sacs rénovation WD 4-7", "source": "https://www.kaercher.com/fr/accessoires/sachet-filtre-ouate-renovation-wd-kwd-4-5-6-kfi-489-paquet-de-4-28633550.html"},
+    {"ref": "S8", "tier": 1, "status": "VERIFIED", "claim_scope": "compatibilité sacs NT30", "source": "https://www.kaercher.com/fr/accessoires/sacs-filtrants-non-tisses-5-piece-s-nt-30-1-28891540.html"},
+    {"ref": "S9", "tier": 3, "status": "SUPPORTED", "claim_scope": "évolution du débit et colmatage M/H", "source": "https://www.inrs.fr/inrs/recherche/etudes-publications-communications/doc/communication.html?refINRS=NOETUDE%2FC2026-013"},
+    {"ref": "S10", "tier": 3, "status": "SUPPORTED", "claim_scope": "exigences aspirateur amiante en France", "source": "https://www.inrs.fr/risques/amiante/prevention-risque-amiante.html"},
+    {"ref": "S11", "tier": 3, "status": "SUPPORTED", "claim_scope": "usage réel WD6, encombrement et polyvalence", "source": "https://www.idealhome.co.uk/buying-guide-reviews/karcher-wd-6-p-premium-wet-and-dry-vacuum-cleaner-review-304161"},
+    {"ref": "S12", "tier": 3, "status": "SUPPORTED", "claim_scope": "usage réel WD6, filtre et limites de tête de sol", "source": "https://www.homesandgardens.com/solved/karcher-wd-6-p-vacuum-review"}
+  ],
+  "residual_risks": [
+    "Les gammes et références Kärcher peuvent évoluer ; vérifier la disponibilité au moment d'une future mise à jour.",
+    "Les observations des tests WD6 ne sont pas extrapolables aux NT ni automatiquement au WD7.",
+    "La page ne remplace pas une évaluation de risque professionnelle pour poussières dangereuses, amiante ou atmosphères explosives."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
