@@ -1,0 +1,111 @@
+{
+  "contract_version": 2,
+  "slug": "bosch-gas-35-m-afc",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {
+      "status": "PASS",
+      "output": "Intent narrowed to an exact-reference decision: whether GAS 35 M AFC is the right Bosch corded M-class choice versus GAS 35 L AFC or GAS 55 M AFC."
+    },
+    "content-audit": {
+      "status": "PASS",
+      "output": "Existing page audited as DEEP_REWRITE: facts were mostly sound but the editorial structure was cloned and weaker than adjacent comparison/brand pages."
+    },
+    "content-refresh": {
+      "status": "PASS",
+      "output": "Preserved verified model facts and rebuilt the editorial body around model-specific decisions rather than the legacy specs / best-for / limits template."
+    },
+    "fact-check-pre": {
+      "status": "PASS",
+      "output": "Primary Bosch pages rechecked for GAS 35 M AFC, GAS 35 L AFC and GAS 55 M AFC; turbine metrics, capacities, weights, classes, AFC and filter area were reconciled before drafting."
+    },
+    "evidence-based-reviews": {
+      "status": "N/A",
+      "reason": "Final draft is documentary and deliberately avoids subjective claims about quality, reliability, noise, ergonomics, manoeuvrability or measured AFC performance."
+    },
+    "affiliate-value": {
+      "status": "PASS",
+      "output": "Affiliate-independent value comes from explaining that 35 M and 35 L share the same published extraction figures, and that 35 M versus 55 M is chiefly a capacity/mass trade-off."
+    },
+    "content-brief-authoring": {
+      "status": "PASS",
+      "output": "Evidence-first brief persisted at .content/models/briefs/bosch-gas-35-m-afc-2026-09-11.md with E1-E6 evidence refs and five decision-led outline questions."
+    },
+    "content-and-copy": {
+      "status": "PASS",
+      "output": "Bespoke body persisted at .content/models/pages/bosch-gas-35-m-afc.html and rendered into the model page without reusing the legacy four-H2 signature."
+    },
+    "fact-check-post": {
+      "status": "PASS",
+      "output": "Post-draft check confirmed 35 M, 35 L and 55 M figures, preserved turbine measurement context, and kept documentary deductions explicitly qualified."
+    },
+    "humanizer": {
+      "status": "PASS",
+      "output": "Removed catalogue-like phrasing and repeated generic transitions; the final copy follows the user's actual decision sequence rather than a synthetic product-review cadence."
+    },
+    "general-writing": {
+      "status": "PASS",
+      "output": "Copy tightened for clarity, with short decision-oriented paragraphs, explicit contrasts and restrained claims."
+    },
+    "anti-ai-slop": {
+      "status": "PASS",
+      "output": "No fixed FAQ, generic conclusion, interchangeable 'for whom / limits' pattern or repeated legacy heading signature remains in the pilot body."
+    },
+    "internal-linking-audit": {
+      "status": "PASS",
+      "output": "Contextual links point to the M-class comparison, automatic filter-cleaning guide and Bosch brand hub; each destination has a distinct role from the model page."
+    },
+    "seo-technical": {
+      "status": "PASS",
+      "output": "Canonical preserved, robots remains noindex, follow, H1 remains the exact model, and the rendered page keeps valid site chrome and sidebar structure."
+    },
+    "seo-best-practices": {
+      "status": "PASS",
+      "output": "Title and meta description now reflect the specific decision angle; headings map to distinct user questions instead of generic product-template sections."
+    },
+    "editorial-qa": {
+      "status": "PASS",
+      "output": "Final rendered page reviewed for role, evidence boundaries, table usefulness, source transparency, no false hands-on language and bespoke TOC alignment."
+    }
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {
+      "status": "PASS",
+      "output": "Exact model identity, class M, 35/23/19.2 L capacities, 74 l/s and 254 mbar turbine context, 6150 cm2 filter area, AFC, antistatic hose variant and 12.4 kg weight checked against Bosch primary sources."
+    },
+    "model-analysis-publish-review": {
+      "status": "PASS",
+      "output": "Publish review passed: the page is model-specific, non-templated, fact-bounded, differentiated from comparison/brand pages and remains noindex pending human validation."
+    }
+  },
+  "reader_decision": "Decide whether the Bosch GAS 35 M AFC is the right corded Bosch M-class extractor, especially versus the GAS 35 L AFC and GAS 55 M AFC.",
+  "value_without_affiliate_links": "Explains the real class difference versus the 35 L, the capacity/mass trade-off versus the 55 M, and the role and evidence limits of AFC without relying on merchant links or faux hands-on claims.",
+  "outline": [
+    {
+      "question": "Pourquoi choisir le GAS 35 M AFC plutôt que le GAS 35 L AFC alors que les chiffres d'aspiration sont identiques ?",
+      "evidence_refs": ["E1", "E2", "E6"],
+      "decision_value": "Centers the purchase decision on the documented M class rather than a nonexistent published extraction advantage."
+    },
+    {
+      "question": "Qu'est-ce que l'AFC change réellement dans le workflow, et que ne peut-on pas conclure sans test indépendant ?",
+      "evidence_refs": ["E1", "E4", "E5"],
+      "decision_value": "Translates the automatic cleaning feature into workflow implications while preserving evidence boundaries."
+    },
+    {
+      "question": "GAS 35 M AFC ou GAS 55 M AFC ?",
+      "evidence_refs": ["E1", "E3"],
+      "decision_value": "Frames the sibling choice as capacity and mass logistics because the published extraction core is the same."
+    },
+    {
+      "question": "Dans quels scénarios le GAS 35 M AFC est-il une référence cohérente ?",
+      "evidence_refs": ["E1", "E4", "E5", "E6"],
+      "decision_value": "Defines the exact-reference fit without turning the page into a global M-class comparison."
+    },
+    {
+      "question": "Quelles limites faut-il garder visibles avant achat ?",
+      "evidence_refs": ["E1", "E2", "E3", "E6"],
+      "decision_value": "Keeps class selection, turbine-measurement context and the lack of physical testing explicit."
+    }
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}

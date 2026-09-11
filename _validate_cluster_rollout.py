@@ -31,7 +31,11 @@ for slug in MODELS:
     check('Contenu test à rédiger' not in h, f'{slug}: test-content placeholder')
     check('<!-- Contenu à rédiger -->' not in h, f'{slug}: content placeholder')
     check('<meta name="robots" content="noindex, follow">' in h, f'{slug}: robots changed')
-    check('<h2 id="source">Source fabricant</h2>' in h, f'{slug}: source section missing')
+    has_source_section = (
+        '<h2 id="source">Source fabricant</h2>' in h
+        or '<h2 id="sources">Sources et méthode</h2>' in h
+    )
+    check(has_source_section, f'{slug}: source section missing')
 
 critical = {
  'festool-ctl-midi': ['badge badge-l', 'Classe L', 'AUTOCLEAN', 'Non sur la référence CTL MIDI I standard'],
