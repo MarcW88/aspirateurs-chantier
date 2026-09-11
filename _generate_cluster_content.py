@@ -2,13 +2,14 @@
 """Canonical generation for the audited content cluster.
 
 The order is intentional and enforced:
-1. shared/custom skill governance;
-2. model evidence/pages;
-3. non-brand usage shell + authored v2 materialization;
-4. comparison cluster with audited bespoke overrides;
-5. brand hubs;
-6. cluster metadata/index;
-7. validation.
+1. shared/custom skill governance for Brands, Comparisons, Usages and Guides;
+2. Guide machine-floor validation (Guide editorial generation remains in its own source-of-truth chain);
+3. model evidence/pages;
+4. non-brand usage shell + authored v2 materialization;
+5. comparison cluster with audited bespoke overrides;
+6. brand hubs;
+7. cluster metadata/index;
+8. validation.
 """
 from pathlib import Path
 import subprocess
@@ -26,6 +27,8 @@ def main():
     run('validate_brand_skill_stack.py')
     run('validate_comparison_skill_stack.py')
     run('validate_usage_workflow.py')
+    run('validate_guide_workflow.py')
+    run('validate_guide_quality.py')
     run('_generate_model_overrides.py')
     run('_generate_usage_overrides.py')
     run('_materialize_usage_v2.py')
