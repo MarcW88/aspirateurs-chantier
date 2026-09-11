@@ -1,0 +1,58 @@
+{
+  "meilleur-aspirateur-de-chantier": {
+    "title": "Meilleur aspirateur de chantier 2026 : choisir selon votre chantier",
+    "description": "Quel aspirateur de chantier choisir en 2026 ? Comparez classe, déchets, mobilité, décolmatage, capacité et usage réel avant les modèles.",
+    "h1": "Meilleur aspirateur de chantier : lequel selon votre chantier ?",
+    "lead": "Classe, déchets, mobilité et rythme de travail : le bon choix dépend d’abord du chantier, pas d’un score universel.",
+    "toc": [["par-ou-commencer", "Par où commencer"], ["cinq-profils", "5 profils"], ["ce-qui-change", "Critères décisifs"], ["fausses-bonnes-idees", "Mauvais achats"], ["score", "Pourquoi pas de score"], ["si-vous-hesitez", "Si vous hésitez"], ["sources", "Sources"]]
+  },
+  "aspirateur-professionnel": {
+    "title": "Aspirateur de chantier professionnel : comparatif par usage 2026",
+    "description": "Choisir un aspirateur professionnel selon classe L/M, décolmatage, outil, mobilité, capacité et coût de workflow, sans faux classement universel.",
+    "h1": "Aspirateur de chantier professionnel : lequel choisir selon votre travail ?",
+    "lead": "Classe L ou M, mobilité, décolmatage, prise outil et volume : le meilleur choix change avec le chantier.",
+    "toc": [["professionnel", "Ce qui fait un pro"], ["six-profils", "6 profils"], ["ordre", "Ordre de décision"], ["cout", "Coût de workflow"], ["mesures", "Mesures"], ["quel-pro", "Quel profil"], ["sources", "Sources"]]
+  },
+  "aspirateur-classe-m": {
+    "title": "Aspirateur classe M : comparatif par workflow 2026",
+    "description": "Comparatif 2026 des aspirateurs classe M : surveillance du débit, décolmatage, collecte, antistatique, mobilité et coût de configuration.",
+    "h1": "Aspirateur classe M : lequel selon votre workflow ?",
+    "lead": "La certification M est le point d’entrée ; surveillance, décolmatage, collecte et mobilité font ensuite la différence.",
+    "toc": [["avant-modeles", "Avant les modèles"], ["cinq-workflows", "5 workflows"], ["filtre-charge", "Filtre chargé"], ["fonctions-separees", "Fonctions distinctes"], ["configuration", "Coût de configuration"], ["choix", "Notre lecture"], ["sortir-m", "Quand sortir du M"], ["sources", "Sources"]]
+  },
+  "aspirateur-chantier-puissant": {
+    "title": "Aspirateur de chantier puissant : débit, dépression et performance utile",
+    "description": "Débit, dépression, point de mesure, filtre chargé et flexible : comparez la puissance utile d’un aspirateur de chantier sans faux podium.",
+    "h1": "Aspirateur de chantier puissant : que faut-il vraiment comparer ?",
+    "lead": "Les gros chiffres ne suffisent pas : débit, dépression, colmatage et circuit d’aspiration doivent être lus ensemble.",
+    "toc": [["question-puissance", "Quelle puissance ?"], ["quatre-references", "4 références"], ["filtre-charge", "Filtre chargé"], ["dechet", "Selon le déchet"], ["flexible", "Flexible"], ["choix-rapide", "Choix rapide"], ["mauvaise-question", "Mauvaise question ?"], ["sources", "Sources"]]
+  },
+  "aspirateur-industriel": {
+    "title": "Aspirateur industriel : choisir selon le process, pas la cuve",
+    "description": "Aspirateur industriel : matière, fonctionnement continu, triphasé, huiles, copeaux, ACD/ATEX et vidage. Choisissez d’abord selon le process.",
+    "h1": "Aspirateur industriel : quel type de machine selon votre process ?",
+    "lead": "Poussières, liquides, copeaux, continu ou stationnaire : l’architecture dépend du process bien avant le volume de cuve.",
+    "toc": [["questions-process", "6 questions"], ["familles", "4 familles"], ["continu", "Cycle de service"], ["matiere", "Matière"], ["acd-atex", "ACD / ATEX"], ["vidage", "Vidage"], ["chantier-ou-industriel", "Chantier ou industriel"], ["dimensionnement", "Dimensionnement"], ["sources", "Sources"]]
+  },
+  "aspirateur-chantier-sans-fil": {
+    "title": "Aspirateur de chantier sans fil : système batterie et classe 2026",
+    "description": "Comparatif sans fil 2026 : classe L/M, Bosch 18 V, DeWalt FLEXVOLT, Kärcher, autonomie, coût batteries, poids réel et déclenchement outil.",
+    "h1": "Aspirateur de chantier sans fil : lequel selon votre système batterie ?",
+    "lead": "Classe, batteries, autonomie, poids prêt à travailler et déclenchement : la tension seule ne suffit pas.",
+    "toc": [["avant-voltage", "Pas seulement les volts"], ["quatre-systemes", "4 systèmes"], ["autonomie", "Autonomie"], ["cout-systeme", "Coût du système"], ["poids-reel", "Poids réel"], ["declenchement", "Déclenchement"], ["choix", "Quel profil"], ["quand-filaire", "Quand rester filaire"], ["sources", "Sources"]]
+  },
+  "aspirateur-eau-poussiere": {
+    "title": "Aspirateur eau et poussière de chantier : comparatif 2026",
+    "description": "Comparez les aspirateurs eau et poussière selon transition sec/humide, vidange, filtre, sac, prise outil et capacité utile.",
+    "h1": "Aspirateur eau et poussière : lequel pour atelier et rénovation ?",
+    "lead": "Passage sec/humide, vidange et filtre comptent plus qu’un simple podium de puissance.",
+    "toc": [["transition", "Passage sec/humide"], ["quatre-profils", "4 profils"], ["vidange", "Vidange"], ["sac-filtre", "Sac et filtre"], ["outil", "Outil"], ["securite", "Sécurité"], ["choix", "Notre lecture"], ["sources", "Sources"]]
+  },
+  "petit-aspirateur-de-chantier": {
+    "title": "Petit aspirateur de chantier : comparatif mobilité 2026",
+    "description": "Petit aspirateur de chantier : comparez poids, gabarit, rangement, capacité, batterie et classe sans seuil arbitraire de litres.",
+    "h1": "Petit aspirateur de chantier : lequel est vraiment facile à transporter ?",
+    "lead": "Poids, forme, rangement et capacité utile : la compacité réelle ne se résume pas au nombre de litres.",
+    "toc": [["compact-definition", "Définir compact"], ["quatre-compacts", "4 compacts"], ["poids-vs-forme", "Poids vs forme"], ["escaliers", "Escaliers"], ["vehicule", "Véhicule"], ["classe", "Classe"], ["choix-compact", "Quel compact"], ["sources", "Sources"]]
+  }
+}
