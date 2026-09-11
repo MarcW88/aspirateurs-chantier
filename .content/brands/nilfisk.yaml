@@ -2,21 +2,37 @@
   "slug": "nilfisk",
   "brand": "Nilfisk",
   "page_type": "BRAND_HUB",
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-11",
   "entity_map": {
     "brand": "Nilfisk",
+    "families": [
+      "Buddy II",
+      "Multi II",
+      "ATTIX 33",
+      "ATTIX 44"
+    ],
     "products": [
-      "Buddy II 12 / 18",
-      "Multi II 22 / 30 T",
-      "ATTIX 33 IC",
+      "Buddy II 18",
+      "Multi II 30 T",
+      "ATTIX 33-2L IC",
       "ATTIX 44-2M IC",
-      "ATTIX H / variantes spécifiques"
+      "ATTIX 44-2H IC"
+    ],
+    "technologies": [
+      "Push&Clean",
+      "InfiniClean",
+      "FlowSensor",
+      "MultiFit",
+      "antistatique"
     ],
     "use_cases": [
+      "garage",
       "atelier",
-      "gravats"
+      "rénovation",
+      "ponçage",
+      "poussières fines",
+      "poussières de classe M/H"
     ],
-    "technologies": [],
     "competitors": [
       "Kärcher",
       "Bosch",
@@ -24,23 +40,16 @@
       "Festool",
       "DeWalt",
       "Parkside",
-      "Nilfisk",
       "Mirka"
     ]
   },
   "brand_positioning": {
-    "summary": "Nilfisk couvre deux besoins très différents : Buddy/Multi pour le nettoyage eau/poussière grand public et ATTIX pour l'aspiration professionnelle, avec des variantes de sécurité et le système de décolmatage InfiniClean. Cette séparation est plus utile que de chercher un unique “meilleur Nilfisk”.",
-    "strengths": [
-      "Spécialiste historique du nettoyage avec une gamme grand public et professionnelle distincte.",
-      "InfiniClean est pertinent pour les poussières colmatantes en usage continu.",
-      "ATTIX propose des variantes classe M avec FlowSensor et antistatique.",
-      "Multi II offre une alternative eau/poussière robuste sans payer une architecture de sécurité inutile."
-    ],
-    "limitations": [
-      "Moins d'intégration avec une plateforme de batteries ou d'outillage qu'un Bosch, Makita ou DeWalt.",
-      "Les noms ATTIX couvrent plusieurs classes : il faut vérifier la variante complète.",
-      "Un Multi II ne remplace pas un ATTIX M lorsqu'une classe M est requise.",
-      "Les accessoires professionnels peuvent être spécifiques au système Nilfisk."
+    "summary": "Nilfisk se choisit comme une progression du nettoyage eau/poussière vers l'extraction professionnelle : Buddy, Multi II avec Push&Clean, puis ATTIX avec InfiniClean et classes certifiées selon la référence.",
+    "core_decisions": [
+      "le besoin est-il du nettoyage ponctuel ou du captage pendant le travail ?",
+      "Push&Clean suffit-il ou faut-il InfiniClean pour maintenir le débit ?",
+      "une classe L, M ou H est-elle réellement requise ?",
+      "la référence complète confirme-t-elle la classe et l'équipement attendus ?"
     ]
   },
   "product_range": [
@@ -93,37 +102,71 @@
   },
   "evidence": [
     {
-      "claim": "Nilfisk Multi II 30 T Inox VSC",
+      "ref": "S1",
       "status": "VERIFIED",
-      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere-2",
-      "source_type": "primary"
+      "tier": 1,
+      "source": "https://shop.nilfisk.com/fr-fr/products/buddy-ii-18-aspirateur-eau-et-poussiere",
+      "source_type": "primary",
+      "label": "Nilfisk — Buddy II 18"
     },
     {
-      "claim": "Nilfisk ATTIX 44-2M IC",
+      "ref": "S2",
       "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://shop.nilfisk.com/fr-fr/collections/multi-aspirateur-eau-poussiere",
+      "source_type": "primary",
+      "label": "Nilfisk — gamme Multi II"
+    },
+    {
+      "ref": "S3",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere",
+      "source_type": "primary",
+      "label": "Nilfisk — Multi II 30 T"
+    },
+    {
+      "ref": "S4",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.nilfisk.com/fr-be/professional/produits/aspirateurs-industriels/aspirateurs-eau-et-poussiere-monophases/attix-33-2l-ic-%2B107412103/",
+      "source_type": "primary",
+      "label": "Nilfisk — ATTIX 33-2L IC"
+    },
+    {
+      "ref": "S5",
+      "status": "VERIFIED",
+      "tier": 1,
       "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/attix-44-2m-ic%2B107412182/",
-      "source_type": "primary"
+      "source_type": "primary",
+      "label": "Nilfisk — ATTIX 44-2M IC"
     },
     {
-      "claim": "Nilfisk — aspirateurs professionnels",
+      "ref": "S6",
       "status": "VERIFIED",
-      "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/",
-      "source_type": "primary"
+      "tier": 1,
+      "source": "https://www.nilfisk.com/fr-be/professional/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/attix-44-m-h%2B107412186/",
+      "source_type": "primary",
+      "label": "Nilfisk — ATTIX 44-2H IC"
+    },
+    {
+      "ref": "S7",
+      "status": "VERIFIED",
+      "tier": 1,
+      "source": "https://www.nilfisk.com/fr-fr/professionnel/pages/accessoires-aspirateurs-industriels/filtres-et-systemes-de-nettoyage-de-filtre/",
+      "source_type": "primary",
+      "label": "Nilfisk — filtres et systèmes de nettoyage"
+    },
+    {
+      "ref": "S8",
+      "status": "SUPPORTED",
+      "tier": 4,
+      "source": "https://www.bricozone.be/t/aspirateur-nilfisk-multi-ii-30-t.105379/",
+      "source_type": "user_experience",
+      "label": "BricoZone — retours d'usage Nilfisk Multi II 30 T"
     }
   ],
   "internal_links": [
-    {
-      "label": "Nilfisk Multi II 30 T",
-      "url": "/modeles/nilfisk-multi-ii-30-t/"
-    },
-    {
-      "label": "industriel",
-      "url": "/comparatifs/aspirateur-industriel/"
-    },
-    {
-      "label": "classe M",
-      "url": "/comparatifs/aspirateur-classe-m/"
-    },
     {
       "label": "eau et poussière",
       "url": "/comparatifs/aspirateur-eau-poussiere/"
@@ -131,6 +174,10 @@
     {
       "label": "professionnel",
       "url": "/comparatifs/aspirateur-professionnel/"
+    },
+    {
+      "label": "classe M",
+      "url": "/comparatifs/aspirateur-classe-m/"
     },
     {
       "label": "décolmatage automatique",
@@ -157,9 +204,96 @@
     "workflow_contract_version": 2,
     "run_evidence": ".content/brands/runs/nilfisk.json"
   },
-  "source_of_truth": "_generate_brand_overrides.py",
-  "structure_strategy": "bespoke_cleaning_specialist_multi_vs_attix",
+  "source_of_truth": "_generate_nilfisk.py",
+  "structure_strategy": "bespoke_cleanup_to_certified_extraction_ladder",
   "recovery_verdict": "DEEP_REWRITE",
+  "key_claims": [
+    {
+      "claim": "Le Multi II 30 T actuel est un 30 L de 1400 W avec prise outil, témoin de saturation et Push&Clean.",
+      "evidence_refs": [
+        "S2",
+        "S3"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Nilfisk décrit InfiniClean comme un nettoyage automatique du filtre pendant le fonctionnement, contrairement aux systèmes semi-automatiques.",
+      "evidence_refs": [
+        "S7"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "L'ATTIX 33-2L IC est certifié classe L tout en pouvant utiliser un filtre PTFE référencé classe M.",
+      "evidence_refs": [
+        "S4"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "L'ATTIX 44-2M IC combine classe M, InfiniClean, FlowSensor et système antistatique.",
+      "evidence_refs": [
+        "S5"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "L'ATTIX 44-2H IC appartient à la gamme certifiée H et utilise un filtre HEPA H14 dans la configuration documentée.",
+      "evidence_refs": [
+        "S6"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Un retour communautaire ancien sur Multi II souligne la limite du nettoyage semi-automatique dans les séquences très poussiéreuses.",
+      "evidence_refs": [
+        "S8"
+      ],
+      "status": "SUPPORTED"
+    }
+  ],
+  "sources": {
+    "S1": {
+      "label": "Nilfisk — Buddy II 18",
+      "url": "https://shop.nilfisk.com/fr-fr/products/buddy-ii-18-aspirateur-eau-et-poussiere",
+      "source_type": "primary"
+    },
+    "S2": {
+      "label": "Nilfisk — gamme Multi II",
+      "url": "https://shop.nilfisk.com/fr-fr/collections/multi-aspirateur-eau-poussiere",
+      "source_type": "primary"
+    },
+    "S3": {
+      "label": "Nilfisk — Multi II 30 T",
+      "url": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere",
+      "source_type": "primary"
+    },
+    "S4": {
+      "label": "Nilfisk — ATTIX 33-2L IC",
+      "url": "https://www.nilfisk.com/fr-be/professional/produits/aspirateurs-industriels/aspirateurs-eau-et-poussiere-monophases/attix-33-2l-ic-%2B107412103/",
+      "source_type": "primary"
+    },
+    "S5": {
+      "label": "Nilfisk — ATTIX 44-2M IC",
+      "url": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/attix-44-2m-ic%2B107412182/",
+      "source_type": "primary"
+    },
+    "S6": {
+      "label": "Nilfisk — ATTIX 44-2H IC",
+      "url": "https://www.nilfisk.com/fr-be/professional/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/attix-44-m-h%2B107412186/",
+      "source_type": "primary"
+    },
+    "S7": {
+      "label": "Nilfisk — filtres et systèmes de nettoyage",
+      "url": "https://www.nilfisk.com/fr-fr/professionnel/pages/accessoires-aspirateurs-industriels/filtres-et-systemes-de-nettoyage-de-filtre/",
+      "source_type": "primary"
+    },
+    "S8": {
+      "label": "BricoZone — retours d'usage Nilfisk Multi II 30 T",
+      "url": "https://www.bricozone.be/t/aspirateur-nilfisk-multi-ii-30-t.105379/",
+      "source_type": "user_experience"
+    }
+  },
   "cluster_audit": {
     "audit_artifact": ".content/brands/cluster-audit-2026-09-10.md",
     "audited_snapshot": "3a79ddb899fe9c17f210e4b413738d68f19df705",
