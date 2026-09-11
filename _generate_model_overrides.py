@@ -96,9 +96,11 @@ def render_main(slug, d):
     if override:
         body = override['body']
         toc = render_toc(override['meta']['toc'])
+        verified_date = override['meta'].get('verified_date', UPDATED_FR)
     else:
         body = legacy_body(d)
         toc = '<a href="#lecture">Lire la référence</a><a href="#pour-qui">Quand la choisir</a><a href="#limites">Limites</a><a href="#source">Source</a>'
+        verified_date = UPDATED_FR
 
     return f'''<main>
 <div class="container"><nav class="breadcrumb"><a href="/">Accueil</a><span class="sep">/</span> <a href="/modeles/">Modèles</a> <span class="sep">/</span> <span>{escape(d['name'])}</span></nav></div>
@@ -109,7 +111,7 @@ def render_main(slug, d):
         <div class="model-badges">{dust_badge(d['dust_class'])}<span class="badge badge-blue">{escape(d['brand'])}</span><span class="ctype ctype-modele">Fiche modèle</span></div>
         <h1 class="model-title">{escape(d['name'])}</h1>
         <p class="model-tagline lead">{escape(d['description'])}</p>
-        <div class="page-meta"><span class="meta-tag">Vérifié : {UPDATED_FR}</span><span class="meta-tag">Recherche documentaire</span></div>
+        <div class="page-meta"><span class="meta-tag">Vérifié : {escape(verified_date)}</span><span class="meta-tag">Recherche documentaire</span></div>
       </div>
       <div class="spec-sheet">
         <div class="spec-sheet-header"><span>Repères vérifiés</span><span class="verified">Source primaire</span></div>
