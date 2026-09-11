@@ -1,8 +1,8 @@
 {
   "slug": "aspirateur-eau-poussiere",
   "url": "/comparatifs/aspirateur-eau-poussiere/",
-  "updated_at": "2026-09-09",
-  "status": "REWRITTEN_AFTER_CLUSTER_AUDIT",
+  "updated_at": "2026-09-11",
+  "status": "V2_EDITORIAL_REWRITE",
   "intent": {
     "query": "aspirateur eau poussière chantier",
     "type": "feature_specific",
@@ -174,7 +174,10 @@
     "affiliate_commission_used_in_ranking": false,
     "desk_research_only": true,
     "noindex_during_rollout": true,
-    "hands_on_test": false
+    "hands_on_test": false,
+    "v2_editorial_source": ".content/comparisons/v2/aspirateur-eau-poussiere.html",
+    "v2_editorial_date": "2026-09-11",
+    "generator_authored_content": false
   },
   "editorial": {
     "workflow_contract_version": 2,

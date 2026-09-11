@@ -1,8 +1,8 @@
 {
   "slug": "aspirateur-professionnel",
   "url": "/comparatifs/aspirateur-professionnel/",
-  "updated_at": "2026-09-09",
-  "status": "PILOT_REWRITE",
+  "updated_at": "2026-09-11",
+  "status": "V2_EDITORIAL_REWRITE",
   "intent": {
     "query": "aspirateur chantier professionnel",
     "type": "best_for_use_case",
@@ -234,7 +234,11 @@
     "affiliate_commission_used_in_ranking": false,
     "desk_research_only": true,
     "noindex_during_pilot": true,
-    "hands_on_test": false
+    "hands_on_test": false,
+    "v2_editorial_source": ".content/comparisons/v2/aspirateur-professionnel.html",
+    "v2_editorial_date": "2026-09-11",
+    "generator_authored_content": false,
+    "noindex_during_rollout": true
   },
   "editorial": {
     "workflow_contract_version": 2,
