@@ -15,6 +15,7 @@ content:
       - "_generate_bosch.py"
       - "_generate_brand_overrides.py"
       - "_generate_karcher.py"
+      - "_generate_makita.py"
     shell_generator: "_generate_brands.py"
   rendered_output:
     - "marques/"
@@ -29,6 +30,7 @@ generation:
   bespoke_overrides:
     bosch: "_generate_bosch.py"
     karcher: "_generate_karcher.py"
+    makita: "_generate_makita.py"
     others: "_generate_brand_overrides.py"
   post_generation_review_state: "enforce_brand_review_state.py"
   prohibit_generic_rebuild_without_overrides: true
