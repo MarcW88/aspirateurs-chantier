@@ -1,0 +1,72 @@
+{
+  "contract_version": 1,
+  "slug": "aspirateur-platre",
+  "url": "/usages/aspirateur-platre/",
+  "updated_at": "2026-09-11",
+  "intent": {
+    "topic": "aspirateur pour platre, enduit et poussiere de poncage",
+    "intent": "information/commercial investigation upstream of product comparison",
+    "user_job": "adapter le captage selon que le travail consiste a poncer, decouper ou nettoyer du platre/enduit et verifier le risque du produit/support reel",
+    "boundary": "material/process page; ponceuse owns tool ergonomics, classe-M comparison only starts after the safety-class gate"
+  },
+  "jtbd": {
+    "circumstances": ["poncage de joints ou enduit", "decoupe de plaque", "nettoyage de chutes", "renovation d'un support dont la composition peut differer"],
+    "progress": "eviter de traiter toutes les poussieres blanches comme un meme probleme et choisir un captage qui tient pendant l'operation reelle",
+    "frictions": ["poussiere fine continue", "colmatage", "raccord outil", "incertitude sur la composition", "vidage qui peut remettre la poussiere en suspension"],
+    "evidence_class": "SUPPORTED"
+  },
+  "criteria": [
+    {"criterion": "operation reelle", "priority": "MUST_HAVE", "decision_effect": "separe nettoyage de debris, poncage continu et decoupe"},
+    {"criterion": "composition et risque documentes", "priority": "MUST_HAVE", "decision_effect": "evite d'assimiler platre a silice ou d'exclure un risque sans preuve"},
+    {"criterion": "captage a la source", "priority": "HIGH", "decision_effect": "limite la dispersion pendant poncage/decoupe"},
+    {"criterion": "gestion du filtre", "priority": "HIGH", "decision_effect": "reduit les interruptions lors de poussiere fine"},
+    {"criterion": "collecte et vidage", "priority": "HIGH", "decision_effect": "evite une exposition secondaire"}
+  ],
+  "evidence": [
+    {"id": "S1", "claim": "les composes de jointoiement pour plaques peuvent avoir des compositions minerales variables et certains peuvent inclure de la silice", "source": "https://archive.cdc.gov/www_cdc_gov/niosh/docs/99-113/default.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S2", "claim": "le captage par aspiration peut reduire fortement la poussiere lors du poncage de joints", "source": "https://www.cdc.gov/niosh/engcontrols/ecd/detail31.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S3", "claim": "la silice cristalline doit etre traitee en fonction des materiaux et procedes susceptibles de l'emettre", "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"}
+  ],
+  "handoffs": {
+    "usage": ["/usages/aspirateur-ponceuse/", "/usages/aspirateur-gravats/"],
+    "guides": ["/guides/decolmatage-automatique/", "/guides/classes-l-m-h/", "/guides/sac-ou-sans-sac/"],
+    "comparisons": ["/comparatifs/aspirateur-classe-m/"]
+  },
+  "outline": [
+    {"question": "Quel materiau et quelle operation sont reellement en jeu ?", "evidence_refs": ["S1", "S3"], "decision_value": "evite la generalisation platre = meme risque"},
+    {"question": "Comment maintenir le captage pendant le poncage ?", "evidence_refs": ["S2"], "decision_value": "fait du raccord et du filtre un probleme de workflow"},
+    {"question": "Quand basculer vers un comparatif classe M ou une autre page usage ?", "evidence_refs": ["S3"], "decision_value": "maintient les frontieres du cluster"}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "content-audit", "status": "PASS", "output": "cluster audit DEEP_REWRITE; preserved fine-dust, source-capture and declogging value"},
+      {"skill": "search-intent", "status": "PASS", "output": "material/process intent separated from generic buying and sander workflow"},
+      {"skill": "jobs-to-be-done", "status": "PASS", "output": "circumstances split by sanding, cutting and cleanup"},
+      {"skill": "content-refresh", "status": "PASS", "output": "deep rewrite scoped to role ambiguity and safety nuance"},
+      {"skill": "fact-check", "status": "PASS", "output": "NIOSH/INRS claims checked pre and post draft"},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "no hands-on or product behavior ranking claim"},
+      {"skill": "affiliate-value", "status": "PASS", "output": "page provides operation/risk/collection decisions without affiliate products"},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "bespoke operation-led outline persisted"},
+      {"skill": "content-and-copy", "status": "PASS", "output": "authored v2 fragment under .content/usages/v2"},
+      {"skill": "humanizer", "status": "PASS", "output": "repetitive template phrasing removed"},
+      {"skill": "general-writing", "status": "PASS", "output": "technical distinctions tightened"},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "architecture differs materially from sister usage pages"},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "handoffs to ponceuse, gravats, guides and class-M comparison are role-based"},
+      {"skill": "seo-onpage", "status": "PASS", "output": "title/H1/lead match material-process intent"},
+      {"skill": "seo-technical", "status": "PASS", "output": "canonical route preserved; noindex follow required"},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "single H1 and crawl-safe internal links"},
+      {"skill": "editorial-qa", "status": "PASS", "output": "no ranking, no false hands-on, no platre=silica shortcut"}
+    ],
+    "custom": [
+      {"skill": "usage-content-workflow", "status": "PASS", "output": "vacuum-specific operation, clogging and class-safety gates applied"},
+      {"skill": "usage-analysis-workflow", "status": "PASS", "output": "PUBLISH_REVIEW role and cluster boundaries rechecked"}
+    ]
+  },
+  "editorial": {
+    "cluster_audit_decision": "DEEP_REWRITE",
+    "final_decision": "DEEP_REWRITE_COMPLETED",
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "noindex, follow"
+  }
+}
