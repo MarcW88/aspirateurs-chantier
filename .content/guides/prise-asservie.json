@@ -1,0 +1,42 @@
+{
+  "contract_version":1,
+  "slug":"prise-asservie",
+  "url":"/guides/prise-asservie/",
+  "guide_type":"HYBRID",
+  "audit_decision":"LIGHT_UPDATE",
+  "intent":{"reader_task":"Comprendre la prise asservie et vérifier quel mode de déclenchement est compatible avec un outil filaire ou sur batterie."},
+  "value_to_preserve":["Limite de puissance spécifique au modèle.","Distinction outil filaire / batterie.","Importance du raccord aspiration."],
+  "evidence":[
+    {"id":"S1","claim":"Les caractéristiques et limites de connexion outil doivent être vérifiées au niveau de la référence exacte de l’aspirateur.","source":"https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/","checked_at":"2026-09-11","status":"SUPPORTED"},
+    {"id":"S2","claim":"Le captage sur machine portative dépend aussi de la conception et du raccordement du système d’aspiration.","source":"https://www.inrs.fr/media.html?refINRS=ED+6052","checked_at":"2026-09-11","status":"SUPPORTED"}
+  ],
+  "outline":[
+    {"question":"Quel mode de déclenchement correspond au type d’outil ?","evidence_refs":["S1"],"decision_value":"Ne pas confondre prise, télécommande et système sans fil."},
+    {"question":"Que faut-il vérifier avant de brancher ?","evidence_refs":["S1","S2"],"decision_value":"Sécuriser puissance admissible et raccordement."}
+  ],
+  "workflow_execution":{"shared":[
+    {"skill":"seo-content-audit","status":"PASS","output":"LIGHT_UPDATE confirmé ; rôle autonome et utile."},
+    {"skill":"seo-keyword","status":"PASS","output":"Topic prise asservie / démarrage automatique conservé."},
+    {"skill":"search-intent","status":"PASS","output":"HYBRID : fonctionnement + vérification de compatibilité."},
+    {"skill":"content-refresh","status":"PASS","output":"Checklist intégrée au plan final et distinction sans-fil renforcée."},
+    {"skill":"fact-check","status":"PASS","output":"Aucune limite de puissance universelle inventée ; documentation modèle priorisée."},
+    {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucun jugement hands-on."},
+    {"skill":"affiliate-value","status":"PASS","output":"Checklist utile sans produit affilié."},
+    {"skill":"content-brief-authoring","status":"PASS","output":"Brief modes de commande -> filaire -> limite -> sans-fil -> raccord -> checklist -> pertinence."},
+    {"skill":"content-and-copy","status":"PASS","output":"LIGHT_UPDATE rédigé avec compatibilités au niveau système/modèle."},
+    {"skill":"humanizer","status":"PASS","output":"Style relu."},
+    {"skill":"general-writing","status":"PASS","output":"Terminologie et transitions clarifiées."},
+    {"skill":"anti-ai-slop","status":"PASS","output":"Pas de structure générique ou quota."},
+    {"skill":"internal-linking-audit","status":"PASS","output":"Liens vers décolmatage et comparatif sans fil."},
+    {"skill":"seo-onpage","status":"PASS","output":"Title/H1/meta couvrent prise et alternatives sans fil."},
+    {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow préservés."},
+    {"skill":"seo-best-practices","status":"PASS","output":"Réponse directe et checklist actionnable."},
+    {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline fournie."},
+    {"skill":"editorial-qa","status":"PASS","output":"Prise asservie, Bluetooth et Wireless Tool Control ne sont pas présentés comme synonymes."}
+  ],"custom":[
+    {"skill":"guide-analysis-workflow","status":"PASS","output":"LIGHT_UPDATE et frontière Usage/Comparatif validées."},
+    {"skill":"guide-content-workflow","status":"PASS","output":"Fragment v2 produit."}
+  ]},
+  "residual_risks":["Les limites électriques et compatibilités sans fil peuvent varier selon génération, tension et marché ; vérifier la notice avant conseil chiffré."],
+  "editorial":{"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+}
