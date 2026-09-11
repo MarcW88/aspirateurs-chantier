@@ -186,7 +186,7 @@
   },
   "editorial": {
     "workflow_contract_version": 2,
-    "publish_review": "REQUIRES_WORKFLOW_RERUN",
+    "publish_review": "READY_FOR_HUMAN_VALIDATION",
     "run_evidence": ".content/comparisons/runs/aspirateur-industriel.json",
     "generator_role": "shell_and_components_only"
   }
