@@ -22,8 +22,9 @@ def main():
     run('validate_brand_skill_stack.py')
     run('_generate_brands.py')                 # shell + seed only
     run('_generate_bosch.py')                  # Bosch bespoke body
-    run('_generate_brand_overrides.py')        # legacy bespoke bodies for non-Bosch brands
+    run('_generate_brand_overrides.py')        # legacy bespoke bodies before evidence-led replacements
     run('_generate_karcher.py')                # evidence-led Kärcher body + ledger v2
+    run('_generate_makita.py')                 # evidence-led Makita body + ledger v2
     run('_brand_rollout_polish.py')
 
     cluster_metadata = BASE / '_apply_cluster_audit_metadata.py'
