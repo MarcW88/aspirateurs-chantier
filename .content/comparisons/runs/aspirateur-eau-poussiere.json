@@ -1,0 +1,51 @@
+{
+  "contract_version": 2,
+  "slug": "aspirateur-eau-poussiere",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur wet/dry selon facilité de transition sec-humide, vidange, filtre/sac, intégration outil et capacité, sans confondre polyvalence eau/poussière et classe de sécurité.",
+  "comparison_scope": "Quatre références grand public/atelier représentent rénovation 30 L équipée, 30 L simple, atelier 20 L et alternative 30 L hors Kärcher.",
+  "value_without_affiliate_links": "La page explique les conséquences pratiques du passage sec-humide, de la vidange et du système sac/filtre et redirige vers classe M lorsque la sécurité domine.",
+  "candidate_scope": {
+    "considered": ["Kärcher WD 7 Control P S 30/6/35/T","Kärcher WD 6 P S V-30/6/22/T","Bosch AdvancedVac 20","Nilfisk Multi II 30 T"],
+    "major_exclusions": [
+      "Aspirateurs de sécurité M/H non inclus comme pairs principaux : l’intention centrale est la polyvalence humide/sec.",
+      "Variantes Nilfisk Multi II non assimilées entre elles sans vérifier le suffixe exact."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-7-control-p-s-30-6-35-t-eu-iii-16283860.html","supports":"WD7 : 30 L, vidange, prise outil, filtre et wet/dry"},
+    {"ref":"S2","source":"https://www.kaercher.com/be/home-garden/nat-en-droogzuigers/wd-6-p-s-v-30-6-22-t-16283610.html","supports":"WD6 : 30 L, prise, nettoyage filtre, vidange"},
+    {"ref":"S3","source":"https://www.bosch-diy.com/fr/fr/p/advancedvac-20-06033d12w0","supports":"AdvancedVac20 : 20 L, eau/poussière, évacuation eau, auto-start et antistatique"},
+    {"ref":"S4","source":"https://shop.nilfisk.com/fr-be/products/multi-ii-30-t-aspirateur-eau-et-poussiere","supports":"Multi II 30 T : 30 L, wet/dry, indicateur filtre et Push & Clean"}
+  ],
+  "outline": [
+    {"question":"Comment passe-t-on réellement du sec au liquide ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Place la transition et les consignes de filtre/sac avant un score de puissance."},
+    {"question":"Quels quatre profils couvrent atelier et rénovation ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Donne une shortlist par usage et niveau d’équipement."},
+    {"question":"Pourquoi la vidange devient-elle décisive ?","evidence_refs":["S1","S2","S3"],"decision_value":"Relie capacité liquide et manutention réelle."},
+    {"question":"Comment sac, filtre et prise outil modifient-ils le workflow ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Évite de réduire wet/dry à une fonction binaire."},
+    {"question":"Quand la classe de poussière passe-t-elle devant wet/dry ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Empêche l’assimilation wet/dry = aspirateur de sécurité."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"Intention eau/poussière confirmée comme comparaison de workflow humide/sec ; frontière claire avec classe M et guide sac/sans sac."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD : alterner poussières, débris et liquides avec un minimum de manipulations de filtre, sac et vidange."},
+    "seo-content-audit":{"status":"PASS","output":"LIGHT_UPDATE respecté : shortlist et rôle conservés, profondeur ajoutée sur transition sec/humide, capacité utile et entretien."},
+    "evidence-based-reviews":{"status":"PASS","output":"Fonctions wet/dry, drainage, filtres et prise outil vérifiées sur quatre sources fabricants ; aucun confort d’usage non testé revendiqué."},
+    "fact-check-pre":{"status":"PASS","output":"Capacité, vidange, prise outil, Push & Clean et absence de classe L/M/H documentée vérifiées avant brief."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale : transition sec-humide, vidage plein d’eau, stratégie sac/filtre et limite sécurité."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief centré sur transition, quatre profils, vidange, sac/filtre, outil, sécurité et lecture finale."},
+    "content-and-copy":{"status":"PASS","output":"Mise à jour persistée dans .content/comparisons/v2/aspirateur-eau-poussiere.html sans reconstruire inutilement le rôle de la page."},
+    "fact-check-post":{"status":"PASS","output":"Claims de drainage et de fonctions filtre relus ; aucune capacité liquide équivalente inventée lorsque le fabricant ne la publie pas."},
+    "humanizer":{"status":"PASS","output":"Le texte parle des manipulations concrètes de sec à humide plutôt que de répéter des spécifications."},
+    "general-writing":{"status":"PASS","output":"Distinction entre capacité nominale, facilité de vidange et sécurité formulée de manière simple."},
+    "anti-ai-slop":{"status":"PASS","output":"Structure spécifique transition/vidange, distincte des pages M, puissance et batterie."},
+    "seo-onpage":{"status":"PASS","output":"Title/meta/H1 ciblent eau et poussière avec vidange/filtre ; headings répondent aux sous-intentions utiles."},
+    "seo-technical":{"status":"PASS","output":"Canonical et robots noindex, follow conservés ; aucun schema de test ajouté."},
+    "internal-linking-audit":{"status":"PASS","output":"Lien vers guide sac/sans sac et comparatif classe M lorsque ces questions deviennent dominantes."},
+    "editorial-qa":{"status":"PASS","output":"Wet/dry explicitement séparé de certification, variantes non généralisées, pas de test physique revendiqué."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Wet/dry non assimilé à M/H, capacité liquide non déduite de la cuve brute, fonctions de filtre et vidange vérifiées au niveau référence."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; LIGHT_UPDATE proportionné et rôle de page conservé sans blocker."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
