@@ -36,7 +36,10 @@
     const layout = document.querySelector('.content-layout');
     const article = document.querySelector('.content-main');
     const sidebar = document.querySelector('.content-sidebar');
-    const tocBox = sidebar?.querySelector('.sidebar-box');
+    const tocBox = sidebar ? [...sidebar.querySelectorAll('.sidebar-box')].find(box => {
+      const label = box.querySelector('.sidebar-box-head')?.textContent.trim().toLowerCase();
+      return label === 'sommaire';
+    }) : null;
     const tocHead = tocBox?.querySelector('.sidebar-box-head');
     const tocBody = tocBox?.querySelector('.sidebar-box-body');
 
@@ -67,7 +70,12 @@
           collapse(true);
         } else {
           tocBox.classList.remove('mobile-toc-box');
-          sidebar.insertBefore(tocBox, sidebar.firstChild);
+          const statusBox = [...sidebar.querySelectorAll('.sidebar-box')].find(box => {
+            const label = box.querySelector('.sidebar-box-head')?.textContent.trim().toLowerCase();
+            return label === 'statut';
+          });
+          if (statusBox) statusBox.insertAdjacentElement('afterend', tocBox);
+          else sidebar.insertBefore(tocBox, sidebar.firstChild);
           tocHead.removeAttribute('role');
           tocHead.removeAttribute('tabindex');
           tocHead.removeAttribute('aria-expanded');
