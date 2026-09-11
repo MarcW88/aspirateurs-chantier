@@ -1,0 +1,53 @@
+{
+  "puissance-aspiration": {
+    "title": "Puissance d’un aspirateur de chantier : que signifient vraiment les watts ?",
+    "description": "Watts, puissance moteur et aspiration : ce que la puissance électrique permet de conclure, ce qu’elle ne dit pas, et comment lire une fiche technique.",
+    "h1": "Puissance d’un aspirateur de chantier : que signifient vraiment les watts ?",
+    "lead": "Les watts indiquent d’abord une puissance électrique. Ils ne suffisent pas à classer la capacité d’aspiration d’un aspirateur de chantier.",
+    "answer": "Les watts indiqués sur un aspirateur de chantier décrivent principalement sa puissance électrique absorbée, pas une « force d’aspiration » directement comparable entre machines. Pour juger le système, il faut séparer puissance absorbée, débit d’air, dépression, point de mesure et comportement lorsque le filtre, le flexible et l’outil ajoutent des pertes de charge.",
+    "toc": [
+      ["vocabulaire", "Le mot puissance recouvre plusieurs données"],
+      ["watts", "Ce que les watts permettent de conclure"],
+      ["limites", "Ce qu’ils ne permettent pas de conclure"],
+      ["fiche", "Lire une fiche technique sans mélanger les métriques"],
+      ["exemple", "Exemple : 1 200 W, 74 L/s et 254 mbar"],
+      ["chantier", "Pourquoi la performance évolue pendant le travail"],
+      ["methode", "Méthode de comparaison en quatre étapes"],
+      ["sources", "Sources"]
+    ]
+  },
+  "depression-kpa-mbar-air-watt": {
+    "title": "Dépression d’un aspirateur : kPa, mbar, mmH₂O et Air Watts",
+    "description": "Comprendre la dépression d’un aspirateur de chantier, convertir kPa, mbar et mmH₂O, interpréter les Air Watts et comparer les mesures correctement.",
+    "h1": "Dépression d’un aspirateur : kPa, mbar, mmH₂O et Air Watts",
+    "lead": "La dépression décrit une différence de pression. Avant de comparer deux chiffres, il faut convertir les unités puis vérifier le point et les conditions de mesure.",
+    "answer": "La dépression mesure la différence de pression que l’aspirateur peut créer. 1 kPa = 10 mbar et vaut environ 102 mmH₂O. Cette conversion permet d’aligner les unités, mais elle ne rend pas deux mesures comparables si l’une est prise à la turbine et l’autre au raccord ou avec un flexible. Les Air Watts combinent pression et débit, sans constituer à eux seuls un protocole universel de comparaison des aspirateurs de chantier.",
+    "toc": [
+      ["definition", "Ce que mesure réellement la dépression"],
+      ["conversion", "Convertir kPa, mbar et mmH₂O"],
+      ["airwatts", "Ce que représentent les Air Watts"],
+      ["mesure", "Le point de mesure change la comparaison"],
+      ["usage", "Quand la dépression devient importante"],
+      ["exemple", "Exemple : 25 kPa et 250 mbar"],
+      ["limites", "Ce que la dépression seule ne dit pas"],
+      ["sources", "Sources"]
+    ]
+  },
+  "debit-air-aspirateur": {
+    "title": "Débit d’air d’un aspirateur de chantier : L/s, m³/h et débit utile",
+    "description": "Débit d’air en L/s ou m³/h, captage à la source, turbine vs raccord, pertes de charge et diagnostic d’une chute de débit sur chantier.",
+    "h1": "Débit d’air d’un aspirateur de chantier : L/s, m³/h et débit utile",
+    "lead": "Le débit indique le volume d’air déplacé. Pour le captage à la source, le chiffre utile dépend autant du point de mesure que du flexible, de l’outil et du filtre.",
+    "answer": "Le débit d’air indique le volume d’air qui traverse le circuit, généralement en L/s ou m³/h, avec 1 L/s = 3,6 m³/h. Pour capter des poussières à la source, ce flux est déterminant, mais un débit maximal à la turbine n’est pas le débit réellement disponible au capot de l’outil après le flexible, les raccords et un filtre qui se charge.",
+    "toc": [
+      ["definition", "Ce que mesure le débit d’air"],
+      ["unites", "Convertir L/s et m³/h"],
+      ["captage", "Pourquoi le débit compte au captage"],
+      ["mesure", "Turbine, raccord et bout du flexible"],
+      ["pertes", "Ce qui fait chuter le débit pendant le chantier"],
+      ["diagnostic", "Diagnostiquer une perte de débit"],
+      ["choix", "Utiliser le débit sans chercher un seuil magique"],
+      ["sources", "Sources"]
+    ]
+  }
+}
