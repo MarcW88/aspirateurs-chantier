@@ -12,6 +12,10 @@ on:
       - "_polish_comparison_rollout.py"
       - "_normalize_comparatifs.py"
       - "_apply_comparison_design.py"
+      - "_apply_design_v2.py"
+      - "design-v2.css"
+      - "design-v2-rollout.css"
+      - "design-v2.js"
       - "_validate_comparatifs.py"
       - "_validate_comparison_rollout.py"
       - "validate_comparison_skill_stack.py"
@@ -44,7 +48,9 @@ jobs:
         run: python validate_comparison_skill_stack.py
 
       - name: Materialize canonical comparison drafts
-        run: python _generate_comparison_content.py
+        run: |
+          python _generate_comparison_content.py
+          python _apply_design_v2.py
 
       - name: Validate persisted run-evidence state
         run: python validate_comparison_run_evidence.py
