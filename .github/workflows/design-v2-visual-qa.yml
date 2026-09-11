@@ -38,7 +38,7 @@ jobs:
       - name: Capture desktop and mobile
         run: |
           mkdir -p screenshots
-          cat > /tmp/capture.mjs <<'JS'
+          cat > capture-design-v2.mjs <<'JS'
           import { chromium } from 'playwright';
           const browser = await chromium.launch({headless:true});
           const pages = [
@@ -67,7 +67,8 @@ jobs:
           }
           await browser.close();
           JS
-          node /tmp/capture.mjs
+          node capture-design-v2.mjs
+          rm capture-design-v2.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: design-v2-screenshots
