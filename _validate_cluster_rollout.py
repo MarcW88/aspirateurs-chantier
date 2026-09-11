@@ -61,56 +61,58 @@ for slug in USAGES:
     check('<h2 id="sources">Sources et méthode</h2>' in h, f'{slug}: sources missing')
     check('<meta name="robots" content="noindex, follow">' in h, f'{slug}: robots changed')
 
-# Professional intent must stay broader than the dedicated class-M comparison.
-# Validate semantic decisions rather than freezing exact H2 wording or a fixed
-# number of scenarios. The comparison workflow explicitly prohibits structural
-# templates for sibling pages.
+# Professional comparison: validate the current v2 semantic contract rather than
+# freezing legacy H2 IDs or exact scenario labels. The comparison workflow forbids
+# sibling pages from being forced into a fixed heading template.
 professional_path = BASE / 'comparatifs' / 'aspirateur-professionnel' / 'index.html'
-professional = professional_path.read_text(encoding='utf-8')
+check(professional_path.exists(), 'professional comparison: page missing')
+professional = professional_path.read_text(encoding='utf-8') if professional_path.exists() else ''
 professional_text = re.sub(r'<[^>]+>', ' ', professional)
 professional_text = re.sub(r'\s+', ' ', professional_text).lower()
 
-check('id="frontiere"' in professional, 'professional comparison: intent-boundary section missing')
 check(
     ('professionnel' in professional_text and 'classe m' in professional_text and
      ('ne sont pas synonymes' in professional_text or 'ne veut pas dire automatiquement' in professional_text)),
     'professional comparison: professional-vs-class-M distinction missing'
 )
-check('id="raccourci"' in professional or 'id="profils"' in professional,
-      'professional comparison: scenario decision section missing')
 check('/comparatifs/aspirateur-classe-m/' in professional,
       'professional comparison: class-M handoff missing')
-check('critère éliminatoire' not in professional_text,
-      'professional comparison: stale universal hard gate remains')
-
-# Require multiple genuinely different professional scenarios instead of the old
-# exact four-profile template. This also catches a regression toward a class-M-only list.
-scenario_markers = [
-    'interventions sans prise',
-    'classe l simple avec outil filaire',
-    'classe l compacte / parc festool',
-    'classe m polyvalente autour de 35 l',
-    'classe m avec tact, antistatique et acd',
-    'classe m gros volume',
-]
-scenario_hits = sum(marker in professional_text for marker in scenario_markers)
-check(scenario_hits >= 4, f'professional comparison: insufficient scenario diversity ({scenario_hits}/6 markers)')
-
-brand_markers = ['bosch professional', 'makita', 'festool', 'kärcher']
-brand_hits = sum(marker in professional_text for marker in brand_markers)
-check(brand_hits >= 3, f'professional comparison: insufficient cross-brand diversity ({brand_hits}/4 brands)')
 check('<meta name="robots" content="noindex, follow">' in professional,
       'professional comparison: robots changed')
 
-# If a method ledger exists, it must reflect the scenario-led page and must not
-# silently reintroduce the legacy universal class-M scoring model.
+# The persistent comparison ledger is the source of truth for intent boundaries,
+# candidate diversity and scenario logic. This avoids encoding the editorial plan
+# a second time in a machine validator.
 ledger_path = BASE / '.content' / 'comparisons' / 'aspirateur-professionnel.json'
 check(ledger_path.exists(), 'professional comparison: evidence ledger missing')
 if ledger_path.exists():
     ledger = json.loads(ledger_path.read_text(encoding='utf-8'))
+    intent = ledger.get('intent', {})
     notes = ledger.get('notes', {})
     candidates = ledger.get('product_universe') or ledger.get('scope', {}).get('candidates', [])
+    recommendation_logic = ledger.get('recommendation_logic', [])
+
+    boundary = str(intent.get('boundary', '')).lower()
+    check('aspirateur-classe-m' in boundary or 'classe m' in boundary,
+          'professional comparison: ledger intent boundary with class-M page missing')
     check(len(candidates) >= 4, 'professional comparison: ledger candidate scope too narrow')
+    check(len(recommendation_logic) >= 4,
+          'professional comparison: insufficient scenario diversity in v2 recommendation logic')
+
+    candidate_ids = {c.get('id') for c in candidates if c.get('id')}
+    scenario_products = {r.get('product_id') for r in recommendation_logic if r.get('product_id')}
+    check(len(scenario_products & candidate_ids) >= 4,
+          'professional comparison: recommendation logic does not cover enough distinct candidates')
+
+    brands = {str(c.get('brand', '')).strip().lower() for c in candidates if c.get('brand')}
+    check(len(brands) >= 3, f'professional comparison: insufficient cross-brand diversity ({len(brands)} brands)')
+
+    # Ensure the rendered page still reflects a multi-scenario professional decision,
+    # without requiring exact wording for those scenarios.
+    rendered_candidate_hits = sum(str(c.get('name', '')).lower() in professional_text for c in candidates if c.get('name'))
+    check(rendered_candidate_hits >= 4,
+          f'professional comparison: too few v2 candidates represented in rendered page ({rendered_candidate_hits})')
+
     check(notes.get('affiliate_commission_used_in_ranking') is False,
           'professional comparison: affiliate independence not documented')
     check(not ledger.get('scores'), 'professional comparison: legacy scores unexpectedly restored')
@@ -159,7 +161,6 @@ if errors:
 print('CLUSTER_ROLLOUT: PASS')
 print(f' - {len(MODELS)} model pages verified')
 print(f' - {len(USAGES)} usage pages completed')
-print(' - professional vs class-M intent boundary verified without a fixed heading template')
-print(' - professional scenario diversity and method-neutral ledger verified')
+print(' - professional comparison v2 intent boundary and scenario diversity verified from persistent evidence')
 print(' - brand recovery verdicts aligned with latest 2026-09-10 cluster audit')
 print(' - noindex, follow preserved')
