@@ -1,0 +1,51 @@
+{
+  "contract_version": 2,
+  "slug": "aspirateur-chantier-sans-fil",
+  "status": "PASS",
+  "reader_decision": "Choisir un système d’aspiration sur batterie selon classe, parc batteries, autonomie, coût complet, masse prête à travailler et déclenchement avec l’outil plutôt que selon la tension seule.",
+  "comparison_scope": "Quatre architectures batterie couvrent classe L légère, classe M 18 V, classe M FLEXVOLT 54 V et wet/dry grand public 18 V ; elles ne sont comparées qu’à l’intérieur de leurs contraintes réelles.",
+  "value_without_affiliate_links": "La page révèle le coût du système complet, refuse les comparaisons d’autonomie non équivalentes, distingue poids nu et poids réel et traite le déclenchement outil comme critère de productivité.",
+  "candidate_scope": {
+    "considered": ["Bosch Professional GAS 18V-10 L","Bosch Professional GAS 18V-12 MC","DeWalt DCV586M","Kärcher WD 3-18 S"],
+    "major_exclusions": [
+      "Les filaires sont hors shortlist mais restent la référence de sortie lorsque autonomie et petite capacité deviennent pénalisantes.",
+      "Les autonomies fabricant ne sont pas converties en score commun sans protocole équivalent."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302","supports":"GAS18V-10L : classe L, poids sans batterie, capacité, autonomie min/Ah"},
+    {"ref":"S2","source":"https://www.bosch-professional.com/fr/fr/products/gas-18v-12-mc-06019K2000","supports":"GAS18V-12MC : M, AMPShare, capacité, Auto-Start, antistatique"},
+    {"ref":"S3","source":"https://www.dewalt.fr/fr-fr/produit/dcv586mn-xj/aspirateur-tstak-xr-flexvolt-54v-brushless-eau-et-poussieres-classe-m","supports":"DCV586M : FLEXVOLT 54 V, M, nettoyage filtre, alarme, télécommande, vendu nu sur variante MN"},
+    {"ref":"S4","source":"https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-3-18-s-avec-la-batterie-amovible-16285760.html","supports":"WD3-18 S : Battery Power 18 V, 17 L, wet/dry et autonomie publiée"}
+  ],
+  "outline": [
+    {"question":"Pourquoi la tension ne suffit-elle pas pour choisir ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Remet classe et écosystème batterie avant le voltage."},
+    {"question":"Quels quatre systèmes correspondent à quels usages ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Compare des workflows plutôt que des volts."},
+    {"question":"Comment lire l’autonomie sans faux benchmark ?","evidence_refs":["S1","S4"],"decision_value":"Conserve la méthode publiée et refuse une normalisation arbitraire."},
+    {"question":"Quel est le coût du système prêt à travailler ?","evidence_refs":["S2","S3"],"decision_value":"Intègre batterie, chargeur et module de déclenchement."},
+    {"question":"Quand le poids et le déclenchement changent-ils la productivité ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Fait basculer la décision selon intervention, escaliers et usage outil."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"Intention sans-fil confirmée comme choix de système batterie ; frontière conservée avec compact, professionnel et classe M."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD : travailler loin d’une prise ou avec forte mobilité sans dégrader la classe requise ni multiplier les interruptions batterie."},
+    "seo-content-audit":{"status":"PASS","output":"DEEP_REWRITE appliqué ; shortlist pertinente conservée mais décision recentrée sur plateforme, autonomie, coût complet, poids et déclenchement."},
+    "evidence-based-reviews":{"status":"PASS","output":"Quatre fiches fabricants vérifiées ; aucune autonomie réelle ou sensation d’usage inventée."},
+    "fact-check-pre":{"status":"PASS","output":"Classes, plateformes, poids sans batterie, capacités, runtime publié et variante DeWalt vendue sans batterie/chargeur vérifiés."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale : total system cost, parc déjà possédé, poids prêt à travailler et déclenchement outil plutôt que simple tension."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief construit autour de voltage non discriminant, systèmes, runtime, coût, poids, déclenchement et sortie vers filaire."},
+    "content-and-copy":{"status":"PASS","output":"Réécriture persistée dans .content/comparisons/v2/aspirateur-chantier-sans-fil.html avec architecture système batterie."},
+    "fact-check-post":{"status":"PASS","output":"Autonomies laissées dans leur format fabricant ; aucune conversion cross-brand ni masse batterie inventée."},
+    "humanizer":{"status":"PASS","output":"Le texte évite le catalogue de tensions et parle en termes de parc, recharge, intervention et usage outil."},
+    "general-writing":{"status":"PASS","output":"Explications de coût système et poids réel rendues concrètes sans surcharger la page de calculs hypothétiques."},
+    "anti-ai-slop":{"status":"PASS","output":"Structure différente des autres comparatifs ; pas de grille générique avantages/limites ni de classement 18V/54V."},
+    "seo-onpage":{"status":"PASS","output":"Title/meta/H1 intègrent sans-fil, système batterie et classe ; headings couvrent runtime, coût et déclenchement."},
+    "seo-technical":{"status":"PASS","output":"Canonical existant et noindex, follow conservés ; aucun prix dynamique ou donnée volatile fabriquée."},
+    "internal-linking-audit":{"status":"PASS","output":"Liens vers professionnel/classe M lorsque le filaire ou la certification deviennent le critère principal."},
+    "editorial-qa":{"status":"PASS","output":"Pas de fausse autonomie réelle, pas de coût total non sourcé, limites de la comparaison et desk research explicites."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Compatibilités de plateformes traitées explicitement ; classe séparée de voltage, autonomie et poids non extrapolés au-delà des données disponibles."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; la page répond au choix d’un système batterie et ne clone plus le comparatif général."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
