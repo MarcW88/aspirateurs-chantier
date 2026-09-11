@@ -8,6 +8,7 @@ on:
       - "_generate_brand_content.py"
       - "_generate_brands.py"
       - "_generate_bosch.py"
+      - "_generate_karcher.py"
       - "_generate_brand_overrides.py"
       - "_brand_rollout_polish.py"
       - "_apply_cluster_audit_metadata.py"
@@ -64,8 +65,12 @@ jobs:
 
       - name: Preserve noindex drafts
         run: |
-          for f in marques/karcher/index.html marques/bosch/index.html marques/makita/index.html marques/festool/index.html marques/dewalt/index.html marques/parkside/index.html marques/nilfisk/index.html marques/mirka/index.html; do
-            grep -q '<meta name="robots" content="noindex, follow">' "$f"
+          for f in marques/karcher/index.html marques/bosch/index.html marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka; do
+            if [ -d "$f" ]; then
+              grep -q '<meta name="robots" content="noindex, follow">' "$f/index.html"
+            else
+              grep -q '<meta name="robots" content="noindex, follow">' "$f"
+            fi
           done
 
       - name: Whitespace check
