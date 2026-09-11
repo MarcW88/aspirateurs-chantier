@@ -278,11 +278,14 @@
     "run_evidence": ".content/brands/runs/karcher.json"
   },
   "cluster_audit": {
-    "audited_snapshot": "7547c8ef4b1d6bb2602756312beecb1cdc1ad185",
-    "date": "2026-09-09",
+    "date": "2026-09-10",
     "verdict": "DEEP_REWRITE",
+    "reason": "Large range and strong WD/NT distinction were under-developed; evidence layer too manufacturer-heavy and sections too uniformly shallow.",
+    "audit_artifact": ".content/brands/cluster-audit-2026-09-10.md",
+    "audited_snapshot": "3a79ddb899fe9c17f210e4b413738d68f19df705",
     "confidence": 0.95,
-    "order_gate": "MODEL_CLEANUP -> USAGE_COMPLETION -> BRAND_REVIEW -> CLUSTER_PUBLISH_REVIEW"
+    "next_step": "brand-content-workflow",
+    "order_gate": "CLUSTER_AUDIT -> PER_PAGE_SHARED_WORKFLOW -> PUBLISH_REVIEW -> HUMAN_VALIDATION"
   },
   "sources": {
     "S1": {

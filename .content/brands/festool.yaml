@@ -165,12 +165,14 @@
   },
   "source_of_truth": "_generate_brand_overrides.py",
   "structure_strategy": "bespoke_system_workflow_ctl_ctm_cth_autoclean",
-  "recovery_verdict": "DEEP_REWRITE",
+  "recovery_verdict": "LIGHT_UPDATE",
   "cluster_audit": {
-    "audited_snapshot": "7547c8ef4b1d6bb2602756312beecb1cdc1ad185",
-    "date": "2026-09-09",
-    "verdict": "DEEP_REWRITE",
-    "confidence": 0.95,
-    "order_gate": "MODEL_CLEANUP -> USAGE_COMPLETION -> BRAND_REVIEW -> CLUSTER_PUBLISH_REVIEW"
+    "audit_artifact": ".content/brands/cluster-audit-2026-09-10.md",
+    "audited_snapshot": "3a79ddb899fe9c17f210e4b413738d68f19df705",
+    "date": "2026-09-10",
+    "verdict": "LIGHT_UPDATE",
+    "confidence": 0.9,
+    "next_step": "brand-content-workflow",
+    "order_gate": "CLUSTER_AUDIT -> PER_PAGE_SHARED_WORKFLOW -> PUBLISH_REVIEW -> HUMAN_VALIDATION"
   }
 }
