@@ -43,7 +43,7 @@
         "brand": "Nilfisk",
         "status": "ELIGIBLE",
         "role": "Grand public 30 L hors Kärcher",
-        "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
+        "source": "https://shop.nilfisk.com/fr-be/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
       }
     ],
     "major_exclusions": []
@@ -79,7 +79,7 @@
       "brand": "Nilfisk",
       "status": "ELIGIBLE",
       "role": "Grand public 30 L hors Kärcher",
-      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
+      "source": "https://shop.nilfisk.com/fr-be/products/multi-ii-30-t-aspirateur-eau-et-poussiere"
     }
   ],
   "criteria": [
@@ -136,8 +136,8 @@
     {
       "product": "nilfisk-multi-ii-30-t",
       "criterion": "product_identity_and_role",
-      "claim": "Puissance annoncée : 1 400 W · Dépression : 210 mbar (21 kPa) · Cuve : 30 L · Eau + poussière : Oui · Fonction soufflerie : Oui · Prise outil : Selon variante T/VSC — vérifier le suffixe exact",
-      "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere",
+      "claim": "Puissance Pmax : 1 400 W · Puissance : 1 260 W · Cuve : 30 L · Dépression (champ Vacuum) : 210 mbar (21 kPa) · Max. suction power (champ distinct) : 292 mbar · Nettoyage du filtre : Push&Clean manuel + indicateur",
+      "source": "https://shop.nilfisk.com/fr-be/products/multi-ii-30-t-aspirateur-eau-et-poussiere",
       "source_date": "2026-09-09",
       "evidence_class": "VERIFIED"
     }
