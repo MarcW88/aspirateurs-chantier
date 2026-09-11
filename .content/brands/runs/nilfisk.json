@@ -1,0 +1,56 @@
+{
+  "contract_version": 2,
+  "slug": "nilfisk",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Choisir un Nilfisk en partant du rythme de travail : nettoyage ponctuel, atelier avec prise outil, poussière fine soutenue, puis exigence éventuelle de classe L/M/H ; choisir ensuite Push&Clean ou InfiniClean et vérifier la référence complète.",
+  "value_without_affiliate_links": "La page évite quatre erreurs d'achat : surdimensionner vers ATTIX pour du simple nettoyage, confondre Push&Clean et décolmatage automatique, confondre la classe d'un filtre avec la certification de l'aspirateur, ou acheter un ATTIX sur le seul nombre 33/44 sans lire ses suffixes.",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent principal : comprendre la gamme Nilfisk pour chantier/atelier et distinguer Buddy, Multi II et ATTIX selon le besoin réel. Sous-intentions : Multi II 30 T, Push&Clean, InfiniClean, ATTIX L/M/H, FlowSensor et références complètes."},
+    "content-audit": {"status": "PASS", "output": "DEEP_REWRITE confirmé. L'ancienne page avait le bon axe Multi vs ATTIX mais restait trop binaire et n'expliquait pas assez la différence entre nettoyage semi-automatique, automatique, classe du filtre et certification de la machine."},
+    "content-refresh": {"status": "PASS", "output": "Actualisation au 11/09/2026 avec Buddy II 18, gamme Multi II actuelle, Multi II 30 T, ATTIX 33-2L IC, ATTIX 44-2M IC, ATTIX 44-2H IC et documentation Nilfisk sur les systèmes de nettoyage de filtre."},
+    "fact-check-pre": {"status": "PASS", "output": "Evidence brief construit avant rédaction. Vérifications prioritaires : capacités et fonctions Buddy/Multi, nature semi-automatique de Push&Clean, fonctionnement d'InfiniClean, certification L du 33-2L, certification M du 44-2M, FlowSensor et configuration H/HEPA du 44-2H."},
+    "evidence-based-reviews": {"status": "PASS", "output": "Les caractéristiques et certifications proviennent de sources Nilfisk Tier 1. BricoZone est utilisé uniquement comme signal d'usage historique sur la limite du nettoyage semi-automatique avec poussière fine ; aucune performance actuelle n'est extrapolée."},
+    "affiliate-value": {"status": "PASS", "output": "La valeur originale réside dans la matrice décisionnelle nettoyage -> maintien du débit -> classe certifiée et dans la distinction filtre/classe machine. Aucun lien marchand n'est nécessaire pour rendre la page utile."},
+    "content-brief-authoring": {"status": "PASS", "output": "Brief evidence-led en sept sections : trois niveaux de besoin ; Buddy/Multi ; Push&Clean vs InfiniClean ; ATTIX L ; ATTIX M/H ; lecture de la référence complète ; routage final par usage."},
+    "content-and-copy": {"status": "PASS", "output": "Réécriture complète produite dans _generate_nilfisk.py. Les produits servent à expliquer des seuils de décision et non à fabriquer une série de mini-reviews répétitives."},
+    "fact-check-post": {"status": "PASS", "output": "Contrôle post-draft : Buddy II 18 18 L/1200 W ; Multi II 30 T 30 L/1400 W avec prise outil et Push&Clean ; ATTIX 33-2L IC classe L avec InfiniClean ; ATTIX 44-2M IC classe M avec FlowSensor ; ATTIX 44-2H IC variante H avec HEPA H14 documenté."},
+    "humanizer": {"status": "PASS", "output": "Passe de style centrée sur les erreurs concrètes d'achat : réservoir trop mis en avant, Push&Clean pris pour un vrai automatique, filtre M pris pour une certification M, suffixes ATTIX ignorés."},
+    "general-writing": {"status": "PASS", "output": "Structure resserrée : un seul tableau final de routage, paragraphes orientés décision et caractéristiques limitées à celles qui changent le choix."},
+    "anti-ai-slop": {"status": "PASS", "output": "Pas de FAQ automatique, pas de conclusion générique, pas de superlatifs, pas de faux test et aucune structure copiée de Parkside, Makita ou Kärcher."},
+    "internal-linking-audit": {"status": "PASS", "output": "Liens vers eau/poussière, professionnel, classe M, décolmatage, classes L/M/H, atelier et gravats uniquement lorsqu'ils correspondent à la prochaine décision du lecteur."},
+    "seo-technical": {"status": "PASS", "output": "Canonical /marques/nilfisk/ conservé, un seul H1, noindex, follow conservé, title/meta actualisés, IDs uniques et sommaire aligné sur la structure spécifique."},
+    "seo-best-practices": {"status": "PASS", "output": "Ciblage centré sur l'entité Nilfisk et les termes Buddy, Multi II, ATTIX, Push&Clean, InfiniClean, FlowSensor et classes L/M/H sans cannibaliser les guides sécurité ni les comparatifs inter-marques."},
+    "editorial-qa": {"status": "PASS", "output": "QA final : distinction classe du filtre/certification de la machine explicite, aucun prix figé, aucune extrapolation du témoignage utilisateur, suffixes et limites de preuve visibles."}
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {"status": "PASS", "output": "Contrôle métier sur aspiration eau/poussière, prise outil, décolmatage semi-automatique et automatique, classe L/M/H, FlowSensor, antistatique, HEPA H14 et compatibilité de flexible. Aucun raccourci filtre=classe machine."},
+    "brand-analysis-publish-review": {"status": "PASS", "output": "PUBLISH_REVIEW : intention satisfaite, structure distincte du cluster, preuves reliées aux claims, limites visibles, valeur indépendante de l'affiliation et noindex conservé. PASS — READY_FOR_HUMAN_VALIDATION."}
+  },
+  "outline": [
+    {"id": "deux-univers", "question": "Quels sont les vrais niveaux de besoin couverts par Nilfisk ?", "evidence_refs": ["S1", "S2", "S4", "S5"], "decision_value": "Évite un faux choix binaire grand public/pro et introduit le niveau intermédiaire Multi II."},
+    {"id": "buddy-multi", "question": "Quand Buddy ou Multi II suffisent-ils réellement ?", "evidence_refs": ["S1", "S2", "S3"], "decision_value": "Positionne les modèles eau/poussière sur le nettoyage et le bricolage sans leur attribuer des fonctions de sécurité non documentées."},
+    {"id": "pushclean-vs-ic", "question": "Quelle différence pratique entre Push&Clean et InfiniClean ?", "evidence_refs": ["S3", "S7", "S8"], "decision_value": "Relie le système de nettoyage du filtre au rythme de travail et au risque de colmatage."},
+    {"id": "infiniclean", "question": "Pourquoi ATTIX 33-2L IC est-il un cas utile pour comprendre filtre et certification ?", "evidence_refs": ["S4"], "decision_value": "Montre qu'un filtre référencé classe M peut équiper une machine certifiée classe L sans changer sa certification."},
+    {"id": "classes-attix", "question": "Que changent réellement les variantes ATTIX M et H ?", "evidence_refs": ["S5", "S6"], "decision_value": "Fait passer FlowSensor, certification et confinement avant la capacité de cuve."},
+    {"id": "reference-complete", "question": "Pourquoi faut-il lire les suffixes ATTIX ?", "evidence_refs": ["S4", "S5", "S6"], "decision_value": "Réduit les erreurs entre L/M/H, IC/PC et variantes de capacité ou d'équipement."},
+    {"id": "quel-nilfisk", "question": "Quel Nilfisk correspond au travail réel ?", "evidence_refs": ["S1", "S3", "S4", "S5", "S6"], "decision_value": "Transforme la gamme en routage par usage sans classement universel."}
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "Buddy II 18 actuel, 18 L, 1200 W, soufflerie et filtre mixte lavable", "source": "https://shop.nilfisk.com/fr-fr/products/buddy-ii-18-aspirateur-eau-et-poussiere"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "gamme Multi II actuelle en 22 et 30 L et variantes disponibles", "source": "https://shop.nilfisk.com/fr-fr/collections/multi-aspirateur-eau-poussiere"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "Multi II 30 T, 30 L, 1400 W, prise outil, témoin filtre et Push&Clean", "source": "https://shop.nilfisk.com/fr-fr/products/multi-ii-30-t-aspirateur-eau-et-poussiere"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "ATTIX 33-2L IC certifié L, InfiniClean et filtre plat PTFE référencé classe M", "source": "https://www.nilfisk.com/fr-be/professional/produits/aspirateurs-industriels/aspirateurs-eau-et-poussiere-monophases/attix-33-2l-ic-%2B107412103/"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "ATTIX 44-2M IC classe M, InfiniClean, FlowSensor et antistatique", "source": "https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/attix-44-2m-ic%2B107412182/"},
+    {"ref": "S6", "tier": 1, "status": "VERIFIED", "claim_scope": "ATTIX 44-2H IC, certification H documentée et filtre HEPA H14 dans la configuration officielle", "source": "https://www.nilfisk.com/fr-be/professional/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/attix-44-m-h%2B107412186/"},
+    {"ref": "S7", "tier": 1, "status": "VERIFIED", "claim_scope": "typologie Nilfisk des systèmes de nettoyage et définition d'InfiniClean comme automatique pendant le fonctionnement", "source": "https://www.nilfisk.com/fr-fr/professionnel/pages/accessoires-aspirateurs-industriels/filtres-et-systemes-de-nettoyage-de-filtre/"},
+    {"ref": "S8", "tier": 4, "status": "SUPPORTED", "claim_scope": "retour communautaire historique sur Multi II 30 T et limite perçue du nettoyage semi-automatique en poussière fine", "source": "https://www.bricozone.be/t/aspirateur-nilfisk-multi-ii-30-t.105379/"}
+  ],
+  "residual_risks": [
+    "Les pages Nilfisk France et Belgique peuvent exposer des variantes différentes ; la référence produit complète reste prioritaire.",
+    "La présence d'un filtre PTFE appelé classe M ne doit jamais être transformée en certification M de la machine complète.",
+    "Les obligations de classe L/M/H dépendent du risque et du contexte de travail ; la page ne remplace pas une évaluation de prévention.",
+    "Le témoignage BricoZone date d'une ancienne génération et ne prouve aucune performance du Multi II actuel."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
