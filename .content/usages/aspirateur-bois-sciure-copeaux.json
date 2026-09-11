@@ -1,0 +1,52 @@
+{
+  "contract_version": 1,
+  "slug": "aspirateur-bois-sciure-copeaux",
+  "url": "/usages/aspirateur-bois-sciure-copeaux/",
+  "updated_at": "2026-09-11",
+  "intent": {"topic": "aspiration bois sciure copeaux", "intent": "information/commercial investigation by material flow", "user_job": "distinguer poussiere fine et copeaux puis choisir aspiration mobile, collecte dediee ou reseau", "boundary": "material-flow page; saw owns one-tool geometry and workshop owns multi-station system design"},
+  "jtbd": {"circumstances": ["poncage", "sciage", "rabotage", "machines portatives", "machines fixes"], "progress": "capter les poussieres fines a la source tout en transportant les copeaux sans bouchons", "frictions": ["flux tres differents", "conduit trop etroit", "volume de copeaux", "nettoyage qui remet la poussiere en suspension"], "evidence_class": "SUPPORTED"},
+  "criteria": [
+    {"criterion": "type de flux", "priority": "MUST_HAVE", "decision_effect": "separe poussiere fine et copeaux"},
+    {"criterion": "captage a la source", "priority": "MUST_HAVE", "decision_effect": "priorite prevention poussiere bois"},
+    {"criterion": "mobile vs collecte fixe", "priority": "HIGH", "decision_effect": "adapte l'architecture au volume et au poste"},
+    {"criterion": "diametre/tracé du conduit", "priority": "HIGH", "decision_effect": "conditionne transport et bouchons"},
+    {"criterion": "nettoyage/vidage", "priority": "HIGH", "decision_effect": "evite remise en suspension"}
+  ],
+  "evidence": [
+    {"id": "S1", "claim": "les travaux exposant aux poussieres de bois sont associes a un risque cancérogene en contexte professionnel et la prevention privilegie le captage a la source", "source": "https://www.inrs.fr/risques/poussieres-bois/ce-qu-il-faut-retenir", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S2", "claim": "le nettoyage par aspiration est prefere au balayage/soufflage pour limiter la remise en suspension des poussieres de bois", "source": "https://www.inrs.fr/metiers/metiers-du-bois/transformation-du-bois/poussiere/ventilation-aspiration.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S3", "claim": "le dimensionnement d'extraction doit tenir compte du type et du nombre de machines et de leur usage simultane", "source": "https://www.hse.gov.uk/woodworking/wooddust.htm", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"}
+  ],
+  "handoffs": {"usage": ["/usages/aspirateur-scie/", "/usages/aspirateur-atelier/"], "guides": ["/guides/debit-air-aspirateur/", "/guides/classes-l-m-h/", "/guides/entretien-aspirateur-chantier/"], "comparisons": []},
+  "outline": [
+    {"question": "Poussiere fine ou copeaux volumineux ?", "evidence_refs": ["S1", "S2"], "decision_value": "evite un cahier des charges unique"},
+    {"question": "Quand passer du mobile au fixe ?", "evidence_refs": ["S3"], "decision_value": "place l'architecture au niveau du volume/poste"},
+    {"question": "Comment nettoyer sans remettre la poussiere en suspension ?", "evidence_refs": ["S2"], "decision_value": "integre la fin du workflow"}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "content-audit", "status": "PASS", "output": "LIGHT_UPDATE; strong material-led role preserved"},
+      {"skill": "search-intent", "status": "PASS", "output": "wood material-flow intent confirmed"},
+      {"skill": "jobs-to-be-done", "status": "PASS", "output": "fine dust vs chip transport circumstances mapped"},
+      {"skill": "content-refresh", "status": "PASS", "output": "mobile-vs-fixed boundary deepened"},
+      {"skill": "fact-check", "status": "PASS", "output": "INRS/HSE prevention claims checked"},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "no experiential product ranking"},
+      {"skill": "affiliate-value", "status": "PASS", "output": "material/architecture value independent of products"},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "two-flow material-led outline"},
+      {"skill": "content-and-copy", "status": "PASS", "output": "authored v2 fragment"},
+      {"skill": "humanizer", "status": "PASS", "output": "template cadence removed"},
+      {"skill": "general-writing", "status": "PASS", "output": "mobile/fixed distinctions clarified"},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "structure distinct from saw/workshop pages"},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "handoffs follow material-to-tool/system journey"},
+      {"skill": "seo-onpage", "status": "PASS", "output": "metadata covers wood/sawdust/chips intent"},
+      {"skill": "seo-technical", "status": "PASS", "output": "canonical/noindex preserved"},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "single H1 and useful sections"},
+      {"skill": "editorial-qa", "status": "PASS", "output": "no inferred class or universal duct threshold"}
+    ],
+    "custom": [
+      {"skill": "usage-content-workflow", "status": "PASS", "output": "wood-flow and vacuum-system gates applied"},
+      {"skill": "usage-analysis-workflow", "status": "PASS", "output": "PUBLISH_REVIEW passed"}
+    ]
+  },
+  "editorial": {"cluster_audit_decision": "LIGHT_UPDATE", "final_decision": "LIGHT_UPDATE_COMPLETED", "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION", "human_validation": false, "robots": "noindex, follow"}
+}
