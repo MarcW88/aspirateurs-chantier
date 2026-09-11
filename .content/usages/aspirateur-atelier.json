@@ -1,0 +1,62 @@
+{
+  "contract_version": 1,
+  "slug": "aspirateur-atelier",
+  "url": "/usages/aspirateur-atelier/",
+  "updated_at": "2026-09-11",
+  "intent": {
+    "topic": "aspiration atelier et choix entre aspirateur mobile, collecteur et reseau",
+    "intent": "information/commercial investigation at system-design level",
+    "user_job": "organiser plusieurs postes de travail en separant nettoyage, outils portatifs et machines fixes",
+    "boundary": "workshop-system page; wood page owns material flow, saw/sander pages own one-tool workflow, comparisons own product selection"
+  },
+  "jtbd": {
+    "circumstances": ["plusieurs postes", "outils portatifs", "machines fixes", "nettoyage sec/humide", "deplacements dans l'atelier"],
+    "progress": "choisir une architecture d'aspiration plutot qu'un appareil surdimensionne qui traite mal certains postes",
+    "frictions": ["longueur/routage des flexibles", "machines simultanees", "gros volumes de copeaux", "mobilite", "bruit", "changement constant de configuration"],
+    "evidence_class": "SUPPORTED"
+  },
+  "criteria": [
+    {"criterion": "cartographie des postes", "priority": "MUST_HAVE", "decision_effect": "revele si un seul appareil peut servir le workflow"},
+    {"criterion": "mobile vs fixe", "priority": "MUST_HAVE", "decision_effect": "oriente l'architecture avant les specs"},
+    {"criterion": "type/volume de matiere", "priority": "HIGH", "decision_effect": "separe poussiere fine et copeaux volumineux"},
+    {"criterion": "risque de poussiere", "priority": "MUST_HAVE", "decision_effect": "determine si une machine certifiee est necessaire"},
+    {"criterion": "nettoyage humide/general", "priority": "CONDITIONAL", "decision_effect": "peut justifier un second appareil polyvalent"}
+  ],
+  "evidence": [
+    {"id": "S1", "claim": "un systeme d'extraction en atelier bois doit etre concu en fonction du nombre/type de machines, de leur utilisation simultanee et de l'implantation", "source": "https://www.hse.gov.uk/woodworking/wooddust.htm", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S2", "claim": "le captage local doit etre adapte au procede et a la source d'emission", "source": "https://www.hse.gov.uk/lev/common-processes.htm", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S3", "claim": "la prevention des poussieres privilegie reduction des emissions et captage a la source", "source": "https://www.inrs.fr/risques/poussieres/ce-qu-il-faut-retenir.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"}
+  ],
+  "handoffs": {"usage": ["/usages/aspirateur-bois-sciure-copeaux/", "/usages/aspirateur-scie/", "/usages/aspirateur-ponceuse/"], "guides": ["/guides/classes-l-m-h/"], "comparisons": ["/comparatifs/aspirateur-eau-poussiere/", "/comparatifs/aspirateur-industriel/"]},
+  "outline": [
+    {"question": "Quels postes et flux existent dans l'atelier ?", "evidence_refs": ["S1"], "decision_value": "place l'architecture avant la cuve"},
+    {"question": "Quand choisir mobile, collecte dediee ou reseau ?", "evidence_refs": ["S1", "S2"], "decision_value": "evite de faire d'un aspirateur mobile une solution universelle"},
+    {"question": "Le nettoyage general doit-il etre separe du captage fin ?", "evidence_refs": ["S3"], "decision_value": "autorise deux roles complementaires au lieu d'un compromis permanent"}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "content-audit", "status": "PASS", "output": "DEEP_REWRITE; preserved cleaning-vs-machine extraction distinction"},
+      {"skill": "search-intent", "status": "PASS", "output": "system-design intent separated from general buying guide"},
+      {"skill": "jobs-to-be-done", "status": "PASS", "output": "job reframed around multiple workstations and collection flows"},
+      {"skill": "content-refresh", "status": "PASS", "output": "generic mobility/ecosystem page rebuilt as workshop architecture"},
+      {"skill": "fact-check", "status": "PASS", "output": "HSE/INRS source-capture claims checked"},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "no hands-on product judgement"},
+      {"skill": "affiliate-value", "status": "PASS", "output": "system-design value independent of affiliate products"},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "architecture-led bespoke brief"},
+      {"skill": "content-and-copy", "status": "PASS", "output": "authored v2 fragment"},
+      {"skill": "humanizer", "status": "PASS", "output": "removed generic page cadence"},
+      {"skill": "general-writing", "status": "PASS", "output": "mobile/fixed/network distinctions made explicit"},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "structure unique within usage cluster"},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "handoffs follow system-to-tool/material journey"},
+      {"skill": "seo-onpage", "status": "PASS", "output": "title/H1 centered on workshop architecture"},
+      {"skill": "seo-technical", "status": "PASS", "output": "canonical/noindex preserved"},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "clear heading hierarchy and internal paths"},
+      {"skill": "editorial-qa", "status": "PASS", "output": "no universal airflow or machine-size claims"}
+    ],
+    "custom": [
+      {"skill": "usage-content-workflow", "status": "PASS", "output": "vacuum-specific system boundaries applied"},
+      {"skill": "usage-analysis-workflow", "status": "PASS", "output": "PUBLISH_REVIEW passed; no cannibalization with general guide"}
+    ]
+  },
+  "editorial": {"cluster_audit_decision": "DEEP_REWRITE", "final_decision": "DEEP_REWRITE_COMPLETED", "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION", "human_validation": false, "robots": "noindex, follow"}
+}
