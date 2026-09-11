@@ -1,0 +1,37 @@
+{
+  "contract_version": 2,
+  "slug": "bosch-gas-18v-10-l",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to the exact-reference decision: mobility-first GAS 18V-10 L versus GAS 18V-12 MC or a corded Bosch alternative."},
+    "content-audit": {"status": "PASS", "output": "Existing page audited as DEEP_REWRITE because the factual base was sound but the editorial value was weaker than the cordless comparison and used the cloned legacy model structure."},
+    "content-refresh": {"status": "PASS", "output": "Preserved verified facts and rebuilt the body around mobility, 4 min/Ah, battery ecosystem, L-vs-M boundary and cordless-vs-corded trade-offs."},
+    "fact-check-pre": {"status": "PASS", "output": "Primary Bosch pages checked for GAS 18V-10 L, GAS 18V-12 MC and GAS 12-25 PL before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "Final page avoids subjective quality, reliability, noise, ergonomics and hands-on performance claims."},
+    "affiliate-value": {"status": "PASS", "output": "Affiliate-independent value comes from interpreting 4 min/Ah, 6 L net capacity, class boundaries and the role of an existing 18V/AMPShare battery fleet."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted at .content/models/briefs/bosch-gas-18v-10-l-2026-09-11.md with evidence refs E1-E6 and five decision-led outline questions."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/ and rendered without the legacy model heading signature."},
+    "fact-check-post": {"status": "PASS", "output": "Post-draft verification preserved 4 min/Ah as a manufacturer figure, 4.7 kg as weight excluding battery, and turbine measurement context for airflow/vacuum."},
+    "humanizer": {"status": "PASS", "output": "Removed catalogue-style best-for/limits phrasing and rewrote around practical decision sequence and explicit evidence boundaries."},
+    "general-writing": {"status": "PASS", "output": "Copy tightened into concrete contrasts: mobility versus capacity, battery runtime planning, L versus M, and battery ecosystem fit."},
+    "anti-ai-slop": {"status": "PASS", "output": "No generic four-H2 model template, FAQ padding, generic conclusion or interchangeable recommendation blocks remain."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links route broader selection to the cordless comparison, range context to Bosch, and safety-class explanation to the L/M/H guide."},
+    "seo-technical": {"status": "PASS", "output": "Canonical unchanged, robots remains noindex, follow, exact-model H1 retained, and bespoke TOC matches rendered headings."},
+    "seo-best-practices": {"status": "PASS", "output": "Specific title/meta focus on autonomy, class L and cordless compromise rather than generic product-sheet wording."},
+    "editorial-qa": {"status": "PASS", "output": "Rendered page checked for no false autonomy extrapolation, no false hands-on, no simplistic airflow/vacuum ranking and clear model/comparison boundaries."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Exact model identity, class L, 34 l/s and 115 mbar turbine context, 10/6/6 L capacities, 4 min/Ah, 4.7 kg without battery and Professional 18V/AMPShare compatibility checked against Bosch."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Publish review passed: page is specific to GAS 18V-10 L, structurally distinct from GAS 35 M and legacy siblings, evidence-bounded and still noindex pending human validation."}
+  },
+  "reader_decision": "Decide whether the Bosch GAS 18V-10 L is the right mobility-first extractor for an existing Professional 18V / AMPShare setup, or whether the GAS 18V-12 MC or a corded class-L Bosch is more rational.",
+  "value_without_affiliate_links": "Explains how to read 4 min/Ah without inventing runtime, the 6 L / low-mass compromise, the class and workflow difference versus GAS 18V-12 MC, and when corded continuity becomes more rational.",
+  "outline": [
+    {"question": "Le GAS 18V-10 L est-il d'abord un choix de mobilité ou de performance ?", "evidence_refs": ["E1", "E3"], "decision_value": "Centers the model on its real mobility/capacity compromise."},
+    {"question": "Comment lire 4 min/Ah sans inventer une autonomie de chantier ?", "evidence_refs": ["E1", "E4", "E5"], "decision_value": "Makes battery planning useful without unsupported runtime promises."},
+    {"question": "GAS 18V-10 L ou GAS 18V-12 MC ?", "evidence_refs": ["E1", "E2", "E6"], "decision_value": "Separates mobility/class-L from M-class/Auto-Start workflow rather than ranking turbine figures."},
+    {"question": "Quand un filaire classe L devient-il plus cohérent ?", "evidence_refs": ["E1", "E3"], "decision_value": "Makes capacity and continuous power constraints visible."},
+    {"question": "Quelles limites doivent rester visibles ?", "evidence_refs": ["E1", "E4", "E6"], "decision_value": "Keeps class, battery-dependent runtime and battery-excluded weight in context."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
