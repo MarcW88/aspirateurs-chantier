@@ -1,0 +1,55 @@
+{
+  "contract_version": 2,
+  "slug": "festool",
+  "run_date": "2026-09-11",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur Festool en déterminant d'abord la classe CTL/CTM/CTH requise, puis le besoin de décolmatage AUTOCLEAN, le format MIDI ou 26 L, l'alimentation filaire ou 2 x 18 V et enfin la valeur réelle de l'intégration CLEANTEC, Bluetooth et Systainer dans son parc d'outils.",
+  "value_without_affiliate_links": "La page évite quatre erreurs d'achat : payer l'écosystème Festool pour un simple besoin de nettoyage, confondre CTL/CTM/CTH malgré des châssis proches, choisir une version sans AUTOCLEAN pour une poussière très colmatante, ou acheter un modèle sans fil en supposant qu'il remplace sans contrainte un aspirateur filaire avec prise outil.",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent principal confirmé : comprendre quel aspirateur Festool choisir dans le système CLEANTEC. Sous-intentions : CTL vs CTM vs CTH, MIDI I / MIDI I AC, CTM 26 EI / AC, CTC/CTMC, AUTOCLEAN, Bluetooth, Systainer et usage avec ponceuses/scies."},
+    "content-audit": {"status": "PASS", "output": "LIGHT_UPDATE confirmé. La page possède déjà une structure spécifique centrée sur le workflow Festool et non un gabarit générique de marque. Les limites du premium, du petit volume MIDI et de la classe requise sont déjà explicites ; aucune DEEP_REWRITE n'est justifiée."},
+    "content-refresh": {"status": "PASS", "output": "Revalidation au 11/09/2026 des pages Festool actuelles : CTM MIDI I AC 578552, CTH MIDI I AC 578558, CTM 26 EI / AC et CTMC MIDI. Les fonctions structurantes utilisées dans la page restent actuelles : classes M/H, AUTOCLEAN, Bluetooth, T-LOC/Systainer et alimentation sans fil 2 x 18 V."},
+    "fact-check-pre": {"status": "PASS", "output": "Brief de vérification ciblé sur les éléments qui changent la décision : catégorie M du CTM MIDI I AC, catégorie H du CTH MIDI I AC, 15/12,5 L sur MIDI AC, fonctionnement AUTOCLEAN, 26 L sur CTM 26 EI, démarrage Bluetooth, T-LOC, et CTMC MIDI classe M à turbine 36 V alimentée par deux batteries 18 V."},
+    "evidence-based-reviews": {"status": "PASS", "output": "Les caractéristiques, classes et compatibilités reposent sur des pages Festool Tier 1. Aucun classement de performance inter-marques ni jugement de fiabilité n'est attribué sans preuve indépendante ; la page reste une analyse documentaire et le dit explicitement."},
+    "affiliate-value": {"status": "PASS", "output": "La valeur indépendante de l'affiliation réside dans la lecture du système : classe -> décolmatage -> mobilité -> intégration outil/flexible/coffret. Cette logique permet aussi d'expliquer quand le premium Festool n'est pas rationnel, sans aucun lien marchand."},
+    "content-brief-authoring": {"status": "PASS", "output": "Le brief existant reste valide : logique système Festool ; CTL/CTM/CTH ; MIDI et AUTOCLEAN ; CTC/CTMC sans fil ; CLEANTEC/Systainer/Bluetooth ; situations où Festool est ou non cohérent. La structure est suffisamment différenciée pour être conservée."},
+    "content-and-copy": {"status": "PASS", "output": "LIGHT_UPDATE : conservation du corps éditorial plutôt qu'une réécriture artificielle. Le texte actuel répond déjà au brief, limite les caractéristiques aux critères qui changent le choix et ne transforme pas la page en catalogue de références."},
+    "fact-check-post": {"status": "PASS", "output": "Contrôle post-audit : CTM MIDI I AC toujours catégorie M, 3700 l/min, 24000 Pa, 15/12,5 L, Bluetooth et AUTOCLEAN ; CTH MIDI I AC toujours catégorie H et 15/12,5 L ; CTM 26 EI AC toujours 26 L, Bluetooth, T-LOC et AUTOCLEAN réglable ; CTMC MIDI toujours catégorie M, 2 x 18 V et 15/12,5 L."},
+    "humanizer": {"status": "PASS", "output": "Le texte reste centré sur les arbitrages concrets : intérêt réel du système, classe avant esthétique, AUTOCLEAN seulement si le rythme de poussière le justifie, et coût d'écosystème à relativiser hors parc Festool."},
+    "general-writing": {"status": "PASS", "output": "La progression éditoriale reste lisible et spécifique : système -> classe -> décolmatage -> sans-fil -> écosystème -> routage. Un seul tableau final suffit à orienter le lecteur sans répéter les mêmes blocs produit."},
+    "anti-ai-slop": {"status": "PASS", "output": "Pas de FAQ automatique, pas de section générique avantages/inconvénients, pas de conclusion creuse, pas de faux test et pas de structure clonée de Bosch, Kärcher, Makita, Parkside ou Nilfisk."},
+    "internal-linking-audit": {"status": "PASS", "output": "Le maillage actuel mène vers CTL Midi, usage ponceuse, comparatif classe M, professionnel, sans fil, classes L/M/H, décolmatage, prise asservie et Mirka. Les liens correspondent aux prochaines décisions du lecteur."},
+    "seo-technical": {"status": "PASS", "output": "Canonical /marques/festool/ conservé, un seul H1, IDs de sections cohérents, title/meta spécifiques et noindex, follow maintenu pendant la phase de recovery."},
+    "seo-best-practices": {"status": "PASS", "output": "Le ciblage reste centré sur Festool + CTL/CTM/CTH/AUTOCLEAN/CLEANTEC/Bluetooth/CTC/CTMC sans cannibaliser le guide L/M/H, le guide décolmatage, les pages modèles ni les comparatifs inter-marques."},
+    "editorial-qa": {"status": "PASS", "output": "QA final : aucune classe extrapolée, aucune performance de test inventée, la différence entre nettoyage manuel et AUTOCLEAN reste compréhensible, le sans-fil est contextualisé par l'autonomie et l'absence de prise outil, et le premium est traité comme un coût de système plutôt qu'une preuve de supériorité."}
+  },
+  "custom_steps": {
+    "vacuum-domain-review": {"status": "PASS", "output": "Contrôle métier sur classes L/M/H, décolmatage manuel/AUTOCLEAN, débit et dépression constructeur, aspiration liquide selon variante, démarrage Bluetooth, prise outil, antistatique et alimentation 2 x 18 V. Aucun raccourci classe=qualité générale ou premium=meilleure aspiration."},
+    "brand-analysis-publish-review": {"status": "PASS", "output": "PUBLISH_REVIEW : LIGHT_UPDATE satisfait sans réécriture lourde ; structure spécifique au workflow Festool préservée, preuves primaires revalidées, limites visibles, valeur indépendante de l'affiliation et noindex conservé. PASS — READY_FOR_HUMAN_VALIDATION."}
+  },
+  "outline": [
+    {"id": "logique-systeme", "question": "Quand l'intégration Festool apporte-t-elle réellement de la valeur ?", "evidence_refs": ["S3", "S6"], "decision_value": "Évite de payer le premium de l'écosystème pour un simple besoin d'aspiration généraliste."},
+    {"id": "classes-ct", "question": "Quelle différence décisionnelle entre CTL, CTM et CTH ?", "evidence_refs": ["S1", "S2", "S7"], "decision_value": "Place la classe de poussière avant la taille de cuve ou la ressemblance entre modèles."},
+    {"id": "midi-autoclean", "question": "Quand AUTOCLEAN justifie-t-il une version MIDI AC ?", "evidence_refs": ["S1", "S4"], "decision_value": "Distingue un compact à nettoyage automatique d'un MIDI à nettoyage manuel selon le rythme de poussière et le risque de colmatage."},
+    {"id": "sans-fil", "question": "Que gagne-t-on et que perd-on avec CTC/CTMC ?", "evidence_refs": ["S5"], "decision_value": "Contextualise la mobilité 2 x 18 V, la classe et l'autonomie sans présenter le sans-fil comme remplacement universel d'un filaire."},
+    {"id": "ecosysteme", "question": "CLEANTEC, Bluetooth et Systainer changent-ils vraiment le workflow ?", "evidence_refs": ["S3", "S6"], "decision_value": "Relie les fonctions d'écosystème à des frictions concrètes : raccord, déclenchement et transport."},
+    {"id": "quand-festool", "question": "Dans quelles situations Festool est-il rationnel ou surdimensionné ?", "evidence_refs": ["S1", "S3", "S5"], "decision_value": "Oriente vers Festool pour un système d'outils intégré et vers d'autres solutions lorsque volume, nettoyage généraliste ou coût dominent."}
+  ],
+  "evidence_ledger": [
+    {"ref": "S1", "tier": 1, "status": "VERIFIED", "claim_scope": "CTM MIDI I AC 578552 : catégorie M, AUTOCLEAN, 3700 l/min, 24000 Pa, réservoir/sac 15/12,5 L, Bluetooth et T-LOC", "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578552---ctm-midi-i-ac"},
+    {"ref": "S2", "tier": 1, "status": "VERIFIED", "claim_scope": "CTH MIDI I AC 578558 : catégorie H, 3700 l/min, 24000 Pa, réservoir/sac 15/12,5 L et usage matières solides", "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-pour-amiante/578558---cth-midi-i-ac"},
+    {"ref": "S3", "tier": 1, "status": "VERIFIED", "claim_scope": "CTM 26 EI / AC : cuve 26 L, Bluetooth, démarrage automatique, T-LOC/Systainer, flexible lisse antistatique et intégration application Festool", "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-mobiles/577851---ctm-26-ei-ac"},
+    {"ref": "S4", "tier": 1, "status": "VERIFIED", "claim_scope": "CTM MIDI I sans AC : catégorie M, 15/12,5 L, Bluetooth et nettoyage manuel du filtre principal", "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578301---ctm-midi-i"},
+    {"ref": "S5", "tier": 1, "status": "VERIFIED", "claim_scope": "CTMC MIDI I sans fil : catégorie M, turbine 36 V alimentée par 2 batteries 18 V, 15/12,5 L, Bluetooth et autonomie dépendante des batteries", "source": "https://www.festool.fr/produits/aspirateurs/aspirateurs-sans-fil/577067---ctmc-midi-i-basic"},
+    {"ref": "S6", "tier": 1, "status": "VERIFIED", "claim_scope": "module Bluetooth et commande à distance : démarrage depuis le tuyau ou via batterie Bluetooth compatible", "source": "https://www.festool.fr/accessoires/aspirateurs/accessoires-et-extensions/modules/578968---bt-ct-26-48-i"},
+    {"ref": "S7", "tier": 1, "status": "VERIFIED", "claim_scope": "documentation Festool sur les catégories de poussière et la gamme d'aspiration L/M/H", "source": "https://www.festool.fr/campagnes/microsites/aspiration"}
+  ],
+  "residual_risks": [
+    "Les obligations de classes L/M/H dépendent du risque et des prescriptions applicables ; la page ne remplace pas une évaluation de prévention.",
+    "Les références et variantes Festool peuvent évoluer rapidement ; il faut vérifier le numéro d'article et le suffixe AC avant achat.",
+    "Les valeurs de débit et de dépression sont des données constructeur et non des mesures indépendantes réalisées sur le site.",
+    "Le CTH MIDI I AC a des contraintes d'usage spécifiques, notamment l'aspiration de matières solides sur la fiche actuelle ; ne pas généraliser les capacités eau/poussière d'une variante à l'autre.",
+    "Les durées de fonctionnement des modèles sans fil dépendent du niveau de puissance et de la capacité des deux batteries utilisées."
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
