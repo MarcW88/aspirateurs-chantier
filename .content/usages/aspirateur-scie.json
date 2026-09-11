@@ -1,0 +1,61 @@
+{
+  "contract_version": 1,
+  "slug": "aspirateur-scie",
+  "url": "/usages/aspirateur-scie/",
+  "updated_at": "2026-09-11",
+  "intent": {
+    "topic": "aspirateur pour scie circulaire, plongeante, onglet ou table",
+    "intent": "information/commercial investigation upstream of product comparison",
+    "user_job": "adapter le captage a la geometrie et au mode d'utilisation de la scie avant de choisir l'aspirateur",
+    "boundary": "tool/workflow page; wood page owns material stream and workshop page owns multi-station architecture"
+  },
+  "jtbd": {
+    "circumstances": ["scie circulaire/plongeante mobile", "scie a onglet ouverte", "scie sur table fixe", "bois ou materiau mineral"],
+    "progress": "reduire les emissions a la source sans surdimensionner un aspirateur incapable de compenser un mauvais capot",
+    "frictions": ["geometrie de captage", "raccord/adaptateur", "copeaux dans petit flexible", "flexible qui gene le geste", "machine fixe avec plusieurs bouches"],
+    "evidence_class": "SUPPORTED"
+  },
+  "criteria": [
+    {"criterion": "type et geometrie de scie", "priority": "MUST_HAVE", "decision_effect": "determine le point et la surface de captage"},
+    {"criterion": "raccord/conduit", "priority": "HIGH", "decision_effect": "conditionne fuite, bouchon et transport des copeaux"},
+    {"criterion": "portable vs fixe", "priority": "HIGH", "decision_effect": "oriente extracteur mobile ou collecte/reseau dedie"},
+    {"criterion": "materiau", "priority": "MUST_HAVE", "decision_effect": "determine le risque et l'eventuelle classe requise"}
+  ],
+  "evidence": [
+    {"id": "S1", "claim": "les machines a bois doivent disposer d'une extraction locale adaptee et le systeme doit etre pense en fonction des machines et de l'installation", "source": "https://www.hse.gov.uk/woodworking/wooddust.htm", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S2", "claim": "le captage a la source est prioritaire pour les poussieres de bois", "source": "https://www.inrs.fr/risques/poussieres-bois/ce-qu-il-faut-retenir", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S3", "claim": "les procedes sur materiaux contenant de la silice doivent etre evalues specifiquement", "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"}
+  ],
+  "handoffs": {"usage": ["/usages/aspirateur-bois-sciure-copeaux/", "/usages/aspirateur-atelier/"], "guides": ["/guides/prise-asservie/", "/guides/debit-air-aspirateur/", "/guides/classes-l-m-h/"], "comparisons": []},
+  "outline": [
+    {"question": "Quel type de scie et quelle geometrie de captage ?", "evidence_refs": ["S1"], "decision_value": "empeche un choix base uniquement sur la puissance"},
+    {"question": "Quand un extracteur mobile cesse-t-il d'etre l'architecture logique ?", "evidence_refs": ["S1", "S2"], "decision_value": "separe scie portative, onglet et poste fixe"},
+    {"question": "Quel risque vient du materiau coupe ?", "evidence_refs": ["S2", "S3"], "decision_value": "evite une classe deduite du type de scie"}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "content-audit", "status": "PASS", "output": "DEEP_REWRITE; preserved raccord, debit, auto-start and material-risk value"},
+      {"skill": "search-intent", "status": "PASS", "output": "tool-specific intent separated from wood and workshop pages"},
+      {"skill": "jobs-to-be-done", "status": "PASS", "output": "jobs split by portable, mitre and fixed saw workflows"},
+      {"skill": "content-refresh", "status": "PASS", "output": "generic saw structure rebuilt around capture geometry"},
+      {"skill": "fact-check", "status": "PASS", "output": "HSE/INRS prevention claims checked"},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "no experiential product ranking"},
+      {"skill": "affiliate-value", "status": "PASS", "output": "useful without products or affiliate links"},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "saw-type architecture persisted"},
+      {"skill": "content-and-copy", "status": "PASS", "output": "authored v2 fragment"},
+      {"skill": "humanizer", "status": "PASS", "output": "removed generic four-section cadence"},
+      {"skill": "general-writing", "status": "PASS", "output": "clear portable/fixed distinctions"},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "structure not interchangeable with sister pages"},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "role-based links to wood and workshop usages"},
+      {"skill": "seo-onpage", "status": "PASS", "output": "title/H1 map to saw variants and capture intent"},
+      {"skill": "seo-technical", "status": "PASS", "output": "canonical/noindex preserved"},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "single-H1 semantic structure"},
+      {"skill": "editorial-qa", "status": "PASS", "output": "no invented airflow thresholds or class claims"}
+    ],
+    "custom": [
+      {"skill": "usage-content-workflow", "status": "PASS", "output": "vacuum capture geometry and claim-safety gates applied"},
+      {"skill": "usage-analysis-workflow", "status": "PASS", "output": "PUBLISH_REVIEW passed after cluster-boundary check"}
+    ]
+  },
+  "editorial": {"cluster_audit_decision": "DEEP_REWRITE", "final_decision": "DEEP_REWRITE_COMPLETED", "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION", "human_validation": false, "robots": "noindex, follow"}
+}
