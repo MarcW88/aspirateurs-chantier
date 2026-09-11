@@ -1,0 +1,51 @@
+{
+  "contract_version": 2,
+  "slug": "petit-aspirateur-de-chantier",
+  "status": "PASS",
+  "reader_decision": "Choisir un aspirateur compact selon manutention réelle, forme, rangement, capacité utile, alimentation et classe plutôt que selon un seuil arbitraire de litres.",
+  "comparison_scope": "Quatre références illustrent léger wet/dry, batterie L, batterie M et compact filaire intégré au rangement professionnel.",
+  "value_without_affiliate_links": "La page distingue masse catalogue et masse prête à travailler, refuse de comparer dimensions machine et emballage comme équivalentes et traite escaliers/véhicule comme vrais cas de décision.",
+  "candidate_scope": {
+    "considered": ["Kärcher WD 2 Plus V-15/4/18","Bosch Professional GAS 18V-10 L","Bosch Professional GAS 18V-12 MC","Festool CTL MIDI I"],
+    "major_exclusions": [
+      "Aucun seuil fixe de litres n’est utilisé pour définir ‘compact’.",
+      "Dimensions d’emballage Bosch non utilisées comme dimensions machine pour produire un faux classement volumétrique."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.kaercher.com/fr/home-garden/aspirateurs-eau-et-poussieres/wd-2-v-15-4-18-c-16280110.html","supports":"WD2 : poids, dimensions machine, 15 L et wet/dry"},
+    {"ref":"S2","source":"https://www.bosch-professional.com/fr/fr/products/gas-18v-10-l-06019C6302","supports":"GAS18V-10L : poids sans batterie, capacité et classe L"},
+    {"ref":"S3","source":"https://www.bosch-professional.com/fr/fr/products/gas-18v-12-mc-06019K2000","supports":"GAS18V-12MC : poids sans batterie, capacité et classe M"},
+    {"ref":"S4","source":"https://www.festool.fr/produits/nouveaux-produits/outils/578309---ctl-midi-i","supports":"CTL MIDI I : poids, dimensions, capacité, classe L et intégration Systainer"}
+  ],
+  "outline": [
+    {"question":"Comment définir compact sans seuil de litres ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Remplace une règle arbitraire par manutention, gabarit et workflow."},
+    {"question":"Quelles sont les quatre formes de compacité représentées ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Montre que léger, batterie, M compact et rangement pro sont des bénéfices différents."},
+    {"question":"Pourquoi poids et forme ne donnent-ils pas le même classement ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Évite les comparaisons de dimensions non homogènes et introduit le poids prêt à travailler."},
+    {"question":"Que changent escaliers et véhicule ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Transforme le critère compact en conséquences de transport concrètes."},
+    {"question":"Quand la classe élimine-t-elle le plus petit appareil ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Maintient L/M comme gate non compensable par poids ou gabarit."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"Intention ‘petit aspirateur de chantier’ redéfinie autour de compacité/manutention ; aucun seuil de litres utilisé comme définition SEO."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD : transporter et ranger facilement l’aspirateur sans sacrifier la classe ou multiplier les vidages au-delà de l’acceptable."},
+    "seo-content-audit":{"status":"PASS","output":"LIGHT_UPDATE respecté ; suppression définitive du vieux seuil arbitraire et enrichissement du rôle mobilité/encombrement."},
+    "evidence-based-reviews":{"status":"PASS","output":"Poids, capacités et dimensions exactes utilisés seulement quand publiés comme dimensions machine ; aucune facilité de portage prétendue comme testée."},
+    "fact-check-pre":{"status":"PASS","output":"Poids sans batterie/accessoires, capacités, classes et dimensions Festool/Kärcher vérifiés avant rédaction."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale : poids prêt à travailler, géométrie, véhicule, escaliers et coût des vidages plutôt qu’un simple tableau de litres."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief construit autour de définition, quatre compacités, poids vs forme, escaliers, véhicule, classe et choix par priorité."},
+    "content-and-copy":{"status":"PASS","output":"Mise à jour persistée dans .content/comparisons/v2/petit-aspirateur-de-chantier.html."},
+    "fact-check-post":{"status":"PASS","output":"Vérifié qu’aucune dimension d’emballage n’est réutilisée comme gabarit machine et que les poids conservent leur contexte fabricant."},
+    "humanizer":{"status":"PASS","output":"Exemples escaliers/véhicule remplacent une définition abstraite de la compacité."},
+    "general-writing":{"status":"PASS","output":"Le texte distingue clairement léger, compact, petite cuve et intégration rangement sans les traiter comme synonymes."},
+    "anti-ai-slop":{"status":"PASS","output":"Architecture propre à la manutention ; pas de cadence identique aux pages wet/dry ou sans-fil."},
+    "seo-onpage":{"status":"PASS","output":"Title/meta/H1 ciblent mobilité/transport et maintiennent le mot-clé petit aspirateur de chantier."},
+    "seo-technical":{"status":"PASS","output":"Canonical et noindex, follow conservés ; pas de données structurées de dimensions inventées."},
+    "internal-linking-audit":{"status":"PASS","output":"Lien vers sans-fil quand l’alimentation devient le vrai besoin ; modèles internes utilisés comme preuves de détail."},
+    "editorial-qa":{"status":"PASS","output":"Aucun seuil arbitraire, aucune comparaison de dimensions non équivalentes, pas de test de portage simulé."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Classes gardées comme gates ; capacités brute/net contextualisées et poids batterie non inventé."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; LIGHT_UPDATE ciblé et intention compact désormais distincte de sans-fil."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
