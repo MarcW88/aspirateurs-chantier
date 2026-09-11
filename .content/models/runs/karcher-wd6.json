@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "karcher-wd6",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether the WD 6 tool socket and larger tank justify moving up from WD 5."},
+    "content-audit": {"status": "PASS", "output": "Existing page audited as DEEP_REWRITE because it repeated the generic model template despite a clear tool-socket decision angle."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt the page around the integrated tool socket, incremental WD 5 differences and the professional-safety boundary."},
+    "fact-check-pre": {"status": "PASS", "output": "Kärcher WD 6, WD 5 and NT 30/1 Tact Te M ACD primary pages checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No subjective rating or hands-on verdict is used."},
+    "affiliate-value": {"status": "PASS", "output": "Affiliate-independent value comes from showing that the socket is more decision-relevant than small airflow/vacuum increments and from defining the boundary with a certified NT model."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted at .content/models/briefs/karcher-wd6-2026-09-11.md."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/karcher-wd6.html."},
+    "fact-check-post": {"status": "PASS", "output": "Final copy retained 30 L, 9.3 kg, 75 l/s, 280 mbar and 100–2100 W tool-socket range in context."},
+    "humanizer": {"status": "PASS", "output": "Generic review cadence removed; prose follows the workshop decision."},
+    "general-writing": {"status": "PASS", "output": "Copy tightened around socket, capacity and certification boundary."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned template, padded FAQ or fixed section quota remains."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links hand off to NT 30/1 and Kärcher range where the decision changes category."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata and TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta express the exact tool-socket purchase question."},
+    "editorial-qa": {"status": "PASS", "output": "No false safety class, no automatic-cleaning claim and no fake hands-on statements remain."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "WD 6 variant, tank, weight, airflow, vacuum, integrated socket range, manual filter-cleaning mode and absent L/M/H documentation checked."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Page is structurally distinct from WD 5 and NT 30/1, evidence-bounded and ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Decide whether the Kärcher WD 6 P S tool socket and 30 L format materially improve the workflow over WD 5, or whether a certified NT model is actually required.",
+  "value_without_affiliate_links": "Explains why the integrated tool socket is the key WD 6 threshold, why filter cleaning is still manual and when the decision leaves the WD range entirely.",
+  "outline": [
+    {"question": "Pourquoi la prise outil change-t-elle réellement le workflow ?", "evidence_refs": ["E1"], "decision_value": "Identifies the functional reason to choose WD 6."},
+    {"question": "WD 6 ou WD 5 ?", "evidence_refs": ["E1", "E2"], "decision_value": "Separates incremental spec gains from the new socket function."},
+    {"question": "Le nettoyage du filtre est-il automatique ?", "evidence_refs": ["E1", "E3"], "decision_value": "Prevents confusion with Tact."},
+    {"question": "Quand faut-il sortir de la gamme WD ?", "evidence_refs": ["E3", "E4"], "decision_value": "Defines the professional safety boundary."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
