@@ -1,0 +1,69 @@
+{
+  "contract_version": 1,
+  "slug": "aspirateur-bricolage-renovation",
+  "url": "/usages/aspirateur-bricolage-renovation/",
+  "updated_at": "2026-09-11",
+  "intent": {
+    "topic": "aspirateur pour chantier de renovation multi-phases",
+    "intent": "information/commercial investigation by project phase",
+    "user_job": "decider si un aspirateur polyvalent peut suivre toute une renovation ou si certains travaux doivent etre separes",
+    "boundary": "project-phase page; general guide explains criteria, specialized usages explain one material/tool, comparisons select products"
+  },
+  "jtbd": {
+    "circumstances": ["depose et debris", "perçage/decoupe", "poncage", "eau ou boue legere", "nettoyage final"],
+    "progress": "eviter d'acheter une machine polyvalente qui devient mauvaise des que le chantier change de phase",
+    "frictions": ["changement sec/humide", "poussiere fine apres gros debris", "reconfiguration sacs/filtres", "mobilite entre pieces/etages", "besoin de captage a la source"],
+    "evidence_class": "SUPPORTED"
+  },
+  "criteria": [
+    {"criterion": "phase du chantier", "priority": "MUST_HAVE", "decision_effect": "fait varier la contrainte dominante"},
+    {"criterion": "captage vs nettoyage", "priority": "MUST_HAVE", "decision_effect": "separe emission pendant travail et residus apres travail"},
+    {"criterion": "polyvalence de configuration", "priority": "HIGH", "decision_effect": "mesure le cout des changements de sacs/filtres/accessoires"},
+    {"criterion": "mobilite", "priority": "HIGH", "decision_effect": "prend en compte pieces et escaliers"},
+    {"criterion": "separation en deux roles", "priority": "CONDITIONAL", "decision_effect": "evite de forcer une seule machine sur des jobs incompatibles"}
+  ],
+  "evidence": [
+    {"id": "S1", "claim": "la prevention des poussieres repose notamment sur la reduction des emissions et le captage au plus pres de la source", "source": "https://www.inrs.fr/risques/poussieres/ce-qu-il-faut-retenir.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S2", "claim": "les travaux sur materiaux susceptibles de contenir de la silice doivent etre evalues selon le materiau et le procede", "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
+    {"id": "S3", "claim": "le captage local/on-tool est une mesure adaptee a plusieurs procedes produisant de la poussiere", "source": "https://www.hse.gov.uk/lev/common-processes.htm", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"}
+  ],
+  "handoffs": {"usage": ["/usages/aspirateur-gravats/", "/usages/aspirateur-ponceuse/", "/usages/aspirateur-platre/"], "guides": ["/guides/comment-choisir-aspirateur-de-chantier/", "/guides/classes-l-m-h/"], "comparisons": ["/comparatifs/aspirateur-eau-poussiere/"]},
+  "outline": [
+    {"question": "Comment le besoin change-t-il entre les phases d'une renovation ?", "evidence_refs": ["S1", "S3"], "decision_value": "cree un role distinct du guide general"},
+    {"question": "Quand le nettoyage devient-il un probleme de captage a la source ?", "evidence_refs": ["S1", "S2", "S3"], "decision_value": "evite de traiter un wet/dry comme solution universelle"},
+    {"question": "Quand separer le travail en deux machines/roles ?", "evidence_refs": ["S1"], "decision_value": "repond au compromis propre a une renovation multi-phases"}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "content-audit", "status": "PASS", "output": "cluster audit proposed MERGE due generic role; value preserved for rebuild test"},
+      {"skill": "search-intent", "status": "PASS", "output": "role reconstructed as multi-phase renovation workflow, distinct from general guide"},
+      {"skill": "jobs-to-be-done", "status": "PASS", "output": "circumstances mapped to renovation phases and configuration changes"},
+      {"skill": "content-refresh", "status": "PASS", "output": "full role reconstruction rather than compressed buying guide"},
+      {"skill": "fact-check", "status": "PASS", "output": "INRS/HSE prevention statements checked"},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "no product-experience ranking"},
+      {"skill": "affiliate-value", "status": "PASS", "output": "one-vs-two-role decision is useful without affiliate links"},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "phase-led architecture persisted"},
+      {"skill": "content-and-copy", "status": "PASS", "output": "authored v2 fragment"},
+      {"skill": "humanizer", "status": "PASS", "output": "removed generic buying-guide cadence"},
+      {"skill": "general-writing", "status": "PASS", "output": "phase transitions and trade-offs clarified"},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "structure unique in cluster"},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "handoffs by phase to gravats/ponceuse/platre and wet-dry comparison"},
+      {"skill": "seo-onpage", "status": "PASS", "output": "metadata centered on renovation multi-phase decision"},
+      {"skill": "seo-technical", "status": "PASS", "output": "canonical route/noindex preserved"},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "single H1 and meaningful headings"},
+      {"skill": "editorial-qa", "status": "PASS", "output": "page now answers a project-phase job instead of duplicating the guide"}
+    ],
+    "custom": [
+      {"skill": "usage-content-workflow", "status": "PASS", "output": "vacuum configuration and phase-boundary gates applied"},
+      {"skill": "usage-analysis-workflow", "status": "PASS", "output": "PUBLISH_REVIEW re-ran boundary test; autonomous role now defensible"}
+    ]
+  },
+  "editorial": {
+    "cluster_audit_decision": "MERGE_PROPOSED",
+    "final_decision": "DEEP_REWRITE_COMPLETED_ROLE_RESCUED",
+    "decision_note": "The former generic role was not preserved. The new page owns the multi-phase renovation job and no longer duplicates the general choosing guide.",
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "noindex, follow"
+  }
+}
