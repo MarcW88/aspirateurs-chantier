@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "bosch-gas-12-25-pl",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether GAS 12-25 PL is the right compact Bosch Professional class-L option or whether GAS 35 L AFC is justified."},
+    "content-audit": {"status": "PASS", "output": "Existing page audited as DEEP_REWRITE because it repeated the generic model template and underused the SFC-vs-AFC decision."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt the page around class L, SFC, useful capacity and the weight/filter-management trade-off against GAS 35 L AFC."},
+    "fact-check-pre": {"status": "PASS", "output": "Bosch Professional GAS 12-25 PL and GAS 35 L AFC plus Bosch DIY AdvancedVac 20 primary pages checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No subjective rating or hands-on verdict is used."},
+    "affiliate-value": {"status": "PASS", "output": "Affiliate-independent value comes from separating class certification from tool integration and SFC semi-automatic cleaning from AFC automatic cleaning."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted at .content/models/briefs/bosch-gas-12-25-pl-2026-09-11.md."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/bosch-gas-12-25-pl.html."},
+    "fact-check-post": {"status": "PASS", "output": "Final copy retains class L, 25/21/15 L, 9 kg, 65 l/s, 200 mbar, SFC and Auto-start in context."},
+    "humanizer": {"status": "PASS", "output": "Removed generic model-review cadence and centered the page on a compact-vs-AFC decision."},
+    "general-writing": {"status": "PASS", "output": "Copy tightened around class L, filter cleaning mode and useful capacity."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned template, padded FAQ or generic conclusion remains."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links hand off to GAS 35 L AFC and Bosch content without duplicating comparison roles."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata and TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta reflect the exact compact class-L versus AFC decision."},
+    "editorial-qa": {"status": "PASS", "output": "SFC remains semi-automatic, class L is not inferred from HEPA, and no fake test language remains."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Class L, tank gross/net/water volumes, weight, turbine metrics, SFC, Click & Clean and Auto-start checked against Bosch Professional."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Page is distinct from AdvancedVac 20 and GAS 35 L AFC and ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Decide whether the GAS 12-25 PL is the right compact Bosch Professional class-L vacuum or whether GAS 35 L AFC is worth the extra size and weight for automatic filter cleaning.",
+  "value_without_affiliate_links": "Explains the real class-L threshold, the SFC-vs-AFC workflow difference and the gap between gross and usable tank capacity.",
+  "outline": [
+    {"question": "Que change réellement la classe L face à AdvancedVac 20 ?", "evidence_refs": ["E1", "E3"], "decision_value": "Separates certification from simple tool integration."},
+    {"question": "Que change le SFC semi-automatique ?", "evidence_refs": ["E1"], "decision_value": "Keeps filter-cleaning mode precise."},
+    {"question": "GAS 12-25 PL ou GAS 35 L AFC ?", "evidence_refs": ["E1", "E2"], "decision_value": "Frames compactness/weight against AFC and filter surface."},
+    {"question": "Quelle capacité est réellement utile ?", "evidence_refs": ["E1"], "decision_value": "Prevents gross tank capacity from being treated as usable capacity."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}

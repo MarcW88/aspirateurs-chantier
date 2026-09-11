@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "bosch-advancedvac-20",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether AdvancedVac 20 is sufficient for DIY tool-connected wet/dry work or whether a Professional class-L model is required."},
+    "content-audit": {"status": "PASS", "output": "Existing page audited as DEEP_REWRITE because the facts were valid but the structure was generic and did not explain the DIY-vs-Professional boundary."},
+    "content-refresh": {"status": "PASS", "output": "Preserved verified specs and rebuilt the page around tool integration, class certification and misleading maxima comparisons."},
+    "fact-check-pre": {"status": "PASS", "output": "Bosch DIY AdvancedVac 20 and Bosch Professional GAS 12-25 PL primary pages checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No subjective rating or hands-on verdict is used."},
+    "affiliate-value": {"status": "PASS", "output": "Affiliate-independent value comes from explaining that both models can sync with tools, while only the Professional model documents class L and SFC."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted at .content/models/briefs/bosch-advancedvac-20-2026-09-11.md."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/bosch-advancedvac-20.html."},
+    "fact-check-post": {"status": "PASS", "output": "Final copy retains 20 L, 7.6 kg, 70 l/s, 260 mbar, tool auto-sync and absent L/M/H documentation in context."},
+    "humanizer": {"status": "PASS", "output": "Removed generic review cadence and feature-list boilerplate."},
+    "general-writing": {"status": "PASS", "output": "Copy tightened around the DIY-vs-Professional purchase boundary."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned model template, padded FAQ or generic conclusion remains."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links hand off to Bosch Professional content without duplicating the range hub role."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata and TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta surface the exact AdvancedVac-vs-GAS 12-25 decision."},
+    "editorial-qa": {"status": "PASS", "output": "No false safety class, no simplistic maxima ranking and no fake test language remain."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Exact reference, 20 L tank, 7.6 kg, 70 l/s, 260 mbar, tool auto-sync, antistatic hose and absent L/M/H class checked against Bosch DIY."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Page is distinct from Professional Bosch models and ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Decide whether the Bosch AdvancedVac 20 is sufficient for tool-connected DIY wet/dry work or whether a certified Professional class-L model is needed.",
+  "value_without_affiliate_links": "Explains that tool synchronization already exists on the DIY model, identifies class L as the real Professional threshold, and prevents misleading comparisons based on turbine maxima alone.",
+  "outline": [
+    {"question": "L'AdvancedVac 20 est-il déjà adapté à un outil ?", "evidence_refs": ["E1"], "decision_value": "Shows that tool integration is not exclusive to Professional models."},
+    {"question": "Que change vraiment le GAS 12-25 PL ?", "evidence_refs": ["E1", "E2", "E3"], "decision_value": "Centers the step-up on documented class L and Professional architecture."},
+    {"question": "Peut-on classer les deux sur 70 l/s vs 65 l/s ?", "evidence_refs": ["E1", "E2"], "decision_value": "Prevents a simplistic performance ranking."},
+    {"question": "Quelle limite de sécurité reste visible ?", "evidence_refs": ["E3"], "decision_value": "Keeps the absent L/M/H certification explicit."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
