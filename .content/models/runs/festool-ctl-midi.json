@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "festool-ctl-midi",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether the standard CTL MIDI I is the right compact Festool class-L workflow, versus the AC or CTM variants."},
+    "content-audit": {"status": "PASS", "output": "Legacy page was factual but generic; DEEP_REWRITE focused on ecosystem integration and exact variant boundaries."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt around compact format, Bluetooth, standard manual cleaning, separate AUTOCLEAN variant and CTL-vs-CTM class distinction."},
+    "fact-check-pre": {"status": "PASS", "output": "Festool CTL MIDI I, CTL MIDI I AC and CTM MIDI I official pages checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No subjective premium or hands-on rating."},
+    "affiliate-value": {"status": "PASS", "output": "Value comes from distinguishing ecosystem workflow, cleaning mode and class rather than relying on premium positioning."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted under .content/models/briefs/."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/."},
+    "fact-check-post": {"status": "PASS", "output": "Class L, 15/12.5 L, 11.4 kg, 3700 l/min, 24000 Pa, 2400 W socket, Bluetooth and manual cleaning remain correctly qualified."},
+    "humanizer": {"status": "PASS", "output": "Removed generic product-review cadence."},
+    "general-writing": {"status": "PASS", "output": "Copy centers Festool system integration and variant choice."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned headings, filler FAQ or generic premium-language verdict."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links hand off to Festool/ponceuse/class guidance without duplicating roles."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata/TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta expose standard-vs-AC-vs-CTM decision."},
+    "editorial-qa": {"status": "PASS", "output": "AUTOCLEAN is explicitly absent from the standard reference; CTL remains class L and no fake hands-on claim remains."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Exact CTL MIDI I standard reference, class L, manual cleaning, Bluetooth, CLEANTEC, tank/bag volumes, socket and CTM/AC sibling boundaries checked."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Page is distinct from generic class-L pages and ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Decide whether the standard Festool CTL MIDI I class-L compact/Bluetooth workflow is right, or whether AUTOCLEAN or class M requires a different MIDI reference.",
+  "value_without_affiliate_links": "Prevents variant confusion and explains Bluetooth, manual cleaning, AUTOCLEAN and CTL-vs-CTM class boundaries.",
+  "outline": [
+    {"question": "Pourquoi le CTL MIDI I se distingue-t-il par son intégration ?", "evidence_refs": ["E1"], "decision_value": "Defines the compact ecosystem role."},
+    {"question": "Que change Bluetooth ?", "evidence_refs": ["E1"], "decision_value": "Explains cordless tool auto-start without confusing it with dust class."},
+    {"question": "Le standard a-t-il AUTOCLEAN ?", "evidence_refs": ["E1", "E2"], "decision_value": "Separates standard manual cleaning from the AC variant."},
+    {"question": "CTL ou CTM ?", "evidence_refs": ["E1", "E3"], "decision_value": "Shows class, not suction figures, is the structural difference."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
