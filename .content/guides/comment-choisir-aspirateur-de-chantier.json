@@ -1,0 +1,46 @@
+{
+  "contract_version": 1,
+  "slug": "comment-choisir-aspirateur-de-chantier",
+  "url": "/guides/comment-choisir-aspirateur-de-chantier/",
+  "guide_type": "CHOICE",
+  "audit_decision": "LIGHT_UPDATE",
+  "intent": {"reader_task": "Construire un cahier des charges d’aspirateur de chantier avant de comparer des modèles."},
+  "value_to_preserve": ["Hiérarchie risque -> captage -> métriques -> filtre -> connexion outil -> logistique."],
+  "evidence": [
+    {"id": "S1", "claim": "Le captage doit être pensé au plus près de l’émission pour limiter la dispersion des poussières.", "source": "https://www.inrs.fr/media.html?refINRS=ED+6052", "checked_at": "2026-09-11", "status": "SUPPORTED"},
+    {"id": "S2", "claim": "Pour les opérations exposant à la silice, l’INRS recommande notamment le captage à la source et le raccordement des outils aspirants à une aspiration haute dépression.", "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir.html", "checked_at": "2026-09-11", "status": "SUPPORTED"}
+  ],
+  "outline": [
+    {"question": "Quels critères éliminent une machine avant toute comparaison ?", "evidence_refs": ["S1", "S2"], "decision_value": "Éviter de choisir d’abord sur prix ou watts."},
+    {"question": "Comment penser le captage avant la machine ?", "evidence_refs": ["S1"], "decision_value": "Relier outil, capot, raccord et aspiration."},
+    {"question": "Quand passer vers Guide, Usage ou Comparatif ?", "evidence_refs": ["S1"], "decision_value": "Préserver les frontières du cluster."}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill":"seo-content-audit","status":"PASS","output":"LIGHT_UPDATE confirmé : bonne base, trop proche d’un résumé de tous les guides."},
+      {"skill":"seo-keyword","status":"PASS","output":"Topic conservé sur comment choisir un aspirateur de chantier."},
+      {"skill":"search-intent","status":"PASS","output":"CHOICE : définir le cahier des charges avant le choix produit."},
+      {"skill":"content-refresh","status":"PASS","output":"Explications spécialisées raccourcies au profit de critères éliminatoires et routing."},
+      {"skill":"fact-check","status":"PASS","output":"Principes de captage et prudence sur silice revérifiés."},
+      {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucun jugement expérientiel produit."},
+      {"skill":"affiliate-value","status":"PASS","output":"Méthode de choix complète sans CTA affilié."},
+      {"skill":"content-brief-authoring","status":"PASS","output":"Brief orienté cahier des charges et critères éliminatoires."},
+      {"skill":"content-and-copy","status":"PASS","output":"LIGHT_UPDATE rédigé avec rôle Guide distinct des Usages et Comparatifs."},
+      {"skill":"humanizer","status":"PASS","output":"Style naturel et technique vérifié."},
+      {"skill":"general-writing","status":"PASS","output":"Répétitions réduites et transitions resserrées."},
+      {"skill":"anti-ai-slop","status":"PASS","output":"Pas de structure ou FAQ mécanique."},
+      {"skill":"internal-linking-audit","status":"PASS","output":"Routing vers guides spécialisés, usages et comparatif général."},
+      {"skill":"seo-onpage","status":"PASS","output":"Title/H1/meta recentrés sur le cahier des charges."},
+      {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow préservés."},
+      {"skill":"seo-best-practices","status":"PASS","output":"Réponse principale tôt et sous-questions clairement routées."},
+      {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline de drift fournie."},
+      {"skill":"editorial-qa","status":"PASS","output":"Aucun ranking produit déguisé ; frontière cluster contrôlée."}
+    ],
+    "custom": [
+      {"skill":"guide-analysis-workflow","status":"PASS","output":"LIGHT_UPDATE et rôle CHOICE validés."},
+      {"skill":"guide-content-workflow","status":"PASS","output":"Fragment v2 evidence-led produit."}
+    ]
+  },
+  "residual_risks": ["Les exigences exactes de classe restent dépendantes du risque, du matériau et du cadre professionnel applicable."],
+  "editorial": {"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+}
