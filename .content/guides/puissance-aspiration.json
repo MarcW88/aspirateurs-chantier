@@ -1,0 +1,71 @@
+{
+  "contract_version": 1,
+  "slug": "puissance-aspiration",
+  "url": "/guides/puissance-aspiration/",
+  "guide_type": "EXPLAINER",
+  "audit_decision": "DEEP_REWRITE",
+  "intent": {
+    "reader_task": "Comprendre ce que les watts d’un aspirateur de chantier représentent réellement et éviter de les confondre avec le débit, la dépression ou une promesse globale de performance."
+  },
+  "value_to_preserve": [
+    "Message central watts moteur != puissance d’aspiration.",
+    "Importance du contexte de mesure.",
+    "Exemple concret de comparaison sans ranking produit."
+  ],
+  "evidence": [
+    {
+      "id": "S1",
+      "claim": "Le Bosch GAS 35 M AFC publie séparément 1 200 W de puissance absorbée nominale, 74 L/s de débit maximal à la turbine et 254 mbar de dépression maximale à la turbine.",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "S2",
+      "claim": "Le captage des poussières doit être raisonné au point d’émission et le dimensionnement d’un système d’aspiration ne se réduit pas à la puissance électrique d’un moteur.",
+      "source": "https://www.inrs.fr/media.html?refINRS=ED+6052",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    }
+  ],
+  "outline": [
+    {"question": "Que recouvre le mot puissance sur une fiche ?", "evidence_refs": ["S1"], "decision_value": "Séparer puissance absorbée, turbine et métriques aérauliques."},
+    {"question": "Que permettent et ne permettent pas les watts ?", "evidence_refs": ["S1", "S2"], "decision_value": "Éviter le classement simpliste par watts."},
+    {"question": "Comment lire une fiche sans mélanger les métriques ?", "evidence_refs": ["S1"], "decision_value": "Conserver libellé et point de mesure."},
+    {"question": "Pourquoi la performance change-t-elle en chantier ?", "evidence_refs": ["S2"], "decision_value": "Relier filtre, flexible et captage à la performance utile."}
+  ],
+  "workflow_execution": {
+    "shared": [
+      {"skill": "seo-content-audit", "status": "PASS", "output": "DEEP_REWRITE confirmé : la page dupliquait trop les rôles des guides débit et dépression."},
+      {"skill": "seo-keyword", "status": "PASS", "output": "Topic recentré sur puissance moteur / watts, sans reprendre les intentions débit ou dépression."},
+      {"skill": "search-intent", "status": "PASS", "output": "Intention EXPLAINER : comprendre le chiffre en W et savoir l’utiliser dans une comparaison."},
+      {"skill": "content-refresh", "status": "PASS", "output": "Valeur existante conservée, architecture reconstruite autour du sens des watts."},
+      {"skill": "fact-check", "status": "PASS", "output": "Valeurs Bosch et distinction des métriques revérifiées le 2026-09-11."},
+      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "Aucun jugement expérientiel ou hands-on n’est nécessaire dans cet explainer."},
+      {"skill": "affiliate-value", "status": "PASS", "output": "La page apporte une méthode de lecture complète sans dépendre d’un lien affilié."},
+      {"skill": "content-brief-authoring", "status": "PASS", "output": "Brief : vocabulaire -> portée des watts -> limites -> lecture de fiche -> exemple -> comportement en chantier -> méthode."},
+      {"skill": "content-and-copy", "status": "PASS", "output": "DEEP_REWRITE rédigé avec renvois rapides vers débit/dépression plutôt que duplication."},
+      {"skill": "humanizer", "status": "PASS", "output": "Passage relu pour supprimer les formulations mécaniques et conserver un français technique naturel."},
+      {"skill": "general-writing", "status": "PASS", "output": "Clarté, précision et transitions resserrées sans ajouter de remplissage."},
+      {"skill": "anti-ai-slop", "status": "PASS", "output": "Pas de FAQ automatique, répétition de conclusion ni structure générique imposée."},
+      {"skill": "internal-linking-audit", "status": "PASS", "output": "Liens contextuels vers débit, dépression, décolmatage et comparatif puissant."},
+      {"skill": "seo-onpage", "status": "PASS", "output": "Title/H1/meta alignés sur le sens des watts et la puissance d’un aspirateur de chantier."},
+      {"skill": "seo-technical", "status": "PASS", "output": "Canonical conservé et robots maintenu en noindex, follow."},
+      {"skill": "seo-best-practices", "status": "PASS", "output": "Réponse principale tôt, sources accessibles et périmètre explicite."},
+      {"skill": "seo-drift", "status": "N/A", "reason": "Aucune baseline SEO exploitable n’a été fournie pour une mesure de drift."},
+      {"skill": "editorial-qa", "status": "PASS", "output": "Frontières avec débit/dépression revérifiées et aucun ranking produit déguisé."}
+    ],
+    "custom": [
+      {"skill": "guide-analysis-workflow", "status": "PASS", "output": "CLUSTER_AUDIT puis PUBLISH_REVIEW : rôle EXPLAINER distinct et reconstruction conforme."},
+      {"skill": "guide-content-workflow", "status": "PASS", "output": "Production evidence-led avec règles métier aspirateurs et source v2 séparée du renderer."}
+    ]
+  },
+  "residual_risks": [
+    "Les fabricants n’emploient pas toujours le mot puissance avec le même libellé ; conserver le contexte exact lors de futures comparaisons."
+  ],
+  "editorial": {
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "noindex, follow"
+  }
+}
