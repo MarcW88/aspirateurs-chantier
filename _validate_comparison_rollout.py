@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Semantic gate for the audited comparison rollout.
+"""Semantic and anti-template gate for the comparison cluster.
 
-This validator checks page roles and cluster boundaries. It deliberately does not
-require fixed H2 labels, word counts, scores or rankings.
+The validator protects intent boundaries and core safety rules for every draft. Stronger
+functional anti-template checks apply when pages claim READY_FOR_HUMAN_VALIDATION: a
+READY cluster cannot merely rename H2s while recycling the same editorial cadence.
 """
 from pathlib import Path
+from collections import defaultdict
 import json
 import re
 
@@ -20,6 +22,7 @@ REWRITTEN = [
     "petit-aspirateur-de-chantier",
 ]
 ALL = ["aspirateur-professionnel"] + REWRITTEN
+READY = "READY_FOR_HUMAN_VALIDATION"
 errors = []
 
 
@@ -36,11 +39,49 @@ def data(slug):
     return json.loads((BASE / ".content" / "comparisons" / f"{slug}.json").read_text(encoding="utf-8"))
 
 
+def editorial_body(slug):
+    h = html(slug)
+    match = re.search(r"<!-- COMPARISON_CONTENT_START -->(.*?)<!-- COMPARISON_CONTENT_END -->", h, flags=re.S)
+    body = match.group(1) if match else h
+    body = re.split(r'<h2\b[^>]*id=["\']sources["\'][^>]*>', body, maxsplit=1, flags=re.I)[0]
+    return body
+
+
+def functional_signature(slug):
+    """Return the ordered editorial component cadence, ignoring wording/labels."""
+    body = editorial_body(slug)
+    token_re = re.compile(
+        r'(?P<answer><div\b[^>]*class=["\'][^"\']*answer-box[^"\']*["\'][^>]*>)'
+        r'|(?P<decision><section\b[^>]*class=["\'][^"\']*comparison-decision-module[^"\']*["\'][^>]*>)'
+        r'|(?P<h2><h2\b[^>]*>)'
+        r'|(?P<h3><h3\b[^>]*>)'
+        r'|(?P<table><table\b[^>]*>)'
+        r'|(?P<ul><ul\b[^>]*>)',
+        flags=re.I,
+    )
+    mapping = {"answer": "A", "decision": "D", "h2": "H2", "h3": "H3", "table": "T", "ul": "L"}
+    return tuple(mapping[m.lastgroup] for m in token_re.finditer(body))
+
+
+def normalized_long_paragraphs(slug):
+    paras = []
+    for raw in re.findall(r"<p\b[^>]*>(.*?)</p>", editorial_body(slug), flags=re.S | re.I):
+        text = re.sub(r"<[^>]+>", " ", raw)
+        text = re.sub(r"\s+", " ", text).strip().lower()
+        if len(text.split()) >= 40:
+            paras.append(text)
+    return paras
+
+
 for slug in ALL:
     h = html(slug)
     d = data(slug)
     check('<meta name="robots" content="noindex, follow">' in h, f"{slug}: noindex/follow changed")
     check(d.get("notes", {}).get("affiliate_commission_used_in_ranking") is False, f"{slug}: affiliate independence missing")
+    editorial = d.get("editorial", {})
+    check(editorial.get("workflow_contract_version") == 2, f"{slug}: comparison workflow contract v2 missing")
+    check(editorial.get("generator_role") == "shell_and_components_only", f"{slug}: generator role is not constrained")
+    check(editorial.get("publish_review") in {READY, "REQUIRES_WORKFLOW_RERUN"}, f"{slug}: invalid publish-review state")
 
 for slug in REWRITTEN:
     h = html(slug)
@@ -103,18 +144,37 @@ for stale in ["Dépression &gt; 25 kPa", "&lt; 15 litres", "Grande capacité", "
 for fresh in ["Débit et dépression contextualisés", "Mobilité et encombrement", "Process, continu, huiles et copeaux", "Certification classe M"]:
     check(fresh in hub, f"comparison hub: new role label missing: {fresh}")
 
-# The general and powerful pages must no longer be the same three-product universe.
+# The general and powerful pages must no longer be the same product universe.
 g = {p["id"] for p in data("meilleur-aspirateur-de-chantier").get("product_universe", [])}
 p = {p["id"] for p in data("aspirateur-chantier-puissant").get("product_universe", [])}
 check(g != p, "cluster: general and powerful still use the exact same product universe")
 
-# Distinct H2 signatures are a useful anti-template gate for the eight rewritten pages.
-signatures = {}
+# Exact H2 cloning is still useful as a low-level draft check.
+signatures = defaultdict(list)
 for slug in REWRITTEN:
     sig = tuple(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", x)).strip().lower() for x in re.findall(r"<h2\b[^>]*>(.*?)</h2>", html(slug), flags=re.S | re.I))
-    signatures.setdefault(sig, []).append(slug)
-for sig, slugs in signatures.items():
+    signatures[sig].append(slug)
+for slugs in signatures.values():
     check(len(slugs) == 1, "cluster: identical H2 architecture remains: " + ", ".join(slugs))
+
+# READY pages get a stronger functional anti-template gate. Components can be shared,
+# but three READY pages may not have the exact same ordered component cadence.
+ready_slugs = [slug for slug in ALL if data(slug).get("editorial", {}).get("publish_review") == READY]
+functional = defaultdict(list)
+for slug in ready_slugs:
+    functional[functional_signature(slug)].append(slug)
+for sig, slugs in functional.items():
+    if sig and len(slugs) >= 3:
+        check(False, "cluster: READY pages share the same functional editorial cadence: " + ", ".join(slugs))
+
+# Long editorial prose copied verbatim into 3+ READY pages is also a blocker.
+paragraph_owners = defaultdict(set)
+for slug in ready_slugs:
+    for paragraph in normalized_long_paragraphs(slug):
+        paragraph_owners[paragraph].add(slug)
+for owners in paragraph_owners.values():
+    if len(owners) >= 3:
+        check(False, "cluster: long editorial paragraph cloned across READY pages: " + ", ".join(sorted(owners)))
 
 if errors:
     print("COMPARISON_ROLLOUT: FAIL")
@@ -123,7 +183,7 @@ if errors:
     raise SystemExit(1)
 
 print("COMPARISON_ROLLOUT: PASS")
-print(" - 8 audited comparison pages use bespoke decision structures")
-print(" - professional pilot preserved as reference")
-print(" - general/powerful overlap reduced and industrial intent respecified")
+print(" - intent and safety boundaries preserved across all 9 comparison drafts")
+print(f" - {len(ready_slugs)} page(s) currently claim READY_FOR_HUMAN_VALIDATION")
+print(" - READY pages are subject to functional-cadence and long-paragraph anti-template gates")
 print(" - all 9 comparison pages remain noindex, follow")
