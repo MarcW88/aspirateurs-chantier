@@ -1,0 +1,36 @@
+{
+  "contract_version": 2,
+  "slug": "bosch-gas-35-l-afc",
+  "status": "PASS",
+  "shared_steps": {
+    "search-intent": {"status": "PASS", "output": "Intent narrowed to whether GAS 35 L AFC is the right class-L AFC choice or whether GAS 12-25 PL / GAS 35 M better fit the need."},
+    "content-audit": {"status": "PASS", "output": "Existing page audited as DEEP_REWRITE because it used the generic model structure despite a clear AFC-vs-SFC and L-vs-M decision."},
+    "content-refresh": {"status": "PASS", "output": "Rebuilt around range position, AFC-vs-SFC, same-chassis L-vs-M choice and gross-vs-net capacity."},
+    "fact-check-pre": {"status": "PASS", "output": "Bosch Professional GAS 35 L AFC, GAS 12-25 PL and GAS 35 M AFC primary pages checked before drafting."},
+    "evidence-based-reviews": {"status": "N/A", "reason": "No subjective rating or hands-on verdict is used."},
+    "affiliate-value": {"status": "PASS", "output": "Affiliate-independent value comes from explaining why AFC, filter surface and class requirement matter more than a simplistic capacity or power ranking."},
+    "content-brief-authoring": {"status": "PASS", "output": "Evidence brief persisted at .content/models/briefs/bosch-gas-35-l-afc-2026-09-11.md."},
+    "content-and-copy": {"status": "PASS", "output": "Bespoke body persisted under .content/models/pages/bosch-gas-35-l-afc.html."},
+    "fact-check-post": {"status": "PASS", "output": "Final copy retains class L, 35/23/19.2 L, 12.2 kg, 6150 cm², 74 l/s, 254 mbar and AFC in context."},
+    "humanizer": {"status": "PASS", "output": "Removed generic product-review cadence and centered the page on the Bosch class-L decision."},
+    "general-writing": {"status": "PASS", "output": "Copy tightened around AFC, class and useful-capacity trade-offs."},
+    "anti-ai-slop": {"status": "PASS", "output": "No cloned 'for whom / limits / source' structure or padded FAQ remains."},
+    "internal-linking-audit": {"status": "PASS", "output": "Links hand off to GAS 35 M AFC and related Bosch content without duplicating their roles."},
+    "seo-technical": {"status": "PASS", "output": "Canonical and noindex, follow preserved; bespoke metadata and TOC supplied."},
+    "seo-best-practices": {"status": "PASS", "output": "Title/meta express the exact AFC-in-L versus class-M decision."},
+    "editorial-qa": {"status": "PASS", "output": "AFC is not presented as an independent test result, GAS 35 M is not called more powerful, and class choice remains risk-based."}
+  },
+  "custom_steps": {
+    "vacuum-model-domain-review": {"status": "PASS", "output": "Class L, tank gross/net/water volumes, filter surface, turbine metrics, AFC and same-chassis comparison to GAS 35 M checked against Bosch."},
+    "model-analysis-publish-review": {"status": "PASS", "output": "Page is distinct from GAS 12-25 PL and GAS 35 M AFC and ready for human validation while remaining noindex."}
+  },
+  "reader_decision": "Decide whether the GAS 35 L AFC is the right Bosch class-L AFC vacuum, or whether a lighter GAS 12-25 PL or class-M GAS 35 M is more appropriate.",
+  "value_without_affiliate_links": "Explains the AFC-vs-SFC trade-off, the near-identical GAS 35 L/M chassis and the gap between gross and net capacity without implying false performance differences.",
+  "outline": [
+    {"question": "Quelle place le GAS 35 L AFC occupe-t-il dans la gamme ?", "evidence_refs": ["E1", "E2", "E3"], "decision_value": "Defines the page role between compact class L and same-chassis class M."},
+    {"question": "Que change AFC face au SFC ?", "evidence_refs": ["E1", "E2"], "decision_value": "Centers the step-up on filter-management workflow."},
+    {"question": "GAS 35 L ou GAS 35 M ?", "evidence_refs": ["E1", "E3"], "decision_value": "Shows the published suction figures are effectively the same and class is the real decision."},
+    {"question": "Que signifie réellement 35 L ?", "evidence_refs": ["E1"], "decision_value": "Keeps gross, net and water volumes distinct."}
+  ],
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
