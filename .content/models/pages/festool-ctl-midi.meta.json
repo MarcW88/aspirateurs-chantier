@@ -1,0 +1,12 @@
+{
+  "title": "Festool CTL MIDI I : standard, AUTOCLEAN ou CTM ?",
+  "meta_description": "Festool CTL MIDI I : classe L, 15 L, Bluetooth, CLEANTEC et nettoyage manuel. Différences avec CTL MIDI I AC et CTM MIDI I classe M.",
+  "verified_date": "11/09/2026",
+  "toc": [
+    ["integration", "Intégration Festool"],
+    ["bluetooth", "Ce que change Bluetooth"],
+    ["autoclean", "Standard vs AUTOCLEAN"],
+    ["ctl-vs-ctm", "CTL vs CTM"],
+    ["sources", "Sources"]
+  ]
+}
