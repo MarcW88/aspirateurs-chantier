@@ -49,7 +49,8 @@ jobs:
           ];
           for (const [name,path] of pages) {
             for (const [mode,viewport] of [['desktop',{width:1440,height:1000}],['mobile',{width:390,height:844}]]) {
-              const page = await browser.newPage({ viewportSize: viewport });
+              const context = await browser.newContext({ viewport });
+              const page = await context.newPage();
               await page.goto('http://127.0.0.1:8000'+path, {waitUntil:'domcontentloaded'});
               await page.waitForTimeout(800);
               console.log(`checking ${name}-${mode}`);
@@ -67,7 +68,7 @@ jobs:
                 }
               }
               await page.screenshot({path:`screenshots/${name}-${mode}.png`, fullPage:true});
-              await page.close();
+              await context.close();
             }
           }
           await browser.close();
