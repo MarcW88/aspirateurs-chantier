@@ -1,0 +1,51 @@
+{
+  "contract_version": 2,
+  "slug": "aspirateur-industriel",
+  "status": "PASS",
+  "reader_decision": "Identifier la bonne architecture d’aspiration industrielle à partir de la matière, du cycle de service, de la mobilité, du vidage et des contraintes de zone, puis savoir quand un dimensionnement fabricant ou intégrateur devient nécessaire.",
+  "comparison_scope": "Quatre familles repères illustrent poussières sèches mobiles, fonctionnement continu triphasé, poussières dangereuses configurables et huiles/copeaux ; elles ne sont pas classées sur un score commun.",
+  "value_without_affiliate_links": "La page évite le raccourci grande cuve = industriel, distingue process, continu, collecte et ACD/ATEX et indique les cas où un comparatif éditorial doit céder la place au dimensionnement.",
+  "candidate_scope": {
+    "considered": ["Kärcher IVC 60/24-2 Tact² M","Kärcher IVR 60/30 Sc M ACD","Nilfisk S3 L100","Nilfisk VHO200"],
+    "major_exclusions": [
+      "Kärcher NT / Bosch GAS / Festool CT : aspirateurs professionnels de chantier, utiles comme frontière mais pas comme pairs automatiques des familles de process industriel.",
+      "Aucune machine ATEX n’est recommandée par extrapolation : la référence exacte et la zone doivent être validées."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.kaercher.com/be-fr/professional/solutions-industrielles-aspiration-et-depoussierage/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivc-60-24-2-tact2-15761000.html","supports":"famille IVC : monophasé, mobilité, 60 L, Tact² et aspiration industrielle de poussières"},
+    {"ref":"S2","source":"https://www.kaercher.com/fr/professional/aspirateurs-industriels/aspirateurs-industriels/aspirateurs-industriels-solides-poussieres/ivr-60-30-sc-m-acd-99906430.html","supports":"IVR : triphasé, continu trois-huit, ACD, M, 60 L, hors zone ATEX"},
+    {"ref":"S3","source":"https://www.nilfisk.com/fr-be/professional/produits/aspirateurs-industriels/poussiere-dangereuse/monophase/s3-l100-lc-fm%2B4010300195","supports":"S3 : architecture industrielle monophasée pour poussières avec variantes/classes et options de filtration"},
+    {"ref":"S4","source":"https://www.nilfisk.com/fr-fr/professionnel/produits/aspirateurs-industriels/huile-et-copeaux/vho200%2B4010400037/","supports":"VHO200 : huiles, liquides, copeaux, séparation et vidange"}
+  ],
+  "outline": [
+    {"question":"Quelles questions de process déterminent d’abord la famille de machine ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Évite une comparaison par volume de cuve et replace matière, duty cycle, mobilité et vidage en amont."},
+    {"question":"Quelles architectures couvrent les quatre grands cas ?","evidence_refs":["S1","S2","S3","S4"],"decision_value":"Donne quatre repères sans faux podium entre machines non équivalentes."},
+    {"question":"Pourquoi le fonctionnement continu change-t-il le dimensionnement ?","evidence_refs":["S1","S2"],"decision_value":"Distingue monophasé mobile et triphasé/canal latéral prévu pour le continu."},
+    {"question":"Comment matière et vidage transforment-ils la machine ?","evidence_refs":["S3","S4"],"decision_value":"Sépare poussières dangereuses, liquides et copeaux ainsi que leurs modes de collecte."},
+    {"question":"Où s’arrêtent ACD et ce comparatif ?","evidence_refs":["S2"],"decision_value":"Évite d’assimiler ACD à ATEX et identifie les cas nécessitant un intégrateur."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"Intention ‘aspirateur industriel’ redéfinie comme choix d’architecture de process plutôt que variante grande capacité d’un aspirateur de chantier."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD : dimensionner la famille selon matière, durée de fonctionnement, alimentation, mobilité, vidage et environnement industriel."},
+    "seo-content-audit":{"status":"PASS","output":"DEEP_REWRITE appliqué ; la bonne frontière chantier/industriel du rollout précédent est conservée mais développée en profondeur."},
+    "evidence-based-reviews":{"status":"PASS","output":"Quatre références/familles fabricants sélectionnées pour des architectures réellement différentes ; aucun avis d’usage non sourcé ajouté."},
+    "fact-check-pre":{"status":"PASS","output":"Triphasé, continu trois-huit, capacités, classes, ACD, modes de vidage et usages huiles/copeaux vérifiés avant brief."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale définie autour des erreurs de dimensionnement : litres, matière, cycle de service, ACD/ATEX et goulot de vidage."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief process-led : six questions, familles, duty cycle, matière, ACD/ATEX, vidage, frontière chantier et dimensionnement."},
+    "content-and-copy":{"status":"PASS","output":"Réécriture persistée dans .content/comparisons/v2/aspirateur-industriel.html sans reprendre la structure des autres comparatifs."},
+    "fact-check-post":{"status":"PASS","output":"Claims sensibles revérifiés, notamment IVR hors zone ATEX et distinction ACD/classe M/ATEX."},
+    "humanizer":{"status":"PASS","output":"Suppression du ton catalogue ; texte organisé comme un raisonnement de process avec limites explicites."},
+    "general-writing":{"status":"PASS","output":"Terminologie process, cycle de service, séparation et dimensionnement clarifiée sans promettre une sélection universelle."},
+    "anti-ai-slop":{"status":"PASS","output":"Aucune cadence produit symétrique imposée ; structure construite autour de questions industrielles propres à cette URL."},
+    "seo-onpage":{"status":"PASS","output":"Title/meta/H1 déplacés vers process, matière, continu et dimensionnement ; intention industrielle clairement différenciée."},
+    "seo-technical":{"status":"PASS","output":"Canonical et noindex, follow préservés ; fragment compatible avec shell existant."},
+    "internal-linking-audit":{"status":"PASS","output":"Handoff vers professionnel et classe M uniquement quand le besoin reste du chantier mobile."},
+    "editorial-qa":{"status":"PASS","output":"Pas de faux sizing, pas de recommandation ATEX par analogie, limites du desk research et de l’affiliation explicitement documentées."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Vérification métier : classes non inférées, ACD séparé d’ATEX, architectures poussières/liquides/copeaux non mélangées, cycle de service prioritaire."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; la page répond désormais à l’intention industrielle sans cannibaliser le comparatif professionnel."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
