@@ -1,0 +1,59 @@
+{
+  "contract_version": 2,
+  "slug": "aspirateur-classe-m",
+  "status": "PASS",
+  "reader_decision": "Choisir entre de vrais aspirateurs classe M selon surveillance du débit, décolmatage, collecte, mobilité et intégration à l’outil une fois le besoin de classe M établi.",
+  "comparison_scope": "Comparaison de cinq architectures M actuelles couvrant sans-fil compact, compact filaire, chantier 30–35 L et gros volume ; la page ne prescrit pas la classe à la place de l’évaluation du risque.",
+  "value_without_affiliate_links": "La page distingue classe M, HEPA, décolmatage, surveillance, antistatique et collecte ; elle explique aussi l’effet du colmatage et le coût de configuration sans dépendre d’un lien marchand.",
+  "candidate_scope": {
+    "considered": [
+      "Bosch Professional GAS 18V-12 MC",
+      "Festool CTM MIDI I AC",
+      "Kärcher NT 30/1 Tact Te M ACD",
+      "Bosch Professional GAS 35 M AFC",
+      "Makita VC4210MX"
+    ],
+    "major_exclusions": [
+      "Appareils L ou non classés exclus du tableau principal car la certification M est le gate d’entrée.",
+      "Classe H non intégrée comme niveau supérieur automatique : la classe requise dépend du risque."
+    ]
+  },
+  "evidence": [
+    {"ref":"S1","source":"https://www.inrs.fr/media.html?refINRS=EC+44","supports":"évolution du débit, filtration et colmatage en cours d’utilisation"},
+    {"ref":"S2","source":"https://www.bosch-professional.com/fr/fr/products/gas-18v-12-mc-06019K2000","supports":"GAS 18V-12 MC : classe M, capacité, débit turbine, SFC, antistatique et Auto-Start"},
+    {"ref":"S3","source":"https://www.festool.fr/produits/aspirateurs/aspirateurs-compact/578552---ctm-midi-i-ac","supports":"CTM MIDI I AC : M, AUTOCLEAN, capacité, débit, prise outil"},
+    {"ref":"S4","source":"https://www.kaercher.com/fr/professional/aspirateurs-eau-et-poussieres/aspirateurs-de-securite/nt-30-1-tact-te-m-acd-11482350.html","supports":"NT 30/1 : M, Tact, surveillance débit, antistatique, capacité et poids"},
+    {"ref":"S5","source":"https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0","supports":"GAS 35 M AFC : M, AFC, capacité et mesures à la turbine"},
+    {"ref":"S6","source":"https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf","supports":"VC4210MX : M, 42 L, InfiniClean, avertisseur de flux, poids"}
+  ],
+  "outline": [
+    {"question":"Quelles conditions doivent être vérifiées avant de comparer les modèles ?","evidence_refs":["S1","S2","S4","S6"],"decision_value":"Empêche de confondre certification, filtre, décolmatage et performance à filtre propre."},
+    {"question":"Quels workflows M représentent réellement les cinq références ?","evidence_refs":["S2","S3","S4","S5","S6"],"decision_value":"Transforme la shortlist en scénarios de travail plutôt qu’en podium universel."},
+    {"question":"Pourquoi le comportement filtre chargé change-t-il l’analyse ?","evidence_refs":["S1"],"decision_value":"Ajoute une couche indépendante au-delà des maxima fabricants."},
+    {"question":"Comment distinguer décolmatage, surveillance et antistatique ?","evidence_refs":["S2","S3","S4","S5","S6"],"decision_value":"Évite les équivalences marketing trompeuses."},
+    {"question":"Quel coût de configuration et quel compromis par situation ?","evidence_refs":["S2","S3","S4","S5","S6"],"decision_value":"Intègre batteries, consommables, capacité et mobilité dans la décision."}
+  ],
+  "shared_steps": {
+    "seo-keyword":{"status":"PASS","output":"Intention resserrée sur ‘aspirateur classe M’ comme comparaison transactionnelle après gate de certification ; frontière conservée avec professionnel et guide classes L/M/H."},
+    "jobs-to-be-done":{"status":"PASS","output":"JTBD identifié : conserver la classe M requise tout en optimisant mobilité, continuité de filtration, collecte et workflow outil."},
+    "seo-content-audit":{"status":"PASS","output":"Verdict DEEP_REWRITE du cluster audit 2026-09-11 appliqué ; shortlist utile conservée, ancienne cadence tableau + H2 courts remplacée."},
+    "evidence-based-reviews":{"status":"PASS","output":"Faits durs issus des cinq fabricants ; étude INRS ajoutée pour le comportement au colmatage sans extrapolation à une référence précise."},
+    "fact-check-pre":{"status":"PASS","output":"Classe M, capacités, poids, modes de nettoyage, mesures turbine, surveillance et fonctions antistatiques vérifiés avant brief."},
+    "affiliate-value":{"status":"PASS","output":"Valeur originale définie autour des erreurs de choix : M ≠ HEPA, décolmatage ≠ classe, coût de configuration et mobilité vs volume."},
+    "content-brief-authoring":{"status":"PASS","output":"Brief construit autour de gates, cinq workflows, filtre chargé, fonctions séparées, coût de configuration et limites du périmètre M."},
+    "content-and-copy":{"status":"PASS","output":"Réécriture complète persistée dans .content/comparisons/v2/aspirateur-classe-m.html avec structure spécifique à l’intention."},
+    "fact-check-post":{"status":"PASS","output":"Relecture post-draft des claims sensibles : M, ACD, Tact, SFC, AFC, InfiniClean, capacité et absence d’extrapolation INRS."},
+    "humanizer":{"status":"PASS","output":"Suppression du ton catalogue et des symétries produit-par-produit ; prose recentrée sur décisions, exceptions et conséquences chantier."},
+    "general-writing":{"status":"PASS","output":"Phrases resserrées, termes techniques explicités et transitions reformulées pour lecture professionnelle sans simplification abusive."},
+    "anti-ai-slop":{"status":"PASS","output":"Structure fonctionnelle différenciée ; absence de sections mécaniques avantages/limites/pour-qui répétées et de score artificiel."},
+    "seo-onpage":{"status":"PASS","output":"Title, meta, H1 et headings alignés sur classe M + workflow ; liens vers industriel et pages modèles conservés."},
+    "seo-technical":{"status":"PASS","output":"Canonical existant conservé, robots noindex, follow maintenu et HTML destiné au shell existant."},
+    "internal-linking-audit":{"status":"PASS","output":"Liens internes limités aux modèles concernés et au comparatif industriel lorsque le besoin sort du périmètre M."},
+    "editorial-qa":{"status":"PASS","output":"Pas de faux test, pas de prescription de classe, sources nommées, limites visibles et indépendance affiliation explicite."}
+  },
+  "custom_steps": {
+    "vacuum-comparison-decision-review":{"status":"PASS","output":"Gates métier vérifiés : M explicitement sourcé, HEPA/décolmatage non assimilés à la classe, mesures cross-brand contextualisées, capacité et surveillance distinguées."},
+    "comparison-analysis-publish-review":{"status":"PASS","output":"PASS — READY_FOR_HUMAN_VALIDATION ; page distincte du comparatif professionnel, evidence-led et sans blocker éditorial identifié."}
+  },
+  "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION"
+}
