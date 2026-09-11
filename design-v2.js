@@ -6,8 +6,9 @@
   const articleLayout = window.matchMedia('(max-width: 1024px)');
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.site-nav');
+  const hasDedicatedInteractionLayer = body.classList.contains('comparison-page') || body.classList.contains('brand-page');
 
-  if (burger && nav && !body.classList.contains('comparison-page')) {
+  if (burger && nav && !hasDedicatedInteractionLayer) {
     if (!nav.id) nav.id = 'site-nav-v2';
     burger.setAttribute('aria-controls', nav.id);
     burger.setAttribute('aria-expanded', 'false');
@@ -31,8 +32,8 @@
     });
   }
 
-  /* Guide/model pages: move the real TOC before the article on smaller screens. */
-  if (!body.classList.contains('comparison-page')) {
+  /* Pages without a dedicated interaction script: move the real TOC before the article. */
+  if (!hasDedicatedInteractionLayer) {
     const layout = document.querySelector('.content-layout');
     const article = document.querySelector('.content-main');
     const sidebar = document.querySelector('.content-sidebar');
