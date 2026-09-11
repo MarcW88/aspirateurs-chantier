@@ -16,6 +16,10 @@ on:
       - "_brand_rollout_polish.py"
       - "_apply_cluster_audit_metadata.py"
       - "_apply_brand_design_fixes.py"
+      - "_apply_design_v2.py"
+      - "design-v2.css"
+      - "design-v2-rollout.css"
+      - "design-v2.js"
       - "enforce_brand_review_state.py"
       - "_validate_brands.py"
       - "validate_brand_skill_stack.py"
@@ -50,7 +54,9 @@ jobs:
         run: python validate_brand_skill_stack.py
 
       - name: Generate canonically and enforce evidence-gated review state
-        run: python _generate_brand_content.py
+        run: |
+          python _generate_brand_content.py
+          python _apply_design_v2.py
 
       - name: Validate machine integrity and anti-template gates
         run: python _validate_brands.py
@@ -62,6 +68,7 @@ jobs:
         run: |
           before=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
           python _generate_brand_content.py >/tmp/brand-regenerate.log
+          python _apply_design_v2.py >/tmp/brand-design.log
           python _validate_brands.py >/tmp/brand-validate.log
           after=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
           test "$before" = "$after"

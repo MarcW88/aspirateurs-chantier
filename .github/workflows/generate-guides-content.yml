@@ -10,6 +10,10 @@ on:
       - '_normalize_guide_answers.py'
       - '_guide_classes_lmh_pilot.py'
       - '_materialize_guides_v2.py'
+      - '_apply_design_v2.py'
+      - 'design-v2.css'
+      - 'design-v2-rollout.css'
+      - 'design-v2.js'
       - 'validate_guide_workflow.py'
       - 'validate_guide_quality.py'
       - 'guide-workflow.config.yaml'
@@ -37,10 +41,12 @@ jobs:
           python-version: '3.12'
 
       - name: Compile Guide v2 pipeline
-        run: python -m py_compile _generate_guide_content.py _materialize_guides_v2.py validate_guide_workflow.py validate_guide_quality.py
+        run: python -m py_compile _generate_guide_content.py _materialize_guides_v2.py _apply_design_v2.py validate_guide_workflow.py validate_guide_quality.py
 
       - name: Generate canonical Guide content
-        run: python _generate_guide_content.py
+        run: |
+          python _generate_guide_content.py
+          python _apply_design_v2.py
 
       - name: Verify draft robots directive remains present
         shell: bash
@@ -59,6 +65,7 @@ jobs:
         run: |
           git diff -- guides > /tmp/guide-first.diff || true
           python _generate_guide_content.py
+          python _apply_design_v2.py >/tmp/guide-design.log
           git diff -- guides > /tmp/guide-second.diff || true
           if ! cmp -s /tmp/guide-first.diff /tmp/guide-second.diff; then
             echo "Guide generation is not idempotent"

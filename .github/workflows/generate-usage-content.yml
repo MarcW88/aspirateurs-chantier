@@ -7,6 +7,10 @@ on:
     paths:
       - "_generate_usage_overrides.py"
       - "_materialize_usage_v2.py"
+      - "_apply_design_v2.py"
+      - "design-v2.css"
+      - "design-v2-rollout.css"
+      - "design-v2.js"
       - "validate_usage_workflow.py"
       - "usage-workflow.config.yaml"
       - ".content/usages/**"
@@ -37,7 +41,9 @@ jobs:
         run: python _generate_usage_overrides.py
 
       - name: Materialize authored usage v2 content
-        run: python _materialize_usage_v2.py
+        run: |
+          python _materialize_usage_v2.py
+          python _apply_design_v2.py
 
       - name: Revalidate usage workflow contract
         run: python validate_usage_workflow.py
