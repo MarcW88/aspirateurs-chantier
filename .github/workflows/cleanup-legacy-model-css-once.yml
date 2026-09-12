@@ -1,0 +1,125 @@
+name: Cleanup legacy model CSS once
+
+on:
+  push:
+    branches:
+      - fix/remove-legacy-model-css
+    paths:
+      - '.github/workflows/cleanup-legacy-model-css-once.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/remove-legacy-model-css
+          fetch-depth: 0
+
+      - name: Remove model-specific rules from homepage stylesheet
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('home-model-polish.css')
+          source = path.read_text(encoding='utf-8')
+
+          def matching_brace(text, open_pos):
+              depth = 0
+              quote = None
+              escaped = False
+              in_comment = False
+              i = open_pos
+              while i < len(text):
+                  if in_comment:
+                      if text.startswith('*/', i):
+                          in_comment = False
+                          i += 2
+                          continue
+                      i += 1
+                      continue
+                  if quote:
+                      ch = text[i]
+                      if escaped:
+                          escaped = False
+                      elif ch == '\\':
+                          escaped = True
+                      elif ch == quote:
+                          quote = None
+                      i += 1
+                      continue
+                  if text.startswith('/*', i):
+                      in_comment = True
+                      i += 2
+                      continue
+                  ch = text[i]
+                  if ch in ('"', "'"):
+                      quote = ch
+                  elif ch == '{':
+                      depth += 1
+                  elif ch == '}':
+                      depth -= 1
+                      if depth == 0:
+                          return i
+                  i += 1
+              raise ValueError('Unbalanced CSS braces')
+
+          def clean_segment(text):
+              out = []
+              cursor = 0
+              while True:
+                  open_pos = text.find('{', cursor)
+                  if open_pos == -1:
+                      out.append(text[cursor:])
+                      break
+                  close_pos = matching_brace(text, open_pos)
+                  prelude = text[cursor:open_pos]
+                  body = text[open_pos + 1:close_pos]
+
+                  # Comments immediately before a rule are harmless to keep or drop.
+                  selector_probe = prelude.split('*/')[-1].strip()
+                  if '.design-v2.design-model' in selector_probe:
+                      # Keep only whitespace before this dropped model rule.
+                      leading = prelude[:len(prelude) - len(prelude.lstrip())]
+                      out.append(leading)
+                  elif selector_probe.startswith('@media') or selector_probe.startswith('@supports'):
+                      cleaned_body = clean_segment(body)
+                      out.append(prelude)
+                      out.append('{')
+                      out.append(cleaned_body)
+                      out.append('}')
+                  else:
+                      out.append(prelude)
+                      out.append('{')
+                      out.append(body)
+                      out.append('}')
+                  cursor = close_pos + 1
+              return ''.join(out)
+
+          cleaned = clean_segment(source)
+          while '\n\n\n\n' in cleaned:
+              cleaned = cleaned.replace('\n\n\n\n', '\n\n\n')
+          path.write_text(cleaned, encoding='utf-8')
+
+          if '.design-v2.design-model' in cleaned:
+              raise SystemExit('Legacy model selectors still present in home-model-polish.css')
+          if '.design-v2.design-home' not in cleaned:
+              raise SystemExit('Homepage selectors were unexpectedly removed')
+          print('Removed legacy model selectors; homepage rules preserved.')
+          PY
+
+      - name: Commit cleanup
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add home-model-polish.css
+          if git diff --cached --quiet; then
+            echo 'No cleanup needed.'
+            exit 0
+          fi
+          git commit -m 'design: remove legacy model rules from homepage stylesheet'
+          git push origin HEAD:fix/remove-legacy-model-css
