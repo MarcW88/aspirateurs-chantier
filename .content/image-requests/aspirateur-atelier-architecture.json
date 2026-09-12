@@ -12,7 +12,7 @@
   "output_path": "assets/generated/aspirateur-atelier-architecture.webp",
   "prompt": "Wide photorealistic editorial documentary photograph inside a real small woodworking and renovation workshop. Show a practical workbench with a generic random orbital sander and hand tools, a generic unbranded wet/dry dust extractor on wheels connected by a flexible hose near the workbench, and a stationary woodworking machine farther in the background to communicate that different workstations can need different extraction approaches. The space should feel used but organized: timber offcuts, realistic concrete floor, natural workshop clutter, practical daylight mixed with neutral overhead workshop light. No staged product hero shot. No visible brand logos, no readable labels, no recognizable Bosch, Karcher, Makita, Festool, Nilfisk or other proprietary design language. Do not imply that this exact setup was tested by a publication. Photorealistic editorial documentary photography, realistic proportions and materials, generic unbranded tools and extractor, candid framing, no watermark, no generated text, no advertising composition.",
   "alt": "Atelier avec plusieurs postes de travail et un aspirateur de chantier générique relié à un outil portatif",
-  "caption": "Illustration générique d’un atelier où aspiration mobile et postes fixes répondent à des besoins différents.",
+  "caption": "",
   "width": 1024,
   "height": 672,
   "prompt_upsampling": true,
