@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "roots": ["modeles"],
+  "products": {
+    "karcher-wd6": {
+      "subject_paths": ["modeles/karcher-wd6/index.html"]
+    },
+    "bosch-advancedvac-20": {
+      "subject_paths": ["modeles/bosch-advancedvac-20/index.html"]
+    },
+    "bosch-gas-18v-10-l": {
+      "subject_paths": ["modeles/bosch-gas-18v-10-l/index.html"]
+    },
+    "bosch-gas-12-25-pl": {
+      "subject_paths": ["modeles/bosch-gas-12-25-pl/index.html"]
+    },
+    "bosch-gas-35-m-afc": {
+      "subject_paths": ["modeles/bosch-gas-35-m-afc/index.html"]
+    },
+    "makita-vc2512l": {
+      "subject_paths": ["modeles/makita-vc2512l/index.html"]
+    },
+    "makita-vc4210mx": {
+      "subject_paths": ["modeles/makita-vc4210mx/index.html"]
+    }
+  }
+}
