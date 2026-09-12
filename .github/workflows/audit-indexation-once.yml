@@ -1,0 +1,45 @@
+name: Audit indexation guards
+
+on:
+  push:
+    branches: [feat/index-site]
+    paths:
+      - '.github/workflows/audit-indexation-once.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit noindex references and public pages
+        run: |
+          mkdir -p .artifacts/indexation-audit
+          {
+            echo '=== NOINDEX REFERENCES ==='
+            grep -RIn --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.artifacts -E 'noindex|draft indexation|authorize indexation' . || true
+            echo
+            echo '=== PUBLIC PAGE ROBOTS STATE ==='
+            python - <<'PY'
+          from _apply_design_v2 import public_pages, ROOT
+          import re
+          pages = public_pages()
+          print(f'public_pages={len(pages)}')
+          for path in pages:
+              html = path.read_text(encoding='utf-8')
+              m = re.search(r'<meta\b[^>]*name=["\']robots["\'][^>]*content=["\']([^"\']+)', html, re.I)
+              print(f'{path.relative_to(ROOT).as_posix()}\t{m.group(1) if m else "MISSING"}')
+          PY
+          } > .artifacts/indexation-audit/report.txt
+          cat .artifacts/indexation-audit/report.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: indexation-audit
+          path: .artifacts/indexation-audit/report.txt
+          retention-days: 7
