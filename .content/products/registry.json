@@ -1,0 +1,187 @@
+{
+  "schema_version": 2,
+  "products": {
+    "karcher-wd6": {
+      "name": "Kärcher WD 6 P S V-30/6/22/T",
+      "internal_url": "/modeles/karcher-wd6/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B09MD5XY39", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Cuve", "value": "30 L"},
+        {"label": "Débit max.", "value": "75 l/s"},
+        {"label": "Dépression max.", "value": "280 mbar"},
+        {"label": "Prise outil", "value": "Oui"},
+        {"label": "Classe", "value": "Aucune L/M/H documentée"}
+      ],
+      "best_for": "Rénovation, atelier et eau/poussière lorsqu'aucune classe L/M/H n'est requise"
+    },
+    "karcher-nt-30-1-tact": {
+      "name": "Kärcher NT 30/1 Tact Te M ACD",
+      "internal_url": "/modeles/karcher-nt-30-1-tact/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "M"},
+        {"label": "Cuve", "value": "30 L"},
+        {"label": "Décolmatage", "value": "Tact automatique"},
+        {"label": "Surveillance", "value": "Débit électronique"},
+        {"label": "ACD", "value": "Oui"}
+      ],
+      "best_for": "Chantiers professionnels classe M avec captage à l'outil et poussières fines"
+    },
+    "karcher-wd3-18-s": {
+      "name": "Kärcher WD 3-18 S",
+      "internal_url": "/marques/karcher/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B0BS3Q1VWR", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Plateforme", "value": "Kärcher Battery Power 18 V"},
+        {"label": "Cuve", "value": "17 L inox"},
+        {"label": "Flexible", "value": "2 m"},
+        {"label": "Usage", "value": "Eau et poussière"},
+        {"label": "Classe", "value": "Aucune L/M/H documentée"}
+      ],
+      "best_for": "Nettoyage mobile, garage et petits travaux sans exigence de classe poussière"
+    },
+    "bosch-advancedvac-20": {
+      "name": "Bosch AdvancedVac 20",
+      "internal_url": "/modeles/bosch-advancedvac-20/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B071YLJJ81", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Cuve", "value": "20 L"},
+        {"label": "Poids", "value": "7,6 kg"},
+        {"label": "Débit max.", "value": "70 l/s à la turbine"},
+        {"label": "Dépression max.", "value": "260 mbar à la turbine"},
+        {"label": "Classe", "value": "Aucune L/M/H documentée"}
+      ],
+      "best_for": "Atelier et bricolage polyvalent avec démarrage automatique de l'outil"
+    },
+    "bosch-gas-18v-10-l": {
+      "name": "Bosch Professional GAS 18V-10 L",
+      "internal_url": "/modeles/bosch-gas-18v-10-l/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B075886SRD", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "L"},
+        {"label": "Cuve", "value": "10 L brut / 6 L net"},
+        {"label": "Poids", "value": "4,7 kg sans batterie"},
+        {"label": "Débit max.", "value": "34 l/s"},
+        {"label": "Plateforme", "value": "Bosch Professional 18 V / AMPShare"}
+      ],
+      "best_for": "Interventions mobiles quand la classe L suffit et que le parc Bosch 18 V existe déjà"
+    },
+    "bosch-gas-18v-12-mc": {
+      "name": "Bosch Professional GAS 18V-12 MC",
+      "internal_url": "/marques/bosch/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "M"},
+        {"label": "Cuve", "value": "12 L brut / 8 L net"},
+        {"label": "Poids", "value": "7 kg sans batterie"},
+        {"label": "Décolmatage", "value": "SFC semi-automatique"},
+        {"label": "Auto-Start", "value": "Via GCT 30-42"}
+      ],
+      "best_for": "Mobilité 18 V avec besoin de classe M et déclenchement sans fil"
+    },
+    "bosch-gas-12-25-pl": {
+      "name": "Bosch Professional GAS 12-25 PL",
+      "internal_url": "/modeles/bosch-gas-12-25-pl/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B07Z41BC79", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "L"},
+        {"label": "Cuve", "value": "25 L brut / 21 L net"},
+        {"label": "Poids", "value": "9 kg"},
+        {"label": "Débit max.", "value": "65 l/s à la turbine"},
+        {"label": "Décolmatage", "value": "SFC semi-automatique"}
+      ],
+      "best_for": "Chantier et atelier classe L avec prise outil dans un format plus compact qu'un 35 L"
+    },
+    "bosch-gas-35-m-afc": {
+      "name": "Bosch Professional GAS 35 M AFC",
+      "internal_url": "/modeles/bosch-gas-35-m-afc/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B00D6H4Y92", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "M"},
+        {"label": "Cuve", "value": "35 L brut / 23 L net"},
+        {"label": "Débit max.", "value": "74 l/s à la turbine"},
+        {"label": "Dépression max.", "value": "254 mbar à la turbine"},
+        {"label": "Décolmatage", "value": "AFC automatique"}
+      ],
+      "best_for": "Captage filaire classe M avec AFC et volume intermédiaire"
+    },
+    "makita-vc2512l": {
+      "name": "Makita VC2512L",
+      "internal_url": "/modeles/makita-vc2512l/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B00RYQVDWM", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "L"},
+        {"label": "Cuve", "value": "25 L brut / 21 L poussière"},
+        {"label": "Poids", "value": "7 kg sans câble"},
+        {"label": "Dépression max.", "value": "210 mbar"},
+        {"label": "Décolmatage", "value": "Push & Clean manuel"}
+      ],
+      "best_for": "Usage classe L relativement mobile avec prise outil et maintenance simple"
+    },
+    "makita-vc4210mx": {
+      "name": "Makita VC4210MX",
+      "internal_url": "/modeles/makita-vc4210mx/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "B0771C4WFD", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "M"},
+        {"label": "Cuve", "value": "42 L brut / 34 L poussière"},
+        {"label": "Poids", "value": "16 kg sans câble"},
+        {"label": "Dépression max.", "value": "250 mbar"},
+        {"label": "Décolmatage", "value": "InfiniClean automatique"}
+      ],
+      "best_for": "Longues sessions classe M où capacité et décolmatage automatique priment sur la mobilité"
+    },
+    "festool-ctl-midi": {
+      "name": "Festool CTL MIDI I",
+      "internal_url": "/modeles/festool-ctl-midi/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Classe", "value": "L"},
+        {"label": "Réservoir / sac", "value": "15 L / 12,5 L"},
+        {"label": "Poids", "value": "11,4 kg sans accessoires"},
+        {"label": "Débit max.", "value": "3 700 l/min"},
+        {"label": "Filtre", "value": "Nettoyage manuel sur le CTL MIDI I standard"}
+      ],
+      "best_for": "Ponçage et finition dans l'écosystème Festool lorsque la classe L suffit"
+    },
+    "nilfisk-multi-ii-30-t": {
+      "name": "Nilfisk Multi II 30 T",
+      "internal_url": "/modeles/nilfisk-multi-ii-30-t/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Cuve", "value": "30 L"},
+        {"label": "Prise outil", "value": "1 100 W"},
+        {"label": "Démarrage outil", "value": "Automatique"},
+        {"label": "Filtre", "value": "Push&Clean manuel + indicateur"},
+        {"label": "Classe", "value": "Aucune L/M/H documentée"}
+      ],
+      "best_for": "Atelier, garage et rénovation domestique avec outil raccordé, sans exigence de classe"
+    },
+    "dewalt-dcv586m": {
+      "name": "DeWalt DCV586M",
+      "internal_url": "/marques/dewalt/",
+      "image": {"url": "", "source_type": "UNSET", "rights_checked": false, "source_page": ""},
+      "amazon": {"asin": "", "affiliate_url": "", "marketplace": "amazon.fr"},
+      "specs": [
+        {"label": "Plateforme", "value": "XR FLEXVOLT 54 V"},
+        {"label": "Classe", "value": "M"},
+        {"label": "Décolmatage", "value": "Nettoyage automatique des filtres"},
+        {"label": "Commande", "value": "Télécommande"},
+        {"label": "Configuration", "value": "Certaines variantes sont vendues sans batterie"}
+      ],
+      "best_for": "Chantier sans fil classe M dans un parc DeWalt FLEXVOLT déjà équipé"
+    }
+  }
+}
