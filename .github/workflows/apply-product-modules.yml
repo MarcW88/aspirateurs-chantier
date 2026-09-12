@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: guarded-product-modules-main
+  group: amazon-product-maintenance-main
   cancel-in-progress: false
 
 jobs:
@@ -57,4 +57,9 @@ jobs:
           git add comparatifs usages guides
           git commit -m "affiliate: apply guarded product modules"
           git pull --rebase origin main
-          git push origin HEAD:main
+          if ! git push origin HEAD:main; then
+            echo "main moved during product maintenance; rebasing once and retrying"
+            sleep 2
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
