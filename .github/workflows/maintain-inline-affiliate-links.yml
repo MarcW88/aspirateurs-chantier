@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: exact-model-amazon-main
+  group: amazon-product-maintenance-main
   cancel-in-progress: false
 
 jobs:
@@ -58,4 +58,9 @@ jobs:
           git add modeles
           git commit -m "affiliate: maintain verified model CTAs"
           git pull --rebase origin main
-          git push origin HEAD:main
+          if ! git push origin HEAD:main; then
+            echo "main moved during affiliate maintenance; rebasing once and retrying"
+            sleep 2
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
