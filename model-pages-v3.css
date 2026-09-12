@@ -171,6 +171,13 @@
 .design-v2.design-model .content-sidebar .sidebar-box:first-child {
   display: none;
 }
+.design-v2.design-model .content-main .table-wrap {
+  width: 100%;
+}
+.design-v2.design-model .content-main .table-wrap > table {
+  width: 100%;
+  max-width: 100%;
+}
 
 /* Model affiliate action stays secondary without adding a separator line. */
 .design-v2.design-model .inline-affiliate-action {
