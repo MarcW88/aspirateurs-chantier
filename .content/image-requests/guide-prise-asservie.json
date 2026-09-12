@@ -1,0 +1,21 @@
+{
+  "id": "guide-prise-asservie",
+  "page": "guides/prise-asservie/index.html",
+  "slot": "prise-asservie",
+  "required": true,
+  "reason": "Rendre immédiatement compréhensible le workflow d'un outil filaire alimenté via la prise auxiliaire de l'aspirateur et aspiré simultanément.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<h2 id=\"filaire\">Comment fonctionne la prise asservie</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/guide-prise-asservie.webp",
+  "prompt": "Photorealistic editorial documentary photograph of a generic corded power tool workflow in a workshop. Show a generic unbranded corded sander or saw on a workbench. Its power cable visibly runs to a generic auxiliary power socket integrated on a generic unbranded wet/dry dust extractor, while a separate flexible dust hose connects the tool to the extractor. The composition should make the two connections understandable at a glance: electrical cable for automatic start and hose for dust extraction. Keep the auxiliary socket generic and unlabeled; do not show any wattage, certification, brand-specific connector or proprietary control panel. Realistic workshop, practical daylight, believable cables and hose routing, no visible logos, no readable labels, no advertising composition, no implication of universal compatibility or a hands-on test. Photorealistic editorial documentary photography, realistic proportions and materials, generic equipment, candid framing, no watermark, no generated text.",
+  "alt": "Outil électroportatif filaire branché sur la prise auxiliaire d’un aspirateur générique et relié par un flexible d’aspiration",
+  "caption": "",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}

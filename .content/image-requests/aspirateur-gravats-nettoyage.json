@@ -1,0 +1,21 @@
+{
+  "id": "aspirateur-gravats-nettoyage",
+  "page": "usages/aspirateur-gravats/index.html",
+  "slot": "nettoyage-gravats",
+  "required": true,
+  "reason": "Illustrer la bonne séquence de nettoyage : gros morceaux retirés à la main, petites fractions et poussières résiduelles aspirées ensuite.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<h2 id=\"sequence\">Une séquence de nettoyage plus efficace que « tout aspirer »</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/aspirateur-gravats-nettoyage.webp",
+  "prompt": "Photorealistic editorial documentary photograph during interior renovation cleanup. Show a worker in ordinary construction clothing using a generic unbranded wet/dry dust extractor with a floor or crevice nozzle to collect small residual fragments and dust from a concrete floor. Larger rubble pieces and sharp debris have already been gathered separately into a sturdy bucket or small pile nearby, clearly showing that the extractor is used for smaller fractions rather than swallowing large chunks. Realistic unfinished room, modest normal construction dust, practical daylight and work lighting, believable hose diameter and body posture. No visible logos, no readable labels, no proprietary product design, no certification markings, no dramatic dust cloud, no unsafe handling, no staged product advertisement and no implication of a hands-on test by the website. Photorealistic editorial documentary photography, realistic proportions and materials, generic equipment, candid framing, no watermark, no generated text.",
+  "alt": "Nettoyage de petits gravats et poussières avec un aspirateur de chantier après retrait des gros morceaux",
+  "caption": "",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}
