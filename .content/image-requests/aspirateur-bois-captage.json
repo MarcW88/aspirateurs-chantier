@@ -1,0 +1,21 @@
+{
+  "id": "aspirateur-bois-captage",
+  "page": "usages/aspirateur-bois-sciure-copeaux/index.html",
+  "slot": "captage-bois",
+  "required": true,
+  "reason": "Montrer que poussière fine et copeaux peuvent conduire à deux architectures d'aspiration différentes dans un même atelier.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<h2 id=\"mobile-ou-fixe\">Aspirateur mobile ou collecte fixe : la frontière se voit dans le volume et le poste</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/aspirateur-bois-captage.webp",
+  "prompt": "Wide photorealistic editorial documentary photograph inside a real small woodworking workshop. In the foreground, show a generic unbranded portable power tool on a workbench connected by a flexible dust hose to a compact generic mobile wet/dry dust extractor. Farther in the workshop, show a stationary woodworking machine with a visibly larger dust hose leading toward a generic fixed dust collection unit or duct, communicating that fine dust from portable tools and larger wood chips from fixed machines can require different extraction architectures. Include realistic wood offcuts, a modest amount of sawdust and wood shavings, practical daylight and workshop lighting, normal used surfaces and believable hose routing. No visible logos, no readable labels, no proprietary product shapes, no certification markings, no dramatic dust clouds, no staged advertising composition, no implication that the website tested this exact setup. Photorealistic editorial documentary photography, realistic proportions and materials, candid framing, generic equipment, no watermark, no generated text.",
+  "alt": "Atelier bois avec un outil portatif relié à un aspirateur mobile et une machine fixe raccordée à une aspiration dédiée",
+  "caption": "",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}
