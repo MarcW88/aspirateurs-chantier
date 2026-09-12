@@ -37,10 +37,10 @@ jobs:
         run: |
           python validate_product_cards.py all
           python validate_inline_affiliate_links.py
-      - name: Preserve draft indexation state
+      - name: Preserve live indexation state
         run: |
           for f in comparatifs/*/index.html usages/*/index.html guides/*/index.html modeles/*/index.html; do
-            grep -Eq '<meta name="robots" content="noindex, ?follow">' "$f"
+            grep -Eq '<meta name="robots" content="index, ?follow">' "$f"
           done
       - name: Idempotence check
         run: |
