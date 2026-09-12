@@ -51,13 +51,13 @@ jobs:
           python _generate_guide_content.py
           python _apply_design_v2.py
 
-      - name: Verify draft robots directive remains present
+      - name: Verify live robots directive remains present
         shell: bash
         run: |
           failures=0
           for page in guides/*/index.html; do
-            if ! grep -Eq '<meta name="robots" content="noindex, ?follow">' "$page"; then
-              echo "Missing noindex,follow: $page"
+            if ! grep -Eq '<meta name="robots" content="index, ?follow">' "$page"; then
+              echo "Missing index,follow: $page"
               failures=1
             fi
           done
