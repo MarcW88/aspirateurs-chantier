@@ -43,10 +43,10 @@ jobs:
       - name: Validate exact-model CTAs
         run: python validate_inline_affiliate_links.py
 
-      - name: Preserve noindex
+      - name: Preserve live indexation
         run: |
           for f in modeles/*/index.html; do
-            grep -Eq '<meta name="robots" content="noindex, ?follow">' "$f"
+            grep -Eq '<meta name="robots" content="index, ?follow">' "$f"
           done
 
       - name: Commit maintained CTAs
