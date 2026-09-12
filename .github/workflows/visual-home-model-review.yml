@@ -9,6 +9,8 @@ on:
       - "design-v2.css"
       - "design-v2-rollout.css"
       - "home-model-polish.css"
+      - "scripts/apply_home_model_review.py"
+      - "_apply_design_v2.py"
       - ".agents/skills/site-design-review/**"
       - ".github/workflows/visual-home-model-review.yml"
   workflow_dispatch:
