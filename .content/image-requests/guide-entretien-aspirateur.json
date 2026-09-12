@@ -1,0 +1,21 @@
+{
+  "id": "guide-entretien-aspirateur",
+  "page": "guides/entretien-aspirateur-chantier/index.html",
+  "slot": "inspection-entretien",
+  "required": true,
+  "reason": "Illustrer une inspection d'entretien simple et sûre — flexible, collecteur, raccords — sans montrer une méthode de nettoyage de filtre potentiellement incorrecte.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<h2 id=\"debit\">Si l’aspiration baisse, chercher la cause avant le moteur</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/guide-entretien-aspirateur.webp",
+  "prompt": "Photorealistic editorial documentary photograph of routine maintenance on a generic unbranded wet/dry dust extractor in a clean workshop. The machine is clearly switched off and unplugged. Show a person visually inspecting the flexible hose and connector for a blockage or crack, with the dust extractor nearby and ordinary dry debris collection accessories on the floor or bench. The action should communicate checking simple airflow restrictions before suspecting the motor. Do not show compressed-air cleaning, washing a filter, blowing dust, hazardous dust handling, opening a motor housing or any brand-specific internal mechanism. No visible logos, no readable labels, no certification marks, no staged advertising look and no implication that this exact procedure applies to every model beyond basic inspection. Photorealistic editorial documentary photography, realistic proportions and materials, practical daylight and workshop lighting, generic equipment, candid framing, no watermark, no generated text.",
+  "alt": "Inspection du flexible et des raccords d’un aspirateur de chantier générique avant un entretien plus poussé",
+  "caption": "",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}
