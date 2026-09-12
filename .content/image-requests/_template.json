@@ -12,7 +12,6 @@
   "output_path": "assets/generated/<slug>-<slot>.webp",
   "prompt": "",
   "alt": "",
-  "caption": "",
   "width": 1024,
   "height": 672,
   "prompt_upsampling": true,
