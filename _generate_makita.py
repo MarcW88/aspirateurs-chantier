@@ -22,7 +22,7 @@ SOURCES = [
     ("S1", "Makita France — gamme aspiration", "https://www.makita.fr/data/pam/public/Content-Pages/Media/CatalogsAndBrochures/2023_leaflet_aspi_web.pdf", "primary"),
     ("S2", "Makita France — brochure Charpentiers / Couvreurs", "https://www.makita.fr/data/pam/public/Content-Pages/Media/CatalogsAndBrochures/BROCHURE_PRODUIT/makita_leaflet_charpentier_couvreur_-_web.pdf", "primary"),
     ("S3", "Makita VC2512L — fiche produit", "https://www.makita.fr/data/sr/productinfo/generated/vc2512l_fiche_produit.pdf", "primary"),
-    ("S4", "Makita France — tract aspiration 2025", "https://www.makita.fr/data/pam/public/content-pages/media/catalogsandbrochures/catalogs/tract_01_2025_vsp_bd.pdf", "primary"),
+    ("S4", "Makita France — tract aspiration", "https://www.makita.fr/data/pam/public/content-pages/media/catalogsandbrochures/catalogs/tract_01_2025_vsp_bd.pdf", "primary"),
     ("S5", "Makita VC4210MX — fiche produit", "https://www.makita.fr/data/sr/productinfo/generated/vc4210mx_fiche_produit.pdf", "primary"),
     ("S6", "KlusVisie — essai Makita XGT avec VC004GL", "https://www.klusvisie.nl/gereedschap/makitas-schurende-scheurijzers/19254/", "independent_test"),
     ("S7", "Coolblue — avis utilisateurs Makita VC4210M", "https://www.coolblue.be/fr/produit/816681/makita-vc4210m.html", "user_review_aggregate"),

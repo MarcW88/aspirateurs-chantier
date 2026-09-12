@@ -87,7 +87,7 @@
       "tier": 1,
       "source": "https://www.makita.fr/data/pam/public/content-pages/media/catalogsandbrochures/catalogs/tract_01_2025_vsp_bd.pdf",
       "source_type": "primary",
-      "label": "Makita France — tract aspiration 2025"
+      "label": "Makita France — tract aspiration"
     },
     {
       "ref": "S5",
@@ -230,7 +230,7 @@
       "source_type": "primary"
     },
     "S4": {
-      "label": "Makita France — tract aspiration 2025",
+      "label": "Makita France — tract aspiration",
       "url": "https://www.makita.fr/data/pam/public/content-pages/media/catalogsandbrochures/catalogs/tract_01_2025_vsp_bd.pdf",
       "source_type": "primary"
     },

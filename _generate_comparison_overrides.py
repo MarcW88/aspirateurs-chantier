@@ -230,7 +230,7 @@ def write_ledger(slug, query, page_type, user_job, constraint, boundary, ids, cr
             "scoring_used": False,
             "affiliate_commission_used_in_ranking": False,
             "desk_research_only": True,
-            "noindex_during_rollout": True,
+            "noindex_during_rollout": False,
             "hands_on_test": False,
         },
     }
