@@ -1,0 +1,86 @@
+name: Fix model mobile TOC once
+
+on:
+  push:
+    branches:
+      - design/model-pages-v3
+    paths:
+      - '.github/workflows/fix-model-mobile-toc-once.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: design/model-pages-v3
+          fetch-depth: 0
+      - name: Add a clear mobile TOC disclosure affordance
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('model-pages-v3.css')
+          text = path.read_text(encoding='utf-8')
+          marker = '/* Model mobile TOC disclosure */'
+          if marker not in text:
+              text += r'''
+
+/* Model mobile TOC disclosure */
+@media (max-width: 1024px) {
+  .design-v2.design-model .mobile-toc-box {
+    margin: 0 0 28px;
+    padding: 0;
+    border-top: 1px solid #8f969b;
+    border-bottom: 1px solid var(--v2-rule);
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 11px 0 10px;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head::after {
+    content: "+";
+    flex: 0 0 auto;
+    color: var(--v2-muted);
+    font-family: var(--font-mono);
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head[aria-expanded="true"]::after {
+    content: "−";
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head:focus-visible {
+    outline: 2px solid var(--v2-blue);
+    outline-offset: 4px;
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-body:not([hidden]) {
+    padding: 0 0 11px;
+  }
+  .design-v2.design-model .mobile-toc-box .toc-list a {
+    padding: 5px 0;
+  }
+}
+'''
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit refinement
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add model-pages-v3.css
+          if git diff --cached --quiet; then
+            echo 'No TOC refinement needed.'
+            exit 0
+          fi
+          git commit -m 'design: make mobile model toc clearly interactive'
+          git push origin HEAD:design/model-pages-v3
