@@ -1,0 +1,21 @@
+{
+  "id": "aspirateur-renovation-captage",
+  "page": "usages/aspirateur-bricolage-renovation/index.html",
+  "slot": "captage-renovation",
+  "required": true,
+  "reason": "Montrer le passage du simple nettoyage au captage à la source pendant une phase active de rénovation.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<h2 id=\"coupe-percage\">Perçage et découpe : l’aspirateur passe du nettoyage au captage</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/aspirateur-renovation-captage.webp",
+  "prompt": "Photorealistic editorial documentary photograph inside a realistic home renovation room. Show a craftsperson using a generic unbranded corded drilling or cutting tool with a simple generic dust extraction shroud or nearby capture attachment connected by a flexible hose to a generic unbranded wet/dry dust extractor on the floor. The scene should communicate source capture while the work is happening rather than cleanup afterward. Include realistic renovation details such as protected flooring, unfinished wall surfaces, a few removed trim pieces and ordinary tools, practical daylight mixed with neutral work lighting. Keep airborne dust modest and believable. No visible brand logos, no readable labels, no proprietary product design, no certification marks, no unsafe setup, no advertising composition and no implication that this exact setup was tested by the website. Photorealistic editorial documentary photography, realistic proportions and materials, generic equipment, candid framing, no watermark, no generated text.",
+  "alt": "Travail de rénovation avec un outil raccordé à un aspirateur de chantier générique pour capter la poussière à la source",
+  "caption": "",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}
