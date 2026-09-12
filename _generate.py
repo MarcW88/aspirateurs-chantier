@@ -139,7 +139,7 @@ FOOTER_HTML = """<footer class="site-footer">
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 aspirateurs-chantier.fr — Base de données indépendante</span>
+      <span>© aspirateurs-chantier.fr — Base de données indépendante</span>
       <span>Liens affiliés présents. <a href="/transparence-affiliation/">Transparence.</a></span>
     </div>
   </div>
@@ -663,8 +663,8 @@ write("/comparatifs/index.html", hub_page(
 
 COMPARATIFS = [
     ("/comparatifs/meilleur-aspirateur-de-chantier/",
-     "Meilleur aspirateur de chantier — Comparatif 2025",
-     "Quel est le meilleur aspirateur de chantier en 2025 ? Notre comparatif indépendant avec données techniques vérifiées.",
+     "Meilleur aspirateur de chantier — Comparatif",
+     "Quel est le meilleur aspirateur de chantier ? Notre comparatif indépendant avec données techniques vérifiées.",
      "Pour la majorité des utilisateurs, le <strong>Bosch GAS 35 M AFC</strong> offre le meilleur équilibre performance/praticité en classe M. Pour un usage grand public avec budget limité, le <strong>Kärcher WD6</strong> reste la référence en classe L. Pour le ponçage intensif, privilégiez le <strong>Festool CTL Midi</strong>.",
      [("Guide classes L/M/H", "/guides/classes-l-m-h/"), ("Aspirateur plâtre", "/usages/aspirateur-platre/"), ("Aspirateur ponceuse", "/usages/aspirateur-ponceuse/")]),
     ("/comparatifs/aspirateur-eau-poussiere/",
