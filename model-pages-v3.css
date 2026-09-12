@@ -1,7 +1,9 @@
-/* Model pages V3 — editorial technical reference sheets.
-   Loaded after home-model-polish.css so these rules intentionally win. */
+/* Model pages V3 — model-specific hero and technical summary only.
+   The long-form article body intentionally inherits the shared Editorial V2
+   rules used by guides, usages and comparisons. Do not redefine chapter or
+   content-table styling here. */
 
-/* Hero: one editorial story first, data second. */
+/* Hero: model identity and verified technical summary. */
 .design-v2.design-model .model-hero {
   padding: 48px 0 34px;
   background: transparent;
@@ -71,7 +73,7 @@
   margin-top: 18px;
 }
 
-/* Repères clés: compact horizontal technical strip instead of a competing hero column. */
+/* Repères vérifiés: a compact model-specific summary, not an article table. */
 .design-v2.design-model .spec-sheet {
   width: 100%;
   margin: 4px 0 0;
@@ -106,6 +108,7 @@
   font-weight: 500;
 }
 .design-v2.design-model .spec-sheet .table-wrap {
+  width: 100%;
   margin: 0;
   border: 0;
   overflow: visible;
@@ -164,92 +167,27 @@
   line-height: 1.4;
 }
 
-/* Reading layout: closer to guides/comparisons, with marginalia kept quiet. */
-.design-v2.design-model > main > .container,
-.design-v2.design-model main > .container {
-  max-width: 1120px;
-}
-.design-v2.design-model .content-layout {
-  grid-template-columns: minmax(0, 760px) minmax(180px, 215px);
-  gap: 72px;
-  padding-top: 42px;
-}
-.design-v2.design-model .content-main {
-  max-width: 760px;
-}
-.design-v2.design-model .content-sidebar {
-  gap: 25px;
-  top: 92px;
-}
-/* Status is already communicated in the hero; avoid repeating dashboard-like metadata. */
+/* Article body: use the shared site grid and editorial rhythm. */
 .design-v2.design-model .content-sidebar .sidebar-box:first-child {
   display: none;
 }
-.design-v2.design-model .content-sidebar .sidebar-box {
-  padding: 12px 0 0;
-  border-top: 1px solid #a9adae;
+.design-v2.design-model .content-main .table-wrap {
+  width: 100%;
 }
-.design-v2.design-model .content-sidebar .sidebar-box-head {
-  padding-bottom: 8px;
-  border-bottom: 0;
-  color: var(--v2-muted);
-  font-size: .63rem;
-  font-weight: 700;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-.design-v2.design-model .content-sidebar .sidebar-box-body {
-  padding-top: 2px;
-}
-.design-v2.design-model .content-sidebar .toc-list a {
-  padding: 4px 0;
-  color: #4e5962;
-  font-size: .76rem;
-  line-height: 1.38;
-}
-.design-v2.design-model .content-sidebar .affil-note {
-  color: var(--v2-muted);
-  font-size: .7rem;
-  line-height: 1.5;
+.design-v2.design-model .content-main .table-wrap > table {
+  width: 100%;
+  max-width: 100%;
 }
 
-/* Verdict: editorial opening, not a technical widget. */
-.design-v2.design-model .content-main > .answer-box:first-child {
-  position: relative;
-  margin: 0 0 12px;
-  padding: 30px 0 7px 22px;
-  border-left: 3px solid var(--v2-orange);
-  border-radius: 0;
-  background: transparent;
-}
-.design-v2.design-model .content-main > .answer-box:first-child::before {
-  content: "Notre lecture";
-  position: absolute;
-  top: 0;
-  left: 22px;
-  color: var(--v2-orange);
-  font-family: var(--font-body);
-  font-size: .66rem;
-  font-weight: 700;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-.design-v2.design-model .content-main > .answer-box:first-child p {
-  margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.62;
-}
-
-/* Commerce becomes a quiet utility line after the editorial verdict. */
+/* Model affiliate action stays secondary without adding a separator line. */
 .design-v2.design-model .inline-affiliate-action {
   display: flex;
   align-items: baseline;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 0 0 42px;
-  padding: 10px 0 13px;
+  margin: -18px 0 36px;
+  padding: 0;
   border: 0;
-  border-bottom: 1px solid var(--v2-rule);
 }
 .design-v2.design-model .inline-affiliate-action .product-card__cta {
   padding: 0 !important;
@@ -269,45 +207,8 @@
   font-size: .64rem;
 }
 
-/* Long-form rhythm: fewer visual fences, stronger editorial chapter starts. */
-.design-v2.design-model .content-main h2 {
-  margin: 50px 0 15px;
-  padding-top: 19px;
-  border-top: 1px solid #c8c6bf;
-  font-size: clamp(1.4rem, 2.3vw, 1.78rem);
-  line-height: 1.14;
-  font-weight: 600;
-}
-.design-v2.design-model .content-main h2:first-of-type {
-  margin-top: 0;
-  border-top-color: #8f969b;
-}
-.design-v2.design-model .content-main h3 {
-  margin-top: 30px;
-}
-.design-v2.design-model .content-main p {
-  line-height: 1.7;
-}
-.design-v2.design-model .content-main .table-wrap {
-  margin-top: 25px;
-  margin-bottom: 32px;
-}
-.design-v2.design-model .content-main table th {
-  padding-top: 9px;
-  padding-bottom: 9px;
-}
-.design-v2.design-model .content-main table td {
-  padding-top: 9px;
-  padding-bottom: 9px;
-}
-.design-v2.design-model .related-box {
-  margin-top: 46px;
-}
-
 @media (max-width: 1024px) {
-  .design-v2.design-model .model-hero .container,
-  .design-v2.design-model > main > .container,
-  .design-v2.design-model main > .container {
+  .design-v2.design-model .model-hero .container {
     max-width: none;
   }
   .design-v2.design-model .spec-table tbody {
@@ -328,12 +229,28 @@
   .design-v2.design-model .spec-table tr:nth-last-child(-n + 2) {
     border-bottom: 0;
   }
-  .design-v2.design-model .content-layout {
-    grid-template-columns: 1fr;
-    gap: 0;
+
+  /* Keep the same sidebar/TOC treatment as other editorial pages; only add
+     a disclosure affordance because design-v2.js collapses it on small screens. */
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    cursor: pointer;
+    user-select: none;
   }
-  .design-v2.design-model .content-sidebar {
-    position: static;
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head::after {
+    content: "+";
+    flex: 0 0 auto;
+    color: var(--v2-muted);
+    font-family: var(--font-mono);
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head[aria-expanded="true"]::after {
+    content: "−";
   }
 }
 
@@ -365,28 +282,8 @@
   .design-v2.design-model .spec-table .sv {
     font-size: .71rem;
   }
-  .design-v2.design-model .content-layout {
-    padding-top: 24px;
-  }
-  .design-v2.design-model .content-main > .answer-box:first-child {
-    padding: 28px 0 5px 17px;
-  }
-  .design-v2.design-model .content-main > .answer-box:first-child::before {
-    left: 17px;
-  }
   .design-v2.design-model .inline-affiliate-action {
-    margin-bottom: 34px;
-  }
-  .design-v2.design-model .content-main h2 {
-    margin-top: 40px;
-    padding-top: 15px;
-  }
-  .design-v2.design-model .content-main .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .design-v2.design-model .content-main .table-wrap table {
-    min-width: 620px;
+    margin-bottom: 32px;
   }
 }
 
@@ -402,47 +299,5 @@
   }
   .design-v2.design-model .spec-table tr:nth-child(even) {
     padding-left: 10px;
-  }
-}
-
-/* Model mobile TOC disclosure */
-@media (max-width: 1024px) {
-  .design-v2.design-model .mobile-toc-box {
-    margin: 0 0 28px;
-    padding: 0;
-    border-top: 1px solid #8f969b;
-    border-bottom: 1px solid var(--v2-rule);
-  }
-  .design-v2.design-model .mobile-toc-box .sidebar-box-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 11px 0 10px;
-    border: 0;
-    cursor: pointer;
-    user-select: none;
-  }
-  .design-v2.design-model .mobile-toc-box .sidebar-box-head::after {
-    content: "+";
-    flex: 0 0 auto;
-    color: var(--v2-muted);
-    font-family: var(--font-mono);
-    font-size: .9rem;
-    font-weight: 500;
-    line-height: 1;
-  }
-  .design-v2.design-model .mobile-toc-box .sidebar-box-head[aria-expanded="true"]::after {
-    content: "−";
-  }
-  .design-v2.design-model .mobile-toc-box .sidebar-box-head:focus-visible {
-    outline: 2px solid var(--v2-blue);
-    outline-offset: 4px;
-  }
-  .design-v2.design-model .mobile-toc-box .sidebar-box-body:not([hidden]) {
-    padding: 0 0 11px;
-  }
-  .design-v2.design-model .mobile-toc-box .toc-list a {
-    padding: 5px 0;
   }
 }
