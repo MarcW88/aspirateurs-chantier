@@ -41,6 +41,11 @@ def page_classes(rel: str) -> list[str]:
     return ["design-v2", "design-static"]
 
 
+def needs_home_model_polish(rel: str) -> bool:
+    parts = Path(rel).parts
+    return rel == "index.html" or (len(parts) == 3 and parts[0] == "modeles" and parts[-1] == "index.html")
+
+
 def merge_body_classes(html: str, wanted: list[str]) -> str:
     match = re.search(r"<body(?:\s+class=\"([^\"]*)\")?\s*>", html, flags=re.I)
     if not match:
@@ -54,12 +59,14 @@ def merge_body_classes(html: str, wanted: list[str]) -> str:
     return html[: match.start()] + replacement + html[match.end() :]
 
 
-def ensure_assets(html: str) -> str:
+def ensure_assets(html: str, rel: str) -> str:
     links = []
     if '/design-v2.css' not in html:
         links.append('  <link rel="stylesheet" href="/design-v2.css">')
     if '/design-v2-rollout.css' not in html:
         links.append('  <link rel="stylesheet" href="/design-v2-rollout.css">')
+    if needs_home_model_polish(rel) and '/home-model-polish.css' not in html:
+        links.append('  <link rel="stylesheet" href="/home-model-polish.css">')
     if links:
         html = html.replace('</head>', "\n".join(links) + '\n</head>', 1)
     if '/design-v2.js' not in html:
@@ -84,7 +91,7 @@ def apply_page(path: Path) -> bool:
     rel = path.relative_to(ROOT).as_posix()
     original = path.read_text(encoding="utf-8")
     html = merge_body_classes(original, page_classes(rel))
-    html = ensure_assets(html)
+    html = ensure_assets(html, rel)
     if html == original:
         return False
     path.write_text(html, encoding="utf-8")
