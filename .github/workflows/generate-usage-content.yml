@@ -13,6 +13,8 @@ on:
       - "design-v2.js"
       - "validate_usage_workflow.py"
       - "usage-workflow.config.yaml"
+      - "scripts/generate_bfl_images.py"
+      - "scripts/restore_editorial_images.py"
       - ".content/usages/**"
       - ".agents/skills/usage-*/**"
       - ".agents/skills/usage-skill-stack.json"
@@ -60,6 +62,11 @@ jobs:
             python apply_product_cards.py usages
             python validate_product_cards.py usages
           fi
+
+      - name: Restore generated editorial images
+        run: |
+          python -m py_compile scripts/generate_bfl_images.py scripts/restore_editorial_images.py
+          python scripts/restore_editorial_images.py --scope usages
 
       - name: Whitespace check
         run: git diff --check
