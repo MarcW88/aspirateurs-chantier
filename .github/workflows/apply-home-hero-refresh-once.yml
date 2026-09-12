@@ -1,0 +1,48 @@
+name: Apply homepage hero refresh once
+
+on:
+  push:
+    branches: [feat/home-hero-bfl-refresh]
+    paths:
+      - '.github/workflows/apply-home-hero-refresh-once.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/home-hero-bfl-refresh
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Link hero refinement stylesheet
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          needle = '  <link rel="stylesheet" href="/home-model-polish.css">\n'
+          addition = needle + '  <link rel="stylesheet" href="/home-hero-refresh.css">\n'
+          if '/home-hero-refresh.css' not in text:
+              if needle not in text:
+                  raise SystemExit('home-model-polish stylesheet marker missing')
+              text = text.replace(needle, addition, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit homepage HTML adjustment
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'Homepage already linked.'
+            exit 0
+          fi
+          git commit -m 'style(home): link hero refinement stylesheet'
+          git push origin HEAD:feat/home-hero-bfl-refresh
