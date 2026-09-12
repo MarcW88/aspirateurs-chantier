@@ -6,7 +6,7 @@
   "reason": "Visualiser concrètement la coexistence de plusieurs postes et le rôle d'un aspirateur mobile dans un atelier, sans représenter un produit précis.",
   "allow_ai_generation": true,
   "truth_risk": "LOW",
-  "status": "PENDING",
+  "status": "GENERATED",
   "marker": "<h2 id=\"trois-architectures\">Trois architectures peuvent coexister</h2>",
   "placement": "before",
   "output_path": "assets/generated/aspirateur-atelier-architecture.webp",
@@ -17,5 +17,8 @@
   "height": 672,
   "prompt_upsampling": true,
   "seed": null,
-  "generated_at": null
+  "generated_at": "2026-09-12T14:03:04.188814+00:00",
+  "bfl_request_id": "5baa2413-a486-43db-8afa-bae6044e30da",
+  "bfl_endpoint": "https://api.bfl.ai/v1/flux-2-pro-preview",
+  "bfl_cost": 3.0
 }
