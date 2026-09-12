@@ -1,23 +1,24 @@
-name: Visual design review — home and models
+name: Visual design review — models
 
 on:
   pull_request:
+    branches:
+      - main
     paths:
-      - "index.html"
       - "modeles/**"
       - "style.css"
       - "design-v2.css"
       - "design-v2-rollout.css"
       - "home-model-polish.css"
       - "model-pages-v3.css"
-      - "scripts/apply_home_model_review.py"
       - "_apply_design_v2.py"
+      - "design-v2.js"
       - ".agents/skills/site-design-review/**"
-      - ".github/workflows/visual-home-model-review.yml"
+      - ".github/workflows/visual-model-design-review.yml"
   workflow_dispatch:
 
 jobs:
-  visual-home-models:
+  visual-models:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -36,22 +37,23 @@ jobs:
       - name: Install Chromium
         run: npx playwright install chromium
 
-      - name: Capture home and representative model pages
+      - name: Capture representative model pages
         run: >-
           node .agents/skills/site-design-review/scripts/run-visual-review.mjs
-          --route /
           --route /modeles/bosch-advancedvac-20/
           --route /modeles/bosch-gas-18v-10-l/
           --route /modeles/bosch-gas-35-m-afc/
           --route /modeles/karcher-wd6/
+          --route /modeles/karcher-nt-30-1-tact/
           --route /modeles/makita-vc4210mx/
-          --output .artifacts/design-review/home-models
+          --route /modeles/festool-ctl-midi/
+          --output .artifacts/design-review/models-v3
 
-      - name: Upload visual review
+      - name: Upload model visual review
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: home-model-design-review
-          path: .artifacts/design-review/home-models/
+          name: model-design-review-v3
+          path: .artifacts/design-review/models-v3/
           if-no-files-found: warn
           retention-days: 14

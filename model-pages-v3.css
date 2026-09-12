@@ -1,0 +1,448 @@
+/* Model pages V3 — editorial technical reference sheets.
+   Loaded after home-model-polish.css so these rules intentionally win. */
+
+/* Hero: one editorial story first, data second. */
+.design-v2.design-model .model-hero {
+  padding: 48px 0 34px;
+  background: transparent;
+}
+.design-v2.design-model .model-hero .container {
+  max-width: 1080px;
+}
+.design-v2.design-model .model-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+.design-v2.design-model .model-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 10px;
+  margin: 0 0 14px;
+}
+.design-v2.design-model .model-badges .ctype {
+  order: -3;
+  color: var(--v2-orange) !important;
+}
+.design-v2.design-model .model-badges .badge-blue {
+  background: transparent;
+  border: 0;
+  color: var(--v2-muted);
+  padding: 0;
+}
+.design-v2.design-model .model-badges .badge-blue::before,
+.design-v2.design-model .model-badges .ctype::before {
+  content: none;
+}
+.design-v2.design-model .model-badges > * + *::before {
+  content: "·";
+  display: inline-block;
+  margin-right: 10px;
+  color: #9a9e9f;
+}
+.design-v2.design-model .model-badges .badge-l,
+.design-v2.design-model .model-badges .badge-m,
+.design-v2.design-model .model-badges .badge-h {
+  padding: 2px 7px;
+}
+.design-v2.design-model .model-badges .badge-l::before,
+.design-v2.design-model .model-badges .badge-m::before,
+.design-v2.design-model .model-badges .badge-h::before {
+  content: none;
+}
+.design-v2.design-model .model-title {
+  max-width: 860px;
+  margin: 0;
+  font-size: clamp(2.05rem, 4.2vw, 3.15rem);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  font-weight: 600;
+}
+.design-v2.design-model .model-tagline {
+  max-width: 760px;
+  margin: 15px 0 0;
+  color: #56616b;
+  font-size: 1.04rem;
+  line-height: 1.62;
+}
+.design-v2.design-model .model-hero .page-meta {
+  margin-top: 18px;
+}
+
+/* Repères clés: compact horizontal technical strip instead of a competing hero column. */
+.design-v2.design-model .spec-sheet {
+  width: 100%;
+  margin: 4px 0 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #8f969b;
+  border-bottom: 1px solid #8f969b;
+  border-radius: 0;
+  overflow: visible;
+}
+.design-v2.design-model .spec-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 0;
+  padding: 9px 0 8px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--v2-rule);
+}
+.design-v2.design-model .spec-sheet-header span {
+  color: var(--v2-muted);
+  font-family: var(--font-body);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.design-v2.design-model .spec-sheet-header .verified {
+  color: #7b8389;
+  font-weight: 500;
+}
+.design-v2.design-model .spec-sheet .table-wrap {
+  margin: 0;
+  border: 0;
+  overflow: visible;
+}
+.design-v2.design-model .spec-table,
+.design-v2.design-model .spec-table tbody {
+  display: block;
+  width: 100%;
+}
+.design-v2.design-model .spec-table tbody {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.design-v2.design-model .spec-table tr {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 3px;
+  min-width: 0;
+  padding: 11px 16px 12px 0;
+  border-right: 1px solid var(--v2-rule);
+  border-bottom: 1px solid var(--v2-rule);
+}
+.design-v2.design-model .spec-table tr:nth-child(4n + 2),
+.design-v2.design-model .spec-table tr:nth-child(4n + 3),
+.design-v2.design-model .spec-table tr:nth-child(4n + 4) {
+  padding-left: 16px;
+}
+.design-v2.design-model .spec-table tr:nth-child(4n) {
+  border-right: 0;
+}
+.design-v2.design-model .spec-table tr:nth-last-child(-n + 4) {
+  border-bottom: 0;
+}
+.design-v2.design-model .spec-table td,
+.design-v2.design-model .spec-table tr:nth-child(even) td {
+  display: block;
+  width: auto;
+  padding: 0;
+  background: transparent !important;
+  border: 0 !important;
+  text-align: left;
+}
+.design-v2.design-model .spec-table .sk {
+  color: var(--v2-muted);
+  font-family: var(--font-body);
+  font-size: .65rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.design-v2.design-model .spec-table .sv {
+  color: var(--v2-ink);
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Reading layout: closer to guides/comparisons, with marginalia kept quiet. */
+.design-v2.design-model > main > .container,
+.design-v2.design-model main > .container {
+  max-width: 1120px;
+}
+.design-v2.design-model .content-layout {
+  grid-template-columns: minmax(0, 760px) minmax(180px, 215px);
+  gap: 72px;
+  padding-top: 42px;
+}
+.design-v2.design-model .content-main {
+  max-width: 760px;
+}
+.design-v2.design-model .content-sidebar {
+  gap: 25px;
+  top: 92px;
+}
+/* Status is already communicated in the hero; avoid repeating dashboard-like metadata. */
+.design-v2.design-model .content-sidebar .sidebar-box:first-child {
+  display: none;
+}
+.design-v2.design-model .content-sidebar .sidebar-box {
+  padding: 12px 0 0;
+  border-top: 1px solid #a9adae;
+}
+.design-v2.design-model .content-sidebar .sidebar-box-head {
+  padding-bottom: 8px;
+  border-bottom: 0;
+  color: var(--v2-muted);
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.design-v2.design-model .content-sidebar .sidebar-box-body {
+  padding-top: 2px;
+}
+.design-v2.design-model .content-sidebar .toc-list a {
+  padding: 4px 0;
+  color: #4e5962;
+  font-size: .76rem;
+  line-height: 1.38;
+}
+.design-v2.design-model .content-sidebar .affil-note {
+  color: var(--v2-muted);
+  font-size: .7rem;
+  line-height: 1.5;
+}
+
+/* Verdict: editorial opening, not a technical widget. */
+.design-v2.design-model .content-main > .answer-box:first-child {
+  position: relative;
+  margin: 0 0 12px;
+  padding: 30px 0 7px 22px;
+  border-left: 3px solid var(--v2-orange);
+  border-radius: 0;
+  background: transparent;
+}
+.design-v2.design-model .content-main > .answer-box:first-child::before {
+  content: "Notre lecture";
+  position: absolute;
+  top: 0;
+  left: 22px;
+  color: var(--v2-orange);
+  font-family: var(--font-body);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.design-v2.design-model .content-main > .answer-box:first-child p {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.62;
+}
+
+/* Commerce becomes a quiet utility line after the editorial verdict. */
+.design-v2.design-model .inline-affiliate-action {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 42px;
+  padding: 10px 0 13px;
+  border: 0;
+  border-bottom: 1px solid var(--v2-rule);
+}
+.design-v2.design-model .inline-affiliate-action .product-card__cta {
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--v2-blue) !important;
+  font-size: .78rem !important;
+  font-weight: 600 !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.design-v2.design-model .inline-affiliate-action .product-card__disclosure {
+  color: var(--v2-muted);
+  font-size: .64rem;
+}
+
+/* Long-form rhythm: fewer visual fences, stronger editorial chapter starts. */
+.design-v2.design-model .content-main h2 {
+  margin: 50px 0 15px;
+  padding-top: 19px;
+  border-top: 1px solid #c8c6bf;
+  font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+  line-height: 1.14;
+  font-weight: 600;
+}
+.design-v2.design-model .content-main h2:first-of-type {
+  margin-top: 0;
+  border-top-color: #8f969b;
+}
+.design-v2.design-model .content-main h3 {
+  margin-top: 30px;
+}
+.design-v2.design-model .content-main p {
+  line-height: 1.7;
+}
+.design-v2.design-model .content-main .table-wrap {
+  margin-top: 25px;
+  margin-bottom: 32px;
+}
+.design-v2.design-model .content-main table th {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+.design-v2.design-model .content-main table td {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+.design-v2.design-model .related-box {
+  margin-top: 46px;
+}
+
+@media (max-width: 1024px) {
+  .design-v2.design-model .model-hero .container,
+  .design-v2.design-model > main > .container,
+  .design-v2.design-model main > .container {
+    max-width: none;
+  }
+  .design-v2.design-model .spec-table tbody {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .design-v2.design-model .spec-table tr,
+  .design-v2.design-model .spec-table tr:nth-child(4n + 2),
+  .design-v2.design-model .spec-table tr:nth-child(4n + 3),
+  .design-v2.design-model .spec-table tr:nth-child(4n + 4) {
+    padding: 10px 14px 11px 0;
+    border-right: 1px solid var(--v2-rule);
+    border-bottom: 1px solid var(--v2-rule);
+  }
+  .design-v2.design-model .spec-table tr:nth-child(even) {
+    padding-left: 14px;
+    border-right: 0;
+  }
+  .design-v2.design-model .spec-table tr:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+  .design-v2.design-model .content-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .design-v2.design-model .content-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .design-v2.design-model .model-hero {
+    padding: 28px 0 24px;
+  }
+  .design-v2.design-model .model-hero-inner {
+    gap: 23px;
+  }
+  .design-v2.design-model .model-title {
+    font-size: clamp(2rem, 10vw, 2.55rem);
+    line-height: 1.03;
+  }
+  .design-v2.design-model .model-tagline {
+    margin-top: 12px;
+    font-size: .98rem;
+    line-height: 1.55;
+  }
+  .design-v2.design-model .model-hero .page-meta {
+    margin-top: 14px;
+  }
+  .design-v2.design-model .spec-sheet-header {
+    padding: 8px 0 7px;
+  }
+  .design-v2.design-model .spec-table .sk {
+    font-size: .61rem;
+  }
+  .design-v2.design-model .spec-table .sv {
+    font-size: .71rem;
+  }
+  .design-v2.design-model .content-layout {
+    padding-top: 24px;
+  }
+  .design-v2.design-model .content-main > .answer-box:first-child {
+    padding: 28px 0 5px 17px;
+  }
+  .design-v2.design-model .content-main > .answer-box:first-child::before {
+    left: 17px;
+  }
+  .design-v2.design-model .inline-affiliate-action {
+    margin-bottom: 34px;
+  }
+  .design-v2.design-model .content-main h2 {
+    margin-top: 40px;
+    padding-top: 15px;
+  }
+  .design-v2.design-model .content-main .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .design-v2.design-model .content-main .table-wrap table {
+    min-width: 620px;
+  }
+}
+
+@media (max-width: 430px) {
+  .design-v2.design-model .spec-table tbody {
+    grid-template-columns: 1fr 1fr;
+  }
+  .design-v2.design-model .spec-table tr,
+  .design-v2.design-model .spec-table tr:nth-child(4n + 2),
+  .design-v2.design-model .spec-table tr:nth-child(4n + 3),
+  .design-v2.design-model .spec-table tr:nth-child(4n + 4) {
+    padding-right: 10px;
+  }
+  .design-v2.design-model .spec-table tr:nth-child(even) {
+    padding-left: 10px;
+  }
+}
+
+/* Model mobile TOC disclosure */
+@media (max-width: 1024px) {
+  .design-v2.design-model .mobile-toc-box {
+    margin: 0 0 28px;
+    padding: 0;
+    border-top: 1px solid #8f969b;
+    border-bottom: 1px solid var(--v2-rule);
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 11px 0 10px;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head::after {
+    content: "+";
+    flex: 0 0 auto;
+    color: var(--v2-muted);
+    font-family: var(--font-mono);
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head[aria-expanded="true"]::after {
+    content: "−";
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-head:focus-visible {
+    outline: 2px solid var(--v2-blue);
+    outline-offset: 4px;
+  }
+  .design-v2.design-model .mobile-toc-box .sidebar-box-body:not([hidden]) {
+    padding: 0 0 11px;
+  }
+  .design-v2.design-model .mobile-toc-box .toc-list a {
+    padding: 5px 0;
+  }
+}

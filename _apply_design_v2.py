@@ -41,9 +41,17 @@ def page_classes(rel: str) -> list[str]:
     return ["design-v2", "design-static"]
 
 
-def needs_home_model_polish(rel: str) -> bool:
+def is_model_leaf(rel: str) -> bool:
     parts = Path(rel).parts
-    return rel == "index.html" or (len(parts) == 3 and parts[0] == "modeles" and parts[-1] == "index.html")
+    return len(parts) == 3 and parts[0] == "modeles" and parts[-1] == "index.html"
+
+
+def needs_home_model_polish(rel: str) -> bool:
+    return rel == "index.html" or is_model_leaf(rel)
+
+
+def needs_model_v3(rel: str) -> bool:
+    return is_model_leaf(rel)
 
 
 def merge_body_classes(html: str, wanted: list[str]) -> str:
@@ -67,6 +75,8 @@ def ensure_assets(html: str, rel: str) -> str:
         links.append('  <link rel="stylesheet" href="/design-v2-rollout.css">')
     if needs_home_model_polish(rel) and '/home-model-polish.css' not in html:
         links.append('  <link rel="stylesheet" href="/home-model-polish.css">')
+    if needs_model_v3(rel) and '/model-pages-v3.css' not in html:
+        links.append('  <link rel="stylesheet" href="/model-pages-v3.css">')
     if links:
         html = html.replace('</head>', "\n".join(links) + '\n</head>', 1)
     if '/design-v2.js' not in html:
