@@ -31,6 +31,16 @@ Ne pas générer de représentation fidèle d'un modèle précis, logo, accessoi
 
 Par défaut, viser zéro ou une image IA par page.
 
+## Pilot initial
+
+Le premier lot validé couvre trois scènes d'usage à faible risque de vérité :
+
+- organisation de plusieurs postes dans un atelier ;
+- ponceuse raccordée à une aspiration générique ;
+- ponçage de plâtre/enduit avec captage à la source.
+
+Ces images restent explicitement des illustrations éditoriales génériques. Elles ne représentent aucun modèle précis et ne constituent pas des preuves de test.
+
 ## Paramètres par défaut
 
 - endpoint : `https://api.bfl.ai/v1/flux-2-pro-preview`
