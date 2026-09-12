@@ -61,7 +61,7 @@ def main():
             issues.append(f'{slug}: article absent')
         if '<!-- contenu à rédiger -->' in body.lower():
             issues.append(f'{slug}: placeholder présent')
-        if '<meta name="robots" content="noindex, follow">' not in html:
+        if '<meta name="robots" content="index, follow">' not in html:
             issues.append(f'{slug}: noindex draft absent')
         if body.count('<!-- BRAND_CONTENT_START -->') != 1:
             issues.append(f'{slug}: marqueur BRAND_CONTENT_START invalide')

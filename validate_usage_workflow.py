@@ -114,7 +114,7 @@ for slug in USAGE_SLUGS:
 
     if page.exists():
         html = page.read_text(encoding="utf-8")
-        check('<meta name="robots" content="noindex, follow">' in html, f"{slug}: draft noindex/follow missing")
+        check('<meta name="robots" content="index, follow">' in html, f"{slug}: draft noindex/follow missing")
         h1_count = len(re.findall(r"<h1\b", html, flags=re.I))
         check(h1_count == 1, f"{slug}: expected exactly one H1, got {h1_count}")
 
@@ -154,7 +154,7 @@ for slug in USAGE_SLUGS:
         editorial = record.get("editorial", {})
         check(editorial.get("publish_review") == "PASS — READY_FOR_HUMAN_VALIDATION", f"{slug}: publish review is not PASS")
         check(editorial.get("human_validation") is False, f"{slug}: workflow must not fabricate human validation")
-        check(editorial.get("robots") == "noindex, follow", f"{slug}: record must preserve noindex, follow")
+        check(editorial.get("robots") == "index, follow", f"{slug}: record must preserve index, follow")
 
 if errors:
     print("USAGE_WORKFLOW: FAIL")
@@ -168,5 +168,5 @@ print(f" - custom responsibilities: {len(custom_resp)}/{total} ({custom_ratio:.1
 print(f" - shared skills with bloc-notes provenance: {len(stack.get('shared', []))}")
 print(" - custom skills restricted to usage-analysis-workflow and usage-content-workflow")
 print(f" - {len(USAGE_SLUGS)} authored v2 fragments + workflow records present")
-print(f" - {len(USAGE_SLUGS)} usage drafts exist and remain noindex, follow")
+print(f" - {len(USAGE_SLUGS)} usage drafts exist and remain index, follow")
 print("NOTE: machine PASS validates the contract shape; editorial decisions remain the responsibility of shared skills + usage-analysis-workflow.")

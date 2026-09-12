@@ -3,50 +3,226 @@
   "slug": "aspirateur-ponceuse",
   "url": "/usages/aspirateur-ponceuse/",
   "updated_at": "2026-09-11",
-  "intent": {"topic": "aspirateur pour ponceuse", "intent": "information/commercial investigation by source-capture workflow", "user_job": "construire une boucle plateau-raccord-flexible-aspirateur qui reste efficace pendant une session de poncage", "boundary": "tool-workflow page; plaster owns material/process nuance and comparisons own product selection"},
-  "jtbd": {"circumstances": ["poncage continu", "outil filaire ou batterie", "bois/enduit/mineral", "travail multi-heures"], "progress": "maintenir un captage regulier sans que le flexible, le raccord ou le filtre interrompe le travail", "frictions": ["flexible rigide", "raccord instable", "filtre qui se charge", "demarrage oublie", "classe deduite du mauvais critere"], "evidence_class": "SUPPORTED"},
+  "intent": {
+    "topic": "aspirateur pour ponceuse",
+    "intent": "information/commercial investigation by source-capture workflow",
+    "user_job": "construire une boucle plateau-raccord-flexible-aspirateur qui reste efficace pendant une session de poncage",
+    "boundary": "tool-workflow page; plaster owns material/process nuance and comparisons own product selection"
+  },
+  "jtbd": {
+    "circumstances": [
+      "poncage continu",
+      "outil filaire ou batterie",
+      "bois/enduit/mineral",
+      "travail multi-heures"
+    ],
+    "progress": "maintenir un captage regulier sans que le flexible, le raccord ou le filtre interrompe le travail",
+    "frictions": [
+      "flexible rigide",
+      "raccord instable",
+      "filtre qui se charge",
+      "demarrage oublie",
+      "classe deduite du mauvais critere"
+    ],
+    "evidence_class": "SUPPORTED"
+  },
   "criteria": [
-    {"criterion": "boucle de captage complete", "priority": "MUST_HAVE", "decision_effect": "evite de juger l'aspirateur seul"},
-    {"criterion": "matiere poncee", "priority": "MUST_HAVE", "decision_effect": "determine le risque et l'eventuelle classe"},
-    {"criterion": "maintien du debit / gestion filtre", "priority": "HIGH", "decision_effect": "conditionne les longues sessions"},
-    {"criterion": "raccord et ergonomie flexible", "priority": "HIGH", "decision_effect": "conditionne le geste"},
-    {"criterion": "declenchement", "priority": "CONDITIONAL", "decision_effect": "reduit les oublis sans changer la filtration"}
+    {
+      "criterion": "boucle de captage complete",
+      "priority": "MUST_HAVE",
+      "decision_effect": "evite de juger l'aspirateur seul"
+    },
+    {
+      "criterion": "matiere poncee",
+      "priority": "MUST_HAVE",
+      "decision_effect": "determine le risque et l'eventuelle classe"
+    },
+    {
+      "criterion": "maintien du debit / gestion filtre",
+      "priority": "HIGH",
+      "decision_effect": "conditionne les longues sessions"
+    },
+    {
+      "criterion": "raccord et ergonomie flexible",
+      "priority": "HIGH",
+      "decision_effect": "conditionne le geste"
+    },
+    {
+      "criterion": "declenchement",
+      "priority": "CONDITIONAL",
+      "decision_effect": "reduit les oublis sans changer la filtration"
+    }
   ],
   "evidence": [
-    {"id": "S1", "claim": "le captage local est adapte aux procedes de poncage quand il est correctement integre", "source": "https://www.hse.gov.uk/lev/common-processes.htm", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
-    {"id": "S2", "claim": "les poussieres de bois doivent etre captees au plus pres de leur source", "source": "https://www.inrs.fr/metiers/metiers-du-bois/transformation-du-bois/poussiere/ventilation-aspiration.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"},
-    {"id": "S3", "claim": "des systemes d'aspiration pour poncage de joints ont montre une reduction importante des expositions dans les evaluations NIOSH", "source": "https://archive.cdc.gov/www_cdc_gov/niosh/docs/99-113/default.html", "checked_at": "2026-09-11", "stability": "stable", "class": "SUPPORTED"}
+    {
+      "id": "S1",
+      "claim": "le captage local est adapte aux procedes de poncage quand il est correctement integre",
+      "source": "https://www.hse.gov.uk/lev/common-processes.htm",
+      "checked_at": "2026-09-11",
+      "stability": "stable",
+      "class": "SUPPORTED"
+    },
+    {
+      "id": "S2",
+      "claim": "les poussieres de bois doivent etre captees au plus pres de leur source",
+      "source": "https://www.inrs.fr/metiers/metiers-du-bois/transformation-du-bois/poussiere/ventilation-aspiration.html",
+      "checked_at": "2026-09-11",
+      "stability": "stable",
+      "class": "SUPPORTED"
+    },
+    {
+      "id": "S3",
+      "claim": "des systemes d'aspiration pour poncage de joints ont montre une reduction importante des expositions dans les evaluations NIOSH",
+      "source": "https://archive.cdc.gov/www_cdc_gov/niosh/docs/99-113/default.html",
+      "checked_at": "2026-09-11",
+      "stability": "stable",
+      "class": "SUPPORTED"
+    }
   ],
-  "handoffs": {"usage": ["/usages/aspirateur-platre/"], "guides": ["/guides/decolmatage-automatique/", "/guides/prise-asservie/", "/guides/classes-l-m-h/"], "comparisons": ["/comparatifs/aspirateur-classe-m/"]},
+  "handoffs": {
+    "usage": [
+      "/usages/aspirateur-platre/"
+    ],
+    "guides": [
+      "/guides/decolmatage-automatique/",
+      "/guides/prise-asservie/",
+      "/guides/classes-l-m-h/"
+    ],
+    "comparisons": [
+      "/comparatifs/aspirateur-classe-m/"
+    ]
+  },
   "outline": [
-    {"question": "La boucle plateau-raccord-flexible est-elle coherente ?", "evidence_refs": ["S1", "S2"], "decision_value": "place le captage avant la cuve"},
-    {"question": "Que se passe-t-il quand le filtre se charge ?", "evidence_refs": ["S1", "S3"], "decision_value": "fait du maintien du debit un critere de session"},
-    {"question": "Quel role joue le declenchement automatique ?", "evidence_refs": ["S1"], "decision_value": "le traite comme ergonomie, pas comme filtration"}
+    {
+      "question": "La boucle plateau-raccord-flexible est-elle coherente ?",
+      "evidence_refs": [
+        "S1",
+        "S2"
+      ],
+      "decision_value": "place le captage avant la cuve"
+    },
+    {
+      "question": "Que se passe-t-il quand le filtre se charge ?",
+      "evidence_refs": [
+        "S1",
+        "S3"
+      ],
+      "decision_value": "fait du maintien du debit un critere de session"
+    },
+    {
+      "question": "Quel role joue le declenchement automatique ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "le traite comme ergonomie, pas comme filtration"
+    }
   ],
   "workflow_execution": {
     "shared": [
-      {"skill": "content-audit", "status": "PASS", "output": "LIGHT_UPDATE; core source-capture workflow preserved"},
-      {"skill": "search-intent", "status": "PASS", "output": "continuous sanding workflow confirmed"},
-      {"skill": "jobs-to-be-done", "status": "PASS", "output": "long-session frictions documented"},
-      {"skill": "content-refresh", "status": "PASS", "output": "targeted depth and evidence update"},
-      {"skill": "fact-check", "status": "PASS", "output": "HSE/INRS/NIOSH claims checked"},
-      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "no product ranking or invented hands-on"},
-      {"skill": "affiliate-value", "status": "PASS", "output": "workflow useful without product links"},
-      {"skill": "content-brief-authoring", "status": "PASS", "output": "loop-led brief"},
-      {"skill": "content-and-copy", "status": "PASS", "output": "authored v2 fragment"},
-      {"skill": "humanizer", "status": "PASS", "output": "natural technical prose"},
-      {"skill": "general-writing", "status": "PASS", "output": "fact/decision distinctions tightened"},
-      {"skill": "anti-ai-slop", "status": "PASS", "output": "non-interchangeable structure"},
-      {"skill": "internal-linking-audit", "status": "PASS", "output": "plaster/class-M handoffs preserved"},
-      {"skill": "seo-onpage", "status": "PASS", "output": "metadata matches sanding intent"},
-      {"skill": "seo-technical", "status": "PASS", "output": "canonical/noindex preserved"},
-      {"skill": "seo-best-practices", "status": "PASS", "output": "semantic headings/single H1"},
-      {"skill": "editorial-qa", "status": "PASS", "output": "no brand-universal or class inference claims"}
+      {
+        "skill": "content-audit",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE; core source-capture workflow preserved"
+      },
+      {
+        "skill": "search-intent",
+        "status": "PASS",
+        "output": "continuous sanding workflow confirmed"
+      },
+      {
+        "skill": "jobs-to-be-done",
+        "status": "PASS",
+        "output": "long-session frictions documented"
+      },
+      {
+        "skill": "content-refresh",
+        "status": "PASS",
+        "output": "targeted depth and evidence update"
+      },
+      {
+        "skill": "fact-check",
+        "status": "PASS",
+        "output": "HSE/INRS/NIOSH claims checked"
+      },
+      {
+        "skill": "evidence-based-reviews",
+        "status": "N/A",
+        "reason": "no product ranking or invented hands-on"
+      },
+      {
+        "skill": "affiliate-value",
+        "status": "PASS",
+        "output": "workflow useful without product links"
+      },
+      {
+        "skill": "content-brief-authoring",
+        "status": "PASS",
+        "output": "loop-led brief"
+      },
+      {
+        "skill": "content-and-copy",
+        "status": "PASS",
+        "output": "authored v2 fragment"
+      },
+      {
+        "skill": "humanizer",
+        "status": "PASS",
+        "output": "natural technical prose"
+      },
+      {
+        "skill": "general-writing",
+        "status": "PASS",
+        "output": "fact/decision distinctions tightened"
+      },
+      {
+        "skill": "anti-ai-slop",
+        "status": "PASS",
+        "output": "non-interchangeable structure"
+      },
+      {
+        "skill": "internal-linking-audit",
+        "status": "PASS",
+        "output": "plaster/class-M handoffs preserved"
+      },
+      {
+        "skill": "seo-onpage",
+        "status": "PASS",
+        "output": "metadata matches sanding intent"
+      },
+      {
+        "skill": "seo-technical",
+        "status": "PASS",
+        "output": "canonical/noindex preserved"
+      },
+      {
+        "skill": "seo-best-practices",
+        "status": "PASS",
+        "output": "semantic headings/single H1"
+      },
+      {
+        "skill": "editorial-qa",
+        "status": "PASS",
+        "output": "no brand-universal or class inference claims"
+      }
     ],
     "custom": [
-      {"skill": "usage-content-workflow", "status": "PASS", "output": "sander-specific capture and claim-safety gates"},
-      {"skill": "usage-analysis-workflow", "status": "PASS", "output": "PUBLISH_REVIEW passed"}
+      {
+        "skill": "usage-content-workflow",
+        "status": "PASS",
+        "output": "sander-specific capture and claim-safety gates"
+      },
+      {
+        "skill": "usage-analysis-workflow",
+        "status": "PASS",
+        "output": "PUBLISH_REVIEW passed"
+      }
     ]
   },
-  "editorial": {"cluster_audit_decision": "LIGHT_UPDATE", "final_decision": "LIGHT_UPDATE_COMPLETED", "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION", "human_validation": false, "robots": "noindex, follow"}
+  "editorial": {
+    "cluster_audit_decision": "LIGHT_UPDATE",
+    "final_decision": "LIGHT_UPDATE_COMPLETED",
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "index, follow"
+  }
 }

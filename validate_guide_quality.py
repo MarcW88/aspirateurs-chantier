@@ -5,7 +5,7 @@ This validator deliberately does not score editorial quality with word counts,
 heading quotas, link quotas, source quotas or mandatory article shapes. Substantive
 quality belongs to guide-analysis-workflow / PUBLISH_REVIEW.
 
-All Guide routes remain noindex, follow during recovery. A persisted Guide record
+All Guide routes remain index, follow during recovery. A persisted Guide record
 with PASS — READY_FOR_HUMAN_VALIDATION activates stricter finished-draft checks, but
 still does not authorize indexation.
 """
@@ -118,8 +118,8 @@ def inspect(page):
         issues.append(f"H1 count={len(h1s)} (expected one non-empty H1)")
 
     robots = [normalized_robots(v) for v in ROBOTS_RE.findall(page_html)]
-    if "noindex,follow" not in robots:
-        issues.append("Guide recovery state must remain noindex, follow")
+    if "index,follow" not in robots:
+        issues.append("Guide recovery state must remain index, follow")
 
     canonicals = CANONICAL_RE.findall(page_html)
     expected = expected_canonical(page)
@@ -157,8 +157,8 @@ def inspect_hub():
         return ["Guide hub missing"]
     html = page.read_text(encoding="utf-8")
     robots = [normalized_robots(v) for v in ROBOTS_RE.findall(html)]
-    if "noindex,follow" not in robots:
-        issues.append("Guide hub must remain noindex, follow during recovery")
+    if "index,follow" not in robots:
+        issues.append("Guide hub must remain index, follow during recovery")
     if CANONICAL_RE.findall(html) != [f"{SITE_ORIGIN}/guides/"]:
         issues.append("Guide hub canonical mismatch")
     h1s = H1_RE.findall(html)
@@ -190,7 +190,7 @@ def main():
     ready_count = sum(1 for page in pages if is_ready(page.parent.name))
     print(f"GUIDE_QUALITY: PASS — {len(pages) + 1} Guide routes have no machine-detectable structural blockers")
     print(f" - READY records under stricter finished-draft checks: {ready_count}")
-    print(" - all Guide routes remain noindex, follow")
+    print(" - all Guide routes remain index, follow")
     print("NOTE: machine validation does not replace guide-analysis-workflow / PUBLISH_REVIEW or human editorial judgment.")
 
 

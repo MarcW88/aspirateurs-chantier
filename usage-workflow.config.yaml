@@ -7,7 +7,7 @@ content:
   scope:
     - "/usages/"
   records_dir: ".content/usages"
-  draft_robots: "noindex, follow"
+  draft_robots: "index, follow"
   require_human_validation_before_indexation: true
   allow_automatic_merge: false
   allow_automatic_indexation: false

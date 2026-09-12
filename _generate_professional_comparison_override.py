@@ -223,7 +223,7 @@ body = f'''<main>
 <h2 id="sources">Sources et méthode</h2>
 <p>Ce comparatif est une <strong>recherche documentaire</strong> vérifiée le {UPDATED}. Il ne prétend pas reproduire un test physique en conditions identiques. Les rôles attribués aux modèles sont des recommandations éditoriales dérivées de caractéristiques officielles et des contraintes du scénario, pas des mesures de laboratoire réalisées par le site.</p>
 <div class="related-box"><strong>Sources primaires consultées</strong><ul>{''.join(source_items)}</ul></div>
-<p><small>Desk research, sans test physique. Les commissions d’affiliation n’entrent ni dans la sélection ni dans la recommandation. La page reste en noindex pendant le pilote.</small></p>
+<p><small>Desk research, sans test physique. Les commissions d’affiliation n’entrent ni dans la sélection ni dans la recommandation.</small></p>
 </article>
 <aside class="content-sidebar"><div class="sidebar-box"><div class="sidebar-box-head">Sommaire</div><div class="sidebar-box-body"><nav class="toc-list"><a href="#raccourci">Quel profil ?</a><a href="#frontiere">Professionnel ≠ M</a><a href="#arbitrages">4 arbitrages</a><a href="#modeles">6 modèles repères</a><a href="#mesures">Débit & dépression</a><a href="#sortie">Autres comparatifs</a><a href="#sources">Sources</a></nav></div></div><div class="sidebar-box"><div class="sidebar-box-head">Affiliation</div><div class="sidebar-box-body"><p class="affil-note">Ce site contient des liens affiliés. Nos analyses restent indépendantes. <a href="/transparence-affiliation/">En savoir plus.</a></p></div></div></aside>
 </div></div>

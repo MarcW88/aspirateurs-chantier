@@ -1,44 +1,179 @@
 {
-  "contract_version":1,
-  "slug":"classes-l-m-h",
-  "url":"/guides/classes-l-m-h/",
-  "guide_type":"HYBRID",
-  "audit_decision":"KEEP",
-  "intent":{"reader_task":"Comprendre les classes L/M/H d’un aspirateur complet et choisir la classe à partir du risque sans la confondre avec HEPA."},
-  "value_to_preserve":["Distinction machine complète vs filtre.","Tableau L/M/H prudent.","HEPA != classe H.","Nuance matériau, VLEP, silice et amiante.","Communication INRS 2026 sur M/H et colmatage."],
-  "evidence":[
-    {"id":"S1","claim":"Les classes L/M/H concernent les extracteurs couverts par IEC 60335-2-69 et ne se réduisent pas à la classe du média filtrant.","source":"https://webstore.iec.ch/en/publication/64777","checked_at":"2026-09-11","status":"SUPPORTED"},
-    {"id":"S2","claim":"Pour l’amiante, l’INRS exige notamment un aspirateur classe H et des filtres THE au minimum H13 ou H14.","source":"https://www.inrs.fr/risques/amiante/prevention-risque-amiante.html","checked_at":"2026-09-11","status":"SUPPORTED"},
-    {"id":"S3","claim":"Pour la silice, l’INRS insiste sur le captage à la source et l’aspiration adaptée au procédé.","source":"https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir.html","checked_at":"2026-09-11","status":"SUPPORTED"}
+  "contract_version": 1,
+  "slug": "classes-l-m-h",
+  "url": "/guides/classes-l-m-h/",
+  "guide_type": "HYBRID",
+  "audit_decision": "KEEP",
+  "intent": {
+    "reader_task": "Comprendre les classes L/M/H d’un aspirateur complet et choisir la classe à partir du risque sans la confondre avec HEPA."
+  },
+  "value_to_preserve": [
+    "Distinction machine complète vs filtre.",
+    "Tableau L/M/H prudent.",
+    "HEPA != classe H.",
+    "Nuance matériau, VLEP, silice et amiante.",
+    "Communication INRS 2026 sur M/H et colmatage."
   ],
-  "outline":[
-    {"question":"Que classent L/M/H ?","evidence_refs":["S1"],"decision_value":"Séparer appareil complet et filtre."},
-    {"question":"Pourquoi le matériau seul ne suffit-il pas ?","evidence_refs":["S2","S3"],"decision_value":"Relier classe à risque, procédé et prescriptions."},
-    {"question":"Pourquoi HEPA et classe H sont-ils différents ?","evidence_refs":["S1","S2"],"decision_value":"Éviter une erreur de sécurité."}
+  "evidence": [
+    {
+      "id": "S1",
+      "claim": "Les classes L/M/H concernent les extracteurs couverts par IEC 60335-2-69 et ne se réduisent pas à la classe du média filtrant.",
+      "source": "https://webstore.iec.ch/en/publication/64777",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "S2",
+      "claim": "Pour l’amiante, l’INRS exige notamment un aspirateur classe H et des filtres THE au minimum H13 ou H14.",
+      "source": "https://www.inrs.fr/risques/amiante/prevention-risque-amiante.html",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "S3",
+      "claim": "Pour la silice, l’INRS insiste sur le captage à la source et l’aspiration adaptée au procédé.",
+      "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir.html",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    }
   ],
-  "workflow_execution":{"shared":[
-    {"skill":"seo-content-audit","status":"PASS","output":"KEEP confirmé par le cluster audit."},
-    {"skill":"seo-keyword","status":"PASS","output":"Topic classes L/M/H stable et distinct du comparatif classe M."},
-    {"skill":"search-intent","status":"PASS","output":"HYBRID EXPLAINER+CHOICE : comprendre la classification puis orienter le choix."},
-    {"skill":"content-refresh","status":"N/A","reason":"KEEP : aucune correction substantielle demandée."},
-    {"skill":"fact-check","status":"PASS","output":"IEC, INRS amiante et INRS silice revérifiés."},
-    {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucun jugement expérientiel produit."},
-    {"skill":"affiliate-value","status":"PASS","output":"Page utile sans lien affilié et sans ranking."},
-    {"skill":"content-brief-authoring","status":"N/A","reason":"KEEP : aucun nouveau brief de production nécessaire."},
-    {"skill":"content-and-copy","status":"N/A","reason":"KEEP : aucune réécriture."},
-    {"skill":"humanizer","status":"N/A","reason":"Aucun nouveau draft à humaniser."},
-    {"skill":"general-writing","status":"N/A","reason":"Aucun changement rédactionnel requis."},
-    {"skill":"anti-ai-slop","status":"PASS","output":"Review : structure spécifique et pas de cadence générique problématique."},
-    {"skill":"internal-linking-audit","status":"PASS","output":"Liens vers HEPA, usages et comparatif classe M cohérents."},
-    {"skill":"seo-onpage","status":"PASS","output":"H1/title/meta alignés sur la décision L/M/H."},
-    {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow conformes."},
-    {"skill":"seo-best-practices","status":"PASS","output":"Réponse tôt, tableau justifié et sources adaptées au risque."},
-    {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline fournie."},
-    {"skill":"editorial-qa","status":"PASS","output":"Aucune confusion filtre/machine ; prudence matériaux et poussières dangereuses."}
-  ],"custom":[
-    {"skill":"guide-analysis-workflow","status":"PASS","output":"KEEP puis PUBLISH_REVIEW : aucun blocker identifié."},
-    {"skill":"guide-content-workflow","status":"N/A","reason":"KEEP : le workflow de production n’est pas requis."}
-  ]},
-  "residual_risks":["Les exigences réglementaires dépendent du contexte professionnel et doivent être revalidées si le cadre change."],
-  "editorial":{"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+  "outline": [
+    {
+      "question": "Que classent L/M/H ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "Séparer appareil complet et filtre."
+    },
+    {
+      "question": "Pourquoi le matériau seul ne suffit-il pas ?",
+      "evidence_refs": [
+        "S2",
+        "S3"
+      ],
+      "decision_value": "Relier classe à risque, procédé et prescriptions."
+    },
+    {
+      "question": "Pourquoi HEPA et classe H sont-ils différents ?",
+      "evidence_refs": [
+        "S1",
+        "S2"
+      ],
+      "decision_value": "Éviter une erreur de sécurité."
+    }
+  ],
+  "workflow_execution": {
+    "shared": [
+      {
+        "skill": "seo-content-audit",
+        "status": "PASS",
+        "output": "KEEP confirmé par le cluster audit."
+      },
+      {
+        "skill": "seo-keyword",
+        "status": "PASS",
+        "output": "Topic classes L/M/H stable et distinct du comparatif classe M."
+      },
+      {
+        "skill": "search-intent",
+        "status": "PASS",
+        "output": "HYBRID EXPLAINER+CHOICE : comprendre la classification puis orienter le choix."
+      },
+      {
+        "skill": "content-refresh",
+        "status": "N/A",
+        "reason": "KEEP : aucune correction substantielle demandée."
+      },
+      {
+        "skill": "fact-check",
+        "status": "PASS",
+        "output": "IEC, INRS amiante et INRS silice revérifiés."
+      },
+      {
+        "skill": "evidence-based-reviews",
+        "status": "N/A",
+        "reason": "Aucun jugement expérientiel produit."
+      },
+      {
+        "skill": "affiliate-value",
+        "status": "PASS",
+        "output": "Page utile sans lien affilié et sans ranking."
+      },
+      {
+        "skill": "content-brief-authoring",
+        "status": "N/A",
+        "reason": "KEEP : aucun nouveau brief de production nécessaire."
+      },
+      {
+        "skill": "content-and-copy",
+        "status": "N/A",
+        "reason": "KEEP : aucune réécriture."
+      },
+      {
+        "skill": "humanizer",
+        "status": "N/A",
+        "reason": "Aucun nouveau draft à humaniser."
+      },
+      {
+        "skill": "general-writing",
+        "status": "N/A",
+        "reason": "Aucun changement rédactionnel requis."
+      },
+      {
+        "skill": "anti-ai-slop",
+        "status": "PASS",
+        "output": "Review : structure spécifique et pas de cadence générique problématique."
+      },
+      {
+        "skill": "internal-linking-audit",
+        "status": "PASS",
+        "output": "Liens vers HEPA, usages et comparatif classe M cohérents."
+      },
+      {
+        "skill": "seo-onpage",
+        "status": "PASS",
+        "output": "H1/title/meta alignés sur la décision L/M/H."
+      },
+      {
+        "skill": "seo-technical",
+        "status": "PASS",
+        "output": "Canonical et noindex, follow conformes."
+      },
+      {
+        "skill": "seo-best-practices",
+        "status": "PASS",
+        "output": "Réponse tôt, tableau justifié et sources adaptées au risque."
+      },
+      {
+        "skill": "seo-drift",
+        "status": "N/A",
+        "reason": "Pas de baseline fournie."
+      },
+      {
+        "skill": "editorial-qa",
+        "status": "PASS",
+        "output": "Aucune confusion filtre/machine ; prudence matériaux et poussières dangereuses."
+      }
+    ],
+    "custom": [
+      {
+        "skill": "guide-analysis-workflow",
+        "status": "PASS",
+        "output": "KEEP puis PUBLISH_REVIEW : aucun blocker identifié."
+      },
+      {
+        "skill": "guide-content-workflow",
+        "status": "N/A",
+        "reason": "KEEP : le workflow de production n’est pas requis."
+      }
+    ]
+  },
+  "residual_risks": [
+    "Les exigences réglementaires dépendent du contexte professionnel et doivent être revalidées si le cadre change."
+  ],
+  "editorial": {
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "index, follow"
+  }
 }

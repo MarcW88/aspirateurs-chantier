@@ -1,41 +1,154 @@
 {
-  "contract_version":1,
-  "slug":"capacite-cuve",
-  "url":"/guides/capacite-cuve/",
-  "guide_type":"CHOICE",
-  "audit_decision":"LIGHT_UPDATE",
-  "intent":{"reader_task":"Dimensionner la cuve selon volume utile, poids, déchets, eau et fréquence de vidage plutôt que viser le plus grand nombre de litres."},
-  "value_to_preserve":["Brut vs net vs eau.","Mobilité et poids plein.","Dimensionnement par fréquence de vidage."],
-  "evidence":[
-    {"id":"S1","claim":"Le Bosch GAS 35 M AFC est documenté avec 35 L brut, 23 L net et 19,2 L net à eau.","source":"https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/","checked_at":"2026-09-11","status":"SUPPORTED"}
+  "contract_version": 1,
+  "slug": "capacite-cuve",
+  "url": "/guides/capacite-cuve/",
+  "guide_type": "CHOICE",
+  "audit_decision": "LIGHT_UPDATE",
+  "intent": {
+    "reader_task": "Dimensionner la cuve selon volume utile, poids, déchets, eau et fréquence de vidage plutôt que viser le plus grand nombre de litres."
+  },
+  "value_to_preserve": [
+    "Brut vs net vs eau.",
+    "Mobilité et poids plein.",
+    "Dimensionnement par fréquence de vidage."
   ],
-  "outline":[
-    {"question":"Quel volume faut-il réellement comparer ?","evidence_refs":["S1"],"decision_value":"Distinguer brut, net et eau."},
-    {"question":"Comment dimensionner selon le chantier ?","evidence_refs":["S1"],"decision_value":"Arbitrer fréquence de vidage, poids et mobilité."}
+  "evidence": [
+    {
+      "id": "S1",
+      "claim": "Le Bosch GAS 35 M AFC est documenté avec 35 L brut, 23 L net et 19,2 L net à eau.",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    }
   ],
-  "workflow_execution":{"shared":[
-    {"skill":"seo-content-audit","status":"PASS","output":"LIGHT_UPDATE confirmé ; page distincte et utile."},
-    {"skill":"seo-keyword","status":"PASS","output":"Topic capacité cuve / litres conservé."},
-    {"skill":"search-intent","status":"PASS","output":"CHOICE : choisir un volume utile selon workflow de vidage."},
-    {"skill":"content-refresh","status":"PASS","output":"Exemple de dimensionnement intégré au plan au lieu d’un supplément automatique."},
-    {"skill":"fact-check","status":"PASS","output":"Capacités Bosch revérifiées le 2026-09-11."},
-    {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucun jugement expérientiel."},
-    {"skill":"affiliate-value","status":"PASS","output":"Méthode de dimensionnement indépendante d’un produit affilié."},
-    {"skill":"content-brief-authoring","status":"PASS","output":"Brief volumes -> poids -> déchets -> eau -> configuration -> fréquence de vidage."},
-    {"skill":"content-and-copy","status":"PASS","output":"LIGHT_UPDATE rédigé comme arbitrage logistique."},
-    {"skill":"humanizer","status":"PASS","output":"Style relu."},
-    {"skill":"general-writing","status":"PASS","output":"Exemples et conséquences pratiques clarifiés."},
-    {"skill":"anti-ai-slop","status":"PASS","output":"Pas de remplissage par seuil de mots."},
-    {"skill":"internal-linking-audit","status":"PASS","output":"Liens contextuels vers gravats, atelier et sac/sans sac."},
-    {"skill":"seo-onpage","status":"PASS","output":"Title/H1/meta recentrés sur volume utile."},
-    {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow préservés."},
-    {"skill":"seo-best-practices","status":"PASS","output":"Réponse tôt et exemple documenté."},
-    {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline fournie."},
-    {"skill":"editorial-qa","status":"PASS","output":"La capacité n’est pas présentée comme proxy de puissance ou de gamme."}
-  ],"custom":[
-    {"skill":"guide-analysis-workflow","status":"PASS","output":"LIGHT_UPDATE CHOICE validé."},
-    {"skill":"guide-content-workflow","status":"PASS","output":"Fragment v2 produit."}
-  ]},
-  "residual_risks":["Les volumes brut/net/eau ne sont pas publiés de façon homogène par toutes les marques."],
-  "editorial":{"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+  "outline": [
+    {
+      "question": "Quel volume faut-il réellement comparer ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "Distinguer brut, net et eau."
+    },
+    {
+      "question": "Comment dimensionner selon le chantier ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "Arbitrer fréquence de vidage, poids et mobilité."
+    }
+  ],
+  "workflow_execution": {
+    "shared": [
+      {
+        "skill": "seo-content-audit",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE confirmé ; page distincte et utile."
+      },
+      {
+        "skill": "seo-keyword",
+        "status": "PASS",
+        "output": "Topic capacité cuve / litres conservé."
+      },
+      {
+        "skill": "search-intent",
+        "status": "PASS",
+        "output": "CHOICE : choisir un volume utile selon workflow de vidage."
+      },
+      {
+        "skill": "content-refresh",
+        "status": "PASS",
+        "output": "Exemple de dimensionnement intégré au plan au lieu d’un supplément automatique."
+      },
+      {
+        "skill": "fact-check",
+        "status": "PASS",
+        "output": "Capacités Bosch revérifiées le 2026-09-11."
+      },
+      {
+        "skill": "evidence-based-reviews",
+        "status": "N/A",
+        "reason": "Aucun jugement expérientiel."
+      },
+      {
+        "skill": "affiliate-value",
+        "status": "PASS",
+        "output": "Méthode de dimensionnement indépendante d’un produit affilié."
+      },
+      {
+        "skill": "content-brief-authoring",
+        "status": "PASS",
+        "output": "Brief volumes -> poids -> déchets -> eau -> configuration -> fréquence de vidage."
+      },
+      {
+        "skill": "content-and-copy",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE rédigé comme arbitrage logistique."
+      },
+      {
+        "skill": "humanizer",
+        "status": "PASS",
+        "output": "Style relu."
+      },
+      {
+        "skill": "general-writing",
+        "status": "PASS",
+        "output": "Exemples et conséquences pratiques clarifiés."
+      },
+      {
+        "skill": "anti-ai-slop",
+        "status": "PASS",
+        "output": "Pas de remplissage par seuil de mots."
+      },
+      {
+        "skill": "internal-linking-audit",
+        "status": "PASS",
+        "output": "Liens contextuels vers gravats, atelier et sac/sans sac."
+      },
+      {
+        "skill": "seo-onpage",
+        "status": "PASS",
+        "output": "Title/H1/meta recentrés sur volume utile."
+      },
+      {
+        "skill": "seo-technical",
+        "status": "PASS",
+        "output": "Canonical et noindex, follow préservés."
+      },
+      {
+        "skill": "seo-best-practices",
+        "status": "PASS",
+        "output": "Réponse tôt et exemple documenté."
+      },
+      {
+        "skill": "seo-drift",
+        "status": "N/A",
+        "reason": "Pas de baseline fournie."
+      },
+      {
+        "skill": "editorial-qa",
+        "status": "PASS",
+        "output": "La capacité n’est pas présentée comme proxy de puissance ou de gamme."
+      }
+    ],
+    "custom": [
+      {
+        "skill": "guide-analysis-workflow",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE CHOICE validé."
+      },
+      {
+        "skill": "guide-content-workflow",
+        "status": "PASS",
+        "output": "Fragment v2 produit."
+      }
+    ]
+  },
+  "residual_risks": [
+    "Les volumes brut/net/eau ne sont pas publiés de façon homogène par toutes les marques."
+  ],
+  "editorial": {
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "index, follow"
+  }
 }

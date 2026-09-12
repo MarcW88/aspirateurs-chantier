@@ -14,42 +14,171 @@
     "Diagnostic pratique de perte de débit."
   ],
   "evidence": [
-    {"id": "S1", "claim": "L’INRS recommande le captage des poussières au plus près de l’émission et documente le dimensionnement des réseaux d’aspiration pour les machines à bois.", "source": "https://www.inrs.fr/media.html?refINRS=ED+6052", "checked_at": "2026-09-11", "status": "SUPPORTED"},
-    {"id": "S2", "claim": "Pour les opérations exposant à la silice, l’INRS recommande notamment de raccorder les outils aspirants à des systèmes d’aspiration à haute dépression.", "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir.html", "checked_at": "2026-09-11", "status": "SUPPORTED"},
-    {"id": "S3", "claim": "Le Bosch GAS 35 M AFC publie 74 L/s comme débit maximal à la turbine.", "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/", "checked_at": "2026-09-11", "status": "SUPPORTED"}
+    {
+      "id": "S1",
+      "claim": "L’INRS recommande le captage des poussières au plus près de l’émission et documente le dimensionnement des réseaux d’aspiration pour les machines à bois.",
+      "source": "https://www.inrs.fr/media.html?refINRS=ED+6052",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "S2",
+      "claim": "Pour les opérations exposant à la silice, l’INRS recommande notamment de raccorder les outils aspirants à des systèmes d’aspiration à haute dépression.",
+      "source": "https://www.inrs.fr/risques/silice-cristalline/ce-qu-il-faut-retenir.html",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "S3",
+      "claim": "Le Bosch GAS 35 M AFC publie 74 L/s comme débit maximal à la turbine.",
+      "source": "https://www.bosch-professional.com/fr/fr/products/gas-35-m-afc-06019C31W0/",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    }
   ],
   "outline": [
-    {"question": "Que mesure le débit ?", "evidence_refs": ["S1"], "decision_value": "Relier le chiffre au transport d’air et de particules."},
-    {"question": "Pourquoi le captage dépend-il du système ?", "evidence_refs": ["S1", "S2"], "decision_value": "Éviter un seuil universel de L/s."},
-    {"question": "Pourquoi le point de mesure change-t-il le chiffre ?", "evidence_refs": ["S3"], "decision_value": "Distinguer valeur turbine et débit utile à l’outil."},
-    {"question": "Comment diagnostiquer une chute de débit ?", "evidence_refs": ["S1"], "decision_value": "Transformer la métrique en diagnostic pratique."}
+    {
+      "question": "Que mesure le débit ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "Relier le chiffre au transport d’air et de particules."
+    },
+    {
+      "question": "Pourquoi le captage dépend-il du système ?",
+      "evidence_refs": [
+        "S1",
+        "S2"
+      ],
+      "decision_value": "Éviter un seuil universel de L/s."
+    },
+    {
+      "question": "Pourquoi le point de mesure change-t-il le chiffre ?",
+      "evidence_refs": [
+        "S3"
+      ],
+      "decision_value": "Distinguer valeur turbine et débit utile à l’outil."
+    },
+    {
+      "question": "Comment diagnostiquer une chute de débit ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "Transformer la métrique en diagnostic pratique."
+    }
   ],
   "workflow_execution": {
     "shared": [
-      {"skill": "seo-content-audit", "status": "PASS", "output": "LIGHT_UPDATE : rôle utile mais chevauchements à réduire avec puissance et dépression."},
-      {"skill": "seo-keyword", "status": "PASS", "output": "Topic maintenu sur débit d’air, L/s, m³/h et débit utile."},
-      {"skill": "search-intent", "status": "PASS", "output": "Intention EXPLAINER + diagnostic : comprendre puis interpréter le débit en usage réel."},
-      {"skill": "content-refresh", "status": "PASS", "output": "Diagnostic et captage préservés ; passages génériques sur puissance/dépression réduits."},
-      {"skill": "fact-check", "status": "PASS", "output": "Recommandations INRS et valeur Bosch revérifiées le 2026-09-11."},
-      {"skill": "evidence-based-reviews", "status": "N/A", "reason": "Aucune conclusion hands-on n’est utilisée."},
-      {"skill": "affiliate-value", "status": "PASS", "output": "La valeur vient du diagnostic et de la lecture de fiche, pas d’un CTA commercial."},
-      {"skill": "content-brief-authoring", "status": "PASS", "output": "Brief : définition -> unités -> captage -> mesure -> pertes -> diagnostic -> usage du chiffre."},
-      {"skill": "content-and-copy", "status": "PASS", "output": "LIGHT_UPDATE rédigé autour du débit utile plutôt qu’un résumé de toutes les métriques."},
-      {"skill": "humanizer", "status": "PASS", "output": "Passage relu pour éviter les formulations mécaniques et répétitives."},
-      {"skill": "general-writing", "status": "PASS", "output": "Explication resserrée et exemples rendus actionnables."},
-      {"skill": "anti-ai-slop", "status": "PASS", "output": "Aucun quota de mots ou section artificielle ajoutée."},
-      {"skill": "internal-linking-audit", "status": "PASS", "output": "Liens vers dépression, décolmatage, guide de choix et usage bois placés selon les sous-questions."},
-      {"skill": "seo-onpage", "status": "PASS", "output": "Title/H1/meta alignés sur débit, unités et débit utile."},
-      {"skill": "seo-technical", "status": "PASS", "output": "Canonical et noindex, follow préservés."},
-      {"skill": "seo-best-practices", "status": "PASS", "output": "Réponse principale tôt et sources rattachées aux claims techniques."},
-      {"skill": "seo-drift", "status": "N/A", "reason": "Aucune baseline fournie pour une analyse de drift."},
-      {"skill": "editorial-qa", "status": "PASS", "output": "Frontière claire avec dépression/puissance et refus d’un seuil universel non justifié."}
+      {
+        "skill": "seo-content-audit",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE : rôle utile mais chevauchements à réduire avec puissance et dépression."
+      },
+      {
+        "skill": "seo-keyword",
+        "status": "PASS",
+        "output": "Topic maintenu sur débit d’air, L/s, m³/h et débit utile."
+      },
+      {
+        "skill": "search-intent",
+        "status": "PASS",
+        "output": "Intention EXPLAINER + diagnostic : comprendre puis interpréter le débit en usage réel."
+      },
+      {
+        "skill": "content-refresh",
+        "status": "PASS",
+        "output": "Diagnostic et captage préservés ; passages génériques sur puissance/dépression réduits."
+      },
+      {
+        "skill": "fact-check",
+        "status": "PASS",
+        "output": "Recommandations INRS et valeur Bosch revérifiées le 2026-09-11."
+      },
+      {
+        "skill": "evidence-based-reviews",
+        "status": "N/A",
+        "reason": "Aucune conclusion hands-on n’est utilisée."
+      },
+      {
+        "skill": "affiliate-value",
+        "status": "PASS",
+        "output": "La valeur vient du diagnostic et de la lecture de fiche, pas d’un CTA commercial."
+      },
+      {
+        "skill": "content-brief-authoring",
+        "status": "PASS",
+        "output": "Brief : définition -> unités -> captage -> mesure -> pertes -> diagnostic -> usage du chiffre."
+      },
+      {
+        "skill": "content-and-copy",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE rédigé autour du débit utile plutôt qu’un résumé de toutes les métriques."
+      },
+      {
+        "skill": "humanizer",
+        "status": "PASS",
+        "output": "Passage relu pour éviter les formulations mécaniques et répétitives."
+      },
+      {
+        "skill": "general-writing",
+        "status": "PASS",
+        "output": "Explication resserrée et exemples rendus actionnables."
+      },
+      {
+        "skill": "anti-ai-slop",
+        "status": "PASS",
+        "output": "Aucun quota de mots ou section artificielle ajoutée."
+      },
+      {
+        "skill": "internal-linking-audit",
+        "status": "PASS",
+        "output": "Liens vers dépression, décolmatage, guide de choix et usage bois placés selon les sous-questions."
+      },
+      {
+        "skill": "seo-onpage",
+        "status": "PASS",
+        "output": "Title/H1/meta alignés sur débit, unités et débit utile."
+      },
+      {
+        "skill": "seo-technical",
+        "status": "PASS",
+        "output": "Canonical et noindex, follow préservés."
+      },
+      {
+        "skill": "seo-best-practices",
+        "status": "PASS",
+        "output": "Réponse principale tôt et sources rattachées aux claims techniques."
+      },
+      {
+        "skill": "seo-drift",
+        "status": "N/A",
+        "reason": "Aucune baseline fournie pour une analyse de drift."
+      },
+      {
+        "skill": "editorial-qa",
+        "status": "PASS",
+        "output": "Frontière claire avec dépression/puissance et refus d’un seuil universel non justifié."
+      }
     ],
     "custom": [
-      {"skill": "guide-analysis-workflow", "status": "PASS", "output": "LIGHT_UPDATE confirmé et rôle débit/captage verrouillé."},
-      {"skill": "guide-content-workflow", "status": "PASS", "output": "Mise à jour evidence-led intégrée comme fragment v2."}
+      {
+        "skill": "guide-analysis-workflow",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE confirmé et rôle débit/captage verrouillé."
+      },
+      {
+        "skill": "guide-content-workflow",
+        "status": "PASS",
+        "output": "Mise à jour evidence-led intégrée comme fragment v2."
+      }
     ]
   },
-  "residual_risks": ["Les besoins de débit varient selon l’outil et la géométrie de captage ; éviter toute valeur universelle hors documentation du système concerné."],
-  "editorial": {"publish_review": "PASS — READY_FOR_HUMAN_VALIDATION", "human_validation": false, "robots": "noindex, follow"}
+  "residual_risks": [
+    "Les besoins de débit varient selon l’outil et la géométrie de captage ; éviter toute valeur universelle hors documentation du système concerné."
+  ],
+  "editorial": {
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "index, follow"
+  }
 }
