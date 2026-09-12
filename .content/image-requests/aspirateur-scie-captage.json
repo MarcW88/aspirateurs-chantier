@@ -1,0 +1,21 @@
+{
+  "id": "aspirateur-scie-captage",
+  "page": "usages/aspirateur-scie/index.html",
+  "slot": "captage-scie-portative",
+  "required": true,
+  "reason": "Visualiser l'importance du raccord et du flexible sur une scie portative avant toute comparaison de puissance d'aspirateur.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<h2 id=\"portative\">Scie circulaire ou plongeante : priorité au raccord stable et au flexible maniable</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/aspirateur-scie-captage.webp",
+  "prompt": "Photorealistic editorial documentary photograph in a real workshop showing a craftsperson making a controlled cut in a plain wood panel with a generic unbranded portable track saw or circular saw. A flexible dust extraction hose is visibly and naturally connected to the saw's dust port and runs to a generic unbranded mobile wet/dry dust extractor positioned on the floor nearby. Emphasize a stable connector, manageable hose routing and normal working posture rather than the product itself. Show realistic workshop surfaces, modest sawdust, practical daylight and neutral work lighting. No visible brand logos, no readable labels, no recognizable proprietary product shapes, no certification markings, no dramatic dust cloud, no unsafe cutting posture, no advertising composition and no implication that the website tested this exact equipment. Photorealistic editorial documentary photography, realistic proportions and materials, candid framing, generic equipment, no watermark, no generated text.",
+  "alt": "Scie portative générique reliée par un flexible à un aspirateur de chantier pendant une coupe de bois",
+  "caption": "",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}
