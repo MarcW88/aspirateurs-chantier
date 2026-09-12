@@ -1,0 +1,21 @@
+{
+  "id": "aspirateur-ponceuse-captage",
+  "page": "usages/aspirateur-ponceuse/index.html",
+  "slot": "captage-ponceuse",
+  "required": true,
+  "reason": "Montrer visuellement la boucle outil-raccord-flexible-aspirateur, qui est centrale dans la compréhension de cette page.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<h2 id=\"interface\">Le raccord et le flexible doivent disparaître du geste</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/aspirateur-ponceuse-captage.webp",
+  "prompt": "Photorealistic editorial documentary close-to-medium shot of a craftsperson sanding a plain wooden panel on a workbench with a generic unbranded random orbital sander. The sander is visibly connected to a flexible dust extraction hose leading naturally toward a generic unbranded wet/dry dust extractor positioned on the floor in the background. Emphasize the practical relationship between the tool, connector, hose and extractor rather than the product itself. Realistic workshop setting, subtle normal dust residue but no dramatic dust cloud, believable hose bend and working posture, safety glasses and ordinary workshop clothing, soft daylight with neutral practical workshop lighting. No visible brand logos, no readable labels, no recognizable proprietary product design, no product-packshot composition, no claim of perfect dust removal, no implication of a hands-on test by the website. Photorealistic editorial documentary photography, realistic proportions and materials, candid framing, generic equipment, no watermark, no generated text.",
+  "alt": "Ponceuse générique reliée par un flexible à un aspirateur de chantier dans un atelier",
+  "caption": "Illustration générique du captage à la source : outil, raccord, flexible et aspirateur fonctionnent comme un ensemble.",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}
