@@ -8,8 +8,14 @@ The order is intentional and enforced:
 4. non-brand usage shell + authored v2 materialization;
 5. comparison cluster with audited bespoke overrides;
 6. brand hubs;
-7. cluster metadata/index;
-8. validation.
+7. restore cross-cutting rendered layers (design, products, affiliate CTAs, images);
+8. cluster metadata/index;
+9. validation.
+
+Cross-cutting layers are part of the committed public artifact. Regenerating the
+editorial body must therefore not make canonical validation falsely report
+Amazon modules, verified model CTAs or already-generated editorial images as
+uncommitted drift.
 """
 from pathlib import Path
 import subprocess
@@ -18,9 +24,9 @@ import sys
 BASE = Path(__file__).resolve().parent
 
 
-def run(script):
-    print(f'→ {script}')
-    subprocess.run([sys.executable, str(BASE / script)], cwd=BASE, check=True)
+def run(script, *args):
+    print('→ ' + ' '.join((script, *args)))
+    subprocess.run([sys.executable, str(BASE / script), *args], cwd=BASE, check=True)
 
 
 def main():
@@ -36,6 +42,28 @@ def main():
     run('_generate_comparison_content.py')
     run('_generate_brand_content.py')
     run('_generate_brand_hub_index.py')
+
+    # Shared visual shell is canonical across generated page families.
+    run('_apply_design_v2.py')
+
+    # Commerce is a guarded post-render layer: restore only approved placements
+    # and exact-model links already present in the product registry.
+    placements = BASE / '.content/products/placements.json'
+    if placements.exists():
+        run('apply_product_cards.py', 'comparisons')
+        run('apply_product_cards.py', 'usages')
+        run('apply_product_cards.py', 'guides')
+        run('validate_product_cards.py', 'comparisons')
+        run('validate_product_cards.py', 'usages')
+        run('validate_product_cards.py', 'guides')
+        run('apply_inline_affiliate_links.py')
+        run('validate_inline_affiliate_links.py')
+
+    # Editorial images are restored from existing GENERATED assets only. This
+    # helper never calls BFL, so canonical regeneration has no generation cost.
+    run('scripts/restore_editorial_images.py', '--scope', 'usages')
+    run('scripts/restore_editorial_images.py', '--scope', 'guides')
+
     run('_apply_cluster_audit_metadata.py')
     run('_validate_comparatifs.py')
     run('_validate_comparison_rollout.py')
