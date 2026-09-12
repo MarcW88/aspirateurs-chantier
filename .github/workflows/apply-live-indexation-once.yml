@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   migrate:
@@ -41,18 +41,14 @@ jobs:
           python validate_product_cards.py all
           python validate_inline_affiliate_links.py
           python scripts/publish_indexation.py --check
-      - name: Package exact migrated files
+      - name: Persist non-workflow launch state
         run: |
-          mkdir -p .artifacts/indexation-migration/files
-          git diff --name-only > .artifacts/indexation-migration/manifest.txt
-          while IFS= read -r file; do
-            [ -n "$file" ] || continue
-            mkdir -p ".artifacts/indexation-migration/files/$(dirname "$file")"
-            cp "$file" ".artifacts/indexation-migration/files/$file"
-          done < .artifacts/indexation-migration/manifest.txt
-          cat .artifacts/indexation-migration/manifest.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: indexation-migration
-          path: .artifacts/indexation-migration
-          retention-days: 7
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- ':!.github/workflows/**' ':!.artifacts/**'
+          if git diff --cached --quiet; then
+            echo 'Nothing to commit outside workflows.'
+            exit 0
+          fi
+          git commit -m 'seo: publish all public pages for indexing'
+          git push origin HEAD:feat/index-site
