@@ -2,25 +2,8 @@ name: Validate live indexation
 
 on:
   pull_request:
-    branches: [main]
-    paths:
-      - '**/index.html'
-      - 'scripts/publish_indexation.py'
-      - 'robots.txt'
-      - 'sitemap.xml'
-      - '.github/workflows/*indexation*'
-      - '_generate.py'
-      - '_materialize_*'
-      - 'validate_*workflow.py'
-      - '*-workflow.config.yaml'
   push:
     branches: [main]
-    paths:
-      - '**/index.html'
-      - 'scripts/publish_indexation.py'
-      - 'robots.txt'
-      - 'sitemap.xml'
-      - '.github/workflows/*indexation*'
   workflow_dispatch:
 
 permissions:
