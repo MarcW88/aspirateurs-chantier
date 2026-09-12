@@ -17,10 +17,10 @@ ALLOWED_SECTIONS = {"comparisons", "usages", "guides"}
 
 def strip_previous_block(text: str, section: str, slug: str) -> str:
     pattern = re.compile(
-        rf'\n?<!-- PRODUCT_MODULE:{re.escape(section)}:{re.escape(slug)}:START -->.*?'
-        rf'<!-- PRODUCT_MODULE:{re.escape(section)}:{re.escape(slug)}:END -->\n?', re.S
+        rf'[ \t\r\n]*<!-- PRODUCT_MODULE:{re.escape(section)}:{re.escape(slug)}:START -->.*?'
+        rf'<!-- PRODUCT_MODULE:{re.escape(section)}:{re.escape(slug)}:END -->[ \t\r\n]*', re.S
     )
-    return pattern.sub("\n", text)
+    return pattern.sub("\n\n", text)
 
 
 def ensure_asset_tag(text: str, tag: str, before: str) -> str:
@@ -46,7 +46,9 @@ def apply_page(section: str, base_path: str, slug: str, config: dict, registry: 
     if not anchor:
         raise SystemExit(f"{section}/{slug}: insertion heading #{anchor_id} not found")
     block = render_section(slug, config, registry, section)
-    text = text[:anchor.start()] + block + "\n\n" + text[anchor.start():]
+    before = text[:anchor.start()].rstrip()
+    after = text[anchor.start():].lstrip("\r\n")
+    text = before + "\n\n" + block + "\n\n" + after
     page.write_text(text, encoding="utf-8")
     print(f"product module applied: {section}/{slug} ({len(config['products'])} products)")
 
