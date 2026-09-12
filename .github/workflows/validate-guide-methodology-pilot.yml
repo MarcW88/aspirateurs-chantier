@@ -44,7 +44,7 @@ jobs:
           grep -q 'id="lecture-rapide"' "$page"
           grep -q 'id="debit-classe-h"' "$page"
           grep -q 'NOETUDE%2FC2026-013' "$page"
-          grep -q '<meta name="robots" content="noindex, follow">' "$page"
+          grep -q '<meta name="robots" content="index, follow">' "$page"
           grep -q 'l’appareil complet' "$page"
           ! grep -q 'de nombreux poussières' "$page"
       - name: Require committed canonical render
