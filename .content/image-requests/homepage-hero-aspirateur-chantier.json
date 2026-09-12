@@ -1,0 +1,20 @@
+{
+  "id": "homepage-hero-aspirateur-chantier",
+  "page": "index.html",
+  "slot": "homepage-hero",
+  "required": true,
+  "reason": "Créer un visuel hero dédié à la homepage, plus fort éditorialement et centré sur l'aspirateur de chantier en situation réelle.",
+  "allow_ai_generation": true,
+  "truth_risk": "LOW",
+  "status": "PENDING",
+  "marker": "<img src=\"/assets/generated/aspirateur-renovation-captage.webp\" alt=\"Travail de rénovation avec un outil raccordé à un aspirateur de chantier générique\" width=\"1024\" height=\"672\" loading=\"eager\" decoding=\"async\">",
+  "placement": "replace",
+  "output_path": "assets/generated/homepage-hero-aspirateur-chantier.webp",
+  "prompt": "Photorealistic editorial documentary photograph for the hero of a specialist French website about construction-site vacuums. Create a wide, believable indoor renovation scene where a generic unbranded professional wet/dry dust extractor is clearly one of the main visual subjects, not a tiny background prop. The extractor should sit naturally in the foreground or mid-ground with a flexible hose visibly connected to a generic unbranded power tool used by a craftsperson. Prefer a sander, circular saw or plunge saw on a practical work surface rather than a dramatic drilling pose. Show only part of the craftsperson if useful; the image should feel observed and editorial, not like a staged stock portrait. Include realistic unfinished renovation materials, timber or plasterboard, a few ordinary hand tools, cables and subtle dust, with natural daylight and restrained neutral tones. Keep the workspace credible, tidy enough to read clearly at website hero size, and visually balanced for a horizontal 16:10 crop. The vacuum, hose and source-capture relationship must be immediately understandable. No visible logos, no readable labels, no certification marks, no proprietary product design, no fake measurements, no advertising composition, no showroom look, no excessive airborne dust, no watermark and no generated text. High-end but grounded European renovation photography, natural textures, realistic proportions, subtle contrast, candid framing.",
+  "alt": "Aspirateur de chantier générique raccordé à un outil électroportatif pendant des travaux de rénovation",
+  "caption": "",
+  "width": 1280,
+  "height": 800,
+  "prompt_upsampling": true,
+  "seed": null
+}
