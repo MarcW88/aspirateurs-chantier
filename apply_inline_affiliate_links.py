@@ -15,7 +15,7 @@ INLINE = ROOT / ".content/products/inline-affiliate.json"
 STYLE_TAG = '<link rel="stylesheet" href="/assets/product-cards.css">'
 INLINE_STYLE_TAG = '<link rel="stylesheet" href="/assets/inline-affiliate.css">'
 SCRIPT_TAG = '<script src="/assets/product-affiliate.js" defer></script>'
-GENERATED_RE = re.compile(r'\n?<!-- INLINE_AFFILIATE:[^>]+:START -->.*?<!-- INLINE_AFFILIATE:[^>]+:END -->\n?', re.S)
+GENERATED_RE = re.compile(r'[ \t\r\n]*<!-- INLINE_AFFILIATE:[^>]+:START -->.*?<!-- INLINE_AFFILIATE:[^>]+:END -->[ \t\r\n]*', re.S)
 ANSWER_BOX_RE = re.compile(r'(<div\b[^>]*class="[^"]*answer-box[^"]*"[^>]*>.*?</div>)', re.S | re.I)
 
 
@@ -34,6 +34,8 @@ def affiliate_url(product: dict, affiliate: dict) -> str:
 def ensure_asset(text: str, tag: str, before: str) -> str:
     if tag in text:
         return text
+    if before not in text:
+        raise SystemExit(f"Could not place asset tag before {before}")
     return text.replace(before, f"  {tag}\n{before}", 1)
 
 
@@ -79,7 +81,9 @@ def main() -> None:
                     match = ANSWER_BOX_RE.search(text)
                     if not match:
                         raise SystemExit(f"No answer-box found on {page_path}")
-                    text = text[:match.end()] + "\n" + block + text[match.end():]
+                    before = text[:match.end()].rstrip()
+                    after = text[match.end():].lstrip("\r\n")
+                    text = before + "\n" + block + "\n" + after
                     text = ensure_asset(text, STYLE_TAG, "</head>")
                     text = ensure_asset(text, INLINE_STYLE_TAG, "</head>")
                     text = ensure_asset(text, SCRIPT_TAG, "</body>")
