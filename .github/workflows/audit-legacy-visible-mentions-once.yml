@@ -1,0 +1,31 @@
+name: Audit legacy visible mentions once
+
+on:
+  push:
+    branches: [fix/remove-legacy-visible-mentions]
+    paths:
+      - '.github/workflows/audit-legacy-visible-mentions-once.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/remove-legacy-visible-mentions
+          fetch-depth: 0
+      - name: Find legacy noindex and 2025 mentions
+        shell: bash
+        run: |
+          echo '=== HTML matches ==='
+          grep -RInE 'noindex|2025' . \
+            --include='*.html' \
+            --exclude-dir=.git || true
+          echo '=== Generator/template matches ==='
+          grep -RInE 'noindex|2025' . \
+            --include='*.py' --include='*.js' --include='*.json' --include='*.yaml' --include='*.yml' \
+            --exclude-dir=.git --exclude='audit-legacy-visible-mentions-once.yml' || true
