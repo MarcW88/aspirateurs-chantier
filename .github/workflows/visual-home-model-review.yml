@@ -9,6 +9,7 @@ on:
       - "design-v2.css"
       - "design-v2-rollout.css"
       - "home-model-polish.css"
+      - "model-pages-v3.css"
       - "scripts/apply_home_model_review.py"
       - "_apply_design_v2.py"
       - ".agents/skills/site-design-review/**"
