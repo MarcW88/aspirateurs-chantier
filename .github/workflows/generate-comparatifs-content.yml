@@ -66,10 +66,10 @@ jobs:
           python _validate_comparatifs.py
           python _validate_comparison_rollout.py
 
-      - name: Preserve noindex
+      - name: Preserve live indexation
         run: |
           for f in comparatifs/*/index.html; do
-            grep -q '<meta name="robots" content="noindex, follow">' "$f"
+            grep -q '<meta name="robots" content="index, follow">' "$f"
           done
 
       - name: Reapply approved product modules
