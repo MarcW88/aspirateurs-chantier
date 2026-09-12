@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate 80/20 governance, records and draft safety
+      - name: Validate 80/20 governance, records and live safety
         run: python validate_usage_workflow.py
 
       - name: Generate base usage shells
@@ -50,10 +50,10 @@ jobs:
       - name: Revalidate usage workflow contract
         run: python validate_usage_workflow.py
 
-      - name: Preserve noindex
+      - name: Preserve live indexation
         run: |
           for f in usages/*/index.html; do
-            grep -q '<meta name="robots" content="noindex, follow">' "$f"
+            grep -q '<meta name="robots" content="index, follow">' "$f"
           done
 
       - name: Reapply approved product modules
