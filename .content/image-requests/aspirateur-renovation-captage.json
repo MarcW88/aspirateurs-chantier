@@ -6,7 +6,7 @@
   "reason": "Montrer le passage du simple nettoyage au captage à la source pendant une phase active de rénovation.",
   "allow_ai_generation": true,
   "truth_risk": "LOW",
-  "status": "PENDING",
+  "status": "GENERATED",
   "marker": "<h2 id=\"coupe-percage\">Perçage et découpe : l’aspirateur passe du nettoyage au captage</h2>",
   "placement": "before",
   "output_path": "assets/generated/aspirateur-renovation-captage.webp",
@@ -17,5 +17,8 @@
   "height": 672,
   "prompt_upsampling": true,
   "seed": null,
-  "generated_at": null
+  "generated_at": "2026-09-12T14:20:19.829869+00:00",
+  "bfl_request_id": "d72a45e9-c4e2-4cd0-9dc0-e58ed719f3f1",
+  "bfl_endpoint": "https://api.bfl.ai/v1/flux-2-pro-preview",
+  "bfl_cost": 3.0
 }

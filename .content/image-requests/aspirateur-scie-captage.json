@@ -6,7 +6,7 @@
   "reason": "Visualiser l'importance du raccord et du flexible sur une scie portative avant toute comparaison de puissance d'aspirateur.",
   "allow_ai_generation": true,
   "truth_risk": "LOW",
-  "status": "PENDING",
+  "status": "GENERATED",
   "marker": "<h2 id=\"portative\">Scie circulaire ou plongeante : priorité au raccord stable et au flexible maniable</h2>",
   "placement": "before",
   "output_path": "assets/generated/aspirateur-scie-captage.webp",
@@ -17,5 +17,8 @@
   "height": 672,
   "prompt_upsampling": true,
   "seed": null,
-  "generated_at": null
+  "generated_at": "2026-09-12T14:20:30.417125+00:00",
+  "bfl_request_id": "90b5f502-229c-46ea-9ca3-c32292a026ee",
+  "bfl_endpoint": "https://api.bfl.ai/v1/flux-2-pro-preview",
+  "bfl_cost": 3.0
 }

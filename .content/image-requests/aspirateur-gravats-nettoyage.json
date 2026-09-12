@@ -6,7 +6,7 @@
   "reason": "Illustrer la bonne séquence de nettoyage : gros morceaux retirés à la main, petites fractions et poussières résiduelles aspirées ensuite.",
   "allow_ai_generation": true,
   "truth_risk": "LOW",
-  "status": "PENDING",
+  "status": "GENERATED",
   "marker": "<h2 id=\"sequence\">Une séquence de nettoyage plus efficace que « tout aspirer »</h2>",
   "placement": "before",
   "output_path": "assets/generated/aspirateur-gravats-nettoyage.webp",
@@ -17,5 +17,8 @@
   "height": 672,
   "prompt_upsampling": true,
   "seed": null,
-  "generated_at": null
+  "generated_at": "2026-09-12T14:20:08.206785+00:00",
+  "bfl_request_id": "e4467318-3b97-40af-a611-7e57eee15328",
+  "bfl_endpoint": "https://api.bfl.ai/v1/flux-2-pro-preview",
+  "bfl_cost": 3.0
 }

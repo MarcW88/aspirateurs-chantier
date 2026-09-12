@@ -6,7 +6,7 @@
   "reason": "Rendre immédiatement compréhensible le workflow d'un outil filaire alimenté via la prise auxiliaire de l'aspirateur et aspiré simultanément.",
   "allow_ai_generation": true,
   "truth_risk": "LOW",
-  "status": "PENDING",
+  "status": "GENERATED",
   "marker": "<h2 id=\"filaire\">Comment fonctionne la prise asservie</h2>",
   "placement": "before",
   "output_path": "assets/generated/guide-prise-asservie.webp",
@@ -17,5 +17,8 @@
   "height": 672,
   "prompt_upsampling": true,
   "seed": null,
-  "generated_at": null
+  "generated_at": "2026-09-12T14:20:50.424746+00:00",
+  "bfl_request_id": "577540ea-fd13-4a32-a388-acb976ea3469",
+  "bfl_endpoint": "https://api.bfl.ai/v1/flux-2-pro-preview",
+  "bfl_cost": 3.0
 }
