@@ -75,6 +75,7 @@ bagless_ledger.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n",
 for page in sorted((BASE / "comparatifs").glob("*/index.html")):
     text = page.read_text(encoding="utf-8")
     text = text.replace("Desk research", "Recherche documentaire")
+    text = text.replace('<span class="ctype ctype-comp">Comp</span>', '<span class="ctype ctype-comp">Comparatif</span>')
     page.write_text(text, encoding="utf-8")
 
 print("✓ comparison rollout editorial polish")
