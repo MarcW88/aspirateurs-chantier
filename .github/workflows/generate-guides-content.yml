@@ -17,6 +17,8 @@ on:
       - 'validate_guide_workflow.py'
       - 'validate_guide_quality.py'
       - 'guide-workflow.config.yaml'
+      - 'scripts/generate_bfl_images.py'
+      - 'scripts/restore_editorial_images.py'
       - '.content/guides/**'
       - '.agents/skills/guide-*/**'
       - '.agents/skills/guide-skill-stack.json'
@@ -42,7 +44,7 @@ jobs:
           python-version: '3.12'
 
       - name: Compile Guide v2 pipeline
-        run: python -m py_compile _generate_guide_content.py _materialize_guides_v2.py _apply_design_v2.py validate_guide_workflow.py validate_guide_quality.py
+        run: python -m py_compile _generate_guide_content.py _materialize_guides_v2.py _apply_design_v2.py validate_guide_workflow.py validate_guide_quality.py scripts/generate_bfl_images.py scripts/restore_editorial_images.py
 
       - name: Generate canonical Guide content
         run: |
@@ -80,6 +82,9 @@ jobs:
             python apply_product_cards.py guides
             python validate_product_cards.py guides
           fi
+
+      - name: Restore generated editorial images
+        run: python scripts/restore_editorial_images.py --scope guides
 
       - name: HTML whitespace check
         run: git diff --check
