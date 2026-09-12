@@ -34,6 +34,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -73,6 +74,13 @@ jobs:
             exit 1
           fi
 
+      - name: Reapply approved product modules
+        run: |
+          if [ -f .content/products/placements.json ]; then
+            python apply_product_cards.py guides
+            python validate_product_cards.py guides
+          fi
+
       - name: HTML whitespace check
         run: git diff --check
 
@@ -87,4 +95,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add guides
           git commit -m "content: regenerate Guides with evidence-led workflow"
+          git pull --rebase origin main
           git push origin HEAD:main

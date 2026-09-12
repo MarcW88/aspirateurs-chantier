@@ -54,6 +54,13 @@ jobs:
             grep -q '<meta name="robots" content="noindex, follow">' "$f"
           done
 
+      - name: Reapply approved product modules
+        run: |
+          if [ -f .content/products/placements.json ]; then
+            python apply_product_cards.py usages
+            python validate_product_cards.py usages
+          fi
+
       - name: Whitespace check
         run: git diff --check
 
