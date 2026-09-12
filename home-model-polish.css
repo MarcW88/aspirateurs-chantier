@@ -119,108 +119,6 @@
 .design-v2.design-home .home-method-point p { margin: 0; color: var(--v2-muted); font-size: .79rem; line-height: 1.5; }
 .design-v2.design-home .home-method-links { margin-top: 16px; display: flex; gap: 18px; flex-wrap: wrap; font-size: .78rem; font-weight: 600; }
 
-/* ---------- Model pages ---------- */
-.design-v2.design-model .model-hero { padding: 44px 0 38px; }
-.design-v2.design-model .model-hero .container { max-width: 1120px; }
-.design-v2.design-model .model-hero-inner {
-  grid-template-columns: minmax(0, 1.15fr) minmax(340px, .78fr);
-  gap: clamp(54px, 7vw, 96px);
-  align-items: end;
-}
-.design-v2.design-model .model-badges { gap: 7px 10px; margin-bottom: 16px; }
-.design-v2.design-model .model-badges .ctype {
-  order: -3;
-  color: var(--v2-orange);
-  font-weight: 700;
-}
-.design-v2.design-model .model-badges .badge-blue {
-  background: transparent;
-  border-color: transparent;
-  color: var(--v2-muted);
-  padding-left: 0;
-  padding-right: 0;
-}
-.design-v2.design-model .model-title {
-  max-width: 690px;
-  font-size: clamp(2.2rem, 4.6vw, 3.45rem);
-  line-height: .98;
-  letter-spacing: -.035em;
-}
-.design-v2.design-model .model-tagline { max-width: 620px; margin-top: 15px; color: #525d66; }
-.design-v2.design-model .model-hero .page-meta { margin-top: 19px; }
-.design-v2.design-model .spec-sheet {
-  padding: 0;
-  border-top: 3px solid var(--v2-ink);
-  border-bottom: 1px solid #8f969b;
-  background: rgba(255,255,255,.22);
-}
-.design-v2.design-model .spec-sheet-header {
-  min-height: 38px;
-  padding: 10px 0 9px;
-  border-bottom: 1px solid var(--v2-rule);
-  font-size: .66rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.design-v2.design-model .spec-sheet .table-wrap { margin: 0; }
-.design-v2.design-model .spec-table td { padding: 8px 0; }
-.design-v2.design-model .spec-table .sk { width: 56%; color: var(--v2-muted); }
-.design-v2.design-model .spec-table .sv { width: 44%; font-weight: 600; }
-
-.design-v2.design-model .content-layout { padding-top: 34px; }
-.design-v2.design-model .content-main > .answer-box:first-child {
-  position: relative;
-  margin-bottom: 10px;
-  padding-top: 30px;
-  border-left-width: 3px;
-}
-.design-v2.design-model .content-main > .answer-box:first-child::before {
-  content: "Verdict documentaire";
-  position: absolute;
-  top: 0;
-  left: 22px;
-  color: var(--v2-orange);
-  font-family: var(--font-body);
-  font-size: .66rem;
-  font-weight: 700;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-.design-v2.design-model .inline-affiliate-action {
-  margin: 0 0 34px;
-  padding: 12px 0 15px;
-  border-bottom: 1px solid var(--v2-rule);
-}
-.design-v2.design-model .inline-affiliate-action .product-card__cta {
-  padding: 8px 11px !important;
-  background: transparent !important;
-  color: var(--v2-blue) !important;
-  border: 1px solid #aeb6bd !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  font-size: .77rem !important;
-  font-weight: 650 !important;
-}
-.design-v2.design-model .inline-affiliate-action .product-card__cta:hover { border-color: var(--v2-blue) !important; }
-.design-v2.design-model .inline-affiliate-action .product-card__disclosure { color: var(--v2-muted); font-size: .66rem; }
-.design-v2.design-model .content-main h2 {
-  margin-top: 46px;
-  padding-top: 18px;
-  border-top: 1px solid #c8c6bf;
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-  line-height: 1.15;
-}
-.design-v2.design-model .content-main h2:first-of-type { margin-top: 28px; border-top-color: #8f969b; }
-.design-v2.design-model .content-main p { line-height: 1.68; }
-.design-v2.design-model .content-sidebar .sidebar-box { padding-top: 13px; border-top: 1px solid #a9adae; }
-.design-v2.design-model .content-sidebar .sidebar-box-head {
-  color: var(--v2-muted);
-  font-size: .64rem;
-  font-weight: 700;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-.design-v2.design-model .content-sidebar .toc-list a { padding: 5px 0; line-height: 1.35; }
 
 @media (max-width: 1024px) {
   .design-v2.design-home .home-hero-grid { grid-template-columns: 1fr; gap: 38px; }
@@ -233,8 +131,8 @@
     border-bottom: 1px solid var(--v2-rule);
   }
   .design-v2.design-home .home-method-inner { grid-template-columns: 1fr; gap: 30px; }
-  .design-v2.design-model .model-hero-inner { grid-template-columns: 1fr; gap: 32px; }
-  .design-v2.design-model .spec-sheet { max-width: 720px; }
+  
+  
 }
 
 @media (max-width: 768px) {
@@ -275,20 +173,15 @@
   .design-v2.design-home .home-reference-table td:nth-child(6)::before { content: "Analyse"; }
   .design-v2.design-home .home-method { padding: 42px 0 48px; }
 
-  .design-v2.design-model .model-hero { padding: 26px 0 28px; }
-  .design-v2.design-model .model-title { font-size: clamp(2rem, 11vw, 2.75rem); }
-  .design-v2.design-model .spec-sheet { margin-top: 2px; }
-  .design-v2.design-model .content-layout { padding-top: 22px; }
-  .design-v2.design-model .content-main h2 { margin-top: 38px; padding-top: 15px; }
-  .design-v2.design-model .content-main .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .design-v2.design-model .content-main .table-wrap table { min-width: 620px; }
-  .design-v2.design-model .content-main > .answer-box:first-child { padding-top: 28px; }
-  .design-v2.design-model .mobile-toc-box {
-    margin: 0 0 24px;
-    padding: 0;
-    border-top: 2px solid var(--v2-ink);
-    border-bottom: 1px solid var(--v2-rule);
-  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }
 
 
