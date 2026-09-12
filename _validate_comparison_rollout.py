@@ -44,7 +44,7 @@ def text(slug):
 for slug in ALL:
     h = html(slug)
     d = data(slug)
-    check('<meta name="robots" content="noindex, follow">' in h, f"{slug}: noindex/follow changed")
+    check('<meta name="robots" content="index, follow">' in h, f"{slug}: noindex/follow changed")
     check(d.get("notes", {}).get("affiliate_commission_used_in_ranking") is False, f"{slug}: affiliate independence missing")
     check("notre classement 2026" not in h.lower() and "score ajusté" not in h.lower(), f"{slug}: legacy ranking language remains")
 
@@ -138,4 +138,4 @@ print("COMPARISON_ROLLOUT_V2: PASS")
 print(" - 8 retained comparisons materialize authored evidence-led v2 fragments")
 print(" - bagless remains a human-gated merge candidate")
 print(" - page roles are distinct and exact structural cloning is blocked")
-print(" - all 9 comparison URLs remain noindex, follow")
+print(" - all 9 comparison URLs remain index, follow")

@@ -92,8 +92,8 @@ for slug in SLUGS:
 
     if canonical is None or canonical.group(1) != expected_canonical:
         errors.append(f"{slug}: canonical mismatch")
-    if robots is None or "noindex" not in robots.group(1).lower() or "follow" not in robots.group(1).lower():
-        errors.append(f"{slug}: draft robots must contain noindex, follow")
+    if robots is None or "index" not in robots.group(1).lower() or "follow" not in robots.group(1).lower():
+        errors.append(f"{slug}: draft robots must contain index, follow")
     if h1_count != 1:
         errors.append(f"{slug}: expected exactly one H1, got {h1_count}")
     for placeholder in PLACEHOLDERS:

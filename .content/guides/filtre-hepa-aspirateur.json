@@ -1,43 +1,168 @@
 {
-  "contract_version":1,
-  "slug":"filtre-hepa-aspirateur",
-  "url":"/guides/filtre-hepa-aspirateur/",
-  "guide_type":"EXPLAINER",
-  "audit_decision":"LIGHT_UPDATE",
-  "intent":{"reader_task":"Comprendre H13/H14 et vérifier ce que le marquage HEPA dit — et ne dit pas — sur un aspirateur de chantier."},
-  "value_to_preserve":["H13/H14 à la MPPS.","HEPA != classe H.","Cas amiante comme démonstration du système complet."],
-  "evidence":[
-    {"id":"S1","claim":"EN 1822 donne au H13 une efficacité intégrale minimale de 99,95 % et au H14 de 99,995 %, soit une pénétration dix fois plus faible pour H14.","source":"https://airfiltration.mann-hummel.com/fr-fr/guide/classification-des-filtres/en-1822.html","checked_at":"2026-09-11","status":"SUPPORTED"},
-    {"id":"S2","claim":"Pour l’amiante, l’INRS demande à la fois un aspirateur de classe H selon IEC 60335-2-69 et des filtres THE au minimum H13 ou H14, parmi d’autres exigences.","source":"https://www.inrs.fr/risques/amiante/prevention-risque-amiante.html","checked_at":"2026-09-11","status":"SUPPORTED"}
+  "contract_version": 1,
+  "slug": "filtre-hepa-aspirateur",
+  "url": "/guides/filtre-hepa-aspirateur/",
+  "guide_type": "EXPLAINER",
+  "audit_decision": "LIGHT_UPDATE",
+  "intent": {
+    "reader_task": "Comprendre H13/H14 et vérifier ce que le marquage HEPA dit — et ne dit pas — sur un aspirateur de chantier."
+  },
+  "value_to_preserve": [
+    "H13/H14 à la MPPS.",
+    "HEPA != classe H.",
+    "Cas amiante comme démonstration du système complet."
   ],
-  "outline":[
-    {"question":"Que décrit HEPA ?","evidence_refs":["S1"],"decision_value":"Séparer performance du filtre et certification machine."},
-    {"question":"Pourquoi H13 et H14 diffèrent-ils ?","evidence_refs":["S1"],"decision_value":"Lire efficacité et pénétration."},
-    {"question":"Pourquoi l’amiante exige-t-il plus qu’un filtre HEPA ?","evidence_refs":["S2"],"decision_value":"Rendre visible le rôle du système complet."}
+  "evidence": [
+    {
+      "id": "S1",
+      "claim": "EN 1822 donne au H13 une efficacité intégrale minimale de 99,95 % et au H14 de 99,995 %, soit une pénétration dix fois plus faible pour H14.",
+      "source": "https://airfiltration.mann-hummel.com/fr-fr/guide/classification-des-filtres/en-1822.html",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "S2",
+      "claim": "Pour l’amiante, l’INRS demande à la fois un aspirateur de classe H selon IEC 60335-2-69 et des filtres THE au minimum H13 ou H14, parmi d’autres exigences.",
+      "source": "https://www.inrs.fr/risques/amiante/prevention-risque-amiante.html",
+      "checked_at": "2026-09-11",
+      "status": "SUPPORTED"
+    }
   ],
-  "workflow_execution":{"shared":[
-    {"skill":"seo-content-audit","status":"PASS","output":"LIGHT_UPDATE confirmé ; frontière avec L/M/H à resserrer."},
-    {"skill":"seo-keyword","status":"PASS","output":"Topic filtre HEPA / H13 / H14 conservé."},
-    {"skill":"search-intent","status":"PASS","output":"EXPLAINER centré média filtrant et limites du marquage."},
-    {"skill":"content-refresh","status":"PASS","output":"Focus renforcé sur filtre, étanchéité et compatibilité ; répétition L/M/H réduite."},
-    {"skill":"fact-check","status":"PASS","output":"Valeurs H13/H14 et exigences INRS amiante revérifiées le 2026-09-11."},
-    {"skill":"evidence-based-reviews","status":"N/A","reason":"Aucun jugement expérientiel produit."},
-    {"skill":"affiliate-value","status":"PASS","output":"Checklist de filtre utile indépendamment d’un achat affilié."},
-    {"skill":"content-brief-authoring","status":"PASS","output":"Brief HEPA -> H13/H14 -> système -> classe H -> amiante -> achat -> entretien."},
-    {"skill":"content-and-copy","status":"PASS","output":"LIGHT_UPDATE rédigé sans refaire le guide L/M/H."},
-    {"skill":"humanizer","status":"PASS","output":"Style relu."},
-    {"skill":"general-writing","status":"PASS","output":"Terminologie normalisée et répétitions réduites."},
-    {"skill":"anti-ai-slop","status":"PASS","output":"Aucune section de remplissage."},
-    {"skill":"internal-linking-audit","status":"PASS","output":"Lien vers L/M/H et entretien seulement quand nécessaire."},
-    {"skill":"seo-onpage","status":"PASS","output":"Title/H1/meta centrés HEPA H13/H14."},
-    {"skill":"seo-technical","status":"PASS","output":"Canonical et noindex, follow préservés."},
-    {"skill":"seo-best-practices","status":"PASS","output":"Réponse et différence filtre/machine visibles tôt."},
-    {"skill":"seo-drift","status":"N/A","reason":"Pas de baseline fournie."},
-    {"skill":"editorial-qa","status":"PASS","output":"HEPA, H13/H14 et classe H restent explicitement distincts."}
-  ],"custom":[
-    {"skill":"guide-analysis-workflow","status":"PASS","output":"LIGHT_UPDATE EXPLAINER validé."},
-    {"skill":"guide-content-workflow","status":"PASS","output":"Fragment v2 produit."}
-  ]},
-  "residual_risks":["La classe et la compatibilité d’un filtre doivent être vérifiées pour la référence vendue, pas seulement pour une famille de produits."],
-  "editorial":{"publish_review":"PASS — READY_FOR_HUMAN_VALIDATION","human_validation":false,"robots":"noindex, follow"}
+  "outline": [
+    {
+      "question": "Que décrit HEPA ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "Séparer performance du filtre et certification machine."
+    },
+    {
+      "question": "Pourquoi H13 et H14 diffèrent-ils ?",
+      "evidence_refs": [
+        "S1"
+      ],
+      "decision_value": "Lire efficacité et pénétration."
+    },
+    {
+      "question": "Pourquoi l’amiante exige-t-il plus qu’un filtre HEPA ?",
+      "evidence_refs": [
+        "S2"
+      ],
+      "decision_value": "Rendre visible le rôle du système complet."
+    }
+  ],
+  "workflow_execution": {
+    "shared": [
+      {
+        "skill": "seo-content-audit",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE confirmé ; frontière avec L/M/H à resserrer."
+      },
+      {
+        "skill": "seo-keyword",
+        "status": "PASS",
+        "output": "Topic filtre HEPA / H13 / H14 conservé."
+      },
+      {
+        "skill": "search-intent",
+        "status": "PASS",
+        "output": "EXPLAINER centré média filtrant et limites du marquage."
+      },
+      {
+        "skill": "content-refresh",
+        "status": "PASS",
+        "output": "Focus renforcé sur filtre, étanchéité et compatibilité ; répétition L/M/H réduite."
+      },
+      {
+        "skill": "fact-check",
+        "status": "PASS",
+        "output": "Valeurs H13/H14 et exigences INRS amiante revérifiées le 2026-09-11."
+      },
+      {
+        "skill": "evidence-based-reviews",
+        "status": "N/A",
+        "reason": "Aucun jugement expérientiel produit."
+      },
+      {
+        "skill": "affiliate-value",
+        "status": "PASS",
+        "output": "Checklist de filtre utile indépendamment d’un achat affilié."
+      },
+      {
+        "skill": "content-brief-authoring",
+        "status": "PASS",
+        "output": "Brief HEPA -> H13/H14 -> système -> classe H -> amiante -> achat -> entretien."
+      },
+      {
+        "skill": "content-and-copy",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE rédigé sans refaire le guide L/M/H."
+      },
+      {
+        "skill": "humanizer",
+        "status": "PASS",
+        "output": "Style relu."
+      },
+      {
+        "skill": "general-writing",
+        "status": "PASS",
+        "output": "Terminologie normalisée et répétitions réduites."
+      },
+      {
+        "skill": "anti-ai-slop",
+        "status": "PASS",
+        "output": "Aucune section de remplissage."
+      },
+      {
+        "skill": "internal-linking-audit",
+        "status": "PASS",
+        "output": "Lien vers L/M/H et entretien seulement quand nécessaire."
+      },
+      {
+        "skill": "seo-onpage",
+        "status": "PASS",
+        "output": "Title/H1/meta centrés HEPA H13/H14."
+      },
+      {
+        "skill": "seo-technical",
+        "status": "PASS",
+        "output": "Canonical et noindex, follow préservés."
+      },
+      {
+        "skill": "seo-best-practices",
+        "status": "PASS",
+        "output": "Réponse et différence filtre/machine visibles tôt."
+      },
+      {
+        "skill": "seo-drift",
+        "status": "N/A",
+        "reason": "Pas de baseline fournie."
+      },
+      {
+        "skill": "editorial-qa",
+        "status": "PASS",
+        "output": "HEPA, H13/H14 et classe H restent explicitement distincts."
+      }
+    ],
+    "custom": [
+      {
+        "skill": "guide-analysis-workflow",
+        "status": "PASS",
+        "output": "LIGHT_UPDATE EXPLAINER validé."
+      },
+      {
+        "skill": "guide-content-workflow",
+        "status": "PASS",
+        "output": "Fragment v2 produit."
+      }
+    ]
+  },
+  "residual_risks": [
+    "La classe et la compatibilité d’un filtre doivent être vérifiées pour la référence vendue, pas seulement pour une famille de produits."
+  ],
+  "editorial": {
+    "publish_review": "PASS — READY_FOR_HUMAN_VALIDATION",
+    "human_validation": false,
+    "robots": "index, follow"
+  }
 }

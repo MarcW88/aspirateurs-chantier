@@ -30,7 +30,7 @@ for slug in MODELS:
     check('MM/AAAA' not in h, f'{slug}: stale verification placeholder')
     check('Contenu test à rédiger' not in h, f'{slug}: test-content placeholder')
     check('<!-- Contenu à rédiger -->' not in h, f'{slug}: content placeholder')
-    check('<meta name="robots" content="noindex, follow">' in h, f'{slug}: robots changed')
+    check('<meta name="robots" content="index, follow">' in h, f'{slug}: robots changed')
     has_source_section = (
         '<h2 id="source">Source fabricant</h2>' in h
         or '<h2 id="sources">Sources et méthode</h2>' in h
@@ -63,7 +63,7 @@ for slug in USAGES:
     check('MM/AAAA' not in h, f'{slug}: stale date placeholder')
     check(len(re.findall(r'<h2\b', h)) >= 5, f'{slug}: insufficient intent depth')
     check('<h2 id="sources">Sources et méthode</h2>' in h, f'{slug}: sources missing')
-    check('<meta name="robots" content="noindex, follow">' in h, f'{slug}: robots changed')
+    check('<meta name="robots" content="index, follow">' in h, f'{slug}: robots changed')
 
 # Professional comparison: validate the current v2 semantic contract rather than
 # freezing legacy H2 IDs or exact scenario labels. The comparison workflow forbids
@@ -81,7 +81,7 @@ check(
 )
 check('/comparatifs/aspirateur-classe-m/' in professional,
       'professional comparison: class-M handoff missing')
-check('<meta name="robots" content="noindex, follow">' in professional,
+check('<meta name="robots" content="index, follow">' in professional,
       'professional comparison: robots changed')
 
 # The persistent comparison ledger is the source of truth for intent boundaries,
@@ -167,4 +167,4 @@ print(f' - {len(MODELS)} model pages verified')
 print(f' - {len(USAGES)} usage pages completed')
 print(' - professional comparison v2 intent boundary and scenario diversity verified from persistent evidence')
 print(' - brand recovery verdicts aligned with latest 2026-09-10 cluster audit')
-print(' - noindex, follow preserved')
+print(' - index, follow preserved')

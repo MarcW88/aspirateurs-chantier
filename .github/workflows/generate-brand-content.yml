@@ -73,10 +73,10 @@ jobs:
           after=$(find marques/karcher marques/bosch marques/makita marques/festool marques/dewalt marques/parkside marques/nilfisk marques/mirka .content/brands -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum)
           test "$before" = "$after"
 
-      - name: Preserve noindex drafts
+      - name: Preserve live indexation
         run: |
           for f in marques/karcher/index.html marques/bosch/index.html marques/makita/index.html marques/festool/index.html marques/dewalt/index.html marques/parkside/index.html marques/nilfisk/index.html marques/mirka/index.html; do
-            grep -q '<meta name="robots" content="noindex, follow">' "$f"
+            grep -q '<meta name="robots" content="index, follow">' "$f"
           done
 
       - name: Whitespace check

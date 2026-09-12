@@ -178,7 +178,7 @@
     "scoring_used": false,
     "affiliate_commission_used_in_ranking": false,
     "desk_research_only": true,
-    "noindex_during_rollout": true,
+    "noindex_during_rollout": false,
     "hands_on_test": false,
     "v2_editorial_source": ".content/comparisons/v2/aspirateur-industriel.html",
     "v2_editorial_date": "2026-09-11",

@@ -72,8 +72,8 @@ def render(slug, cfg):
     html = re.sub(r"Vérifié\s*:\s*\d{2}/\d{2}/\d{4}", f"Vérifié : {UPDATED_LABEL}", html)
     html = re.sub(r"Vérifié\s*:\s*\d{2}/\d{4}", f"Vérifié : {UPDATED_LABEL}", html)
 
-    if '<meta name="robots" content="noindex, follow">' not in html:
-        raise RuntimeError(f"{slug}: noindex, follow missing after materialization")
+    if '<meta name="robots" content="index, follow">' not in html:
+        raise RuntimeError(f"{slug}: index, follow missing after materialization")
     if len(re.findall(r"<h1\b", html, re.I)) != 1:
         raise RuntimeError(f"{slug}: materialized page must contain exactly one H1")
 

@@ -123,7 +123,7 @@ if CONFIG.exists():
     config_text = CONFIG.read_text(encoding="utf-8")
     for slug in GUIDE_SLUGS:
         check(f'/guides/{slug}/' in config_text, f"{slug}: route missing from guide-workflow.config.yaml")
-    check('draft_robots: "noindex, follow"' in config_text, "config must preserve draft noindex, follow")
+    check('draft_robots: "index, follow"' in config_text, "config must preserve draft index, follow")
     check('require_human_validation_before_indexation: true' in config_text, "config must require human validation before indexation")
     check('allow_automatic_indexation: false' in config_text, "config must prohibit automatic indexation")
 
@@ -138,7 +138,7 @@ for slug in GUIDE_SLUGS:
         continue
     html = page.read_text(encoding="utf-8")
     robots = [normalized_robots(v) for v in ROBOTS_RE.findall(html)]
-    check("noindex,follow" in robots, f"{slug}: draft noindex, follow missing")
+    check("index,follow" in robots, f"{slug}: draft index, follow missing")
     canonicals = CANONICAL_RE.findall(html)
     expected = f"{SITE_ORIGIN}/guides/{slug}/"
     check(canonicals == [expected], f"{slug}: canonical mismatch ({canonicals!r})")
@@ -149,7 +149,7 @@ check(hub.exists(), "Guide hub missing")
 if hub.exists():
     html = hub.read_text(encoding="utf-8")
     robots = [normalized_robots(v) for v in ROBOTS_RE.findall(html)]
-    check("noindex,follow" in robots, "Guide hub must remain noindex, follow during recovery")
+    check("index,follow" in robots, "Guide hub must remain index, follow during recovery")
     check(CANONICAL_RE.findall(html) == [f"{SITE_ORIGIN}/guides/"], "Guide hub canonical mismatch")
 
 # Run evidence is optional until a Guide actually enters the workflow. If a record
@@ -190,7 +190,7 @@ if RECORDS.exists():
         editorial = record.get("editorial", {})
         check(editorial.get("publish_review") in ALLOWED_PUBLISH, f"{slug}: invalid publish_review")
         check(editorial.get("human_validation") is False, f"{slug}: workflow must not fabricate human validation")
-        check(editorial.get("robots") == "noindex, follow", f"{slug}: record must preserve noindex, follow")
+        check(editorial.get("robots") == "index, follow", f"{slug}: record must preserve index, follow")
 
 if errors:
     print("GUIDE_WORKFLOW: FAIL")
@@ -203,5 +203,5 @@ print(f" - shared responsibilities: {len(shared_resp)}/{total} ({shared_ratio:.1
 print(f" - custom responsibilities: {len(custom_resp)}/{total} ({custom_ratio:.1%})")
 print(f" - shared skills with bloc-notes provenance: {len(stack.get('shared', []))}")
 print(" - custom skills restricted to guide-analysis-workflow and guide-content-workflow")
-print(f" - {len(GUIDE_SLUGS)} Guide drafts + hub remain noindex, follow")
+print(f" - {len(GUIDE_SLUGS)} Guide drafts + hub remain index, follow")
 print("NOTE: run-evidence is required only once a Guide is worked; machine PASS never awards editorial approval.")

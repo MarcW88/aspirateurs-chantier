@@ -42,10 +42,10 @@ jobs:
       - name: Validate product modules
         run: python validate_product_cards.py all
 
-      - name: Preserve noindex
+      - name: Preserve live indexation
         run: |
           for f in comparatifs/*/index.html usages/*/index.html guides/*/index.html; do
-            grep -Eq '<meta name="robots" content="noindex, ?follow">' "$f"
+            grep -Eq '<meta name="robots" content="index, ?follow">' "$f"
           done
 
       - name: Commit generated modules

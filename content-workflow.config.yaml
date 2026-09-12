@@ -49,7 +49,7 @@ internal_linking:
 workflow:
   briefs_dir: ".content/briefs"
   reviews_dir: ".content/reviews"
-  draft_robots: "noindex,follow"
+  draft_robots: "index,follow"
   require_human_validation_before_publish: true
   allow_automatic_merge: false
 

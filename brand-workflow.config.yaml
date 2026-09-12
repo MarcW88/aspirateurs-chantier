@@ -64,7 +64,7 @@ quality:
   editorial_reference: "/guides/comment-choisir-aspirateur-de-chantier/"
   visual_reference: "/marques/bosch/"
   visual_reference_is_not_structure_template: true
-  draft_robots: "noindex, follow"
+  draft_robots: "index, follow"
   prohibit_word_count_quotas: true
   prohibit_heading_count_quotas: true
   prohibit_internal_link_quotas: true
@@ -180,7 +180,7 @@ editorial_chain:
 quality_gate:
   require_sources_for_material_factual_claims: true
   require_limitations_when_decision_relevant: true
-  require_noindex_in_draft: true
+  require_noindex_in_draft: false
   require_run_evidence_for_ready_status: true
   prohibit_fake_test_language: true
   prohibit_editor_facing_metadiscourse: true
