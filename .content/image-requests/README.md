@@ -25,21 +25,31 @@ Les statuts `NOT_NEEDED` et `BLOCKED` sont ignorés.
 8. Le JSON passe à `GENERATED`.
 9. Si une régénération de contenu retire le `<figure>`, le workflow réinsère l'image existante sans nouvel appel API.
 
+## Présentation
+
+Les images générées n'affichent pas de légende visible sous le visuel. Le contexte éditorial est donné par le texte de la page et l'accessibilité par l'attribut `alt`. Le template de requête ne contient donc plus de champ `caption`; les anciennes légendes sont également masquées par le design V2 pour garantir la cohérence du site.
+
 ## Garde-fous
 
 Ne pas générer de représentation fidèle d'un modèle précis, logo, accessoire propriétaire, certification L/M/H, interface, benchmark, résultat de mesure ou faux test hands-on. Ces besoins doivent être `BLOCKED` et alimentés par une vraie photo ou une source officielle.
 
 Par défaut, viser zéro ou une image IA par page.
 
-## Pilot initial
+## Couverture éditoriale actuelle
 
-Le premier lot validé couvre trois scènes d'usage à faible risque de vérité :
+Le workflow a été utilisé pour neuf scènes à faible risque de vérité :
 
 - organisation de plusieurs postes dans un atelier ;
 - ponceuse raccordée à une aspiration générique ;
-- ponçage de plâtre/enduit avec captage à la source.
+- ponçage de plâtre/enduit avec captage à la source ;
+- atelier bois : aspiration mobile et collecte fixe ;
+- nettoyage de petits gravats après retrait des gros morceaux ;
+- rénovation : captage à la source pendant perçage/découpe ;
+- scie portative raccordée à une aspiration ;
+- prise asservie : câble d'alimentation et flexible d'aspiration ;
+- entretien : inspection simple du flexible et des raccords, machine débranchée.
 
-Ces images restent explicitement des illustrations éditoriales génériques. Elles ne représentent aucun modèle précis et ne constituent pas des preuves de test.
+Les fiches modèles, pages marques, comparatifs produit, classes L/M/H, HEPA et pages de métriques restent volontairement sans image IA lorsqu'une représentation exacte ou une vraie source fabricant est préférable.
 
 ## Paramètres par défaut
 
