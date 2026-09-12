@@ -3,6 +3,7 @@
 
 /* ---------- Homepage ---------- */
 .design-v2.design-home .home-hero-grid {
+  display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(330px, .72fr);
   align-items: end;
   gap: clamp(54px, 8vw, 112px);
@@ -239,7 +240,39 @@
 @media (max-width: 768px) {
   .design-v2.design-home .hero { padding-top: 42px; padding-bottom: 42px; }
   .design-v2.design-home .home-decision-link { grid-template-columns: 24px minmax(0, 1fr) auto; }
-  .design-v2.design-home .home-reference-table { min-width: 760px; }
+  .design-v2.design-home .home-reference-table,
+  .design-v2.design-home .home-reference-table tbody,
+  .design-v2.design-home .home-reference-table tr,
+  .design-v2.design-home .home-reference-table td { display: block; width: 100%; }
+  .design-v2.design-home .home-reference-table { min-width: 0; }
+  .design-v2.design-home .home-reference-table thead { display: none; }
+  .design-v2.design-home .home-reference-table tr {
+    padding: 15px 0 17px;
+    border-top: 1px solid #aeb1ae;
+  }
+  .design-v2.design-home .home-reference-table tr:last-child { border-bottom: 1px solid #aeb1ae; }
+  .design-v2.design-home .home-reference-table td {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
+    padding: 4px 0;
+    border: 0;
+    font-size: .78rem;
+  }
+  .design-v2.design-home .home-reference-table td::before {
+    color: var(--v2-muted);
+    font-family: var(--font-body);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  .design-v2.design-home .home-reference-table td:nth-child(1)::before { content: "Profil"; }
+  .design-v2.design-home .home-reference-table td:nth-child(2)::before { content: "Référence"; }
+  .design-v2.design-home .home-reference-table td:nth-child(3)::before { content: "Classe"; }
+  .design-v2.design-home .home-reference-table td:nth-child(4)::before { content: "Point utile"; }
+  .design-v2.design-home .home-reference-table td:nth-child(5)::before { content: "Contrepartie"; }
+  .design-v2.design-home .home-reference-table td:nth-child(6)::before { content: "Analyse"; }
   .design-v2.design-home .home-method { padding: 42px 0 48px; }
 
   .design-v2.design-model .model-hero { padding: 26px 0 28px; }
