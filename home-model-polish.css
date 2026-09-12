@@ -290,3 +290,119 @@
     border-bottom: 1px solid var(--v2-rule);
   }
 }
+
+
+/* ---------- Homepage BNN rhythm tune ---------- */
+.design-v2.design-home .home-hero-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .92fr);
+  align-items: stretch;
+  gap: clamp(38px, 6vw, 78px);
+}
+.design-v2.design-home .home-hero-copy {
+  align-self: center;
+  padding: 26px 0;
+}
+.design-v2.design-home .home-hero-copy .hero-desc {
+  max-width: 610px;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+}
+.design-v2.design-home .home-hero-visual {
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid var(--v2-rule);
+  background: #e8e7e1;
+}
+.design-v2.design-home .home-hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+}
+.design-v2.design-home .home-hero + .section--alt {
+  border-top: 1px solid var(--v2-rule);
+}
+.design-v2.design-home .section-head.home-centered-heading,
+.design-v2.design-home .section--alt > .container > .section-head:first-child {
+  max-width: 720px;
+}
+.design-v2.design-home .home-reading-section {
+  border-top: 1px solid var(--v2-rule);
+  border-bottom: 1px solid var(--v2-rule);
+  background: #f8f7f2;
+}
+.design-v2.design-home .home-reading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.design-v2.design-home .home-reading-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  color: var(--v2-ink);
+  text-decoration: none;
+  background: rgba(255,255,255,.38);
+  border: 1px solid var(--v2-rule);
+}
+.design-v2.design-home .home-reading-card:hover {
+  border-color: #9da4a8;
+}
+.design-v2.design-home .home-reading-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #e7e6e0;
+}
+.design-v2.design-home .home-reading-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
+.design-v2.design-home .home-reading-card:hover .home-reading-media img {
+  transform: scale(1.015);
+}
+.design-v2.design-home .home-reading-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px 18px 17px;
+}
+.design-v2.design-home .home-reading-body h3 {
+  margin: 10px 0 7px;
+  font-size: 1.08rem;
+  line-height: 1.22;
+}
+.design-v2.design-home .home-reading-body p {
+  margin: 0 0 16px;
+  color: var(--v2-muted);
+  font-size: .82rem;
+  line-height: 1.55;
+}
+.design-v2.design-home .home-reading-link {
+  margin-top: auto;
+  color: var(--v2-blue);
+  font-size: .77rem;
+  font-weight: 650;
+}
+.design-v2.design-home .usage-grid {
+  gap: 14px;
+}
+.design-v2.design-home .usage-card {
+  min-height: 150px;
+}
+@media (max-width: 1024px) {
+  .design-v2.design-home .home-hero-grid { grid-template-columns: 1fr; }
+  .design-v2.design-home .home-hero-visual { min-height: 340px; max-width: 760px; }
+  .design-v2.design-home .home-hero-visual img { min-height: 340px; }
+  .design-v2.design-home .home-reading-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .design-v2.design-home .home-hero-visual,
+  .design-v2.design-home .home-hero-visual img { min-height: 250px; }
+  .design-v2.design-home .home-reading-grid { grid-template-columns: 1fr; }
+  .design-v2.design-home .home-reading-card { display: grid; grid-template-columns: 124px minmax(0, 1fr); }
+  .design-v2.design-home .home-reading-media { aspect-ratio: auto; min-height: 100%; }
+  .design-v2.design-home .home-reading-body { padding: 15px; }
+}
