@@ -1,0 +1,21 @@
+{
+  "id": "<slug>-<slot>",
+  "page": "usages/<slug>/index.html",
+  "slot": "editorial",
+  "required": false,
+  "reason": "",
+  "allow_ai_generation": false,
+  "truth_risk": "LOW",
+  "status": "NOT_NEEDED",
+  "marker": "<h2 id=\"section\">Titre stable de section</h2>",
+  "placement": "before",
+  "output_path": "assets/generated/<slug>-<slot>.webp",
+  "prompt": "",
+  "alt": "",
+  "caption": "",
+  "width": 1024,
+  "height": 672,
+  "prompt_upsampling": true,
+  "seed": null,
+  "generated_at": null
+}
