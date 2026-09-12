@@ -6,7 +6,7 @@
   "reason": "Créer un visuel hero dédié à la homepage, plus fort éditorialement et centré sur l'aspirateur de chantier en situation réelle.",
   "allow_ai_generation": true,
   "truth_risk": "LOW",
-  "status": "PENDING",
+  "status": "GENERATED",
   "marker": "<img src=\"/assets/generated/aspirateur-renovation-captage.webp\" alt=\"Travail de rénovation avec un outil raccordé à un aspirateur de chantier générique\" width=\"1024\" height=\"672\" loading=\"eager\" decoding=\"async\">",
   "placement": "replace",
   "output_path": "assets/generated/homepage-hero-aspirateur-chantier.webp",
@@ -16,5 +16,9 @@
   "width": 1280,
   "height": 800,
   "prompt_upsampling": true,
-  "seed": null
+  "seed": null,
+  "bfl_request_id": "7cb1bd64-560d-4a51-ba0d-e0db6dde38c9",
+  "bfl_endpoint": "https://api.bfl.ai/v1/flux-2-pro-preview",
+  "bfl_cost": 3.0,
+  "generated_at": "2026-09-12T16:58:42.479062+00:00"
 }
