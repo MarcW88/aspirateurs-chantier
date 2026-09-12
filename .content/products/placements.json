@@ -1,0 +1,138 @@
+{
+  "schema_version": 3,
+  "policy": {
+    "max_modules_per_page": 1,
+    "max_products_per_module": 3,
+    "purpose": "decision_support_only",
+    "excluded_sections": ["brands", "industrial", "hubs", "accessories", "technical_guides"]
+  },
+  "sections": {
+    "comparisons": {
+      "base_path": "comparatifs",
+      "pages": {
+        "meilleur-aspirateur-de-chantier": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois profils à vérifier avant achat",
+          "intro": "Ces trois références couvrent trois décisions très différentes : polyvalence eau/poussière, classe M filaire et mobilité sur batterie. Vérifiez la référence exacte et sa disponibilité au moment de l'achat.",
+          "products": ["karcher-wd6", "bosch-gas-35-m-afc", "bosch-gas-18v-10-l"]
+        },
+        "aspirateur-classe-m": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois architectures classe M à comparer",
+          "intro": "Une fois la classe M confirmée pour votre situation, comparez surtout le décolmatage, la capacité, la surveillance et la mobilité. Ces modèles représentent trois compromis distincts.",
+          "products": ["bosch-gas-35-m-afc", "makita-vc4210mx", "karcher-nt-30-1-tact"]
+        },
+        "aspirateur-chantier-sans-fil": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois logiques sans fil à vérifier",
+          "intro": "Le choix dépend d'abord de la classe nécessaire et du parc batteries déjà possédé. Ces références illustrent un compact classe L, un classe M Bosch et un wet/dry grand public Kärcher.",
+          "products": ["bosch-gas-18v-10-l", "bosch-gas-18v-12-mc", "karcher-wd3-18-s"]
+        },
+        "aspirateur-eau-poussiere": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois wet/dry à vérifier selon le chantier",
+          "intro": "Ces modèles sont pertinents lorsque le besoin principal reste le nettoyage eau/poussière et l'atelier. Ils ne remplacent pas une machine classée lorsque le risque impose une certification.",
+          "products": ["karcher-wd6", "bosch-advancedvac-20", "nilfisk-multi-ii-30-t"]
+        },
+        "aspirateur-chantier-sans-sac": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois machines à vérifier pour un usage wet/dry polyvalent",
+          "intro": "Le fonctionnement sans sac dépend toujours du déchet et de la configuration prévue par le fabricant. Ces modèles servent de points de comparaison, pas de règle universelle 'sans sac'.",
+          "products": ["karcher-wd6", "bosch-advancedvac-20", "nilfisk-multi-ii-30-t"]
+        },
+        "aspirateur-chantier-puissant": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois profils de performance à vérifier",
+          "intro": "Nous ne classons pas les aspirateurs sur un seul chiffre de débit ou de dépression. Ces trois références montrent pourquoi classe, décolmatage et usage réel doivent rester visibles.",
+          "products": ["bosch-gas-35-m-afc", "makita-vc4210mx", "karcher-wd6"]
+        },
+        "aspirateur-professionnel": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois aspirateurs professionnels à confronter au cahier des charges",
+          "intro": "Ces références couvrent trois façons de travailler en classe M : format Bosch intermédiaire, gros volume Makita et architecture Kärcher avec Tact et ACD.",
+          "products": ["bosch-gas-35-m-afc", "makita-vc4210mx", "karcher-nt-30-1-tact"]
+        },
+        "petit-aspirateur-de-chantier": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois formats plus mobiles à vérifier",
+          "intro": "Compact ne signifie pas la même chose selon que vous privilégiez le sans-fil, l'intégration à un écosystème ou une cuve filaire encore transportable.",
+          "products": ["bosch-gas-18v-10-l", "festool-ctl-midi", "makita-vc2512l"]
+        }
+      }
+    },
+    "usages": {
+      "base_path": "usages",
+      "pages": {
+        "aspirateur-ponceuse": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois profils d'aspiration pour ponceuse",
+          "intro": "Une fois le matériau, la classe nécessaire et le raccord vérifiés, ces références couvrent trois niveaux de workflow : compact L, L avec SFC et M avec AFC.",
+          "products": ["festool-ctl-midi", "bosch-gas-12-25-pl", "bosch-gas-35-m-afc"]
+        },
+        "aspirateur-platre": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois machines à vérifier pour les travaux poussiéreux",
+          "intro": "Le bon appareil dépend du risque réel et de la classe requise. Ces références mettent surtout en évidence les différences de décolmatage, de volume et de surveillance.",
+          "products": ["bosch-gas-35-m-afc", "makita-vc4210mx", "karcher-nt-30-1-tact"]
+        },
+        "aspirateur-scie": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois aspirateurs à vérifier autour d'une scie",
+          "intro": "Le capot, le raccord et le matériau restent prioritaires. Ces modèles représentent ensuite trois workflows : bricolage avec prise outil, wet/dry polyvalent et intégration Festool compacte.",
+          "products": ["bosch-advancedvac-20", "karcher-wd6", "festool-ctl-midi"]
+        },
+        "aspirateur-bricolage-renovation": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois profils pour une rénovation polyvalente",
+          "intro": "Ces références couvrent le nettoyage wet/dry, l'atelier avec outil filaire et une option classe L plus orientée chantier. La nature des poussières doit rester le premier filtre.",
+          "products": ["karcher-wd6", "bosch-advancedvac-20", "makita-vc2512l"]
+        },
+        "aspirateur-gravats": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois wet/dry à vérifier pour le nettoyage de chantier",
+          "intro": "Ces modèles sont destinés au nettoyage des petites fractions et résidus après retrait des gros morceaux. Ils ne remplacent pas un système de captage ou une classe de sécurité imposée par la poussière produite.",
+          "products": ["karcher-wd6", "bosch-advancedvac-20", "nilfisk-multi-ii-30-t"]
+        }
+      }
+    },
+    "guides": {
+      "base_path": "guides",
+      "pages": {
+        "comment-choisir-aspirateur-de-chantier": {
+          "layout": "recommendation_list",
+          "insert_before_heading_id": "sources",
+          "section_id": "modeles-a-verifier",
+          "section_title": "Trois paliers pour concrétiser votre choix",
+          "intro": "Cette sélection arrive après les critères du guide : polyvalence DIY, classe L professionnelle et classe M avec décolmatage automatique. Elle ne remplace pas l'analyse du risque.",
+          "products": ["bosch-advancedvac-20", "bosch-gas-12-25-pl", "bosch-gas-35-m-afc"]
+        }
+      }
+    }
+  }
+}
