@@ -1,6 +1,11 @@
 /* Sitewide extensions for Editorial V2.
    Loaded after page-specific CSS and design-v2.css. */
 
+/* Editorial images: keep visuals self-contained; no visible generated captions. */
+.design-v2 .editorial-media figcaption {
+  display: none !important;
+}
+
 /* Shared footer: quiet publication colophon instead of a dark app footer. */
 .design-v2 .site-footer {
   background: #ECEBE5;
