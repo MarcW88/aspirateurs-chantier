@@ -39,6 +39,31 @@ jobs:
       - name: Install Chromium
         run: npx playwright install chromium
 
+      - name: Enforce model stylesheet ownership
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const failures = [];
+          const legacy = fs.readFileSync('home-model-polish.css', 'utf8');
+          const model = fs.readFileSync('model-pages-v3.css', 'utf8');
+
+          if (/\.design-v2\.design-model/.test(legacy)) {
+            failures.push('home-model-polish.css still contains model selectors; model-specific styling must live in model-pages-v3.css only');
+          }
+          if (/\.content-main\s+h2\s*\{/.test(model)) {
+            failures.push('model-pages-v3.css must not redefine shared article H2 styling');
+          }
+          if (/\.content-main\s+p\s*\{/.test(model)) {
+            failures.push('model-pages-v3.css must not redefine shared paragraph rhythm');
+          }
+
+          if (failures.length) {
+            console.error('Model stylesheet ownership failed:\n- ' + failures.join('\n- '));
+            process.exit(1);
+          }
+          console.log('Model styling ownership is clean: shared article rhythm comes from the common design layer.');
+          NODE
+
       - name: Capture model pages with site references
         run: >-
           node .agents/skills/site-design-review/scripts/run-visual-review.mjs
@@ -69,19 +94,11 @@ jobs:
             }
           }
 
-          const css = fs.readFileSync('model-pages-v3.css', 'utf8');
-          if (/\.content-main\s+h2\s*\{/.test(css)) {
-            failures.push('model-pages-v3.css must not redefine shared article H2 styling');
-          }
-          if (/\.content-main\s+p\s*\{/.test(css)) {
-            failures.push('model-pages-v3.css must not redefine shared paragraph rhythm');
-          }
-
           if (failures.length) {
             console.error('Model alignment validation failed:\n- ' + failures.join('\n- '));
             process.exit(1);
           }
-          console.log('Model pages keep the shared article rhythm and content tables fill their wrappers.');
+          console.log('Model content tables fill their wrappers and no model page creates global overflow.');
           NODE
 
       - name: Upload model visual review
