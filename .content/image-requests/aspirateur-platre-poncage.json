@@ -12,7 +12,7 @@
   "output_path": "assets/generated/aspirateur-platre-poncage.webp",
   "prompt": "Photorealistic editorial documentary photograph in a realistic interior renovation room with unfinished plasterboard walls. Show a worker using a generic unbranded long-reach drywall sander on a wall, with a flexible extraction hose connected to a generic unbranded wet/dry dust extractor on the floor. The scene should communicate source extraction during sanding, not a product demonstration. Include realistic renovation details such as protected flooring, a few tools, unfinished joints and ordinary construction light. The worker wears appropriate eye and respiratory protection. Keep the amount of airborne dust modest and believable; do not depict magically dust-free sanding. No visible brand logos, no readable labels, no recognizable proprietary product design, no certification markings, no staged advertising look, no implication that this exact equipment was tested by the website. Photorealistic editorial documentary photography, realistic proportions and materials, generic equipment, practical natural and work light, candid framing, no watermark, no generated text.",
   "alt": "Ponçage d’un mur en rénovation avec une ponceuse raccordée à un aspirateur de chantier générique",
-  "caption": "Illustration générique d’un ponçage avec captage à la source ; elle ne représente aucun modèle ni test précis.",
+  "caption": "",
   "width": 1024,
   "height": 672,
   "prompt_upsampling": true,
