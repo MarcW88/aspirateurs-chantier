@@ -36,19 +36,36 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Apply live indexation and rebuild discovery files
-        run: |
-          python scripts/publish_indexation.py
-          python scripts/publish_indexation.py --check
-      - name: Commit maintained state
+      - name: Maintain live indexation and discovery files
+        shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git reset --hard HEAD
           git pull --rebase origin main
           python scripts/publish_indexation.py
+          python scripts/publish_indexation.py --check
           git add robots.txt sitemap.xml '**/index.html'
+
           if git diff --cached --quiet; then
             echo 'Indexation state already current.'
+            exit 0
+          fi
+
+          git commit -m 'chore(seo): maintain live indexation'
+          if git push origin HEAD:main; then
+            exit 0
+          fi
+
+          echo 'main moved during indexation maintenance; reapplying on latest main'
+          git fetch origin main
+          git reset --hard origin/main
+          python scripts/publish_indexation.py
+          python scripts/publish_indexation.py --check
+          git add robots.txt sitemap.xml '**/index.html'
+          if git diff --cached --quiet; then
+            echo 'Latest main is already compliant.'
             exit 0
           fi
           git commit -m 'chore(seo): maintain live indexation'
