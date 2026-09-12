@@ -148,7 +148,7 @@ ledger = {
         'scoring_used': False,
         'affiliate_commission_used_in_ranking': False,
         'desk_research_only': True,
-        'noindex_during_pilot': True,
+        'noindex_during_pilot': False,
         'hands_on_test': False,
     }
 }

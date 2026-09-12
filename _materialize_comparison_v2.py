@@ -77,7 +77,7 @@ def render(slug, cfg):
     notes["v2_editorial_source"] = f".content/comparisons/v2/{slug}.html"
     notes["v2_editorial_date"] = UPDATED_ISO
     notes["generator_authored_content"] = False
-    notes["noindex_during_rollout"] = True
+    notes["noindex_during_rollout"] = False
     ledger_path.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"✓ {slug}: v2 fragment materialized")
 
