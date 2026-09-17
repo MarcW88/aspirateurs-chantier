@@ -25,7 +25,9 @@ MODULES = (
     "model-pages-v3.css",
     "home-hero-refresh.css",
 )
-IMPORT_RE = re.compile(r"^\s*@import\s+[^;]+;\s*$", re.M)
+# Match a complete @import line. URLs such as Google Fonts legitimately contain
+# semicolons in their query string, so do not stop matching at the first ';'.
+IMPORT_RE = re.compile(r"^[ \t]*@import\s+[^\r\n]*;[ \t]*$", re.M)
 
 
 def clean_trailing_whitespace(text: str) -> str:
