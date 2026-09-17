@@ -4,6 +4,9 @@
    python _build_css.py
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
 /* ============================================================
    SOURCE MODULE: styles/base.css
    ============================================================ */
@@ -12,7 +15,7 @@
    Aesthetic: specialized technical database, not affiliate clone
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 
 /* --- Variables --- */
 :root {
@@ -1687,8 +1690,6 @@ p  { font-size: 0.9375rem; line-height: 1.7; color: var(--color-text); }
 /* ============================================================
    SOURCE MODULE: design-v2.css
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 /* Editorial V2 prototype — scoped to four design-review pages only. */
 .design-v2 {
   --v2-paper: #F5F4EF;
