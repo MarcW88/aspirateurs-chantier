@@ -3,6 +3,7 @@
 
 This is deliberately a post-processing layer: editorial generators remain free to
 change their bespoke article structures, while the shared brand UX stays stable.
+CSS is provided by the sitewide /style.css entry point.
 """
 from pathlib import Path
 import re
@@ -24,8 +25,6 @@ MODULES = {
 def ensure_assets(html: str) -> str:
     if 'class="brand-page"' not in html:
         html = html.replace('<body>', '<body class="brand-page">', 1)
-    if '/brand-pages.css' not in html:
-        html = html.replace('</head>', '  <link rel="stylesheet" href="/brand-pages.css">\n</head>', 1)
     if '/brand-pages.js' not in html:
         html = html.replace('</body>', '<script src="/brand-pages.js" defer></script>\n</body>', 1)
     return html

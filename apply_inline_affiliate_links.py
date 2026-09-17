@@ -12,8 +12,6 @@ ROOT = Path(__file__).resolve().parent
 REGISTRY = ROOT / ".content/products/registry.json"
 AFFILIATE = ROOT / ".content/products/affiliate.json"
 INLINE = ROOT / ".content/products/inline-affiliate.json"
-STYLE_TAG = '<link rel="stylesheet" href="/assets/product-cards.css">'
-INLINE_STYLE_TAG = '<link rel="stylesheet" href="/assets/inline-affiliate.css">'
 SCRIPT_TAG = '<script src="/assets/product-affiliate.js" defer></script>'
 GENERATED_RE = re.compile(r'[ \t\r\n]*<!-- INLINE_AFFILIATE:[^>]+:START -->.*?<!-- INLINE_AFFILIATE:[^>]+:END -->[ \t\r\n]*', re.S)
 ANSWER_BOX_RE = re.compile(r'(<div\b[^>]*class="[^"]*answer-box[^"]*"[^>]*>.*?</div>)', re.S | re.I)
@@ -84,8 +82,7 @@ def main() -> None:
                     before = text[:match.end()].rstrip()
                     after = text[match.end():].lstrip("\r\n")
                     text = before + "\n" + block + "\n" + after
-                    text = ensure_asset(text, STYLE_TAG, "</head>")
-                    text = ensure_asset(text, INLINE_STYLE_TAG, "</head>")
+                    # CSS is provided by the sitewide /style.css entry point.
                     text = ensure_asset(text, SCRIPT_TAG, "</body>")
                     inserted += 1
             if text != original:
