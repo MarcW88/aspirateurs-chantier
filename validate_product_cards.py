@@ -30,7 +30,7 @@ PROHIBITED_MODULE_ROOTS = {"marques", "modeles", "accessoires"}
 ALLOWED_IMAGE_SOURCES = {"UNSET", "OWN", "MANUFACTURER_AUTHORIZED", "AMAZON_CREATORS_API"}
 FORBIDDEN_COMMERCE_KEYS = {"price", "current_price", "reference_price", "discount", "discount_pct", "stock"}
 ASIN_RE = re.compile(r"^[A-Z0-9]{10}$")
-STYLE_TAG = '<link rel="stylesheet" href="/assets/product-cards.css">'
+STYLE_TAG = '<link rel="stylesheet" href="/style.css">'
 SCRIPT_TAG = '<script src="/assets/product-affiliate.js" defer></script>'
 
 
