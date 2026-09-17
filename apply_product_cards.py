@@ -10,7 +10,6 @@ from pathlib import Path
 from product_cards import load_placements, load_registry, render_section
 
 ROOT = Path(__file__).resolve().parent
-STYLE_TAG = '<link rel="stylesheet" href="/assets/product-cards.css">'
 SCRIPT_TAG = '<script src="/assets/product-affiliate.js" defer></script>'
 ALLOWED_SECTIONS = {"comparisons", "usages", "guides"}
 
@@ -36,7 +35,7 @@ def apply_page(section: str, base_path: str, slug: str, config: dict, registry: 
     if not page.exists():
         raise SystemExit(f"Missing configured product-module page: {page}")
     text = strip_previous_block(page.read_text(encoding="utf-8"), section, slug)
-    text = ensure_asset_tag(text, STYLE_TAG, "</head>")
+    # CSS is provided by the sitewide /style.css entry point.
     text = ensure_asset_tag(text, SCRIPT_TAG, "</body>")
     missing = [pid for pid in config["products"] if pid not in registry]
     if missing:
