@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Fail when a public page falls out of the Editorial V2 shell."""
+"""Validate that public pages use the Editorial V2 shell and one CSS entry point."""
 from pathlib import Path
-from _apply_design_v2 import ROOT, needs_home_model_polish, needs_model_v3, public_pages, page_classes
+from _apply_design_v2 import LEGACY_STYLESHEETS, ROOT, SINGLE_STYLESHEET, public_pages, page_classes
 
-CORE_ASSETS = ("/design-v2.css", "/design-v2-rollout.css", "/design-v2.js")
-POLISH_ASSET = "/home-model-polish.css"
-MODEL_V3_ASSET = "/model-pages-v3.css"
+CORE_SCRIPT = "/design-v2.js"
 
 
 def main() -> None:
@@ -21,18 +19,14 @@ def main() -> None:
         for cls in page_classes(rel):
             if cls not in body_open.split('class="', 1)[-1]:
                 errors.append(f"{rel}: missing body class {cls}")
-        for asset in CORE_ASSETS:
-            count = html.count(asset)
-            if count != 1:
-                errors.append(f"{rel}: expected one {asset}, found {count}")
-        polish_count = html.count(POLISH_ASSET)
-        expected_polish = 1 if needs_home_model_polish(rel) else 0
-        if polish_count != expected_polish:
-            errors.append(f"{rel}: expected {expected_polish} {POLISH_ASSET}, found {polish_count}")
-        model_v3_count = html.count(MODEL_V3_ASSET)
-        expected_model_v3 = 1 if needs_model_v3(rel) else 0
-        if model_v3_count != expected_model_v3:
-            errors.append(f"{rel}: expected {expected_model_v3} {MODEL_V3_ASSET}, found {model_v3_count}")
+
+        if html.count(SINGLE_STYLESHEET) != 1:
+            errors.append(f"{rel}: expected exactly one {SINGLE_STYLESHEET}")
+        if html.count(CORE_SCRIPT) != 1:
+            errors.append(f"{rel}: expected exactly one {CORE_SCRIPT}")
+        for asset in LEGACY_STYLESHEETS:
+            if asset in html:
+                errors.append(f"{rel}: extra stylesheet link remains: {asset}")
 
     if errors:
         print("EDITORIAL_V2: FAIL")
@@ -40,7 +34,7 @@ def main() -> None:
             print(f" - {error}")
         raise SystemExit(1)
 
-    print(f"EDITORIAL_V2: PASS — {len(pages)} public pages covered")
+    print(f"EDITORIAL_V2: PASS — {len(pages)} public pages use one CSS entry point")
 
 
 if __name__ == "__main__":
