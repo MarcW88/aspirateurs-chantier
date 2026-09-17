@@ -3,7 +3,8 @@
 
 Idempotent by design: generators can run first, then this script restores the
 shared body classes and ensures every public page points to one CSS entry point:
-/style.css. The entry point preserves the existing cascade through imports.
+/style.css. The entry point preserves the existing cascade through the generated
+bundle.
 """
 from pathlib import Path
 import re
@@ -77,7 +78,12 @@ def strip_stylesheet(html: str, href: str) -> str:
 
 
 def normalize_stylesheets(html: str) -> str:
-    # Remove all site stylesheet links first, then add one canonical entry point.
+    # Already-normalized pages must be byte-for-byte stable. This guard also
+    # prevents whitespace drift when the applicator is run repeatedly in CI.
+    if html.count(SINGLE_STYLESHEET) == 1 and not any(href in html for href in LEGACY_STYLESHEETS):
+        return html
+
+    # Legacy/generated pages are migrated to one canonical site stylesheet.
     # External preconnect/font links are intentionally left untouched.
     html = strip_stylesheet(html, SINGLE_STYLESHEET)
     for href in LEGACY_STYLESHEETS:
