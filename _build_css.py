@@ -28,6 +28,10 @@ MODULES = (
 IMPORT_RE = re.compile(r"^\s*@import\s+[^;]+;\s*$", re.M)
 
 
+def clean_trailing_whitespace(text: str) -> str:
+    return "\n".join(line.rstrip() for line in text.splitlines())
+
+
 def build() -> str:
     imports: list[str] = []
     sections: list[str] = []
@@ -42,7 +46,8 @@ def build() -> str:
             rule = match.strip()
             if rule not in imports:
                 imports.append(rule)
-        css = IMPORT_RE.sub("", css).strip()
+        css = IMPORT_RE.sub("", css)
+        css = clean_trailing_whitespace(css).strip()
 
         sections.append(
             "\n".join(
