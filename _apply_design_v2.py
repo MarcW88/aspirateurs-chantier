@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Apply the editorial V2 shell to all public site pages.
+"""Apply the Editorial V2 shell and normalize CSS assets on all public pages.
 
 Idempotent by design: generators can run first, then this script restores the
-shared design classes/assets without touching editorial content.
+shared body classes and ensures every public page points to one CSS entry point:
+/style.css. The entry point preserves the existing cascade through imports.
 """
 from pathlib import Path
 import re
@@ -15,6 +16,19 @@ STATIC = (
     "mentions-legales/index.html",
     "methode-de-test/index.html",
     "transparence-affiliation/index.html",
+)
+
+SINGLE_STYLESHEET = "/style.css"
+LEGACY_STYLESHEETS = (
+    "/comparison-pages.css",
+    "/brand-pages.css",
+    "/design-v2.css",
+    "/design-v2-rollout.css",
+    "/assets/product-cards.css",
+    "/assets/inline-affiliate.css",
+    "/home-model-polish.css",
+    "/model-pages-v3.css",
+    "/home-hero-refresh.css",
 )
 
 
@@ -41,19 +55,6 @@ def page_classes(rel: str) -> list[str]:
     return ["design-v2", "design-static"]
 
 
-def is_model_leaf(rel: str) -> bool:
-    parts = Path(rel).parts
-    return len(parts) == 3 and parts[0] == "modeles" and parts[-1] == "index.html"
-
-
-def needs_home_model_polish(rel: str) -> bool:
-    return rel == "index.html" or is_model_leaf(rel)
-
-
-def needs_model_v3(rel: str) -> bool:
-    return is_model_leaf(rel)
-
-
 def merge_body_classes(html: str, wanted: list[str]) -> str:
     match = re.search(r"<body(?:\s+class=\"([^\"]*)\")?\s*>", html, flags=re.I)
     if not match:
@@ -67,18 +68,29 @@ def merge_body_classes(html: str, wanted: list[str]) -> str:
     return html[: match.start()] + replacement + html[match.end() :]
 
 
-def ensure_assets(html: str, rel: str) -> str:
-    links = []
-    if '/design-v2.css' not in html:
-        links.append('  <link rel="stylesheet" href="/design-v2.css">')
-    if '/design-v2-rollout.css' not in html:
-        links.append('  <link rel="stylesheet" href="/design-v2-rollout.css">')
-    if needs_home_model_polish(rel) and '/home-model-polish.css' not in html:
-        links.append('  <link rel="stylesheet" href="/home-model-polish.css">')
-    if needs_model_v3(rel) and '/model-pages-v3.css' not in html:
-        links.append('  <link rel="stylesheet" href="/model-pages-v3.css">')
-    if links:
-        html = html.replace('</head>', "\n".join(links) + '\n</head>', 1)
+def strip_stylesheet(html: str, href: str) -> str:
+    pattern = re.compile(
+        rf'^[ \t]*<link\b(?=[^>]*\brel=["\']stylesheet["\'])(?=[^>]*\bhref=["\']{re.escape(href)}["\'])[^>]*>\s*$',
+        flags=re.I | re.M,
+    )
+    return pattern.sub("", html)
+
+
+def normalize_stylesheets(html: str) -> str:
+    # Remove all site stylesheet links first, then add one canonical entry point.
+    # External preconnect/font links are intentionally left untouched.
+    html = strip_stylesheet(html, SINGLE_STYLESHEET)
+    for href in LEGACY_STYLESHEETS:
+        html = strip_stylesheet(html, href)
+
+    tag = f'  <link rel="stylesheet" href="{SINGLE_STYLESHEET}">'
+    if "</head>" not in html:
+        return html
+    return html.replace("</head>", tag + "\n</head>", 1)
+
+
+def ensure_assets(html: str) -> str:
+    html = normalize_stylesheets(html)
     if '/design-v2.js' not in html:
         html = html.replace('</body>', '  <script src="/design-v2.js" defer></script>\n</body>', 1)
     return html
@@ -101,7 +113,7 @@ def apply_page(path: Path) -> bool:
     rel = path.relative_to(ROOT).as_posix()
     original = path.read_text(encoding="utf-8")
     html = merge_body_classes(original, page_classes(rel))
-    html = ensure_assets(html, rel)
+    html = ensure_assets(html)
     if html == original:
         return False
     path.write_text(html, encoding="utf-8")
@@ -110,8 +122,9 @@ def apply_page(path: Path) -> bool:
 
 
 def main() -> None:
-    changed = sum(apply_page(path) for path in public_pages())
-    print(f"Editorial V2 applied: {changed} page(s) changed; {len(public_pages())} page(s) checked.")
+    pages = public_pages()
+    changed = sum(apply_page(path) for path in pages)
+    print(f"Editorial V2 applied: {changed} page(s) changed; {len(pages)} page(s) checked.")
 
 
 if __name__ == "__main__":
