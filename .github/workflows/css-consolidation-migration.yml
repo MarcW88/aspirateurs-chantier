@@ -6,6 +6,7 @@ on:
       - css-consolidation-safe
     paths:
       - ".github/workflows/css-consolidation-migration.yml"
+      - "_build_css.py"
 
 permissions:
   contents: write
