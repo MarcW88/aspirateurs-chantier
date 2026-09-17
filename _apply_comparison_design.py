@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Apply the comparison-cluster design layer after canonical content generation.
 
-Idempotent by design: it scopes CSS/JS through `.comparison-page`, adds the shared
-assets once, and replaces one intent-specific decision module per article page.
+Idempotent by design: it scopes JS through `.comparison-page`, adds the shared
+script once, and replaces one intent-specific decision module per article page.
+CSS is provided by the sitewide /style.css entry point.
 """
 from html import escape
 from pathlib import Path
@@ -137,8 +138,6 @@ def ensure_body_class(html):
 
 
 def apply_assets(html):
-    if '/comparison-pages.css' not in html:
-        html = html.replace('</head>', '  <link rel="stylesheet" href="/comparison-pages.css">\n</head>', 1)
     if '/comparison-pages.js' not in html:
         html = html.replace('</body>', '  <script src="/comparison-pages.js" defer></script>\n</body>', 1)
     return html
