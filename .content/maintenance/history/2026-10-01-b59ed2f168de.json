@@ -1,0 +1,64 @@
+{
+  "pages": [
+    {
+      "url": "/comparatifs/aspirateur-chantier-puissant/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-comparison-aspirateur-chantier-puissant-2026-10-01.md"
+    },
+    {
+      "url": "/guides/capacite-cuve/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-guide-capacite-cuve-2026-10-01.md"
+    },
+    {
+      "url": "/marques/bosch/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-brand-bosch-2026-10-01.md"
+    },
+    {
+      "url": "/modeles/bosch-advancedvac-20/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-model-bosch-advancedvac-20-2026-10-01.md"
+    },
+    {
+      "url": "/usages/aspirateur-atelier/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-usage-aspirateur-atelier-2026-10-01.md"
+    },
+    {
+      "url": "/comparatifs/aspirateur-chantier-sans-fil/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-comparison-aspirateur-chantier-sans-fil-2026-10-01.md"
+    },
+    {
+      "url": "/guides/classes-l-m-h/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-guide-classes-l-m-h-2026-10-01.md"
+    },
+    {
+      "url": "/marques/dewalt/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-brand-dewalt-2026-10-01.md"
+    },
+    {
+      "url": "/modeles/bosch-gas-12-25-pl/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-model-bosch-gas-12-25-pl-2026-10-01.md"
+    },
+    {
+      "url": "/usages/aspirateur-bois-sciure-copeaux/",
+      "reviewed_at": "2026-10-01",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/maintenance-usage-aspirateur-bois-sciure-copeaux-2026-10-01.md"
+    }
+  ]
+}
