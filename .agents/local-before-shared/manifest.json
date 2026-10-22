@@ -1,0 +1,198 @@
+{
+  "repository": "aspirateurs-chantier",
+  "base_commit": "b11401c1e78ec1da7d90238fc1b903b48cca4933",
+  "files": {
+    ".agents/skills/academic-voice/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/academic-voice/SKILL.md",
+      "sha256": "2cbee097cf3e428175f4e314e396da8643c0a9f84bef3251caf4da75dbdf0640"
+    },
+    ".agents/skills/affiliate-value/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/affiliate-value/SKILL.md",
+      "sha256": "6e21f9a1b06ae6f531a59bbb7744b8c9a632bd30f2926df68942eb01c443c20c"
+    },
+    ".agents/skills/anti-ai-slop/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/anti-ai-slop/SKILL.md",
+      "sha256": "4bd6e45b2cf6801f456fd519a0215a7066f4d0b13a558771e5b7faea03327db4"
+    },
+    ".agents/skills/better-usage/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/better-usage/SKILL.md",
+      "sha256": "789c1b3e5d14b24cc786f1e21aa34502bcb54281a949169cb186475fd9979608"
+    },
+    ".agents/skills/brand-analysis-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/brand-analysis-workflow/SKILL.md",
+      "sha256": "25427d51b3a3b8706b5bc7731b373bf09fb9241e2e688fa94d605e4e6d0faaaa"
+    },
+    ".agents/skills/brand-content-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/brand-content-workflow/SKILL.md",
+      "sha256": "9c868c59a08b5b59166d83e738b94b458c8ec295c6b9462f27555b558ab9beeb"
+    },
+    ".agents/skills/comparison-analysis-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-analysis-workflow/SKILL.md",
+      "sha256": "ec8b0b3b325f808ba2bf94e8ff53f6a587a221bfee2e396c92845962d2883b20"
+    },
+    ".agents/skills/comparison-content-workflow/README.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/README.md",
+      "sha256": "963f18ffd4192486379e8b74ead6b5ee1810bb592bf37d79ac1437e4baa30b87"
+    },
+    ".agents/skills/comparison-content-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/SKILL.md",
+      "sha256": "7b18b5b8e1dd6436a5bb704ba20743d56abda788343d8f99dd018e4f4f8ab138"
+    },
+    ".agents/skills/comparison-content-workflow/comparison-workflow.config.example.yaml": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/comparison-workflow.config.example.yaml",
+      "sha256": "e5b6de30dc0c71b34baf0c4f001f8f43b8c96c0a34db0b390c19bdfaa50ceac9"
+    },
+    ".agents/skills/comparison-content-workflow/references/comparison-brief-template.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/references/comparison-brief-template.md",
+      "sha256": "2f44d9252775c1bcc13638fc95865e7a9d76e296b0ba9cd367980ff2a3649844"
+    },
+    ".agents/skills/comparison-content-workflow/references/comparison-data-template.yaml": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/references/comparison-data-template.yaml",
+      "sha256": "57967826f51c845dcfec6e93b86d1bb06d65a7ddb38f7a8bc46092e3025be3ce"
+    },
+    ".agents/skills/comparison-content-workflow/references/comparison-publish-gate-template.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/references/comparison-publish-gate-template.md",
+      "sha256": "eae603718b27911fa71d488b695934ee79d1941b68293bd9b843fb11bd1a40b9"
+    },
+    ".agents/skills/comparison-content-workflow/scripts/score_comparison.py": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/scripts/score_comparison.py",
+      "sha256": "f4413cfae7d73a853ec64a739082fb451fa083bc11477e0bd903433613b4cdee"
+    },
+    ".agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py": {
+      "backup": ".agents/local-before-shared/.agents/skills/comparison-content-workflow/scripts/validate_comparison_data.py",
+      "sha256": "fddb5067bc59a5c84c3f35be6e2b774ba44a71a6c83c186ff514d82d300bed4c"
+    },
+    ".agents/skills/content-and-copy/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/content-and-copy/SKILL.md",
+      "sha256": "932bb0f63b3bb9af740a4c9cbd6544dc20a786d538edcf223278c1dcc7a0f150"
+    },
+    ".agents/skills/content-audit/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/content-audit/SKILL.md",
+      "sha256": "9aaf77b0af0a5a36211a54a8ce0821ac613cf92438ae572a32556ebcb1836327"
+    },
+    ".agents/skills/content-brief-authoring/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/content-brief-authoring/SKILL.md",
+      "sha256": "116367ca409875cd314cc7d607af085dca2b21cc63ff134e6d31118aba5387ac"
+    },
+    ".agents/skills/content-refresh/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/content-refresh/SKILL.md",
+      "sha256": "13d4cdd2e56635bf0a263dd050aae8db2b55d7fbb8ac26577581fc0d560ed8fa"
+    },
+    ".agents/skills/editorial-image-planner/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/editorial-image-planner/SKILL.md",
+      "sha256": "6cb22c594efcc99fdad010cb808c5d7082caa1c5ecb4f404ab15fd1585bf3ee9"
+    },
+    ".agents/skills/editorial-qa/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/editorial-qa/SKILL.md",
+      "sha256": "d37dfc7f00b7e00d5ba0ec2e0f698065f0d7a93b5a334cd24fd6a38b5eae9f49"
+    },
+    ".agents/skills/evidence-based-reviews/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/evidence-based-reviews/SKILL.md",
+      "sha256": "48c6fcd49b4b8cf47b63f209082722d13f4be0c0deef9e4b7a74589ef277c469"
+    },
+    ".agents/skills/fact-check/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/fact-check/SKILL.md",
+      "sha256": "d56d1532704e986ade097dd8d95df07675553e353babeff0ced1aa98a5b389e6"
+    },
+    ".agents/skills/general-writing/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/general-writing/SKILL.md",
+      "sha256": "f1499106e754668337784a4df2e9a1808cf7553a383474e32113c1fadfd8ce41"
+    },
+    ".agents/skills/guide-analysis-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/guide-analysis-workflow/SKILL.md",
+      "sha256": "040c853b073bbc8abdabd912b77772f4f4dbaf62fbe56a4d2bb910e7b30b5bb5"
+    },
+    ".agents/skills/guide-content-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/guide-content-workflow/SKILL.md",
+      "sha256": "d68662d11bd08e4bda6436b5cd9d02ae9fe48ab5d6577c7d01eb7c1c5d418cee"
+    },
+    ".agents/skills/guide-content-workflow/references/brief-template.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/guide-content-workflow/references/brief-template.md",
+      "sha256": "8f63d6b382b342bd013f1cc0891b2a2fafb66e6f53908a782d66efcb772a6a00"
+    },
+    ".agents/skills/guide-content-workflow/references/choice-guide.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/guide-content-workflow/references/choice-guide.md",
+      "sha256": "8075f6f9fb9186cd1cfc1fd8f9810869f470daecfce610baaa61ab0457364954"
+    },
+    ".agents/skills/guide-content-workflow/references/explainer-guide.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/guide-content-workflow/references/explainer-guide.md",
+      "sha256": "c2b7a4369533fec06fc7275048deefe1888a1fe391f9b7485cc1570be4f93f99"
+    },
+    ".agents/skills/guide-content-workflow/references/how-to-guide.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/guide-content-workflow/references/how-to-guide.md",
+      "sha256": "2ff02d58bf3024395a2179411c19d6509173f12cea684e6b20e59a29dafccc7e"
+    },
+    ".agents/skills/guide-content-workflow/references/publish-gate-template.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/guide-content-workflow/references/publish-gate-template.md",
+      "sha256": "3a959152004538fac2253a2baf498eb8e47af499c8e774660d17a8f05bfef8b2"
+    },
+    ".agents/skills/humanizer/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/humanizer/SKILL.md",
+      "sha256": "88f6165bc2457f2e6e16bf7c74a1e97708fc6028fdbfe6526f9b0ab75410328c"
+    },
+    ".agents/skills/internal-linking-audit/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/internal-linking-audit/SKILL.md",
+      "sha256": "5ba5440f5e0e3bd5b20d1944d7f86ce64c94d7d019be7a00606126056c0c472d"
+    },
+    ".agents/skills/jobs-to-be-done/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/jobs-to-be-done/SKILL.md",
+      "sha256": "ab3865163eabd169dc2e369b02e3003359748e3e26bf6f38ca5edf3e664a66d5"
+    },
+    ".agents/skills/non-autoregressive-writing-pass/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/non-autoregressive-writing-pass/SKILL.md",
+      "sha256": "82bad00a4339e387be659801f04db22d3a12cb64ed9ad795d453389fb0325aa4"
+    },
+    ".agents/skills/search-intent/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/search-intent/SKILL.md",
+      "sha256": "f5e39e798d4b1c44ba8484b3276c59fdb494728897af64c974b8517c1eeb9215"
+    },
+    ".agents/skills/seo-best-practices/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/seo-best-practices/SKILL.md",
+      "sha256": "cdb27d7b26846b9f187755ddf69890bdc217ab3f0631595aa0d36ce001e94962"
+    },
+    ".agents/skills/seo-content-audit/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/seo-content-audit/SKILL.md",
+      "sha256": "ef4770f5020cacd50e50739191e18e5d462fb247deb671a942209d041f7c90eb"
+    },
+    ".agents/skills/seo-drift/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/seo-drift/SKILL.md",
+      "sha256": "fbe3fde73066829a8e56a8481459fa2d92aeb6f0049a68ee2b49e3a679dd2711"
+    },
+    ".agents/skills/seo-keyword/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/seo-keyword/SKILL.md",
+      "sha256": "ecf2a58f5573d88e9ff9bfa025fabc307808c589912047092d20a66f22f843c9"
+    },
+    ".agents/skills/seo-onpage/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/seo-onpage/SKILL.md",
+      "sha256": "ef369032bd4e4c9540a14318e1e38e28fc198f60bfd77b07ef2c412be59ae83f"
+    },
+    ".agents/skills/seo-technical/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/seo-technical/SKILL.md",
+      "sha256": "ddd4b4ed1c31380466ac9735ee58ddf0c0aa8c50de6b37212e96faf287cf2e2a"
+    },
+    ".agents/skills/site-design-review/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/site-design-review/SKILL.md",
+      "sha256": "0a2cb97f9747d77b5e86b11272d9e170917ba7ff95a8dcaeee210cdd94cdf8b4"
+    },
+    ".agents/skills/site-design-review/references/playwright-visual-check.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/site-design-review/references/playwright-visual-check.md",
+      "sha256": "eb54011486f8abc3a8b9e27233c4a051468bf6245823a89e61b19ffbd444db34"
+    },
+    ".agents/skills/site-design-review/scripts/run-visual-review.mjs": {
+      "backup": ".agents/local-before-shared/.agents/skills/site-design-review/scripts/run-visual-review.mjs",
+      "sha256": "ea1308d7812e0be8e0aee503d501c2164d75b7cf14580d3aeb7aca178748a339"
+    },
+    ".agents/skills/usage-analysis-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/usage-analysis-workflow/SKILL.md",
+      "sha256": "fbfe852140148c1d9bde250cef053c255ca53a3115092fc5cfd167cbc5c29e90"
+    },
+    ".agents/skills/usage-content-workflow/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/usage-content-workflow/SKILL.md",
+      "sha256": "c89eb1854e811f9b7a9eee4b0802b8ba91480d361c0c84601ca0f35ef11dc794"
+    },
+    ".agents/skills/writing-cadence/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/writing-cadence/SKILL.md",
+      "sha256": "3475d7806e1f4e567805ee08c41f1f2ddedb0442ba1d1336b91f8a859c897952"
+    }
+  }
+}
