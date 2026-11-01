@@ -1,1 +1,95 @@
-{"schema_version": 1, "pages": {}}
+{
+  "schema_version": 1,
+  "pages": {
+    "/comparatifs/aspirateur-chantier-sans-sac/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2026-12-01",
+      "fingerprint": "4eb79ab33bad17b9b587d8cc424a0a4c97f59761ff8482b2fdc95ecfc4569de7",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/aspirateur-chantier-sans-sac-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/comparison-content-workflow/SKILL.md"
+    },
+    "/guides/comment-choisir-aspirateur-de-chantier/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2027-01-30",
+      "fingerprint": "1e889f0bde7aaab5d3f15c370ed18e29d833d2b1e378ce45048750e7b4e1fc4e",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/comment-choisir-aspirateur-de-chantier-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/guide-content-workflow/SKILL.md"
+    },
+    "/marques/festool/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2026-12-16",
+      "fingerprint": "7904b3a6503a447235d17a0c6a9213ce4e202e2422917de1265eb84faa1aa5e0",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/festool-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/brand-content-workflow/SKILL.md"
+    },
+    "/modeles/bosch-gas-18v-10-l/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2026-12-16",
+      "fingerprint": "6c31623fa884fe573e4a608e69419516087833951cf4e67774c48ad5e6d5e497",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/bosch-gas-18v-10-l-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/model-content-workflow/SKILL.md"
+    },
+    "/usages/aspirateur-bricolage-renovation/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2027-01-30",
+      "fingerprint": "9bfb1bdaa51121c1d924e6da26777fd30afdd7622c3f93681b78c897768f8508",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/aspirateur-bricolage-renovation-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/usage-content-workflow/SKILL.md"
+    },
+    "/comparatifs/aspirateur-classe-m/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2026-12-01",
+      "fingerprint": "9d0ea47f633d0150e8dfcea92f5aff057c80bd9914e8c10f4a71eb0833257de7",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/aspirateur-classe-m-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/comparison-content-workflow/SKILL.md"
+    },
+    "/guides/debit-air-aspirateur/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2027-01-30",
+      "fingerprint": "b8f10a4eb38c08ec62e969f1d1b0dc8a93fd4e2be9638dacb2e663fe07e7f625",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/debit-air-aspirateur-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/guide-content-workflow/SKILL.md"
+    },
+    "/marques/karcher/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2026-12-16",
+      "fingerprint": "d549b63a4585f12526f025187b03a75f7db8b61c8b92782ee36aedc652d43b20",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/karcher-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/brand-content-workflow/SKILL.md"
+    },
+    "/modeles/bosch-gas-35-l-afc/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2026-12-16",
+      "fingerprint": "9b53704dd8fb39ceaf0a57bfe450f7d1ba481de3012cb19aeb81863c18b61ce4",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/bosch-gas-35-l-afc-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/model-content-workflow/SKILL.md"
+    },
+    "/usages/aspirateur-gravats/": {
+      "last_reviewed": "2026-11-01",
+      "next_review": "2027-01-30",
+      "fingerprint": "5866f61e99dd609ef2dc79129cd23603e7607d68c0e2816092a49f412d98c7bc",
+      "decision": "KEEP",
+      "audit_report": ".content/reviews/aspirateur-gravats-2026-11-01.md",
+      "next_action": "NONE",
+      "content_workflow": ".agents/skills/usage-content-workflow/SKILL.md"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "pages": [
+    {
+      "url": "/comparatifs/aspirateur-chantier-sans-sac/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/aspirateur-chantier-sans-sac-2026-11-01.md"
+    },
+    {
+      "url": "/guides/comment-choisir-aspirateur-de-chantier/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/comment-choisir-aspirateur-de-chantier-2026-11-01.md"
+    },
+    {
+      "url": "/marques/festool/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/festool-2026-11-01.md"
+    },
+    {
+      "url": "/modeles/bosch-gas-18v-10-l/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/bosch-gas-18v-10-l-2026-11-01.md"
+    },
+    {
+      "url": "/usages/aspirateur-bricolage-renovation/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/aspirateur-bricolage-renovation-2026-11-01.md"
+    },
+    {
+      "url": "/comparatifs/aspirateur-classe-m/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/aspirateur-classe-m-2026-11-01.md"
+    },
+    {
+      "url": "/guides/debit-air-aspirateur/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/debit-air-aspirateur-2026-11-01.md"
+    },
+    {
+      "url": "/marques/karcher/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/karcher-2026-11-01.md"
+    },
+    {
+      "url": "/modeles/bosch-gas-35-l-afc/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/bosch-gas-35-l-afc-2026-11-01.md"
+    },
+    {
+      "url": "/usages/aspirateur-gravats/",
+      "decision": "KEEP",
+      "reviewed_at": "2026-11-01",
+      "audit_report": ".content/reviews/aspirateur-gravats-2026-11-01.md"
+    }
+  ]
+}
